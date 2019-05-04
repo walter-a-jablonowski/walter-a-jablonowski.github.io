@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Homepage of Walter A. Jablonowski - Programmer Apps, Web, .NET">
+  <meta name="author" content="Walter A. Jablonowski">
+
+  <title>Walter A. Jablonowski</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/scrolling-nav.css" rel="stylesheet">
+
+  <link href="css/waj.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  
+  <link href="js/jquery-toast-plugin/jquery.toast.min.css" rel="stylesheet">
+  
+</head>
+
+<body id="page-top" style="display: none;">
+
+  <!-- Navigation -->
+  <nav style="background-color: #00000000;" class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="index.html#page-top"><i class="fas fa-layer-group"></i>&nbsp;&nbsp;<span style="color: #d6d6d6;">Home of</span>&nbsp;&nbsp;Walter A. Jablonowski</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="index.html#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="index.html#int">Interests</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="index.html#awe">Awesome</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="index.html#conn">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-info text-white">
+    <div class="container text-center">
+      <!-- <p class="lead" style="color: #25aeff;"><b>- INNOVATION -</b></p> -->
+      <h1 style="color: #25aeff;">Walter A. Jablonowski</h1>
+      <h2 style="color: #d6d6d6;">Apps | Web | .NET - Developer</h2>
+      <p class="lead">
+        <!-- <span style="border: 2px solid #25aeff; padding: 0 5px 5px 5px; border-radius: 25px;"> -->
+          Bamberg, Germany&nbsp;&nbsp;<a class="js-scroll-trigger" style="color: #eee;" href="#conn"><i class="fas fa-map-marker-alt"></i> show on map</a>
+        <!-- </span> -->
+      </p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Credits</h2>
+          <p>
+
+            Free images<br>
+            <br>
+            - <a href="https://pngtree.com/free-backgrounds">free background photos from pngtree.com</a><br>
+            - <a href="http://www.freepik.com">Designed by fullvector / Freepik</a>
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background-color: #212121;" class="py-5">
+    <div class="container">
+      <p class="m-0 text-center text-white">
+        Copyright &copy; Walter A. Jablonowski 2019
+        <span class="font-weight-light">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+        <a href="privacy.html" class="text-white">Privacy</a>
+        <span class="font-weight-light">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+        <a href="imprint.html" class="text-white">Legal</a>
+        <span class="font-weight-light">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+        <a href="credits.html" class="text-white">Credits</a>
+      </p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="js/scrolling-nav.js"></script>
+
+  <script src="js/jquery-toast-plugin/jquery.toast.min.js"></script>
+
+
+  <!-- Page JS -->
+  <script>
+    $( function() {
+
+      $(window).scroll( function() {
+
+        var scroll = $(window).scrollTop();
+
+        if (scroll > 50)
+          $("#mainNav").css("background-color" , "#212121");
+        else  $("#mainNav").css("background-color" , "#00000000");
+
+      });
+
+      $('body').fadeIn();
+    });
+
+    $.toast({
+        heading: '<span style="font-size: 15px;">Privacy</span>',
+        text: '<span style="font-family: Helvetica, Arial, sans-serif; font-size: 15px;">By using this website, you agree with the <a style="font-family: Helvetica, Arial, sans-serif; font-size: 15px; color: #000; text-decoration: none; border-bottom: 1px solid #000;" href="privacy.html" target="_blank">privacy policy</a></span>.',
+        // icon: 'info',
+        position: 'bottom-right',
+        bgColor: '#F98200',
+        textColor: 'black',
+        loaderBg: '#818181',
+        stack: false,
+        hideAfter: 15000   // in milli seconds
+    })
+  </script>
+</body>
+
+</html>
