@@ -1,0 +1,38 @@
+/*!
+ * Start Bootstrap - Scrolling Nav (modified) (https://startbootstrap.com/template-overviews/scrolling-nav)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-scrolling-nav/blob/master/LICENSE)
+ */
+header {
+  padding: 156px 0 100px;
+
+  background: url('../img/ne2_compr2.jpg') center center no-repeat;
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+section {
+  padding: 120px 0; /* WAJ modified from 150 */
+}
+
+@media (max-width: 575.98px) {
+  
+  .page-xs-small-font-name  { font-size: 30px; }
+  .page-xs-small-font-dev   { font-size: 25px; }
+  .page-xs-small-font-city  { font-size: 24px; }
+}
+
+.map-container {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.map-container iframe {
+  left:       0;
+  top:        0;
+  height:   100%;
+  width:    100%;
+  position: absolute;
+}
