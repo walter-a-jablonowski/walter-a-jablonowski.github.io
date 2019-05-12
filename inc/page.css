@@ -3,6 +3,9 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-scrolling-nav/blob/master/LICENSE)
  */
+
+/* Modified WAJ */
+
 header {
   padding: 156px 0 100px;
 
@@ -12,15 +15,26 @@ header {
 }
 
 section {
-  padding: 120px 0; /* WAJ modified from 150 */
+  padding: 120px 0;
 }
 
 @media (max-width: 575.98px) {
   
+/* Now using JS */
+/*
+  #mainNav { background-color: #00000000; }
+*/
   .page-xs-small-font-name  { font-size: 30px; }
   .page-xs-small-font-dev   { font-size: 25px; }
   .page-xs-small-font-city  { font-size: 24px; }
 }
+
+/*
+@media (max-width: 767.98px) {
+
+  #mainNav { background-color: #212121; }
+}
+*/
 
 .map-container {
   overflow: hidden;

@@ -26,4 +26,44 @@
     offset: 56
   });
 
+
+  // Addedd WAJ
+  
+  // Menu bg
+
+  // Initial depending on width
+
+  if( window.innerWidth <= 768)
+    $("#mainNav").css("background-color" , "#212121");
+  else
+    $("#mainNav").css("background-color" , "#00000000");
+  
+  // On scroll
+
+  $(window).scroll( function() {
+
+    var scroll = $(window).scrollTop();
+
+    if( window.innerWidth <= 768)  // Allways bg if low width
+      
+      $("#mainNav").css("background-color" , "#212121");
+    
+    else                           // or if scrolling down
+      
+      if( scroll > 50)
+        $("#mainNav").css("background-color" , "#212121");
+      else  $("#mainNav").css("background-color" , "#00000000");
+
+  });
+  
+  // On resize depending on width
+  
+  $(window).resize( function() {
+
+    if( window.innerWidth <= 768)
+      $("#mainNav").css("background-color" , "#212121");
+    else
+      $("#mainNav").css("background-color" , "#00000000");
+  });
+
 })(jQuery); // End of use strict

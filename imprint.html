@@ -30,7 +30,7 @@
 <body id="page-top" style="display: none;">
 
   <!-- Navigation -->
-  <nav style="background-color: #00000000;" class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand js-scroll-trigger" href="index.html#page-top"><i class="fas fa-layer-group"></i>&nbsp;&nbsp;<span style="color: #d6d6d6;">Home of</span>&nbsp;&nbsp;Walter A. Jablonowski</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -157,32 +157,17 @@
     <!-- /.container -->
   </footer>
 
-  <!-- Bootstrap core JavaScript -->
+  <!-- JS includes -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Custom JavaScript for this theme -->
-  <script src="js/scrolling-nav.js"></script>
-
-  <script src="js/jquery-toast-plugin/jquery.toast.min.js"></script>
-
+  <script src="inc/page.js"></script>
+  <script src="inc/jquery-toast-plugin/jquery.toast.min.js"></script>
 
   <!-- Page JS -->
   <script>
     $( function() {
-
-      $(window).scroll( function() {
-
-        var scroll = $(window).scrollTop();
-
-        if (scroll > 50)
-          $("#mainNav").css("background-color" , "#212121");
-        else  $("#mainNav").css("background-color" , "#00000000");
-
-      });
 
       $('body').fadeIn();
     });
