@@ -6,7 +6,11 @@
 
 /* Modified WAJ */
 
+
+/* Common */
+
 header {
+
   padding: 156px 0 100px;
 
   background: url('../img/ne2_compr2.jpg') center center no-repeat;
@@ -14,9 +18,7 @@ header {
   background-repeat: repeat;
 }
 
-section {
-  padding: 120px 0;
-}
+section {  padding: 120px 0;  }
 
 @media (max-width: 575.98px) {
   
@@ -36,7 +38,11 @@ section {
 }
 */
 
+
+/* Startpage */
+
 .map-container {
+
   overflow: hidden;
   padding-bottom: 56.25%;
   position: relative;
@@ -44,9 +50,17 @@ section {
 }
 
 .map-container iframe {
+
   left:       0;
   top:        0;
   height:   100%;
   width:    100%;
   position: absolute;
+}
+
+@media (max-width: 575.98px) {
+
+  .vid-xs-fix {
+    margin-left: -10px;
+  }
 }
