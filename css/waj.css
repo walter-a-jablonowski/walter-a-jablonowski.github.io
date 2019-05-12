@@ -18,3 +18,8 @@ header {
   width:    100%;
   position: absolute;
 }
+
+@media (max-width: 575.98px) {
+  
+  .page-xs-smaller-name { font-size: 12px; }
+}
