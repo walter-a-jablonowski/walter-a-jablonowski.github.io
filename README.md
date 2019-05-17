@@ -1,4 +1,4 @@
-# Homepage of Walter A. Jablonowski
+# Home of Walter A. Jablonowski
 
 Apps | Web | .NET
 
