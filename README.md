@@ -1,6 +1,7 @@
 # Homepage of Walter A. Jablonowski
 
-Programmer Apps, Web, .NET
+Apps | Web | .NET
+
 Bamberg, Germany
 
 
