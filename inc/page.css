@@ -9,7 +9,7 @@
 
 /* Common */
 
-header {
+header.main-header {
 
   padding: 156px 0 100px;
 
@@ -18,7 +18,22 @@ header {
   background-repeat: repeat;
 }
 
-section {  padding: 120px 0;  }
+header.header-2 {
+
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+header.header-2 h2 {
+
+  font-weight: normal;
+  color: #a1a1a1;
+}
+
+section {
+  padding: 80px 0;
+  min-height: 420px;  /* footer above since padding smaller */
+}
 
 @media (max-width: 575.98px) {
   
@@ -58,9 +73,10 @@ section {  padding: 120px 0;  }
   position: absolute;
 }
 
+/*
 @media (max-width: 575.98px) {
-
   .vid-xs-fix {
     margin-left: -10px;
   }
 }
+*/
