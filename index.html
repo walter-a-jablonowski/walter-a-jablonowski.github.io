@@ -20,11 +20,13 @@
 
   <title>Walter A. Jablonowski - Programmer - Bamberg, Germany</title>
 
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
   <link href="inc/page.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="vendor/components/font-awesome/css/all.css">
+
   <link href="inc/jquery-toast-plugin/jquery.toast.min.css" rel="stylesheet">
   
 </head>
@@ -58,6 +60,12 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="index.html#awe">Awesome</a>
           </li>
+<!--
+          <li class="nav-item">
+            <!-- <i class="fas fa-external-link-alt"></i> -- >
+            <a class="nav-link normal-link" href="http://github.com/walter-a-jablonowski" target="_blank"><i class="fas fa-external-link-square-alt"></i> github</a>
+          </li>
+-->
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="index.html#con">Contact</a>
           </li>
@@ -118,7 +126,7 @@
                 </span>
               </td>
               <td>Apps for Android and iOS</td>
-              <td>iPhone, iPad</td>
+              <td>iPhone, iPad, Android</td>
             </tr>
             <tr>
               <td><i class="fas fa-code fa-2x" style="color: #f89123;"></i></td>
@@ -349,8 +357,8 @@
 
 
   <!-- Gear -->
-<!--
   
+<!--
   <section id="gear">
 
     <!--
@@ -424,16 +432,17 @@
 <!-- 
       </td></tr>
     </table>
--- >
 -->
+  
   
 <!-- Mars -->  
 <!-- 
     <iframe width="980" height="410" src="https://mars.nasa.gov/layout/embed/send-your-name/mars2020/certificate/?cn=823358940341" frameborder="0"></iframe>
--->
+-- >
   
   
   </section>
+-->
 
 
   <!-- Footer -->
@@ -456,9 +465,11 @@
 
   <!-- JS includes -->
 
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- 3.3.1 <script src="vendor/jquery/jquery.min.js"></script> -->
+  <script src="vendor/components/jquery/jquery.min.js"></script>
+  <!-- 4.2.1 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+  <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="inc/jquery-easing/jquery.easing.min.js"></script>
 
   <script src="inc/page.js"></script>
   <script src="inc/jquery-toast-plugin/jquery.toast.min.js"></script>
@@ -479,9 +490,8 @@
       // autoplay
       // $("#onShowMusic").get(0).play();
       // document.getElementById("onShowMusic").play();
-    });
 
-    $.toast({
+      $.toast({
         heading: '<span style="font-size: 15px;">Privacy</span>',
         text: '<span style="font-family: Helvetica, Arial, sans-serif; font-size: 15px;">By using this website, you agree with the <a style="font-family: Helvetica, Arial, sans-serif; font-size: 15px; color: #000; text-decoration: none; border-bottom: 1px solid #000;" href="privacy.html" target="_blank">privacy policy</a>, including cookie policy.</span>.',
         // icon: 'info',
@@ -491,7 +501,9 @@
         loaderBg: '#818181',
         stack: false,
         hideAfter: 15000   // in milli seconds
-    })
+      })
+
+    });
   </script>
 </body>
 
