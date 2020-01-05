@@ -35,6 +35,15 @@ section {
   min-height: 420px;  /* footer above since padding smaller */
 }
 
+section#gear {
+  padding: 50px 0;
+  min-height: 280px;  /* footer above since padding smaller */
+}
+
+.scroll-x {
+  overflow-x: scroll;
+}
+
 @media (max-width: 575.98px) {
   
 /* Now using JS */
