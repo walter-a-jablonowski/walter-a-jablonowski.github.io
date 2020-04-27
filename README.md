@@ -1,6 +1,6 @@
 # Home of Walter A. Jablonowski
 
-**Apps, Web, .NET**
+**Web, Apps, .NET**
 
 Bamberg, Germany
 
