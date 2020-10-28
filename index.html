@@ -40,7 +40,6 @@
 
 <body id="page-top" style="display: none;">
 
-
   <!-- Navigation -->
 
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -162,10 +161,12 @@
           </p>
 
           <p>
-            <span class="font-weight-bold">All skills</span> and projects <a href="https://drive.google.com/drive/folders/1i-l4SuDyUgCwjd3LsaBd8dh4fnjJv-sz?usp=sharing" target="_blank">download my full CV</a>,
-            see code on <i class="fab fa-github"></i> <a href="http://github.com/walter-a-jablonowski">github</a>, or <a class="js-scroll-trigger" href="index.html#con"> contact me</a>.
+            See code on <i class="fab fa-github"></i> <a href="http://github.com/walter-a-jablonowski">github</a>, or <a class="js-scroll-trigger" href="index.html#con"> contact me</a>.
             <br>
             <i class="fab fa-stack-overflow"></i> <a href="https://stackoverflow.com/users/509073/walter-a-jablonowski">stackoverflow</a>
+<!--
+            <i class="fab fa-stack-overflow"></i> <a href="https://codepen.io/walterjab">codepen (just collection)</a>
+-->
           </p>
 
         </div>
@@ -402,6 +403,48 @@
   </section>
 
 
+  <!-- Sound -->
+  <!-- see below "Last sound hack" -->
+  
+  <!-- Problem is restrictions, see page code -->
+
+<!--
+  <audio id="onShowMusic" preload="auto" autoplay>
+    <source src="sounds/dancing_in_the_dark.mp3" type="audio/mp3">
+  </audio>
+-->
+
+<!--
+  <iframe id="iframeAudio" src="sounds/silence.mp3" allow="autoplay">
+  </iframe> 
+
+  <audio id="onShowMusic" preload="auto" autoplay>
+    <source src="sounds/dancing_in_the_dark.mp3" type="audio/mp3">
+  </audio>
+-->
+
+<!--
+  Big player
+
+  <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/14450682&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+  
+  Mid player
+
+  - https://developers.soundcloud.com/docs/api/html5-widget
+  - Streaming https://developers.soundcloud.com/docs/api/guide#playing
+  - Wenn eine der Einstelungen &show_comments=false&show_user=false false is, spielt es etwas häufiger
+  - ohne wird der User nicht so arg genervt
+
+  - https://developers.deezer.com/sdk/javascript/player
+-->
+
+<!--
+  Last sound hack was:
+  
+  <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/95953735&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&show_artwork=false&download=true"></iframe>
+-->
+
+
   <!-- Gear -->
 <!--
 
@@ -554,19 +597,32 @@
 
   <!-- Page JS -->
 
-<!--
-  <audio id="onShowMusic" preload="auto" autoplay>
-    <source src="sounds/epic.swf_1.mp3" type="audio/mpeg">
-  </audio>
--->
   <script>
+
     $( function() {
 
       $('body').fadeIn();
 
-      // autoplay
-      // $("#onShowMusic").get(0).play();
-      // document.getElementById("onShowMusic").play();
+      // "Uncaught (in promise) DOMException: play() failed because the user didn't interact with the document first"
+      // https://www.gradextra.de/2018/05/07/einschraenkung-fuer-video-autoplay-ab-chrome-66
+
+      // https://stackoverflow.com/questions/50490304/how-to-make-audio-autoplay-on-chrome
+/*
+      var played = false;
+
+      $('body').mouseover( function() {
+          
+        if( ! played )
+        {
+          var sound = $('#onShowMusic')[0];
+
+          sound.load();
+          sound.play();
+          
+          played = true;
+        }
+      });
+*/
 
       $.toast({
         heading: '<span style="font-size: 15px;">Privacy</span>',
