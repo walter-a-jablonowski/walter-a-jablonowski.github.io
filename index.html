@@ -26,17 +26,37 @@
   <link rel="prefetch" href="img/ne2_compr2.jpg">           <!-- missing in safari  https://caniuse.com/#search=prefetch -->
   <link rel="preload" href="img/ne2_compr2.jpg" as="image"> <!-- missing in firefox https://caniuse.com/#search=preload  -->
 
+  <!-- Styles -->
 
   <link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
-  <link href="inc/page.css" rel="stylesheet">
-
   <link rel="stylesheet" href="vendor/components/font-awesome/css/all.css">
-
   <link href="inc/jquery-toast-plugin/jquery.toast.min.css" rel="stylesheet">
+
+  <link href="inc/page.css" rel="stylesheet">
 
 </head>
 
 <body id="page-top" style="display: none;">
+
+
+  <!-- DEV or use musc doasd -->
+
+  <div class="position-absolute w-100 d-flex flex-column p-4">
+    <div class="toast ml-auto" role="alert" data-delay="700" data-autohide="false">
+      <div class="toast-header">
+        <img src="..." class="rounded mr-2" alt="...">
+        <strong class="mr-auto text-primary">Toast</strong>
+        <small class="text-muted">3 mins ago</small>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="toast-body">
+        Hey, there! This is a Bootstrap 4 toast.
+      </div>
+    </div>
+  </div>
+
 
   <!-- Navigation -->
 
@@ -84,6 +104,7 @@
   </nav>
 
 
+  <!-- Header -->
   <!-- Banner -->
 
   <header class="main-header bg-info text-white">
@@ -275,19 +296,12 @@
 
           <ul>
             <li><a href="https://learnxinyminutes.com" target="_blank">Learn X in Y Minutes</a> - All of a programming language in a single huge code sample</li>
-            <li>Github <a href="https://github.com/topics/awesome" target="_blank">awesome lists</a> - Awesome things curated by the community</li>
-<!--
             <li><a href="https://www.syncfusion.com/ebooks" target="_blank">syncfusion.com/ebooks</a> - Huge list of free ebooks, <a href="https://dzone.com/refcardz" target="_blank">Free refcardz</a></li>
+            <li><a href="https://github.com/walter-a-jablonowski/damn-small-engine" target="_blank">Damn Small Engine</a> - PHP Templating by me (0.1.0)</li>
+<!--
+            <li><a href="https://hackr.io" target="_blank">hackr.io</a> - Learning resources, <a href="https://libraries.io" target="_blank">libraries.io</a></li>
 -->
             <li>Did you know that scientists believe they can make us <b>immortal within 20 years</b>? Furthermore they say aging can be reversed. There are tons of <a href="https://www.forbes.com/sites/robinseatonjefferson/2019/08/26/how-extraordinary-breakthroughs-in-anti-aging-research-will-happen-faster-than-people-think/#28087dfe33dd" target="_blank">articles</a> on google.</li>
-<!--
-            <li><a href="https://bookboon.com" target="_blank">bookboon.com</a> - Load bundles of free ebooks (<a href="https://bookboon.com/de" target="_blank">German</a>)</li>
--->
-<!--
-            <li><a href="https://hackr.io" target="_blank">hackr.io</a> - Learning</li>
-            <li><a href="https://libraries.io" target="_blank">libraries.io</a> - Libs</li>
--->
-            <li><a href="https://github.com/walter-a-jablonowski/damn-small-engine" target="_blank">Damn Small Engine</a> - PHP Templating by me</li>
             <li>NASA: <a href="https://mars.nasa.gov/participate/send-your-name/mars2020/" target="_blank">Send your name 2 Mars</a> (until 30 Sep 2019)</li>
           </ul>
 
@@ -354,6 +368,7 @@
                 <div style="padding: 11px 0 11px 0;">
 
                   <p class="lead">Where I live</p>
+
                   <p>
                     - <a href="https://en.wikipedia.org/wiki/Bamberg" target="_blank">Wikipedia</a>
                     (<a href="https://de.wikipedia.org/wiki/Bamberg" target="_blank">German</a>)<br>
@@ -571,7 +586,6 @@
         <a href="credits.html" class="text-white">Credits</a>
       </p>
     </div>
-    <!-- /.container -->
   </footer>
 
 
@@ -582,9 +596,9 @@
   <!-- 4.2.1 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
   <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="inc/jquery-easing/jquery.easing.min.js"></script>
+  <script src="inc/jquery-toast-plugin/jquery.toast.min.js"></script>
 
   <script src="inc/page.js"></script>
-  <script src="inc/jquery-toast-plugin/jquery.toast.min.js"></script>
 
 
   <!-- Page JS -->
@@ -594,6 +608,8 @@
     $( function() {
 
       $('body').fadeIn();
+
+      $('.toast').toast('show');
 
       // "Uncaught (in promise) DOMException: play() failed because the user didn't interact with the document first"
       // https://www.gradextra.de/2018/05/07/einschraenkung-fuer-video-autoplay-ab-chrome-66
@@ -615,7 +631,7 @@
         }
       });
 */
-
+/*
       $.toast({
         heading: '<span style="font-size: 15px;">Privacy</span>',
         text: '<span style="font-family: Helvetica, Arial, sans-serif; font-size: 15px;">By using this website, you agree with the <a style="font-family: Helvetica, Arial, sans-serif; font-size: 15px; color: #000; text-decoration: none; border-bottom: 1px solid #000;" href="privacy.html" target="_blank">privacy policy</a>, including cookie policy.</span>.',
@@ -627,7 +643,7 @@
         stack: false,
         hideAfter: 15000   // in milli seconds
       })
-
+*/
     });
   </script>
 </body>

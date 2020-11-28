@@ -1,3 +1,5 @@
+// Modified WAJ
+
 (function($) {
 
   "use strict"; // Start of use strict
