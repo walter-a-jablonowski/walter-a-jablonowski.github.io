@@ -1,0 +1,9 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Walter A. Jablonowski
+N:Jablonowski;Walter A.
+TITLE:Web, SQL, Apps
+ADR;TYPE=HOME:;;Am Anger 9;Stegaurach;;96135;Germany
+EMAIL;TYPE=WORK,INTERNET:walter.a.jablonowski@gmail.com
+URL:https://walter-a-jablonowski.github.io
+END:VCARD

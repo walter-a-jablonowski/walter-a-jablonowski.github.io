@@ -13,7 +13,7 @@ header.main-header {
 
   padding: 156px 0 100px;
 
-  background: url('../img/ne2_compr2.jpg') center center no-repeat;
+  background: url('../res/img/ne2_compr2.jpg') center center no-repeat;
   background-size: cover;
   background-repeat: repeat;
 }
@@ -48,11 +48,11 @@ section#gear {
   
 /* Now using JS */
 /*
-  #mainNav { background-color: #00000000; }
+#mainNav { background-color: #00000000; }
 */
-  .page-xs-small-font-name  { font-size: 30px; }
-  .page-xs-small-font-dev   { font-size: 25px; }
-  .page-xs-small-font-city  { font-size: 24px; }
+.page-xs-small-font-name  { font-size: 30px; }
+.page-xs-small-font-dev   { font-size: 25px; }
+.page-xs-small-font-city  { font-size: 24px; }
 }
 
 /*
@@ -61,6 +61,14 @@ section#gear {
   #mainNav { background-color: #212121; }
 }
 */
+
+
+/* Toast */
+
+.toast {
+  background-color: rgba(255,255,255,.85);
+  font-family: "Roboto", sans-serif;
+}
 
 
 /* Startpage */
@@ -89,3 +97,10 @@ section#gear {
   }
 }
 */
+
+
+/* Interests */
+
+ul {
+  padding-left: 35px;
+}
