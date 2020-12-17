@@ -28,7 +28,6 @@
 
   <link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="vendor/components/font-awesome/css/all.css">
-  <link href="inc/jquery-toast-plugin/jquery.toast.min.css" rel="stylesheet">
 
   <link href="inc/page.css" rel="stylesheet">
   
@@ -155,7 +154,6 @@
   <!-- 4.2.1 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
   <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="inc/jquery-easing/jquery.easing.min.js"></script>
-  <script src="inc/jquery-toast-plugin/jquery.toast.min.js"></script>
 
   <script src="inc/page.js"></script>
 
@@ -166,19 +164,9 @@
     $( function() {
 
       $('body').fadeIn();
-    });
+      $('.toast').toast('show');
 
-    $.toast({
-        heading: '<span style="font-size: 15px;">Privacy</span>',
-        text: '<span style="font-family: Helvetica, Arial, sans-serif; font-size: 15px;">By using this website, you agree with the <a style="font-family: Helvetica, Arial, sans-serif; font-size: 15px; color: #000; text-decoration: none; border-bottom: 1px solid #000;" href="privacy.html" target="_blank">privacy policy</a></span>, including cookie policy.',
-        // icon: 'info',
-        position: 'bottom-right',
-        bgColor: '#F98200',
-        textColor: 'black',
-        loaderBg: '#818181',
-        stack: false,
-        hideAfter: 15000   // in milli seconds
-    })
+    });
   </script>
 </body>
 
