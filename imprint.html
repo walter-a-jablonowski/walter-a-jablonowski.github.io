@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Hi! This is the homepage of Walter A. Jablonowski - Web, Apps, .NET Programmer and Freelancer in Bamberg (Nuremberg Area) Germany.">
+  <meta name="description" content="Hi! This is the homepage of Walter A. Jablonowski - Web, SQL and App programmer in Bamberg (Nuremberg Area) Germany.">
   <meta name="author" content="Walter A. Jablonowski">
 
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -28,13 +28,26 @@
 
   <link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="vendor/components/font-awesome/css/all.css">
-  <link href="inc/jquery-toast-plugin/jquery.toast.min.css" rel="stylesheet">
 
   <link href="inc/page.css" rel="stylesheet">
 
 </head>
 
 <body id="page-top" style="display: none;">
+
+
+  <!-- Snackbar -->
+
+  <div class="toast fixed-bottom ml-auto mr-3" role="alert" data-delay="700" data-autohide="false" style="z-index: 1050;">
+    <div class="toast-body">
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" style="margin-top: -5px;">
+        <span>&times;</span>
+      </button>
+      By using this site you accept cookies and terms of the used services.
+      Details see <a href="privacy.html">privacy</a>.
+    </div>
+  </div>
+
 
   <!-- Navigation -->
 
@@ -76,11 +89,9 @@
     <div class="container text-center">
       <!-- <p class="lead" style="color: #25aeff;"><b>- INNOVATION -</b></p> -->
       <h1 style="color: #25aeff;">Walter A. Jablonowski</h1>
-      <h2 style="color: #d6d6d6;">Web | Apps | .NET - Developer</h2>
+      <h2 style="color: #d6d6d6;">Web | SQL | Apps</h2>
       <p class="lead">
-        <!-- <span style="border: 2px solid #25aeff; padding: 0 5px 5px 5px; border-radius: 25px;"> -->
-          Bamberg, Germany&nbsp;&nbsp;<a class="js-scroll-trigger" style="color: #eee;" href="index.html#con"><i class="fas fa-map-marker-alt"></i> show on map</a>
-        <!-- </span> -->
+        Bamberg, Germany&nbsp;&nbsp;<a class="js-scroll-trigger" style="color: #eee;" href="index.html#con"><i class="fas fa-map-marker-alt"></i> show on map</a>
       </p>
     </div>
   </header>
@@ -186,7 +197,6 @@
   <!-- 4.2.1 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
   <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="inc/jquery-easing/jquery.easing.min.js"></script>
-  <script src="inc/jquery-toast-plugin/jquery.toast.min.js"></script>
 
   <script src="inc/page.js"></script>
 
@@ -198,18 +208,6 @@
 
       $('body').fadeIn();
     });
-
-    $.toast({
-        heading: '<span style="font-size: 15px;">Privacy</span>',
-        text: '<span style="font-family: Helvetica, Arial, sans-serif; font-size: 15px;">By using this website, you agree with the <a style="font-family: Helvetica, Arial, sans-serif; font-size: 15px; color: #000; text-decoration: none; border-bottom: 1px solid #000;" href="privacy.html" target="_blank">privacy policy</a></span>, including cookie policy.',
-        // icon: 'info',
-        position: 'bottom-right',
-        bgColor: '#F98200',
-        textColor: 'black',
-        loaderBg: '#818181',
-        stack: false,
-        hideAfter: 15000   // in milli seconds
-    })
   </script>
 </body>
 

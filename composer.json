@@ -1,8 +1,8 @@
 {
   "name": "walter-a-jablonowski/walter-a-jablonowski.github.io",
-  "description": "Homepage of Walter A. Jablonowski, Apps - Web - .NET, Bamberg, Germany",
+  "description": "Homepage of Walter A. Jablonowski - Web, SQL and App programmer in Bamberg (Nuremberg Area) Germany",
   "type": "project",
-  "keywords": ["Bamberg", "Developer", "Android", "iOS", ".NET", "C#", "PHP", "Programmer", "App", "Apps", "xcode", "Objective C", "Swift", "iPhone", "iPad", "Android Studio", "Java", "React Native", "Ionic", "Cordova", "Xamarin", "React", "Angular", "vue.js", "Bootstrap", "Semantic UI", "Foundation", "UI Kit", "Wordpress", "Dupral", "Joomla", "HTML", "CSS", "jquery", "javascript", "LESS", "SASS", "SQL", "SQL Server", "Oracle", "MySQL"],
+  "keywords": ["Bamberg", "Developer", "PHP", "SQL", "javascript", "jquery", "Android", "iOS", "Programmer", "SQL Server", "Oracle", "MySQL", "Bootstrap", "App", "Apps", "xcode", "Objective C", "iPhone", "iPad", "Android Studio", "Java", "Wordpress"],
   "homepage": "https://github.com/walter-a-jablonowski/walter-a-jablonowski.github.io",
   "license": "MIT",
   "authors": [
