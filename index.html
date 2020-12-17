@@ -35,6 +35,13 @@
   <link rel="prefetch" href="res/img/ne2_compr2.jpg">             <!-- missing in safari  https://caniuse.com/#search=prefetch -->
   <link rel="preload"  href="res/img/ne2_compr2.jpg" as="image">  <!-- missing in firefox https://caniuse.com/#search=preload  -->
 
+  <style>
+    .btn:focus, .btn:active {
+      outline: none !important;
+      box-shadow: none;
+    }
+  </style>
+
 </head>
 
 <body id="page-top" style="display: none;">
@@ -108,7 +115,7 @@
 
   <header class="header-2">
     <div class="container text-center">
-      <h2 class="page-xs-small-font-dev">Looking for a coder?</h2>
+      <h2 class="page-xs-small-font-dev">Looking for help?</h2>
 <!--
       <h2 class="page-xs-small-font-dev">I can accept new orders in <b>June</b></h2>
 -->
@@ -122,7 +129,7 @@
         <div class="col-lg-8 mx-auto">
 
           <h2>Welcome on my page</h2>
-          <p class="lead">How can I help you?</p>
+          <p class="lead">Here is how I can help you ...</p>
 
 
           <!-- Skills -->
@@ -189,6 +196,16 @@
               <td>Android and iOS</td>
               <td>Native Apps</td>
             </tr>
+            <tr>
+              <td>
+                <!-- f9423a -->
+                <span style="white-space: nowrap;">
+                  <i class="fas fa-user-friends fa-2x" style="color: #f0934b;"></i>
+                </span>
+              </td>
+              <td>Consulting</td>
+              <td>for software projects</td>
+            </tr>
 <!--
             <tr>
               <td><i class="fab fa-windows fa-2x" style="color: #00BCF2;"></i></td>
@@ -204,14 +221,14 @@
 
           <p>
             <span class="font-weight-bold">Summary:</span> Until 2008 I primarily worked
-            on database applications for more than 10 years. I still have those skills.
-            In 2008 I started developing iOS and later Android apps. I work on web applications
+            on full database applications for more than 10 years. I still have those skills.
+            Starting from 2008 I was interested in iOS and later Android apps. I work on web applications
             since 2011 (PHP, jquery, Bootstrap, ...). Pure PHP backend experience since 2004. Right
             now I am focusing on web and SQL development.
           </p>
 
           <p>
-            <b>Currently</b>, I am looking for a part-time job.
+            <b>Currently</b>, I am looking for a part-time job 100% remote.
 <!--
             Currently, I am working on a new web application (part time).
 -->
@@ -232,20 +249,18 @@
   <section id="int" class="bg-light">
     <div class="container">
       <div class="row">
-        <div class="col-lg-7 mx-auto">
+        <div class="col-5">  <!-- col-lg-7 mx-auto -->
 
           <h2 class="pb-2">About me</h2>
 
-          <!-- Tab skills -->
-
           <ul class="nav nav-tabs" role="tablist" style="max-width: 465px; font-size: 1.2rem;">
-<!--
+
             <li class="nav-item">
-              <a class="nav-link active" data-toggle="tab" href="#dev" role="tab">Skills</a>
+              <a class="nav-link active small" data-toggle="tab" href="#dev" role="tab">Skills</a>
             </li>
--->
+
             <li class="nav-item small">
-              <a class="nav-link active" data-toggle="tab" href="#int1" role="tab">Interests</a>
+              <a class="nav-link" data-toggle="tab" href="#int1" role="tab">Interests</a>
             </li>
             <li class="nav-item small">
               <a class="nav-link" data-toggle="tab" href="#aboutMe" role="tab">About</a>
@@ -253,49 +268,143 @@
           </ul>
 
           <div class="tab-content">
-<!--
+
+
+          <!-- Tab skills -->
+
             <div class="tab-pane fade show active pt-3" id="dev" role="tabpanel">
-
-              <span class="progress-label ml-1" style="font-size: large;">PHP</span>
-              <div class="progress" style="max-width: 415px;">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 95%;">PHP</div>
+            
+              <div class="row">
+                <div class="col-3">
+                  <span class="progress-label ml-1" style="font-size: large;">PHP</span>
+                </div>
+                <div class="col-8">
+                  <div class="progress mt-2" style="max-width: 415px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 100%;"></div>
+                  </div>
+                </div>
               </div>
 
-              <span class="progress-label ml-1" style="font-size: large;">javascript</span>
-              <div class="progress" style="max-width: 415px;">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 50%;">javascript</div>
+              <div class="row mt-2">
+                <div class="col-3">
+                  <span class="progress-label ml-1" style="font-size: large;">OOP</span>
+                </div>
+                <div class="col-8">
+                  <div class="progress mt-2" style="max-width: 415px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 85%;"></div>
+                  </div>
+                </div>
               </div>
 
-              <span class="progress-label ml-1" style="font-size: large;">jquery</span>
-              <div class="progress" style="max-width: 415px;">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 50%;">jquery</div>
+              <div class="row mt-2">
+                <div class="col-3">
+                  <span class="progress-label ml-1" style="font-size: large;">javascript</span>
+                </div>
+                <div class="col-8">
+                  <div class="progress mt-2" style="max-width: 415px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 75%;"></div>
+                  </div>
+                </div>
               </div>
 
-              <span class="progress-label ml-1" style="font-size: large;">HTML5</span>
-              <div class="progress" style="max-width: 415px;">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 95%;">HTML5</div>
+              <div class="row mt-2">
+                <div class="col-3">
+                  <span class="progress-label ml-1" style="font-size: large;">SQL</span>
+                </div>
+                <div class="col-8">
+                  <div class="progress mt-2" style="max-width: 415px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 100%;"></div>
+                  </div>
+                </div>
               </div>
 
-              <span class="progress-label ml-1" style="font-size: large;">Bootstrap</span>
-              <div class="progress" style="max-width: 415px;">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 95%;">Bootstrap</div>
+              <div class="row mt-2">
+                <div class="col-3">
+                  <span class="progress-label ml-1" style="font-size: large;">
+                    DBs&nbsp;<button type="button" class="btn p-0" style="color: #bbb;" data-container="body" data-toggle="popover" data-placement="right" data-content="Analysis of bisuness processes and modelling of relational databases">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </span>
+                </div>
+                <div class="col-8">
+                  <div class="progress mt-2" style="max-width: 415px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 100%;"></div>
+                  </div>
+                </div>
               </div>
 
-              <span class="progress-label ml-1" style="font-size: large;">CSS</span>
-              <div class="progress" style="max-width: 415px;">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 95%;">CSS</div>
+              <div class="row mt-2">
+                <div class="col-3">
+                  <span class="progress-label ml-1" style="font-size: large;">jquery</span>
+                </div>
+                <div class="col-8">
+                  <div class="progress mt-2" style="max-width: 415px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 75%;"></div>
+                  </div>
+                </div>
               </div>
 
-              <span class="progress-label ml-1" style="font-size: large;">SQL</span>
-              <div class="progress" style="max-width: 415px;">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 95%;">SQL</div>
+              <div class="row mt-2">
+                <div class="col-3">
+                  <span class="progress-label ml-1" style="font-size: large;">HTML5</span>
+                </div>
+                <div class="col-8">
+                  <div class="progress mt-2" style="max-width: 415px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 100%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-2">
+                <div class="col-3">
+                  <span class="progress-label ml-1" style="font-size: large;">Bootstrap</span>
+                </div>
+                <div class="col-8">
+                  <div class="progress mt-2" style="max-width: 415px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 85%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-2">
+                <div class="col-3">
+                  <span class="progress-label ml-1" style="font-size: large;">CSS</span>
+                </div>
+                <div class="col-8">
+                  <div class="progress mt-2" style="max-width: 415px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 50%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-2">
+                <div class="col-3">
+                  <span class="progress-label ml-1" style="font-size: large;">Obj. C</span>
+                </div>
+                <div class="col-8">
+                  <div class="progress mt-2" style="max-width: 415px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 75%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-2">
+                <div class="col-3">
+                  <span class="progress-label ml-1" style="font-size: large;">Java (Android)</span>
+                </div>
+                <div class="col-8">
+                  <div class="progress mt-2" style="max-width: 415px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 60%;"></div>
+                  </div>
+                </div>
               </div>
 
             </div>
--->
-            <div class="tab-pane fade show active pt-3" id="int1" role="tabpanel">
 
           <!-- End Tab skills -->
+
+
+            <div class="tab-pane fade pt-3" id="int1" role="tabpanel">
 
               <!-- <p class="lead">What I am interested in</p> -->
 
@@ -348,6 +457,9 @@
 
             </div>
 
+
+            <!-- Tab About -->
+
             <div class="tab-pane fade pt-3" id="aboutMe" role="tabpanel" style="max-width: 465px;">
 
               I started development in C when I was 14 Years old, and worked for
@@ -361,15 +473,21 @@
               Because I am an experienced developer I don't neccessarily need a
               framework that does the work for me. I am able to write
               my own framework, ORM-Tool, ... what you need.
+
             </div>
+
           </div>
+        </div>
+
+
+        <!-- Int Img -->
+
+        <div class="col-3">  <!-- col-lg-3 mx-auto d-none d-lg-block d-xl-block -->
+
+          <img src="res/img/982_compr.jpg" style="max-width: 518px;" class="rounded">  <!-- min-width: 518px; float-right -->
 
         </div>
-        <div class="col-lg-3 mx-auto d-none d-lg-block d-xl-block">
 
-          <img src="res/img/982_compr.jpg" style="min-width: 518px; max-width: 518px;" class="float-right rounded">
-
-        </div>
       </div>
     </div>
   </section>
@@ -764,6 +882,16 @@
   <script>
 
     $( function() {
+
+      $('[data-toggle="popover"]').popover();
+      
+      $('body').on('click', function (e) {
+        $('[data-toggle=popover]').each( function () {
+          // hide any open popovers when the anywhere else in the body is clicked
+          if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0)
+              $(this).popover('hide');
+        });
+      });
 
       $('body').fadeIn();
       $('.toast').toast('show');
