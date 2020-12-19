@@ -549,51 +549,64 @@
           
           <!-- Form version -->
 
-          <!-- <h2>Contact</h2>
+          <h2>Contact</h2>
 
-          <form
-            action="https://formspree.io/f/moqpkpwd"
-            method="POST"
-            class="pt-3 pb-2"
-          >
+          <!-- action="https://formspree.io/f/moqpkpwd"
+          method="POST" -->
+
+          <form id="contactForm" class="needs-validation pt-3 pb-2" method="GET" novalidate>
 
             <div class="form-group row">
               <label for="company" class="col-2 pl-3">Company *</label>
               <div class="col-10">
-                <input type="text" id="company" name="company" class="form-control">
+                <input type="text" id="company" name="company" class="form-control" required>
+                <div class="invalid-feedback">
+                  Required
+                </div>
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="_replyto" class="col-2 pl-3">Mail *</label>
+              <label for="mail" class="col-2 pl-3">Mail *</label>
               <div class="col-10">
-                <input type="text" id="_replyto" name="_replyto" class="form-control">
+                <input type="email" id="mail" name="mail" class="form-control" required>
+                <div class="invalid-feedback">
+                  Please provide a valid mail adress
+                </div>
               </div>
             </div>
 
             <div class="form-group row">
               <label for="message" class="col-2 pl-3">Message *</label>
               <div class="col-10">
-                <textarea type="text" id="message" name="message" rows="3" class="form-control"></textarea>
+                <textarea id="message" name="message" rows="3" class="form-control" required></textarea>
+                <div class="invalid-feedback">
+                  Required
+                </div>
               </div>
             </div>
 
             <div class="form-group row">
-              <div class="col-2">
-                <button type="submit" class="btn btn-info btn-rounded">Send</button>
+              <div class="col-5">
+                <button type="submit" class="btn btn-info btn-rounded">
+                  <span id="sendSpinner" style="display: none;" class="spinner-border spinner-border-sm" role="status"></span>
+                  <span id="sendBtn">Send</span>
+                </button>
+
+                <span id="sendMsg" class="pt-2 ml-3" style="color: orange; display: none;"></span>
               </div>
-              <div class="col-10 pt-2">
+              <div class="col-7 pt-2">
 <!--
                 <i class="fas fa-envelope"></i> Mail
                 <a href="mailto:walter.a.jablonowski@gmail.com">mail me</a>
--- >
+-->
                 <i class="far fa-address-card"></i>
-                <a href="http://walter-a-jablonowski.github.io/public/Walter_A_Jablonowski.vcf">Download vcard</a>
+                <a href="http://walter-a-jablonowski.github.io/public/Walter_A_Jablonowski.vcf">vcard</a>
 
                 &nbsp;&nbsp;
 
                 <img src="res/icon/qr.png">
-                <a href="http://walter-a-jablonowski.github.io/hidden/scan_qr.html" target="_blank">Scan QR Code</a>
+                <a href="http://walter-a-jablonowski.github.io/hidden/scan_qr.html" target="_blank">QR Code</a>
                 
                 &nbsp;&nbsp;
 
@@ -603,12 +616,12 @@
               </div>
             </div>
             
-          </form> -->
+          </form>
           
 
           <!-- Contact Normal version -->
 
-          <h2>Contact</h2>
+          <!-- <h2>Contact</h2>
 
           <table class="table mt-2">
 
@@ -632,7 +645,7 @@
               <td><a href="https://goo.gl/maps/RRCcuAVrxa2qfJr9A" target="_blank">on google maps</a></td>
             </tr>
 
-          </table>
+          </table> -->
 
           
           <!-- Map -->
@@ -872,6 +885,8 @@
   <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="inc/jquery-easing/jquery.easing.min.js"></script>
 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+
   <script src="inc/page.js"></script>
 
 
@@ -881,18 +896,85 @@
 
     $( function() {
 
+      // Init
+      
+      // Basic
+
       $('[data-toggle="popover"]').popover();
       
       $('body').on('click', function (e) {
         $('[data-toggle=popover]').each( function () {
           // hide any open popovers when the anywhere else in the body is clicked
           if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0)
-              $(this).popover('hide');
+            $(this).popover('hide');
         });
       });
 
+      // Form
+
+      emailjs.init("user_Eo1C4W8MfEJAIQvxUkVR4");
+
+      $('#contactForm input, textarea').change( function( event ) {
+        $('#contactForm').removeClass('was-validated');
+      });
+      
+      $('#contactForm').submit( function( event ) {
+
+        event.preventDefault();
+
+        let valid = $('#contactForm')[0].checkValidity();
+        // console.log( valid );
+        if( ! valid )
+        {
+          event.stopPropagation();
+
+          $('#contactForm .invalid-feedback').show();  // simple solution, seems that BS cant do this
+
+          return;
+        }
+        
+        $('#contactForm .invalid-feedback').hide();
+        $('#contactForm').addClass('was-validated');
+
+        var args = {
+          company: $('#company').val(),
+          mail:    $('#mail').val(),
+          message: $('#message').val()
+        };
+
+        $('#sendBtn').text('Sending...').prop('disabled', true);
+        $('#sendSpinner').show();
+
+        emailjs
+
+          .send('service_y1d8s4r', 'template_ltytzqx', args)
+          .then(
+
+            function(response)
+            {  
+              $('#sendSpinner').hide();
+              $('#sendBtn').text('Send').prop('disabled', false);
+
+              $('#sendMsg').text('Sent sucessfully !')
+                           .fadeIn(500).delay(2000).fadeOut(1000);
+            },
+            function(error)
+            {
+              $('#sendSpinner').hide();
+              $('#sendBtn').text('Send');
+
+              $('#sendMsg').text('Error sending message !')
+                           .fadeIn(500).delay(2000).fadeOut(1000);
+            }
+          );
+      });
+
+
+      // UI
+
       $('body').fadeIn();
       $('.toast').toast('show');
+
 
       // "Uncaught (in promise) DOMException: play() failed because the user didn't interact with the document first"
       // https://www.gradextra.de/2018/05/07/einschraenkung-fuer-video-autoplay-ab-chrome-66
