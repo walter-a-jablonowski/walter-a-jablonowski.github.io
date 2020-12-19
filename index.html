@@ -914,9 +914,9 @@
 
       emailjs.init("user_Eo1C4W8MfEJAIQvxUkVR4");
 
-      $('#contactForm input, textarea').change( function( event ) {
-        $('#contactForm').removeClass('was-validated');
-      });
+      // $('#contactForm input, textarea').change( function( event ) {  // no green borders
+      //   $('#contactForm').removeClass('was-validated');
+      // });
       
       $('#contactForm').submit( function( event ) {
 
@@ -934,7 +934,7 @@
         }
         
         $('#contactForm .invalid-feedback').hide();
-        $('#contactForm').addClass('was-validated');
+        // $('#contactForm').addClass('was-validated');
 
         var args = {
           company: $('#company').val(),
