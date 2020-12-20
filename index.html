@@ -134,7 +134,7 @@
 
           <!-- Skills -->
           
-          <div class="card-group mb-0">
+          <div class="card-group mb-1">
             
             <div class="card">
               <div class="card-body text-center">
@@ -162,14 +162,14 @@
 
           </div>
 
-          <div class="card-group mb-4">
+          <div class="card-group mb-2">
             
             <div class="card border-0">
               <div class="card-body text-center">
-                <h6 class="card-text">
+                <h5 class="card-text">
                   <i class="fab fa-firefox" style="color: #bbb;"></i>
-                  Websites
-                </h6>
+                  <span style="color: #888;">Websites</span>
+                </h5>
               </div>
             </div>
 <!--           
@@ -180,11 +180,11 @@
 -->
             <div class="card border-0">
               <div class="card-body text-center">
-                <h6 class="card-text">
+                <h5 class="card-text">
                   <i class="fab fa-apple" style="color: #bbb;"></i>
                   <i class="fab fa-android" style="color: #bbb;"></i>
-                  Native Apps
-                </h6>
+                  <span style="color: #888;">Native Apps</span>
+                </h5>
               </div>
             </div>
           
@@ -232,31 +232,53 @@
           </table>
 -->
 
+          <p class="spacer">&nbsp;</p>
+
 
           <!-- Summary -->
+          <!-- bg: class="rounded-2 px-2 py-1" style="background-color: #eee;  -->
 
-          <p class="text-center rounded p-1 pl-2" style="background-color: #eee;">
-            More than 25 years of development experience
+          <p class="text-center rounded-top mb-3" style="font-size: 1.35rem;">
+            <a data-toggle="collapse" href="#fold" style="color: inherit;">
+              More than 25 years of development experience <i class="fas fa-caret-down"></i>
+            </a>
           </p>
+          <div class="collapse" id="fold">
 
-          <p>
-            <span class="font-weight-bold">Summary:</span> Until 2008 I primarily worked
-            on full database applications for more than 10 years. I still have those skills.
-            Starting from 2008 I was interested in iOS and later Android apps. I work on web
-            applications since 2011. Pure PHP backend experience since 2004. Right now I am
-            focusing on web and SQL development.
-          </p>
+            <b>Quick summary:</b>&nbsp;Until 2008 I primarily worked on full database applications for more than 10 years.
+            I still have those skills. Starting from 2008 I was interested in iOS and later Android
+            apps. I work on web applications since 2011. Pure PHP backend experience since 2004.
+            Right now I am focusing on web and SQL development.
 
-          <p>
-            <b>Currently</b>, I am looking for a part-time job 100% remote.
+          </div>
+          
+          <p class="spacer">&nbsp;</p>
+          <p class="spacer">&nbsp;</p>
+
+          <table class="mt-4 w-100">
+            <tr>
+              <td>
+                
+                <span style="font-size: 1.1em; color: #b1b1b1;">
+                  <b>Currently</b>, I am looking for a <br>
+                  part-time job 100% remote.
 <!--
-            Currently, I am working on a new web application (part time).
+                  Currently, I am working on a new web application (part time).
 -->
-          </p>
+                </span>
+  
+              </td>
+              <td style="vertical-align: top; text-align: right;">
+                
+                <span class="lead" style="color: #b1b1b1;">
+                  See code on <i class="fab fa-github"></i> <a class="text-info" href="http://github.com/walter-a-jablonowski" target="_blank">github</a>,
+                  <a class="text-info" class="js-scroll-trigger" href="hidden/request_cv/index.html">request CV</a>
+                  or <a class="text-info" class="js-scroll-trigger" href="index.html#con"> contact me</a>
+                </span>
 
-          <p>
-            See code on <i class="fab fa-github"></i> <a href="http://github.com/walter-a-jablonowski" target="_blank">github</a>, <a class="js-scroll-trigger" href="hidden/request_cv/index.html">request CV</a> or <a class="js-scroll-trigger" href="index.html#con"> contact me</a>
-          </p>
+              </td>
+            </tr>
+          </table>
 
         </div>
       </div>
@@ -276,24 +298,38 @@
           <ul class="nav nav-tabs" role="tablist" style="max-width: 465px; font-size: 1.2rem;">
 
             <li class="nav-item">
-              <a class="nav-link active small" data-toggle="tab" href="#dev" role="tab">Skills</a>
+              <a class="nav-link active small" data-toggle="tab" href="#web" role="tab">Web</a>
             </li>
-
+            <li class="nav-item">
+              <a class="nav-link small" data-toggle="tab" href="#sql" role="tab">SQL</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link small" data-toggle="tab" href="#apps" role="tab">Misc</a>
+            </li>
             <li class="nav-item small">
               <a class="nav-link" data-toggle="tab" href="#int1" role="tab">Interests</a>
             </li>
             <li class="nav-item small">
               <a class="nav-link" data-toggle="tab" href="#aboutMe" role="tab">About</a>
             </li>
+
           </ul>
 
           <div class="tab-content">
 
 
-          <!-- Tab skills -->
+            <!-- Tab Web -->
 
-            <div class="tab-pane fade show active pt-3" id="dev" role="tabpanel">
+            <div class="tab-pane fade show active pt-3" id="web" role="tabpanel">
             
+              <div class="row">
+                <div class="col-12">
+                  <p class="ml-1">
+                    One of my main focus areas is web development.
+                  </p>
+                </div>
+              </div>
+
               <div class="row">
                 <div class="col-3">
                   <span class="progress-label ml-1" style="font-size: large;">PHP</span>
@@ -323,32 +359,6 @@
                 <div class="col-8">
                   <div class="progress mt-2" style="max-width: 415px;">
                     <div class="progress-bar bg-info" role="progressbar" style="width: 75%;"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mt-2">
-                <div class="col-3">
-                  <span class="progress-label ml-1" style="font-size: large;">SQL</span>
-                </div>
-                <div class="col-8">
-                  <div class="progress mt-2" style="max-width: 415px;">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 100%;"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mt-2">
-                <div class="col-3">
-                  <span class="progress-label ml-1" style="font-size: large;">
-                    RDD&nbsp;<button type="button" class="btn p-0" style="color: #bbb; margin-top: -2px;" data-container="body" data-toggle="popover" data-placement="right" data-content="Relational database design: Analysis of business processes and modelling of relational databases">
-                      <i class="fas fa-info-circle"></i>
-                    </button>
-                  </span>
-                </div>
-                <div class="col-8">
-                  <div class="progress mt-2" style="max-width: 415px;">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 100%;"></div>
                   </div>
                 </div>
               </div>
@@ -397,6 +407,108 @@
                 </div>
               </div>
 
+            </div>
+
+
+            <!-- Tab SQL -->
+
+            <div class="tab-pane fade pt-3" id="sql" role="tabpanel">
+
+              <div class="row">
+                <div class="col-12">
+                  <p class="ml-1">
+                    My second main focus is DB design and SQL<br>
+                    development. I do SQL-only projects, also.
+                  </p>
+                </div>
+              </div>
+
+              <div class="row mt-2">
+                <div class="col-3">
+                  <span class="progress-label ml-1" style="font-size: large;">SQL</span>
+                </div>
+                <div class="col-8">
+                  <div class="progress mt-2" style="max-width: 415px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 100%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-2">
+                <div class="col-3">
+                  <span class="progress-label ml-1" style="font-size: large;">
+                    RDD&nbsp;<button type="button" class="btn p-0" style="color: #bbb; margin-top: -2px;" data-container="body" data-toggle="popover" data-placement="right" data-content="Relational database design: Analysis of business processes and modelling of relational databases">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </span>
+                </div>
+                <div class="col-8">
+                  <div class="progress mt-2" style="max-width: 415px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 100%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-2">
+                <div class="col-3">
+                  <span class="progress-label ml-1" style="font-size: large;">SQLServer</span>
+                </div>
+                <div class="col-8">
+                  <div class="progress mt-2" style="max-width: 415px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 90%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-2">
+                <div class="col-3">
+                  <span class="progress-label ml-1" style="font-size: large;">Oracle</span>
+                </div>
+                <div class="col-8">
+                  <div class="progress mt-2" style="max-width: 415px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 80%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-2">
+                <div class="col-3">
+                  <span class="progress-label ml-1" style="font-size: large;">MySQL, &nbsp;MariaDB</span>
+                </div>
+                <div class="col-8">
+                  <div class="progress mt-2" style="max-width: 415px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 90%;"></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+            <!-- Tab Apps -->
+
+            <div class="tab-pane fade pt-3" id="apps" role="tabpanel">
+
+              <div class="row">
+                <div class="col-12">
+                  <p class="ml-1">
+                    Beside these, I have a couple of additional skills. <br>
+                    E. g. native App development.
+                  </p>
+                </div>
+              </div>
+
+              <div class="row mt-2">
+                <div class="col-3">
+                  <span class="progress-label ml-1" style="font-size: large;">OOAD</span>
+                </div>
+                <div class="col-8">
+                  <div class="progress mt-2" style="max-width: 415px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 85%;"></div>
+                  </div>
+                </div>
+              </div>
+
               <div class="row mt-2">
                 <div class="col-3">
                   <span class="progress-label ml-1" style="font-size: large;">Obj. C</span>
@@ -421,8 +533,8 @@
 
             </div>
 
-          <!-- End Tab skills -->
 
+            <!-- Tab Interests -->
 
             <div class="tab-pane fade pt-3" id="int1" role="tabpanel">
 
@@ -686,7 +798,7 @@
           <p>&nbsp;</p>
 
           <div style="padding: 0 15px 0 15px;">
-            <div class="row rounded" style="background-color: #e8e8e8;">
+            <div class="row rounded" style="background-color: #eee;">
               <div class="col-xs-6 col-lg-4">
 
                 <div style="padding: 11px 0 11px 0;">
