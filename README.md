@@ -4,6 +4,8 @@
 
 Bamberg, Germany
 
+[GitBook](https://walter-a-jablonowski.gitbook.io/waj-hq)
+
 
 ## License
 
