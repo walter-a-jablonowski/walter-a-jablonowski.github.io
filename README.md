@@ -1,4 +1,4 @@
-# Initial page
+# Home of Walter A. Jablonowski
 
 **Web, SQL, Apps**
 

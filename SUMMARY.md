@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [Home of Walter A. Jablonowski](README.md)
 * [vendor](vendor/README.md)
   * [twbs](vendor/twbs/README.md)
     * [README](vendor/twbs/bootstrap/README.md)
@@ -20,12 +20,4 @@
     * [Font Awesome](vendor/components/font-awesome.md)
 * [public](public/README.md)
   * [DEL\_ME](public/del_me.md)
-
-## Trying
-
-* [Untitled](trying/untitled.md)
-
----
-
-* [Trying](trying-1.md)
 
