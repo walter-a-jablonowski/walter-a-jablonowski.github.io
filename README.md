@@ -8,7 +8,7 @@ Bamberg, Germany
 
 ## License
 
-Copyright \(C\) Walter A. Jablonowski 2019
+Copyright \(C\) Walter A. Jablonowski 2019-2020
 
 Licenses of third party software used see [credits](https://github.com/walter-a-jablonowski/walter-a-jablonowski.github.io/tree/c89f9a0f38469ac0675b3d38248a0d47440adab4/credits.md)
 
