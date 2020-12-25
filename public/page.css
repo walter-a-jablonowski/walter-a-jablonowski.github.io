@@ -12,7 +12,8 @@ a, a:hover, a:focus {
 }
 
 /* force BS animation for collapse */
-.collapsing { transition:height 0.35s ease !important; }
+.fade {  transition:opacity 0.15s linear !important;  }
+.collapsing {  transition:height 0.35s ease !important;  }
 
 .rounded-2 {
   border-radius: 0.5rem !important;
