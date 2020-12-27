@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="vendor/components/font-awesome/css/all.css">
 
-  <link href="public/page.css" rel="stylesheet">
+  <link href="public/styles/page.css" rel="stylesheet">
 
   <!-- Preload -->
 
@@ -116,9 +116,6 @@
   <header class="header-2">
     <div class="container text-center">
       <h2 class="page-xs-small-font-dev">Looking for help?</h2>
-<!--
-      <h2 class="page-xs-small-font-dev">I can accept new orders in <b>June</b></h2>
--->
     </div>
   </header>
 
@@ -407,6 +404,17 @@
                 </div>
               </div>
 
+              <div class="row mt-2">
+                <div class="col-3">
+                  <span class="progress-label ml-1" style="font-size: large;">Python</span>
+                </div>
+                <div class="col-8">
+                  <div class="progress mt-2" style="max-width: 415px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 25%;"></div>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
 
@@ -492,8 +500,8 @@
               <div class="row">
                 <div class="col-12">
                   <p class="ml-1">
-                    Beside these, I have a couple of additional skills. <br>
-                    E. g. Native App development.
+                    Beside these, I have a couple of additional skills, <br>
+                    e. g. native app development.
                   </p>
                 </div>
               </div>
@@ -528,6 +536,15 @@
                   <div class="progress mt-2" style="max-width: 415px;">
                     <div class="progress-bar bg-info" role="progressbar" style="width: 60%;"></div>
                   </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  <p class="ml-1">
+                    <br>
+                    Apps: git, miscellaneous
+                  </p>
                 </div>
               </div>
 
@@ -601,7 +618,7 @@
               <br>
               While programming I like simpifying things using less code, writing
               libraries and automation (generators). Currently, I focus on web
-              and SQL development.<br>
+              and SQL development (web: backend before frontend).<br>
               <br>
               Because I am an experienced developer I don't neccessarily need a
               framework that does the work for me. I am able to write
@@ -835,48 +852,6 @@
   </section>
 
 
-  <!-- Sound -->
-  <!-- see below "Last sound hack" -->
-
-  <!-- Problem is restrictions, see page code -->
-
-<!--
-  <audio id="onShowMusic" preload="auto" autoplay>
-    <source src="public/sounds/dancing_in_the_dark.mp3" type="audio/mp3">
-  </audio>
--->
-
-<!--
-  <iframe id="iframeAudio" src="public/sounds/silence.mp3" allow="autoplay">
-  </iframe>
-
-  <audio id="onShowMusic" preload="auto" autoplay>
-    <source src="public/sounds/dancing_in_the_dark.mp3" type="audio/mp3">
-  </audio>
--->
-
-<!--
-  Big player
-
-  <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/14450682&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-
-  Mid player
-
-  - https://developers.soundcloud.com/docs/api/html5-widget
-  - Streaming https://developers.soundcloud.com/docs/api/guide#playing
-  - Wenn eine der Einstelungen &show_comments=false&show_user=false false is, spielt es etwas häufiger
-  - ohne wird der User nicht so arg genervt
-
-  - https://developers.deezer.com/sdk/javascript/player
--->
-
-<!--
-  Last sound hack was:
-
-  <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/95953735&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&show_artwork=false&download=true"></iframe>
--->
-
-
   <!-- Gear -->
 <!--
 
@@ -1024,7 +999,7 @@
 
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
 
-  <script src="public/page.js"></script>
+  <script src="public/js/page.js"></script>
 
 
   <!-- Page JS -->
@@ -1112,27 +1087,6 @@
       $('body').fadeIn();
       $('.toast').toast('show');
 
-
-      // "Uncaught (in promise) DOMException: play() failed because the user didn't interact with the document first"
-      // https://www.gradextra.de/2018/05/07/einschraenkung-fuer-video-autoplay-ab-chrome-66
-
-      // https://stackoverflow.com/questions/50490304/how-to-make-audio-autoplay-on-chrome
-/*
-      var played = false;
-
-      $('body').mouseover( function() {
-
-        if( ! played )
-        {
-          var sound = $('#onShowMusic')[0];
-
-          sound.load();
-          sound.play();
-
-          played = true;
-        }
-      });
-*/
     });
   </script>
 </body>
