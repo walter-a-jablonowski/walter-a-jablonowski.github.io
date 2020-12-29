@@ -810,7 +810,7 @@
 
           </div>
 
-          <span class="small"> <b>Hi there ;-)</b> OpenStreetMap is free, but a bit buggy. Press reload. You may also use <a href="https://goo.gl/maps/RRCcuAVrxa2qfJr9A" target="_blank">google maps</a>.</span>
+          <span class="small"> <b>Don't see anything?</b> OpenStreetMap is free, but a bit buggy. Press reload. You may also use <a href="https://goo.gl/maps/RRCcuAVrxa2qfJr9A" target="_blank">google maps</a>.</span>
 
 
           <!-- Where I live -->
@@ -1066,6 +1066,10 @@
             {  
               $('#sendSpinner').hide();
               $('#sendBtn').text('Send').prop('disabled', false);
+
+              $('#company').val('');
+              $('#mail').val('');
+              $('#message').val('');
 
               $('#sendMsg').text('Sent sucessfully !')
                            .fadeIn(500).delay(2000).fadeOut(1000);
