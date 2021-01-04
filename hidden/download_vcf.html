@@ -37,7 +37,7 @@
 <!-- Sticky footer version -->
 <!-- https://getbootstrap.com/docs/4.3/examples/sticky-footer-navbar -->
 
-<body id="page-top" class="d-flex flex-column h-100" style="background-color: #000; display: none;">
+<body id="page-top" class="d-flex flex-column h-100" style="display: none;">
 
   <!-- Navigation -->
 
@@ -71,8 +71,10 @@
   <!-- Content -->
   
   <main class="flex-shrink-0 mx-auto my-auto">
-    <h3 class="text-white">Scan me</h3>
-    <img src="public/waj_qr.png">
+    <p class="lead font-weight-bold">
+      Your download should start shortly. If it doesn't, click
+      <a data-auto-download href="https://walter-a-jablonowski.github.io/apps/mail/public/Walter_A_Jablonowski.vcf">here</a>.
+    </p>
   </main>
 
 
@@ -109,7 +111,15 @@
 
       $('body').fadeIn();
       $('.toast').toast('show');
-
+// /*
+      $('a[data-auto-download]').each( function() {
+        var $this = $(this);
+        
+        setTimeout(function() {
+          window.location = $this.attr('href');
+        }, 2000);
+      });
+// */
     });
   </script>
 </body>
