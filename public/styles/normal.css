@@ -1,0 +1,123 @@
+/*!
+ * Start Bootstrap - Scrolling Nav (modified) (https://startbootstrap.com/template-overviews/scrolling-nav)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-scrolling-nav/blob/master/LICENSE)
+ */
+
+/* Modified WAJ */
+
+
+a, a:hover, a:focus {
+  text-decoration: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* force BS animation for collapse */
+.fade {  transition:opacity 0.15s linear !important;  }
+.collapsing {  transition:height 0.35s ease !important;  }
+
+.rounded-2 {
+  border-radius: 0.5rem !important;
+}
+
+
+/* Common */
+
+header.main-header {
+
+  padding: 156px 0 100px;
+
+  background: url('../img/ne2_compr2.jpg') center center no-repeat;
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+header.header-2 {
+
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+header.header-2 h2 {
+
+  font-weight: normal;
+  color: #a1a1a1;
+}
+
+section {
+  padding: 80px 0;
+  min-height: 420px;  /* footer above since padding smaller */
+}
+
+section#gear {
+  padding: 50px 0;
+  min-height: 280px;  /* footer above since padding smaller */
+}
+
+.scroll-x {
+  overflow-x: scroll;
+}
+
+@media (max-width: 575.98px) {
+  
+/* Now using JS */
+/*
+#mainNav { background-color: #00000000; }
+*/
+.page-xs-small-font-name  { font-size: 30px; }
+.page-xs-small-font-dev   { font-size: 25px; }
+.page-xs-small-font-city  { font-size: 24px; }
+}
+
+/*
+@media (max-width: 767.98px) {
+
+  #mainNav { background-color: #212121; }
+}
+*/
+
+
+/* Toast */
+
+.toast {
+  background-color: rgba(255,255,255,.85);
+  font-family: "Roboto", sans-serif;
+}
+
+
+/* Startpage */
+
+.map-container {
+
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.map-container iframe {
+
+  left:       0;
+  top:        0;
+  height:   100%;
+  width:    100%;
+  position: absolute;
+}
+
+/*
+@media (max-width: 575.98px) {
+  .vid-xs-fix {
+    margin-left: -10px;
+  }
+}
+*/
+
+
+/* Interests */
+
+ul {
+  padding-left: 35px;
+}
