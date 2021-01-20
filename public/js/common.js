@@ -74,4 +74,4 @@
       $("#mainNav").css("background-color" , "#00000000");
   });
 
-})(jQuery); // End of use strict
+})(jQuery);
