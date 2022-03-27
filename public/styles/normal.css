@@ -4,8 +4,7 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-scrolling-nav/blob/master/LICENSE)
  */
 
-/* Modified WAJ */
-
+/* modified */
 
 a, a:hover, a:focus {
   text-decoration: none;
@@ -59,6 +58,10 @@ section#gear {
 
 .scroll-x {
   overflow-x: scroll;
+}
+
+.scroll-y {
+  overflow-y: scroll;
 }
 
 @media (max-width: 575.98px) {
