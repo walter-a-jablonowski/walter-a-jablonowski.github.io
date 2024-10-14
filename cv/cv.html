@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    .collapsible {
+  position: relative;
+}
+
+.content {
+  overflow:   hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.content.collapsed {
+  max-height: 6.1em;
+}
+
+.more-btn {
+  color:    blue;
+  cursor:     pointer;
+  display:    inline-block;
+  margin-top: 5px;
+}
+
+.more-btn:hover {
+  text-decoration: none;
+}
+    .no-indent {
+  padding-left: 20px;
+}
+    a {
+  text-decoration: none;
+}
+
+.label {
+  color:     grey;
+  font-weight: bold;
+}
+
+/* Page */
+
+:root {
+  --primary-color:   #000000;
+  --secondary-color: #ffffff;
+  --accent-color:    #FFA500;
+  --text-color:      #333333;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  font-size:   18px;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin:      0;
+  padding:     0;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width:   30%;
+  background-color: var(--primary-color);
+  color:   var(--secondary-color);
+  padding: 2rem;
+}
+
+.sidebar a {
+  color: #fff;
+}
+
+.main-content {
+  width:       70%;
+  background-color: var(--secondary-color);
+  padding:     2rem;
+  padding-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar, .main-content {
+    width: 100%;
+  }
+}
+
+/* Common */
+
+h1, h2 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.info {
+  display:       none;  /* print only */
+  margin-left:   40px;
+  border:        1px solid grey;
+  border-radius: 11px;
+  padding:       8px;
+  font-size:     15px;
+  color:       grey;
+}
+
+@media print {
+  .info {
+    display: inline;
+  }
+}
+
+/* Sidebar */
+
+.profile-img {
+  width:         150px;
+/*
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-color);
+*/
+  margin-top:    0.15rem;
+  margin-bottom: 0.25rem;
+}
+
+.sidebar h2 {
+  color: var(--secondary-color);
+  /* border-bottom: 2px solid var(--accent-color); */
+  padding-bottom: 0.5rem;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+}
+
+.contact-info td {
+  padding-right: 8px;
+}
+
+.skill {
+  margin-bottom: 1rem;
+}
+
+.skill-name {
+  font-weight:   bold;
+  margin-bottom: 0.25rem;
+}
+
+.skill-bar {
+  background-color: var(--secondary-color);
+  height:        5px;
+  border-radius: 5px;
+}
+
+.skill-level {
+  background-color: var(--accent-color);
+  height:        100%;
+  border-radius: 5px;
+}
+
+.lang-skill {
+  display:          inline-block;
+  background-color: var(--accent-color);
+  color:            var(--primary-color);
+  padding:          0.25rem 0.5rem;
+  border-radius:    15px;
+  margin:           0 5px 5px 0;
+  font-size:        0.8em;
+}
+
+.misc-personal {
+  font-size: 0.8em;
+}
+
+.misc-personal td {
+  padding-right: 8px;
+}
+
+/* Main */
+
+/* Main: btns upper right */
+
+.action-buttons {
+  position: absolute;
+  top:      20px;
+  right:    20px;
+  display:  flex;
+  gap:      10px;
+}
+
+.btn-action {
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  width:           36px;  /* Reduced from 40px */
+  height:          36px;  /* Reduced from 40px */
+  border:          2px solid #808080; /* Changed to grey */
+  border-radius:   8px;
+  background:      linear-gradient(135deg, #f0f0f0, #ffffff);
+  color:         black;
+  cursor:          pointer;
+  font-size:       16px;  /* Slightly reduced font size */
+  transition:      all 0.3s ease;
+  box-shadow:      0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-action:hover {
+  transform:  translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-action:active {
+  transform:  translateY(0);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-action img {
+  width:  18px;     /* Slightly reduced from 20px */
+  height: auto;
+}
+
+.btn-action i {
+  font-size: 16px;  /* Adjusted icon size */
+}
+
+/* Main: Timeline */
+
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  content:  '';
+  position: absolute;
+  left:     3px;
+  top:      0;
+  bottom:   0;
+  width:    2px;
+  background-color: var(--accent-color);
+}
+
+.experience-item, .education-item {
+  margin-bottom: 1.5rem;
+  position:      relative;
+  padding-left:  20px;
+}
+
+.experience-item::before, .education-item::before {
+  display: none;
+}
+
+.experience-item h3, .education-item h3 {
+  position: relative;
+}
+
+.experience-item h3::before, .education-item h3::before {
+  content:          '';
+  position:         absolute;
+  left:             -21px;
+  top:              50%;
+  width:            10px;
+  height:           10px;
+  background-color: var(--accent-color);
+  border-radius:    50%;
+  transform:        translateY(-50%);
+}
+
+.experience-item .details, .education-item .details {
+  font-size: 16px;
+}
+
+/* Main: Misc */
+
+.date {
+  font-style: italic;
+  color:      var(--accent-color);
+}
+
+.footer {
+  font-size:  18px;
+  color:    grey;
+  text-align: center;
+}
+
+/* Print */
+
+@page {
+  size: A4 portrait;  /* TASK: there seems to be no setting that removes the printed page paddings */
+  margin:  0;
+  padding: 0;
+}
+
+@media print {
+  
+  a {
+    text-decoration: none;
+    color: var(--secondary-color) !important;
+  }
+
+  .new-page {
+    page-break-inside: avoid;
+    page-break-before: always;
+    margin-top: 20px;
+  }
+
+  /* Page */
+
+  .sidebar {
+    min-height: calc(59.4cm - 2rem);  /* current solution: page 2 * A4 high - padding */
+  }
+
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  
+  .container {
+    display: flex !important;
+  }
+  
+  .sidebar {
+    width:   30% !important;
+    background-color: var(--primary-color) !important;
+    color:   var(--secondary-color) !important;
+    padding: 1rem !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  .main-content {
+    width:   70% !important;
+    padding: 1rem !important;
+  }
+
+  /*
+  .main-content h2, .main-content .date {
+    color: var(--primary-color) !important;
+  }
+  */
+  .main-content a {
+    color: var(--primary-color) !important;
+  }
+
+  /* Common */
+  
+  h1, h2, .date {
+    color: var(--accent-color) !important;
+  }
+
+  /* Sidebar */
+  
+  .sidebar h2 {
+    color: var(--secondary-color) !important;
+    border-bottom-color: var(--accent-color) !important;
+  }
+  
+  .skill-bar {
+    background-color: var(--secondary-color) !important;
+  }
+  
+  .skill-level, .lang-skill {
+    background-color: var(--accent-color) !important;
+  }
+  
+  .lang-skill {
+    font-size: 0.6em;
+    color: var(--primary-color) !important;
+  }
+
+  /* Main */
+
+}
+  </style>
+</head>
+<body>
+
+  <div class="container">
+  <div class="sidebar">
+    
+    <img src="img.png" class="profile-img" style="max-width: 200px;">
+    
+    <h1 style="font-size: 2.4vw;">  <!-- fix font size so that it matches container -->
+      Walter A. Jablonowski    </h1>
+    
+          <p data-key="personal.summary">
+        Web and SQL developer      </p>
+    
+    <div class="contact-info">
+      <table style="margin-left: -4px;">
+        <tr>
+          <td><i class="bi bi-envelope"></i></td>
+          <td>
+            <a href="mailto:walterjab@outlook.com">walterjab@outlook.com</a>
+          </td>
+        </tr>
+        <tr>
+          <td><i class="bi bi-globe"></i></td>
+          <td>
+            <a href="https://is.gd/waj_hq">
+              is.gd/waj_hq            </a>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;"><i class="bi bi-geo-alt-fill"></i></td>
+          <td>
+            <a href="https://goo.gl/maps/RRCcuAVrxa2qfJr9A" target="_blank">
+              Am Anger 9 <br>
+              96135 Stegaurach            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+          <div class="skill" style="margin-top: 20px;">
+        <div class="skill-name">PHP</div>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 100%;"></div>
+        </div>
+      </div>
+          <div class="skill" style="margin-top: 20px;">
+        <div class="skill-name">javascript</div>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 60%;"></div>
+        </div>
+      </div>
+          <div class="skill" style="margin-top: 20px;">
+        <div class="skill-name">HTML</div>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 100%;"></div>
+        </div>
+      </div>
+          <div class="skill" style="margin-top: 20px;">
+        <div class="skill-name">Bootstrap</div>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 85%;"></div>
+        </div>
+      </div>
+          <div class="skill" style="margin-top: 20px;">
+        <div class="skill-name">CSS</div>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 50%;"></div>
+        </div>
+      </div>
+          <div class="skill" style="margin-top: 20px;">
+        <div class="skill-name">Python</div>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 25%;"></div>
+        </div>
+      </div>
+          <div class="skill" style="margin-top: 20px;">
+        <div class="skill-name">SQL</div>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 100%;"></div>
+        </div>
+      </div>
+          <div class="skill" style="margin-top: 20px;">
+        <div class="skill-name">DB-Design</div>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 100%;"></div>
+        </div>
+      </div>
+    
+    <div class="lang-skills" style="margin-top: 40px;">
+              <span class="lang-skill">
+          <span data-caption="German">German</span>: <span data-key="skills.lang.German">native</span>
+        </span>
+              <span class="lang-skill">
+          <span data-caption="English">English</span>: <span data-key="skills.lang.English">fluent</span>
+        </span>
+          </div>
+      
+    <div class="new-page" style="padding-top: 20px;">
+      <table class="misc-personal">
+        <tr>
+          <td data-caption="born">
+            Born:
+          </td>
+          <td data-key="personal.dateOfBirth">
+            1978-09-11          </td>
+        </tr>
+        <tr>
+          <td data-caption="nationality">
+            Nationality:
+          </td>
+          <td data-key="personal.nationality">
+            German          </td>
+        </tr>
+        <tr>
+          <td data-caption="maritalStatus">
+            Marital status:
+          </td>
+          <td data-key="personal.maritalStatus">
+            single          </td>
+        </tr>
+      </table>
+    </div>
+
+          <div style="padding: 20px 0 5px 0;">
+        Scan me
+      </div>
+      <div>
+        <img src="qr.png" style="max-width: 200px;">
+      </div>
+      </div>
+
+  <div class="main-content">
+
+    <div class="action-buttons">
+      <button id="printBtn" class="btn btn-action" onclick="printCV()">
+        <i class="bi bi-printer"></i>
+      </button>
+      <button id="langBtn"  class="btn btn-action lang-en" onclick="toggleLanguage()">
+        <img  src="https://flagcdn.com/w20/us.png">
+      </button>
+    </div>
+
+          <div style="text-align: center;">
+        <img src="logo.png"  style="max-width: 150px;">
+      </div>
+        
+    <section>
+      <h2 data-caption="summary">
+        Summary      </h2>
+      <p data-key="summary">
+        
+25 years of experience in programming with a strong focus on PHP based web applications since about 10 years. I usually made framework-less apps from scratch, but could work with frameworks like Laravel or Symfony as well. Second focus: design of databases and plain SQL development.
+      </p>
+    </section>
+
+    <section>
+      <h2 data-caption="specialSkills">
+        Special skills      </h2>
+      <!-- collapsible -->
+        <div class="collapsible" data-captions="{&quot;de&quot;:{&quot;readMore&quot;:&quot;Mehr ...&quot;,&quot;less&quot;:&quot;weniger zeigen&quot;},&quot;en&quot;:{&quot;readMore&quot;:&quot;Read more ...&quot;,&quot;less&quot;:&quot;less&quot;}}">
+        <div data-key="specialSkills" class="content collapsed">
+          
+<p>Passionate about making minimalistic (small and fast) web apps, reducing the effort, and the use of AI tools in development. At some point I realized that often third party components like frameworks or even a database isn't always neccessary if you look closely. These often can easily be replaced with simpler approaches, which reduces complexity and makes the system much simpler.</p>
+<p><b>Code samples:</b></p>
+<ul class="no-indent">
+  <li>This CV was made with web technologies, see <a href="https://github.com/walter-a-jablonowski/cv-maker" target="_blank">cv-maker</a></li>
+  <li>( to be continued )</li>
+</ul>
+<p><b>Articles:</b></p>
+<ul class="no-indent">
+  <li>( to be continued )</li>
+</ul>
+        </div>
+        <span class="more-btn" data-caption="collapsible.readMore">Read more ...</span>
+        <!-- special elem -->
+        <span class="info">
+          <i class="bi bi-info-circle"></i> see online version at <a href="https://is.gd/waj_cv">is.gd/waj_cv</a>
+        </span>
+      </div>
+    </section>
+    
+    <section>
+      <h2 data-caption="goals">
+        Goals      </h2>
+      <div data-key="goals">  <!-- ul can't be inside p (html used in yml) -->
+        
+<ul class="no-indent">
+  <li>Use of AI and innovative technologies</li>
+  <li>Ideally working on topic of interest, e.g. nutrition, information management</li>
+  <li>Ideally small fast web apps</li>
+  <li>or plain SQL-development</li>
+  <li>part-time 16h (remote)</li>
+</ul>
+      </div>
+    </section>
+    
+    <section class="new-page">
+      
+      <h2 data-caption="experience">
+        Experience      </h2>
+      
+      <div class="timeline" data-list="experience">
+                  <div class="experience-item" data-idx="0">
+            <h3>
+              <span class="date">
+                <span data-key="from">01/2021</span> - <span data-key="until">07/2024</span>
+              </span>
+              &nbsp;
+              <span data-key="position">Web-Entwickler</span>
+            </h3>
+                          <p class="details">
+                                  <div>
+                    <span class="label" data-caption="company">Company</span>: <span data-key="organisation">VX APPS, Hildesheim</span>
+                  </div>
+                                                  <div data-key="summary">Made new web application, part-time (home office)</div>
+                              </p>
+                      </div>
+                  <div class="experience-item" data-idx="1">
+            <h3>
+              <span class="date">
+                <span data-key="from">05/2019</span> - <span data-key="until">01/2021</span>
+              </span>
+              &nbsp;
+              <span data-key="position">Web-Entwickler</span>
+            </h3>
+                          <p class="details">
+                                  <div>
+                    <span class="label" data-caption="company">Company</span>: <span data-key="organisation">inixmedia GmbH, Schwentinental</span>
+                  </div>
+                                                  <div data-key="summary">Made new web application, part-time (home office)</div>
+                              </p>
+                      </div>
+                  <div class="experience-item" data-idx="2">
+            <h3>
+              <span class="date">
+                <span data-key="from">09/2015</span> - <span data-key="until">12/2017</span>
+              </span>
+              &nbsp;
+              <span data-key="position">Web-Entwickler</span>
+            </h3>
+                          <p class="details">
+                                  <div>
+                    <span class="label" data-caption="company">Company</span>: <span data-key="organisation">Varimetrix Deutschland GmbH, Kummersbrück</span>
+                  </div>
+                                                  <div data-key="summary">Made new web application, part-time (home office)</div>
+                              </p>
+                      </div>
+                  <div class="experience-item" data-idx="3">
+            <h3>
+              <span class="date">
+                <span data-key="from">02/2004</span> - <span data-key="until">05/2012</span>
+              </span>
+              &nbsp;
+              <span data-key="position">Self-employed</span>
+            </h3>
+                          <p class="details">
+                                                  <div data-key="summary">Self-employed software developer / freelancer: Development of apps for iPhone, business applications for Windows, database design, SQL development
+</div>
+                              </p>
+                      </div>
+              </div>
+    </section>
+      
+    <section>
+        
+      <h2 data-caption="education">
+        Education      </h2>
+      
+      <div class="timeline" data-list="education">
+                  <div class="education-item" data-idx="0">
+            <h3>
+              <span class="date">
+                <span data-key="from">09/2000</span> - <span data-key="until">02/2003</span>
+              </span>
+              &nbsp;
+              <span data-key="institution">CIB, Bamberg</span>
+            </h3>
+                          <p class="details">
+                                                  <div>
+                    <span class="label" data-caption="degree">Degree</span>: <span data-key="degree">Fachinformatiker Anwendungsentwicklung</span>
+                  </div>
+                              </p>
+                      </div>
+                  <div class="education-item" data-idx="1">
+            <h3>
+              <span class="date">
+                <span data-key="from">09/1989</span> - <span data-key="until">05/1999</span>
+              </span>
+              &nbsp;
+              <span data-key="institution">Clavius Gymnasium</span>
+            </h3>
+                          <p class="details">
+                                                  <div>
+                    <span class="label" data-caption="degree">Degree</span>: <span data-key="degree">Mittlere Reife</span>
+                  </div>
+                              </p>
+                      </div>
+              </div>
+    </section>
+
+    <p class="footer">
+      powered by <a href="https://github.com/walter-a-jablonowski/cv-maker" target="_blank">cv-maker</a> &copy; Walter A. Jablonowski 2024
+    </p>
+  </div>
+  
+</div>
+
+  <script>
+    const captions = {
+      'en': {"German":"German","English":"English","Spanish":"Spanish","born":"Born","nationality":"Nationality","maritalStatus":"Marital status","summary":"Summary","specialSkills":"Special skills","goals":"Goals","experience":"Experience","company":"Company","education":"Education","degree":"Degree","collapsible":{"readMore":"Read more ...","less":"less"}},
+      'de': {"German":"Deutsch","English":"Englisch","Spanish":"Spanisch","born":"Geburtsdatum","nationality":"Nationalit\u00e4t","maritalStatus":"Familienst.","summary":"Summary","specialSkills":"Special skills","goals":"Ziele","experience":"Experience","company":"Firma","education":"Ausbildung","degree":"Abschluss","collapsible":{"readMore":"Mehr ...","less":"weniger zeigen"}}    }
+    const data = {
+      'en': {"personal":{"name":"Walter A. Jablonowski","logo":"logo.png","summary":"Web and SQL developer","email":"walterjab@outlook.com","url":"https:\/\/is.gd\/waj_hq","location":{"address":"Am Anger 9","postalCode":96135,"city":"Stegaurach"},"dateOfBirth":"1978-09-11","nationality":"German","maritalStatus":"single"},"summary":"\n25 years of experience in programming with a strong focus on PHP based web applications since about 10 years. I usually made framework-less apps from scratch, but could work with frameworks like Laravel or Symfony as well. Second focus: design of databases and plain SQL development.\n","specialSkills":"\n<p>Passionate about making minimalistic (small and fast) web apps, reducing the effort, and the use of AI tools in development. At some point I realized that often third party components like frameworks or even a database isn't always neccessary if you look closely. These often can easily be replaced with simpler approaches, which reduces complexity and makes the system much simpler.<\/p>\n<p><b>Code samples:<\/b><\/p>\n<ul class=\"no-indent\">\n  <li>This CV was made with web technologies, see <a href=\"https:\/\/github.com\/walter-a-jablonowski\/cv-maker\" target=\"_blank\">cv-maker<\/a><\/li>\n  <li>( to be continued )<\/li>\n<\/ul>\n<p><b>Articles:<\/b><\/p>\n<ul class=\"no-indent\">\n  <li>( to be continued )<\/li>\n<\/ul>\n","goals":"\n<ul class=\"no-indent\">\n  <li>Use of AI and innovative technologies<\/li>\n  <li>Ideally working on topic of interest, e.g. nutrition, information management<\/li>\n  <li>Ideally small fast web apps<\/li>\n  <li>or plain SQL-development<\/li>\n  <li>part-time 16h (remote)<\/li>\n<\/ul>\n","skills":{"dev":{"PHP":100,"javascript":60,"HTML":100,"Bootstrap":85,"CSS":50,"Python":25,"SQL":100,"DB-Design":100},"lang":{"German":"native","English":"fluent"}},"experience":[{"from":"01\/2021","until":"07\/2024","position":"Web-Entwickler","organisation":"VX APPS, Hildesheim","summary":"Made new web application, part-time (home office)"},{"from":"05\/2019","until":"01\/2021","position":"Web-Entwickler","organisation":"inixmedia GmbH, Schwentinental","summary":"Made new web application, part-time (home office)"},{"from":"09\/2015","until":"12\/2017","position":"Web-Entwickler","organisation":"Varimetrix Deutschland GmbH, Kummersbr\u00fcck","summary":"Made new web application, part-time (home office)"},{"from":"02\/2004","until":"05\/2012","position":"Self-employed","organisation":null,"summary":"Self-employed software developer \/ freelancer: Development of apps for iPhone, business applications for Windows, database design, SQL development\n"}],"education":[{"from":"09\/2000","until":"02\/2003","institution":"CIB, Bamberg","degree":"Fachinformatiker Anwendungsentwicklung"},{"from":"09\/1989","until":"05\/1999","institution":"Clavius Gymnasium","degree":"Mittlere Reife"}]},
+      'de': {"personal":{"name":"Walter A. Jablonowski","logo":"logo.png","summary":"Web and SQL developer","email":"walterjab@outlook.com","url":"https:\/\/is.gd\/waj_hq","location":{"address":"Am Anger 9","postalCode":96135,"city":"Stegaurach"},"dateOfBirth":"1978-09-11","nationality":"German","maritalStatus":"single"},"summary":"\n25 Jahre Erfahrung in der Programmierung mit starkem Fokus auf PHP-basierten Webanwendungen seit etwa 10 Jahren. Ich habe in der Regel framework-less Anwendungen erstellt, kann aber prinzipiell auch mit Frameworks wie Laravel oder Symfony arbeiten. Zweiter Schwerpunkt: Design von Datenbanken und reine SQL-Entwicklung.\n","specialSkills":"\n<p>Ich begeistere mich insbesondere f\u00fcr minimalistische (kleine und schnelle) Webanwendungen (Aufwand reduzieren), sowie f\u00fcr den Einsatz von KI-Tools in der Entwicklung. Bei genauem Hinsehen sind Komponenten wie Frameworks oder Datenbank nicht immer notwendig. Man kann sie oft durch einfachere Ans\u00e4tze ersetzten.<\/p>\n<p><b>Code samples:<\/b><\/p>\n<ul class=\"no-indent\">\n  <li>Dieser CV wurde mit Web-Technologien erstellt, siehe <a href=\"https:\/\/github.com\/walter-a-jablonowski\/cv-maker\" target=\"_blank\">cv-maker<\/a><\/li>\n  <li>( to be continued )<\/li>\n<\/ul>\n<p><b>Artikel:<\/b><\/p>\n<ul class=\"no-indent\">\n  <li>( to be continued )<\/li>\n<\/ul>\n","goals":"\n<ul class=\"no-indent\">\n  <li>Einsatz von KI und innovativen Technologien<\/li>\n  <li>Ideal Themen von Interesse, z.B. Ern\u00e4hrung, Informationsmanagement<\/li>\n  <li>Idealerweise kleine (schnelle) Webanwendungen<\/li>\n  <li>oder reine SQL-Entwicklung<\/li>\n  <li>Teilzeit 16h (remote)<\/li>\n<\/ul>\n","skills":{"dev":{"PHP":100,"javascript":60,"HTML":100,"Bootstrap":85,"CSS":50,"Python":25,"SQL":100,"DB-Design":100},"lang":{"German":"Muttersprache","English":"flie\u00dfend"}},"experience":[{"from":"01\/2021","until":"07\/2024","position":"Web-Entwickler","organisation":"VX APPS, Hildesheim","summary":"Neuentwicklung einer Webanwendung in Teilzeit (Home Office)"},{"from":"05\/2019","until":"01\/2021","position":"Web-Entwickler","organisation":"inixmedia GmbH, Schwentinental","summary":"Neuentwicklung einer Webanwendung in Teilzeit (Home Office)"},{"from":"09\/2015","until":"12\/2017","position":"Web-Entwickler","organisation":"Varimetrix Deutschland GmbH, Kummersbr\u00fcck","summary":"Neuentwicklung einer Webanwendung in Teilzeit (Home Office)"},{"from":"02\/2004","until":"05\/2012","position":"Selbst\u00e4ndig","organisation":null,"summary":"Selbst\u00e4ndiger Softwareentwickler \/ Freiberufler: Neuentwicklung von Apps f\u00fcr iPhone, Entwicklung von Business-Anwendungen unter Windows, Datenbankdesign, SQL-Entwicklung\n"}],"education":[{"from":"09\/2000","until":"02\/2003","institution":"CIB, Bamberg","degree":"Fachinformatiker Anwendungsentwicklung"},{"from":"09\/1989","until":"05\/1999","institution":"Clavius Gymnasium","degree":"Mittlere Reife"}]}    }
+  </script>
+  <script>
+  
+    function findKey(obj, path)
+{
+  return path.split('.').reduce( (value, key) => {
+    return value && value[key] !== undefined ? value[key] : undefined;
+  }, obj);
+}
+    document.querySelectorAll('.collapsible').forEach( elem => {
+
+  // const more = {'en': "Read more ...", 'de': "Mehr ..." }
+  // const less = {'en': 'less', 'de': "weniger zeigen" }
+
+  elem.addEventListener('click', function() {
+
+    const btn = elem.querySelector('.more-btn')
+    const content = elem.querySelector('.content')
+    const lang = document.documentElement.lang
+
+    if( content.classList.contains('collapsed'))
+    {
+      content.classList.remove('collapsed')
+      btn.dataset.caption = 'collapsible.less'
+      // btn.textContent = less[ document.documentElement.lang ]
+      btn.textContent = JSON.parse( btn.closest('.collapsible').dataset.captions)[lang].less
+    }
+    else
+    {
+      content.classList.add('collapsed')
+      btn.dataset.caption = 'collapsible.readMore'
+      // btn.textContent = more[ document.documentElement.lang ]
+      btn.textContent = JSON.parse( btn.closest('.collapsible').dataset.captions)[lang].readMore
+    }
+  })
+})
+    function translate( lang )
+{
+  // Captions
+  
+  document.querySelectorAll(`[data-caption]`).forEach( elem => {
+    // we don't really need list captions, just replace the strings
+    elem.innerHTML = findKey( captions[lang], elem.dataset.caption)
+  })
+
+  // Single data values
+
+  let elems = document.querySelectorAll(`[data-key]:not([data-list] [data-key])`)  // TASK: (advanced) recurse (see also below) :not([data-list] [data-list]
+  // elems = document.querySelectorAll(`[data-key]`).filter( elem => {
+  //   return ! elem.closest('[data-list]')
+  // })
+
+  elems.forEach( elem => { 
+    elem.innerHTML = findKey( data[lang], elem.dataset.key)
+  })
+  
+  // Data lists
+  
+  let lists = document.querySelectorAll('[data-list]')
+  
+  lists.forEach( list => { translate_recurse( list, lang ) })
+
+  // Lang attribute
+
+  document.documentElement.lang = lang
+}
+
+function translate_recurse( list, lang )
+{
+  let value = findKey( data[lang], list.dataset.list )  // TASK: func has undefined (currently makes no difference)
+  
+  list.querySelectorAll(`[data-idx]`).forEach( idx => {
+    
+    let val = value[idx.dataset.idx]
+
+    idx.querySelectorAll(`[data-key]`).forEach( entry => {
+      entry.innerHTML = findKey( val, entry.dataset.key)
+    })
+  })
+  
+  // TASK: (advanced) nestend lists
+
+  // list.querySelectorAll(`[data-list]:not([data-list] [data-list]`).forEach( subList => {
+  //   translate_recurse( subList, lang )
+  // })
+}
+  
+          /*
+
+// Font width of long name
+
+function adjustFontSize()
+{
+  const container = document.querySelector('#name')
+  const text = document.querySelector('.inner-name')
+  let fontSize = 40
+  text.style.fontSize = fontSize + 'px'
+
+  while( text.scrollWidth > container.clientWidth && fontSize > 8)
+  {
+    fontSize--
+    text.style.fontSize = fontSize + 'px'
+  }
+}
+
+ready( function() {
+  window.addEventListener('load',   adjustFontSize)
+  window.addEventListener('resize', adjustFontSize)
+})
+
+*/
+
+function printCV()
+{
+  window.print()
+}
+
+function toggleLanguage()
+{
+  const langBtn = document.getElementById('langBtn')
+  
+  if( langBtn.classList.contains('lang-en'))
+  {
+    translate('de')
+    
+    langBtn.classList.remove('lang-en')
+    langBtn.classList.add('lang-de')
+    langBtn.querySelector('img').src = 'https://flagcdn.com/w20/de.png'  // TASK: local
+  }
+  else
+  {
+    translate('en')
+    
+    langBtn.classList.remove('lang-de')
+    langBtn.classList.add('lang-en')
+    langBtn.querySelector('img').src = 'https://flagcdn.com/w20/us.png'
+  }
+}
+      </script>
+</body>
+</html>
