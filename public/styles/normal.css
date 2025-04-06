@@ -22,6 +22,10 @@ button:focus {
   border-radius: 0.5rem !important;
 }
 
+.no-indent {
+  padding-left: 20px;
+}
+
 
 /* Common */
 
