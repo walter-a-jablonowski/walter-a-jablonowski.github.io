@@ -1,180 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Hi! This is the homepage of Walter A. Jablonowski - Web, SQL and App Programmer in Bamberg (Nuremberg Area) Germany.">
-  <meta name="author" content="Walter A. Jablonowski">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-
-  <title>Credits | Walter A. Jablonowski - Programmer - Bamberg, Germany</title>
-
-  <!-- Preloading -->
-  
-  <link rel="prefetch" href="public/img/ne2_compr2.jpg">           <!-- missing in safari  https://caniuse.com/#search=prefetch -->
-  <link rel="preload" href="public/img/ne2_compr2.jpg" as="image"> <!-- missing in firefox https://caniuse.com/#search=preload  -->
-
-  <!-- Styles -->
-
-  <link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="vendor/components/font-awesome/css/all.css">
-  <link href="public/styles/normal.css" rel="stylesheet">
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Credits for Walter A. Jablonowski's personal website">
+  <title>Credits | Walter A. Jablonowski</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    .legal-content {
+      padding: 120px 0 60px;
+    }
+    
+    .legal-content .container {
+      max-width: 800px;
+    }
+    
+    .legal-content h1 {
+      margin-bottom: 2rem;
+      color: var(--primary);
+    }
+    
+    .legal-content h2 {
+      font-size: 1.75rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .legal-content p, .legal-content ul, .legal-content ol {
+      margin-bottom: 1rem;
+    }
+    
+    .legal-content ul, .legal-content ol {
+      padding-left: 2rem;
+    }
+    
+    .legal-content a {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+    
+    .legal-content a:hover {
+      color: var(--primary-dark);
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+    
+    .back-link i {
+      margin-right: 0.5rem;
+    }
+    
+    .credits-list {
+      margin-top: 1rem;
+    }
+    
+    .credits-item {
+      margin-bottom: 1.5rem;
+    }
+    
+    .credits-item h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
-
-<body id="page-top" style="display: none;">
-
-  <!-- Snackbar -->
-
-  <div class="toast fixed-bottom ml-auto mr-3" role="alert" data-delay="700" data-autohide="false" style="z-index: 1050;">
-    <div class="toast-body" style="background-color: orange;">
-      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" style="margin-top: -5px;">
-        <span>&times;</span>
-      </button>
-      <span style="font-size: 1rem;">
-        I don't use cookies. By using this site you accept technically necessary third party terms and cookies.
-        Details see <a href="privacy.html">privacy</a>.
-      </span>
-    </div>
-  </div>
-
-
-  <!-- Navigation -->
-
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+<body>
+  <header>
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="index.html#page-top">
-        <i class="fas fa-layer-group"></i>
-        &nbsp;&nbsp;
-        <!-- <span style="color: #d6d6d6;">Home of</span>&nbsp;&nbsp;Walter A. Jablonowski</a> -->
-        Home
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="index.html#skills">Skills</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="index.html#int">Interests</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="index.html#awe">Awesome</a>
-          </li>
-<!--
-          <li class="nav-item">
-            <!-- <i class="fas fa-external-link-alt"></i> -- >
-            <a class="nav-link normal-link" href="http://github.com/walter-a-jablonowski" target="_blank"><i class="fas fa-external-link-square-alt"></i> github</a>
-          </li>
--->
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="index.html#con">Contact</a>
-          </li>
+      <nav>
+        <div class="logo">
+          <a href="index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="index.html#services" class="nav-link">Services</a></li>
+          <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+          <li><a href="index.html#proj" class="nav-link">Projects</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
         </ul>
-      </div>
-    </div>
-  </nav>
-
-
-  <!-- Header -->
-
-  <header class="main-header bg-info text-white">
-    <div class="container text-center">
-      <!-- <p class="lead" style="color: #25aeff;"><b>- INNOVATION -</b></p> -->
-      <h1 style="color: #25aeff;">Walter A. Jablonowski</h1>
-      <h2 style="color: #d6d6d6;">Web | SQL | Apps</h2>
-      <p class="lead">
-        Bamberg, Germany&nbsp;&nbsp;<a class="js-scroll-trigger" style="color: #eee;" href="index.html#con"><i class="fas fa-map-marker-alt"></i> show on map</a>
-      </p>
+      </nav>
     </div>
   </header>
 
-
-  <!-- Content -->
-
-  <section>
+  <section class="legal-content">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          
-          <h2>Credits</h2>
-          
-          <p class="lead">Free images</p>
-          
-          <p>
-            - <a href="https://pngtree.com/free-backgrounds" target="_blank">free background photos from pngtree.com</a> 2019<br>
-            - <a href="http://www.freepik.com" target="_blank">Designed by fullvector / Freepik</a> 2019<br>
-            - Free comming soon image by <a href="https://pixabay.com/users/quinntheislander-1139623/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2579123">Quinn Kampschroer</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2579123">Pixabay</a> 2020<br>
-            - Tag cloud by <a href="https://wordart.com" target="_blank">wordart.com</a> 2019
-          </p>
-
-          <p class="lead">Terms of use and Licences</p>
-          
-          <p>
-            - <a href="credits/scrollbar.txt" target="_blank">scrollbar</a><br>
-            - <a href="credits/pngtree%202020.txt" target="_blank">pngtree</a><br>
-            - <a href="credits/freepik%20license%20free.txt" target="_blank">freepik</a><br>
-            - <a href="credits/wordart.txt" target="_blank">wordart</a><br>
-            - <a href="credits/flagicon%20LICENSE" target="_blank">flagicon</a><br>
-            - <a href="credits/sw.txt" target="_blank">Software licenses</a>
-          </p>
-
+      <h1>Credits</h1>
+      
+      <p>This website uses various resources, libraries, and tools. I would like to acknowledge and thank the creators and contributors of these resources.</p>
+      
+      <div class="credits-list">
+        <div class="credits-item">
+          <h3>Font Awesome</h3>
+          <p>Icons used on this website are provided by Font Awesome.</p>
+          <p><a href="https://fontawesome.com/" target="_blank">https://fontawesome.com/</a></p>
+          <p>License: <a href="https://fontawesome.com/license" target="_blank">Font Awesome Free License</a></p>
+        </div>
+        
+        <div class="credits-item">
+          <h3>Google Fonts</h3>
+          <p>The fonts used on this website are provided by Google Fonts.</p>
+          <p><a href="https://fonts.google.com/" target="_blank">https://fonts.google.com/</a></p>
+          <p>Fonts used: Roboto, Source Code Pro</p>
+        </div>
+        
+        <div class="credits-item">
+          <h3>OpenStreetMap</h3>
+          <p>Map data is provided by OpenStreetMap contributors.</p>
+          <p><a href="https://www.openstreetmap.org/" target="_blank">https://www.openstreetmap.org/</a></p>
+          <p>License: <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap License</a></p>
+        </div>
+        
+        <div class="credits-item">
+          <h3>Images and Content</h3>
+          <p>All original content, including text, images, and code created specifically for this website, is owned by Walter A. Jablonowski unless otherwise stated.</p>
+        </div>
+        
+        <div class="credits-item">
+          <h3>External Links</h3>
+          <p>This website contains links to external websites. These links are provided for convenience and informational purposes only. I have no control over the content of these external websites and am not responsible for their content.</p>
         </div>
       </div>
+      
+      <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
     </div>
   </section>
 
-  
-  <br>  <!-- spacer large screens -->
-
-
-  <!-- Footer -->
-
-  <footer style="background-color: #212121;" class="py-5">
+  <footer>
     <div class="container">
-      <p class="m-0 text-center text-white">
-        Copyright &copy; Walter A. Jablonowski 2019-2025
-        <span class="font-weight-light">&nbsp;&nbsp;</span>
-        <a href="privacy.html" class="text-white">Privacy</a>
-        <span class="font-weight-light">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-        <a href="imprint.html" class="text-white">Imprint</a>
-        <span class="font-weight-light">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-        <a href="credits.html" class="text-white">Credits</a>
-      </p>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="imprint.html">Imprint</a>
+          <!-- <a href="credits.html">Credits</a> -->
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>powered by &copy; Walter A. Jablonowski 2019-2025. Made with AI. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
 
-  <!-- JS includes -->
-
-  <!-- 3.3.1 <script src="vendor/jquery/jquery.min.js"></script> -->
-  <script src="vendor/components/jquery/jquery.min.js"></script>
-  <!-- 4.2.1 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
-  <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="public/plugins/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Page JS -->
-
-  <script src="public/js/common.js"></script>
-
+  <script src="controller.js"></script>
   <script>
-    $( function() {
-
-      $('body').fadeIn();
-      $('.toast').toast('show');
-
-    });
+    new WebsiteController();
   </script>
 </body>
-
 </html>
