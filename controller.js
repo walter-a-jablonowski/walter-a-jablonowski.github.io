@@ -43,6 +43,7 @@ class WebsiteController
       this.initTabNavigation();
       this.initInfoIcons();
       this.initTypewriterEffect();
+      this.initProjectCarousel();
       
       // Add animation classes to elements
       document.querySelectorAll('.fade-in').forEach( (element, index) => {
@@ -448,6 +449,127 @@ class WebsiteController
       
       // Start typing after a short delay
       setTimeout(typeNextChar, 800);
+    }
+  }
+  
+  /**
+   * Initialize project carousel
+   */
+  initProjectCarousel()
+  {
+    const carouselContainer = document.querySelector('.project-cards-container');
+    const prevArrow = document.querySelector('.carousel-arrow.prev');
+    const nextArrow = document.querySelector('.carousel-arrow.next');
+    
+    if( ! carouselContainer || ! prevArrow || ! nextArrow ) return;
+    
+    // Set initial state - hide prev arrow if at start
+    this.updateCarouselArrows(carouselContainer);
+    
+    // Handle next arrow click
+    nextArrow.addEventListener('click', () => {
+      const cardWidth = carouselContainer.querySelector('.project-card').offsetWidth;
+      const gap = parseInt(window.getComputedStyle(carouselContainer).getPropertyValue('gap'));
+      const scrollAmount = cardWidth + gap;
+      
+      carouselContainer.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Handle prev arrow click
+    prevArrow.addEventListener('click', () => {
+      const cardWidth = carouselContainer.querySelector('.project-card').offsetWidth;
+      const gap = parseInt(window.getComputedStyle(carouselContainer).getPropertyValue('gap'));
+      const scrollAmount = cardWidth + gap;
+      
+      carouselContainer.scrollBy({
+        left: -scrollAmount,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Update arrows visibility on scroll
+    carouselContainer.addEventListener('scroll', () => {
+      this.updateCarouselArrows(carouselContainer);
+    });
+    
+    // Update arrows on window resize
+    window.addEventListener('resize', () => {
+      this.updateCarouselArrows(carouselContainer);
+    });
+    
+    // Touch swipe functionality for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    carouselContainer.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    carouselContainer.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      this.handleSwipe(carouselContainer, touchStartX, touchEndX);
+    }, { passive: true });
+  }
+  
+  /**
+   * Update carousel arrows visibility based on scroll position
+   * @param {HTMLElement} container - The carousel container element
+   */
+  updateCarouselArrows(container)
+  {
+    const prevArrow = document.querySelector('.carousel-arrow.prev');
+    const nextArrow = document.querySelector('.carousel-arrow.next');
+    
+    if( ! container || ! prevArrow || ! nextArrow ) return;
+    
+    // Show/hide prev arrow based on scroll position
+    if( container.scrollLeft <= 10 ) {
+      prevArrow.style.opacity = '0';
+      prevArrow.style.pointerEvents = 'none';
+    } else {
+      prevArrow.style.opacity = '0.8';
+      prevArrow.style.pointerEvents = 'auto';
+    }
+    
+    // Show/hide next arrow based on if we can scroll more
+    const maxScrollLeft = container.scrollWidth - container.clientWidth - 10;
+    if( container.scrollLeft >= maxScrollLeft ) {
+      nextArrow.style.opacity = '0';
+      nextArrow.style.pointerEvents = 'none';
+    } else {
+      nextArrow.style.opacity = '0.8';
+      nextArrow.style.pointerEvents = 'auto';
+    }
+  }
+  
+  /**
+   * Handle swipe gesture for carousel
+   * @param {HTMLElement} container - The carousel container
+   * @param {number} startX - Touch start X position
+   * @param {number} endX - Touch end X position
+   */
+  handleSwipe(container, startX, endX)
+  {
+    const cardWidth = container.querySelector('.project-card').offsetWidth;
+    const gap = parseInt(window.getComputedStyle(container).getPropertyValue('gap'));
+    const scrollAmount = cardWidth + gap;
+    const swipeThreshold = 50; // Minimum swipe distance to trigger scroll
+    
+    if( startX - endX > swipeThreshold ) {
+      // Swipe left, go to next
+      container.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    } else if( endX - startX > swipeThreshold ) {
+      // Swipe right, go to prev
+      container.scrollBy({
+        left: -scrollAmount,
+        behavior: 'smooth'
+      });
     }
   }
   
