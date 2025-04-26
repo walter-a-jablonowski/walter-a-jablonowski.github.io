@@ -1,0 +1,594 @@
+/* Custom stylesheet for AI Tools Overview - Inspired by CV design */
+
+:root {
+  --primary-color: #000000;      /* Black */
+  --secondary-color: #ffffff;    /* White */
+  --accent-color: #FFA500;       /* Orange */
+  --dark-bg: #000000;            /* Pure black background */
+  --dark-card: #111111;          /* Slightly lighter than background */
+  --text-primary: #f8f9fa;       /* Light gray, almost white */
+  --text-secondary: #adb5bd;     /* Medium gray */
+  --badge-radius: 15px;          /* Rounded corners for badges */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 0.75rem;
+  
+  /* Common gradients */
+  --gradient-dark: linear-gradient(135deg, #0a0a0a, #151515);
+  --gradient-darker: linear-gradient(135deg, rgba(17, 17, 17, 0.95), rgba(25, 25, 25, 0.95));
+  --gradient-accent: linear-gradient(135deg, var(--accent-color), #e69500);
+}
+
+/* Base styles */
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-primary);
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  font-size: 18px;
+  overflow: hidden; /* Prevent double scrollbars */
+}
+
+/* Navbar styling */
+.navbar {
+  background: var(--gradient-dark);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 165, 0, 0.3);
+  padding: 0.5rem 0;
+}
+
+.navbar .container-fluid {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* Nav icons styling */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  margin-left: 0.1rem;
+  position: relative;
+  top: -5px;
+}
+
+.icon-link {
+  color: var(--text-secondary);
+  font-size: 1.3rem;
+  margin-left: 1rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.icon-link:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+.navbar-brand {
+  color: var(--accent-color) !important;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+}
+
+/* Content container */
+.content-container {
+  height: calc(100vh - 56px);
+  overflow-y: auto;
+  padding: 0.5rem 0 1rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-color) rgba(0, 0, 0, 0.2);
+}
+
+.content-container .container-fluid {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Scrollbar styling */
+.content-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.content-container::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 4px;
+}
+
+#toolDescription::-webkit-scrollbar {
+  width: 6px;
+}
+
+#toolDescription::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+#toolDescription::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 3px;
+}
+
+/* Container and layout */
+.container-fluid {
+  padding: 0 var(--spacing-sm);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.row {
+  --bs-gutter-x: 0.75rem;
+  margin-right: calc(var(--bs-gutter-x) * -0.5);
+  margin-left: calc(var(--bs-gutter-x) * -0.5);
+}
+
+.col-md-4, .col-sm-6 {
+  padding: 0 calc(var(--bs-gutter-x) * 0.5);
+}
+
+/* Category styling */
+.category-group {
+  background: var(--gradient-dark);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-group:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.category-header {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 var(--spacing-sm) 0;
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 1px solid rgba(255, 165, 0, 0.3);
+  letter-spacing: 0.5px;
+}
+
+/* Tool badges container */
+.tool-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Badge styling - common properties */
+.tool-badge {
+  display: inline-flex;
+  align-items: center;
+  background: var(--gradient-darker);
+  border: 1px solid rgba(255, 165, 0, 0.4);
+  border-radius: var(--badge-radius);
+  padding: 0.3rem 0.7rem;
+  margin: 0.1rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  color: var(--text-primary);
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.tool-badge:hover {
+  background: linear-gradient(135deg, rgba(30, 30, 30, 0.95), rgba(40, 40, 40, 0.95));
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+/* Folder badges for nested tool groups */
+.folder-badge {
+  background-color: #333;
+  border: 1px solid var(--accent-color);
+  position: relative;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  margin: 4px;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.folder-badge:hover {
+  background-color: #444;
+}
+
+.folder-badge .folder-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 8px;
+  height: 8px;
+  margin-right: 4px;
+  position: relative;
+}
+
+.folder-badge .folder-icon:before {
+  content: '+';
+  color: var(--accent-color);
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1;
+  position: relative;
+  top: 1;
+}
+
+.folder-badge[aria-expanded="true"] {
+  background-color: #444;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+}
+
+.folder-badge[aria-expanded="true"] .folder-icon:before {
+  content: '-';
+}
+
+/* Nested tool groups */
+.nested-tools {
+  padding-left: 0px;
+  margin: 5px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  /* background-color: rgba(30, 30, 30, 0.7); */
+  background-color: rgba(40, 40, 40, 0.8);
+  border-radius: 8px;
+  padding: 8px;
+  border-left: 2px solid rgba(255, 165, 0, 0.3);
+}
+
+/* Make nested tool badges match the size of regular tool badges */
+.nested-tools .tool-badge {
+  font-size: 1rem;
+  padding: 0.3rem 0.7rem;
+  margin: 0.1rem 0;
+  vertical-align: middle;
+  line-height: normal;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Remove animation from collapse */
+.collapse:not(.show) {
+  display: none;
+}
+
+.collapsing {
+  height: 0;
+  overflow: hidden;
+  display: none;
+}
+
+/* Modal styling */
+.modal-content {
+  background: var(--gradient-dark) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid rgba(255, 165, 0, 0.4) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5) !important;
+}
+
+.modal-header, .modal-footer {
+  border-color: rgba(255, 165, 0, 0.3) !important;
+  padding: 1rem 1.5rem;
+  background: var(--gradient-darker) !important;
+}
+
+.modal-title {
+  color: var(--accent-color) !important;
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+}
+
+.modal-body {
+  padding: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+#toolDescription {
+  max-height: 50vh;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+/* Button styling */
+.btn {
+  font-weight: 500;
+  border-radius: var(--badge-radius) !important;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #222, #333) !important;
+  border: 1px solid rgba(255, 165, 0, 0.2) !important;
+  color: var(--text-primary) !important;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #333, #444) !important;
+  border-color: rgba(255, 165, 0, 0.4) !important;
+}
+
+.btn-primary {
+  background: var(--gradient-accent) !important;
+  border: 1px solid var(--accent-color) !important;
+  color: var(--dark-bg) !important;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #e69500, #d68500) !important;
+  border-color: #e69500 !important;
+}
+
+.btn-close {
+  filter: invert(1) brightness(200%) !important;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.btn-close:hover {
+  opacity: 1;
+}
+
+/* Modal backdrop and animation */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.modal-backdrop.show {
+  opacity: 0.8 !important;
+}
+
+.modal.fade .modal-dialog {
+  transition: transform 0.3s ease-out;
+  transform: scale(0.95);
+}
+
+.modal.show .modal-dialog {
+  transform: scale(1);
+}
+
+/* List styling in modals */
+.no-indent {
+  padding-left: 20px;
+}
+
+/* Tooltip customization */
+.tooltip {
+  --bs-tooltip-bg: var(--dark-card);
+  --bs-tooltip-color: var(--text-primary);
+  --bs-tooltip-opacity: 1;
+  --bs-tooltip-max-width: 300px;
+}
+
+.tooltip .tooltip-inner {
+  border: 1px solid var(--accent-color);
+  padding: var(--spacing-md);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Badge color selection */
+.badge-color-options h6 {
+  color: var(--accent-color);
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.color-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.color-option {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.color-option:hover {
+  transform: scale(1.1);
+  border-color: var(--accent-color);
+}
+
+.color-option.active {
+  border: 2px solid var(--accent-color);
+  box-shadow: 0 0 8px var(--accent-color);
+}
+
+.color-option.no-color {
+  background-color: #000;
+  color: transparent;
+}
+
+/* Custom styling for nav pills to match the design */
+.nav-pills {
+  padding-bottom: 0px;
+  display: flex;
+  align-items: center;
+}
+
+/* Settings icon beside pills */
+.settings-icon {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.settings-icon:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+.nav-pills .nav-link {
+  color: var(--text-primary);
+  background-color: var(--dark-card);
+  border-radius: var(--badge-radius);
+  margin-right: 8px;
+  padding: 0.25rem 1rem;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.nav-pills .nav-link:hover {
+  color: var(--text-primary);
+  background-color: rgba(255, 165, 0, 0.7);
+}
+
+.nav-pills .nav-link.active {
+  color: black;
+  font-weight: bold;
+  background-color: var(--accent-color);
+  border: none;
+  box-shadow: 0 0 8px rgba(255, 165, 0, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .category-header {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tool-badge {
+    font-size: 0.9rem;
+    padding: 0.25rem 0.6rem;
+    margin: 0.05rem;
+  }
+  
+  .category-group {
+    margin-bottom: 0.8rem;
+    padding: 0.6rem;
+  }
+  
+  /* Add more horizontal padding in the content area */
+  .content-container .container-fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Ensure navbar padding matches content padding */
+  .navbar .container-fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Increase space below nav pills */
+  
+  /* Reduce space between category groups */
+  .mb-3 {
+    margin-bottom: 0.8rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal-dialog {
+    margin: 0.5rem;
+  }
+  
+  /* Even more padding for very small devices */
+  .content-container .container-fluid {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+  
+  /* Ensure navbar padding matches content padding */
+  .navbar .container-fluid {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+  
+  /* Increase space below category headers even more on small devices */
+  .category-header {
+    margin-bottom: 0.8rem;
+  }
+  
+  /* Increase space below nav pills even more on small devices */
+  
+  .modal-title {
+    font-size: 1.2rem;
+  }
+  
+  .modal-body {
+    padding: 0.8rem;
+  }
+  
+  .row {
+    --bs-gutter-x: 0.4rem;
+  }
+  
+  .category-group {
+    padding: 0.6rem;
+  }
+  
+  /* Reduce vertical spacing */
+  .py-3 {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+  
+  /* Make badges more compact */
+  .tool-badges {
+    gap: 3px;
+  }
+  
+  /* Increase tool badge font size on small devices */
+  .tool-badge {
+    font-size: 1rem;
+    padding: 0.3rem 0.7rem;
+  }
+}
+
+/* Tool modal styling */
+.modal-content {
+  background-color: var(--dark-card);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 165, 0, 0.2);
+}
+
+/* Style for the updated date text */
+#toolUpdated {
+  color: #adb5bd;
+  font-size: 0.9rem;
+  letter-spacing: 0.02rem;
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(255, 165, 0, 0.2);
+}
