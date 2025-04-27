@@ -1152,6 +1152,85 @@ section {
   border-color: var(--primary);
 }
 
+/* Contact form validation and status styles */
+.validation-messages {
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm);
+  background-color: rgba(255, 62, 0, 0.1);
+  border-radius: var(--border-radius-sm);
+  display: none;
+}
+
+.validation-messages ul {
+  margin: 0;
+  padding-left: var(--spacing-md);
+  color: var(--accent-red);
+}
+
+.validation-messages li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.validation-messages li:last-child {
+  margin-bottom: 0;
+}
+
+.form-status {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  text-align: center;
+  font-weight: 500;
+}
+
+.form-status.success {
+  background-color: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+}
+
+.form-status.error {
+  background-color: rgba(255, 62, 0, 0.1);
+  color: var(--accent-red);
+}
+
+.form-status i {
+  margin-right: var(--spacing-xs);
+}
+
+/* Spinner */
+.spinner {
+  display: flex;
+  justify-content: center;
+  margin: var(--spacing-md) 0;
+}
+
+.spinner > div {
+  width: 12px;
+  height: 12px;
+  background-color: var(--primary);
+  border-radius: 100%;
+  display: inline-block;
+  margin: 0 4px;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  animation-delay: -0.16s;
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% { 
+    transform: scale(0);
+  } 40% { 
+    transform: scale(1.0);
+  }
+}
+
 /* ===== Footer ===== */
 footer {
   background-color: var(--dark);

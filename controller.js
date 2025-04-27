@@ -204,25 +204,127 @@ class WebsiteController
   initContactForm()
   {
     if( this.contactForm ) {
+      // Create validation message container
+      const validationContainer = document.createElement('div');
+      validationContainer.className = 'validation-messages';
+      this.contactForm.appendChild(validationContainer);
+      
+      // Create spinner element
+      const spinner = document.createElement('div');
+      spinner.className = 'spinner';
+      spinner.innerHTML = '<div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div>';
+      spinner.style.display = 'none';
+      this.contactForm.appendChild(spinner);
+      
+      // Create status message container
+      const statusContainer = document.createElement('div');
+      statusContainer.className = 'form-status';
+      statusContainer.style.display = 'none';
+      this.contactForm.appendChild(statusContainer);
+      
       this.contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
         // Get form values
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const subject = document.getElementById('subject').value.trim();
+        const message = document.getElementById('message').value.trim();
         
-        // Validate form (simple validation)
-        if( ! name || ! email || ! subject || ! message ) {
-          alert('Please fill in all fields');
+        // Reset validation messages
+        validationContainer.innerHTML = '';
+        validationContainer.style.display = 'none';
+        statusContainer.style.display = 'none';
+        
+        // Validate form
+        let isValid = true;
+        const errors = [];
+        
+        if( ! name ) {
+          errors.push('Please enter your name');
+          isValid = false;
+        }
+        
+        if( ! email ) {
+          errors.push('Please enter your email address');
+          isValid = false;
+        } else if( ! this.isValidEmail(email) ) {
+          errors.push('Please enter a valid email address');
+          isValid = false;
+        }
+        
+        if( ! subject ) {
+          errors.push('Please enter a subject');
+          isValid = false;
+        }
+        
+        if( ! message ) {
+          errors.push('Please enter your message');
+          isValid = false;
+        }
+        
+        // Display validation errors if any
+        if( ! isValid ) {
+          validationContainer.style.display = 'block';
+          const errorList = document.createElement('ul');
+          errors.forEach(error => {
+            const li = document.createElement('li');
+            li.textContent = error;
+            errorList.appendChild(li);
+          });
+          validationContainer.appendChild(errorList);
           return;
         }
         
-        // In a real implementation, you would send the form data to a server
-        // For now, just show a success message
-        alert('Thank you for your message! I will get back to you soon.');
-        this.contactForm.reset();
+        // Prepare template parameters
+        const templateParams = {
+          name: name,
+          mail: email,
+          subject: subject,
+          message: message
+        };
+        
+        // EmailJS configuration
+        const serviceID  = 'service_r1nitci';   // Update this with your actual service ID
+        const templateID = 'template_ltytzqx';  // Update this with your actual template ID
+        
+        // Show spinner
+        spinner.style.display = 'flex';
+        
+        // Send email using EmailJS
+        emailjs.send(serviceID, templateID, templateParams)
+          .then((response) => {
+            // Hide spinner
+            spinner.style.display = 'none';
+            
+            // Show success message
+            statusContainer.style.display = 'block';
+            statusContainer.className = 'form-status success';
+            statusContainer.innerHTML = '<i class="fas fa-check-circle"></i> Thank you for your message! I will get back to you soon.';
+            
+            // Reset form
+            this.contactForm.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+              statusContainer.style.display = 'none';
+            }, 5000);
+          })
+          .catch(error => {
+            // Hide spinner
+            spinner.style.display = 'none';
+            
+            // Show detailed error message in development
+            let errorMessage = '<i class="fas fa-exclamation-circle"></i> Oops! Something went wrong. Please try again later.';
+            if(error && error.text) {
+              errorMessage += `<br><small>Error details: ${error.text}</small>`;
+            }
+            
+            // Show error message
+            statusContainer.style.display = 'block';
+            statusContainer.className = 'form-status error';
+            statusContainer.innerHTML = errorMessage;
+          });
       });
     }
     
@@ -240,6 +342,17 @@ class WebsiteController
           subjectField.value = 'CV Request';
       });
     }
+  }
+  
+  /**
+   * Validate email format
+   * @param {string} email - Email to validate
+   * @return {boolean} True if valid, false otherwise
+   */
+  isValidEmail(email)
+  {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   }
   
   /**
