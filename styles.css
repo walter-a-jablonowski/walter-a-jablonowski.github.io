@@ -828,6 +828,11 @@ section {
   font-weight: 600;
 }
 
+span.project-link {
+  color: var(--primary);
+  padding: 8px;
+}
+
 .carousel-arrow {
   position: absolute;
   top: 50%;
