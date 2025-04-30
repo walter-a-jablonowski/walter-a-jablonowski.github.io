@@ -1388,13 +1388,42 @@
         </div>
       </div>
     </div>
-    
+
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="infoModalLabel"><i class="bi bi-info-circle-fill me-2"></i>Welcome to AI Tools Overview</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Here are some tips to help you navigate:</p>
+            <ul>
+              <li>Badges with <strong>+</strong> or <strong>-</strong> can be clicked to expand or collapse sections</li>
+              <li>Click on tool badges to see more details about each tool</li>
+              <li>Use the tabs at the top to navigate between different categories</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./index_files/controller.js"></script>
     <script>
       // Initialize the application when DOM is loaded
       document.addEventListener('DOMContentLoaded', () => {
         new OverviewController();
+
+        // Show info modal for first-time visitors
+        if( ! localStorage.getItem('infoModalShown')) {
+          const infoModal = new bootstrap.Modal( document.getElementById('infoModal'));
+          infoModal.show();
+          localStorage.setItem('infoModalShown', 'true');
+        }
       });
     </script>
   
