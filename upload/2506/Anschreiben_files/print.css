@@ -1,0 +1,132 @@
+/* Preserve colors in print (just for print in pdf as sample) */
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  /* Basic print setup */
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+  
+  /* Page container adjustments for print */
+  .page-container {
+    display: block;
+    margin: 0;
+    padding: 0;
+    max-width: none;
+  }
+  
+  /* Page setup for print */
+  .page {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    page-break-after: always;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header and footer remain visible on each page */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  
+  /* Main content adjustments to avoid overlapping with header/footer */
+  main {
+    margin-top: var(--header-height);
+    margin-bottom: var(--footer-height);
+    padding: var(--content-spacing);
+  }
+  
+  /* Ensure proper page breaks */
+  p {
+    page-break-inside: avoid;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+  
+  img {
+    page-break-inside: avoid;
+  }
+    
+  /* Add page numbers through CSS */
+  @page {
+    @bottom-right {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Poppins', sans-serif;
+      font-size: 9pt;
+    }
+  }
+  
+  /* Color preservation for specific elements */
+  /* Header elements in white */
+  .logo, 
+  .personal-brand h1,
+  .personal-brand h2,
+  .footer-decoration {
+    color: white !important;
+  }
+  
+  /* Content elements in primary color */
+  .date,
+  .subject h3,
+  .signature,
+  .attachments h4 {
+    color: var(--primary-color) !important;
+  }
+  
+  /* Ensure contact icons are visible */
+  .contact-item .icon i {
+    color: var(--primary-color) !important;
+  }
+
+  .contact-grid,
+  .attachments {
+    background-color: var(--light-color) !important;
+  }
+
+  .footer-decoration {
+    background: linear-gradient(135deg, var(--gradient-end), var(--gradient-start)) !important;
+  }
+
+  .logo {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+  }
+
+  a {
+    color: var(--primary-color) !important;
+  }
+
+  .footer-decoration,
+  .footer-decoration a,
+  .footer-decoration span {
+    color: white !important;
+  }
+}

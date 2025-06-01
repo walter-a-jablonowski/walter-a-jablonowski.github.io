@@ -1,0 +1,54 @@
+.form-container {
+  margin: 5px auto;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+.form-layout {
+  display: flex;
+  gap: 20px;
+}
+.form-column {
+  flex: 1;
+}
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 10px;
+}
+
+/* Special alignment for groups containing textareas */
+.textarea-group {
+  align-items: flex-start;
+}
+
+.form-group label {
+  width: 120px;
+  text-align: right;
+  flex-shrink: 0;
+}
+.form-group input, .form-group textarea {
+  flex: 1;
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.form-group textarea {
+  font-size: 15px;
+  line-height: 1.4;
+  font-family: 'Consolas', monospace;
+  padding: 10px;
+}
+.submit-btn {
+  background: #007bff;
+  color: white;
+  padding: 6px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 130px;
+  margin-top: 10px;
+}
+.submit-btn:hover {
+  background: #0056b3;
+}
