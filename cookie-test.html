@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie Consent Test</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      color: #333;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ff6b00;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+    
+    .btn-outline {
+      background-color: transparent;
+      color: #ff6b00;
+      border: 1px solid #ff6b00;
+    }
+    
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      z-index: 9999;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .cookie-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .cookie-content p {
+      margin: 0;
+      padding-right: 20px;
+    }
+    
+    .cookie-buttons {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .status {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #f0f0f0;
+      border-radius: 4px;
+    }
+    
+    .test-button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Cookie Consent Test Page</h1>
+    <p>This is a standalone test page to diagnose cookie consent issues on GitHub Pages.</p>
+    
+    <div class="status">
+      <h3>Status:</h3>
+      <div id="status-output">Checking...</div>
+    </div>
+    
+    <div class="test-button">
+      <button id="test-localstorage" class="btn">Test localStorage</button>
+      <button id="reset-consent" class="btn btn-outline">Reset Consent</button>
+    </div>
+  </div>
+  
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>This website uses cookies to ensure you get the best experience on our website.</p>
+      <div class="cookie-buttons">
+        <button id="accept-cookies" class="btn">Accept</button>
+        <button id="decline-cookies" class="btn btn-outline">Decline</button>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // Status output element
+    const statusOutput = document.getElementById('status-output');
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptButton = document.getElementById('accept-cookies');
+    const declineButton = document.getElementById('decline-cookies');
+    const testButton = document.getElementById('test-localstorage');
+    const resetButton = document.getElementById('reset-consent');
+    
+    // Update status
+    function updateStatus(message) {
+      statusOutput.innerHTML += `<p>${message}</p>`;
+    }
+    
+    // Test localStorage
+    function testLocalStorage() {
+      try {
+        localStorage.setItem('testStorage', 'test');
+        const testValue = localStorage.getItem('testStorage');
+        localStorage.removeItem('testStorage');
+        
+        if (testValue === 'test') {
+          updateStatus('✅ localStorage is working correctly');
+          return true;
+        } else {
+          updateStatus('❌ localStorage test failed: value mismatch');
+          return false;
+        }
+      } catch (e) {
+        updateStatus(`❌ localStorage test failed with error: ${e.message}`);
+        return false;
+      }
+    }
+    
+    // Check cookie consent
+    function checkCookieConsent() {
+      try {
+        const cookieConsent = localStorage.getItem('cookieConsent');
+        updateStatus(`Current cookie consent value: ${cookieConsent || 'null'}`);
+        
+        if (cookieConsent === null) {
+          cookieBanner.style.display = 'block';
+          updateStatus('Cookie banner should be visible (no consent set)');
+        } else {
+          cookieBanner.style.display = 'none';
+          updateStatus(`Cookie banner hidden (consent is set to "${cookieConsent}")`);
+        }
+      } catch (e) {
+        updateStatus(`Error checking cookie consent: ${e.message}`);
+      }
+    }
+    
+    // Initialize
+    function init() {
+      updateStatus('Test page loaded');
+      updateStatus(`Running on: ${window.location.hostname}`);
+      updateStatus(`Is GitHub Pages: ${window.location.hostname.includes('github.io')}`);
+      
+      // Test localStorage
+      const localStorageWorks = testLocalStorage();
+      
+      if (localStorageWorks) {
+        // Check cookie consent
+        checkCookieConsent();
+        
+        // Add event listeners
+        if (acceptButton) {
+          acceptButton.addEventListener('click', function() {
+            updateStatus('Accept button clicked');
+            try {
+              localStorage.setItem('cookieConsent', 'accepted');
+              updateStatus('Consent saved as "accepted"');
+              cookieBanner.style.display = 'none';
+            } catch (e) {
+              updateStatus(`Error saving consent: ${e.message}`);
+            }
+          });
+        } else {
+          updateStatus('❌ Accept button not found');
+        }
+        
+        if (declineButton) {
+          declineButton.addEventListener('click', function() {
+            updateStatus('Decline button clicked');
+            try {
+              localStorage.setItem('cookieConsent', 'declined');
+              updateStatus('Consent saved as "declined"');
+              cookieBanner.style.display = 'none';
+              // In a real scenario, you would redirect here
+              updateStatus('Would redirect to terms_declined.html in the main site');
+            } catch (e) {
+              updateStatus(`Error saving consent: ${e.message}`);
+            }
+          });
+        } else {
+          updateStatus('❌ Decline button not found');
+        }
+        
+        // Test button
+        if (testButton) {
+          testButton.addEventListener('click', function() {
+            updateStatus('--- Running localStorage test again ---');
+            testLocalStorage();
+            checkCookieConsent();
+          });
+        }
+        
+        // Reset button
+        if (resetButton) {
+          resetButton.addEventListener('click', function() {
+            updateStatus('Resetting cookie consent');
+            try {
+              localStorage.removeItem('cookieConsent');
+              checkCookieConsent();
+            } catch (e) {
+              updateStatus(`Error resetting consent: ${e.message}`);
+            }
+          });
+        }
+      } else {
+        updateStatus('⚠️ Cannot proceed with cookie consent testing due to localStorage issues');
+      }
+      
+      // Check computed styles
+      if (cookieBanner) {
+        const computedStyle = window.getComputedStyle(cookieBanner);
+        updateStatus(`Cookie banner computed style - display: ${computedStyle.display}, visibility: ${computedStyle.visibility}, z-index: ${computedStyle.zIndex}`);
+      }
+    }
+    
+    // Run when DOM is loaded
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>

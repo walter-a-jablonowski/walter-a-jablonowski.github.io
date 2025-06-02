@@ -36,18 +36,25 @@
     }
   }
   
-  // Force cookie banner visibility
+  // Force cookie banner visibility with important inline styles
   function forceCookieBanner() {
     const banner = document.getElementById('cookie-consent');
     if (banner) {
-      console.log('Force showing cookie banner');
-      banner.style.display = 'block';
+      console.log('Force showing cookie banner with !important styles');
+      
+      // Apply critical inline styles to force visibility
+      banner.setAttribute('style', 'display: block !important; visibility: visible !important; opacity: 1 !important; z-index: 99999 !important; position: fixed !important; bottom: 0 !important; left: 0 !important; width: 100% !important;');
+      
+      // Log the computed style to verify visibility
+      const computedStyle = window.getComputedStyle(banner);
+      console.log('Banner computed style - display:', computedStyle.display, 'visibility:', computedStyle.visibility, 'opacity:', computedStyle.opacity);
       
       // Add event listeners directly
       const acceptButton = document.getElementById('accept-cookies');
       const declineButton = document.getElementById('decline-cookies');
       
       if (acceptButton) {
+        console.log('Accept button found, adding listener');
         acceptButton.addEventListener('click', function() {
           try {
             localStorage.setItem('cookieConsent', 'accepted');
@@ -58,9 +65,12 @@
             banner.style.display = 'none';
           }
         });
+      } else {
+        console.error('Accept button not found');
       }
       
       if (declineButton) {
+        console.log('Decline button found, adding listener');
         declineButton.addEventListener('click', function() {
           try {
             localStorage.setItem('cookieConsent', 'declined');
@@ -73,6 +83,8 @@
             window.location.href = 'terms_declined.html';
           }
         });
+      } else {
+        console.error('Decline button not found');
       }
     } else {
       console.error('Cookie banner element not found');
