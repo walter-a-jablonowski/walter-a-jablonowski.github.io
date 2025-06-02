@@ -385,12 +385,13 @@ class WebsiteController
       console.error('Error getting cookie consent:', e);
     }
     
-    if( cookieConsent === null && this.cookieBanner ) {
-      // Show the cookie banner if no choice has been made
-      this.cookieBanner.style.display = 'block';
-      console.log('Cookie banner should be visible now');
+    // Important: Since we changed the CSS to show by default,
+    // we need to hide it if consent is already set
+    if( cookieConsent !== null && this.cookieBanner ) {
+      this.cookieBanner.style.display = 'none';
+      console.log('Cookie banner hidden - consent already set');
     } else {
-      console.log('Cookie banner not shown, consent already set or banner element missing');
+      console.log('Cookie banner visible - no consent set yet');
     }
     
     // Handle accept button click

@@ -1706,7 +1706,7 @@ footer {
   color: var(--white);
   padding: var(--spacing-lg);
   z-index: 9999;
-  display: none;
+  display: block; /* Show by default */
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
 }
 
