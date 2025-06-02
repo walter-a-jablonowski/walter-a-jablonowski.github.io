@@ -52,23 +52,31 @@
         <div class="cookie-buttons" style="display: flex; gap: ${spacingMd}">
           <button id="accept-cookies-alt" class="btn" style="
             display: inline-block;
-            padding: 8px 16px;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius-pill, 30px);
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition-normal, 0.3s ease);
+            border: none;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
             background-color: ${primaryColor};
             color: ${whiteColor};
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: inherit;
           ">Accept</button>
           <button id="decline-cookies-alt" class="btn btn-outline" style="
             display: inline-block;
-            padding: 8px 16px;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius-pill, 30px);
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition-normal, 0.3s ease);
+            font-size: 1rem;
+            letter-spacing: 0.5px;
             background-color: transparent;
             color: ${primaryColor};
-            border: 1px solid ${primaryColor};
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: inherit;
+            border: 2px solid ${primaryColor};
           ">Decline</button>
         </div>
       </div>
