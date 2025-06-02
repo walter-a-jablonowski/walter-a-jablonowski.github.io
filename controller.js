@@ -381,8 +381,10 @@ class WebsiteController
     // Handle decline button click
     if( this.declineCookieButton ) {
       this.declineCookieButton.addEventListener('click', () => {
-        localStorage.setItem('cookieConsent', 'declined');
+        // localStorage.setItem('cookieConsent', 'declined');
         this.cookieBanner.style.display = 'none';
+        // Redirect to terms declined page
+        window.location.href = 'terms_declined.html';
       });
     }
   }
@@ -424,12 +426,14 @@ class WebsiteController
     if( isIOS )
       document.documentElement.classList.add('ios');
     
+    // TASK: removed, was adding padding to all links (AI says "common for mobile-friendly")
+    // 
     // Adjust touch targets for better mobile experience
-    const touchTargets = document.querySelectorAll('a:not(.logo a), button:not(.logo button), .nav-link, .btn');
-    touchTargets.forEach( target => {
-      if( window.getComputedStyle(target).getPropertyValue('padding') === '0px')
-        target.style.padding = '8px';
-    });
+    // const touchTargets = document.querySelectorAll('a:not(.logo a), button:not(.logo button), .nav-link, .btn');
+    // touchTargets.forEach( target => {
+    //   if( window.getComputedStyle(target).getPropertyValue('padding') === '0px')
+    //     target.style.padding = '8px';
+    // });
   }
   
   /**
