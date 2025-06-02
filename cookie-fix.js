@@ -1,6 +1,7 @@
 /**
  * Alternative cookie consent implementation for GitHub Pages
- * This script creates and injects the cookie banner directly into the DOM
+ * This script exactly matches the original implementation but uses direct DOM injection
+ * to ensure visibility on GitHub Pages
  */
 (function() {
   // Wait for DOM to be fully loaded
@@ -25,92 +26,136 @@
     
     console.log('No consent found, creating banner');
     
-    // Create banner element
+    // Get CSS variables from the page to match styles exactly
+    const computedStyle = getComputedStyle(document.documentElement);
+    const darkColor = computedStyle.getPropertyValue('--dark') || '#333';
+    const whiteColor = computedStyle.getPropertyValue('--white') || '#fff';
+    const primaryColor = computedStyle.getPropertyValue('--primary') || '#ff6b00';
+    const spacingLg = computedStyle.getPropertyValue('--spacing-lg') || '24px';
+    const spacingMd = computedStyle.getPropertyValue('--spacing-md') || '16px';
+    
+    // Create banner element that exactly matches the original HTML structure
     const banner = document.createElement('div');
     banner.id = 'cookie-consent-alt';
     banner.innerHTML = `
-      <div style="
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        color: white;
-        padding: 20px;
-        z-index: 99999;
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-        font-family: 'Roboto', sans-serif;
+      <div class="cookie-content" style="
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       ">
-        <div style="
-          max-width: 1200px;
-          margin: 0 auto;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          flex-wrap: wrap;
-        ">
-          <p style="margin: 0; padding-right: 20px;">
-            This website uses cookies to ensure you get the best experience on our website. 
-            By continuing to use this site, you consent to the use of cookies.
-          </p>
-          <div style="display: flex; gap: 10px; margin-top: 10px;">
-            <button id="accept-cookies-alt" style="
-              padding: 8px 16px;
-              background-color: #ff6b00;
-              color: white;
-              border: none;
-              border-radius: 4px;
-              cursor: pointer;
-              font-family: inherit;
-            ">Accept</button>
-            <button id="decline-cookies-alt" style="
-              padding: 8px 16px;
-              background-color: transparent;
-              color: #ff6b00;
-              border: 1px solid #ff6b00;
-              border-radius: 4px;
-              cursor: pointer;
-              font-family: inherit;
-            ">Decline</button>
-          </div>
+        <p style="margin: 0; padding-right: ${spacingLg}">
+          This website uses cookies to ensure you get the best experience on our website. 
+          By continuing to use this site, you consent to the use of cookies.
+        </p>
+        <div class="cookie-buttons" style="display: flex; gap: ${spacingMd}">
+          <button id="accept-cookies-alt" class="btn" style="
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: ${primaryColor};
+            color: ${whiteColor};
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+          ">Accept</button>
+          <button id="decline-cookies-alt" class="btn btn-outline" style="
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: transparent;
+            color: ${primaryColor};
+            border: 1px solid ${primaryColor};
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+          ">Decline</button>
         </div>
       </div>
     `;
+    
+    // Apply styles to match the original banner
+    banner.style.position = 'fixed';
+    banner.style.bottom = '0';
+    banner.style.left = '0';
+    banner.style.width = '100%';
+    banner.style.backgroundColor = darkColor;
+    banner.style.color = whiteColor;
+    banner.style.padding = spacingLg;
+    banner.style.zIndex = '9999';
+    banner.style.boxShadow = '0 -2px 10px rgba(0, 0, 0, 0.2)';
+    banner.style.display = 'block';
+    
+    // Add responsive styles for mobile
+    const mediaQuery768 = window.matchMedia('(max-width: 768px)');
+    const mediaQuery480 = window.matchMedia('(max-width: 480px)');
+    
+    function applyResponsiveStyles() {
+      const cookieContent = banner.querySelector('.cookie-content');
+      const cookieContentP = banner.querySelector('.cookie-content p');
+      const cookieButtons = banner.querySelector('.cookie-buttons');
+      const buttons = banner.querySelectorAll('.cookie-buttons .btn');
+      
+      if (mediaQuery768.matches) {
+        cookieContent.style.flexDirection = 'column';
+        cookieContent.style.textAlign = 'center';
+        cookieContentP.style.marginBottom = spacingMd;
+        cookieContentP.style.paddingRight = '0';
+        cookieButtons.style.width = '100%';
+        cookieButtons.style.justifyContent = 'center';
+        
+        buttons.forEach(btn => {
+          btn.style.flex = '1';
+          btn.style.maxWidth = '150px';
+        });
+      }
+      
+      if (mediaQuery480.matches) {
+        banner.style.padding = spacingMd;
+        cookieButtons.style.flexDirection = 'column';
+        cookieButtons.style.width = '100%';
+        cookieButtons.style.maxWidth = '200px';
+        cookieButtons.style.margin = '0 auto';
+        
+        buttons.forEach(btn => {
+          btn.style.maxWidth = 'none';
+          btn.style.marginBottom = computedStyle.getPropertyValue('--spacing-xs') || '8px';
+        });
+      }
+    }
+    
+    // Apply responsive styles initially
+    mediaQuery768.addListener(applyResponsiveStyles);
+    mediaQuery480.addListener(applyResponsiveStyles);
     
     // Append to body
     document.body.appendChild(banner);
     console.log('Banner appended to body');
     
+    // Apply responsive styles after appending
+    applyResponsiveStyles();
+    
     // Get buttons
     const acceptButton = document.getElementById('accept-cookies-alt');
     const declineButton = document.getElementById('decline-cookies-alt');
     
-    // Add event listeners
+    // Add event listeners to match original functionality exactly
     if (acceptButton) {
       acceptButton.addEventListener('click', function() {
         console.log('Accept clicked');
-        try {
-          localStorage.setItem('cookieConsent', 'accepted');
-          banner.remove();
-        } catch (e) {
-          console.error('Error saving consent:', e);
-          banner.remove();
-        }
+        localStorage.setItem('cookieConsent', 'accepted');
+        banner.style.display = 'none';
+        // Here you would initialize analytics or misc cookie-dependent features
       });
     }
     
     if (declineButton) {
       declineButton.addEventListener('click', function() {
         console.log('Decline clicked');
-        try {
-          localStorage.setItem('cookieConsent', 'declined');
-          banner.remove();
-          window.location.href = 'terms_declined.html';
-        } catch (e) {
-          console.error('Error saving consent:', e);
-          banner.remove();
-          window.location.href = 'terms_declined.html';
-        }
+        // Note: Not setting localStorage for declined, matching original implementation
+        banner.style.display = 'none';
+        // Redirect to terms declined page
+        window.location.href = 'terms_declined.html';
       });
     }
   });
