@@ -360,69 +360,31 @@ class WebsiteController
    */
   initCookieConsent()
   {
-    // GitHub Pages debugging
-    console.log('Cookie consent init started');
-    console.log('Cookie banner element:', this.cookieBanner);
-    console.log('Accept button:', this.acceptCookieButton);
-    console.log('Decline button:', this.declineCookieButton);
-    
-    // Test localStorage access
-    try {
-      localStorage.setItem('testStorage', 'test');
-      const testValue = localStorage.getItem('testStorage');
-      console.log('localStorage test:', testValue === 'test' ? 'successful' : 'failed');
-      localStorage.removeItem('testStorage');
-    } catch(e) {
-      console.error('localStorage test error:', e);
-    }
-    
     // Check if user has already made a choice
-    let cookieConsent = null;
-    try {
-      cookieConsent = localStorage.getItem('cookieConsent');
-      console.log('Current cookie consent value:', cookieConsent);
-    } catch(e) {
-      console.error('Error getting cookie consent:', e);
-    }
+    const cookieConsent = localStorage.getItem('cookieConsent');
     
-    // Important: Since we changed the CSS to show by default,
-    // we need to hide it if consent is already set
-    if( cookieConsent !== null && this.cookieBanner ) {
-      this.cookieBanner.style.display = 'none';
-      console.log('Cookie banner hidden - consent already set');
-    } else {
-      console.log('Cookie banner visible - no consent set yet');
+    if( cookieConsent === null && this.cookieBanner ) {
+      // Show the cookie banner if no choice has been made
+      this.cookieBanner.style.display = 'block';
     }
     
     // Handle accept button click
     if( this.acceptCookieButton ) {
       this.acceptCookieButton.addEventListener('click', () => {
-        console.log('Accept button clicked');
-        try {
-          localStorage.setItem('cookieConsent', 'accepted');
-          console.log('Consent saved as: accepted');
-          this.cookieBanner.style.display = 'none';
-          
-          // Here you would initialize analytics or misc cookie-dependent features
-        } catch(e) {
-          console.error('Error saving accepted consent:', e);
-        }
+        localStorage.setItem('cookieConsent', 'accepted');
+        this.cookieBanner.style.display = 'none';
+        
+        // Here you would initialize analytics or misc cookie-dependent features
       });
     }
     
     // Handle decline button click
     if( this.declineCookieButton ) {
       this.declineCookieButton.addEventListener('click', () => {
-        console.log('Decline button clicked');
-        try {
-          localStorage.setItem('cookieConsent', 'declined');
-          console.log('Consent saved as: declined');
-          this.cookieBanner.style.display = 'none';
-          // Redirect to terms declined page
-          window.location.href = 'terms_declined.html';
-        } catch(e) {
-          console.error('Error saving declined consent:', e);
-        }
+        // localStorage.setItem('cookieConsent', 'declined');
+        this.cookieBanner.style.display = 'none';
+        // Redirect to terms declined page
+        window.location.href = 'terms_declined.html';
       });
     }
   }
