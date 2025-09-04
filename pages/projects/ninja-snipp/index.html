@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NinjaSnipp project details">
+  <title>NinjaSnipp | Project Detail</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
+  <link rel="manifest" href="../../../site.webmanifest">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Project detail page specific styles */
+    .project-detail {
+      padding: var(--spacing-xxl) 0;
+      background-color: var(--dark);
+      color: var(--white);
+      position: relative;
+    }
+    .project-detail::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(14,14,14,0.95) 0%, rgba(26,26,26,0.85) 100%);
+      z-index: 1;
+    }
+    .project-detail .container { position: relative; z-index: 2; }
+
+    .project-header {
+      display: block;
+    }
+    .project-media {
+      flex: 1 1 340px;
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--border-radius-md);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .project-media img { width: 100%; height: 100%; object-fit: cover; }
+
+    .project-title {
+      flex: 2 1 460px;
+    }
+    .project-title h2 { color: var(--white); margin-top: 0.5rem; }
+    .project-title .underline { margin-top: .5rem; }
+
+    /* Typography for converted markdown */
+    .intro-text {
+      font-size: 1.2rem;
+      color: var(--lighter-gray);
+      line-height: 1.8;
+      font-weight: 300;
+      margin-left: 0;
+    }
+    .content { color: var(--lighter-gray); line-height: 1.75; }
+    .content h2, .content h3, .content h4 { color: var(--white); margin-top: var(--spacing-lg); }
+    .content p { margin: 0 0 var(--spacing-md); }
+    .content ul { padding-left: 1.25rem; margin: 0 0 var(--spacing-md); }
+    .content li { margin: .35rem 0; }
+    .content a { color: var(--primary); }
+    .content blockquote {
+      margin: var(--spacing-md) 0;
+      padding: var(--spacing-md);
+      border-left: 4px solid var(--primary);
+      background: rgba(255,255,255,0.04);
+      border-radius: var(--border-radius-sm);
+    }
+    .content pre {
+      background: #0f0f0f;
+      color: #eee;
+      padding: var(--spacing-md);
+      border-radius: var(--border-radius-sm);
+      overflow: auto;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .content code { font-family: var(--font-code); }
+
+    @media (max-width: 768px) {
+      .project-header { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="../../../index.html#hero" class="nav-link">Home</a></li>
+          <li><a href="../../../index.html#about" class="nav-link">About</a></li>
+          <li><a href="../../../index.html#services" class="nav-link">Services</a></li>
+          <li><a href="../../../index.html#skills" class="nav-link">Skills</a></li>
+          <li><a href="../../../index.html#proj" class="nav-link">Projects</a></li>
+          <li><a href="../../../index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link" title="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="project-detail">
+    <div class="container">
+      <div class="project-header">
+        <div class="project-title">
+          <div class="section-header">
+            <h2>NinjaSnipp</h2>
+            <div class="underline"></div>
+          </div>
+          <p class="intro-text" style="margin-left: 0;">
+            A snippet manager app produced <strong>fast and cost-efficient</strong> with AI
+          </p>
+          <ul>
+            <li>Effort: with AI just a few afternoons as a side project</li>
+            <li>Manual development effort would be: easily 2-3 months at least (much code: <a href="https://github.com/walter-a-jablonowski/NinjaSnipp/blob/main/PHP%20manager%20app/controller.js" target="_blank">see controller.js</a>)</li>
+          </ul>
+          <p>
+            <b>State:</b> All basic features implemented, standards to be added (login), advanced features 
+          </p>
+          <p>
+            View project: <a href="https://github.com/walter-a-jablonowski/NinjaSnipp" target="_blank">github</a>
+          </p>
+        </div>
+        <div class="project-media">
+          <img src="img.png" alt="NinjaSnipp.png">
+        </div>
+      </div>
+
+      <div class="content">
+        <!-- Converted from pages/projects/NinjaSnipp.md without altering content text -->
+
+        <h3>Development process</h3>
+        <p><b>Tools used:</b></p>
+        <ul>
+          <li>Windsurf IDE</li>
+          <li>Claude Sonnet, GPT-5, Grok Code Fast 1</li>
+        </ul>
+
+        <h4>Initial prompt</h4>
+        <p>Development was started with an initial <a href="https://github.com/walter-a-jablonowski/NinjaSnipp/blob/main/PHP%20manager%20app/ai.md" target="_blank">prompt</a> that includes the most important information. The AI did an initial version of the app.</p>
+
+        <h4>Fine tuning</h4>
+        <p>Then a series of prompts was used to fix/finish detail features of the app. Code written entirely by AI with human oversight.</p>
+        <p><b>Result commits:</b> <a href="https://github.com/walter-a-jablonowski/NinjaSnipp/commits/main" target="_blank">see github</a></p>
+
+        <p><b>Sample prompts</b> (latest first):</p>
+        <ul>
+          <li>
+            ...
+          </li>
+          <li>[ x ] use modal ins of simple dlg
+            <blockquote>
+              <p>When I press #duplicateSnippetBtn or #deleteSnippetBtn simple browser input dialogs are used. Instead use bootstrap modal.</p>
+            </blockquote>
+            <blockquote>
+              <p>This didn't look right. Add new modals similar to these existing ones @index.php#L217-272</p>
+              <p>Then you must alter the currently used js code: @controller.js#L442-463 @controller.js#L420-441</p>
+            </blockquote>
+          </li>
+          <li>[ x ] fix search
+            <blockquote>
+              <p>Looks like using the #searchInput doen't work correctly.</p>
+              <p>- Search in the current data folder selected via #dataFolderSelect only</p>
+              <p>- Match file and folder names as well as content from this data folder</p>
+            </blockquote>
+            <blockquote>
+              <p>Looks like results are displayed in #fileList</p>
+              <p>- Currently there are no results displayed searching for "html" (file name) or "form" (content)</p>
+              <p>- Make sure that we can go back to the previous list using #backBtn</p>
+            </blockquote>
+          </li>
+          <li>[ x ] also allow plain text edits before copy
+            <ul>
+              <li>simple solution: replace use of this.renderedText with a preview text below #inlineSnippet again</li>
+              <li>make text elements in #inlineSnippet editable (convert to spans like the editable fields)</li>
+            </ul>
+            <blockquote>
+              <p>Template currently are rendered like:</p>
+              <pre><code class="language-html">&lt;div id="inlineSnippet" class="inline-snippet"&gt;
+
+  const
+
+  &lt;span class="ph ph-text" contenteditable="true" tabindex="0" data-ph="name" data-default="myArray"&gt;myArray&lt;/span&gt;
+
+...
+
+&lt;/div&gt;</code></pre>
+              <p>Strings that are no placeholders like "const" are just text. I need these editable as well (with no background color). Maybe it would be a good idea to wrap those static texts in a span. Do you have a better idea?</p>
+            </blockquote>
+          </li>
+          <li>[ x ] ins of 2 menus see offcanvas-demo.html
+            <ul>
+              <li>[ - ] maybe: spacing issue mobile menu, misc stuff</li>
+            </ul>
+            <blockquote>
+              <p>The layout on larger screens is broken. The main element is displayed lower than #sidebarNav instead of beside it. It looks like we are currently using a custom offcanvas implementation.</p>
+              <p>I provided you a sample for a correct offcanvas implementation in offcanvas-demo.html that uses bootstrap 5.3. Edit index.php and replace the current sidebar/offcanvas implementation with a plain bootstrap offcanvas implementation. Overall make it state of the art bootstrap code and make it work on all devices. Then review the stylesheet (and if relevant controller.js) and update it, e.g. remove redundant code.</p>
+            </blockquote>
+          </li>
+          <li>[ x ] fix layout issue on large screens
+            <blockquote>
+              <p>The layout on larger scrreens is broken. The main element is displayed lower than #sidebarNav instead of beside it. The layout on smaller screens and smartphone looks good.</p>
+              <p>Design: While on larger screens the sidebar is always visible it must slide in as an overlay from left to right on small screens and smartphone.</p>
+              <p>Review the tag structure and bootstrap classes for the sidebar/menu used in index.php. I assume that something there isn't as it must be. You may alter all neccessary html elements and classes. Overall make it state of the art bootstrap code and make it work on all devices. Then review the stylesheet.</p>
+            </blockquote>
+          </li>
+          <li>[ x ] limit recent to current data folder
+            <blockquote>
+              <p>recent_snippets.json saves a list of recent files for all data folders (selectable in #dataFolderSelect.). Data folders are defined here: @config.yml#L10-12</p>
+              <p>This isn't right. Instead it must save one list per data folder. We limit recent files list to current data folder. Use the key from config.yml as parent key in the json file.</p>
+            </blockquote>
+          </li>
+          <li>[ x ] `includedSameIndent: true`
+            <blockquote>
+              <p>I have added a setting includedSameIndent to config. When this is true try to apply the current indentation if the include placeholder to all lines if the included content.</p>
+            </blockquote>
+          </li>
+          <li>[ - ] maybe trim included</li>
+          <li>[ x ] fix include
+            <blockquote>
+              <p>The include syntax `{{ include: "error-handling" }}` isn't rendered correctly @function-template.yml#L15-16 in #inlineSnippet. The string "error-handling" is the file name of the snippet to include for the data folder currently selected in #dataFolderSelect.</p>
+            </blockquote>
+            <blockquote>
+              <p>If there are further includes in the included file these must be resolved as well (multiple levels). When there are placeholders (`{placholder}`, `{placholder=default}`), and so on) in te included file in #inlineSnippet these must be editable in the same way as the placeholders in the main file (user can fill out).</p>
+            </blockquote>
+          </li>
+          <li>[ x ] file system include feature `11 INCLUDE error-handling`
+            <blockquote>
+              <p>I have added a demo file `11 INCLUDE error-handling` with no extension and no content. When you read which data files there are we need to resolve this entry. It wirks similar to a soft link: "INCLUDE" upper case identifies that it is an include entry instead of a snippet. There may be any string before INCLUDE. The string behind it is the name of a file of a folder from the currently selected data folder (e.g. demo_data_1), which  may also be in a sub folder of the data folder. Whenever we read snippets we need to replace the INCLUDE entry with the referenced file or with the folder (and all of its sub folders).</p>
+            </blockquote>
+          </li>
+          <li>[ x ] layout
+            <blockquote>
+              <p>Currently in this app the smartphone layout when I click navbar-toggler-icon the sidebar slides in from top to button. Instead is must slide in from left to right as an overlay.</p>
+              <p>Prefer boostrap classes for this, update the existing styles as needed. You may alter the sidebarNav, but make sure that its content stays as it yurrently is.</p>
+            </blockquote>
+          </li>
+          <li>[ x ] fill vars in rendered with no form just by tab
+            <ul>
+              <li>[ x ] prompt</li>
+            </ul>
+            <blockquote>
+              <p>Currently we use a form for filling in the placeholders in the rendered snippet. Instead there must be a single element that show the snippet content with included snippets already added. Then the user can tab over the remaining placeholders and fill in the values.</p>
+              <p>- When a placholder appears multiple times, all of these will be replaced by the value when the user enters it once</p>
+              <p>- For choice like `{placholder=one|two|three}` we need a popup</p>
+              <p>- If a user use tabs over a placeholder without entering a value, use the default value if set `{placholder=default}`</p>
+            </blockquote>
+            <ul>
+              <li>[ - ] debug this, still has some problems</li>
+            </ul>
+          </li>
+          <li>
+            ...
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-links">
+          <a href="../../../privacy.html">Privacy</a>
+          <a href="../../../imprint.html">Imprint</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>powered by &copy; Walter A. Jablonowski 2019-2025. Made with AI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="../../../controller.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      new WebsiteController();
+    });
+  </script>
+</body>
+</html>
