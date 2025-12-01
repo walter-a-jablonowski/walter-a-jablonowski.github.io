@@ -1,0 +1,234 @@
+/* Voice Agent Styles */
+
+.voice-agent-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+  min-height: 400px;
+}
+
+.voice-agent-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.voice-agent-subtitle {
+  font-size: 1rem;
+  color: var(--light-gray);
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  max-width: 400px;
+}
+
+/* Microphone Button */
+.voice-agent-mic {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent-red));
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+  margin-bottom: var(--spacing-lg);
+}
+
+.voice-agent-mic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px rgba(255, 107, 53, 0.4);
+}
+
+.voice-agent-mic:active {
+  transform: scale(0.95);
+}
+
+.voice-agent-mic i {
+  font-size: 3rem;
+  color: var(--white);
+}
+
+/* Pulse animation for listening state */
+.voice-agent-mic.listening {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+  }
+  50% {
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6),
+                0 0 0 15px rgba(255, 107, 53, 0.1),
+                0 0 0 30px rgba(255, 107, 53, 0.05);
+  }
+}
+
+/* Speaking state */
+.voice-agent-mic.speaking {
+  background: linear-gradient(135deg, var(--accent-gold), var(--primary));
+  animation: speaking 0.8s ease-in-out infinite;
+}
+
+@keyframes speaking {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+/* Error state */
+.voice-agent-mic.error {
+  background: linear-gradient(135deg, var(--accent-red), #CC0000);
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+/* Status indicator */
+.voice-agent-status {
+  font-size: 1rem;
+  color: var(--dark);
+  margin-bottom: var(--spacing-md);
+  min-height: 24px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.voice-agent-status.listening {
+  color: var(--primary);
+}
+
+.voice-agent-status.speaking {
+  color: var(--accent-gold);
+}
+
+.voice-agent-status.error {
+  color: var(--accent-red);
+}
+
+/* Example question */
+.voice-agent-example {
+  font-size: 0.875rem;
+  color: var(--light-gray);
+  font-style: italic;
+  margin-top: var(--spacing-sm);
+  text-align: center;
+}
+
+/* Loading indicator */
+.voice-agent-loading {
+  display: none;
+  margin-top: var(--spacing-md);
+}
+
+.voice-agent-loading.active {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--light-gray);
+}
+
+.loading-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.loading-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  animation: loadingDot 1.4s ease-in-out infinite;
+}
+
+.loading-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes loadingDot {
+  0%, 80%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Error message */
+.voice-agent-error {
+  display: none;
+  padding: var(--spacing-md);
+  background-color: rgba(255, 0, 0, 0.1);
+  border: 1px solid var(--accent-red);
+  border-radius: var(--border-radius-sm);
+  color: var(--accent-red);
+  margin-top: var(--spacing-md);
+  max-width: 400px;
+  text-align: center;
+}
+
+.voice-agent-error.active {
+  display: block;
+}
+
+/* Fallback message for unsupported browsers */
+.voice-agent-fallback {
+  display: none;
+  padding: var(--spacing-lg);
+  background-color: rgba(255, 107, 53, 0.1);
+  border: 1px solid var(--primary);
+  border-radius: var(--border-radius-md);
+  color: var(--dark);
+  text-align: center;
+  max-width: 400px;
+}
+
+.voice-agent-fallback.active {
+  display: block;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .voice-agent-container {
+    min-height: 300px;
+    padding: var(--spacing-md);
+  }
+  
+  .voice-agent-mic {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .voice-agent-mic i {
+    font-size: 2.5rem;
+  }
+  
+  .voice-agent-title {
+    font-size: 1.25rem;
+  }
+  
+  .voice-agent-subtitle {
+    font-size: 0.9rem;
+  }
+}

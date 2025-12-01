@@ -347,7 +347,7 @@ class WebsiteController
   /**
    * Validate email format
    * @param {string} email - Email to validate
-   * @return {boolean} True if valid, false otherwise
+   * @return {boolean} True if valid or false
    */
   isValidEmail(email)
   {

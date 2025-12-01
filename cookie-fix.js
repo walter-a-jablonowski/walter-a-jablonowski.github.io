@@ -20,7 +20,7 @@
     
     // If consent is already set, don't show the banner
     if (hasConsent()) {
-      console.log('Consent already set, not showing banner');
+      console.log('Consent already set, showing no banner');
       return;
     }
     
@@ -160,7 +160,7 @@
     if (declineButton) {
       declineButton.addEventListener('click', function() {
         console.log('Decline clicked');
-        // Note: Not setting localStorage for declined, matching original implementation
+        // No localStorage for declined, matching original implementation
         banner.style.display = 'none';
         // Redirect to terms declined page
         window.location.href = 'terms_declined.html';

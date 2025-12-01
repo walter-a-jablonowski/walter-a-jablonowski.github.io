@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="How Google Agent Dev Kit, Coinbase x402 Bazaar, and Agent Payments Pro (AP2) fit together to build, discover, and monetize autonomous agents.">
+  <meta name="keywords" content="Blog, Agents, AI first, Payments, Google Cloud, Coinbase, x402, AP2">
+  <meta name="author" content="Walter A. Jablonowski">
+  <meta property="og:title" content="Autonomous Agents with Google ADK, Coinbase x402, and AP2 - Walter A. Jablonowski">
+  <meta property="og:description" content="A concise overview of the emerging agent stack: build with Google's Agent Dev Kit, distribute via x402 Bazaar, and handle money flows with AP2.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://walter-a-jablonowski.github.io/pages/blog/250918-01-autonomous-agents-ap2-x402.html">
+  <title>Autonomous agents with Google ADK, Coinbase x402, and AP2 | Walter A. Jablonowski</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="manifest" href="../../site.webmanifest">
+  <link rel="stylesheet" href="../../styles.css?v=25113001">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <script src="../../cookie-fix.js?v=25113001"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="../../index.html#hero" class="nav-link">Home</a></li>
+          <li><a href="../../index.html#about" class="nav-link">About</a></li>
+          <li><a href="../../index.html#services" class="nav-link">Services</a></li>
+          <li><a href="../../index.html#skills" class="nav-link">Skills</a></li>
+          <li><a href="../../index.html#proj" class="nav-link">Projects</a></li>
+          <li><a href="../../index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link" title="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <section class="article-header">
+      <div class="container">
+        <h1>Autonomous agents with Google ADK, Coinbase x402, and AP2</h1>
+        <div class="article-meta">
+          <span><i class="far fa-calendar"></i> <time datetime="2025-09-18">September 18, 2025</time></span>
+          <span>|</span>
+          <span><i class="fas fa-tags"></i> <span class="tag">Agents</span><span class="tag alt">AI first</span><span class="tag">Payments</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-content">
+      <div class="container">
+        <div class="article-text">
+          <p>Autonomous agents are quickly getting a practical stack: build agents with Google’s Agent Development Kit (ADK), publish and discover them via Coinbase’s x402 Bazaar, and enable compliant money flows using Agent Payments Pro (AP2). Below is a concise map of what each part does and how they fit together.</p>
+
+          <h2>TL;DR — Key points</h2>
+          <ul>
+            <li><strong>Build:</strong> Google <em>Agent Development Kit</em> offers a quickstart to scaffold tools, memory, and execution for agents on Vertex AI.</li>
+            <li><strong>Discover:</strong> Coinbase <em>x402 Bazaar</em> is an agent/app directory and distribution surface with developer docs and launch guide.</li>
+            <li><strong>Transact:</strong> <em>AP2</em> (Agent Payments Pro) provides primitives for programmatic payments, wallets, and compliance rails.</li>
+            <li><strong>A2A:</strong> Emerging agent‑to‑agent patterns enable agents to call other agents and exchange value or capabilities.</li>
+          </ul>
+
+          <h2>Components at a glance</h2>
+          <h3>Google Agent Development Kit (ADK)</h3>
+          <p>Google’s ADK (Vertex AI) provides scaffolding and runtime support to build agents that call tools, keep state, and orchestrate tasks. The <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/agent-development-kit/quickstart?hl=de" target="_blank" rel="noopener">Quickstart</a> shows how to:</p>
+          <ul>
+            <li>Define tools/functions an agent can invoke</li>
+            <li>Configure memory and planning/execution</li>
+            <li>Run locally or deploy to Google Cloud endpoints</li>
+          </ul>
+
+          <h3>Coinbase x402 and the Bazaar</h3>
+          <p>x402 focuses on agent discovery, distribution, and mini-apps. The <a href="https://www.coinbase.com/de/developer-platform/discover/launches/x402-bazaar" target="_blank" rel="noopener">Bazaar launch</a> and the <a href="https://docs.cdp.coinbase.com/x402/bazaar" target="_blank" rel="noopener">developer docs</a> outline:</p>
+          <ul>
+            <li>How to publish agents or mini‑apps to a marketplace-like directory</li>
+            <li>Discovery metadata and versioning</li>
+            <li>Distribution surfaces and user onboarding</li>
+          </ul>
+
+          <h3>Agent Payments Pro (AP2)</h3>
+          <p>AP2 adds payment primitives for agents: account creation, pay‑ins/pay‑outs, balances, and potentially compliance tooling. Combined with x402, it enables agents to charge for work or pay other agents.</p>
+
+          <h3>A2A (Agent‑to‑Agent)</h3>
+          <p>A2A patterns allow agents to invoke each other’s capabilities (e.g., retrieval, booking, payments). With AP2+x402, A2A can include metered usage and settlement.</p>
+
+          <h2>How they fit together</h2>
+          <ol>
+            <li><strong>Develop</strong> your agent with ADK: tools, memory, execution loop.</li>
+            <li><strong>Distribute</strong> via x402 Bazaar: publish, document, and version your agent.</li>
+            <li><strong>Monetize</strong> with AP2: accept payments, pay collaborators or upstream agents.</li>
+          </ol>
+
+          <h2>Reference workflow (developer)</h2>
+          <ul>
+            <li>Prototype locally using the ADK Quickstart.</li>
+            <li>Add core tools (search, RAG, service APIs) and guardrails.</li>
+            <li>Integrate AP2 for pricing and settlement (per task or subscription).</li>
+            <li>Publish to x402 Bazaar with clear metadata, pricing, and docs.</li>
+            <li>Enable A2A by exposing a simple, stable tool interface.</li>
+          </ul>
+
+          <h2>Risks and open questions</h2>
+          <ul>
+            <li>Compliance and KYC/AML responsibilities when agents move money</li>
+            <li>Trust, safety, and rate‑limiting for A2A invocation chains</li>
+            <li>Vendor lock‑in across cloud runtime vs. distribution/payment rails</li>
+          </ul>
+
+          <h2>Sources</h2>
+          <ul>
+            <li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/agent-development-kit/quickstart?hl=de" target="_blank" rel="noopener">Google Agent Development Kit — Quickstart</a></li>
+            <li><a href="https://www.coinbase.com/de/developer-platform/discover/launches/x402-bazaar" target="_blank" rel="noopener">Coinbase — x402 Bazaar launch</a></li>
+            <li><a href="https://docs.cdp.coinbase.com/x402/bazaar" target="_blank" rel="noopener">Coinbase — x402 Bazaar docs</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/walter-a-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-links">
+          <a href="../../privacy.html">Privacy</a>
+          <a href="../../imprint.html">Imprint</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>powered by &copy; Walter A. Jablonowski 2019-2025. Made with AI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init({ publicKey: "xvNrfCyYGqQD5cuoU" });
+    })();
+  </script>
+  <script src="../../controller.js?v=25113001"></script>
+  <script src="../../lib/map.js?v=25113001"></script>
+  <script src="../../lib/popover.js?v=25113001"></script>
+  <script>
+    new WebsiteController();
+    if( typeof MapController !== 'undefined' ) { new MapController(); }
+  </script>
+</body>
+</html>
