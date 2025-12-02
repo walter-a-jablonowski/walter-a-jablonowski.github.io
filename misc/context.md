@@ -1,8 +1,9 @@
-# About me
+# About Walter
 
 - **English description:** 25 years of experience in programming with a focus on PHP based web applications since about 10 years, as well as design of databases and plain SQL development. Experience in "AI first" development. Interested in minimalistic solutions and innovative technologies.
 - **German description:** 25 Jahre Erfahrung in der Programmierung zuletzt mit Fokus auf PHP-basierten Webanwendungen seit ca. 10 Jahren, sowie Design von Datenbanken und reine SQL-Entwicklung. Erfahrung in "AI first"-Entwicklung. Interessiert an minimalistischen Lösungen und innovativen Technologien.
 
+- **Persoanl interests:** Technology Trends / Emerging Technologies / Futurism, AI
 - **Languages:** German, English
 - **Work location:** Bamberg, Germany or home office
 
@@ -16,6 +17,7 @@
 - alternatively DB design and plain SQL development
 - Part-time 16h - 20h, temporarily full time possible
 - Maintain work-life balance with flexible hours
+- No pure documentation or test jobs
 
 **German description:** 
 
@@ -24,7 +26,7 @@
 - auch DB-Design und reine SQL-Entwicklung
 - Teilzeit 16-20h (Home Office), temporär Vollzeit denkbar
 - Work-Life-Balance durch flexible Arbeitszeiten
-
+- Keine reinen Dokumentationsaufgaben oder nur Tests
 
 Roles:
 
@@ -42,32 +44,49 @@ Roles:
 
 # Current skills
 
-AI & ML:
+AI & ML (new skills, still learning):
 
-- Agentic AI systems (new skill, still learning)
-- Python (new skill, still learning)
+- AI agents
+- AI features for you existing apps and websites
+- AI-powered workflow automation: agents that handle routine tasks
+- Smart data solutions and web search
+- Python
 
 Web development:
 
-- PHP
-- OOAD
-- JavaScript
-- HTML
-- CSS
+- Larger web applications based on PHP and JavaScript with a focus on usability
+- Websites: Modern, responsive websites that look great on all devices and are optimized for AI and search engines.
+- Mini Apps Tip: Small to medium-sized applications that solve specific problems - with AI fast and cost-efficient.
+- Languages
+  - PHP
+  - OOAD: Object oriented analysis and design
+  - JavaScript
+  - HTML
+  - CSS
+  - YAML
+  - JSON
 
 Database:
 
-- SQL development
-- RDD (Relational database design)
-- MySQL, MariaDB
-- Oracle
-- SQL Server
+- Database design with a focus on exact business process modelling
+- SQL development: Complex SQL queries and procedures
+- Databases
+  - MySQL, MariaDB
+  - Oracle
+  - SQL Server
+
+Misc:
+
+- Consulting: Advice on technology choices, architecture, and implementation strategies for your projects
 
 Special skills:
 
-**English description:** AI superpowers: Increased productivity through AI usage. Passionate about making minimalistic apps. Minimalistic approaches (less frameworks and tools) increase the productivity even more in combination with AI.
-
-**German description:** Gesteigerte Produktivität durch KI-Einsatz bei der Entwicklung. Zudem Effizienzsteigerung durch minimalistische Ansätze: Weniger Frameworks und Tools steigern die Produktivität erheblich in Kombination mit KI.
+- **English description:**
+  - AI superpowers: Increased productivity through AI usage. Passionate about making minimalistic apps. Minimalistic approaches (less frameworks and tools) increase the productivity even more in combination with AI.
+  - Conceptualization of software for management and workflow tasks
+- **German description:**
+  - Gesteigerte Produktivität durch KI-Einsatz bei der Entwicklung. Zudem Effizienzsteigerung durch minimalistische Ansätze: Weniger Frameworks und Tools steigern die Produktivität erheblich in Kombination mit KI.
+  - Konzipierung von Software für Management/Workflow-Aufgaben
 
 Tools: Windsurf IDE, Claude Sonnet, various AI tools and frameworks
 
