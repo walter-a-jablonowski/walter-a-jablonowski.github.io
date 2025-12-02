@@ -1,3 +1,8 @@
+# IMPORTANT: How to read his context
+
+- The information below is partially in English and Partially in German language because it is from different sources. When you resond to the user be sure that you use the right language.
+- "mit" is a German word and doesn't mean "Massachusetts Institute of Technology"
+
 # About Walter
 
 - **English description:** 25 years of experience in programming with a focus on PHP based web applications since about 10 years, as well as design of databases and plain SQL development. Experience in "AI first" development. Interested in minimalistic solutions and innovative technologies.
