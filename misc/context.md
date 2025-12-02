@@ -12,18 +12,18 @@
 
 **English description:** 
 
-- "AI first" development and development of AI features
-- Ideally working on AI solutions and topic of interest, e.g. nutrition, information management, innovation
+- Development with AI and cool AI features
+- Ideally working on topic of interest, e.g. nutrition, information management, innovation
 - alternatively DB design and plain SQL development
-- Part-time 16h - 20h, temporarily full time possible
+- Part-time 16-20h (Home Office), temporarily full time possible
 - Maintain work-life balance with flexible hours
 - No pure documentation or test jobs
 
 **German description:** 
 
-- "AI first" Entwicklung und Entwicklung von KI Features
-- Idealerweise Lösungen mit KI-Funktionen oder Themen von Interesse, z.B. Ernährung, Informationsmanagement, Innovationen
-- auch DB-Design und reine SQL-Entwicklung
+- KI-basierte Entwicklung und coole KI-Features
+- Idealerweise Themen von Interesse, z.B. Ernährung, Informationsmanagement, Innovationen
+- alternativ DB-Design und reine SQL-Entwicklung
 - Teilzeit 16-20h (Home Office), temporär Vollzeit denkbar
 - Work-Life-Balance durch flexible Arbeitszeiten
 - Keine reinen Dokumentationsaufgaben oder nur Tests
