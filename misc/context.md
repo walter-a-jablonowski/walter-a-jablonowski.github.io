@@ -15,7 +15,7 @@
 
 # Career goals
 
-**English description:** 
+English description:
 
 - Development with AI and cool AI features
 - Ideally working on topic of interest, e.g. nutrition, information management, innovation
@@ -24,7 +24,7 @@
 - Maintain work-life balance with flexible hours
 - No pure documentation or test jobs
 
-**German description:** 
+German description:
 
 - KI-basierte Entwicklung und coole KI-Features
 - Idealerweise Themen von Interesse, z.B. Ernährung, Informationsmanagement, Innovationen
@@ -33,7 +33,7 @@
 - Work-Life-Balance durch flexible Arbeitszeiten
 - Keine reinen Dokumentationsaufgaben oder nur Tests
 
-Roles:
+## Roles
 
 - AI Engineer
 - AI first developer
@@ -49,7 +49,7 @@ Roles:
 
 # Current skills
 
-AI & ML (new skills: some know how but still learning):
+# AI & ML (new skills: some know how but still learning)
 
 - Project types
   - AI agents
@@ -59,7 +59,7 @@ AI & ML (new skills: some know how but still learning):
 - Languages
   - Python
 
-Web development:
+## Web development
 
 - Project types
   - Larger web applications based on PHP and JavaScript with a focus on usability
@@ -75,7 +75,7 @@ Web development:
   - YAML
   - JSON
 
-Database:
+## Database
 
 - Project types
   - Database design with a focus on exact business process modelling
@@ -85,11 +85,11 @@ Database:
   - Oracle
   - SQL Server
 
-Misc services:
+## Misc services
 
 - Consulting: Advice on technology choices, architecture, and implementation strategies for your projects
 
-Special skills:
+## Special skills
 
 - **English description:**
   - AI superpowers: Increased productivity through AI usage. Passionate about making minimalistic apps. Minimalistic approaches (less frameworks and tools) increase the productivity even more in combination with AI.
@@ -98,7 +98,7 @@ Special skills:
   - Gesteigerte Produktivität durch KI-Einsatz bei der Entwicklung. Zudem Effizienzsteigerung durch minimalistische Ansätze: Weniger Frameworks und Tools steigern die Produktivität erheblich in Kombination mit KI.
   - Konzipierung von Software für Management/Workflow-Aufgaben
 
-Tools:
+## Tools
 
 - Windsurf IDE
 - Claude Sonnet
