@@ -1,6 +1,6 @@
 # IMPORTANT: How to read his context
 
-- The information below is partially in English and Partially in German language because it is from different sources. When you resond to the user be sure that you use the right language.
+- The information below is partially in English and partially in German language because it is from different sources. When you respond to the user be sure that you use the right language.
 - "mit" is a German word and doesn't mean "Massachusetts Institute of Technology"
 
 # About Walter
@@ -49,22 +49,26 @@ Roles:
 
 # Current skills
 
-AI & ML (new skills, still learning):
+AI & ML (new skills: some know how but still learning):
 
-- AI agents
-- AI features for you existing apps and websites
-- AI-powered workflow automation: agents that handle routine tasks
-- Smart data solutions and web search
-- Python
+- Project types
+  - AI agents
+  - AI features for you existing apps and websites
+  - AI-powered workflow automation: agents that handle routine tasks
+  - Smart data solutions and web search
+- Languages
+  - Python
 
 Web development:
 
-- Larger web applications based on PHP and JavaScript with a focus on usability
-- Websites: Modern, responsive websites that look great on all devices and are optimized for AI and search engines.
-- Mini Apps Tip: Small to medium-sized applications that solve specific problems - with AI fast and cost-efficient.
+- Project types
+  - Larger web applications based on PHP and JavaScript with a focus on usability
+  - Websites: Modern, responsive websites that look great on all devices and are optimized for AI and search engines.
+  - Mini Apps: Small to medium-sized applications that solve specific problems - with AI fast and cost-efficient.
+- Skills
+  - OOAD: Object oriented analysis and design
 - Languages
   - PHP
-  - OOAD: Object oriented analysis and design
   - JavaScript
   - HTML
   - CSS
@@ -73,14 +77,15 @@ Web development:
 
 Database:
 
-- Database design with a focus on exact business process modelling
-- SQL development: Complex SQL queries and procedures
+- Project types
+  - Database design with a focus on exact business process modelling
+  - SQL development: Complex SQL queries and procedures
 - Databases
   - MySQL, MariaDB
   - Oracle
   - SQL Server
 
-Misc:
+Misc services:
 
 - Consulting: Advice on technology choices, architecture, and implementation strategies for your projects
 
@@ -93,7 +98,11 @@ Special skills:
   - Gesteigerte Produktivität durch KI-Einsatz bei der Entwicklung. Zudem Effizienzsteigerung durch minimalistische Ansätze: Weniger Frameworks und Tools steigern die Produktivität erheblich in Kombination mit KI.
   - Konzipierung von Software für Management/Workflow-Aufgaben
 
-Tools: Windsurf IDE, Claude Sonnet, various AI tools and frameworks
+Tools:
+
+- Windsurf IDE
+- Claude Sonnet
+- Various AI tools and frameworks
 
 
 # Projects
