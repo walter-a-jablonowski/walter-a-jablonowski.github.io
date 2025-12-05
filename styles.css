@@ -729,6 +729,11 @@ section {
 .tab-navigation {
   display: flex;
   justify-content: center;
+  margin-bottom: var(--spacing-sm);
+  transition: margin-bottom var(--transition-fast);
+}
+
+.tab-navigation.expanded {
   margin-bottom: var(--spacing-md);
 }
 
@@ -762,6 +767,15 @@ section {
   color: var(--light-gray);
   margin: 0 var(--spacing-xs);
   font-size: 1.2rem;
+}
+
+.section-comment {
+  text-align: center;
+  margin: 0.25rem 0 0.75rem 0;
+  color: var(--light-gray);
+  font-size: 0.9rem;
+  font-style: italic;
+  opacity: 0.8;
 }
 
 .tab-content {
@@ -1351,6 +1365,47 @@ footer {
 
 .back-to-top:hover {
   background-color: var(--primary-dark);
+}
+
+/* ===== Floating AI Button ===== */
+.floating-ai-button
+{
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: linear-gradient(45deg, var(--primary), var(--accent-red));
+  color: var(--white);
+  padding: 1rem 1.5rem;
+  border-radius: var(--border-radius-pill);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(255, 107, 0, 0.4);
+  transition: all var(--transition-normal);
+  z-index: 998;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.floating-ai-button.show
+{
+  opacity: 1;
+  visibility: visible;
+}
+
+.floating-ai-button:hover
+{
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(255, 107, 0, 0.5);
+  color: var(--white);
+}
+
+.floating-ai-button span
+{
+  white-space: nowrap;
 }
 
 /* ===== Animations ===== */

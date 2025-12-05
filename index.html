@@ -20,16 +20,16 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=25113001">
+  <link rel="stylesheet" href="styles.css?v=25120501">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Code+Pro:wght@400;600&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="lib/voice-agent.css?v=25113001">
+  <link rel="stylesheet" href="lib/voice-agent.css?v=25120501">
   <!-- Alternative cookie consent implementation for GitHub Pages (original doesn't work) -->
-  <script src="cookie-fix.js?v=25113001"></script>
+  <script src="cookie-fix.js?v=25120501"></script>
 </head>
 
 <body>
@@ -82,7 +82,9 @@
           <div class="hero-cta">
             <a href="#about" class="btn btn-primary"><i class="fas fa-microphone"></i> Ask AI</a>
             <a href="#services" class="btn btn-outline">My Services</a>
+<!--
             <a href="#contact" class="btn btn-outline">Contact Me</a>
+-->
           </div>
         </div>
         <div class="hero-image hide-on-mobile">
@@ -143,6 +145,11 @@
     </div>
   </section>
 
+  <!-- Floating AI Button -->
+  <a href="#about" class="floating-ai-button hide-on-mobile">
+    <span>Speak to an AI</span>
+  </a>
+
   <section id="about" class="about">
     <div class="container">
       <div class="section-header">
@@ -169,7 +176,7 @@
                   class="badge badge-new">New</span></span></li>
           </ul>
           <div class="cta-buttons">
-            <a href="#" class="btn btn-primary request-cv"><i class="fas fa-file-alt"></i> Request CV</a>
+            <a href="#" class="btn btn-primary request-cv"><!--<i class="fas fa-file-alt"></i> Request CV-->Contact me</a>
             <a href="https://github.com/walter-a-jablonowski" target="_blank" class="btn btn-outline">
               <i class="fab fa-github"></i> GitHub</a>
           </div>
@@ -419,7 +426,7 @@
   <section id="proj" class="interests">
     <div class="container">
       <div class="section-header">
-        <h2>Some of my personal projects</h2>
+        <h2>Some personal projects</h2>
         <div class="underline"></div>
       </div>
 
@@ -433,6 +440,10 @@
           <a href="#" class="tab-link" data-tab="timeline">Timeline</a>
         </div>
       </div>
+
+      <p class="section-comment" id="projects-comment">
+        Showing some of my private projects (no work related)
+      </p>
 
       <div class="interests-content">
         <div class="tab-content" id="projects-tab" style="display: block;">
@@ -726,9 +737,12 @@
     </div>
   </footer>
 
+<!-- (TASK) hidden for now (replaced by Speak to an AI) -->
+<!--
   <div class="back-to-top">
     <i class="fas fa-arrow-up"></i>
   </div>
+-->
 
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
   </script>
@@ -739,11 +753,11 @@
       });
     })();
   </script>
-  <script src="controller.js?v=25113001"></script>
-  <script src="lib/map.js?v=25113001"></script>
-  <script src="lib/popover.js?v=25113001"></script>
-  <script src="lib/config.js?v=25113001"></script>
-  <script src="lib/voice-agent.js?v=25113001"></script>
+  <script src="controller.js?v=25120501"></script>
+  <script src="lib/map.js?v=25120501"></script>
+  <script src="lib/popover.js?v=25120501"></script>
+  <script src="lib/config.js?v=25120501"></script>
+  <script src="lib/voice-agent.js?v=25120501"></script>
   <script>
     new WebsiteController();
     new MapController();

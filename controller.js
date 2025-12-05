@@ -13,7 +13,8 @@ class WebsiteController
     this.navMenu = document.querySelector('.nav-menu');
     this.navLinks = document.querySelectorAll('.nav-link');
     this.body = document.body;
-    this.backToTopButton = document.querySelector('.back-to-top');
+    // this.backToTopButton = document.querySelector('.back-to-top');  // (TASK) hidden for now (replaced by Speak to an AI)
+    this.floatingAiButton = document.querySelector('.floating-ai-button');
     this.contactForm = document.getElementById('contact-form');
     this.requestCvButton = document.querySelector('.request-cv');
     this.cookieBanner = document.getElementById('cookie-consent');
@@ -36,7 +37,8 @@ class WebsiteController
     document.addEventListener('DOMContentLoaded', () => {
       this.initNavigation();
       this.initScrollAnimations();
-      this.initBackToTop();
+      // this.initBackToTop();  // (TASK) hidden for now (replaced by Speak to an AI)
+      this.initFloatingAiButton();
       this.initContactForm();
       this.initCookieConsent();
       this.initResponsiveAdjustments();
@@ -195,6 +197,27 @@ class WebsiteController
         top: 0,
         behavior: 'smooth'
       });
+    });
+  }
+
+  /**
+   * Floating AI button - show/hide based on scroll position
+   */
+  initFloatingAiButton()
+  {
+    if( !this.floatingAiButton )
+      return;
+
+    window.addEventListener('scroll', () => {
+      const servicesSection = document.getElementById('services');
+      if( servicesSection ) {
+        const servicesSectionTop = servicesSection.offsetTop - 500; // Show slightly before reaching the section
+        
+        if( window.scrollY >= servicesSectionTop )
+          this.floatingAiButton.classList.add('show');
+        else
+          this.floatingAiButton.classList.remove('show');
+      }
     });
   }
   
@@ -477,6 +500,24 @@ class WebsiteController
           
           // Add active class to the clicked tab link
           link.classList.add('active');
+          
+          // Show/hide projects notice based on active tab
+          const projectsComment = document.getElementById('projects-comment');
+          if( projectsComment ) {
+            if( tabId === 'projects' )
+              projectsComment.style.display = 'block';
+            else
+              projectsComment.style.display = 'none';
+          }
+          
+          // Adjust tab-navigation spacing based on active tab
+          const tabNavigation = document.querySelector('.tab-navigation');
+          if( tabNavigation ) {
+            if( tabId === 'projects' )
+              tabNavigation.classList.remove('expanded');
+            else
+              tabNavigation.classList.add('expanded');
+          }
         });
       });
     }
