@@ -15,12 +15,12 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
   <link rel="manifest" href="../../site.webmanifest">
-  <link rel="stylesheet" href="../../styles.css?v=25113001">
+  <link rel="stylesheet" href="../../styles.css?v=25120601">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
-  <script src="../../cookie-fix.js?v=25113001"></script>
+  <script src="../../cookie-fix.js?v=25120601"></script>
 </head>
 <body>
   <header>
@@ -67,7 +67,7 @@
             <li><strong>Build:</strong> Google <em>Agent Development Kit</em> offers a quickstart to scaffold tools, memory, and execution for agents on Vertex AI.</li>
             <li><strong>Discover:</strong> Coinbase <em>x402 Bazaar</em> is an agent/app directory and distribution surface with developer docs and launch guide.</li>
             <li><strong>Transact:</strong> <em>AP2</em> (Agent Payments Pro) provides primitives for programmatic payments, wallets, and compliance rails.</li>
-            <li><strong>A2A:</strong> Emerging agent‑to‑agent patterns enable agents to call other agents and exchange value or capabilities.</li>
+            <li><strong>A2A:</strong> Emerging agent‑to‑agent patterns enable agents to call misc agents and exchange value or capabilities.</li>
           </ul>
 
           <h2>Components at a glance</h2>
@@ -88,10 +88,10 @@
           </ul>
 
           <h3>Agent Payments Pro (AP2)</h3>
-          <p>AP2 adds payment primitives for agents: account creation, pay‑ins/pay‑outs, balances, and potentially compliance tooling. Combined with x402, it enables agents to charge for work or pay other agents.</p>
+          <p>AP2 adds payment primitives for agents: account creation, pay‑ins/pay‑outs, balances, and compliance tooling. Combined with x402, it enables agents to charge for work or pay misc agents.</p>
 
           <h3>A2A (Agent‑to‑Agent)</h3>
-          <p>A2A patterns allow agents to invoke each other’s capabilities (e.g., retrieval, booking, payments). With AP2+x402, A2A can include metered usage and settlement.</p>
+          <p>A2A patterns allow agents to invoke capabilities (e.g., retrieval, booking, payments). With AP2+x402, A2A can include metered usage and settlement.</p>
 
           <h2>How they fit together</h2>
           <ol>
@@ -102,7 +102,7 @@
 
           <h2>Reference workflow (developer)</h2>
           <ul>
-            <li>Prototype locally using the ADK Quickstart.</li>
+            <li>Locally using the ADK Quickstart.</li>
             <li>Add core tools (search, RAG, service APIs) and guardrails.</li>
             <li>Integrate AP2 for pricing and settlement (per task or subscription).</li>
             <li>Publish to x402 Bazaar with clear metadata, pricing, and docs.</li>
@@ -159,9 +159,9 @@
       emailjs.init({ publicKey: "xvNrfCyYGqQD5cuoU" });
     })();
   </script>
-  <script src="../../controller.js?v=25113001"></script>
-  <script src="../../lib/map.js?v=25113001"></script>
-  <script src="../../lib/popover.js?v=25113001"></script>
+  <script src="../../controller.js?v=25120601"></script>
+  <script src="../../lib/map.js?v=25120601"></script>
+  <script src="../../lib/popover.js?v=25120601"></script>
   <script>
     new WebsiteController();
     if( typeof MapController !== 'undefined' ) { new MapController(); }
