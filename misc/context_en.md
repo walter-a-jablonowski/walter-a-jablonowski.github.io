@@ -25,9 +25,9 @@
 - Generative AI Engineer
 - AI Product Engineer / AI Full-Stack
 
-- Full-Stack / AI-Product Engineering mit PHP + KI-API-Integration
-- Backend / Data-Infrastructure mit KI-Automatisierung
-- Web-Apps mit KI-Features (z. B. Empfehlungssystem, Textanalyse, Daten-Workflows)
+- Full-Stack / AI-Product Engineering with PHP + KI-API-Integration
+- Backend / Data-Infrastructure with AI-automation
+- Web-Apps with AI-features (e.g. recommendation systems, text analysis, data workflows)
 
 
 # Current skills
@@ -88,48 +88,48 @@
 
 ## Last projects
 
-### Weiterentwicklung Web Applikation Statistik
+### Further Development of Web Application for Statistics
 
-Zeitraum: 2020-01 - 2024-07
+Period: 2020-01 – 2024-07
 
-- **Unternehmen:** VX Apps
-- **Rolle:** Entwicklung
-- **Details:** Weiterentwicklung einer Web Applikation im Bereich Statistik-Daten.
-- **Plattform:** Web
-- **Werkzeuge:** PHP 7, HTML5, Bootstrap, AdminLTE, Chartjs, CSS 3, javascript, jquery, YAML, JSON
+- **Company:** VX Apps
+- **Role:** Development
+- **Details:** Further development of a web application in the area of statistical data.
+- **Platform:** Web
+- **Technologies:** PHP 7, HTML5, Bootstrap, AdminLTE, Chart.js, CSS 3, JavaScript, jQuery, YAML, JSON
 
-### Neuentwicklung einer Webapplikation für betriebliche Verwaltung
+### New Development of a Web Application for Operational Administration
 
-Zeitraum: 2019-05 - 2021-01
+Period: 2019-05 – 2021-01
 
-- **Unternehmen:** Werbeagentur
-- **Rolle:** Entwicklung
-- **Details:** Datenbank basierte Applikation zur Abwicklung betrieblicher Vorgänge. Ablösen eines Altsystems. Insbesondere möglichst abhängigkeitslose Entwicklung um eine sehr lange Laufzeit der Anwendung zu gewährleisten und Migrationsaufwände durch Frameworks zu minimieren. Genereren von Oberflächen aus Bausteinen, sonstige Komponenten für ein kleines Framework inklusive ORM. Entwickeln von Datenbank und Formularen auf Basis des Frameworks.
-- **Plattform:** Web
-- **Werkzeuge:** Framework: Selbst entwickelt, PHP 7, javascript, jquery, YAML, JSON, Bootstrap, CSS, MariaDB, SQL
+- **Company:** Advertising agency
+- **Role:** Development
+- **Details:** Database-driven application for handling operational processes, replacing a legacy system. Focus on minimizing dependencies to ensure a very long lifetime of the application and to reduce migration efforts caused by frameworks. Generation of user interfaces from building blocks and misc components for a small framework including an ORM. Design of the database and forms based on this framework.
+- **Platform:** Web
+- **Technologies:** Custom framework, PHP 7, JavaScript, jQuery, YAML, JSON, Bootstrap, CSS, MariaDB, SQL
 
-### Entwicklung von Open Source Applikationen und Komponenten
+### Development of Open Source Applications and Components
 
-Zeitraum: seit 2018-01
+Period: since 2018-01
 
-- **Unternehmen:** Eigenentwicklungen
-- **Rolle:** Entwicklung
-- **Details:** Entwicklung von Open Source Komponenten und Applikationen (github).
-  Siehe http://www.github.com/walter-a-jablonowski
-  Es ist nicht unbedingt alles veröffentlicht. Bei diesen privaten Projekten liegt der Fokus auf Einfachheit im Gegensatz zum allgemeinen Trend immer komplexer werdender Webframeworks, sowie Automatisierung. Sieht man genau hin, dann kann man das selbe Ergebnis häufig auch mit deutlich weniger komplexen Mitteln erreichen.
-  Interessenbereiche allgemein: Informationsmanagement, Tools für Datengewinnung und Kommunikation, Framework-Komponenten, Tools
-- **Plattform:** Web (Chrome)
-- **Werkzeuge:** PHP 7, javascript, jquery, YAML, JSON, Bootstrap, HTML, CSS
+- **Company:** Own projects
+- **Role:** Development
+- **Details:** Development of open-source components and applications (GitHub).  
+  See http://www.github.com/walter-a-jablonowski  
+  In these private projects, the focus is on simplicity in contrast to the general trend toward increasingly complex web frameworks, as well as on automation. Often you can achieve the same results with significantly less complex means.
+  General areas of interest: information management, tools for data acquisition and communication, framework components, tools.
+- **Platform:** Web (Chrome)
+- **Technologies:** PHP 7, JavaScript, jQuery, YAML, JSON, Bootstrap, HTML, CSS
 
-### Neuentwicklung Web Applikation Statistik
+### New Development of Web Application for Statistics
 
-Zeitraum: 2016-02 – 2017-12
+Period: 2016-02 – 2017-12
 
-- **Unternehmen:** Varimetrix (Deutschland) GmbH
-- **Rolle:** Entwicklung
-- **Details:** Neuentwicklung einer Web Applikation im Bereich Statistik-Daten. Layout auf Basis von Bootstrap und AdminLTE, Umsetzung grafisches Design, animierte Menüs u.Ä. Eigene Classes für die App (Base classes, App, ErrorHandler, DB, Log, Data, Captions usw.), sowie Client-Server-Kommunikation. Eigenes Templating System. Dashboard, verschiedene Charts auf Basis von per SDK gesammelten Daten und Chartjs, neu anordnen von Widgets. Generieren benutzerdefinierter Charts, YAML Chart-Definitionsfomrat. Datenlisten mit Gruppierung, aufklappbar, Sortierung, (i) Buttons mit zusätzlichen Popup Informationen. Detailansicht mit Datenliste, Listenfunktionen, Menüs. Mobile Ansicht Handy, Tablet mit Design Anpassungen (responsive). User Settings, Admin, User Help, About, Impressum, Privacy. Und andere Funktionen...
-- **Plattform:** Linux Server, Apache, MySQL 5.7, PC, Mac, Smartphone, Tablet (Chrome)
-- **Werkzeuge:** PHP 5/7, HTML5, Bootstrap, AdminLTE, Chartjs, CSS 3, javascript, jquery, YAML, JSON
+- **Company:** Varimetrix (Germany) GmbH
+- **Role:** Development
+- **Details:** New development of a web application in the area of statistical data. Layout based on Bootstrap and AdminLTE, implementation of the visual design, animated menus, etc. Custom classes for the app (base classes, app, error handler, DB, log, data, captions, etc.) as well as client–server communication. Custom templating system. Dashboard with various charts based on data collected via SDK and Chart.js, rearrangeable widgets. Creation of user-defined charts with a YAML chart definition format. Data lists with grouping, expandable rows, sorting, (i) buttons with additional popup information. Detail view with data list, list functions, menus. Mobile view for phone and tablet with responsive design adjustments. User settings, admin area, user help, about, imprint, privacy, and other features.
+- **Platform:** Linux server, Apache, MySQL 5.7, PC, Mac, smartphone, tablet (Chrome)
+- **Technologies:** PHP 5/7, HTML5, Bootstrap, AdminLTE, Chart.js, CSS 3, JavaScript, jQuery, YAML, JSON
 
 
 ## Older projects
