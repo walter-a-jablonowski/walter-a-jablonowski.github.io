@@ -49,7 +49,7 @@ German description:
 
 # Current skills
 
-# AI & ML (new skills: some know how but still learning)
+# AI & ML (these are new skills: know how availaible, still learning more)
 
 - Project types
   - AI agents

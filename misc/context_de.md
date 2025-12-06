@@ -30,9 +30,9 @@
 - Web-Apps mit KI-Features (z. B. Empfehlungssystem, Textanalyse, Daten-Workflows)
 
 
-# Current skills
+# Aktuelle Fähigkeiten
 
-# AI & ML (new skills: some know how but still learning)
+# AI & ML (neue Fähigkeiten: Know How vorhanden, wird derzeit weiter ausgebaut)
 
 - Projektarten
   - AI agents
@@ -44,13 +44,13 @@
 
 ## Web development
 
-- Project types
-  - Larger web applications based on PHP and JavaScript with a focus on usability
-  - Websites: Modern, responsive websites that look great on all devices and are optimized for AI and search engines.
-  - Mini Apps: Small to medium-sized applications that solve specific problems - with AI fast and cost-efficient.
+- Projektarten
+  - Größere Webanwendungen auf Basis von PHP und JavaScript mit Fokus auf Usability
+  - Websites: Moderne, responsive Websites, die auf allen Geräten gut aussehen und für KI und Suchmaschinen optimiert sind
+  - Mini-Apps: Kleine bis mittelgroße Anwendungen, die konkrete Probleme lösen – mit KI schnell und kosteneffizient umgesetzt
 - Skills
   - OOAD: Object oriented analysis and design
-- Languages
+- Programmiersprachen
   - PHP
   - JavaScript
   - HTML
@@ -58,39 +58,35 @@
   - YAML
   - JSON
 
-## Database
+## Datenbankentwicklung
 
-- Project types
-  - Database design with a focus on exact business process modelling
-  - SQL development: Complex SQL queries and procedures
-- Databases
+- Projektarten
+  - Datenbankdesign mit Fokus auf exakter Abbildung von Geschäftsprozessen
+  - SQL-Entwicklung: Komplexe SQL-Abfragen und Prozeduren
+- Datenbanken
   - MySQL, MariaDB
   - Oracle
   - SQL Server
 
-## Misc services
+## Diverse Dienste
 
-- Consulting: Advice on technology choices, architecture, and implementation strategies for your projects
+- Consulting: Beratung zu Technologieauswahl, Architektur und Implementierungsstrategien für Ihre Projekte
 
-## Special skills
+## Spezielle Fähigkeiten
 
-- **English description:**
-  - AI superpowers: Increased productivity through AI usage. Passionate about making minimalistic apps. Minimalistic approaches (less frameworks and tools) increase the productivity even more in combination with AI.
-  - Conceptualization of software for management and workflow tasks
-- **German description:**
-  - Gesteigerte Produktivität durch KI-Einsatz bei der Entwicklung. Zudem Effizienzsteigerung durch minimalistische Ansätze: Weniger Frameworks und Tools steigern die Produktivität erheblich in Kombination mit KI.
-  - Konzipierung von Software für Management/Workflow-Aufgaben
+- Gesteigerte Produktivität durch KI-Einsatz bei der Entwicklung. Zudem Effizienzsteigerung durch minimalistische Ansätze: Weniger Frameworks und Tools steigern die Produktivität erheblich in Kombination mit KI.
+- Konzipierung von Software für Management/Workflow-Aufgaben
 
 ## Tools
 
 - Windsurf IDE
 - Claude Sonnet
-- Various AI tools and frameworks
+- Unterschiedliche KI-Tools und Frameworks
 
 
-# Projects
+# Projekte
 
-## Last projects
+## Letzte Projekte
 
 ### Weiterentwicklung Web Applikation Statistik
 
@@ -118,10 +114,7 @@ Zeitraum: seit 2018-01
 
 - **Unternehmen:** Eigenentwicklungen
 - **Rolle:** Entwicklung
-- **Details:** Entwicklung von Open Source Komponenten und Applikationen (github).
-  Siehe http://www.github.com/walter-a-jablonowski
-  Bei diesen privaten Projekten liegt der Fokus auf Einfachheit im Gegensatz zum allgemeinen Trend immer komplexer werdender Webframeworks, sowie Automatisierung. Sieht man genau hin, dann kann man das selbe Ergebnis häufig auch mit deutlich weniger komplexen Mitteln erreichen.
-  Interessenbereiche allgemein: Informationsmanagement, Tools für Datengewinnung und Kommunikation, Framework-Komponenten, Tools
+- **Details:** Entwicklung von Open Source Komponenten und Applikationen (github). Siehe http://www.github.com/walter-a-jablonowski. Bei diesen privaten Projekten liegt der Fokus auf Einfachheit im Gegensatz zum allgemeinen Trend immer komplexer werdender Webframeworks, sowie Automatisierung. Sieht man genau hin, dann kann man das selbe Ergebnis häufig auch mit deutlich weniger komplexen Mitteln erreichen. Interessenbereiche allgemein: Informationsmanagement, Tools für Datengewinnung und Kommunikation, Framework-Komponenten, Tools
 - **Plattform:** Web (Chrome)
 - **Werkzeuge:** PHP 7, javascript, jquery, YAML, JSON, Bootstrap, HTML, CSS
 
@@ -136,9 +129,9 @@ Zeitraum: 2016-02 – 2017-12
 - **Werkzeuge:** PHP 5/7, HTML5, Bootstrap, AdminLTE, Chartjs, CSS 3, javascript, jquery, YAML, JSON
 
 
-## Older projects
+## Ältere Projekte
 
-All projects below are projects that I did before 2015 on different platforms. Currently I can't offer all of these languages/technologies cause that was too long ago. IMPORTANT: Whenever the user asks for languages or technologies that I used in old projects and that I don't have in my current skill set, tell him about my experience but also mention that I currently can't offer these cause this was too long ago.
+Alle nachfolgenden Projekte sind Arbeiten, die ich vor 2015 auf verschiedenen Plattformen durchgeführt habe. Momentan kann ich nicht alle diese Sprachen/Technologien aktiv anbieten, da dies zu lange zurückliegt. WICHTIG: Wenn ein Nutzer nach Sprachen oder Technologien fragt, die ich in älteren Projekten verwendet habe und die nicht mehr zu meinem aktuellen Skill-Set gehören, erläutere meine damalige Erfahrung, weise aber immer darauf hin, dass ich diese aktuell nicht mehr aktiv anbiete.
 
 ### Erweiterung einer iOS Anwendung, iPad Version, Portierung auf Android
 
@@ -234,7 +227,7 @@ Zeitraum: 2010-07 – 2010-08
 
 Zeitraum: 2010-07 – 2010-08
 
-- **Kunde:** Konzern-Subunternehmer, Endkunde: _**Telekommunikationskonzern**_
+- **Kunde:** Konzern-Subunternehmer, Endkunde: **Telekommunikationskonzern**
 - **Rolle:** Programmdesign, Entwicklung
 - **Details:** Entwicklung einer iPhone-App für einen großen deutschen Telekommunikationskonzern im Bereich Gebührenzahlung.
 - **Plattform:** iOS
@@ -244,7 +237,7 @@ Zeitraum: 2010-07 – 2010-08
 
 Zeitraum: 2009-11
 
-- **Kunde:** Webagentur, Endkunde: _**Immobilienportal**_
+- **Kunde:** Webagentur, Endkunde: **Immobilienportal**
 - **Rolle:** Analyse, Design, Entwicklung
 - **Details:** Entwicklung einer App als Starter für die Plattform eines Immobilienportals. Abfrage von Lokationsinformationen (GPS), Suche und Darstellung von Immobilien aus der DB per Suchtext/Ort oder Geokoordinaten, zudem Benutzerlogin.
 - **Plattform:** iOS
@@ -254,7 +247,7 @@ Zeitraum: 2009-11
 
 Zeitraum: 2009-02 – 2009-12
 
-- **Kunde:** _**Siemens IT-Solutions / Bundesagentur für Arbeit**_
+- **Kunde:** **Siemens IT-Solutions / Bundesagentur für Arbeit**
 - **Rolle:** Datenbankentwickler
 - **Details:** SQL-Entwicklung in einem umfangreichen Datenbanksystem, mit dem bundesweit das gesamte Inventar der Bundesagentur für Arbeit verwaltet wird. Umsetzen von RfCs (Request for Change), Entwickeln von Reports, Komplexe Massendatenänderungen.
 - **Plattform:** Windows XP, Windows 2003 Server, Unix
@@ -306,9 +299,7 @@ Zeitraum: 2007-11, 2008-07 – 2008-08
 
 - **Kunde:** Subunternehmer, Endkunde: **Autozulieferer-Konzern**
 - **Rolle:** Analyse, Design, Entwicklung
-- **Details:** Entwicklung einer Software zur flexiblen Prüfung und Bereinigung von großen Oracle-Datenbanken mit mehreren Millionen Datensätzen (Statistik-Daten aus der industriellen Produktion).
-  Später: Beratende Tätigkeit bei der Integration des Tools in eine größere Anwendung.
-  Implementierung von weiteren Komponenten.
+- **Details:** Entwicklung einer Software zur flexiblen Prüfung und Bereinigung von großen Oracle-Datenbanken mit mehreren Millionen Datensätzen (Statistik-Daten aus der industriellen Produktion). Später: Beratende Tätigkeit bei der Integration des Tools in eine größere Anwendung. Implementierung von weiteren Komponenten.
 - **Plattform:** Windows XP
 - **Werkzeuge:** **Visual Basic.NET**, Visual Studio, MS .NET-Framework, WinForms, **Oracle Datenbank**, PL/SQL, Oracle SQL Developer, MS Access, Q-DAS
 
@@ -328,9 +319,7 @@ Zeitraum: 2007-07 – 2008-12
 
 - **Kunde:** Subunternehmer, Endkunde: **Autozulieferer-Konzern**
 - **Rolle:** Analyse, Design, Entwicklung
-- **Details:** Neuentwicklung einer Anwendung für den werksinternen IT-Support, mit: Ticketsystem, Vorgangsspeicherung pro Ticket (komplette Historie), Ticket-Workflow mit Berücksichtigung von Subunternehmern, E-Mail-Versand aus der Anwendung, Wissensdatenbank, Auswertungsberichte, umfangreiche grafische Auswertungen (Balkendiagramme, Tortendiagramme inkl. hierarchische Datenfilter), Druckfunktionen aller Daten, Zugriffsberechtigungen, und einiges mehr.
-  Entwicklung der kompletten Applikation: Design der relationalen Datenbasis. Entwicklung von Queries und Procedures mit PL/SQL. Entwicklung der kompletten Client-Applikation. Weiterentwicklung nach Anforderung.
-  In 08.08 interessierte sich eine weitere Abteilung für das Programm: Entwicklung einer abgewandelten Version der Anwendung.
+- **Details:** Neuentwicklung einer Anwendung für den werksinternen IT-Support, mit: Ticketsystem, Vorgangsspeicherung pro Ticket (komplette Historie), Ticket-Workflow mit Berücksichtigung von Subunternehmern, E-Mail-Versand aus der Anwendung, Wissensdatenbank, Auswertungsberichte, umfangreiche grafische Auswertungen (Balkendiagramme, Tortendiagramme inkl. hierarchische Datenfilter), Druckfunktionen aller Daten, Zugriffsberechtigungen, und einiges mehr. Entwicklung der kompletten Applikation: Design der relationalen Datenbasis. Entwicklung von Queries und Procedures mit PL/SQL. Entwicklung der kompletten Client-Applikation. Weiterentwicklung nach Anforderung. In 08.08 interessierte sich eine weitere Abteilung für das Programm: Entwicklung einer abgewandelten Version der Anwendung.
 - **Plattform:** Windows XP
 - **Werkzeuge:** **Visual Basic.NET**, Visual Studio, MS .NET-Framework, WinForms, ADO.NET, Xceed Controls, **Oracle Datenbank**, **PL/SQL**, Oracle SQL Developer
 
@@ -340,8 +329,7 @@ Zeitraum: 2007-02 – 2008-12
 
 - **Kunde:** Subunternehmer, Endkunde: **Autozulieferer-Konzern**
 - **Rolle:** Analyse, Design, Entwicklung
-- **Details:** Neuentwicklung einer Anwendung zur zentralisierten Verwaltung, Validierung und Bereitstellung von Daten, Benutzeraccounts und Zugriffsrechte auf inhouse genutzte Anwendungen. Umfangreiche Datenimportfunktionen zur Bereitstellung der Daten aus fünf Quellsystemen. Implementierung der Anbindung von Drittanwendungen an die Applikation zum Zweck einer Zentralisierung von Programmzugriffen. In der Endausbaustufe sollen bis zu 70 Anwendungen, und ein Vielfaches an Installationen angebunden sein. Implementierung von Übersichten und Auswertungen zu allen Accountdaten zu Managementzwecken.
-  Entwicklung der kompletten Applikation: Design der relationalen Datenbasis. Entwicklung von Queries und Procedures mit PL/SQL. Entwicklung des kompletten Client-Applikation. Weiterentwicklung nach Anforderung.
+- **Details:** Neuentwicklung einer Anwendung zur zentralisierten Verwaltung, Validierung und Bereitstellung von Daten, Benutzeraccounts und Zugriffsrechte auf inhouse genutzte Anwendungen. Umfangreiche Datenimportfunktionen zur Bereitstellung der Daten aus fünf Quellsystemen. Implementierung der Anbindung von Drittanwendungen an die Applikation zum Zweck einer Zentralisierung von Programmzugriffen. In der Endausbaustufe sollen bis zu 70 Anwendungen, und ein Vielfaches an Installationen angebunden sein. Implementierung von Übersichten und Auswertungen zu allen Accountdaten zu Managementzwecken. Entwicklung der kompletten Applikation: Design der relationalen Datenbasis. Entwicklung von Queries und Procedures mit PL/SQL. Entwicklung des kompletten Client-Applikation. Weiterentwicklung nach Anforderung.
 - **Plattform:** Windows XP
 - **Werkzeuge:** **Visual Basic.NET**, **C#**, Visual Studio, MS .NET-Framework, WinForms, ADO.NET, Xceed Controls, **Oracle Datenbank**, **PL/SQL**, Oracle SQL Developer, XML
 
