@@ -1,4 +1,4 @@
-# Über Walter
+## Über Walter
 
 25 Jahre Erfahrung in der Programmierung zuletzt mit Fokus auf PHP-basierten Webanwendungen seit ca. 10 Jahren, sowie Design von Datenbanken und reine SQL-Entwicklung. Erfahrung in "AI first"-Entwicklung. Interessiert an minimalistischen Lösungen und innovativen Technologien.
 
@@ -7,7 +7,7 @@
 - **Arbeitsort:** Bamberg, Germany oder Home Office
 
 
-# Karriereziele
+## Karriereziele
 
 - KI-basierte Entwicklung und coole KI-Features
 - Idealerweise Themen von Interesse, z.B. Ernährung, Informationsmanagement, Innovationen
@@ -16,7 +16,7 @@
 - Work-Life-Balance durch flexible Arbeitszeiten
 - Keine reinen Dokumentationsaufgaben oder nur Tests
 
-## Rollen
+### Rollen
 
 - AI Engineer
 - AI first developer
@@ -30,9 +30,9 @@
 - Web-Apps mit KI-Features (z. B. Empfehlungssystem, Textanalyse, Daten-Workflows)
 
 
-# Aktuelle Fähigkeiten
+## Aktuelle Fähigkeiten
 
-# AI & ML (neue Fähigkeiten: Know How vorhanden, wird derzeit weiter ausgebaut)
+### AI & ML (neue Fähigkeiten: Know How vorhanden, wird derzeit weiter ausgebaut)
 
 - Projektarten
   - AI agents
@@ -42,7 +42,7 @@
 - Programmiersprachen
   - Python
 
-## Web development
+### Web development
 
 - Projektarten
   - Größere Webanwendungen auf Basis von PHP und JavaScript mit Fokus auf Usability
@@ -58,7 +58,7 @@
   - YAML
   - JSON
 
-## Datenbankentwicklung
+### Datenbankentwicklung
 
 - Projektarten
   - Datenbankdesign mit Fokus auf exakter Abbildung von Geschäftsprozessen
@@ -68,27 +68,27 @@
   - Oracle
   - SQL Server
 
-## Diverse Dienste
+### Diverse Dienste
 
 - Consulting: Beratung zu Technologieauswahl, Architektur und Implementierungsstrategien für Ihre Projekte
 
-## Spezielle Fähigkeiten
+### Spezielle Fähigkeiten
 
 - Gesteigerte Produktivität durch KI-Einsatz bei der Entwicklung. Zudem Effizienzsteigerung durch minimalistische Ansätze: Weniger Frameworks und Tools steigern die Produktivität erheblich in Kombination mit KI.
 - Konzipierung von Software für Management/Workflow-Aufgaben
 
-## Tools
+### Tools
 
 - Windsurf IDE
 - Claude Sonnet
 - Unterschiedliche KI-Tools und Frameworks
 
 
-# Projekte
+## Projekte
 
-## Letzte Projekte
+### Letzte Projekte
 
-### Weiterentwicklung Web Applikation Statistik
+#### Weiterentwicklung Web Applikation Statistik
 
 Zeitraum: 2020-01 - 2024-07
 
@@ -98,7 +98,7 @@ Zeitraum: 2020-01 - 2024-07
 - **Plattform:** Web
 - **Werkzeuge:** PHP 7, HTML5, Bootstrap, AdminLTE, Chartjs, CSS 3, javascript, jquery, YAML, JSON
 
-### Neuentwicklung einer Webapplikation für betriebliche Verwaltung
+#### Neuentwicklung einer Webapplikation für betriebliche Verwaltung
 
 Zeitraum: 2019-05 - 2021-01
 
@@ -108,7 +108,7 @@ Zeitraum: 2019-05 - 2021-01
 - **Plattform:** Web
 - **Werkzeuge:** Framework: Selbst entwickelt, PHP 7, javascript, jquery, YAML, JSON, Bootstrap, CSS, MariaDB, SQL
 
-### Entwicklung von Open Source Applikationen und Komponenten
+#### Entwicklung von Open Source Applikationen und Komponenten
 
 Zeitraum: seit 2018-01
 
@@ -118,7 +118,7 @@ Zeitraum: seit 2018-01
 - **Plattform:** Web (Chrome)
 - **Werkzeuge:** PHP 7, javascript, jquery, YAML, JSON, Bootstrap, HTML, CSS
 
-### Neuentwicklung Web Applikation Statistik
+#### Neuentwicklung Web Applikation Statistik
 
 Zeitraum: 2016-02 – 2017-12
 
@@ -133,7 +133,7 @@ Zeitraum: 2016-02 – 2017-12
 
 Alle nachfolgenden Projekte sind Arbeiten, die ich vor 2015 auf verschiedenen Plattformen durchgeführt habe. Momentan kann ich nicht alle diese Sprachen/Technologien aktiv anbieten, da dies zu lange zurückliegt. WICHTIG: Wenn ein Nutzer nach Sprachen oder Technologien fragt, die ich in älteren Projekten verwendet habe und die nicht mehr zu meinem aktuellen Skill-Set gehören, erläutere meine damalige Erfahrung, weise aber immer darauf hin, dass ich diese aktuell nicht mehr aktiv anbiete.
 
-### Erweiterung einer iOS Anwendung, iPad Version, Portierung auf Android
+#### Erweiterung einer iOS Anwendung, iPad Version, Portierung auf Android
 
 Zeitraum: 2015-11 – 2016-01
 
@@ -143,7 +143,7 @@ Zeitraum: 2015-11 – 2016-01
 - **Plattform:** iOS, Android
 - **Werkzeuge:** Objective C, Java, PHP, xcode, Android Studio
 
-### Erweiterung einer iOS Anwendung
+#### Erweiterung einer iOS Anwendung
 
 Zeitraum: 2015-09 – 2015-10
 
@@ -153,7 +153,7 @@ Zeitraum: 2015-09 – 2015-10
 - **Plattform:** iOS
 - **Werkzeuge:** **Objective C**, xcode
 
-### Mitarbeit an eCommerce System
+#### Mitarbeit an eCommerce System
 
 Zeitraum: 2015-02 - 2015-03
 
@@ -163,7 +163,7 @@ Zeitraum: 2015-02 - 2015-03
 - **Plattform:** Web
 - **Werkzeuge:** **PHP**
 
-### Entwicklung mit .NET Gadgeteer
+#### Entwicklung mit .NET Gadgeteer
 
 Zeitraum: ab 2012-08
 
@@ -173,7 +173,7 @@ Zeitraum: ab 2012-08
 - **Plattform:** Windows, NET M
 - **Werkzeuge:** **C#**, Visual Studio 2010, .NET Framework, .NET Micro Framework (NET MF), .NET Gadgeteer Hardware
 
-### Mitarbeit an einer iPhone App Web 2.0 Plattform
+#### Mitarbeit an einer iPhone App Web 2.0 Plattform
 
 Zeitraum: 2012-02
 
@@ -183,7 +183,7 @@ Zeitraum: 2012-02
 - **Plattform:** iOS
 - **Werkzeuge:** **iOS SDK 5**, Objective C, xcode
 
-### Entwicklung einer Web 2.0 Webapplikation
+#### Entwicklung einer Web 2.0 Webapplikation
 
 Zeitraum: 2011-07 – 2011-09
 
@@ -193,7 +193,7 @@ Zeitraum: 2011-07 – 2011-09
 - **Plattform:** Webserver, Linux
 - **Werkzeuge:** **PHP4, HTML, CSS, XML, javascript, jquery**
 
-### Entwicklung einer iPhone App Automobile, Schulung von Programmierern
+#### Entwicklung einer iPhone App Automobile, Schulung von Programmierern
 
 Zeitraum: 2010-12
 
@@ -203,7 +203,7 @@ Zeitraum: 2010-12
 - **Plattform:** iOS
 - **Werkzeuge:** **iOS SDK 4, Objective C, xcode, IB, WebServices, XML**
 
-### Entwicklung einer iPhone App im Bereich Consumer Services
+#### Entwicklung einer iPhone App im Bereich Consumer Services
 
 Zeitraum: 2010-10 – 2010-12
 
@@ -213,7 +213,7 @@ Zeitraum: 2010-10 – 2010-12
 - **Plattform:** iOS
 - **Werkzeuge:** **iOS SDK 4, Objective C, xcode, IB, Web Requests, XML**
 
-### Entwicklung einer News iPhone App
+#### Entwicklung einer News iPhone App
 
 Zeitraum: 2010-07 – 2010-08
 
@@ -223,7 +223,7 @@ Zeitraum: 2010-07 – 2010-08
 - **Plattform:** iOS, Linux Server
 - **Werkzeuge:** iOS SDK 4, Objective C, xcode, Interface Builder, PHP4, SQL, MySQL, SOAP, Push
 
-### Entwicklung einer iPhone App für Telekommunikationskonzern
+#### Entwicklung einer iPhone App für Telekommunikationskonzern
 
 Zeitraum: 2010-07 – 2010-08
 
@@ -233,7 +233,7 @@ Zeitraum: 2010-07 – 2010-08
 - **Plattform:** iOS
 - **Werkzeuge:** Apple iPhone SDK 3 (auf Kundenwunsch), Objective C, xcode, Interface Builder
 
-### Neuentwicklung einer iPhone App für Immobilienportal
+#### Neuentwicklung einer iPhone App für Immobilienportal
 
 Zeitraum: 2009-11
 
@@ -243,7 +243,7 @@ Zeitraum: 2009-11
 - **Plattform:** iOS
 - **Werkzeuge:** **iOS SDK 3**, Objective C, xcode, Interface Builder, GPS-API
 
-### Datenbankentwicklung SQL Server
+#### Datenbankentwicklung SQL Server
 
 Zeitraum: 2009-02 – 2009-12
 
@@ -253,7 +253,7 @@ Zeitraum: 2009-02 – 2009-12
 - **Plattform:** Windows XP, Windows 2003 Server, Unix
 - **Werkzeuge:** **MS SQL Server 2000 u. 2008**, SQL, SQL-Server Tools, Reporting, DTS, **Crystal Reports**, Visual Studio und MS.NET für Code-Generierung
 
-### iPhone Radio Apps
+#### iPhone Radio Apps
 
 Zeitraum: 2009-01 – 2009-03
 
@@ -263,7 +263,7 @@ Zeitraum: 2009-01 – 2009-03
 - **Plattform:** iOS
 - **Werkzeuge:** **iOS SDK 3**, Objective C, xcode, Interface Builder
 
-### Tool für Zeiterfassung, Projektverfolgung und Abrechnung in SW-Projekten
+#### Tool für Zeiterfassung, Projektverfolgung und Abrechnung in SW-Projekten
 
 Zeitraum: 2008-07
 
@@ -273,7 +273,7 @@ Zeitraum: 2008-07
 - **Plattform:** Windows XP
 - **Werkzeuge:** **MS Access 2003**, VBA, **SQL**
 
-### Entwicklung einer Bug-Reporting-Komponente mit Anbindung an ein Bug Tracking System
+#### Entwicklung einer Bug-Reporting-Komponente mit Anbindung an ein Bug Tracking System
 
 Zeitraum: 2008-03
 
@@ -283,7 +283,7 @@ Zeitraum: 2008-03
 - **Plattform:** Windows XP
 - **Werkzeuge:** **C#**, Visual Studio 2008, **.NET Framework 3.0**, WPF, WebServices
 
-### Neuentwicklung eines ERP-Systems
+#### Neuentwicklung eines ERP-Systems
 
 Zeitraum: 2007-12 – 2008-03
 
@@ -293,7 +293,7 @@ Zeitraum: 2007-12 – 2008-03
 - **Plattform:** Windows XP
 - **Werkzeuge:** **Visual Basic.NET**, Visual Studio, MS .NET-Framework, WinForms, ADO.NET, Xceed Controls, **SQL**, MS Access
 
-### Neuentwicklung einer Anwendung für Datenbereinigung
+#### Neuentwicklung einer Anwendung für Datenbereinigung
 
 Zeitraum: 2007-11, 2008-07 – 2008-08
 
@@ -303,7 +303,7 @@ Zeitraum: 2007-11, 2008-07 – 2008-08
 - **Plattform:** Windows XP
 - **Werkzeuge:** **Visual Basic.NET**, Visual Studio, MS .NET-Framework, WinForms, **Oracle Datenbank**, PL/SQL, Oracle SQL Developer, MS Access, Q-DAS
 
-### Komponente zur Erstellung von hierarchischen Datenfiltern
+#### Komponente zur Erstellung von hierarchischen Datenfiltern
 
 Zeitraum: 2008-04 – 2008-05
 
@@ -313,7 +313,7 @@ Zeitraum: 2008-04 – 2008-05
 - **Plattform:** Windows XP
 - **Werkzeuge:** **Visual Basic.NET**, Visual Studio, MS .NET-Framework, WinForms, **Oracle Datenbank**, PL/SQL, Oracle SQL Developer, XML
 
-### Neuentwicklung einer Anwendung für den IT-Support
+#### Neuentwicklung einer Anwendung für den IT-Support
 
 Zeitraum: 2007-07 – 2008-12
 
@@ -323,7 +323,7 @@ Zeitraum: 2007-07 – 2008-12
 - **Plattform:** Windows XP
 - **Werkzeuge:** **Visual Basic.NET**, Visual Studio, MS .NET-Framework, WinForms, ADO.NET, Xceed Controls, **Oracle Datenbank**, **PL/SQL**, Oracle SQL Developer
 
-### Neuentwicklung einer werkseiten Anw. für „Anwender-/Zugriffskontrolle“
+#### Neuentwicklung einer werkseiten Anw. für „Anwender-/Zugriffskontrolle“
 
 Zeitraum: 2007-02 – 2008-12
 
@@ -333,7 +333,7 @@ Zeitraum: 2007-02 – 2008-12
 - **Plattform:** Windows XP
 - **Werkzeuge:** **Visual Basic.NET**, **C#**, Visual Studio, MS .NET-Framework, WinForms, ADO.NET, Xceed Controls, **Oracle Datenbank**, **PL/SQL**, Oracle SQL Developer, XML
 
-### Erweiterung einer Anwendung zum weltweiten Dateiaustausch
+#### Erweiterung einer Anwendung zum weltweiten Dateiaustausch
 
 Zeitraum: 2007-01
 
@@ -343,7 +343,7 @@ Zeitraum: 2007-01
 - **Plattform:** Windows XP
 - **Werkzeuge:** Visual Basic.NET, Visual Studio, MS .NET-Framework, SQL, SQL-Datenbank (SQLite), Sparx EA UML Tool
 
-### Neuentwicklung einer ERP-Applikation für den Massivholzmöbel-Vertrieb
+#### Neuentwicklung einer ERP-Applikation für den Massivholzmöbel-Vertrieb
 
 Zeitraum: 2004-12 – 2006-02
 
@@ -353,7 +353,7 @@ Zeitraum: 2004-12 – 2006-02
 - **Plattform:** Windows XP, SuSE Linux Server (Webserver)
 - **Werkzeuge:** MS Access XP, MySQL, PHP4, Visual Studio, C#
 
-### Vorbereitung zum Rework von ca. 10 Access-Anwendungen
+#### Vorbereitung zum Rework von ca. 10 Access-Anwendungen
 
 Zeitraum: 2004-11 – 2004-12
 
@@ -363,7 +363,7 @@ Zeitraum: 2004-11 – 2004-12
 - **Plattform:** Windows XP
 - **Werkzeuge:** MS Access XP, Visual Studio
 
-### Technisches Angeb. für Redesign Client/Server-Anwendung
+#### Technisches Angeb. für Redesign Client/Server-Anwendung
 
 Zeitraum: 2004-10
 
@@ -373,7 +373,7 @@ Zeitraum: 2004-10
 - **Plattform:** Windows NT, Unix
 - **Werkzeuge:** Sybase Datenbank und PowerBuilder für Testzwecke
 
-### Entwicklung einer Webplattform für Print-Lösungen
+#### Entwicklung einer Webplattform für Print-Lösungen
 
 Zeitraum: 2004-07 – 2004-10
 
@@ -383,14 +383,14 @@ Zeitraum: 2004-07 – 2004-10
 - **Plattform:** Windows, Linux Server
 - **Werkzeuge:** **PHP5, SQL, MySQL, HTML, XAMPP**
 
-### MS Office Schulungen für Selbstständige Kursteilnehmen
+#### MS Office Schulungen für Selbstständige Kursteilnehmen
 
 Zeitraum: 2004-05 - 2005-06
 
 - Institut 2F Informatik GmbH, Innsbruck
 - Freiberuflicher MS Office Trainer, Schulung von Unternehmern
 
-### Mitarbeit an der Neuentwicklung eines Application Framework
+#### Mitarbeit an der Neuentwicklung eines Application Framework
 
 Zeitraum: 2002-01 – 2002-11
 
@@ -401,7 +401,7 @@ Zeitraum: 2002-01 – 2002-11
 - **Plattform:** Windows 2000/Cygwin, Linux
 - **Werkzeuge:** **Java, XML, XSLT, Together UML, JBuilder**
 
-### Neuentwicklung einer Software für Produktionssteuerung in Betonwerken
+#### Neuentwicklung einer Software für Produktionssteuerung in Betonwerken
 
 Zeitraum: 2001-02 – 2002-06
 
@@ -413,7 +413,7 @@ Zeitraum: 2001-02 – 2002-06
 - **Plattform:** Windows NT/2000
 - **Werkzeuge:** **MS Access, Visual Basic, Winsock, SQL Server**
 
-### Migration einer Dispositionssoftware
+#### Migration einer Dispositionssoftware
 
 Zeitraum: 2001-01 – 2001-02
 
@@ -423,7 +423,7 @@ Zeitraum: 2001-01 – 2001-02
 - **Plattform:** Windows 2000
 - **Werkzeuge:** Borland C++, Visual C++, Visual Basic (für Codegenerierung Resource Files)
 
-### Euro-Umstellung einer Fakturierungsanwendung
+#### Euro-Umstellung einer Fakturierungsanwendung
 
 Zeitraum: 2001-10 – 2001-12
 
@@ -433,7 +433,7 @@ Zeitraum: 2001-10 – 2001-12
 - **Plattform:** Windows (Version des Kunden)
 - **Werkzeuge:** MS Visual C
 
-### Weiterentwicklung von 3 Softwareprodukten
+#### Weiterentwicklung von 3 Softwareprodukten
 
 Zeitraum: 2000-09 – 2003-01
 
@@ -446,7 +446,7 @@ Zeitraum: 2000-09 – 2003-01
 - **Plattform:** Windows 95/98/NT/2000/XP
 - **Werkzeuge:** C, Visual C++, Borland C++, MFC, dBase IV/V (eigene DB-API), Forth-ähnliche Sprache
 
-### Mitarbeit in einer Firma bereits zur Schulzeit
+#### Mitarbeit in einer Firma bereits zur Schulzeit
 
 Zeitraum: 1996-01 – 1999-09
 
