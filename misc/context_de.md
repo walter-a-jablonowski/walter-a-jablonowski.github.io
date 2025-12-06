@@ -1,3 +1,5 @@
+HINWEIS: Sprich natürlich mit vollständigen Worten wie "mit", "im", "am", "zu", "bei".
+
 ## Über Walter
 
 25 Jahre Erfahrung in der Programmierung zuletzt mit Fokus auf PHP-basierten Webanwendungen seit ca. 10 Jahren, sowie Design von Datenbanken und reine SQL-Entwicklung. Erfahrung in "AI first"-Entwicklung. Interessiert an minimalistischen Lösungen und innovativen Technologien.
