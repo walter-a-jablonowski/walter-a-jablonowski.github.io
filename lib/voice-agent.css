@@ -99,6 +99,35 @@
   75% { transform: translateX(10px); }
 }
 
+/* Maintenance/Down for service state */
+.voice-agent-mic.maintenance {
+  background: linear-gradient(135deg, #555, #777);
+  cursor: not-allowed;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(85, 85, 85, 0.3);
+}
+
+.voice-agent-mic.maintenance:hover {
+  transform: none;
+  box-shadow: 0 8px 25px rgba(85, 85, 85, 0.3);
+}
+
+.voice-agent-mic.maintenance i.fa-microphone {
+  display: none;
+}
+
+.voice-agent-mic.maintenance::after {
+  content: '\f0ad';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /* Status indicator */
 .voice-agent-status {
   font-size: 1rem;
@@ -138,6 +167,11 @@
   max-width: 400px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.voice-agent-status.maintenance {
+  color: var(--accent-red);
+  font-weight: 600;
 }
 
 /* Loading state with animated dots */
