@@ -14,7 +14,7 @@ HINWEIS: Sprich natürlich mit vollständigen Worten wie "mit", "im", "am", "zu"
 - KI-basierte Entwicklung und coole KI-Features
 - Idealerweise Themen von Interesse, z.B. Ernährung, Informationsmanagement, Innovationen
 - alternativ DB-Design und reine SQL-Entwicklung
-- Teilzeit 16-20h (Home Office), temporär Vollzeit denkbar
+- Teilzeit 16-20h (Home Office) (erwähne, dass Vollzeit temporär denkbar ist)
 - Work-Life-Balance durch flexible Arbeitszeiten
 - Keine reinen Dokumentationsaufgaben oder nur Tests
 

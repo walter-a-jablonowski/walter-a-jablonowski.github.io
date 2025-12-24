@@ -12,7 +12,7 @@
 - Development with AI and cool AI features
 - Ideally working on topic of interest, e.g. nutrition, information management, innovation
 - alternatively DB design and plain SQL development
-- Part-time 16-20h (Home Office), temporarily full time possible
+- Part-time 16-20h (Home Office) (mention that full time is possible temporarily)
 - Maintain work-life balance with flexible hours
 - No pure documentation or test jobs
 
