@@ -171,6 +171,55 @@
           <li>Claude Sonnet, GPT-5, Grok Code Fast 1</li>
         </ul>
 
+        <h4>Principle</h4>
+
+        <p>
+          As an experienced developer, these days I am increasing my efficiency through the use AI. By delegating as much development work as possible to an AI, I can improve value/time. Workflow: 
+        </p>
+
+        <svg width="100%" height="340" viewBox="0 0 420 340" style="max-width: 420px; margin: 0 auto; display: block;">
+          <!-- Arrow definitions -->
+          <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+              <polygon points="0 0, 10 3, 0 6" fill="#ff6b00" />
+            </marker>
+            <linearGradient id="boxGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#ff6b00;stop-opacity:0.15" />
+              <stop offset="100%" style="stop-color:#ff3131;stop-opacity:0.15" />
+            </linearGradient>
+          </defs>
+          
+          <!-- Step 1: New App funktion => write prompt -->
+          <rect x="30" y="15" width="360" height="50" rx="12" fill="url(#boxGradient)" stroke="#ff6b00" stroke-width="2"/>
+          <text x="210" y="45" text-anchor="middle" font-size="15" fill="#fff" font-weight="400">New app function => Write prompt for AI</text>
+          
+          <!-- Arrow down -->
+          <line x1="210" y1="70" x2="210" y2="95" stroke="#ff6b00" stroke-width="2" marker-end="url(#arrowhead)"/>
+          
+          <!-- Step 2: AI edits codefiles -->
+          <rect x="30" y="100" width="360" height="50" rx="12" fill="url(#boxGradient)" stroke="#ff6b00" stroke-width="2"/>
+          <text x="210" y="130" text-anchor="middle" font-size="15" fill="#fff" font-weight="400">AI agent edits codefiles</text>
+          
+          <!-- Arrow down -->
+          <line x1="210" y1="155" x2="210" y2="180" stroke="#ff6b00" stroke-width="2" marker-end="url(#arrowhead)"/>
+          
+          <!-- Step 3: Review result -->
+          <rect x="30" y="185" width="360" height="50" rx="12" fill="url(#boxGradient)" stroke="#ff6b00" stroke-width="2"/>
+          <text x="210" y="215" text-anchor="middle" font-size="15" fill="#fff" font-weight="400">Developer checks code and function</text>
+          
+          <!-- Arrow down -->
+          <line x1="210" y1="240" x2="210" y2="265" stroke="#ff6b00" stroke-width="2" marker-end="url(#arrowhead)"/>
+          
+          <!-- Step 4: Additional prompts (optional) -->
+          <rect x="30" y="270" width="360" height="50" rx="12" fill="url(#boxGradient)" stroke="#ff6b00" stroke-width="2"/>
+          <text x="210" y="290" text-anchor="middle" font-size="15" fill="#fff" font-weight="400">Additional prompts,</text>
+          <text x="210" y="308" text-anchor="middle" font-size="15" fill="#fff" font-weight="400">Fine tuning, corrections</text>
+          
+          <!-- Arrow back to top (loop) -->
+          <path d="M 210 330 L 210 340 L 415 340 L 415 40 L 390 40" 
+                fill="none" stroke="#ff6b00" stroke-width="2" marker-end="url(#arrowhead)" stroke-dasharray="8,6"/>
+        </svg>
+
         <h4>Initial prompt</h4>
         <p>Development was started with an initial <a href="https://github.com/walter-a-jablonowski/NinjaSnipp/blob/main/PHP%20manager%20app/ai.md" target="_blank">prompt</a> that includes the most important information. The AI did an initial version of the app.</p>
 
