@@ -46,6 +46,7 @@ class WebsiteController
       this.initInfoIcons();
       this.initTypewriterEffect();
       this.initProjectCarousel();
+      this.initPastSkillsToggle();
       
       // Add animation classes to elements
       document.querySelectorAll('.fade-in').forEach( (element, index) => {
@@ -729,6 +730,22 @@ class WebsiteController
         behavior: 'smooth'
       });
     }
+  }
+  
+  /**
+   * Initialize past skills toggle functionality
+   */
+  initPastSkillsToggle()
+  {
+    const toggleButton = document.getElementById('past-skills-toggle');
+    const content = document.getElementById('past-skills-content');
+    
+    if( ! toggleButton || ! content ) return;
+    
+    toggleButton.addEventListener('click', () => {
+      toggleButton.classList.toggle('active');
+      content.classList.toggle('expanded');
+    });
   }
   
   /**

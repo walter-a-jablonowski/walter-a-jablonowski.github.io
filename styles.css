@@ -716,6 +716,129 @@ section {
   }
 }
 
+/* ===== Past Skills Section ===== */
+.past-skills-section {
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+  text-align: center;
+}
+
+.past-skills-toggle {
+  background: none;
+  border: none;
+  color: var(--light-gray);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: var(--spacing-sm) var(--spacing-md);
+  transition: color var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.past-skills-toggle:hover {
+  color: var(--primary);
+}
+
+.past-skills-toggle i {
+  transition: transform var(--transition-normal);
+  font-size: 0.8rem;
+}
+
+.past-skills-toggle.active i {
+  transform: rotate(180deg);
+}
+
+.past-skills-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, opacity 0.3s ease-out, margin-top 0.3s ease-out;
+  opacity: 0;
+  margin-top: 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.past-skills-content.expanded {
+  max-height: 1000px;
+  opacity: 1;
+  margin-top: var(--spacing-lg);
+}
+
+.past-skills-comment {
+  color: var(--light-gray);
+  font-size: 0.95rem;
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  font-style: italic;
+}
+
+.past-skills-period {
+  background: linear-gradient(90deg, rgba(255, 107, 0, 0.03) 0%, transparent 100%);
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  text-align: left;
+  position: relative;
+}
+
+.past-skills-period::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%);
+  border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm);
+}
+
+.past-skills-period:last-child {
+  margin-bottom: 0;
+}
+
+.past-skills-period h4 {
+  color: var(--primary);
+  margin-bottom: var(--spacing-sm);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+.past-skills-subtitle {
+  color: var(--light-gray);
+  font-size: 0.85rem;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 500;
+}
+
+.past-skills-period ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.past-skills-period ul li {
+  background-color: rgba(255, 107, 0, 0.08);
+  color: var(--dark);
+  font-size: 0.85rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--border-radius-pill);
+  border: 1px solid rgba(255, 107, 0, 0.15);
+  transition: all var(--transition-fast);
+}
+
+.past-skills-period ul li:hover {
+  background-color: rgba(255, 107, 0, 0.12);
+  border-color: rgba(255, 107, 0, 0.3);
+  transform: translateY(-1px);
+}
+
 /* ===== Interests Section ===== */
 .interests {
   background-color: var(--dark);
@@ -1978,6 +2101,11 @@ footer {
   .carousel-arrow {
     width: 36px;
     height: 36px;
+  }
+
+  /* Past skills mobile adjustments */
+  .past-skills-period ul {
+    grid-template-columns: 1fr;
   }
 }
 

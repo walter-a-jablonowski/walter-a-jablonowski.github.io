@@ -20,16 +20,16 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=25120601">
+  <link rel="stylesheet" href="styles.css?v=25122601">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Code+Pro:wght@400;600&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="lib/voice-agent.css?v=25120601">
+  <link rel="stylesheet" href="lib/voice-agent.css?v=25122601">
   <!-- Alternative cookie consent implementation for GitHub Pages (original doesn't work) -->
-  <script src="cookie-fix.js?v=25120601"></script>
+  <script src="cookie-fix.js?v=25122601"></script>
 </head>
 
 <body>
@@ -315,7 +315,8 @@
             </div>
             <div class="skill-item">
               <div class="skill-info">
-                <span>OOAD</span>
+                <span>OOAD <i class="fas fa-question-circle info-icon"
+                    data-popover="Object-oriented analysis and design: Designing software systems using object-oriented principles and patterns"></i></span>
                 <span>85%</span>
               </div>
               <div class="skill-bar">
@@ -401,6 +402,37 @@
                 <div class="skill-level" style="width: 90%"></div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Past Skills Foldable Section -->
+      <div class="past-skills-section">
+        <button class="past-skills-toggle" id="past-skills-toggle">
+          Past skills <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="past-skills-content" id="past-skills-content">
+          <p class="past-skills-comment">Skills from earlier in my career that I no longer actively offer due to the time elapsed.</p>
+          <div class="past-skills-period">
+            <h4>2010 - 2015</h4>
+            <ul>
+              <li><strong>iOS Apps:</strong> Objective C, xcode</li>
+              <li><strong>Android Apps:</strong> Java, Android Studio</li>
+            </ul>
+          </div>
+          <div class="past-skills-period">
+            <h4>199X - 2010</h4>
+            <p class="past-skills-subtitle">Apps for management of business processes (Win)</p>
+            <ul>
+              <li>.NET: C#, VB</li>
+              <li>UML</li>
+              <li>Java</li>
+              <li>XML, XSLT</li>
+              <li>VBA</li>
+              <li>Visual Basic</li>
+              <li>C++</li>
+              <li>C</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -746,11 +778,11 @@
       });
     })();
   </script>
-  <script src="controller.js?v=25120601"></script>
-  <script src="lib/map.js?v=25120601"></script>
-  <script src="lib/popover.js?v=25120601"></script>
-  <script src="lib/config.js?v=25120601"></script>
-  <script src="lib/voice-agent.js?v=25120601"></script>
+  <script src="controller.js?v=25122601"></script>
+  <script src="lib/map.js?v=25122601"></script>
+  <script src="lib/popover.js?v=25122601"></script>
+  <script src="lib/config.js?v=25122601"></script>
+  <script src="lib/voice-agent.js?v=25122601"></script>
   <script>
     new WebsiteController();
     new MapController();
