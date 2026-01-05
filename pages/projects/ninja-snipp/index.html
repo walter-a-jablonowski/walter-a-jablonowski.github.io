@@ -71,14 +71,20 @@
       border-radius: var(--border-radius-sm);
     }
     .content pre {
-      background: #0f0f0f;
+      background: rgba(255,255,255,0.03);
       color: #eee;
       padding: var(--spacing-md);
       border-radius: var(--border-radius-sm);
-      overflow: auto;
+      overflow: hidden;
       border: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.9rem;
+      line-height: 1.5;
     }
     .content code { font-family: var(--font-code); }
+    .code-tag { color: #569cd6; }
+    .code-attr { color: #9cdcfe; }
+    .code-string { color: #ce9178; }
+    .code-comment { color: #6a9955; }
 
     /* Status chips for checklist items */
     .chip {
@@ -133,6 +139,18 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+    }
+
+    .content .prompt-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .content .prompt-list li {
+      margin-bottom: var(--spacing-md);
+    }
+    .content .prompt-list ul {
+      list-style: none;
+      padding-left: 1.25rem;
     }
 
     @media (max-width: 768px) {
@@ -260,7 +278,7 @@
         <p><b>Result commits:</b> <a href="https://github.com/walter-a-jablonowski/NinjaSnipp/commits/main" target="_blank">see github</a></p>
 
         <p><b>Sample prompts</b> (latest first):</p>
-        <ul>
+        <ul class="prompt-list">
           <li>
             ...
           </li>
@@ -294,15 +312,15 @@
             </ul>
             <blockquote>
               <p>Template currently are rendered like:</p>
-              <pre><code class="language-html">&lt;div id="inlineSnippet" class="inline-snippet"&gt;
+              <pre><code><span class="code-tag">&lt;div</span> <span class="code-attr">id</span>=<span class="code-string">"inlineSnippet"</span> <span class="code-attr">class</span>=<span class="code-string">"inline-snippet"</span><span class="code-tag">&gt;</span>
 
   const
 
-  &lt;span class="ph ph-text" contenteditable="true" tabindex="0" data-ph="name" data-default="myArray"&gt;myArray&lt;/span&gt;
+  <span class="code-tag">&lt;span</span> <span class="code-attr">class</span>=<span class="code-string">"ph ph-text"</span> <span class="code-attr">contenteditable</span>=<span class="code-string">"true"</span> ...<span class="code-tag">&gt;</span>myArray<span class="code-tag">&lt;/span&gt;</span>
 
-...
+  <span class="code-comment">...</span>
 
-&lt;/div&gt;</code></pre>
+<span class="code-tag">&lt;/div&gt;</span></code></pre>
               <p>Strings that are no placeholders like "const" are just text. I need these editable as well (with no background color). Maybe it would be a good idea to wrap those static texts in a span. Do you have a better idea?</p>
             </blockquote>
           </li>
