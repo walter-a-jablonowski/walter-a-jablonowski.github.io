@@ -106,6 +106,35 @@
       border: 1px solid rgba(255,255,255,0.12);
     }
 
+    /* Workflow intro box */
+    .workflow-intro {
+      background: rgba(255, 107, 0, 0.05);
+      border-left: 4px solid var(--primary);
+      padding: var(--spacing-lg);
+      border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+      margin: var(--spacing-lg) 0;
+      display: flex;
+      gap: var(--spacing-md);
+      align-items: flex-start;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    .workflow-intro i {
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-top: 0.25rem;
+    }
+    .workflow-intro p {
+      margin: 0 !important;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .workflow-intro .highlight-text {
+      color: var(--primary);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
     @media (max-width: 768px) {
       .project-header { flex-direction: column; }
     }
@@ -173,9 +202,12 @@
 
         <h4>Principle</h4>
 
-        <p>
-          As an experienced developer, these days I am increasing my efficiency through the use of AI. By delegating as much development work as possible to an AI, I can <span style="color: orange;">improve value/time</span>. Workflow:
-        </p>
+        <div class="workflow-intro">
+          <i class="fas fa-rocket"></i>
+          <p>
+            As an experienced developer, these days I am increasing my efficiency through the use of AI. By delegating as much development work as possible to an AI, I can <span class="highlight-text">improve value/time</span>. Workflow:
+          </p>
+        </div>
 
         <svg width="100%" height="340" viewBox="0 0 420 340" style="max-width: 420px; margin: 0 auto; display: block;">
           <!-- Arrow definitions -->
@@ -360,7 +392,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>powered by &copy; Walter A. Jablonowski 2019-2025. Made with AI. All rights reserved.</p>
+        <p>powered by &copy; Walter A. Jablonowski 2019-2026. Made with AI. All rights reserved.</p>
       </div>
     </div>
   </footer>
