@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Privacy Policy | Walter A. Jablonowski">
-  <title>Privacy Policy | Walter A. Jablonowski</title>
+  <meta name="description" content="Mini Apps | Walter A. Jablonowski">
+  <title>Mini Apps | Walter A. Jablonowski</title>
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -109,6 +109,69 @@
       margin-right: var(--spacing-xs);
     }
     
+    .sample-image:not(svg) {
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+    
+    .sample-image:not(svg):hover {
+      opacity: 0.9;
+    }
+    
+    .image-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    
+    .image-overlay.active {
+      display: flex;
+    }
+    
+    .image-overlay-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+    }
+    
+    .image-overlay img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: var(--border-radius-md);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
+    
+    .image-overlay-close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: rgba(255, 255, 255, 0.9);
+      border: none;
+      color: #000;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem 0.75rem;
+      line-height: 1;
+      transition: all 0.3s ease;
+      border-radius: 0 var(--border-radius-md) 0 0.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      z-index: 10000;
+    }
+    
+    .image-overlay-close:hover {
+      background-color: var(--primary);
+      color: #fff;
+    }
+    
     @media (max-width: 768px) {
       .sample-card {
         flex-direction: column;
@@ -122,6 +185,19 @@
         width: 100%;
         height: 200px;
         order: 1;
+      }
+      
+      .image-overlay-close {
+        top: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.95);
+        border-radius: 0;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
       }
     }
   </style>
@@ -290,7 +366,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>powered by &copy; Walter A. Jablonowski 2019-2025. Made with AI. All rights reserved.</p>
+        <p>powered by &copy; Walter A. Jablonowski 2019-2026. Made with AI. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -299,20 +375,64 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
+  <div class="image-overlay" id="imageOverlay">
+    <div class="image-overlay-content">
+      <button class="image-overlay-close" id="closeOverlay">
+        <i class="fas fa-times"></i>
+      </button>
+      <img src="" alt="" id="overlayImage">
+    </div>
+  </div>
+
   <script src="../../controller.js?v=26010501"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Initialize the website controller for common functionality
+    document.addEventListener('DOMContentLoaded', function()
+    {
       new WebsiteController();
       
-      // Add sample button functionality (placeholder for future implementation)
       const addSampleBtn = document.querySelector('.add-sample-btn');
-      if (addSampleBtn) {
+      if( addSampleBtn ) {
         addSampleBtn.addEventListener('click', function(e) {
           e.preventDefault();
           alert('This functionality will be implemented in the future. You will be able to add new samples here.');
         });
       }
+      
+      const imageOverlay = document.getElementById('imageOverlay');
+      const overlayImage = document.getElementById('overlayImage');
+      const closeOverlay = document.getElementById('closeOverlay');
+      const sampleImages = document.querySelectorAll('.sample-image');
+      
+      sampleImages.forEach(function(img) {
+        if( img.tagName === 'svg' )
+          return;
+        
+        img.addEventListener('click', function() {
+          overlayImage.src = this.src;
+          overlayImage.alt = this.alt;
+          imageOverlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      
+      closeOverlay.addEventListener('click', function() {
+        imageOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+      
+      imageOverlay.addEventListener('click', function(e) {
+        if( e.target === imageOverlay ) {
+          imageOverlay.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+      
+      document.addEventListener('keydown', function(e) {
+        if( e.key === 'Escape' && imageOverlay.classList.contains('active') ) {
+          imageOverlay.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
     });
   </script>
 </body>
