@@ -21,7 +21,7 @@
       color: var(--white);
       position: relative;
     }
-    
+
     .samples-section::before {
       content: '';
       position: absolute;
@@ -32,24 +32,24 @@
       background: linear-gradient(135deg, rgba(14, 14, 14, 0.95) 0%, rgba(26, 26, 26, 0.8) 100%);
       z-index: 1;
     }
-    
+
     .samples-section .container {
       position: relative;
       z-index: 2;
     }
-    
+
     .samples-section .section-header h2,
     .samples-section p {
       color: var(--white);
     }
-    
+
     .samples-list {
       margin-top: var(--spacing-lg);
       display: flex;
       flex-direction: column;
       gap: var(--spacing-xl);
     }
-    
+
     .sample-card {
       display: flex;
       background-color: rgba(26, 26, 26, 0.5);
@@ -57,26 +57,26 @@
       overflow: hidden;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
-    
+
     .sample-info {
       flex: 1;
       padding: var(--spacing-lg);
       display: flex;
       flex-direction: column;
     }
-    
+
     .sample-image-container {
       width: 40%;
       overflow: hidden;
     }
-    
+
     .sample-image {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: left top;
     }
-    
+
     .intro-text {
       font-size: 1.2rem;
       color: var(--lighter-gray);
@@ -85,39 +85,39 @@
       font-weight: 300;
       margin-left: 0.2rem;
     }
-    
+
     .sample-name {
       font-weight: 600;
       font-size: 1.5rem;
       color: var(--primary);
       margin-bottom: var(--spacing-md);
     }
-    
+
     .sample-description {
       color: var(--lighter-gray);
       font-size: 1rem;
       line-height: 1.6;
     }
-    
+
     .add-sample-btn {
       margin-top: var(--spacing-xl);
       display: inline-flex;
       align-items: center;
     }
-    
+
     .add-sample-btn i {
       margin-right: var(--spacing-xs);
     }
-    
+
     .sample-image:not(svg) {
       cursor: pointer;
       transition: opacity 0.3s ease;
     }
-    
+
     .sample-image:not(svg):hover {
       opacity: 0.9;
     }
-    
+
     .image-overlay {
       display: none;
       position: fixed;
@@ -131,17 +131,17 @@
       align-items: center;
       padding: 2rem;
     }
-    
+
     .image-overlay.active {
       display: flex;
     }
-    
+
     .image-overlay-content {
       position: relative;
       max-width: 90%;
       max-height: 90%;
     }
-    
+
     .image-overlay img {
       max-width: 100%;
       max-height: 90vh;
@@ -149,7 +149,7 @@
       border-radius: var(--border-radius-md);
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
     }
-    
+
     .image-overlay-close {
       position: absolute;
       top: 0;
@@ -166,27 +166,27 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
       z-index: 10000;
     }
-    
+
     .image-overlay-close:hover {
       background-color: var(--primary);
       color: #fff;
     }
-    
+
     @media (max-width: 768px) {
       .sample-card {
         flex-direction: column;
       }
-      
+
       .sample-info {
         order: 2;
       }
-      
+
       .sample-image-container {
         width: 100%;
         height: 200px;
         order: 1;
       }
-      
+
       .image-overlay-close {
         top: 0;
         right: 0;
@@ -219,6 +219,8 @@
           <li><a href="../../index.html#skills" class="nav-link">Skills</a></li>
           <li><a href="../../index.html#proj" class="nav-link">Projects</a></li>
           <li><a href="../../index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
+              title="Visit my LinkedIn profile"><i class="fab fa-linkedin-in"></i></a></li>
           <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link" title="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
         </ul>
       </nav>
@@ -231,9 +233,9 @@
         <h2 style="margin-top: 2rem;">Mini Apps made fast with AI</h2>
         <div class="underline"></div>
       </div>
-      
+
       <p class="intro-text">Small to medium-sized applications that solve specific problems - made <b>fast and cost-efficient</b> with AI</p>
-      
+
       <div class="samples-list">
 
         <div class="sample-card">
@@ -271,7 +273,7 @@
             <img src="Scheduler.png" alt="Price view" class="sample-image">
           </div>
         </div>
-<!--        
+<!--
         <div class="sample-card">
           <div class="sample-info">
             <div class="sample-name">Data Visualization Tool</div>
@@ -295,7 +297,7 @@
             <img src="../projects/ninja-snipp/img.png" alt="Data Visualization Tool" class="sample-image">
           </div>
         </div>
-        
+
         <div class="sample-card">
           <div class="sample-info">
             <div class="sample-name">Command line tools</div>
@@ -305,38 +307,38 @@
             <svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" class="sample-image">
               <!-- Background -->
               <rect width="560" height="320" fill="#1a1a1a"/>
-              
+
               <!-- Terminal window -->
               <rect x="40" y="40" width="480" height="240" rx="8" fill="#2d2d2d" stroke="#FF6B35" stroke-width="2"/>
-              
+
               <!-- Terminal header bar -->
               <rect x="40" y="40" width="480" height="30" rx="8" fill="#FF6B35"/>
               <rect x="40" y="55" width="480" height="15" fill="#FF6B35"/>
-              
+
               <!-- Terminal -->
               <circle cx="60" cy="55" r="5" fill="#fff"/>
               <circle cx="80" cy="55" r="5" fill="#fff"/>
               <circle cx="100" cy="55" r="5" fill="#fff"/>
-              
+
               <!-- Command prompt lines -->
               <text x="60" y="100" font-family="'Source Code Pro', monospace" font-size="14" fill="#4CAF50">$</text>
               <text x="75" y="100" font-family="'Source Code Pro', monospace" font-size="14" fill="#fff">ai-tool generate --input data.csv</text>
-              
+
               <!-- Output lines with AI processing indicator -->
               <text x="60" y="130" font-family="'Source Code Pro', monospace" font-size="12" fill="#888">Processing with AI...</text>
-              
+
               <!-- Progress bar -->
               <rect x="60" y="145" width="400" height="8" rx="4" fill="#333"/>
               <rect x="60" y="145" width="280" height="8" rx="4" fill="#FF6B35"/>
-              
+
               <!-- Generated output -->
               <text x="60" y="175" font-family="'Source Code Pro', monospace" font-size="12" fill="#4CAF50">✓ Analysis complete</text>
               <text x="60" y="195" font-family="'Source Code Pro', monospace" font-size="12" fill="#888">Generated 3 reports</text>
               <text x="60" y="215" font-family="'Source Code Pro', monospace" font-size="12" fill="#888">Optimized 127 entries</text>
-              
+
               <!-- Cursor blink -->
               <rect x="60" y="235" width="10" height="15" fill="#FF6B35" opacity="0.8"/>
-              
+
               <!-- AI sparkles decoration -->
               <path d="M 420 180 L 425 185 L 420 190 L 415 185 Z" fill="#FF6B35" opacity="0.6"/>
               <path d="M 440 200 L 443 203 L 440 206 L 437 203 Z" fill="#FF6B35" opacity="0.4"/>
@@ -357,7 +359,7 @@
         </div>
         <div class="footer-social">
           <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/walter-a-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
         <div class="footer-links">
@@ -389,7 +391,7 @@
     document.addEventListener('DOMContentLoaded', function()
     {
       new WebsiteController();
-      
+
       const addSampleBtn = document.querySelector('.add-sample-btn');
       if( addSampleBtn ) {
         addSampleBtn.addEventListener('click', function(e) {
@@ -397,16 +399,16 @@
           alert('This functionality will be implemented in the future. You will be able to add new samples here.');
         });
       }
-      
+
       const imageOverlay = document.getElementById('imageOverlay');
       const overlayImage = document.getElementById('overlayImage');
       const closeOverlay = document.getElementById('closeOverlay');
       const sampleImages = document.querySelectorAll('.sample-image');
-      
+
       sampleImages.forEach(function(img) {
         if( img.tagName === 'svg' )
           return;
-        
+
         img.addEventListener('click', function() {
           overlayImage.src = this.src;
           overlayImage.alt = this.alt;
@@ -414,19 +416,19 @@
           document.body.style.overflow = 'hidden';
         });
       });
-      
+
       closeOverlay.addEventListener('click', function() {
         imageOverlay.classList.remove('active');
         document.body.style.overflow = '';
       });
-      
+
       imageOverlay.addEventListener('click', function(e) {
         if( e.target === imageOverlay ) {
           imageOverlay.classList.remove('active');
           document.body.style.overflow = '';
         }
       });
-      
+
       document.addEventListener('keydown', function(e) {
         if( e.key === 'Escape' && imageOverlay.classList.contains('active') ) {
           imageOverlay.classList.remove('active');

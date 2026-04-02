@@ -39,6 +39,8 @@
           <li><a href="../../index.html#skills" class="nav-link">Skills</a></li>
           <li><a href="../../index.html#proj" class="nav-link">Projects</a></li>
           <li><a href="../../index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
+              title="Visit my LinkedIn profile"><i class="fab fa-linkedin-in"></i></a></li>
           <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link" title="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
         </ul>
       </nav>
@@ -75,12 +77,12 @@
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
-  
+
   /* Color palette */
   --primary: #FF6B00;
   --dark: #0E0E0E;
   --light-gray: #888888;
-  
+
   /* Typography */
   --font-main: 'Roboto', sans-serif;
   --font-code: 'Source Code Pro', monospace;
@@ -186,7 +188,7 @@ function showLoadingState(button) {
   const originalText = button.textContent;
   button.textContent = 'Loading...';
   button.disabled = true;
-  
+
   return () => {
     button.textContent = originalText;
     button.disabled = false;
@@ -202,7 +204,7 @@ function showLoadingState(button) {
     this.navMenu = document.querySelector('.nav-menu');
     this.init();
   }
-  
+
   init() {
     if (this.menuToggle && this.navMenu) {
       this.menuToggle.addEventListener('click', () => this.toggleMenu());
@@ -210,12 +212,12 @@ function showLoadingState(button) {
       window.addEventListener('resize', () => this.handleResize());
     }
   }
-  
+
   toggleMenu() {
     this.navMenu.classList.toggle('active');
     document.body.classList.toggle('menu-open');
   }
-  
+
   handleResize() {
     if (window.innerWidth > 768) {
       this.navMenu.classList.remove('active');
@@ -237,10 +239,10 @@ header('Access-Control-Allow-Origin: *');
 
 try {
   $data = json_decode(file_get_contents('php://input'), true);
-  
+
   // Process the request
   $result = processRequest($data);
-  
+
   echo json_encode([
     'success' => true,
     'data' => $result
@@ -296,10 +298,10 @@ function renderCard($title, $content, $image = null) {
           <h3>Image Optimization</h3>
           <p>Use modern image formats and lazy loading:</p>
 
-          <pre><code>&lt;img src="image.webp" 
-     alt="Description" 
+          <pre><code>&lt;img src="image.webp"
+     alt="Description"
      loading="lazy"
-     width="400" 
+     width="400"
      height="300"&gt;
 
 &lt;picture&gt;
@@ -344,14 +346,14 @@ function renderCard($title, $content, $image = null) {
 async function submitForm(form) {
   const submitButton = form.querySelector('button[type="submit"]');
   const resetLoading = showLoadingState(submitButton);
-  
+
   try {
     const formData = new FormData(form);
     const response = await fetch(form.action, {
       method: 'POST',
       body: formData
     });
-    
+
     if (response.ok) {
       showSuccessMessage('Form submitted successfully!');
       form.reset();
@@ -394,7 +396,7 @@ async function submitForm(form) {
         </div>
         <div class="footer-social">
           <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/walter-a-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
         <div class="footer-links">
@@ -403,7 +405,7 @@ async function submitForm(form) {
         </div>
       </div>
       <div class="footer-bottom">
-        <p>powered by &copy; Walter A. Jablonowski 2019-2025. Made with AI. All rights reserved.</p>
+        <p>powered by &copy; Walter A. Jablonowski 2019-2026. Made with AI. All rights reserved.</p>
       </div>
     </div>
   </footer>
