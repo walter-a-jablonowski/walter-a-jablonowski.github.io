@@ -6,7 +6,7 @@
   <title>Lebenslauf — Walter A. Jablonowski</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <style>
 
@@ -122,13 +122,13 @@
     }
 
     .s-name {
-      font-family:    'Plus Jakarta Sans', sans-serif;
-      font-size:      1.7rem;
-      font-weight:    300;
-      font-style:     normal;
+      font-family:    var(--f-serif);
+      font-size:      1.9rem;
+      font-weight:    600;
+      font-style:     italic;
       color:          #ffffff;
-      line-height:    1.2;
-      letter-spacing: 0.06em;
+      line-height:    1.1;
+      letter-spacing: 0.01em;
       margin-bottom:  0.4rem;
     }
 
@@ -412,10 +412,10 @@
     .timeline::before {
       content:    '';
       position:   absolute;
-      left:       1px;
+      left:       0;
       top:        0.5rem;
       bottom:     0.5rem;
-      width:      2px;
+      width:      1.5px;
       background: linear-gradient(180deg, var(--c-gold) 0%, rgba(200,155,60,0.15) 100%);
     }
 
@@ -429,14 +429,13 @@
     .t-item::before {
       content:       '';
       position:      absolute;
-      left:          calc(2px - 1.1rem);
+      left:          -1.18rem;
       top:           0.4rem;
       width:         7px;
       height:        7px;
       border-radius: 50%;
       background:    var(--c-gold);
       box-shadow:    0 0 0 2px var(--c-paper), 0 0 0 3.5px var(--c-gold);
-      transform:     translateX(-50%);
     }
 
     .t-date {
@@ -617,7 +616,7 @@
 
     <aside class="sidebar">
 
-      <img src="img/img_6.png" class="s-photo" alt="Walter A. Jablonowski">
+      <img src="../_old_cv/img_6.png" class="s-photo" alt="Walter A. Jablonowski">
 
       <div class="s-name">Walter A.<br>Jablonowski</div>
       <div class="s-title">AI Developer &middot; Full Stack</div>
@@ -717,7 +716,7 @@
             <strong>AI Superpowers:</strong> Gesteigerte Produktivit&auml;t durch KI-Einsatz.
             Begeistert von minimalistischen Ans&auml;tzen, welche die Produktivit&auml;t
             kombiniert mit KI nochmals erheblich steigern. Lieblingsthemen:
-            Informationsmanagement, Innovationen, Nutrition.
+            Informationsmanagement, Innovationen, Ern&auml;hrung.
           </p>
           <p>
             <strong>Fr&uuml;here Skills</strong>
@@ -734,7 +733,7 @@
               </div>
             </div>
             <div class="past-col">
-              <p><strong>bis 2010:</strong> Business-Anwendungen</p>
+              <p><strong>bis 2010:</strong> Business-Apps (Win)</p>
               <div class="lang-badges">
                 <span class="lang-badge">C#</span>
                 <span class="lang-badge">VB</span>
@@ -763,13 +762,13 @@
         <h2 class="m-h2">App&#8209;Beispiele</h2>
         <div class="apps-grid">
           <div class="app-card">
-            <img src="img/log-view.jpg" alt="Log-Analyse">
+            <img src="../_old_cv/log-view.png" alt="Log-Analyse">
             <div class="app-card-body">
               <strong>Fertig in nur 3&nbsp;Tagen:</strong> Datenanalyse mit KI (gro&szlig;e Log-Dateien)
             </div>
           </div>
           <div class="app-card">
-            <img src="img/dashb-2.jpg" alt="Dashboard">
+            <img src="../_old_cv/dashb-2.png" alt="Dashboard">
             <div class="app-card-body">
               <strong>Gr&ouml;&szlig;ere Anwendung</strong> (derzeit in Entwicklung)
             </div>
@@ -782,11 +781,11 @@
         </p>
         <div class="tool-badges">
           <a href="https://www.anthropic.com/claude" class="tool-badge" target="_blank">
-            <img src="img/claude_logo.png" alt="Claude">
+            <img src="../_old_cv/claude_logo.png" alt="Claude">
             Claude enthusiast
           </a>
           <a href="https://www.windsurf.com" class="tool-badge" target="_blank">
-            <img src="img/windsurf_logo.png" alt="Windsurf">
+            <img src="../_old_cv/windsurf_logo.png" alt="Windsurf">
             enthusiast
           </a>
         </div>
@@ -835,7 +834,7 @@
 
       <div class="s-qr">
         <div class="s-qr-label">Online ansehen</div>
-        <img src="img/qr.png" alt="QR Code">
+        <img src="../_old_cv/qr.png" alt="QR Code">
       </div>
 
     </aside>
@@ -903,7 +902,7 @@
       </section>
 
       <footer class="cv-footer">
-        powered by cv-maker &copy; Walter A. Jablonowski 2026
+        powered by cv-maker &copy; Walter A. Jablonowski 2024&ndash;2026
       </footer>
 
     </main>
