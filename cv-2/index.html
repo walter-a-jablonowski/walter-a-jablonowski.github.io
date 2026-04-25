@@ -1,980 +1,1022 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="manifest" href="site.webmanifest">
-  <title>Resume</title>
+  <title>Walter A. Jablonowski — CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=satoshi@300,400,500,600,700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <style>
-    .collapsible {
-  position: relative;
-}
-
-.collapsible .content > *:first-child {
-  margin-top:  0;
-  padding-top: 0;
-}
-
-.content {
-  overflow:   hidden;
-  transition: max-height 0.3s ease-out;
-}
-
-.content.collapsed {
-  max-height: 5.1em;
-}
-
-.more-btn {
-  color:    blue;
-  cursor:     pointer;
-  display:    inline-block;
-  margin-top: 5px;
-}
-
-.more-btn:hover {
-  text-decoration: none;
-}
-    .no-indent {
-  padding-left: 20px;
-}
-    a {
-  text-decoration: none;
-}
-
-.label {
-  color:     grey;
-  font-weight: bold;
-}
-
-/* Page */
-
-:root {
-  --primary-color:   #000000;
-  --secondary-color: #ffffff;
-  --accent-color:    #FFA500;
-  --text-color:      #333333;
-}
-
-body {
-  font-family: 'Arial', sans-serif;
-  font-size:   18px;
-  line-height: 1.6;
-  color: var(--text-color);
-  margin:      0;
-  padding:     0;
-}
-
-.container {
-  display: flex;
-  min-height: 100vh;
-}
-
-.sidebar {
-  width:   30%;
-  background-color: var(--primary-color);
-  color:   var(--secondary-color);
-  padding: 2rem;
-}
-
-.sidebar a {
-  color: #fff;
-}
-
-.main-content {
-  width:       70%;
-  background-color: var(--secondary-color);
-  padding:     2rem;
-  padding-top: 1.5rem;
-}
-
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
-  .sidebar, .main-content {
-    width: 100%;
-  }
-}
-
-/* Common */
-
-h1, h2 {
-  color: var(--accent-color);
-  margin-bottom: 1rem;
-}
-
-.info {
-  display:          none;  /* print only */
-  margin-left:      16px;
-  border:           1px solid var(--accent-color);
-  border-radius:    20px;
-  padding:          3px 12px;
-  font-size:        13px;
-  color:            #666;
-  background-color: #fffaf0;
-  vertical-align:   middle;
-  white-space:      nowrap;
-}
-
-.info a {
-  color: var(--accent-color);
-  font-weight: bold;
-}
-
-@media print {
-  .info {
-    display: inline;
-  }
-}
-
-/* Sidebar */
-
-.profile-img {
-  width:         150px;
-/*
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--accent-color);
-*/
-  margin-top:    0.15rem;
-  margin-bottom: 0.25rem;
-}
-
-.sidebar h2 {
-  color: var(--secondary-color);
-  /* border-bottom: 2px solid var(--accent-color); */
-  padding-bottom: 0.5rem;
-}
-
-.contact-info p {
-  margin: 0.5rem 0;
-}
-
-.contact-info td {
-  padding-right: 8px;
-}
-
-.skill {
-  margin-bottom: 1rem;
-}
-
-.skill-name {
-  font-weight:   bold;
-  margin-bottom: 0.25rem;
-}
-
-.skill-bar {
-  background-color: var(--secondary-color);
-  height:        5px;
-  border-radius: 5px;
-}
-
-.skill-level {
-  background-color: var(--accent-color);
-  height:        100%;
-  border-radius: 5px;
-}
-
-.lang-skill {
-  display:          inline-block;
-  background-color: var(--accent-color);
-  color:            var(--primary-color);
-  padding:          0.25rem 0.5rem;
-  border-radius:    15px;
-  margin:           0 5px 5px 0;
-  font-size:        0.8em;
-}
-
-.misc-personal {
-  font-size: 0.8em;
-}
-
-.misc-personal td {
-  padding-right: 8px;
-}
-
-/* Main */
-
-/* Main: btns upper right */
-
-.action-buttons {
-  position: absolute;
-  top:      20px;
-  right:    20px;
-  display:  flex;
-  gap:      10px;
-}
-
-.btn-action {
-  display:         flex;
-  align-items:     center;
-  justify-content: center;
-  width:           36px;  /* Reduced from 40px */
-  height:          36px;  /* Reduced from 40px */
-  border:          2px solid #808080; /* Changed to grey */
-  border-radius:   8px;
-  background:      linear-gradient(135deg, #f0f0f0, #ffffff);
-  color:         black;
-  cursor:          pointer;
-  font-size:       16px;  /* Slightly reduced font size */
-  transition:      all 0.3s ease;
-  box-shadow:      0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.btn-action:hover {
-  transform:  translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.btn-action:active {
-  transform:  translateY(0);
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-}
-
-.btn-action img {
-  width:  18px;     /* Slightly reduced from 20px */
-  height: auto;
-}
-
-.btn-action i {
-  font-size: 16px;  /* Adjusted icon size */
-}
-
-/* Main: Timeline */
-
-.timeline {
-  position: relative;
-}
-
-.timeline::before {
-  content:  '';
-  position: absolute;
-  left:     3px;
-  top:      0;
-  bottom:   0;
-  width:    2px;
-  background-color: var(--accent-color);
-}
-
-.experience-item, .education-item {
-  margin-bottom: 1.5rem;
-  position:      relative;
-  padding-left:  20px;
-}
-
-.experience-item::before, .education-item::before {
-  display: none;
-}
-
-.experience-item h3, .education-item h3 {
-  position: relative;
-}
-
-.experience-item h3::before, .education-item h3::before {
-  content:          '';
-  position:         absolute;
-  left:             -21px;
-  top:              50%;
-  width:            10px;
-  height:           10px;
-  background-color: var(--accent-color);
-  border-radius:    50%;
-  transform:        translateY(-50%);
-}
-
-.experience-item .details, .education-item .details {
-  font-size: 16px;
-}
-
-/* Main: Misc */
-
-.date {
-  font-style: italic;
-  color:      var(--accent-color);
-}
-
-.footer {
-  font-size:  18px;
-  color:    grey;
-  text-align: center;
-}
-
-.homepage-fab {
-  position:         fixed;
-  bottom:           24px;
-  right:            24px;
-  height:           48px;
-  background-color: #555;
-  color:            var(--accent-color);
-  border:           1px solid var(--accent-color);
-  border-radius:    24px;
-  display:          flex;
-  align-items:      center;
-  gap:              8px;
-  padding:          0 16px;
-  font-size:        18px;
-  box-shadow:       0 2px 8px rgba(0,0,0,0.4);
-  transition:       opacity 0.2s ease, transform 0.2s ease;
-  text-decoration:  none;
-  white-space:      nowrap;
-  opacity:          0.85;
-}
-
-.homepage-fab:hover {
-  opacity:   1;
-  transform: translateY(-2px);
-}
-
-.homepage-fab-label {
-  font-size:      13px;
-  font-weight:    bold;
-  letter-spacing: 0.03em;
-}
-
-@media print {
-  .homepage-fab {
-    display: none;
-  }
-}
-
-/* Print */
-
-@page {
-  size: A4 portrait;  /* TASK: there seems to be no setting that removes the printed page paddings */
-  margin:  0;
-  padding: 0;
-}
-
-@media print {
-  
-  a {
-    text-decoration: none;
-    color: var(--secondary-color) !important;
-  }
-
-  body a.link-blue,
-  body a.link-blue:visited,
-  body a.link-blue:link {
-    color: #1a73e8 !important;
-  }
-
-  .new-page {
-    page-break-inside: avoid;
-    page-break-before: always;
-    margin-top: 20px;
-  }
-
-  /* Page */
-
-  .sidebar {
-    min-height: calc(59.4cm - 2rem);  /* current solution: page 2 * A4 high - padding */
-  }
-
-  body {
-    print-color-adjust: exact;
-    -webkit-print-color-adjust: exact;
-  }
-  
-  .container {
-    display: flex !important;
-    flex-direction: row !important;  /* was needed cause content sometimes breaks below sidebar */
-  }
-  
-  .sidebar {
-    width:   30% !important;
-    background-color: var(--primary-color) !important;
-    color:   var(--secondary-color) !important;
-    padding: 1rem !important;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
-  
-  .main-content {
-    width:   70% !important;
-    padding: 1rem !important;
-  }
-
-  /*
-  .main-content h2, .main-content .date {
-    color: var(--primary-color) !important;
-  }
-  */
-  .main-content a {
-    color: var(--primary-color) !important;
-  }
-
-  /* Common */
-  
-  h1, h2, .date {
-    color: var(--accent-color) !important;
-  }
-
-  /* Sidebar */
-  
-  .sidebar h2 {
-    color: var(--secondary-color) !important;
-    border-bottom-color: var(--accent-color) !important;
-  }
-  
-  .skill-bar {
-    background-color: var(--secondary-color) !important;
-  }
-  
-  .skill-level, .lang-skill {
-    background-color: var(--accent-color) !important;
-  }
-  
-  .lang-skill {
-    font-size: 0.6em;
-    color: var(--primary-color) !important;
-  }
-
-  /* Main */
-
-  h2 {
-    margin-bottom: 0.75rem !important;
-  }
-
-  h3 {
-    margin-top:    0.4rem !important;
-    margin-bottom: 0.2rem !important;
-  }
-
-  section {
-    margin-bottom: 0.75rem !important;
-  }
-
-  .experience-item, .education-item {
-    margin-bottom: 1.1rem !important;
-  }
-
-  .experience-item .details, .education-item .details {
-    font-size: 15px !important;
-    margin:    0.1rem 0 !important;
-  }
-
-  .footer {
-    margin-top: 0.5rem !important;
-    font-size:  15px !important;
-  }
-
-}
+
+    /* ============================================================
+       VARIABLES
+    ============================================================ */
+    :root {
+      --c-dark:    #0B0E16;
+      --c-dark2:   #141A24;
+      --c-orange:  #E07829;
+      --c-amber:   #C9941F;
+      --c-paper:   #F9F8F5;
+      --c-white:   #FFFFFF;
+      --c-text:    #18181B;
+      --c-muted:   #6B6B73;
+      --c-line:    #E3E2DB;
+      --c-side-t:  #DDD8CC;
+      --c-side-m:  #736F66;
+      --f-main:    'Satoshi', sans-serif;
+      --f-mono:    'Space Mono', monospace;
+    }
+
+    /* ============================================================
+       RESET
+    ============================================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { font-size: 15px; }
+
+    body {
+      font-family: var(--f-main);
+      font-weight: 400;
+      color: var(--c-text);
+      background: #191919;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ============================================================
+       PAGE STRUCTURE
+    ============================================================ */
+    .cv-wrap {
+      padding: 2.5rem 2rem;
+    }
+
+    .cv-page {
+      display:   flex;
+      width:     900px;
+      margin:    0 auto 2.5rem;
+      box-shadow: 0 24px 90px rgba(0,0,0,0.55), 0 4px 18px rgba(0,0,0,0.3);
+      position:  relative;
+      overflow:  hidden;
+    }
+
+    /* ============================================================
+       SIDEBAR — shared
+    ============================================================ */
+    .sidebar {
+      width:            30%;
+      flex-shrink:      0;
+      background-color: var(--c-dark);
+      background-image:
+        repeating-linear-gradient(
+          45deg,
+          transparent 0,
+          transparent 20px,
+          rgba(255,255,255,0.012) 20px,
+          rgba(255,255,255,0.012) 21px
+        );
+      color:    var(--c-side-t);
+      padding:  2.4rem 1.8rem 2rem;
+      position: relative;
+    }
+
+    /* Orange top bar — page 1 */
+    .p1 .sidebar::before {
+      content:    '';
+      position:   absolute;
+      top: 0; left: 0; right: 0;
+      height:     4px;
+      background: linear-gradient(90deg, var(--c-orange) 0%, var(--c-amber) 55%, transparent 100%);
+    }
+
+    /* Decorative diamond outline in lower-right corner of sidebar */
+    .sidebar::after {
+      content:       '';
+      position:      absolute;
+      bottom:        -90px;
+      right:         -90px;
+      width:         240px;
+      height:        240px;
+      border:        1.5px solid rgba(224, 120, 41, 0.06);
+      transform:     rotate(45deg);
+      pointer-events: none;
+    }
+
+    /* ============================================================
+       SIDEBAR — shared components
+    ============================================================ */
+    .s-divider {
+      height:     1px;
+      background: linear-gradient(90deg, rgba(224,120,41,0.42), transparent);
+      margin:     1.2rem 0;
+    }
+
+    .s-label {
+      font-family:    var(--f-mono);
+      font-size:      0.55rem;
+      font-weight:    700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color:          var(--c-orange);
+      margin-bottom:  0.85rem;
+    }
+
+    /* ============================================================
+       SIDEBAR PAGE 1 — profile
+    ============================================================ */
+    .s-photo {
+      width:           110px;
+      height:          110px;
+      object-fit:      cover;
+      object-position: top center;
+      display:         block;
+      border:          2px solid var(--c-orange);
+      clip-path:       polygon(0 0, 100% 0, 100% 82%, 86% 100%, 0 100%);
+      margin-bottom:   1.3rem;
+    }
+
+    .s-name {
+      margin-bottom: 0.35rem;
+    }
+
+    .s-name-first {
+      display:        block;
+      font-family:    var(--f-main);
+      font-size:      0.85rem;
+      font-weight:    300;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color:          rgba(255,255,255,0.82);
+      margin-bottom:  0.1rem;
+    }
+
+    .s-name-last {
+      display:        block;
+      font-family:    'Clash Display', sans-serif;
+      font-size:      1.55rem;
+      font-weight:    700;
+      letter-spacing: 0.01em;
+      color:          #ffffff;
+      line-height:    1.1;
+    }
+
+    .s-title {
+      font-family:    var(--f-mono);
+      font-size:      0.66rem;
+      font-weight:    700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color:          var(--c-orange);
+      margin-bottom:  1.5rem;
+    }
+
+    /* Contact */
+    .s-contact { list-style: none; }
+
+    .s-contact li {
+      display:       flex;
+      align-items:   flex-start;
+      gap:           0.6rem;
+      margin-bottom: 0.58rem;
+      font-size:     0.78rem;
+      line-height:   1.35;
+    }
+
+    .s-contact .ic {
+      color:       var(--c-orange);
+      font-size:   0.82rem;
+      flex-shrink: 0;
+      margin-top:  0.1rem;
+    }
+
+    .s-contact a { color: var(--c-side-t); }
+    .s-contact a:hover { color: var(--c-orange); }
+
+    /* Segmented skill bars */
+    .s-skill { margin-bottom: 0.8rem; }
+
+    .s-skill-row {
+      display:         flex;
+      justify-content: space-between;
+      align-items:     baseline;
+      margin-bottom:   0.28rem;
+    }
+
+    .s-skill-name { font-size: 0.78rem; font-weight: 500; color: var(--c-side-t); }
+
+    .s-skill-val {
+      font-family:    var(--f-mono);
+      font-size:      0.54rem;
+      color:          var(--c-side-m);
+      letter-spacing: 0.04em;
+    }
+
+    .s-skill-track {
+      height:           5px;
+      background-image: repeating-linear-gradient(
+        90deg,
+        rgba(255,255,255,0.07) 0,
+        rgba(255,255,255,0.07) 8px,
+        transparent 8px,
+        transparent 11px
+      );
+    }
+
+    .s-skill-fill {
+      height:           100%;
+      background-image: repeating-linear-gradient(
+        90deg,
+        var(--c-orange) 0,
+        var(--c-orange) 8px,
+        transparent 8px,
+        transparent 11px
+      );
+    }
+
+    /* ============================================================
+       SIDEBAR PAGE 2 — languages, personal, QR
+    ============================================================ */
+    .s-langs {
+      display:        flex;
+      flex-direction: column;
+      gap:            0.5rem;
+    }
+
+    .s-lang {
+      display:         flex;
+      justify-content: space-between;
+      font-size:       0.8rem;
+    }
+
+    .s-lang-name  { color: var(--c-side-t); font-weight: 500; }
+    .s-lang-level { color: var(--c-side-m); font-style: italic; }
+
+    .s-personal {
+      width:           100%;
+      border-collapse: collapse;
+      font-size:       0.78rem;
+    }
+
+    .s-personal td { padding: 0.23rem 0; vertical-align: top; }
+
+    .s-personal td:first-child {
+      font-family:    var(--f-mono);
+      font-size:      0.63rem;
+      color:          var(--c-side-m);
+      padding-right:  0.55rem;
+      white-space:    nowrap;
+      letter-spacing: 0.02em;
+    }
+
+    .s-qr { margin-top: 1.75rem; }
+
+    .s-qr-label {
+      font-family:    var(--f-mono);
+      font-size:      0.53rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color:          var(--c-side-m);
+      margin-bottom:  0.55rem;
+    }
+
+    .s-qr img {
+      width:      145px;
+      display:    block;
+      border:     1px solid rgba(224,120,41,0.2);
+      padding:    4px;
+      background: rgba(255,255,255,0.03);
+    }
+
+    /* ============================================================
+       MAIN — shared
+    ============================================================ */
+    .main {
+      flex:       1;
+      background: var(--c-paper);
+      padding:    2.4rem 2.2rem 2rem;
+    }
+
+    .m-sec { margin-bottom: 1.55rem; }
+
+    .m-h2 {
+      font-family:    var(--f-main);
+      font-size:      0.67rem;
+      font-weight:    600;
+      color:          var(--c-text);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding:        0.35rem 0 0.35rem 0.8rem;
+      margin-bottom:  0.9rem;
+      border-left:    3px solid var(--c-orange);
+    }
+
+    /* ============================================================
+       LOGO AREA — page 1 top
+    ============================================================ */
+    .logo-area {
+      text-align:    center;
+      padding-bottom: 1.5rem;
+      margin-bottom:  1.5rem;
+      position:       relative;
+      border-bottom:  1px solid var(--c-line);
+    }
+
+    /* Orange center accent on divider */
+    .logo-area::after {
+      content:    '';
+      position:   absolute;
+      bottom:     -1px;
+      left:       50%;
+      transform:  translateX(-50%);
+      width:      44px;
+      height:     2px;
+      background: var(--c-orange);
+    }
+
+    .cv-logo {
+      max-height: 52px;
+      max-width:  200px;
+      width:      auto;
+      display:    inline-block;
+    }
+
+    /* ============================================================
+       MAIN PAGE 1 — summary
+    ============================================================ */
+    .m-summary {
+      font-size:   0.88rem;
+      line-height: 1.75;
+    }
+
+    .m-summary strong { font-weight: 600; color: var(--c-text); }
+
+    /* ============================================================
+       MAIN PAGE 1 — special skills
+    ============================================================ */
+    .skill-block { font-size: 0.86rem; line-height: 1.65; }
+    .skill-block p { margin-bottom: 0.45rem; }
+    .skill-block strong { font-weight: 600; }
+    .skill-block ul { padding-left: 1.1rem; margin-bottom: 0.35rem; }
+    .skill-block li { margin-bottom: 0.1rem; }
+
+    .skill-block .muted {
+      color:      var(--c-muted);
+      font-style: italic;
+      font-size:  0.8rem;
+    }
+
+    .past-grid { display: flex; gap: 1.5rem; margin-top: 0.35rem; }
+    .past-col  { flex: 1; }
+    .past-col p { margin-bottom: 0.4rem; }
+
+    .lang-badges {
+      display:   flex;
+      flex-wrap: wrap;
+      gap:       0.3rem;
+    }
+
+    .lang-badge {
+      display:        inline-block;
+      background:     rgba(224,120,41,0.07);
+      border:         1px solid rgba(224,120,41,0.22);
+      color:          var(--c-text);
+      font-family:    var(--f-mono);
+      font-size:      0.62rem;
+      font-weight:    400;
+      padding:        0.16rem 0.44rem;
+      border-radius:  2px;
+      letter-spacing: 0.03em;
+    }
+
+    /* ============================================================
+       MAIN PAGE 1 — goals
+    ============================================================ */
+    .goal-list { list-style: none; }
+
+    .goal-list li {
+      display:       flex;
+      align-items:   flex-start;
+      gap:           0.65rem;
+      margin-bottom: 0.35rem;
+      font-size:     0.88rem;
+      line-height:   1.5;
+    }
+
+    /* Diamond bullet */
+    .goal-list li::before {
+      content:       '';
+      display:       inline-block;
+      width:         6px;
+      height:        6px;
+      background:    var(--c-orange);
+      flex-shrink:   0;
+      margin-top:    0.42rem;
+      transform:     rotate(45deg);
+    }
+
+    /* ============================================================
+       MAIN PAGE 1 — app samples
+    ============================================================ */
+    .apps-grid {
+      display:       flex;
+      gap:           1rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .app-card {
+      flex:     1;
+      border:   1px solid var(--c-line);
+      background: var(--c-white);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Tiny orange corner triangle */
+    .app-card::before {
+      content:    '';
+      position:   absolute;
+      top: 0; right: 0;
+      width:      0;
+      height:     0;
+      border-top: 12px solid var(--c-orange);
+      border-left: 12px solid transparent;
+      z-index:    1;
+    }
+
+    .app-card img {
+      width:           100%;
+      height:          80px;
+      object-fit:      cover;
+      object-position: top;
+      display:         block;
+      border-bottom:   1px solid var(--c-line);
+    }
+
+    .app-card-body {
+      padding:     0.45rem 0.6rem;
+      font-size:   0.76rem;
+      line-height: 1.4;
+    }
+
+    .app-card-body strong { font-weight: 600; }
+
+    .apps-links {
+      font-size:     0.86rem;
+      color:         var(--c-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .apps-links a {
+      color:         var(--c-orange);
+      border-bottom: 1px solid rgba(224,120,41,0.3);
+    }
+
+    .apps-links a:hover { border-color: var(--c-orange); }
+
+    .tool-badges { display: flex; gap: 0.45rem; flex-wrap: wrap; }
+
+    .tool-badge {
+      display:     flex;
+      align-items: center;
+      gap:         0.4rem;
+      border:      1px solid var(--c-line);
+      background:  var(--c-white);
+      padding:     0.25rem 0.6rem;
+      font-size:   0.72rem;
+      color:       var(--c-text);
+      border-radius: 2px;
+      transition:  border-color 0.15s, background 0.15s;
+    }
+
+    .tool-badge:hover {
+      border-color: var(--c-orange);
+      background:   rgba(224,120,41,0.04);
+    }
+
+    .tool-badge img { height: 15px; width: auto; }
+
+    /* ============================================================
+       MAIN PAGE 2 — timeline
+    ============================================================ */
+    .timeline {
+      position:     relative;
+      padding-left: 1.25rem;
+    }
+
+    .timeline::before {
+      content:    '';
+      position:   absolute;
+      left:       2.25px;
+      top:        0.55rem;
+      bottom:     0.55rem;
+      width:      1.5px;
+      background: linear-gradient(180deg, var(--c-orange) 0%, rgba(224,120,41,0.1) 100%);
+    }
+
+    .t-item {
+      position:      relative;
+      margin-bottom: 1.3rem;
+    }
+
+    .t-item:last-child { margin-bottom: 0; }
+
+    /* Diamond timeline dot */
+    .t-item::before {
+      content:       '';
+      position:      absolute;
+      left:          calc(3px - 1.25rem);
+      top:           0.32rem;
+      width:         8px;
+      height:        8px;
+      background:    var(--c-orange);
+      border-radius: 50%;
+      transform:     translateX(-50%);
+      box-shadow:    0 0 0 2.5px var(--c-paper), 0 0 0 4px var(--c-orange);
+    }
+
+    .t-date {
+      font-family:    var(--f-mono);
+      font-size:      0.6rem;
+      font-weight:    700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color:          var(--c-orange);
+      margin-bottom:  0.12rem;
+    }
+
+    .t-pos {
+      font-size:     1rem;
+      font-weight:   600;
+      color:         var(--c-text);
+      line-height:   1.25;
+      margin-bottom: 0.08rem;
+    }
+
+    .t-org {
+      font-size:     0.76rem;
+      color:         var(--c-muted);
+      font-weight:   400;
+      margin-bottom: 0.2rem;
+    }
+
+    .t-desc { font-size: 0.83rem; line-height: 1.5; }
+
+    /* ============================================================
+       MAIN PAGE 2 — footer
+    ============================================================ */
+    .cv-footer {
+      margin-top:     1.5rem;
+      padding-top:    0.7rem;
+      border-top:     1px solid var(--c-line);
+      font-family:    var(--f-mono);
+      font-size:      0.6rem;
+      color:          var(--c-muted);
+      text-align:     center;
+      letter-spacing: 0.08em;
+    }
+
+    /* ============================================================
+       SCREEN BUTTONS
+    ============================================================ */
+    .print-btn {
+      position:       fixed;
+      top:            1.25rem;
+      right:          1.25rem;
+      background:     var(--c-dark);
+      color:          #fff;
+      border:         1px solid rgba(224,120,41,0.4);
+      padding:        0.5rem 1.1rem;
+      font-family:    var(--f-mono);
+      font-size:      0.64rem;
+      font-weight:    400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor:         pointer;
+      border-radius:  2px;
+      display:        flex;
+      align-items:    center;
+      gap:            0.45rem;
+      box-shadow:     0 4px 20px rgba(0,0,0,0.3);
+      transition:     all 0.15s;
+      z-index:        200;
+    }
+
+    .print-btn:hover {
+      background:   var(--c-orange);
+      color:        var(--c-dark);
+      border-color: var(--c-orange);
+    }
+
+    .homepage-fab {
+      position:       fixed;
+      bottom:         1.5rem;
+      right:          1.5rem;
+      background:     var(--c-dark);
+      color:          var(--c-orange);
+      border:         1px solid rgba(224,120,41,0.3);
+      border-radius:  2px;
+      padding:        0.5rem 1.1rem;
+      font-family:    var(--f-main);
+      font-size:      0.73rem;
+      font-weight:    500;
+      letter-spacing: 0.02em;
+      display:        flex;
+      align-items:    center;
+      gap:            0.45rem;
+      box-shadow:     0 4px 20px rgba(0,0,0,0.3);
+      transition:     opacity 0.2s, transform 0.15s;
+      opacity:        0.85;
+      z-index:        200;
+    }
+
+    .homepage-fab:hover { opacity: 1; transform: translateY(-2px); }
+
+    /* ============================================================
+       PRINT
+    ============================================================ */
+    @page {
+      size:   A4 portrait;
+      margin: 0;
+    }
+
+    @media print {
+
+      body {
+        background:                 none;
+        print-color-adjust:         exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .cv-wrap { padding: 0; }
+
+      .cv-page {
+        width:            210mm;
+        height:           297mm;
+        overflow:         hidden;
+        margin:           0;
+        box-shadow:       none;
+        page-break-after: always;
+      }
+
+      .cv-page.p2 { page-break-after: auto; }
+
+      .sidebar {
+        print-color-adjust:         exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .print-btn,
+      .homepage-fab { display: none !important; }
+
+      a {
+        color:         inherit !important;
+        border-bottom: none !important;
+      }
+    }
+
+    /* ============================================================
+       RESPONSIVE (SCREEN)
+    ============================================================ */
+    @media screen and (max-width: 940px) {
+      .cv-page { width: 100%; }
+    }
+
+    @media screen and (max-width: 680px) {
+      .cv-page { flex-direction: column; }
+      .sidebar  { width: 100%; }
+      .cv-wrap  { padding: 0; }
+    }
+
   </style>
 </head>
 <body>
 
-  <div class="container">
-  <div class="sidebar">
+<button class="print-btn" onclick="window.print()">
+  <i class="bi bi-printer"></i> Drucken
+</button>
 
-    <img src="img_6.png" class="profile-img" style="max-width: 200px;">
+<div class="cv-wrap">
 
-    <h1 style="font-size: 2.4vw;">  <!-- fix font size so that it matches container -->
-      Walter A. Jablonowski    </h1>
+  <!-- ============================================================
+       PAGE 1
+  ============================================================ -->
+  <div class="cv-page p1">
 
-          <p data-key="personal.summary">
-        AI developer (full stack)      </p>
-    
-    <div class="contact-info">
-      <table style="margin-left: -4px;">
-        <tr>
-          <td><i class="bi bi-envelope"></i></td>
-          <td>
-            <a href="mailto:walter.a.jablonowski@gmail.com">walterjab@outlook.com</a>
-          </td>
-        </tr>
-        <tr>
-          <td><i class="bi bi-globe"></i></td>
-          <td>
-            <a href="https://is.gd/waj_hq">
-              is.gd/waj_hq            </a>
-          </td>
-        </tr>
-        <tr>
-          <td style="vertical-align: top;"><i class="bi bi-geo-alt-fill"></i></td>
-          <td>
-            <a href="https://goo.gl/maps/RRCcuAVrxa2qfJr9A" target="_blank">
-              Am Anger 9 <br>
-              96135 Stegaurach            </a>
-          </td>
-        </tr>
-      </table>
-    </div>
+    <aside class="sidebar">
 
-          <div class="skill" style="margin-top: 20px;">
-        <div class="skill-name">Python</div>
-        <div class="skill-bar">
-          <div class="skill-level" style="width: 40%;"></div>
-        </div>
+      <img src="img/img_6.png" class="s-photo" alt="Walter A. Jablonowski">
+
+      <div class="s-name">
+        <span class="s-name-first">Walter A.</span>
+        <span class="s-name-last">Jablonowski</span>
       </div>
-          <div class="skill" style="margin-top: 20px;">
-        <div class="skill-name">Typescript</div>
-        <div class="skill-bar">
-          <div class="skill-level" style="width: 25%;"></div>
+      <div class="s-title">AI Developer &middot; Full Stack</div>
+
+      <div class="s-divider"></div>
+
+      <div class="s-label">Kontakt</div>
+      <ul class="s-contact">
+        <li>
+          <i class="bi bi-envelope ic"></i>
+          <a href="mailto:walterjab@outlook.com">walterjab@outlook.com</a>
+        </li>
+        <li>
+          <i class="bi bi-globe2 ic"></i>
+          <a href="https://is.gd/waj_hq" target="_blank">is.gd/waj_hq</a>
+        </li>
+        <li>
+          <i class="bi bi-geo-alt-fill ic"></i>
+          <a href="https://goo.gl/maps/RRCcuAVrxa2qfJr9A" target="_blank">
+            Am Anger 9<br>96135 Stegaurach
+          </a>
+        </li>
+      </ul>
+
+      <div class="s-divider"></div>
+
+      <div class="s-label">Technische Skills</div>
+
+      <div class="s-skill">
+        <div class="s-skill-row">
+          <span class="s-skill-name">PHP</span>
+          <span class="s-skill-val">Expert</span>
         </div>
+        <div class="s-skill-track"><div class="s-skill-fill" style="width:100%"></div></div>
       </div>
-          <div class="skill" style="margin-top: 20px;">
-        <div class="skill-name">PHP</div>
-        <div class="skill-bar">
-          <div class="skill-level" style="width: 100%;"></div>
+      <div class="s-skill">
+        <div class="s-skill-row">
+          <span class="s-skill-name">SQL &amp; DB-Design</span>
+          <span class="s-skill-val">Expert</span>
         </div>
+        <div class="s-skill-track"><div class="s-skill-fill" style="width:100%"></div></div>
       </div>
-          <div class="skill" style="margin-top: 20px;">
-        <div class="skill-name">javascript</div>
-        <div class="skill-bar">
-          <div class="skill-level" style="width: 70%;"></div>
+      <div class="s-skill">
+        <div class="s-skill-row">
+          <span class="s-skill-name">HTML</span>
+          <span class="s-skill-val">Expert</span>
         </div>
+        <div class="s-skill-track"><div class="s-skill-fill" style="width:100%"></div></div>
       </div>
-          <div class="skill" style="margin-top: 20px;">
-        <div class="skill-name">HTML</div>
-        <div class="skill-bar">
-          <div class="skill-level" style="width: 100%;"></div>
+      <div class="s-skill">
+        <div class="s-skill-row">
+          <span class="s-skill-name">JavaScript</span>
+          <span class="s-skill-val">Fortgeschritten</span>
         </div>
+        <div class="s-skill-track"><div class="s-skill-fill" style="width:70%"></div></div>
       </div>
-          <div class="skill" style="margin-top: 20px;">
-        <div class="skill-name">CSS</div>
-        <div class="skill-bar">
-          <div class="skill-level" style="width: 50%;"></div>
+      <div class="s-skill">
+        <div class="s-skill-row">
+          <span class="s-skill-name">CSS</span>
+          <span class="s-skill-val">Fortgeschritten</span>
         </div>
+        <div class="s-skill-track"><div class="s-skill-fill" style="width:50%"></div></div>
       </div>
-          <div class="skill" style="margin-top: 20px;">
-        <div class="skill-name">SQL</div>
-        <div class="skill-bar">
-          <div class="skill-level" style="width: 100%;"></div>
+      <div class="s-skill">
+        <div class="s-skill-row">
+          <span class="s-skill-name">Python</span>
+          <span class="s-skill-val">Grundkenntnisse</span>
         </div>
+        <div class="s-skill-track"><div class="s-skill-fill" style="width:40%"></div></div>
       </div>
-          <div class="skill" style="margin-top: 20px;">
-        <div class="skill-name">DB-Design</div>
-        <div class="skill-bar">
-          <div class="skill-level" style="width: 100%;"></div>
+      <div class="s-skill">
+        <div class="s-skill-row">
+          <span class="s-skill-name">TypeScript</span>
+          <span class="s-skill-val">Grundkenntnisse</span>
         </div>
+        <div class="s-skill-track"><div class="s-skill-fill" style="width:25%"></div></div>
       </div>
-    
-    <div class="lang-skills" style="margin-top: 40px;">
-              <span class="lang-skill">
-          <span data-caption="German">German</span>: <span data-key="skills.lang.German">native</span>
-        </span>
-              <span class="lang-skill">
-          <span data-caption="English">English</span>: <span data-key="skills.lang.English">fluent</span>
-        </span>
+
+    </aside>
+
+    <main class="main">
+
+      <div class="logo-area">
+        <img src="img/logo.png" alt="Logo" class="cv-logo">
+      </div>
+
+      <section class="m-sec">
+        <h2 class="m-h2">Zusammenfassung</h2>
+        <p class="m-summary">
+          <strong>AI&#8209;nativer</strong> Developer kombiniert mit <strong>25&nbsp;Jahren Erfahrung</strong>
+          in der Programmierung. Vor KI: Entwicklung von Webanwendungen &mdash; dann 2&nbsp;Jahre
+          KI-basierte App-Entwicklung sowie AI&nbsp;Agents. Interessiert an minimalistischen
+          L&ouml;sungen und innovativen Technologien.
+        </p>
+      </section>
+
+      <section class="m-sec">
+        <h2 class="m-h2">Besondere F&auml;higkeiten</h2>
+        <div class="skill-block">
+          <p>
+            <strong>AI Superpowers:</strong> Gesteigerte Produktivit&auml;t durch KI-Einsatz.
+            Begeistert von minimalistischen Ans&auml;tzen, welche die Produktivit&auml;t
+            kombiniert mit KI nochmals erheblich steigern. Lieblingsthemen:
+            Informationsmanagement, Innovationen, Nutrition.
+          </p>
+          <p>
+            <strong>Fr&uuml;here Skills</strong>
+            <span class="muted">&nbsp;&mdash; nicht mehr aktuell</span>
+          </p>
+          <div class="past-grid">
+            <div class="past-col">
+              <p><strong>bis 2015:</strong> iOS &amp; Android Apps</p>
+              <div class="lang-badges">
+                <span class="lang-badge">Objective-C</span>
+                <span class="lang-badge">Xcode</span>
+                <span class="lang-badge">Java</span>
+                <span class="lang-badge">Android Studio</span>
+              </div>
+            </div>
+            <div class="past-col">
+              <p><strong>bis 2010:</strong> Business-Anwendungen</p>
+              <div class="lang-badges">
+                <span class="lang-badge">C#</span>
+                <span class="lang-badge">VB</span>
+                <span class="lang-badge">Java</span>
+                <span class="lang-badge">XML/XSLT</span>
+                <span class="lang-badge">VBA</span>
+                <span class="lang-badge">Visual Basic</span>
+                <span class="lang-badge">C++</span>
+                <span class="lang-badge">C</span>
+              </div>
+            </div>
           </div>
-
-    <div class="new-page" style="padding-top: 20px;">
-      <table class="misc-personal">
-        <tr>
-          <td data-caption="born">
-            Born:
-          </td>
-          <td data-key="personal.dateOfBirth">
-            1978-09-11          </td>
-        </tr>
-        <tr>
-          <td data-caption="nationality">
-            Nationality:
-          </td>
-          <td data-key="personal.nationality">
-            German          </td>
-        </tr>
-        <tr>
-          <td data-caption="maritalStatus">
-            Marital status:
-          </td>
-          <td data-key="personal.maritalStatus">
-            single          </td>
-        </tr>
-      </table>
-    </div>
-
-          <div style="padding: 20px 0 5px 0;">
-        Scan me
-      </div>
-      <div>
-        <img src="qr.png" style="max-width: 200px;">
-      </div>
-      </div>
-
-  <div class="main-content">
-
-    <div class="action-buttons">
-      <button id="printBtn" class="btn btn-action" onclick="printCV()">
-        <i class="bi bi-printer"></i>
-      </button>
-      <button id="langBtn"  class="btn btn-action lang-en" onclick="toggleLanguage()">
-        <img  src="https://flagcdn.com/w20/us.png">
-      </button>
-    </div>
-
-          <div style="text-align: center;">
-        <img src="logo.png"  style="max-width: 75px;">
-      </div>
-    
-    <section>
-      <h2 data-caption="summary">
-        Summary      </h2>
-      <p data-key="summary">
-        
-<b>AI native</b> developer combined with <b>25 years of experience</b> in programming. Before AI: development of web applications, then 2 years AI-based app development as well as AI Agents. Interested in minimalistic solutions and innovative technologies.
-      </p>
-    </section>
-
-    <section>
-      <h2 data-caption="specialSkills">
-        Special skills      </h2>
-      <!-- collapsible -->
-      <div class="collapsible" data-captions="{&quot;de&quot;:{&quot;readMore&quot;:&quot;Mehr ...&quot;,&quot;less&quot;:&quot;weniger zeigen&quot;},&quot;en&quot;:{&quot;readMore&quot;:&quot;Read more ...&quot;,&quot;less&quot;:&quot;less&quot;}}">
-        <div data-key="specialSkills" class="content collapsed">
-          
-<p><b>AI superpowers:</b> Increased productivity through AI. Passionate about minimalistic approaches, which increase the productivity even more when combined with AI. Topics of special interest: e.g. information management, innovation, nutrition.</p>
-<p><b>Past skills:</b></p> <p style="color: #6c757d; font-style: italic; font-size: 0.9em;">
-  Skills from earlier in my career that I no longer actively offer due to the time elapsed
-</p>
-<p><b>until 2015:</b> iOS and Android Apps</p> <ul class="no-indent">
-  <li>Objective C, Xcode</li>
-  <li>Java, Android Studio</li>
-</ul>
-<p><b>until 2010:</b> Apps for management of business processes (Win)</p> <ul class="no-indent">
-  <li>.NET: C#, VB</li>
-  <li>UML</li>
-  <li>Java</li>
-  <li>XML, XSLT</li>
-  <li>VBA</li>
-  <li>Visual Basic</li>
-  <li>C++</li>
-  <li>C</li>
-</ul>
-        </div>
-        <span class="more-btn" data-caption="collapsible.readMore">Read more ...</span>
-        <!-- special elem TASK: add this in cv -->
-        <span class="info">
-          read online: <a href="https://is.gd/waj_cv">is.gd/waj_cv</a>
-        </span>
-      </div>
-    </section>
-
-    <section>
-      <h2 data-caption="goals">
-        Goals      </h2>
-      <div data-key="goals">  <!-- ul can't be inside p (html used in yml) -->
-        
-<ul class="no-indent">
-  <li>AI powered development, cool AI features</li>
-  <li>Part-time 16-20h (Home Office), temporarily full time</li>
-  <li>Maintain work-life balance with flexible hours</li>
-</ul>
-      </div>
-    </section>
-
-          <section>
-        <div data-key="specialContentPage1">
-          
-<h4 style="margin-bottom: 8px;">Samples for apps that I made with AI (with AI features)</h4>
-
-<table style="border: none; border-collapse: collapse;"><tr style="border: none;">
-  <td style="border: none; width: 200px; vertical-align: top; text-align: left; line-height: 1.2;">
-    <img src="log-view.png" style="height: 110px; display: block; margin-bottom: 6px;">
-    <span style="font-size: 0.85em;"><b>Done in only 3 days:</b> Data analysis with AI (large log files)</span>
-  </td>
-  <td style="border: none; width: 40px;"></td>
-  <td style="border: none; width: 200px; vertical-align: top; text-align: left; line-height: 1.2;">
-    <img src="dashb-2.png" style="height: 110px; display: block; margin-bottom: 6px;">
-    <span style="font-size: 0.85em;"><b>Larger Application</b> (currently in development)</span>
-  </td>
-</tr></table>
-
-<p style="margin: 8px 0 10px; font-size: 0.85em; color: #555;"><b>More apps and code samples:</b> on my <a href="https://walter-a-jablonowski.github.io" target="_blank" class="link-blue" style="color: #1a73e8;">homepage</a> or <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="link-blue" style="color: #1a73e8;">LinkedIn</a>.</p>
-
-<div style="margin-top: 4px;">
-  <span style="display: inline-block; background-color: #f8f9fa; padding: 5px 10px; border-radius: 5px; margin-right: 10px;">
-    <a href="https://www.anthropic.com/claude" target="_blank" style="text-decoration: none; color: black;">
-      <img src="claude_logo.png" style="height: 25px; vertical-align: middle; margin-right: 5px;">
-      Claude enthusiast
-    </a>
-  </span>
-  <span style="display: inline-block; background-color: #f8f9fa; padding: 5px 10px; border-radius: 5px; margin-right: 10px;">
-    <a href="https://www.windsurf.com" target="_blank" style="text-decoration: none; color: black;">
-      <img src="windsurf_logo.png" style="height: 25px; vertical-align: middle; margin-right: 5px;">
-      enthusiast
-    </a>
-  </span>
-</div>
-
-<!--
-<span style="display: inline-block; background-color: #f8f9fa; padding: 5px 10px; border-radius: 5px;">
-  <a href="https://waj.42web.io/overview?board=default&tab=2" target="_blank" style="text-decoration: none; color: black;">
-    <b>my</b> AI tools <i class="bi bi-box-arrow-up-right" style="font-size: 0.8em;"></i>
-  </a>
-</span>
--->
-
-<!-- <img src="ui_sample.png" style="display: block; max-height: 180px; margin-top: 5px;"> -->
         </div>
       </section>
-    
-    <section class="new-page">
 
-      <h2 data-caption="experience">
-        Experience      </h2>
+      <section class="m-sec">
+        <h2 class="m-h2">Ziele</h2>
+        <ul class="goal-list">
+          <li>KI-basierte Entwicklung und KI-Features</li>
+          <li>Teilzeit 16&ndash;20&thinsp;h (Home Office), tempor&auml;r Vollzeit denkbar</li>
+          <li>Work-Life-Balance durch flexible Arbeitszeiten</li>
+        </ul>
+      </section>
 
-      <div class="timeline" data-list="experience">
-                  <div class="experience-item" data-idx="0">
-            <h3>
-              <span class="date">
-                <span data-key="from">01/2021</span> - <span data-key="until">07/2024</span>
-              </span>
-              &nbsp;
-              <span data-key="position">Web developer</span>
-            </h3>
-                          <p class="details">
-                                  <div>
-                    <span class="label" data-caption="company">Company</span>: <span data-key="organisation">VX APPS, Hildesheim</span>
-                  </div>
-                                                  <div data-key="summary"><div style='display:flex; align-items:flex-start; gap:4px; margin-left:-4px;'><i class='bi bi-arrow-right-short' style='color:#FFA500; font-size:1.3em; flex-shrink:0; margin-top:-3px;'></i><span>New PHP/js web application (part-time, home office)</span></div></div>
-                              </p>
-                      </div>
-                  <div class="experience-item" data-idx="1">
-            <h3>
-              <span class="date">
-                <span data-key="from">05/2019</span> - <span data-key="until">01/2021</span>
-              </span>
-              &nbsp;
-              <span data-key="position">Web developer</span>
-            </h3>
-                          <p class="details">
-                                  <div>
-                    <span class="label" data-caption="company">Company</span>: <span data-key="organisation">inixmedia GmbH, Schwentinental</span>
-                  </div>
-                                                  <div data-key="summary"><div style='display:flex; align-items:flex-start; gap:4px; margin-left:-4px;'><i class='bi bi-arrow-right-short' style='color:#FFA500; font-size:1.3em; flex-shrink:0; margin-top:-3px;'></i><span>New PHP/js web application (part-time, home office)</span></div></div>
-                              </p>
-                      </div>
-                  <div class="experience-item" data-idx="2">
-            <h3>
-              <span class="date">
-                <span data-key="from">09/2015</span> - <span data-key="until">12/2017</span>
-              </span>
-              &nbsp;
-              <span data-key="position">Mobile- and web developer</span>
-            </h3>
-                          <p class="details">
-                                  <div>
-                    <span class="label" data-caption="company">Company</span>: <span data-key="organisation">Varimetrix Deutschland GmbH, Kummersbrück</span>
-                  </div>
-                                                  <div data-key="summary"><div style='display:flex; align-items:flex-start; gap:4px; margin-left:-4px;'><i class='bi bi-arrow-right-short' style='color:#FFA500; font-size:1.3em; flex-shrink:0; margin-top:-3px;'></i><span>iOS and Android Apps, new web application based on PHP and js (part-time, home office)</span></div></div>
-                              </p>
-                      </div>
-                  <div class="experience-item" data-idx="3">
-            <h3>
-              <span class="date">
-                <span data-key="from">02/2004</span> - <span data-key="until">05/2012</span>
-              </span>
-              &nbsp;
-              <span data-key="position">Self-employed developer</span>
-            </h3>
-                          <p class="details">
-                                                  <div data-key="summary"><b>Clients:</b> e.g. Auto Group, Telecomm., Federal Authority<br> <div style='display:flex; align-items:flex-start; gap:4px; margin-left:-4px;'><i class='bi bi-arrow-right-short' style='color:#FFA500; font-size:1.3em; flex-shrink:0; margin-top:-3px;'></i><span>Development of business applications for Windows, database design, SQL development, apps for iPhone</span></div>
-</div>
-                              </p>
-                      </div>
-              </div>
-    </section>
+      <section class="m-sec">
+        <h2 class="m-h2">App&#8209;Beispiele</h2>
+        <div class="apps-grid">
+          <div class="app-card">
+            <img src="img/log-view.jpg" alt="Log-Analyse">
+            <div class="app-card-body">
+              <strong>Fertig in nur 3&nbsp;Tagen:</strong> Datenanalyse mit KI (gro&szlig;e Log-Dateien)
+            </div>
+          </div>
+          <div class="app-card">
+            <img src="img/dashb-2.jpg" alt="Dashboard">
+            <div class="app-card-body">
+              <strong>Gr&ouml;&szlig;ere Anwendung</strong> (derzeit in Entwicklung)
+            </div>
+          </div>
+        </div>
+        <p class="apps-links">
+          Mehr Apps und Code-Samples auf meiner
+          <a href="https://walter-a-jablonowski.github.io" target="_blank">Webseite</a> oder
+          <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank">LinkedIn</a>.
+        </p>
+        <div class="tool-badges">
+          <a href="https://www.anthropic.com/claude" class="tool-badge" target="_blank">
+            <img src="img/claude_logo.png" alt="Claude">
+            Claude enthusiast
+          </a>
+          <a href="https://www.windsurf.com" class="tool-badge" target="_blank">
+            <img src="img/windsurf_logo.png" alt="Windsurf">
+            enthusiast
+          </a>
+        </div>
+      </section>
 
-    <section>
+    </main>
+  </div><!-- /.cv-page.p1 -->
 
-      <h2 data-caption="education">
-        Education      </h2>
 
-      <div class="timeline" data-list="education">
-                  <div class="education-item" data-idx="0">
-            <h3>
-              <span class="date">
-                <span data-key="from">09/2000</span> - <span data-key="until">02/2003</span>
-              </span>
-              &nbsp;
-              <span data-key="institution">CIB, Bamberg</span>
-            </h3>
-                          <p class="details">
-                                                  <div>
-                    <span class="label" data-caption="degree">Degree</span>: <span data-key="degree">Fachinformatiker Anwendungsentwicklung</span>
-                  </div>
-                              </p>
-                      </div>
-                  <div class="education-item" data-idx="1">
-            <h3>
-              <span class="date">
-                <span data-key="from">09/1989</span> - <span data-key="until">05/1999</span>
-              </span>
-              &nbsp;
-              <span data-key="institution">Clavius Gymnasium</span>
-            </h3>
-                          <p class="details">
-                                                  <div>
-                    <span class="label" data-caption="degree">Degree</span>: <span data-key="degree">Mittlere Reife</span>
-                  </div>
-                              </p>
-                      </div>
-              </div>
-    </section>
+  <!-- ============================================================
+       PAGE 2
+  ============================================================ -->
+  <div class="cv-page p2">
 
-    <p class="footer">
-      powered by cv-maker &copy; Walter A. Jablonowski 2024-2026
-    </p>
-  </div>
+    <aside class="sidebar">
 
-</div>
+      <div class="s-label">Sprachen</div>
+      <div class="s-langs">
+        <div class="s-lang">
+          <span class="s-lang-name">Deutsch</span>
+          <span class="s-lang-level">Muttersprache</span>
+        </div>
+        <div class="s-lang">
+          <span class="s-lang-name">Englisch</span>
+          <span class="s-lang-level">Flie&szlig;end</span>
+        </div>
+      </div>
+
+      <div class="s-divider"></div>
+
+      <div class="s-label">Pers&ouml;nliches</div>
+      <table class="s-personal">
+        <tr>
+          <td>Geburtsdatum</td>
+          <td>09.11.1978</td>
+        </tr>
+        <tr>
+          <td>Nationalit&auml;t</td>
+          <td>Deutsch</td>
+        </tr>
+        <tr>
+          <td>Familienstand</td>
+          <td>Ledig</td>
+        </tr>
+      </table>
+
+      <div class="s-qr">
+        <div class="s-qr-label">Scan me</div>
+        <img src="img/qr.png" alt="QR Code">
+      </div>
+
+    </aside>
+
+    <main class="main">
+
+      <section class="m-sec">
+        <h2 class="m-h2">Berufserfahrung</h2>
+        <div class="timeline">
+
+          <div class="t-item">
+            <div class="t-date">01/2021 &mdash; 07/2024</div>
+            <div class="t-pos">Web-Entwickler</div>
+            <div class="t-org">VX APPS, Hildesheim</div>
+            <div class="t-desc">Entwicklung einer PHP/js-Webanwendung (Teilzeit, Home Office)</div>
+          </div>
+
+          <div class="t-item">
+            <div class="t-date">05/2019 &mdash; 01/2021</div>
+            <div class="t-pos">Web-Entwickler</div>
+            <div class="t-org">inixmedia GmbH, Schwentinental</div>
+            <div class="t-desc">Entwicklung einer PHP/js-Webanwendung (Teilzeit, Home Office)</div>
+          </div>
+
+          <div class="t-item">
+            <div class="t-date">09/2015 &mdash; 12/2017</div>
+            <div class="t-pos">Mobile- und Web-Entwickler</div>
+            <div class="t-org">Varimetrix Deutschland GmbH, K&uuml;mmersbruck</div>
+            <div class="t-desc">
+              iOS und Android Apps; Entwicklung einer Webanwendung mit PHP und js
+              (Teilzeit, Home Office)
+            </div>
+          </div>
+
+          <div class="t-item">
+            <div class="t-date">02/2004 &mdash; 05/2012</div>
+            <div class="t-pos">Selbst&auml;ndiger Entwickler</div>
+            <div class="t-desc">
+              <strong>Kunden:</strong> u.&thinsp;a. Auto-Konzern, Telekommunikation, Beh&ouml;rde<br>
+              Neuentwicklung von Business-Anwendungen unter Windows, Datenbankdesign,
+              SQL-Entwicklung, Apps f&uuml;r iPhone
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="m-sec">
+        <h2 class="m-h2">Ausbildung</h2>
+        <div class="timeline">
+
+          <div class="t-item">
+            <div class="t-date">09/2000 &mdash; 02/2003</div>
+            <div class="t-pos">CIB, Bamberg</div>
+            <div class="t-desc">Fachinformatiker Anwendungsentwicklung</div>
+          </div>
+
+          <div class="t-item">
+            <div class="t-date">09/1989 &mdash; 05/1999</div>
+            <div class="t-pos">Clavius Gymnasium</div>
+            <div class="t-desc">Mittlere Reife</div>
+          </div>
+
+        </div>
+      </section>
+
+      <footer class="cv-footer">
+        powered by cv-maker &copy; Walter A. Jablonowski 2026
+      </footer>
+
+    </main>
+  </div><!-- /.cv-page.p2 -->
+
+</div><!-- /.cv-wrap -->
 
 <a class="homepage-fab" href="https://walter-a-jablonowski.github.io/" target="_blank">
   <i class="bi bi-house-fill"></i>
-  <span class="homepage-fab-label">Visit my homepage</span>
+  <span>Zur Webseite</span>
 </a>
 
-  <script>
-    const captions = {
-      'en': {"German":"German","English":"English","Spanish":"Spanish","born":"Born","nationality":"Nationality","maritalStatus":"Marital status","summary":"Summary","specialSkills":"Special skills","goals":"Goals","experience":"Experience","company":"Company","education":"Education","degree":"Degree","collapsible":{"readMore":"Read more ...","less":"less"}},
-      'de': {"German":"Deutsch","English":"Englisch","Spanish":"Spanisch","born":"Geburtsdatum","nationality":"Nationalit\u00e4t","maritalStatus":"Familienst.","summary":"Summary","specialSkills":"Special skills","goals":"Ziele","experience":"Experience","company":"Firma","education":"Ausbildung","degree":"Abschluss","collapsible":{"readMore":"Mehr ...","less":"weniger zeigen"}}    }
-    const data = {
-      'en': {"personal":{"name":"Walter A. Jablonowski","logo":"logo.png","image":"img_6.png","summary":"AI developer (full stack)","mailCaption":"walterjab@outlook.com","mail":"walter.a.jablonowski@gmail.com","url":"https:\/\/is.gd\/waj_hq","location":{"address":"Am Anger 9","postalCode":96135,"city":"Stegaurach"},"dateOfBirth":"1978-09-11","nationality":"German","maritalStatus":"single"},"summary":"\n<b>AI native<\/b> developer combined with <b>25 years of experience<\/b> in programming. Before AI: development of web applications, then 2 years AI-based app development as well as AI Agents. Interested in minimalistic solutions and innovative technologies.\n","specialSkills":"\n<p><b>AI superpowers:<\/b> Increased productivity through AI. Passionate about minimalistic approaches, which increase the productivity even more when combined with AI. Topics of special interest: e.g. information management, innovation, nutrition.<\/p>\n<p><b>Past skills:<\/b><\/p> <p style=\"color: #6c757d; font-style: italic; font-size: 0.9em;\">\n  Skills from earlier in my career that I no longer actively offer due to the time elapsed\n<\/p>\n<p><b>until 2015:<\/b> iOS and Android Apps<\/p> <ul class=\"no-indent\">\n  <li>Objective C, Xcode<\/li>\n  <li>Java, Android Studio<\/li>\n<\/ul>\n<p><b>until 2010:<\/b> Apps for management of business processes (Win)<\/p> <ul class=\"no-indent\">\n  <li>.NET: C#, VB<\/li>\n  <li>UML<\/li>\n  <li>Java<\/li>\n  <li>XML, XSLT<\/li>\n  <li>VBA<\/li>\n  <li>Visual Basic<\/li>\n  <li>C++<\/li>\n  <li>C<\/li>\n<\/ul>\n","goals":"\n<ul class=\"no-indent\">\n  <li>AI powered development, cool AI features<\/li>\n  <li>Part-time 16-20h (Home Office), temporarily full time<\/li>\n  <li>Maintain work-life balance with flexible hours<\/li>\n<\/ul>\n","specialContentPage1":"\n<h4 style=\"margin-bottom: 8px;\">Samples for apps that I made with AI (with AI features)<\/h4>\n\n<table style=\"border: none; border-collapse: collapse;\"><tr style=\"border: none;\">\n  <td style=\"border: none; width: 200px; vertical-align: top; text-align: left; line-height: 1.2;\">\n    <img src=\"log-view.png\" style=\"height: 110px; display: block; margin-bottom: 6px;\">\n    <span style=\"font-size: 0.85em;\"><b>Done in only 3 days:<\/b> Data analysis with AI (large log files)<\/span>\n  <\/td>\n  <td style=\"border: none; width: 40px;\"><\/td>\n  <td style=\"border: none; width: 200px; vertical-align: top; text-align: left; line-height: 1.2;\">\n    <img src=\"dashb-2.png\" style=\"height: 110px; display: block; margin-bottom: 6px;\">\n    <span style=\"font-size: 0.85em;\"><b>Larger Application<\/b> (currently in development)<\/span>\n  <\/td>\n<\/tr><\/table>\n\n<p style=\"margin: 8px 0 10px; font-size: 0.85em; color: #555;\"><b>More apps and code samples:<\/b> on my <a href=\"https:\/\/walter-a-jablonowski.github.io\" target=\"_blank\" class=\"link-blue\" style=\"color: #1a73e8;\">homepage<\/a> or <a href=\"https:\/\/www.linkedin.com\/in\/walter-a-jablonowski-6a9a101b0\" target=\"_blank\" class=\"link-blue\" style=\"color: #1a73e8;\">LinkedIn<\/a>.<\/p>\n\n<div style=\"margin-top: 4px;\">\n  <span style=\"display: inline-block; background-color: #f8f9fa; padding: 5px 10px; border-radius: 5px; margin-right: 10px;\">\n    <a href=\"https:\/\/www.anthropic.com\/claude\" target=\"_blank\" style=\"text-decoration: none; color: black;\">\n      <img src=\"claude_logo.png\" style=\"height: 25px; vertical-align: middle; margin-right: 5px;\">\n      Claude enthusiast\n    <\/a>\n  <\/span>\n  <span style=\"display: inline-block; background-color: #f8f9fa; padding: 5px 10px; border-radius: 5px; margin-right: 10px;\">\n    <a href=\"https:\/\/www.windsurf.com\" target=\"_blank\" style=\"text-decoration: none; color: black;\">\n      <img src=\"windsurf_logo.png\" style=\"height: 25px; vertical-align: middle; margin-right: 5px;\">\n      enthusiast\n    <\/a>\n  <\/span>\n<\/div>\n\n<!--\n<span style=\"display: inline-block; background-color: #f8f9fa; padding: 5px 10px; border-radius: 5px;\">\n  <a href=\"https:\/\/waj.42web.io\/overview?board=default&tab=2\" target=\"_blank\" style=\"text-decoration: none; color: black;\">\n    <b>my<\/b> AI tools <i class=\"bi bi-box-arrow-up-right\" style=\"font-size: 0.8em;\"><\/i>\n  <\/a>\n<\/span>\n-->\n\n<!-- <img src=\"ui_sample.png\" style=\"display: block; max-height: 180px; margin-top: 5px;\"> -->\n","skills":{"dev":{"Python":40,"Typescript":25,"PHP":100,"javascript":70,"HTML":100,"CSS":50,"SQL":100,"DB-Design":100},"lang":{"German":"native","English":"fluent"}},"experience":[{"from":"01\/2021","until":"07\/2024","position":"Web developer","organisation":"VX APPS, Hildesheim","summary":"<div style='display:flex; align-items:flex-start; gap:4px; margin-left:-4px;'><i class='bi bi-arrow-right-short' style='color:#FFA500; font-size:1.3em; flex-shrink:0; margin-top:-3px;'><\/i><span>New PHP\/js web application (part-time, home office)<\/span><\/div>"},{"from":"05\/2019","until":"01\/2021","position":"Web developer","organisation":"inixmedia GmbH, Schwentinental","summary":"<div style='display:flex; align-items:flex-start; gap:4px; margin-left:-4px;'><i class='bi bi-arrow-right-short' style='color:#FFA500; font-size:1.3em; flex-shrink:0; margin-top:-3px;'><\/i><span>New PHP\/js web application (part-time, home office)<\/span><\/div>"},{"from":"09\/2015","until":"12\/2017","position":"Mobile- and web developer","organisation":"Varimetrix Deutschland GmbH, Kummersbr\u00fcck","summary":"<div style='display:flex; align-items:flex-start; gap:4px; margin-left:-4px;'><i class='bi bi-arrow-right-short' style='color:#FFA500; font-size:1.3em; flex-shrink:0; margin-top:-3px;'><\/i><span>iOS and Android Apps, new web application based on PHP and js (part-time, home office)<\/span><\/div>"},{"from":"02\/2004","until":"05\/2012","position":"Self-employed developer","summary":"<b>Clients:<\/b> e.g. Auto Group, Telecomm., Federal Authority<br> <div style='display:flex; align-items:flex-start; gap:4px; margin-left:-4px;'><i class='bi bi-arrow-right-short' style='color:#FFA500; font-size:1.3em; flex-shrink:0; margin-top:-3px;'><\/i><span>Development of business applications for Windows, database design, SQL development, apps for iPhone<\/span><\/div>\n"}],"education":[{"from":"09\/2000","until":"02\/2003","institution":"CIB, Bamberg","degree":"Fachinformatiker Anwendungsentwicklung"},{"from":"09\/1989","until":"05\/1999","institution":"Clavius Gymnasium","degree":"Mittlere Reife"}]},
-      'de': {"personal":{"name":"Walter A. Jablonowski","logo":"logo.png","image":"img_6.png","summary":"AI developer (full stack)","mailCaption":"walterjab@outlook.com","mail":"walter.a.jablonowski@gmail.com","url":"https:\/\/is.gd\/waj_hq","location":{"address":"Am Anger 9","postalCode":96135,"city":"Stegaurach"},"dateOfBirth":"1978-09-11","nationality":"German","maritalStatus":"single"},"summary":"\n<b>AI native<\/b> Developer kombiniert mit <b>25 Jahren Erfahrung<\/b> in der Programmierung. Vor KI: Entwicklung von Webanwendungen, dann 2 Jahre KI-basierte App-Entwicklung und AI Agents. Interessiert an minimalistischen L\u00f6sungen und innovativen Technologien.\n","specialSkills":"\n<p><b>AI superpowers:<\/b> Gesteigerte Produktivit\u00e4t durch KI-Einsatz. Begeistert von minimalistischen Ans\u00e4tzen, welche die Produktivit\u00e4t kombiniert mit KI nochmal erheblich steigern. Lieblingsthemen: z.B. Informationsmanagement, Innovationen, Nutrition.<\/p>\n<p><b>Past skills:<\/b><\/p> <p style=\"color: #6c757d; font-style: italic; font-size: 0.9em;\">\n  Fr\u00fchere F\u00e4higkeiten, die ich aufgrund der verstrichenen Zeit nicht mehr aktiv anbiete\n<\/p>\n<p><b>bis 2015:<\/b> iOS und Android Apps<\/p> <ul class=\"no-indent\">\n  <li>Objective C, Xcode<\/li>\n  <li>Java, Android Studio<\/li>\n<\/ul>\n<p><b>bis 2010:<\/b> Anwendungen f\u00fcr betriebliche Prozesse (Win)<\/p> <ul class=\"no-indent\">\n  <li>.NET: C#, VB<\/li>\n  <li>UML<\/li>\n  <li>Java<\/li>\n  <li>XML, XSLT<\/li>\n  <li>VBA<\/li>\n  <li>Visual Basic<\/li>\n  <li>C++<\/li>\n  <li>C<\/li>\n<\/ul>\n","goals":"\n<ul class=\"no-indent\">\n  <li>KI-basierte Entwicklung und KI-Features<\/li>\n  <li>Teilzeit 16-20h (Home Office), tempor\u00e4r Vollzeit denkbar<\/li>\n  <li>Work-Life-Balance durch flexible Arbeitszeiten<\/li>\n<\/ul>\n","specialContentPage1":"\n<h4 style=\"margin-bottom: 8px;\">Beispiele f\u00fcr mit KI entwickelte Apps (mit KI-Features)<\/h4>\n\n<table style=\"border: none; border-collapse: collapse;\"><tr style=\"border: none;\">\n  <td style=\"border: none; width: 200px; vertical-align: top; text-align: left; line-height: 1.2;\">\n    <img src=\"log-view.png\" style=\"height: 110px; display: block; margin-bottom: 6px;\">\n    <span style=\"font-size: 0.85em;\"><b>Fertig in nur 3 Tagen:<\/b> Datenanalyse mit KI (grosse logs)<\/span>\n  <\/td>\n  <td style=\"border: none; width: 40px;\"><\/td>\n  <td style=\"border: none; width: 200px; vertical-align: top; text-align: left; line-height: 1.2;\">\n    <img src=\"dashb-2.png\" style=\"height: 110px; display: block; margin-bottom: 6px;\">\n    <span style=\"font-size: 0.85em;\"><b>Gr\u00f6\u00dfere Anwendung<\/b> (derzeit in Entwicklung)<\/span>\n  <\/td>\n<\/tr><\/table>\n\n<p style=\"margin: 8px 0 10px; font-size: 0.85em; color: #555;\"><b>Mehr Apps und Code-Samples:<\/b> auf meiner <a href=\"https:\/\/walter-a-jablonowski.github.io\" target=\"_blank\" class=\"link-blue\" style=\"color: #1a73e8;\">Webseite<\/a> oder <a href=\"https:\/\/www.linkedin.com\/in\/walter-a-jablonowski-6a9a101b0\" target=\"_blank\" class=\"link-blue\" style=\"color: #1a73e8;\">LinkedIn<\/a>.<\/p>\n\n<div style=\"margin-top: 4px;\">\n  <span style=\"display: inline-block; background-color: #f8f9fa; padding: 5px 10px; border-radius: 5px; margin-right: 10px;\">\n    <a href=\"https:\/\/www.anthropic.com\/claude\" target=\"_blank\" style=\"text-decoration: none; color: black;\">\n      <img src=\"claude_logo.png\" style=\"height: 25px; vertical-align: middle; margin-right: 5px;\">\n      Claude enthusiast\n    <\/a>\n  <\/span>\n  <span style=\"display: inline-block; background-color: #f8f9fa; padding: 5px 10px; border-radius: 5px; margin-right: 10px;\">\n    <a href=\"https:\/\/www.windsurf.com\" target=\"_blank\" style=\"text-decoration: none; color: black;\">\n      <img src=\"windsurf_logo.png\" style=\"height: 25px; vertical-align: middle; margin-right: 5px;\">\n      enthusiast\n    <\/a>\n  <\/span>\n<\/div>\n\n<!--\n<span style=\"display: inline-block; background-color: #f8f9fa; padding: 5px 10px; border-radius: 5px;\">\n  <a href=\"https:\/\/waj.42web.io\/overview?board=default&tab=2\" target=\"_blank\" style=\"text-decoration: none; color: black;\">\n    <b>my<\/b> AI tools <i class=\"bi bi-box-arrow-up-right\" style=\"font-size: 0.8em;\"><\/i>\n  <\/a>\n<\/span>\n-->\n\n<!-- <img src=\"ui_sample.png\" style=\"display: block; max-height: 180px; margin-top: 5px;\"> -->\n","skills":{"dev":{"Python":40,"Typescript":25,"PHP":100,"javascript":70,"HTML":100,"CSS":50,"SQL":100,"DB-Design":100},"lang":{"German":"Muttersp.","English":"flie\u00dfend"}},"experience":[{"from":"01\/2021","until":"07\/2024","position":"Web-Entwickler","organisation":"VX APPS, Hildesheim","summary":"<div style='display:flex; align-items:flex-start; gap:4px; margin-left:-4px;'><i class='bi bi-arrow-right-short' style='color:#FFA500; font-size:1.3em; flex-shrink:0; margin-top:-3px;'><\/i><span>Entwicklung PHP\/js-Anwendung (Teilzeit, Home Office)<\/span><\/div>"},{"from":"05\/2019","until":"01\/2021","position":"Web-Entwickler","organisation":"inixmedia GmbH, Schwentinental","summary":"<div style='display:flex; align-items:flex-start; gap:4px; margin-left:-4px;'><i class='bi bi-arrow-right-short' style='color:#FFA500; font-size:1.3em; flex-shrink:0; margin-top:-3px;'><\/i><span>Entwicklung PHP\/js-Anwendung (Teilzeit, Home Office)<\/span><\/div>"},{"from":"09\/2015","until":"12\/2017","position":"Mobile- und Web-Entwickler","organisation":"Varimetrix Deutschland GmbH, Kummersbr\u00fcck","summary":"<div style='display:flex; align-items:flex-start; gap:4px; margin-left:-4px;'><i class='bi bi-arrow-right-short' style='color:#FFA500; font-size:1.3em; flex-shrink:0; margin-top:-3px;'><\/i><span>iOS und Android Apps, Entwicklung einer Webanwendung mit PHP und js in Teilzeit (Home Office)<\/span><\/div>"},{"from":"02\/2004","until":"05\/2012","position":"Selbst\u00e4ndiger Entwickler","summary":"<b>Kunden:<\/b> z.B. Auto-Konzern, Telekommunikation, Beh\u00f6rde<br> <div style='display:flex; align-items:flex-start; gap:4px; margin-left:-4px;'><i class='bi bi-arrow-right-short' style='color:#FFA500; font-size:1.3em; flex-shrink:0; margin-top:-3px;'><\/i><span>Neuentwicklung von Business-Anwendungen unter Windows, Datenbankdesign, SQL-Entwicklung, Apps f\u00fcr iPhone<\/span><\/div>\n"}],"education":[{"from":"09\/2000","until":"02\/2003","institution":"CIB, Bamberg","degree":"Fachinformatiker Anwendungsentwicklung"},{"from":"09\/1989","until":"05\/1999","institution":"Clavius Gymnasium","degree":"Mittlere Reife"}]}    }
-  </script>
-  <script>
-  
-    function findKey(obj, path)
-{
-  return path.split('.').reduce( (value, key) => {
-    return value && value[key] !== undefined ? value[key] : undefined;
-  }, obj);
-}
-    document.querySelectorAll('.collapsible').forEach( elem => {
-
-  // const more = {'en': "Read more ...", 'de': "Mehr ..." }
-  // const less = {'en': 'less', 'de': "weniger zeigen" }
-
-  elem.addEventListener('click', function() {
-
-    const btn = elem.querySelector('.more-btn')
-    const content = elem.querySelector('.content')
-    const lang = document.documentElement.lang
-
-    if( content.classList.contains('collapsed'))
-    {
-      content.classList.remove('collapsed')
-      btn.dataset.caption = 'collapsible.less'
-      // btn.textContent = less[ document.documentElement.lang ]
-      btn.textContent = JSON.parse( btn.closest('.collapsible').dataset.captions)[lang].less
-    }
-    else
-    {
-      content.classList.add('collapsed')
-      btn.dataset.caption = 'collapsible.readMore'
-      // btn.textContent = more[ document.documentElement.lang ]
-      btn.textContent = JSON.parse( btn.closest('.collapsible').dataset.captions)[lang].readMore
-    }
-  })
-})
-    function translate( lang )
-{
-  // Captions
-  
-  document.querySelectorAll(`[data-caption]`).forEach( elem => {
-    // we don't really need list captions, just replace the strings
-    elem.innerHTML = findKey( captions[lang], elem.dataset.caption)
-  })
-
-  // Single data values
-
-  let elems = document.querySelectorAll(`[data-key]:not([data-list] [data-key])`)  // TASK: (advanced) recurse (see also below) :not([data-list] [data-list]
-  // elems = document.querySelectorAll(`[data-key]`).filter( elem => {
-  //   return ! elem.closest('[data-list]')
-  // })
-
-  elems.forEach( elem => { 
-    elem.innerHTML = findKey( data[lang], elem.dataset.key)
-  })
-  
-  // Data lists
-  
-  let lists = document.querySelectorAll('[data-list]')
-  
-  lists.forEach( list => { translate_recurse( list, lang ) })
-
-  // Lang attribute
-
-  document.documentElement.lang = lang
-}
-
-function translate_recurse( list, lang )
-{
-  let value = findKey( data[lang], list.dataset.list )  // TASK: func has undefined (currently makes no difference)
-  
-  list.querySelectorAll(`[data-idx]`).forEach( idx => {
-    
-    let val = value[idx.dataset.idx]
-
-    idx.querySelectorAll(`[data-key]`).forEach( entry => {
-      entry.innerHTML = findKey( val, entry.dataset.key)
-    })
-  })
-  
-  // TASK: (advanced) nestend lists
-
-  // list.querySelectorAll(`[data-list]:not([data-list] [data-list]`).forEach( subList => {
-  //   translate_recurse( subList, lang )
-  // })
-}
-  
-          /*
-
-// Font width of long name
-
-function adjustFontSize()
-{
-  const container = document.querySelector('#name')
-  const text = document.querySelector('.inner-name')
-  let fontSize = 40
-  text.style.fontSize = fontSize + 'px'
-
-  while( text.scrollWidth > container.clientWidth && fontSize > 8)
-  {
-    fontSize--
-    text.style.fontSize = fontSize + 'px'
-  }
-}
-
-ready( function() {
-  window.addEventListener('load',   adjustFontSize)
-  window.addEventListener('resize', adjustFontSize)
-})
-
-*/
-
-function printCV()
-{
-  window.print()
-}
-
-function toggleLanguage()
-{
-  const langBtn = document.getElementById('langBtn')
-  
-  if( langBtn.classList.contains('lang-en'))
-  {
-    translate('de')
-    
-    langBtn.classList.remove('lang-en')
-    langBtn.classList.add('lang-de')
-    langBtn.querySelector('img').src = 'https://flagcdn.com/w20/de.png'  // TASK: local
-  }
-  else
-  {
-    translate('en')
-    
-    langBtn.classList.remove('lang-de')
-    langBtn.classList.add('lang-en')
-    langBtn.querySelector('img').src = 'https://flagcdn.com/w20/us.png'
-  }
-}
-      </script>
 </body>
 </html>

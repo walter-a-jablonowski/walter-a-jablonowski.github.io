@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anschreiben — Walter A. Jablonowski</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=satoshi@300,400,500,600,700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+
+    /* ============================================================
+       VARIABLES  (identical to CV)
+    ============================================================ */
+    :root {
+      --c-dark:   #0B0E16;
+      --c-dark2:  #141A24;
+      --c-orange: #E07829;
+      --c-amber:  #C9941F;
+      --c-paper:  #F9F8F5;
+      --c-white:  #FFFFFF;
+      --c-text:   #18181B;
+      --c-muted:  #6B6B73;
+      --c-line:   #E3E2DB;
+      --c-side-t: #DDD8CC;
+      --c-side-m: #736F66;
+      --f-main:   'Satoshi', sans-serif;
+      --f-mono:   'Space Mono', monospace;
+    }
+
+    /* ============================================================
+       RESET
+    ============================================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { font-size: 15px; }
+
+    body {
+      font-family: var(--f-main);
+      font-weight: 400;
+      color: var(--c-text);
+      background: #191919;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ============================================================
+       OUTER WRAP
+    ============================================================ */
+    .letter-wrap {
+      padding: 2.5rem 2rem;
+    }
+
+    /* ============================================================
+       LETTER PAGE  (A4 card on screen)
+    ============================================================ */
+    .letter-page {
+      width:          900px;
+      margin:         0 auto;
+      background:     var(--c-paper);
+      box-shadow:     0 24px 90px rgba(0,0,0,0.55), 0 4px 18px rgba(0,0,0,0.3);
+      display:        flex;
+      flex-direction: column;
+    }
+
+    /* ============================================================
+       BRIEFKOPF — designed letterhead
+    ============================================================ */
+    .l-header {
+      position:         relative;
+      background-color: var(--c-dark);
+      background-image: repeating-linear-gradient(
+        45deg,
+        transparent 0,
+        transparent 20px,
+        rgba(255,255,255,0.012) 20px,
+        rgba(255,255,255,0.012) 21px
+      );
+      padding:         1.5rem 2.2rem 1.4rem;
+      display:         flex;
+      align-items:     center;
+      justify-content: space-between;
+      gap:             1.5rem;
+      /* Decorative diamond outline — bottom-right corner, mirrors CV sidebar */
+      overflow:        hidden;
+    }
+
+    /* Decorative diamond outline — mirrors CV sidebar ::after */
+    .l-header::after {
+      content:        '';
+      position:       absolute;
+      bottom:         -90px;
+      right:          -90px;
+      width:          240px;
+      height:         240px;
+      border:         1.5px solid rgba(224,120,41,0.07);
+      transform:      rotate(45deg);
+      pointer-events: none;
+    }
+
+    /* Thin orange separator line below header */
+    .l-header-rule {
+      height:     1px;
+      background: linear-gradient(90deg, var(--c-orange) 0%, rgba(201,148,31,0.25) 60%, transparent 100%);
+    }
+
+    /* ── Left block: logo + name/title ──────────────────────── */
+    .l-hdr-left {
+      display:     flex;
+      align-items: center;
+      gap:         1.2rem;
+      flex-shrink: 0;
+      position:    relative;
+      z-index:     1;
+    }
+
+    .l-logo {
+      max-height:      48px;
+      max-width:       160px;
+      width:           auto;
+      display:         block;
+      mix-blend-mode:  screen;
+    }
+
+    /* Vertical rule between logo and name — uses orange accent */
+    .l-hdr-divider {
+      width:        1px;
+      height:       42px;
+      background:   linear-gradient(to bottom, transparent, rgba(224,120,41,0.5), transparent);
+      flex-shrink:  0;
+    }
+
+    .l-hdr-name-first {
+      display:        block;
+      font-family:    var(--f-main);
+      font-size:      0.78rem;
+      font-weight:    300;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color:          rgba(255,255,255,0.82);
+      margin-bottom:  0.08rem;
+    }
+
+    .l-hdr-name-last {
+      display:        block;
+      font-family:    'Clash Display', sans-serif;
+      font-size:      1.45rem;
+      font-weight:    700;
+      letter-spacing: 0.01em;
+      color:          #ffffff;
+      line-height:    1.1;
+    }
+
+    .l-hdr-title {
+      font-family:    var(--f-mono);
+      font-size:      0.66rem;
+      font-weight:    700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color:          var(--c-orange);
+      margin-top:     0.3rem;
+    }
+
+    /* ── Right block: contact details ───────────────────────── */
+    .l-hdr-contact {
+      list-style:  none;
+      text-align:  right;
+      flex-shrink: 0;
+      position:    relative;
+      z-index:     1;
+    }
+
+    .l-hdr-contact li {
+      display:         flex;
+      align-items:     center;
+      justify-content: flex-end;
+      gap:             0.45rem;
+      font-size:       0.75rem;
+      color:           var(--c-side-t);
+      margin-bottom:   0.33rem;
+      line-height:     1.3;
+    }
+
+    .l-hdr-contact li:last-child { margin-bottom: 0; }
+
+    .l-hdr-contact .ic {
+      color:     var(--c-orange);
+      font-size: 0.78rem;
+    }
+
+    .l-hdr-contact a { color: var(--c-side-t); }
+    .l-hdr-contact a:hover { color: var(--c-orange); }
+
+    /* ============================================================
+       LETTER CONTENT — DIN 5008 Form B
+    ============================================================ */
+    .l-content {
+      padding: 1.7rem 2.2rem 2.2rem 2.4rem;
+      flex:    1;
+    }
+
+    /* ── Address zone ──────────────────────────────────────────
+       DIN 5008: address block left, date right, same baseline
+    ────────────────────────────────────────────────────────── */
+    .l-addr-zone {
+      display:         flex;
+      justify-content: space-between;
+      align-items:     flex-start;
+      margin-bottom:   1.55rem;
+    }
+
+    /* Rücksendeangabe — tiny sender line above recipient */
+    .l-return-addr {
+      font-family:    var(--f-mono);
+      font-size:      0.58rem;
+      color:          var(--c-muted);
+      border-bottom:  1px solid #b5b1a9;
+      padding-bottom: 0.16rem;
+      margin-bottom:  0.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* Recipient address block (DIN 5008: max 6 lines) */
+    .l-recipient {
+      font-size:   0.9rem;
+      line-height: 1.7;
+    }
+
+    .l-recipient .l-company { font-weight: 600; }
+
+    .l-placeholder {
+      color:      var(--c-muted);
+      font-style: italic;
+    }
+
+    /* Date — right-aligned, top of address zone */
+    .l-date-col {
+      text-align:  right;
+      font-family: var(--f-mono);
+      font-size:   0.78rem;
+      color:       var(--c-muted);
+      padding-top: 1.3rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Betreff ───────────────────────────────────────────────
+       Styled like CV section headings: left orange border
+       DIN 5008 (2020): no "Betreff:" label
+    ────────────────────────────────────────────────────────── */
+    .l-subject {
+      font-family:  var(--f-main);
+      font-size:    1rem;
+      font-weight:  600;
+      color:        var(--c-text);
+      padding:      0.38rem 0 0.38rem 0.85rem;
+      border-left:  3px solid var(--c-orange);
+      margin-bottom: 1.3rem;
+    }
+
+    /* ── Anrede ────────────────────────────────────────────── */
+    .l-salutation {
+      font-size:     0.9rem;
+      margin-bottom: 0.9rem;
+    }
+
+    /* ── Brieftext ─────────────────────────────────────────── */
+    .l-body {
+      font-size:   0.9rem;
+      line-height: 1.78;
+    }
+
+    .l-body p { margin-bottom: 0.9rem; }
+
+    .l-body a {
+      color:         var(--c-orange);
+      border-bottom: 1px solid rgba(224,120,41,0.3);
+    }
+
+    .l-body a:hover { border-color: var(--c-orange); }
+
+    /* ── Grußformel + Unterschrift ─────────────────────────── */
+    .l-closing {
+      margin-top: 1.5rem;
+      font-size:  0.9rem;
+    }
+
+    /* DIN 5008: at least ~2 cm free for handwritten signature */
+    .l-sig-space { height: 2.6rem; }
+
+    .l-sig-name { font-weight: 600; }
+
+    /* ── Anlagenhinweis ────────────────────────────────────── */
+    .l-anlagen {
+      margin-top:  1.6rem;
+      padding-top: 0.75rem;
+      border-top:  1px solid var(--c-line);
+      font-family: var(--f-mono);
+      font-size:   0.7rem;
+      color:       var(--c-muted);
+      letter-spacing: 0.03em;
+    }
+
+    .l-anlagen strong {
+      color:       var(--c-text);
+      font-weight: 700;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .l-footer {
+      background-color: var(--c-dark);
+      color:            var(--c-side-t);
+      text-align:       center;
+      font-family:      var(--f-mono);
+      font-size:        0.64rem;
+      letter-spacing:   0.06em;
+      padding:          0.5rem 1rem;
+    }
+
+    .l-footer a {
+      color:           var(--c-side-t);
+      text-decoration: none;
+    }
+
+    .l-footer a:hover { color: var(--c-orange); }
+
+    /* ============================================================
+       SCREEN BUTTONS
+    ============================================================ */
+    .print-btn {
+      position:       fixed;
+      top:            1.25rem;
+      right:          1.25rem;
+      background:     var(--c-dark);
+      color:          #fff;
+      border:         1px solid rgba(224,120,41,0.4);
+      padding:        0.5rem 1.1rem;
+      font-family:    var(--f-mono);
+      font-size:      0.64rem;
+      font-weight:    400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor:         pointer;
+      border-radius:  2px;
+      display:        flex;
+      align-items:    center;
+      gap:            0.45rem;
+      box-shadow:     0 4px 20px rgba(0,0,0,0.3);
+      transition:     all 0.15s;
+      z-index:        200;
+    }
+
+    .print-btn:hover {
+      background:   var(--c-orange);
+      color:        var(--c-dark);
+      border-color: var(--c-orange);
+    }
+
+    .homepage-fab {
+      position:       fixed;
+      bottom:         1.5rem;
+      right:          1.5rem;
+      background:     var(--c-dark);
+      color:          var(--c-orange);
+      border:         1px solid rgba(224,120,41,0.3);
+      border-radius:  2px;
+      padding:        0.5rem 1.1rem;
+      font-family:    var(--f-main);
+      font-size:      0.73rem;
+      font-weight:    500;
+      letter-spacing: 0.02em;
+      display:        flex;
+      align-items:    center;
+      gap:            0.45rem;
+      box-shadow:     0 4px 20px rgba(0,0,0,0.3);
+      transition:     opacity 0.2s, transform 0.15s;
+      opacity:        0.85;
+      z-index:        200;
+    }
+
+    .homepage-fab:hover { opacity: 1; transform: translateY(-2px); }
+
+    /* ============================================================
+       PRINT
+    ============================================================ */
+    @page {
+      size:   A4 portrait;
+      margin: 0;
+    }
+
+    @media print {
+
+      body {
+        background:                 none;
+        print-color-adjust:         exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .letter-wrap { padding: 0; }
+
+      .letter-page {
+        width:      210mm;
+        min-height: 297mm;
+        box-shadow: none;
+      }
+
+      /* DIN 5008 Form B: left 25mm, right 20mm */
+      .l-content {
+        padding: 0.6cm 2cm 1cm 2.5cm;
+      }
+
+      .l-header {
+        padding-left:  2.5cm;
+        padding-right: 2cm;
+        print-color-adjust:         exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .l-footer {
+        print-color-adjust:         exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .print-btn,
+      .homepage-fab { display: none !important; }
+
+      a { color: inherit !important; border-bottom: none !important; }
+      .l-body a { color: var(--c-orange) !important; }
+    }
+
+    /* ============================================================
+       RESPONSIVE (SCREEN)
+    ============================================================ */
+    @media screen and (max-width: 940px) {
+      .letter-page { width: 100%; }
+    }
+
+    @media screen and (max-width: 640px) {
+      .l-header         { flex-direction: column; align-items: flex-start; }
+      .l-hdr-contact    { text-align: left; }
+      .l-hdr-contact li { justify-content: flex-start; }
+      .letter-wrap      { padding: 1rem 0; }
+    }
+
+  </style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">
+  <i class="bi bi-printer"></i> Drucken
+</button>
+
+<div class="letter-wrap">
+  <div class="letter-page">
+
+    <!-- ============================================================
+         BRIEFKOPF (DIN 5008 header zone — freely designed)
+    ============================================================ -->
+    <header class="l-header">
+
+      <div class="l-hdr-left">
+        <img src="img/logo.png" class="l-logo" alt="Logo">
+        <div class="l-hdr-divider"></div>
+        <div>
+          <span class="l-hdr-name-first">Walter A.</span>
+          <span class="l-hdr-name-last">Jablonowski</span>
+          <div class="l-hdr-title">AI Developer &middot; Full Stack</div>
+        </div>
+      </div>
+
+      <ul class="l-hdr-contact">
+        <li>
+          <i class="bi bi-envelope ic"></i>
+          <a href="mailto:walterjab@outlook.com">walterjab@outlook.com</a>
+        </li>
+        <li>
+          <i class="bi bi-globe2 ic"></i>
+          <a href="https://is.gd/waj_hq" target="_blank">is.gd/waj_hq</a>
+        </li>
+        <li>
+          <i class="bi bi-geo-alt-fill ic"></i>
+          Am Anger 9, 96135 Stegaurach
+        </li>
+      </ul>
+
+    </header>
+
+    <div class="l-header-rule"></div>
+
+    <!-- ============================================================
+         BRIEFINHALT  (DIN 5008 Form B layout)
+    ============================================================ -->
+    <div class="l-content">
+
+      <!-- Anschrift + Datum ──────────────────────────────────── -->
+      <div class="l-addr-zone">
+
+        <div>
+          <!-- Rücksendeangabe (DIN 5008) -->
+          <div class="l-return-addr">
+            Walter A. Jablonowski &middot; Am Anger 9 &middot; 96135 Stegaurach
+          </div>
+
+          <!-- Anschriftfeld (max. 6 Zeilen nach DIN 5008) -->
+          <div class="l-recipient">
+            <div class="l-company l-placeholder">[Firmenname]</div>
+            <div class="l-placeholder">[z.&thinsp;Hd. Personalabteilung]</div>
+            <div class="l-placeholder">[Stra&szlig;e Hausnummer]</div>
+            <div class="l-placeholder">[PLZ Ort]</div>
+          </div>
+        </div>
+
+        <!-- Datum (rechts, auf H&ouml;he des Anschriftfeldes) -->
+        <div class="l-date-col">
+          Stegaurach, 25. April 2026
+        </div>
+
+      </div>
+
+      <!-- Betreff ────────────────────────────────────────────
+           DIN 5008 (2020): kein "Betreff:" davor, nur fett
+      ──────────────────────────────────────────────────────── -->
+      <div class="l-subject">
+        Bewerbung als <span class="l-placeholder">[FILL ME]</span>
+      </div>
+
+      <!-- Anrede ─────────────────────────────────────────────── -->
+      <p class="l-salutation">Sehr geehrte Damen und Herren,</p>
+
+      <!-- Brieftext ──────────────────────────────────────────── -->
+      <div class="l-body">
+
+        <p>ich habe Ihre Position <strong>&bdquo;<span class="l-placeholder">[FILL ME]</span>&ldquo;</strong> gesehen. Als erfahrener Entwickler begeistere ich mich insbesondere f&uuml;r die Entwicklung mit KI und suche eine Stelle im Home Office. Vollzeit ist vorstellbar, auf Dauer w&uuml;rde ich aber gerne in Teilzeit arbeiten (16&ndash;20&thinsp;Wochenstunden).</p>
+
+        <p>Insgesamt habe ich mehr als 25&nbsp;Jahre Erfahrung auf unterschiedlichen Plattformen. Zuletzt habe ich Webanwendungen mit Schwerpunkt PHP, JavaScript und SQL entwickelt.</p>
+
+        <p>Auf meiner <a href="https://walter-a-jablonowski.github.io/#about" target="_blank">Webseite</a> k&ouml;nnen Sie mit meiner KI-Assistentin sprechen und Fragen zu Fachkenntnissen und Projekten stellen. Ich habe das selbst geschrieben.</p>
+
+        <p>Als IDE verwende ich Windsurf (mit KI-Unterst&uuml;tzung). Die Nutzung von KI bei der Entwicklung sowie das Entwickeln von Software mit KI-Funktionen interessieren mich besonders. Eine Auswahl von Beispielprojekten finden Sie auf meiner <a href="https://walter-a-jablonowski.github.io" target="_blank">Homepage</a>.</p>
+
+        <p>Ich w&uuml;rde mich freuen, von Ihnen zu h&ouml;ren.</p>
+
+      </div>
+
+      <!-- Gru&szlig;formel + Unterschrift ────────────────────── -->
+      <div class="l-closing">
+        <p>Mit freundlichen Gr&uuml;&szlig;en</p>
+        <div class="l-sig-space"></div>
+        <p class="l-sig-name">Walter A. Jablonowski</p>
+      </div>
+
+      <!-- Anlagenhinweis (DIN 5008) ──────────────────────────── -->
+      <div class="l-anlagen">
+        <strong>Anlage:</strong> Lebenslauf
+      </div>
+
+    </div><!-- /.l-content -->
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+    <footer class="l-footer">
+      Visit my homepage:
+      <a href="https://walter-a-jablonowski.github.io" target="_blank">
+        https://walter-a-jablonowski.github.io
+      </a>
+    </footer>
+
+  </div><!-- /.letter-page -->
+</div><!-- /.letter-wrap -->
+
+<a class="homepage-fab" href="https://walter-a-jablonowski.github.io/" target="_blank">
+  <i class="bi bi-house-fill"></i>
+  <span>Zur Webseite</span>
+</a>
+
+</body>
+</html>

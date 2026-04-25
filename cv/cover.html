@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anschreiben — Walter A. Jablonowski</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+
+    /* ============================================================
+       VARIABLES  (identical to CV)
+    ============================================================ */
+    :root {
+      --c-dark:   #0f1318;
+      --c-gold:   #c89b3c;
+      --c-paper:  #faf9f7;
+      --c-text:   #1c1c1e;
+      --c-muted:  #6b6b72;
+      --c-line:   #e2dfd7;
+      --c-side-t: #ddd9ce;
+      --c-side-m: #7a766e;
+      --f-serif:  'Cormorant Garamond', 'Georgia', serif;
+      --f-sans:   'Jost', 'Segoe UI', sans-serif;
+    }
+
+    /* ============================================================
+       RESET
+    ============================================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { font-size: 15px; }
+
+    body {
+      font-family: var(--f-sans);
+      font-weight: 400;
+      color: var(--c-text);
+      background: #dedad2;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ============================================================
+       OUTER WRAP
+    ============================================================ */
+    .letter-wrap {
+      padding: 2rem;
+    }
+
+    /* ============================================================
+       LETTER PAGE  (A4 card on screen)
+    ============================================================ */
+    .letter-page {
+      width:          900px;
+      margin:         0 auto;
+      background:     var(--c-paper);
+      box-shadow:     0 10px 70px rgba(0,0,0,0.32), 0 2px 14px rgba(0,0,0,0.16);
+      display:        flex;
+      flex-direction: column;
+    }
+
+    /* ============================================================
+       BRIEFKOPF — designed letterhead (replaces sidebar)
+       Occupies the DIN 5008 Form-B header zone (~45 mm)
+    ============================================================ */
+    .l-header {
+      position:         relative;
+      background-color: var(--c-dark);
+      background-image: repeating-linear-gradient(
+        -52deg,
+        transparent 0,
+        transparent 22px,
+        rgba(255,255,255,0.016) 22px,
+        rgba(255,255,255,0.016) 23px
+      );
+      padding:     1.5rem 2.3rem 1.35rem;
+      display:     flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    /* Gold top-border — same technique as CV sidebar */
+    .l-header::before {
+      content:  '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height:     3px;
+      background: linear-gradient(90deg, var(--c-gold) 55%, transparent);
+    }
+
+    /* Gold separator line below header */
+    .l-header-rule {
+      height:     1px;
+      background: linear-gradient(90deg, var(--c-gold) 35%, rgba(200,155,60,0.15) 75%, transparent);
+    }
+
+    /* Left block: photo + name */
+    .l-hdr-left {
+      display:        flex;
+      flex-direction: column;
+      flex-shrink:    0;
+    }
+
+    .l-hdr-name {
+      font-family:    'Plus Jakarta Sans', sans-serif;
+      font-size:      1.55rem;
+      font-weight:    300;
+      color:          #ffffff;
+      line-height:    1.2;
+      letter-spacing: 0.06em;
+    }
+
+    .l-hdr-title {
+      font-size:      0.59rem;
+      font-weight:    600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color:          var(--c-gold);
+      margin-top:     0.3rem;
+    }
+
+    /* Right block: contact details */
+    .l-hdr-contact {
+      list-style:  none;
+      text-align:  right;
+      flex-shrink: 0;
+    }
+
+    .l-hdr-contact li {
+      display:       flex;
+      align-items:   center;
+      justify-content: flex-end;
+      gap:           0.45rem;
+      font-size:     0.77rem;
+      color:         var(--c-side-t);
+      margin-bottom: 0.32rem;
+      line-height:   1.35;
+    }
+
+    .l-hdr-contact li:last-child { margin-bottom: 0; }
+
+    .l-hdr-contact .ic {
+      color:     var(--c-gold);
+      font-size: 0.8rem;
+    }
+
+    .l-hdr-contact a { color: var(--c-side-t); }
+    .l-hdr-contact a:hover { color: var(--c-gold); }
+
+    /* ============================================================
+       LETTER CONTENT — follows DIN 5008 Form B zones
+    ============================================================ */
+    .l-content {
+      padding:  1.7rem 2.2rem 2.2rem 2.4rem;
+      flex:     1;
+    }
+
+    /* ── Address zone ──────────────────────────────────────────
+       DIN 5008: address block left, date right, same baseline
+    ────────────────────────────────────────────────────────── */
+    .l-addr-zone {
+      display:         flex;
+      justify-content: space-between;
+      align-items:     flex-start;
+      margin-bottom:   1.55rem;
+    }
+
+    /* Rücksendeangabe — tiny sender line above recipient field */
+    .l-return-addr {
+      font-size:      0.61rem;
+      color:          var(--c-muted);
+      border-bottom:  1px solid #b8b4aa;
+      padding-bottom: 0.16rem;
+      margin-bottom:  0.5rem;
+      letter-spacing: 0.01em;
+    }
+
+    /* Recipient address block (DIN 5008: max 6 lines, ~40mm tall) */
+    .l-recipient {
+      font-size:   0.9rem;
+      line-height: 1.7;
+    }
+
+    .l-recipient .l-company { font-weight: 500; }
+
+    .l-placeholder {
+      color:      var(--c-muted);
+      font-style: italic;
+    }
+
+    /* Date — right-aligned, top of address zone */
+    .l-date-col {
+      text-align: right;
+      font-size:  0.88rem;
+      color:      var(--c-text);
+      /* nudge down to sit level with recipient text (below return addr) */
+      padding-top: 1.3rem;
+    }
+
+    /* ── Betreff ───────────────────────────────────────────────
+       DIN 5008 (2020): no "Betreff:" label, just bold subject
+       Styled like the CV section headings for visual consistency
+    ────────────────────────────────────────────────────────── */
+    .l-subject {
+      font-family:    var(--f-serif);
+      font-size:      1.28rem;
+      font-weight:    600;
+      color:          var(--c-dark);
+      padding-bottom: 0.45rem;
+      margin-bottom:  1.3rem;
+      border-bottom:  1px solid var(--c-line);
+      position:       relative;
+    }
+
+    .l-subject::after {
+      content:    '';
+      position:   absolute;
+      left:       0;
+      bottom:     -1px;
+      width:      2.6rem;
+      height:     2px;
+      background: var(--c-gold);
+    }
+
+    /* ── Anrede ────────────────────────────────────────────── */
+    .l-salutation {
+      font-size:     0.9rem;
+      margin-bottom: 0.9rem;
+    }
+
+    /* ── Brieftext ─────────────────────────────────────────── */
+    .l-body {
+      font-size:   0.9rem;
+      line-height: 1.78;
+    }
+
+    .l-body p { margin-bottom: 0.9rem; }
+
+    .l-body a {
+      color:         #2563eb;
+      border-bottom: 1px solid rgba(37,99,235,0.25);
+    }
+
+    /* ── Grußformel + Unterschrift ─────────────────────────── */
+    .l-closing {
+      margin-top: 1.5rem;
+      font-size:  0.9rem;
+    }
+
+    /* Signature gap — DIN 5008: at least ~2 cm free for handwritten signature */
+    .l-sig-space { height: 2.6rem; }
+
+    .l-sig-name { font-weight: 500; }
+
+    /* ── Anlagenhinweis ────────────────────────────────────── */
+    .l-anlagen {
+      margin-top:  1.6rem;
+      padding-top: 0.75rem;
+      border-top:  1px solid var(--c-line);
+      font-size:   0.78rem;
+      color:       var(--c-muted);
+    }
+
+    .l-anlagen strong {
+      color:       var(--c-text);
+      font-weight: 500;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .l-footer {
+      background-color: var(--c-dark);
+      color:            var(--c-side-t);
+      text-align:       center;
+      font-size:        0.72rem;
+      padding:          0.5rem 1rem;
+      letter-spacing:   0.03em;
+    }
+
+    .l-footer a {
+      color:           var(--c-side-t);
+      text-decoration: none;
+    }
+
+    .l-footer a:hover { color: var(--c-gold); }
+
+    /* ============================================================
+       SCREEN BUTTONS
+    ============================================================ */
+    .print-btn {
+      position:       fixed;
+      top:            1.25rem;
+      right:          1.25rem;
+      background:     var(--c-dark);
+      color:          #fff;
+      border:         1px solid rgba(200,155,60,0.4);
+      padding:        0.5rem 1.05rem;
+      font-family:    var(--f-sans);
+      font-size:      0.68rem;
+      font-weight:    500;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      cursor:         pointer;
+      border-radius:  3px;
+      display:        flex;
+      align-items:    center;
+      gap:            0.4rem;
+      box-shadow:     0 2px 16px rgba(0,0,0,0.2);
+      transition:     all 0.2s;
+      z-index:        200;
+    }
+
+    .print-btn:hover {
+      background:   var(--c-gold);
+      color:        var(--c-dark);
+      border-color: var(--c-gold);
+    }
+
+    .homepage-fab {
+      position:       fixed;
+      bottom:         1.5rem;
+      right:          1.5rem;
+      background:     var(--c-dark);
+      color:          var(--c-gold);
+      border:         1px solid rgba(200,155,60,0.35);
+      border-radius:  24px;
+      padding:        0.5rem 1.1rem;
+      font-family:    var(--f-sans);
+      font-size:      0.75rem;
+      font-weight:    500;
+      letter-spacing: 0.03em;
+      display:        flex;
+      align-items:    center;
+      gap:            0.4rem;
+      box-shadow:     0 2px 20px rgba(0,0,0,0.25);
+      transition:     opacity 0.2s, transform 0.2s;
+      opacity:        0.85;
+      z-index:        200;
+    }
+
+    .homepage-fab:hover { opacity: 1; transform: translateY(-2px); }
+
+    /* ============================================================
+       PRINT
+    ============================================================ */
+    @page {
+      size:   A4 portrait;
+      margin: 0;
+    }
+
+    @media print {
+
+      body {
+        background:                 none;
+        print-color-adjust:         exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .letter-wrap { padding: 0; }
+
+      .letter-page {
+        width:      210mm;
+        min-height: 297mm;
+        box-shadow: none;
+      }
+
+      /* DIN 5008 Form B: left 25mm, right 20mm, content padding */
+      .l-content {
+        padding: 0.6cm 2cm 1cm 2.5cm;
+      }
+
+      /* Keep header padding aligned with content left edge */
+      .l-header {
+        padding-left:  2.5cm;
+        padding-right: 2cm;
+        print-color-adjust:         exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .print-btn,
+      .homepage-fab,
+      #edit-btn,
+      #edit-overlay {
+        display: none !important;
+      }
+
+      a { color: inherit !important; border-bottom: none !important; }
+      .l-body a { color: #2563eb !important; }
+    }
+
+    /* ============================================================
+       EDIT OVERLAY
+    ============================================================ */
+    #edit-btn {
+      position:       fixed;
+      top:            3.75rem;
+      right:          1.25rem;
+      background:     var(--c-dark);
+      color:          #fff;
+      border:         1px solid rgba(200,155,60,0.4);
+      padding:        0.5rem 1.05rem;
+      font-family:    var(--f-sans);
+      font-size:      0.68rem;
+      font-weight:    500;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      cursor:         pointer;
+      border-radius:  3px;
+      display:        flex;
+      align-items:    center;
+      gap:            0.4rem;
+      box-shadow:     0 2px 16px rgba(0,0,0,0.2);
+      transition:     all 0.2s;
+      z-index:        200;
+    }
+
+    #edit-btn:hover {
+      background:   var(--c-gold);
+      color:        var(--c-dark);
+      border-color: var(--c-gold);
+    }
+
+    #edit-overlay {
+      display:         none;
+      position:        fixed;
+      inset:           0;
+      background:      rgba(0,0,0,0.6);
+      z-index:         1000;
+      align-items:     center;
+      justify-content: center;
+      padding:         1.5rem;
+    }
+
+    #edit-overlay.open { display: flex; }
+
+    .edit-modal {
+      background:    #fff;
+      border-radius: 6px;
+      padding:       2rem;
+      width:         100%;
+      max-width:     620px;
+      max-height:    90vh;
+      overflow-y:    auto;
+      box-shadow:    0 24px 80px rgba(0,0,0,0.5);
+    }
+
+    .edit-modal-title {
+      font-family:    var(--f-sans);
+      font-size:      1rem;
+      font-weight:    600;
+      color:          var(--c-dark);
+      margin-bottom:  1.4rem;
+      padding-bottom: 0.75rem;
+      border-bottom:  2px solid var(--c-gold);
+    }
+
+    .edit-field { margin-bottom: 1.1rem; }
+
+    .edit-field label {
+      display:        block;
+      font-family:    var(--f-sans);
+      font-size:      0.72rem;
+      font-weight:    600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color:          var(--c-muted);
+      margin-bottom:  0.35rem;
+    }
+
+    .edit-field small {
+      display:       block;
+      font-size:     0.68rem;
+      color:         var(--c-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .edit-field input,
+    .edit-field textarea {
+      width:         100%;
+      font-family:   var(--f-sans);
+      font-size:     0.875rem;
+      color:         var(--c-text);
+      background:    #fafafa;
+      border:        1px solid #ddd;
+      border-radius: 4px;
+      padding:       0.55rem 0.75rem;
+      outline:       none;
+      line-height:   1.55;
+      resize:        vertical;
+      transition:    border-color 0.15s;
+    }
+
+    .edit-field input:focus,
+    .edit-field textarea:focus { border-color: var(--c-gold); }
+
+    .edit-actions {
+      display:         flex;
+      justify-content: flex-end;
+      gap:             0.75rem;
+      margin-top:      1.4rem;
+      padding-top:     1rem;
+      border-top:      1px solid #e8e8e8;
+    }
+
+    .edit-actions button {
+      font-family:    var(--f-sans);
+      font-size:      0.72rem;
+      font-weight:    500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding:        0.55rem 1.2rem;
+      border-radius:  4px;
+      cursor:         pointer;
+      border:         1px solid #ddd;
+      background:     #f5f5f5;
+      color:          var(--c-text);
+      transition:     all 0.15s;
+    }
+
+    .edit-actions button.primary {
+      background:   var(--c-gold);
+      color:        #fff;
+      border-color: var(--c-gold);
+    }
+
+    .edit-actions button:hover { opacity: 0.85; }
+
+    /* ============================================================
+       RESPONSIVE (SCREEN)
+    ============================================================ */
+    @media screen and (max-width: 940px) {
+      .letter-page { width: 100%; }
+    }
+
+    @media screen and (max-width: 620px) {
+      .l-header         { flex-direction: column; align-items: flex-start; }
+      .l-hdr-contact    { text-align: left; }
+      .l-hdr-contact li { justify-content: flex-start; }
+      .letter-wrap      { padding: 0; }
+    }
+
+  </style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">
+  <i class="bi bi-printer"></i> Drucken
+</button>
+
+<div class="letter-wrap">
+  <div class="letter-page">
+
+    <!-- ============================================================
+         BRIEFKOPF (DIN 5008 header zone — freely designed)
+    ============================================================ -->
+    <header class="l-header">
+
+      <div class="l-hdr-left">
+        <div class="l-hdr-name">Walter A. Jablonowski</div>
+        <div class="l-hdr-title">AI Developer &middot; Full Stack</div>
+      </div>
+
+      <ul class="l-hdr-contact">
+        <li>
+          <i class="bi bi-envelope ic"></i>
+          <a href="mailto:walterjab@outlook.com">walterjab@outlook.com</a>
+        </li>
+        <li>
+          <i class="bi bi-globe2 ic"></i>
+          <a href="https://is.gd/waj_hq" target="_blank">is.gd/waj_hq</a>
+        </li>
+        <li>
+          <i class="bi bi-geo-alt-fill ic"></i>
+          Am Anger 9, 96135 Stegaurach
+        </li>
+      </ul>
+
+    </header>
+
+    <div class="l-header-rule"></div>
+
+    <!-- ============================================================
+         BRIEFINHALT  (DIN 5008 Form B layout)
+    ============================================================ -->
+    <div class="l-content">
+
+      <!-- Anschrift + Datum ──────────────────────────────────── -->
+      <div class="l-addr-zone">
+
+        <div>
+          <!-- Rücksendeangabe (tiny sender line above recipient) -->
+          <div class="l-return-addr">
+            Walter A. Jablonowski &middot; Am Anger 9 &middot; 96135 Stegaurach
+          </div>
+
+          <!-- Anschriftfeld (max. 6 Zeilen nach DIN 5008) -->
+          <div class="l-recipient">
+            <div class="l-company l-placeholder">[Firmenname]</div>
+            <div class="l-placeholder">[z.&thinsp;Hd. Personalabteilung]</div>
+            <div class="l-placeholder">[Stra&szlig;e Hausnummer]</div>
+            <div class="l-placeholder">[PLZ Ort]</div>
+          </div>
+        </div>
+
+        <!-- Datum (rechts, auf H&ouml;he des Anschriftfeldes) -->
+        <div class="l-date-col">
+          Stegaurach, 25. April 2026
+        </div>
+
+      </div>
+
+      <!-- Betreff ────────────────────────────────────────────
+           DIN 5008 (2020): kein "Betreff:" davor, nur fett
+      ──────────────────────────────────────────────────────── -->
+      <div class="l-subject">
+        Bewerbung als <span class="l-placeholder">[FILL ME]</span>
+      </div>
+
+      <!-- Anrede ─────────────────────────────────────────────── -->
+      <p class="l-salutation">Sehr geehrte Damen und Herren,</p>
+
+      <!-- Brieftext ──────────────────────────────────────────── -->
+      <div class="l-body">
+
+        <p>ich habe Ihre Position <strong>&bdquo;<span class="l-placeholder">[FILL ME]</span>&ldquo;</strong> gesehen. Als erfahrener Entwickler begeistere ich mich insbesondere f&uuml;r die Entwicklung mit KI und suche eine Stelle im Home Office. Vollzeit ist vorstellbar, auf Dauer w&uuml;rde ich aber gerne in Teilzeit arbeiten (16&ndash;20&thinsp;Wochenstunden).</p>
+
+        <p>Insgesamt habe ich mehr als 25&nbsp;Jahre Erfahrung auf unterschiedlichen Plattformen. Zuletzt habe ich Webanwendungen mit Schwerpunkt PHP, JavaScript und SQL entwickelt.</p>
+
+        <p>Auf meiner <a href="https://walter-a-jablonowski.github.io/#about" target="_blank">Webseite</a> k&ouml;nnen Sie mit meiner KI-Assistentin sprechen und Fragen zu Fachkenntnissen und Projekten stellen. Ich habe das selbst geschrieben.</p>
+
+        <p>Als IDE verwende ich Windsurf (mit KI-Unterst&uuml;tzung). Die Nutzung von KI bei der Entwicklung sowie das Entwickeln von Software mit KI-Funktionen interessieren mich besonders. Eine Auswahl von Beispielprojekten finden Sie auf meiner <a href="https://walter-a-jablonowski.github.io" target="_blank">Homepage</a>.</p>
+
+        <p>Ich w&uuml;rde mich freuen, von Ihnen zu h&ouml;ren.</p>
+
+      </div>
+
+      <!-- Gru&szlig;formel + Unterschrift ────────────────────── -->
+      <div class="l-closing">
+        <p>Mit freundlichen Gr&uuml;&szlig;en</p>
+        <div class="l-sig-space"></div>
+        <p class="l-sig-name">Walter A. Jablonowski</p>
+      </div>
+
+      <!-- Anlagenhinweis (DIN 5008) ──────────────────────────── -->
+      <div class="l-anlagen">
+        <strong>Anlage:</strong> Lebenslauf
+      </div>
+
+    </div><!-- /.l-content -->
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+    <footer class="l-footer">
+      Visit my homepage:
+      <a href="https://walter-a-jablonowski.github.io" target="_blank">
+        https://walter-a-jablonowski.github.io
+      </a>
+    </footer>
+
+  </div><!-- /.letter-page -->
+</div><!-- /.letter-wrap -->
+
+<a class="homepage-fab" href="https://walter-a-jablonowski.github.io/" target="_blank">
+  <i class="bi bi-house-fill"></i>
+  <span>Zur Webseite</span>
+</a>
+
+<script>
+(function()
+{
+  // ── Set current date on load ─────────────────────────────
+  function setDate()
+  {
+    const el = document.querySelector('.l-date-col');
+    if( !el ) return;
+    el.textContent = 'Stegaurach, ' + new Date().toLocaleDateString('de-DE', {
+      day: 'numeric', month: 'long', year: 'numeric'
+    });
+  }
+
+  // ── Body: DOM → editable text ────────────────────────────
+  function bodyToText(el)
+  {
+    const parts = [];
+    el.querySelectorAll('p').forEach(function(p)
+    {
+      let text = '';
+      p.childNodes.forEach(function(node)
+      {
+        if( node.nodeType === Node.TEXT_NODE )
+          text += node.textContent;
+        else if( node.nodeName === 'A' )
+          text += node.getAttribute('href') || node.textContent;
+        else
+          text += node.textContent;
+      });
+      parts.push(text.trim());
+    });
+    return parts.join('\n\n');
+  }
+
+  // ── Body: editable text → DOM innerHTML ─────────────────
+  function textToBody(text)
+  {
+    const esc = function(s) {
+      return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    };
+    const urlRe = /(https?:\/\/[^\s]+)/g;
+
+    return text.trim().split(/\n\n+/).filter(function(p) {
+      return p.trim() !== '';
+    }).map(function(para)
+    {
+      let html = '';
+      let last = 0;
+      let m;
+      urlRe.lastIndex = 0;
+      while( (m = urlRe.exec(para)) !== null ) {
+        html += esc(para.slice(last, m.index));
+        html += '<a href="' + m[1] + '" target="_blank">' + esc(m[1]) + '</a>';
+        last = m.index + m[0].length;
+      }
+      html += esc(para.slice(last));
+      return '<p>' + html.trim() + '</p>';
+    }).join('\n');
+  }
+
+  // ── Recipient: DOM → editable text ──────────────────────
+  function recipientToText(el)
+  {
+    const lines = [];
+    el.childNodes.forEach(function(node) {
+      if( node.nodeType === Node.ELEMENT_NODE )
+        lines.push(node.textContent.trim());
+    });
+    return lines.join('\n');
+  }
+
+  // ── Recipient: editable text → DOM innerHTML ─────────────
+  function textToRecipient(text)
+  {
+    return text.trim().split('\n').map(function(line, i) {
+      return '<div' + (i === 0 ? ' class="l-company"' : '') + '>' + line + '</div>';
+    }).join('\n');
+  }
+
+  // ── Build overlay element ────────────────────────────────
+  function buildOverlay()
+  {
+    const el = document.createElement('div');
+    el.id = 'edit-overlay';
+    el.innerHTML =
+      '<div class="edit-modal">' +
+        '<h2 class="edit-modal-title">Brief bearbeiten</h2>' +
+        '<div class="edit-field">' +
+          '<label>Adresse</label>' +
+          '<textarea id="ef-addr" rows="5" placeholder="Firmenname&#10;z. Hd. Personalabteilung&#10;Straße Hausnummer&#10;PLZ Ort"></textarea>' +
+        '</div>' +
+        '<div class="edit-field">' +
+          '<label>Betreff</label>' +
+          '<input id="ef-subj" type="text" placeholder="Bewerbung als …">' +
+        '</div>' +
+        '<div class="edit-field">' +
+          '<label>Anrede</label>' +
+          '<input id="ef-sal" type="text" placeholder="Sehr geehrte Damen und Herren,">' +
+        '</div>' +
+        '<div class="edit-field">' +
+          '<label>Brieftext</label>' +
+          '<small>Absätze mit Leerzeile trennen &middot; Links einfach als URL eingeben</small>' +
+          '<textarea id="ef-body" rows="12"></textarea>' +
+        '</div>' +
+        '<div class="edit-actions">' +
+          '<button id="edit-cancel">Abbrechen</button>' +
+          '<button id="edit-apply" class="primary">Übernehmen</button>' +
+        '</div>' +
+      '</div>';
+    return el;
+  }
+
+  // ── Fill form from DOM ───────────────────────────────────
+  function openOverlay()
+  {
+    const rec  = document.querySelector('.l-recipient');
+    const sub  = document.querySelector('.l-subject');
+    const sal  = document.querySelector('.l-salutation');
+    const body = document.querySelector('.l-body');
+
+    document.getElementById('ef-addr').value = rec  ? recipientToText(rec)   : '';
+    document.getElementById('ef-subj').value = sub  ? sub.textContent.trim() : '';
+    document.getElementById('ef-sal').value  = sal  ? sal.textContent.trim() : '';
+    document.getElementById('ef-body').value = body ? bodyToText(body)        : '';
+
+    document.getElementById('edit-overlay').classList.add('open');
+  }
+
+  function closeOverlay()
+  {
+    document.getElementById('edit-overlay').classList.remove('open');
+  }
+
+  // ── Write form values back to DOM ────────────────────────
+  function applyFields()
+  {
+    const rec  = document.querySelector('.l-recipient');
+    const sub  = document.querySelector('.l-subject');
+    const sal  = document.querySelector('.l-salutation');
+    const body = document.querySelector('.l-body');
+
+    if( rec )  rec.innerHTML   = textToRecipient(document.getElementById('ef-addr').value);
+    if( sub )  sub.textContent = document.getElementById('ef-subj').value;
+    if( sal )  sal.textContent = document.getElementById('ef-sal').value;
+    if( body ) body.innerHTML  = textToBody(document.getElementById('ef-body').value);
+  }
+
+  // ── Init ─────────────────────────────────────────────────
+  document.addEventListener('DOMContentLoaded', function()
+  {
+    setDate();
+
+    const btn = document.createElement('button');
+    btn.id        = 'edit-btn';
+    btn.innerHTML = '<i class="bi bi-pencil"></i> Bearbeiten';
+    document.body.appendChild(btn);
+    btn.addEventListener('click', openOverlay);
+
+    const overlay = buildOverlay();
+    document.body.appendChild(overlay);
+
+    document.getElementById('edit-cancel').addEventListener('click', closeOverlay);
+    document.getElementById('edit-apply').addEventListener('click', function() {
+      applyFields();
+      closeOverlay();
+    });
+    overlay.addEventListener('click', function(e) {
+      if( e.target === overlay ) closeOverlay();
+    });
+  });
+})();
+</script>
+</body>
+</html>
