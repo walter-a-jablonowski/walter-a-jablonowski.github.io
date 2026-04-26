@@ -491,10 +491,39 @@
       border-radius: 4px;
       padding:       2rem;
       width:         100%;
-      max-width:     620px;
-      max-height:    90vh;
-      overflow-y:    auto;
+      max-width:     1100px;
+      height:        92vh;
+      overflow-y:    visible;
       box-shadow:    0 24px 80px rgba(0,0,0,0.6);
+      display:       flex;
+      flex-direction: column;
+    }
+
+    .edit-cols {
+      display:               grid;
+      grid-template-columns: 1fr 1fr;
+      gap:                   0 2rem;
+      flex:                  1;
+      min-height:            0;
+    }
+
+    .edit-col-left,
+    .edit-col-right {
+      display:        flex;
+      flex-direction: column;
+    }
+
+    .edit-col-right .edit-field:last-child {
+      flex:       1;
+      display:    flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    .edit-col-right .edit-field:last-child textarea {
+      flex:       1;
+      min-height: 0;
+      resize:     none;
     }
 
     .edit-modal-title {
@@ -811,23 +840,28 @@
     el.id = 'edit-overlay';
     el.innerHTML =
       '<div class="edit-modal">' +
-        '<h2 class="edit-modal-title">Brief bearbeiten</h2>' +
-        '<div class="edit-field">' +
-          '<label>Adresse</label>' +
-          '<textarea id="ef-addr" rows="5" placeholder="Firmenname&#10;z. Hd. Personalabteilung&#10;Straße Hausnummer&#10;PLZ Ort"></textarea>' +
-        '</div>' +
-        '<div class="edit-field">' +
-          '<label>Betreff</label>' +
-          '<input id="ef-subj" type="text" placeholder="Bewerbung als …">' +
-        '</div>' +
-        '<div class="edit-field">' +
-          '<label>Anrede</label>' +
-          '<input id="ef-sal" type="text" placeholder="Sehr geehrte Damen und Herren,">' +
-        '</div>' +
-        '<div class="edit-field">' +
-          '<label>Brieftext</label>' +
-          '<small>Absätze mit Leerzeile trennen &middot; Links einfach als URL eingeben</small>' +
-          '<textarea id="ef-body" rows="12"></textarea>' +
+        '<div class="edit-cols">' +
+          '<div class="edit-col-left">' +
+            '<div class="edit-field">' +
+              '<label>Adresse</label>' +
+              '<textarea id="ef-addr" rows="6" placeholder="Firmenname&#10;z. Hd. Personalabteilung&#10;Straße Hausnummer&#10;PLZ Ort"></textarea>' +
+            '</div>' +
+            '<div class="edit-field">' +
+              '<label>Betreff</label>' +
+              '<input id="ef-subj" type="text" placeholder="Bewerbung als …">' +
+            '</div>' +
+          '</div>' +
+          '<div class="edit-col-right">' +
+            '<div class="edit-field">' +
+              '<label>Anrede</label>' +
+              '<input id="ef-sal" type="text" placeholder="Sehr geehrte Damen und Herren,">' +
+            '</div>' +
+            '<div class="edit-field">' +
+              '<label>Brieftext</label>' +
+              '<small>Absätze mit Leerzeile trennen &middot; Links einfach als URL eingeben</small>' +
+              '<textarea id="ef-body" rows="14"></textarea>' +
+            '</div>' +
+          '</div>' +
         '</div>' +
         '<div class="edit-actions">' +
           '<button id="edit-cancel">Abbrechen</button>' +
