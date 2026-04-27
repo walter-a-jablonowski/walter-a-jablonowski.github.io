@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dashboard project details | Walter A. Jablonowski">
+  <title>Dashboard | Project Detail</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
+  <link rel="manifest" href="../../../site.webmanifest">
+  <link rel="stylesheet" href="../../../styles.css?v=26042801">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Project detail page specific styles */
+    .project-detail {
+      padding: var(--spacing-xxl) 0;
+      background-color: var(--dark);
+      color: var(--white);
+      position: relative;
+    }
+    .project-detail::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(14,14,14,0.95) 0%, rgba(26,26,26,0.85) 100%);
+      z-index: 1;
+    }
+    .project-detail .container { position: relative; z-index: 2; }
+
+    .project-header {
+      display: block;
+    }
+    .project-media {
+      flex: 1 1 340px;
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--border-radius-md);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .project-media img { width: 100%; height: 100%; object-fit: cover; }
+
+    .project-title {
+      flex: 2 1 460px;
+    }
+    .project-title h2 { color: var(--white); margin-top: 0.5rem; }
+    .project-title .underline { margin-top: .5rem; }
+
+    /* Typography for converted markdown */
+    .intro-text {
+      font-size: 1.2rem;
+      color: var(--lighter-gray);
+      line-height: 1.8;
+      font-weight: 300;
+      margin-left: 0;
+    }
+    .content { color: var(--lighter-gray); line-height: 1.75; }
+    .content h2, .content h3, .content h4 { color: var(--white); margin-top: var(--spacing-lg); }
+    .content p { margin: 0 0 var(--spacing-md); }
+    .content ul { padding-left: 1.25rem; margin: 0 0 var(--spacing-md); }
+    .content li { margin: .35rem 0; }
+    .content a { color: var(--primary); }
+    .content strong { color: var(--white); }
+    .content blockquote {
+      margin: var(--spacing-md) 0;
+      padding: var(--spacing-md);
+      border-left: 4px solid var(--primary);
+      background: rgba(255,255,255,0.04);
+      border-radius: var(--border-radius-sm);
+    }
+    .content pre {
+      background: #0f0f0f;
+      color: #eee;
+      padding: var(--spacing-md);
+      border-radius: var(--border-radius-sm);
+      overflow: auto;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .content code { font-family: var(--font-code); }
+
+    .tech-stack {
+      color: var(--primary);
+      font-weight: 500;
+      font-size: 1.05rem;
+    }
+
+    @media (max-width: 768px) {
+      .project-header { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="../../../index.html#hero" class="nav-link">Home</a></li>
+          <li><a href="../../../index.html#about" class="nav-link">About</a></li>
+          <li><a href="../../../index.html#services" class="nav-link">Services</a></li>
+          <li><a href="../../../index.html#skills" class="nav-link">Skills</a></li>
+          <li><a href="../../../index.html#proj" class="nav-link">Projects</a></li>
+          <li><a href="../../../index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
+              title="Visit my LinkedIn profile"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link" title="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="project-detail">
+    <div class="container">
+      <div class="project-header">
+        <div class="project-title">
+          <div class="section-header">
+            <h2>Dashboard (early preview)</h2>
+            <div class="underline"></div>
+          </div>
+          <p class="intro-text" style="margin-left: 0;">
+            Personal AI Command Center — Your entire life in one view
+          </p>
+          <p>
+            A single-page personal dashboard built with PHP and vanilla JavaScript that consolidates activity tracking, finance, inbox, habits, weather, and AI-powered insights into one clean, themeable interface. Data is stored in lightweight YAML files — no database required.
+          </p>
+        </div>
+        <div class="project-media">
+          <img src="../../../misc/dashb-2.png" alt="Dashboard">
+        </div>
+      </div>
+
+      <div class="content">
+
+        <h3>Key Features</h3>
+        <ul>
+          <li><strong>Widget System</strong>: Modular, composable widgets covering activity, finance, inbox, habits, weather, quick links, and more — all rendered server-side in PHP</li>
+          <li><strong>AI Daily Briefing</strong>: Claude AI integration delivers a personalised daily summary based on your current tasks, focus queue, and activity data</li>
+          <li><strong>AI Chat</strong>: Built-in conversational interface powered by Claude for on-demand assistance directly within the dashboard</li>
+          <li><strong>Finance Overview</strong>: Accounts, transactions, fixed costs, and charts for a complete financial snapshot at a glance</li>
+          <li><strong>Activity &amp; Focus Tracking</strong>: Active tasks, vision summary, focus queue, and a focus timer to keep you on track</li>
+          <li><strong>Theming</strong>: Multiple built-in themes (default, business, …) switchable via URL parameter or user settings — with full light/dark mode support</li>
+          <li><strong>YAML Data Storage</strong>: All personal data stored in plain YAML files under <code>/data</code> — version-control friendly, no database setup needed</li>
+          <li><strong>CSRF Protection</strong>: HMAC-based CSRF token generation secures all AJAX interactions</li>
+        </ul>
+
+        <h3>Technical Architecture</h3>
+        <ul>
+          <li><strong>Backend</strong>: PHP renders all static page structure on load using PHP's alternative syntax; AJAX calls are routed through <code>ajax.php</code></li>
+          <li><strong>Frontend</strong>: Vanilla JavaScript with the Fetch API handles all dynamic interactions without any heavy frameworks</li>
+          <li><strong>Widget Engine</strong>: Each widget lives in its own folder under <code>/view/widg/</code> and is resolved via a central <code>index.yml</code> registry</li>
+          <li><strong>Layout System</strong>: Reusable layouts in <code>/view/default_layouts/</code> compose widgets into full dashboard views</li>
+          <li><strong>AI Layer</strong>: Anthropic Claude API called server-side via PHP; API key kept in <code>.env</code>, never exposed to the client</li>
+          <li><strong>Configuration</strong>: App-wide settings in <code>config.yml</code>; per-user overrides in <code>/users/default/settings.yml</code></li>
+        </ul>
+
+        <h3>Tech Stack</h3>
+        <p class="tech-stack">
+          PHP • Vanilla JavaScript • YAML • Claude AI (Anthropic) • Open-Meteo • HTML/CSS • Symfony Yaml
+        </p>
+
+        <h3>Use Cases</h3>
+        <p>
+          Start your day with a single browser tab: review your AI-generated briefing, check today's focus queue and active tasks, glance at your finances, scan your inbox, and track your habits — all without switching between apps. The dashboard adapts to your workflow through themes and a fully modular widget system.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-links">
+          <a href="../../../privacy.html">Privacy</a>
+          <a href="../../../imprint.html">Imprint</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>powered by &copy; Walter A. Jablonowski 2019-2026. Made with AI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="../../../controller.js?v=26042801"></script>
+  <script>
+    new WebsiteController();
+  </script>
+</body>
+</html>

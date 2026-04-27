@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Crypto Position Tracker project details | Walter A. Jablonowski">
+  <title>Crypto Position Tracker | Project Detail</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
+  <link rel="manifest" href="../../../site.webmanifest">
+  <link rel="stylesheet" href="../../../styles.css?v=26042801">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Project detail page specific styles */
+    .project-detail {
+      padding: var(--spacing-xxl) 0;
+      background-color: var(--dark);
+      color: var(--white);
+      position: relative;
+    }
+    .project-detail::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(14,14,14,0.95) 0%, rgba(26,26,26,0.85) 100%);
+      z-index: 1;
+    }
+    .project-detail .container { position: relative; z-index: 2; }
+
+    .project-header {
+      display: block;
+    }
+    .project-media {
+      flex: 1 1 340px;
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--border-radius-md);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .project-media img { width: 100%; height: 100%; object-fit: cover; }
+
+    .project-title {
+      flex: 2 1 460px;
+    }
+    .project-title h2 { color: var(--white); margin-top: 0.5rem; }
+    .project-title .underline { margin-top: .5rem; }
+
+    /* Typography for converted markdown */
+    .intro-text {
+      font-size: 1.2rem;
+      color: var(--lighter-gray);
+      line-height: 1.8;
+      font-weight: 300;
+      margin-left: 0;
+    }
+    .content { color: var(--lighter-gray); line-height: 1.75; }
+    .content h2, .content h3, .content h4 { color: var(--white); margin-top: var(--spacing-lg); }
+    .content p { margin: 0 0 var(--spacing-md); }
+    .content ul { padding-left: 1.25rem; margin: 0 0 var(--spacing-md); }
+    .content li { margin: .35rem 0; }
+    .content a { color: var(--primary); }
+    .content strong { color: var(--white); }
+    .content blockquote {
+      margin: var(--spacing-md) 0;
+      padding: var(--spacing-md);
+      border-left: 4px solid var(--primary);
+      background: rgba(255,255,255,0.04);
+      border-radius: var(--border-radius-sm);
+    }
+    .content pre {
+      background: #0f0f0f;
+      color: #eee;
+      padding: var(--spacing-md);
+      border-radius: var(--border-radius-sm);
+      overflow: auto;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .content code { font-family: var(--font-code); }
+
+    .tech-stack {
+      color: var(--primary);
+      font-weight: 500;
+      font-size: 1.05rem;
+    }
+
+    @media (max-width: 768px) {
+      .project-header { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="../../../index.html#hero" class="nav-link">Home</a></li>
+          <li><a href="../../../index.html#about" class="nav-link">About</a></li>
+          <li><a href="../../../index.html#services" class="nav-link">Services</a></li>
+          <li><a href="../../../index.html#skills" class="nav-link">Skills</a></li>
+          <li><a href="../../../index.html#proj" class="nav-link">Projects</a></li>
+          <li><a href="../../../index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
+              title="Visit my LinkedIn profile"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link" title="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="project-detail">
+    <div class="container">
+      <div class="project-header">
+        <div class="project-title">
+          <div class="section-header">
+            <h2>Find AI Blockchain use cases</h2>
+            <div class="underline"></div>
+          </div>
+          <p class="intro-text" style="margin-left: 0;">
+            Real-Time Anomaly Detection for the Top 100 Crypto Coins
+          </p>
+          <p>
+            A lightweight monitoring tool that tracks the top 100 coins by market cap and surfaces unusual movers at a glance. Automated data collection feeds a scoring pipeline that detects regime changes and statistical outliers, so you can spot coins gaining value unusually fast before the crowd is aware of.
+          </p>
+        </div>
+        <div class="project-media">
+          <img src="../../../misc/btc.png" alt="Crypto Position Tracker">
+        </div>
+      </div>
+
+      <div class="content">
+
+        <h3>Key Features</h3>
+        <ul>
+          <li><strong>Anomaly Scoring</strong>: Two complementary scorers — a regime-change detector and a Z-score mover detector — highlight coins outside their normal patterns</li>
+          <li><strong>Automated Collection</strong>: Scheduler-driven <code>collect.php</code> pulls live data from the CoinGecko API every 15 minutes and stores atomic JSON snapshots in SQLite</li>
+          <li><strong>30-Day Backfill</strong>: One-time history seeder populates the scorer database so anomalies are detectable from day one, no waiting weeks for data</li>
+          <li><strong>AI Coin Enrichment</strong>: <code>enrich_coins.php</code> fetches CoinGecko descriptions and uses an LLM to generate ≤6-word summaries and AI-relevance badges</li>
+          <li><strong>Clean Dashboard UI</strong>: Browser-based single-page interface renders ranked coin cards with score indicators and enrichment badges in real time via AJAX</li>
+          <li><strong>Configurable Constants</strong>: All key thresholds and parameters live in <code>config.yml</code> for easy tuning without touching code</li>
+        </ul>
+
+        <h3>Technical Architecture</h3>
+        <ul>
+          <li><strong>Backend</strong>: PHP with SQLite (<code>data/snapsh.db</code>) storing full snapshots as single JSON columns per scorer table</li>
+          <li><strong>Scorer Design</strong>: <code>AnomalyScorer</code> factory routes to pluggable scorer implementations via <code>ScorerInterface</code></li>
+          <li><strong>Data Pipeline</strong>: CoinGecko API → <code>collect.php</code> → SQLite → scorers → <code>ajax/get_coins.php</code> → Browser UI</li>
+          <li><strong>Frontend</strong>: Vanilla JavaScript with Fetch API, no heavy frameworks</li>
+          <li><strong>Scheduling</strong>: Cron (Linux/macOS) or Windows System Scheduler running <code>collect.php</code> every 15 minutes</li>
+        </ul>
+
+        <h3>Tech Stack</h3>
+        <p class="tech-stack">
+          PHP • SQLite • CoinGecko API • LLM (OpenRouter / Ollama) • YAML • Vanilla JavaScript
+        </p>
+
+        <h3>Use Cases</h3>
+        <p>
+          Quickly identify when a coin is gaining value unusually fast relative to its normal speed — useful for seeing early breakout moves across the top 100 by market cap. Filter by AI-relevance badges to focus on the subset most likely tied to AI narratives in the current market regime.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-links">
+          <a href="../../../privacy.html">Privacy</a>
+          <a href="../../../imprint.html">Imprint</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>powered by &copy; Walter A. Jablonowski 2019-2026. Made with AI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="../../../controller.js?v=26042801"></script>
+  <script>
+    new WebsiteController();
+  </script>
+</body>
+</html>
