@@ -25,7 +25,21 @@
     }
     
     console.log('No consent found, creating banner');
-    
+
+    // Pick text based on the page language (<html lang>)
+    const isGerman = (document.documentElement.lang || '').toLowerCase().startsWith('de');
+    const text = isGerman ? {
+      message: 'Diese Website verwendet Cookies, um Ihnen das beste Erlebnis auf unserer Website zu bieten. ' +
+               'Durch die weitere Nutzung dieser Seite stimmen Sie der Verwendung von Cookies zu.',
+      accept: 'Akzeptieren',
+      decline: 'Ablehnen'
+    } : {
+      message: 'This website uses cookies to ensure you get the best experience on our website. ' +
+               'By continuing to use this site, you consent to the use of cookies.',
+      accept: 'Accept',
+      decline: 'Decline'
+    };
+
     // Get CSS variables from the page to match styles exactly
     const computedStyle = getComputedStyle(document.documentElement);
     const darkColor = computedStyle.getPropertyValue('--dark') || '#333';
@@ -46,8 +60,7 @@
         align-items: center;
       ">
         <p style="margin: 0; padding-right: ${spacingLg}">
-          This website uses cookies to ensure you get the best experience on our website. 
-          By continuing to use this site, you consent to the use of cookies.
+          ${text.message}
         </p>
         <div class="cookie-buttons" style="display: flex; gap: ${spacingMd}">
           <button id="accept-cookies-alt" class="btn" style="
@@ -63,7 +76,7 @@
             letter-spacing: 0.5px;
             background-color: ${primaryColor};
             color: ${whiteColor};
-          ">Accept</button>
+          ">${text.accept}</button>
           <button id="decline-cookies-alt" class="btn btn-outline" style="
             display: inline-block;
             padding: 0.75rem 1.5rem;
@@ -77,7 +90,7 @@
             background-color: transparent;
             color: ${primaryColor};
             border: 2px solid ${primaryColor};
-          ">Decline</button>
+          ">${text.decline}</button>
         </div>
       </div>
     `;
@@ -163,7 +176,7 @@
         // No localStorage for declined, matching original implementation
         banner.style.display = 'none';
         // Redirect to terms declined page
-        window.location.href = 'terms_declined.html';
+        window.location.href = isGerman ? 'terms_declined_de.html' : 'terms_declined.html';
       });
     }
   });

@@ -1,4 +1,12 @@
 
+I provided you a sample of a project page from my home page in "_sample".
+
+Can you make a new page that looks exactly the same in /output but descripes the current project/application {{APPLICATION}}?
+
+I will add the project image later.
+
+ --
+
 Can you write a summary of this application that I can use on my personal developer homepage? Put it in a new markdown file.
 
  --

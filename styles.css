@@ -310,6 +310,7 @@ nav {
 
 .nav-menu {
   display: flex;
+  align-items: center;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -352,6 +353,17 @@ nav {
 
 .github-link i {
   font-size: 1.2rem;
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.lang-switch .lang-sep {
+  color: var(--white);
+  opacity: 0.4;
 }
 
 .menu-toggle {
