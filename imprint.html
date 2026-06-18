@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Imprint | Walter A. Jablonowski">
   <title>Imprint | Walter A. Jablonowski</title>
+  <link rel="canonical" href="https://walter-a-jablonowski.github.io/imprint.html">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=26060602">
+  <link rel="stylesheet" href="styles.css?v=26061801">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -76,8 +77,21 @@
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="index.html#about" class="nav-link">About</a></li>
-          <li><a href="index.html#services" class="nav-link">Services</a></li>
-          <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-head">
+              <a href="index.html#services" class="nav-link">Services</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Services submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="en/pages/placeholder.html" class="nav-link">Automation</a></li>
+              <li><a href="en/pages/placeholder.html" class="nav-link">Self-improving AI</a></li>
+              <li><a href="pages/projects/db-assistant/index.html" class="nav-link">AI Data Solutions</a></li>
+              <li><a href="en/pages/placeholder.html" class="nav-link">AI Consulting</a></li>
+              <li><a href="en/pages/placeholder.html" class="nav-link">AI Security</a></li>
+              <li><a href="en/pages/placeholder.html" class="nav-link">Apps that work</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="index.html#skills" class="nav-link">Skills</a></li>
           <li><a href="index.html#proj" class="nav-link">Projects</a></li>
           <li><a href="index.html#contact" class="nav-link">Contact</a></li>
           <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
@@ -148,7 +162,7 @@
       </p>
 
       <p>
-        Sample imprint of Flegl Rechtsanwälte GmbH
+        Sample imprint of Flegl Rechtsanw&auml;lte GmbH
       </p>
 
       <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
@@ -182,7 +196,7 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="controller.js?v=26060602"></script>
+  <script src="controller.js?v=26061801"></script>
   <script>
     new WebsiteController();
   </script>

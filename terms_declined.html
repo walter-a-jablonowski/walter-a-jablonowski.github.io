@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Terms Declined | Walter A. Jablonowski">
   <title>Terms Declined | Walter A. Jablonowski</title>
-  <link rel="stylesheet" href="styles.css?v=26060602">
+  <link rel="stylesheet" href="styles.css?v=26061801">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,18 +70,31 @@
     <div class="container">
       <nav>
         <div class="logo">
-          <a href="index_en.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+          <a href="en/index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
         </div>
         <div class="menu-toggle">
           <i class="fas fa-bars"></i>
         </div>
         <ul class="nav-menu">
-          <li><a href="index_en.html" class="nav-link">Home</a></li>
-          <li><a href="index_en.html#about" class="nav-link">About</a></li>
-          <li><a href="index_en.html#services" class="nav-link">Services</a></li>
-          <li><a href="index_en.html#skills" class="nav-link">Skills</a></li>
-          <li><a href="index_en.html#proj" class="nav-link">Projects</a></li>
-          <li><a href="index_en.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="en/index.html" class="nav-link">Home</a></li>
+          <li><a href="en/index.html#about" class="nav-link">About</a></li>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-head">
+              <a href="en/index.html#services" class="nav-link">Services</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Services submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="en/pages/placeholder.html" class="nav-link">Automation</a></li>
+              <li><a href="en/pages/placeholder.html" class="nav-link">Self-improving AI</a></li>
+              <li><a href="pages/projects/db-assistant/index.html" class="nav-link">AI Data Solutions</a></li>
+              <li><a href="en/pages/placeholder.html" class="nav-link">AI Consulting</a></li>
+              <li><a href="en/pages/placeholder.html" class="nav-link">AI Security</a></li>
+              <li><a href="en/pages/placeholder.html" class="nav-link">Apps that work</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="en/index.html#skills" class="nav-link">Skills</a></li>
+          <li><a href="en/index.html#proj" class="nav-link">Projects</a></li>
+          <li><a href="en/index.html#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -93,7 +106,7 @@
       <p>You didn't accept terms of use</p>
       <div class="button-group">
         <a href="https://www.google.com" class="btn btn-outline">Leave to Google</a>
-        <a href="index_en.html" class="btn btn-primary">Back to Index</a>
+        <a href="en/index.html" class="btn btn-primary">Back to Index</a>
       </div>
     </div>
   </section>
@@ -110,7 +123,7 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="controller.js?v=26060602"></script>
+  <script src="controller.js?v=26061801"></script>
   <script>
     new WebsiteController();
   </script>

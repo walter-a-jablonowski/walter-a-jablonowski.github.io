@@ -15,9 +15,6 @@ class WebsiteController {
     this.floatingAiButton = document.querySelector('.floating-ai-button');
     this.contactForm = document.getElementById('contact-form');
     this.requestCvButton = document.querySelector('.request-cv');
-    this.cookieBanner = document.getElementById('cookie-consent');
-    this.acceptCookieButton = document.getElementById('accept-cookies');
-    this.declineCookieButton = document.getElementById('decline-cookies');
     this.tabLinks = document.querySelectorAll('.tab-link');
     this.tabContents = document.querySelectorAll('.tab-content');
     this.infoIcons = document.querySelectorAll('.info-icon');
@@ -40,7 +37,7 @@ class WebsiteController {
       // this.initBackToTop();  // (TASK) hidden for now (replaced by Speak to an AI)
       this.initFloatingAiButton();
       this.initContactForm();
-      this.initCookieConsent();
+      this.initSkillsModal();
       this.initResponsiveAdjustments();
       this.initTabNavigation();
       this.initInfoIcons();
@@ -62,8 +59,23 @@ class WebsiteController {
    * Initialize loading screen
    */
   initLoadingScreen() {
-    // Check if loading screen is enabled in config
-    if (typeof LOADING_CONFIG === 'undefined' || !LOADING_CONFIG.showLoadingScreen) {
+    // Detect whether the user is navigating within the site (e.g. coming back
+    // from a sub page) versus arriving fresh from outside. Every page of the
+    // site sets this flag, so once it exists we know the visitor is already
+    // inside the site and we can skip the loading screen on the index pages.
+    // (sessionStorage is per-tab and cleared when the tab is closed.)
+    let cameFromWithinSite = false;
+    try {
+      cameFromWithinSite = sessionStorage.getItem('waj:homepage:siteVisited') === '1';
+      sessionStorage.setItem('waj:homepage:siteVisited', '1');
+    } catch (e) {
+      // sessionStorage may be unavailable (e.g. privacy mode); fall back to
+      // always showing the loading screen.
+    }
+
+    // Check if loading screen is enabled in config, and suppress it when the
+    // user is just navigating back from a sub page.
+    if (typeof LOADING_CONFIG === 'undefined' || !LOADING_CONFIG.showLoadingScreen || cameFromWithinSite) {
       // If disabled, remove the loading screen immediately and allow typewriter to start
       const loadingScreen = document.getElementById('loading-screen');
       if (loadingScreen) {
@@ -143,6 +155,18 @@ class WebsiteController {
         this.menuToggle.querySelector('i').classList.add('fa-bars');
         this.menuToggle.querySelector('i').classList.remove('fa-times');
         this.body.style.overflow = '';
+      });
+    });
+
+    // Services dropdown: caret toggles the submenu on mobile (desktop uses hover)
+    document.querySelectorAll('.nav-dropdown-toggle').forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const dropdown = toggle.closest('.nav-dropdown');
+        if (!dropdown) return;
+        const isOpen = dropdown.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
     });
 
@@ -417,36 +441,45 @@ class WebsiteController {
   }
 
   /**
-   * Cookie consent banner
+   * Cookie consent is handled entirely by cookie-fix.js (single source of truth,
+   * injects its own banner and works reliably on GitHub Pages). It is intentionally
+   * not duplicated here — having both caused a double banner / two-click accept bug.
    */
-  initCookieConsent() {
-    // Check if user has already made a choice
-    const cookieConsent = localStorage.getItem('cookieConsent');
 
-    if (cookieConsent === null && this.cookieBanner) {
-      // Show the cookie banner if no choice has been made
-      this.cookieBanner.style.display = 'block';
-    }
+  /**
+   * AI development skills modal (opened from the link in the Skills section)
+   */
+  initSkillsModal() {
+    const trigger = document.getElementById('aiSkillsTrigger');
+    const modal = document.getElementById('aiSkillsModal');
+    if (!trigger || !modal) return;
 
-    // Handle accept button click
-    if (this.acceptCookieButton) {
-      this.acceptCookieButton.addEventListener('click', () => {
-        localStorage.setItem('cookieConsent', 'accepted');
-        this.cookieBanner.style.display = 'none';
+    const open = (e) => {
+      if (e) e.preventDefault();
+      modal.classList.add('open');
+      this.body.style.overflow = 'hidden';
+      const closeBtn = modal.querySelector('.skills-modal-close');
+      if (closeBtn) closeBtn.focus();
+    };
+    const close = () => {
+      modal.classList.remove('open');
+      this.body.style.overflow = '';
+    };
 
-        // Here you would initialize analytics or misc cookie-dependent features
-      });
-    }
+    trigger.addEventListener('click', open);
 
-    // Handle decline button click
-    if (this.declineCookieButton) {
-      this.declineCookieButton.addEventListener('click', () => {
-        // localStorage.setItem('cookieConsent', 'declined');
-        this.cookieBanner.style.display = 'none';
-        // Redirect to terms declined page
-        window.location.href = 'terms_declined.html';
-      });
-    }
+    // Close via the X button (data-close-modal)
+    modal.querySelectorAll('[data-close-modal]').forEach(el => el.addEventListener('click', close));
+
+    // Close when clicking the backdrop (but not the dialog box itself)
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) close();
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) close();
+    });
   }
 
   /**

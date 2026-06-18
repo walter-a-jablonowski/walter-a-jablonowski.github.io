@@ -11,7 +11,7 @@
     // Check if consent is already set
     function hasConsent() {
       try {
-        return localStorage.getItem('cookieConsent') !== null;
+        return localStorage.getItem('waj:homepage:cookieConsent') !== null;
       } catch (e) {
         console.error('Error checking consent:', e);
         return false;
@@ -164,7 +164,7 @@
     if (acceptButton) {
       acceptButton.addEventListener('click', function() {
         console.log('Accept clicked');
-        localStorage.setItem('cookieConsent', 'accepted');
+        localStorage.setItem('waj:homepage:cookieConsent', 'accepted');
         banner.style.display = 'none';
         // Here you would initialize analytics or misc cookie-dependent features
       });
