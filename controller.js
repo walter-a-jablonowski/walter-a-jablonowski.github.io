@@ -14,6 +14,7 @@ class WebsiteController {
     // this.backToTopButton = document.querySelector('.back-to-top');  // (TASK) hidden for now (replaced by Speak to an AI)
     this.floatingAiButton = document.querySelector('.floating-ai-button');
     this.contactForm = document.getElementById('contact-form');
+    this.offerForm = document.getElementById('offer-form');
     this.requestCvButton = document.querySelector('.request-cv');
     this.tabLinks = document.querySelectorAll('.tab-link');
     this.tabContents = document.querySelectorAll('.tab-content');
@@ -30,6 +31,13 @@ class WebsiteController {
     // Initialize loading screen before DOM is fully loaded
     this.initLoadingScreen();
 
+    // Reveal the hero offer callout (if enabled) — runs synchronously so it is
+    // already visible before the loading screen fades (no layout shift).
+    this.initHeroOffer();
+
+    // Inject the site-wide announcement bar (if enabled) below the header.
+    this.initAnnouncementBar();
+
     // Wait for DOM to be fully loaded
     document.addEventListener('DOMContentLoaded', () => {
       this.initNavigation();
@@ -37,6 +45,7 @@ class WebsiteController {
       // this.initBackToTop();  // (TASK) hidden for now (replaced by Speak to an AI)
       this.initFloatingAiButton();
       this.initContactForm();
+      this.initOfferForm();
       this.initSkillsModal();
       this.initResponsiveAdjustments();
       this.initTabNavigation();
@@ -52,6 +61,110 @@ class WebsiteController {
 
       // Initial check for header background
       this.checkHeaderBackground();
+    });
+  }
+
+  /**
+   * Reveal the hero offer callout when enabled via LOADING_CONFIG.showHeroOffer.
+   * The element is hidden by default in CSS, so when disabled the hero is
+   * unchanged. Tolerant of config being absent.
+   */
+  initHeroOffer() {
+    if (typeof LOADING_CONFIG === 'undefined' || !LOADING_CONFIG.showHeroOffer)
+      return;
+
+    document.querySelectorAll('.hero-offer').forEach(el => el.classList.add('is-on'));
+  }
+
+  /**
+   * Inject the site-wide announcement bar just below the header (inside the
+   * fixed header, under the nav), when enabled via LOADING_CONFIG.
+   * Modes (LOADING_CONFIG.showAnnouncementBar):
+   *   'off'    - nothing is added.
+   *   'offer'  - bar links to the offer page (legacy boolean true == 'offer').
+   *   'texts'  - shows announcementTexts[announcementTextIndex], an HTML string
+   *              that may contain links; the {root} placeholder is replaced with
+   *              the path to the current language root.
+   * The relative paths are derived from the logo link (which always points to
+   * the current language's root) so they are correct on every page and in both
+   * languages. Tolerant of config absent.
+   */
+  initAnnouncementBar() {
+    const config = (typeof LOADING_CONFIG !== 'undefined') ? LOADING_CONFIG : {};
+    // Normalise the mode and accept the legacy boolean (true => 'offer').
+    let mode = config.showAnnouncementBar;
+    if (mode === true) mode = 'offer';
+    if (!mode || mode === 'off') return;
+
+    // In offer mode, reaching the offer page is the goal of the bar, so treat
+    // the visit like a manual dismissal: remember it for the session so the bar
+    // no longer shows here or on any other page the visitor opens this session.
+    if (mode === 'offer' && /\/offers\/offer\.html$/.test(location.pathname)) {
+      try { sessionStorage.setItem('waj:homepage:offerDismissed', '1'); } catch (e) { /* ignore */ }
+    }
+
+    // Stay hidden if the visitor dismissed it earlier this session (or already
+    // reached the offer page above). sessionStorage is per-tab and cleared when
+    // the tab/browser closes, so it reappears on the next visit.
+    try {
+      if (sessionStorage.getItem('waj:homepage:offerDismissed') === '1') return;
+    } catch (e) { /* sessionStorage may be unavailable (privacy mode) */ }
+
+    const header = this.header || document.querySelector('header');
+    if (!header || header.querySelector('.announcement-bar')) return;
+
+    const isDe = (document.documentElement.lang || 'en').toLowerCase().startsWith('de');
+    const closeLabel = isDe ? 'Hinweis schlie&szlig;en' : 'Dismiss';
+
+    // The logo link points to the current language's root (e.g. "#",
+    // "../../index.html"), so stripping its trailing "index.html"/"#" yields the
+    // prefix to that root for building relative links.
+    const logo = document.querySelector('.logo a');
+    const prefix = (logo ? logo.getAttribute('href') : '')
+      .replace(/index\.html$/, '').replace(/^#$/, '');
+
+    let inner;
+    if (mode === 'texts') {
+      const texts = Array.isArray(config.announcementTexts) ? config.announcementTexts : [];
+      const entry = texts[config.announcementTextIndex || 0];
+      // Each entry is { de, en }; fall back to the other language if one is
+      // missing. (A bare string is also tolerated for older configs.)
+      const html = (typeof entry === 'string')
+        ? entry
+        : (entry && ((isDe ? entry.de : entry.en) || entry.en || entry.de));
+      if (!html) return; // nothing configured to show
+      inner =
+        '<div class="container">' +
+          '<span class="announcement-bar-content">' + html.replace(/\{root\}/g, prefix) + '</span>' +
+        '</div>';
+    } else {
+      // 'offer'
+      const text = isDe
+        ? 'Kleine KI-Automatisierung? Schicken Sie es mir &ndash; ich baue es ab <strong>500&nbsp;&euro;</strong>'
+        : 'Have a small AI automation Send it to me &mdash; I&rsquo;ll build it starting at <strong>&euro;500</strong>.';
+      const href = prefix + 'pages/offers/offer.html';
+      inner =
+        '<div class="container">' +
+          '<a class="announcement-bar-link" href="' + href + '">' +
+            '<i class="fas fa-bolt" aria-hidden="true"></i>' +
+            '<span class="announcement-bar-text">' + text + '</span>' +
+            '<i class="fas fa-arrow-right announcement-bar-arrow" aria-hidden="true"></i>' +
+          '</a>' +
+        '</div>';
+    }
+
+    const bar = document.createElement('div');
+    bar.className = 'announcement-bar';
+    bar.innerHTML = inner +
+      '<button class="announcement-bar-close" type="button" aria-label="' + closeLabel + '" title="' + closeLabel + '">&times;</button>';
+
+    header.appendChild(bar);
+    document.body.classList.add('has-announcement');
+
+    bar.querySelector('.announcement-bar-close').addEventListener('click', () => {
+      bar.remove();
+      document.body.classList.remove('has-announcement');
+      try { sessionStorage.setItem('waj:homepage:offerDismissed', '1'); } catch (e) { /* ignore */ }
     });
   }
 
@@ -428,6 +541,131 @@ class WebsiteController {
           subjectField.value = 'CV Request';
       });
     }
+  }
+
+  /**
+   * Use-case inquiry form on the offer page. Reuses the same EmailJS service and
+   * template as the contact form; the two textareas (current situation + desired
+   * outcome) and the helper fields are composed into the template's "message".
+   * No-op on pages without the form.
+   */
+  initOfferForm() {
+    if( ! this.offerForm ) return;
+
+    const isDe = (document.documentElement.lang || 'en').toLowerCase().startsWith('de');
+    const t = isDe ? {
+      errName:    'Bitte geben Sie Ihren Namen ein',
+      errMail:    'Bitte geben Sie Ihre E-Mail-Adresse ein',
+      errMailInv: 'Bitte geben Sie eine gültige E-Mail-Adresse ein',
+      errCurrent: 'Bitte beschreiben Sie die aktuelle Situation',
+      errOutcome: 'Bitte beschreiben Sie das gewünschte Ergebnis',
+      success:    '<i class="fas fa-check-circle"></i> Vielen Dank! Ich melde mich zeitnah bei Ihnen.',
+      error:      '<i class="fas fa-exclamation-circle"></i> Hoppla, da ist etwas schiefgelaufen. Bitte versuchen Sie es später erneut.',
+      subject:    'Use-Case-Anfrage (Angebotsseite)',
+      lCurrent:   'Aktuelle Situation / Aufgabe heute',
+      lOutcome:   'Gewünschtes Ergebnis',
+      lFrequency: 'Häufigkeit / Volumen',
+      lSystems:   'Beteiligte Systeme / Tools',
+      notGiven:   '(keine Angabe)'
+    } : {
+      errName:    'Please enter your name',
+      errMail:    'Please enter your email address',
+      errMailInv: 'Please enter a valid email address',
+      errCurrent: 'Please describe the current situation',
+      errOutcome: 'Please describe the desired outcome',
+      success:    '<i class="fas fa-check-circle"></i> Thank you! I will get back to you soon.',
+      error:      '<i class="fas fa-exclamation-circle"></i> Oops! Something went wrong. Please try again later.',
+      subject:    'Use case inquiry (offer page)',
+      lCurrent:   'Current situation / task today',
+      lOutcome:   'Desired outcome',
+      lFrequency: 'Frequency / volume',
+      lSystems:   'Systems / tools involved',
+      notGiven:   '(not specified)'
+    };
+
+    // Build validation / spinner / status containers (same pattern as the contact form)
+    const validationContainer = document.createElement('div');
+    validationContainer.className = 'validation-messages';
+    this.offerForm.appendChild(validationContainer);
+
+    const spinner = document.createElement('div');
+    spinner.className = 'spinner';
+    spinner.innerHTML = '<div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div>';
+    spinner.style.display = 'none';
+    this.offerForm.appendChild(spinner);
+
+    const statusContainer = document.createElement('div');
+    statusContainer.className = 'form-status';
+    statusContainer.style.display = 'none';
+    this.offerForm.appendChild(statusContainer);
+
+    this.offerForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name      = document.getElementById('of-name').value.trim();
+      const email     = document.getElementById('of-email').value.trim();
+      const current   = document.getElementById('of-current').value.trim();
+      const outcome   = document.getElementById('of-outcome').value.trim();
+      const frequency = document.getElementById('of-frequency').value.trim();
+      const systems   = document.getElementById('of-systems').value.trim();
+
+      validationContainer.innerHTML = '';
+      validationContainer.style.display = 'none';
+      statusContainer.style.display = 'none';
+
+      let isValid = true;
+      const errors = [];
+      if( ! name )                         { errors.push(t.errName); isValid = false; }
+      if( ! email )                        { errors.push(t.errMail); isValid = false; }
+      else if( ! this.isValidEmail(email)) { errors.push(t.errMailInv); isValid = false; }
+      if( ! current )                      { errors.push(t.errCurrent); isValid = false; }
+      if( ! outcome )                      { errors.push(t.errOutcome); isValid = false; }
+
+      if( ! isValid ) {
+        validationContainer.style.display = 'block';
+        const errorList = document.createElement('ul');
+        errors.forEach(error => {
+          const li = document.createElement('li');
+          li.textContent = error;
+          errorList.appendChild(li);
+        });
+        validationContainer.appendChild(errorList);
+        return;
+      }
+
+      // Compose the message body from the two textareas plus the helper fields
+      const message =
+        t.lCurrent + ':\n' + current + '\n\n' +
+        t.lOutcome + ':\n' + outcome + '\n\n' +
+        t.lFrequency + ': ' + (frequency || t.notGiven) + '\n' +
+        t.lSystems + ': ' + (systems || t.notGiven);
+
+      const templateParams = { name: name, mail: email, subject: t.subject, message: message };
+
+      const serviceID  = 'service_r1nitci';
+      const templateID = 'template_ltytzqx';
+
+      spinner.style.display = 'flex';
+
+      emailjs.send(serviceID, templateID, templateParams)
+        .then(() => {
+          spinner.style.display = 'none';
+          statusContainer.style.display = 'block';
+          statusContainer.className = 'form-status success';
+          statusContainer.innerHTML = t.success;
+          this.offerForm.reset();
+          setTimeout(() => { statusContainer.style.display = 'none'; }, 6000);
+        })
+        .catch(error => {
+          spinner.style.display = 'none';
+          let errorMessage = t.error;
+          if( error && error.text )
+            errorMessage += `<br><small>${error.text}</small>`;
+          statusContainer.style.display = 'block';
+          statusContainer.className = 'form-status error';
+          statusContainer.innerHTML = errorMessage;
+        });
+    });
   }
 
   /**

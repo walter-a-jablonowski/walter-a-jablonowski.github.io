@@ -662,6 +662,122 @@ header.over-white .menu-toggle::before {
   gap: var(--spacing-md);
 }
 
+/* Hero offer / teaser callout — hidden by default; controller adds .is-on
+   when LOADING_CONFIG.showHeroOffer is true (so the hero is unchanged when off). */
+.hero-offer {
+  display: none;
+  align-items: center;
+  gap: 0.7rem;
+  max-width: 600px;
+  margin-top: var(--spacing-lg);
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(255, 107, 0, 0.45);
+  border-radius: var(--border-radius-md);
+  background: rgba(255, 107, 0, 0.07);
+  color: var(--white);
+  font-size: 1.02rem;
+  line-height: 1.4;
+  text-align: left;
+  text-decoration: none;
+}
+.hero-offer.is-on { display: flex; }
+/* Keep color static on hover (override the global a:hover color change) */
+.hero-offer:hover { color: var(--white); }
+.hero-offer-icon {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.95rem;
+}
+.hero-offer-text { flex: 1; }
+.hero-offer-text strong { color: var(--primary); white-space: nowrap; }
+.hero-offer-arrow {
+  flex-shrink: 0;
+  color: var(--primary);
+}
+
+/* Site-wide announcement bar — injected by the controller inside the fixed
+   header, directly below the nav. Full-width strip, centered inner container. */
+.announcement-bar {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(255, 107, 0, 0.18), rgba(255, 107, 0, 0.10));
+  border-top: 1px solid rgba(255, 107, 0, 0.30);
+}
+.announcement-bar-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.5rem 2.25rem;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  text-align: center;
+}
+.announcement-bar-link i.fa-bolt,
+.announcement-bar-link strong { color: var(--primary); }
+.announcement-bar-link strong { white-space: nowrap; }
+.announcement-bar-arrow { color: var(--primary); }
+/* Keep colors static on hover (override the global a:hover color change) */
+.announcement-bar-link:hover { color: var(--white); }
+/* 'texts' mode: a plain HTML message (may include its own links). */
+.announcement-bar-content {
+  display: block;
+  padding: 0.5rem 2.25rem;
+  color: var(--white);
+  font-size: 0.95rem;
+  line-height: 1.3;
+  text-align: center;
+}
+.announcement-bar-content a { color: var(--primary); text-decoration: none; }
+.announcement-bar-content a:hover { text-decoration: underline; }
+.announcement-bar-close {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  width: 1.7rem;
+  height: 1.7rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--lighter-gray);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+.announcement-bar-close:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Compensate the extra header height on pages that reserve space for the
+   fixed header, so content is not tucked underneath when the bar is present. */
+body.has-announcement .page-wrap {
+  padding-top: calc(80px + 2.6rem);
+  min-height: calc(100vh - 80px - 2.6rem);
+}
+body.has-announcement .project-detail { padding-top: calc(var(--spacing-xxl) + 2.6rem); }
+
+@media (max-width: 480px) {
+  .announcement-bar-link { font-size: 0.85rem; padding: 0.45rem 2rem; gap: 0.45rem; }
+  .announcement-bar-content { font-size: 0.85rem; padding: 0.45rem 2rem; }
+  .announcement-bar-arrow { display: none; }
+}
+
 .hero-image {
   flex: 1;
   display: flex;
@@ -899,7 +1015,7 @@ section {
 .service-card {
   background-color: var(--dark-gray);
   border-radius: var(--border-radius-md);
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
   transition: box-shadow var(--transition-normal);
   height: 100%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -912,11 +1028,21 @@ section {
 .service-icon {
   font-size: 2.5rem;
   color: var(--primary);
-  margin-bottom: var(--spacing-md);
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
 }
 
 .service-card h3 {
+  display: inline-block;
+  vertical-align: middle;
   margin-bottom: var(--spacing-sm);
+}
+
+.service-card ul {
+  padding-left: 1.1rem;
+  margin-left: 0;
 }
 
 /* ===== Skills Section ===== */
@@ -2026,6 +2152,12 @@ footer {
     justify-content: center;
   }
 
+  .hero-offer {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
   .services-grid,
   .skills-content,
   .interest-cards,
@@ -2073,6 +2205,11 @@ footer {
 
   .hero-cta .btn {
     width: 100%;
+  }
+
+  .hero-offer {
+    width: 100%;
+    max-width: 100%;
   }
 
   .cta-buttons {
