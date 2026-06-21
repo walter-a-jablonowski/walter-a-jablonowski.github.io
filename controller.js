@@ -140,8 +140,8 @@ class WebsiteController {
     } else {
       // 'offer'
       const text = isDe
-        ? 'Kleine KI-Automatisierung? Schicken Sie es mir &ndash; ich baue es ab <strong>500&nbsp;&euro;</strong>'
-        : 'Have a small AI automation Send it to me &mdash; I&rsquo;ll build it starting at <strong>&euro;500</strong>.';
+        ? 'Kleine KI-Automatisierung? Schicken Sie es mir &ndash; ich baue es ab <strong>1.000&nbsp;&euro;</strong>'
+        : 'Have a small AI automation Send it to me &mdash; I&rsquo;ll build it starting at <strong>&euro;1000</strong>.';
       const href = prefix + 'pages/offers/offer.html';
       inner =
         '<div class="container">' +

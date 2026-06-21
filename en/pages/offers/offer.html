@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Have a small AI automation? Automate recurring work with AI agents or workflows &ndash; from &euro;500. Fixed price, integration with existing systems (CRM, ERP). Bamberg, Nuremberg and online.">
+  <meta name="description" content="Have a small AI automation? Automate recurring work with AI agents or workflows &ndash; from &euro;1,000. Fixed price, integration with existing systems (CRM, ERP). Bamberg, Nuremberg and online.">
   <meta name="keywords" content="AI use case, AI automation, AI agents, workflow automation, fixed price, CRM integration, ERP integration, AI for SMB, Bamberg, Nuremberg">
   <meta name="author" content="Walter A. Jablonowski">
-  <title>Have a small AI automation? From &euro;500 | Walter A. Jablonowski</title>
+  <title>Have a small AI automation? From &euro;1,000 | Walter A. Jablonowski</title>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Walter A. Jablonowski">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="de_DE">
-  <meta property="og:title" content="Have a small AI automation? I&rsquo;ll build it for &euro;500">
+  <meta property="og:title" content="Have a small AI automation? I&rsquo;ll build it for &euro;1ß00">
   <meta property="og:description" content="Automate recurring work with AI agents or workflows. Fixed price, integration with your existing systems.">
   <meta property="og:url" content="https://walter-a-jablonowski.github.io/en/pages/offers/offer.html">
   <meta property="og:image" content="https://walter-a-jablonowski.github.io/misc/logo_2.png">
@@ -41,9 +41,9 @@
         ],
         "offers": {
           "@type": "Offer",
-          "price": "500",
+          "price": "1000",
           "priceCurrency": "EUR",
-          "description": "Small use case, approx. 1 working day, plus VAT."
+          "description": "Small use case, up to 2 working days, plus VAT."
         }
       }
     ]
@@ -57,11 +57,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
   <link rel="manifest" href="../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../styles.css?v=26062001">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css?v=26062101">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26062101">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26062101">
   <style>
     /* Offer page specific styles (built on the shared design tokens) */
     .project-detail {
@@ -92,7 +90,7 @@
 
     .content { color: var(--lighter-gray); line-height: 1.75; }
     .content h3 { color: var(--white); margin-top: var(--spacing-lg); }
-    .content h3 .h3-note { color: var(--light-gray); font-weight: 400; font-size: 0.85em; }
+    .content h3 .h3-sub { color: var(--light-gray); font-weight: 400; }
     .content p { margin: 0 0 var(--spacing-md); }
     .content ul { padding-left: 1.25rem; margin: 0 0 var(--spacing-md); }
     .content li { margin: .45rem 0; }
@@ -133,47 +131,27 @@
       font-size: .95rem;
     }
     .offer-steps .step-comment { color: var(--light-gray); font-size: .92rem; }
+    .offer-steps li.no-num { counter-increment: none; padding-left: 1rem; }
+    .offer-steps li.no-num::before { display: none; }
 
-    /* Foldable use-case examples */
-    .offer-foldable {
-      margin: 0 0 var(--spacing-md);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: var(--border-radius-sm);
-      background: rgba(255,255,255,0.03);
-      overflow: hidden;
-    }
-    .offer-foldable > summary {
+    /* Samples reveal (inline toggle under the lead) */
+    .samples-reveal { margin: 0 0 var(--spacing-md); }
+    .samples-reveal > summary {
       list-style: none;
       cursor: pointer;
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: .6rem;
-      padding: .9rem 1rem;
-      color: var(--white);
+      gap: .45rem;
+      color: var(--accent-gold);
       font-weight: 600;
     }
-    .offer-foldable > summary::-webkit-details-marker { display: none; }
-    .offer-foldable > summary .fa-lightbulb { color: var(--primary); }
-    .offer-foldable > summary .fa-chevron-down {
-      margin-left: auto;
-      color: var(--primary);
-      font-size: .85rem;
+    .samples-reveal > summary::-webkit-details-marker { display: none; }
+    .samples-reveal > summary .fa-chevron-down {
+      font-size: .8rem;
       transition: transform var(--transition-fast);
     }
-    .offer-foldable[open] > summary .fa-chevron-down { transform: rotate(180deg); }
-    .offer-foldable .foldable-body { padding: 0 1rem 1rem; }
-    .offer-foldable .foldable-body ul { margin: 0; }
-
-    /* Foldable + trust side by side */
-    .offer-top {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--spacing-lg);
-      align-items: start;
-      margin: 0 0 var(--spacing-md);
-    }
-    .offer-top .offer-foldable,
-    .offer-top .offer-trust { margin: 0; }
+    .samples-reveal[open] > summary .fa-chevron-down { transform: rotate(180deg); }
+    .samples-reveal ul { margin: .75rem 0 0; }
 
     /* Two-column layout: process (narrow) + pricing (wider) side by side */
     .offer-cols {
@@ -189,8 +167,8 @@
     .offer-cols .offer-steps { margin-top: -.4rem; }
 
     @media (max-width: 768px) {
-      .offer-top { grid-template-columns: 1fr; gap: var(--spacing-md); }
       .offer-cols { grid-template-columns: 1fr; gap: 0; }
+      .offer-cols > div + div h3 { margin-top: var(--spacing-lg); }
     }
 
     /* Pricing table */
@@ -219,16 +197,27 @@
     .pricing-table .scope { color: var(--white); font-weight: 500; }
     .pricing-table .price { color: var(--primary); font-weight: 700; white-space: nowrap; }
     .pricing-table .price-small { font-size: 1.15rem; }
-    .pricing-note { font-size: .9rem; color: var(--light-gray); margin: 0 0 var(--spacing-md); }
-
-    /* Trust callout */
-    .offer-trust {
-      margin: var(--spacing-md) 0;
-      padding: var(--spacing-md);
-      background: rgba(255,255,255,0.04);
-      border-radius: var(--border-radius-sm);
+    .pricing-comment { font-size: .9rem; color: var(--light-gray); margin: .5rem 0 var(--spacing-md); border-collapse: collapse; }
+    .pricing-comment td { border: none; padding: 0 .4rem 0 0; vertical-align: top; }
+    .pricing-comment td:first-child { white-space: nowrap; }
+    .pricing-table .scope-info {
+      display: inline-block;
+      margin-left: .4rem;
+      padding: 0;
+      font-size: .75rem;
+      color: var(--accent-gold);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      vertical-align: middle;
+      transition: transform var(--transition-fast);
     }
-    .offer-trust strong { color: var(--white); }
+    .pricing-table .scope-info[aria-expanded="true"] { transform: rotate(180deg); }
+    .pricing-table .scope-samples td { padding-top: .35rem; padding-bottom: .85rem; color: var(--light-gray); }
+    .pricing-table .scope-samples .samples-label { display: block; color: var(--white); font-weight: 600; font-size: .85rem; margin-bottom: .3rem; }
+    .pricing-table .scope-samples ul { margin: 0; padding-left: 1.25rem; font-size: .9rem; }
+    .pricing-table .scope-samples li { margin: .2rem 0; }
 
     /* CTA */
     .offer-cta {
@@ -256,6 +245,7 @@
         color: var(--light-gray);
         margin-bottom: .2rem;
       }
+      .pricing-table .scope-samples td::before { display: none; }
     }
   </style>
 </head>
@@ -306,7 +296,7 @@
   <section class="project-detail">
     <div class="container">
       <div class="section-header">
-        <h2 style="color: var(--white);">Small AI automation starting at <span class="highlight">&euro;500</span></h2>
+        <h2 style="color: var(--white);">Small AI automation starting at <span class="highlight">&euro; 1,000</span></h2>
 <!--
         <div class="underline"></div>
 -->
@@ -314,37 +304,26 @@
 
       <p class="offer-lead">
         Automate recurring work &ndash; with <strong>AI agents or workflow</strong>, integrated with your existing systems (e.g. CRM and ERP).
-        Once installed, <span class="price-hl">an automation saves you a lot of time, effort and resources every year.</span>
+        Once installed, <span class="price-hl">an automation saves you much time, effort and resources every year.</span>
       </p>
 
+      <details class="samples-reveal">
+        <summary>Show samples for automations <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+        <ul>
+          <li>Invoices or reports automatically</li>
+          <li>Sort, answer or forward emails</li>
+          <li>Extract data from PDFs, forms or emails</li>
+          <li>Sync information between systems (CRM, ERP)</li>
+          <li>Recurring research and summaries</li>
+        </ul>
+      </details>
+
       <div class="content">
-        <div class="offer-top">
-          <details class="offer-foldable">
-            <summary>
-              <i class="fas fa-lightbulb" aria-hidden="true"></i>
-              <span>Show samples for automations</span>
-              <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </summary>
-            <div class="foldable-body">
-              <ul>
-                <li>Invoices or reports automatically</li>
-                <li>Sort, answer or forward emails</li>
-                <li>Extract data from PDFs, forms or emails</li>
-                <li>Sync information between systems (CRM, ERP)</li>
-                <li>Recurring research and summaries</li>
-              </ul>
-            </div>
-          </details>
-
-          <div class="offer-trust">
-            <strong>Fixed price, no risk.</strong> Runs locally or trusted cloud &ndash; GDPR-compliant.
-          </div>
-        </div>
-
         <div class="offer-cols">
           <div>
             <h3>How it works</h3>
             <ol class="offer-steps">
+              <li class="no-num"><strong>Runs locally or web server.</strong> Support with GDPR.</li>
               <li>Clarify / identify the use case<br>
                 <span class="step-comment">free initial consultation, on-site in the region or online</span></li>
               <li>Proposed solution</li>
@@ -352,7 +331,7 @@
             </ol>
           </div>
           <div>
-            <h3>Pricing</h3>
+            <h3>Kickstart offer <span class="h3-sub">(fixed price, no risk)</span></h3>
             <table class="pricing-table">
           <thead>
             <tr>
@@ -363,29 +342,67 @@
           </thead>
           <tbody>
             <tr>
-              <td class="scope" data-label="Scope">Small use case</td>
-              <td data-label="Effort">approx. 1 working day</td>
-              <td class="price price-small" data-label="Price">&euro;500</td>
+              <td class="scope" data-label="Scope">Small use case<button type="button" class="scope-info" aria-expanded="false" aria-label="Show examples"><i class="fas fa-chevron-down" aria-hidden="true"></i></button></td>
+              <td data-label="Effort">up to 2 working days</td>
+              <td class="price price-small" data-label="Price">&euro;1,000</td>
+            </tr>
+            <tr class="scope-samples" hidden>
+              <td colspan="3">
+                <span class="samples-label">Examples:</span>
+                <ul>
+                  <li>Simple API connection</li>
+                  <li>Workflow automation &amp; system integration</li>
+                </ul>
+              </td>
             </tr>
             <tr>
-              <td class="scope" data-label="Scope">Normal use case</td>
-              <td data-label="Effort">approx. 2&ndash;5 working days</td>
-              <td class="price" data-label="Price">up to &euro;3,500</td>
+              <td class="scope" data-label="Scope">Normal use case<button type="button" class="scope-info" aria-expanded="false" aria-label="Show examples"><i class="fas fa-chevron-down" aria-hidden="true"></i></button></td>
+              <td data-label="Effort">3&ndash;5 working days</td>
+              <td class="price" data-label="Price">&euro;1,500 - &euro;2,500</td>
+            </tr>
+            <tr class="scope-samples" hidden>
+              <td colspan="3">
+                <span class="samples-label">Examples:</span>
+                <ul>
+                  <li>Multi-step workflows across several systems</li>
+                  <li>AI-assisted document or email processing</li>
+                </ul>
+              </td>
             </tr>
             <tr>
-              <td class="scope" data-label="Scope">Larger project</td>
+              <td class="scope" data-label="Scope">Larger project<button type="button" class="scope-info" aria-expanded="false" aria-label="Show examples"><i class="fas fa-chevron-down" aria-hidden="true"></i></button></td>
               <td data-label="Effort">&ndash;</td>
               <td class="price" data-label="Price">on request</td>
             </tr>
+            <tr class="scope-samples" hidden>
+              <td colspan="3">
+                <span class="samples-label">Examples:</span>
+                <ul>
+                  <li>Custom AI agents / custom dashboards</li>
+                  <li>Ongoing support &amp; further development</li>
+                </ul>
+              </td>
+            </tr>
           </tbody>
         </table>
-            <p class="pricing-note">
-              * plus VAT. Ongoing operating costs may apply, e.g. for AI usage or servers.
-            </p>
+            <table class="pricing-comment">
+              <tr>
+                <td>*</td>
+                <td><b>Special price</b> plus VAT, 50% deposit upfront (regular price: 80 EUR/hour).</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b>On-site:</b> plus expenses or flat rate (Bamberg at no extra charge).</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b>Not included:</b> e.g. costs for AI usage, cloud or professional GDPR review.</td>
+              </tr>
+            </table>
           </div>
         </div>
 
-        <h3>Send your use case <span class="h3-note">(non-binding offer)</span></h3>
+        <h3>Send your use case <span class="h3-sub">(non-binding offer)</span></h3>
         <p>Describe your use case &ndash; I&rsquo;ll get back to you shortly with an assessment.</p>
         <div class="contact-form-container">
           <form id="offer-form" class="contact-form" novalidate>
@@ -434,8 +451,8 @@
           <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
         <div class="footer-links">
-          <a href="../../../privacy.html">Privacy</a>
-          <a href="../../../imprint.html">Imprint</a>
+          <a href="../../privacy.html">Privacy</a>
+          <a href="../../imprint.html">Imprint</a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -448,16 +465,28 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript" src="../../../lib/emailjs/email.min.js"></script>
   <script>
     (function () {
       emailjs.init({ publicKey: "xvNrfCyYGqQD5cuoU" });
     })();
   </script>
-  <script src="../../../lib/config.js?v=26062001"></script>
-  <script src="../../../controller.js?v=26062001"></script>
+  <script src="../../../lib/config.js?v=26062101"></script>
+  <script src="../../../controller.js?v=26062101"></script>
   <script>
     new WebsiteController();
+  </script>
+  <script>
+    document.querySelectorAll('.pricing-table .scope-info').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var row = btn.closest('tr');
+        var samples = row.nextElementSibling;
+        if (!samples || !samples.classList.contains('scope-samples')) return;
+        var willOpen = samples.hasAttribute('hidden');
+        if (willOpen) { samples.removeAttribute('hidden'); } else { samples.setAttribute('hidden', ''); }
+        btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      });
+    });
   </script>
 </body>
 </html>
