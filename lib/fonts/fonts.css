@@ -1,6 +1,11 @@
 ﻿/* Self-hosted Google Fonts (latin + latin-ext subsets)
    Roboto 300/400/700, Source Code Pro 400/600
-   Downloaded from Google Fonts for DSGVO-compliant local hosting. */
+   Downloaded from Google Fonts for DSGVO-compliant local hosting.
+
+   Licenses (bundled in this directory, required because the font files are
+   redistributed here):
+   - Roboto:          Apache License 2.0           -> Roboto-LICENSE.txt
+   - Source Code Pro: SIL Open Font License 1.1    -> SourceCodePro-LICENSE.txt */
 
 /* Roboto 300 latin-ext */
 @font-face {

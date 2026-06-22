@@ -447,6 +447,30 @@ class WebsiteController
   initContactForm()
   {
     if (this.contactForm) {
+
+      const isDe = (document.documentElement.lang || 'en').toLowerCase().startsWith('de');
+      const t = isDe ? {
+        errName:    'Bitte geben Sie Ihren Namen ein',
+        errMail:    'Bitte geben Sie Ihre E-Mail-Adresse ein',
+        errMailInv: 'Bitte geben Sie eine gültige E-Mail-Adresse ein',
+        errSubject: 'Bitte geben Sie einen Betreff ein',
+        errMessage: 'Bitte geben Sie Ihre Nachricht ein',
+        success:    '<i class="fas fa-check-circle"></i> Vielen Dank für Ihre Nachricht! Ich melde mich bei Ihnen.',
+        error:      '<i class="fas fa-exclamation-circle"></i> Hoppla, da ist etwas schiefgelaufen. Bitte versuchen Sie es später erneut.',
+        errDetails: 'Fehlerdetails',
+        cvSubject:  'Lebenslauf-Anfrage'
+      } : {
+        errName:    'Please enter your name',
+        errMail:    'Please enter your email address',
+        errMailInv: 'Please enter a valid email address',
+        errSubject: 'Please enter a subject',
+        errMessage: 'Please enter your message',
+        success:    '<i class="fas fa-check-circle"></i> Thank you for your message! I will get back to you.',
+        error:      '<i class="fas fa-exclamation-circle"></i> Oops! Something went wrong. Please try again later.',
+        errDetails: 'Error details',
+        cvSubject:  'CV Request'
+      };
+
       // Create validation message container
       const validationContainer = document.createElement('div');
       validationContainer.className = 'validation-messages';
@@ -484,25 +508,25 @@ class WebsiteController
         const errors = [];
 
         if( ! name ) {
-          errors.push('Please enter your name');
+          errors.push(t.errName);
           isValid = false;
         }
 
         if( ! email ) {
-          errors.push('Please enter your email address');
+          errors.push(t.errMail);
           isValid = false;
         } else if( ! this.isValidEmail(email)) {
-          errors.push('Please enter a valid email address');
+          errors.push(t.errMailInv);
           isValid = false;
         }
 
         if( ! subject ) {
-          errors.push('Please enter a subject');
+          errors.push(t.errSubject);
           isValid = false;
         }
 
         if( ! message ) {
-          errors.push('Please enter your message');
+          errors.push(t.errMessage);
           isValid = false;
         }
 
@@ -543,7 +567,7 @@ class WebsiteController
             // Show success message
             statusContainer.style.display = 'block';
             statusContainer.className = 'form-status success';
-            statusContainer.innerHTML = '<i class="fas fa-check-circle"></i> Thank you for your message! I will get back to you soon.';
+            statusContainer.innerHTML = t.success;
 
             // Reset form
             this.contactForm.reset();
@@ -558,9 +582,9 @@ class WebsiteController
             spinner.style.display = 'none';
 
             // Show detailed error message in development
-            let errorMessage = '<i class="fas fa-exclamation-circle"></i> Oops! Something went wrong. Please try again later.';
+            let errorMessage = t.error;
             if( error && error.text ) {
-              errorMessage += `<br><small>Error details: ${error.text}</small>`;
+              errorMessage += `<br><small>${t.errDetails}: ${error.text}</small>`;
             }
 
             // Show error message
@@ -582,7 +606,7 @@ class WebsiteController
         // Pre-fill subject field
         const subjectField = document.getElementById('subject');
         if( subjectField )
-          subjectField.value = 'CV Request';
+          subjectField.value = t.cvSubject;
       });
     }
   }
