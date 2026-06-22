@@ -1,0 +1,348 @@
+/* ===== Media Queries ===== */
+@media (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+
+  .about-content,
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-container::after {
+    left: 40px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 0;
+  }
+
+  .timeline-item:nth-child(even) {
+    left: 0;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-dot,
+  .timeline-item:nth-child(even) .timeline-dot {
+    left: 30px;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-date,
+  .timeline-item:nth-child(even) .timeline-date {
+    left: 0;
+    top: -30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--dark);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: right var(--transition-normal);
+    z-index: 1001;
+    overflow-y: auto;
+    /* Allow scrolling if menu is taller than viewport */
+    padding: 4rem 0 2rem;
+    /* Add padding to avoid content being hidden under header */
+  }
+
+  .nav-menu.active {
+    right: 0;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-menu li {
+    margin: var(--spacing-md) 0;
+    margin-left: 0;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .hero-text p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta {
+    justify-content: center;
+  }
+
+  .hero-offer {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  .services-grid,
+  .skills-content,
+  .interest-cards,
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-radar {
+    transform: scale(0.8);
+    margin: 0 auto;
+  }
+
+  .developer-illustration {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    width: 100%;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+  }
+
+  .hero-offer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    width: 100%;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  .contact-card {
+    padding: var(--spacing-md);
+  }
+
+  .contact-form-container {
+    padding: var(--spacing-md);
+  }
+
+  .tech-radar {
+    transform: scale(0.7);
+    margin: 0 auto;
+  }
+
+  .back-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Hide elements with hide-on-mobile class on smartphones */
+  .hide-on-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  html {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .section-header {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .tech-radar {
+    transform: scale(0.6);
+  }
+}
+
+/* iOS specific fixes */
+.ios .hero {
+  min-height: -webkit-fill-available;
+}
+
+.ios .nav-menu.active {
+  height: -webkit-fill-available;
+}
+
+/* Map section */
+.map-section {
+  width: 100%;
+  height: 400px;
+  background-color: var(--dark);
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0;
+  margin-bottom: -10px;
+  /* Negative margin to reduce space below the map */
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+  filter: grayscale(100%) invert(92%) contrast(83%);
+}
+
+@media (max-width: 480px) {
+  .map-section {
+    height: 300px;
+  }
+}
+
+/* Remove old map container styles */
+.map-container {
+  display: none;
+}
+
+/* Info icon and popover */
+.popover {
+  position: fixed;
+  z-index: 1101;
+  background: var(--lighter-gray);
+  color: var(--dark);
+  padding: 0.7rem 1rem;
+  border-radius: var(--border-radius-md);
+  font-size: 0.85rem;
+  white-space: normal;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 220px;
+  text-align: left;
+  font-weight: normal;
+  line-height: 1.5;
+  text-transform: none !important;
+  font-family: 'Roboto', sans-serif !important;
+  letter-spacing: normal;
+  display: none;
+}
+
+.info-icon {
+  color: var(--primary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-left: 0.25rem;
+  position: relative;
+}
+
+.info-icon.active {
+  color: var(--primary);
+}
+
+/* AI tools link (keep this design) */
+.ai-tools-link {
+  display: block;
+  margin-top: 20px;
+  background-color: rgba(255, 107, 0, 0.05);
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+}
+
+.ai-tools-link i {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.ai-tools-link:hover {
+  background-color: rgba(255, 107, 0, 0.1);
+}
+
+/* AI tools link 2 — same size as the original, just more visible */
+.ai-tools-link-2 {
+  display: block;
+  margin-top: 20px;
+  background-color: rgba(255, 107, 0, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(255, 107, 0, 0.45);
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+  transition: background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.ai-tools-link-2 i {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.ai-tools-link-2:hover {
+  background-color: rgba(255, 107, 0, 0.22);
+  box-shadow: inset 0 0 0 1px rgba(255, 107, 0, 0.7);
+}
+

@@ -3,8 +3,10 @@
  * Main JavaScript Controller
  */
 
-class WebsiteController {
-  constructor() {
+class WebsiteController
+{
+  constructor()
+  {
     // Store references to DOM elements as class properties
     this.header = document.querySelector('header');
     this.menuToggle = document.querySelector('.menu-toggle');
@@ -27,7 +29,8 @@ class WebsiteController {
   /**
    * Initialize all website components
    */
-  init() {
+  init()
+  {
     // Initialize loading screen before DOM is fully loaded
     this.initLoadingScreen();
 
@@ -37,6 +40,12 @@ class WebsiteController {
 
     // Inject the site-wide announcement bar (if enabled) below the header.
     this.initAnnouncementBar();
+
+    // Gate "new feature" CTAs (e.g. the .service-cta banner) via config.
+    this.initNewFeatures();
+
+    // Gate the FAQ mini-tab on the service pages via config.
+    this.initFAQ();
 
     // Wait for DOM to be fully loaded
     document.addEventListener('DOMContentLoaded', () => {
@@ -69,11 +78,39 @@ class WebsiteController {
    * The element is hidden by default in CSS, so when disabled the hero is
    * unchanged. Tolerant of config being absent.
    */
-  initHeroOffer() {
+  initHeroOffer()
+  {
     if (typeof LOADING_CONFIG === 'undefined' || !LOADING_CONFIG.showHeroOffer)
       return;
 
     document.querySelectorAll('.hero-offer').forEach(el => el.classList.add('is-on'));
+  }
+
+  /**
+   * Hide "new feature" CTAs (e.g. the .service-cta banner on the service pages)
+   * when LOADING_CONFIG.showCTA is explicitly false. Adds a body class
+   * that styles.css uses to hide the gated elements; the default (true/absent)
+   * leaves them visible, so they still show if config or JS is unavailable.
+   * To gate further CTAs, add their selector to the `body.no-new-features` rule
+   * in styles.css. Tolerant of config being absent.
+   */
+  initNewFeatures()
+  {
+    if (typeof LOADING_CONFIG !== 'undefined' && LOADING_CONFIG.showCTA === false)
+      document.body.classList.add('no-new-features');
+  }
+
+  /**
+   * Hide the FAQ mini-tab ("Häufige Fragen") on the service pages when
+   * LOADING_CONFIG.showFAQ is explicitly false. Adds a body class that CSS uses
+   * to hide the FAQ tab button, its separator and the FAQ panel; the overview
+   * tab stays active. The default (true/absent) leaves the FAQ visible, so it
+   * still shows if config or JS is unavailable. Tolerant of config being absent.
+   */
+  initFAQ()
+  {
+    if (typeof LOADING_CONFIG !== 'undefined' && LOADING_CONFIG.showFAQ === false)
+      document.body.classList.add('no-faq');
   }
 
   /**
@@ -89,7 +126,8 @@ class WebsiteController {
    * the current language's root) so they are correct on every page and in both
    * languages. Tolerant of config absent.
    */
-  initAnnouncementBar() {
+  initAnnouncementBar()
+  {
     const config = (typeof LOADING_CONFIG !== 'undefined') ? LOADING_CONFIG : {};
     // Normalise the mode and accept the legacy boolean (true => 'offer').
     let mode = config.showAnnouncementBar;
@@ -230,7 +268,8 @@ class WebsiteController {
   /**
    * Navigation functionality
    */
-  initNavigation() {
+  initNavigation()
+  {
     // Handle scroll events for header styling
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50)
@@ -299,7 +338,8 @@ class WebsiteController {
   /**
    * Update active nav link based on scroll position
    */
-  updateActiveNavLink() {
+  updateActiveNavLink()
+  {
     const sections = document.querySelectorAll('section');
     const scrollPosition = window.scrollY + 200;
 
@@ -321,7 +361,8 @@ class WebsiteController {
   /**
    * Scroll animations
    */
-  initScrollAnimations() {
+  initScrollAnimations()
+  {
     // Animate elements when they come into view
     const animatedElements = document.querySelectorAll('.service-card, .skill-category, .interest-card, .timeline-item');
 
@@ -362,7 +403,8 @@ class WebsiteController {
   /**
    * Back to top button
    */
-  initBackToTop() {
+  initBackToTop()
+  {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 500)
         this.backToTopButton.classList.add('show');
@@ -381,7 +423,8 @@ class WebsiteController {
   /**
    * Floating AI button - show/hide based on scroll position
    */
-  initFloatingAiButton() {
+  initFloatingAiButton()
+  {
     if (!this.floatingAiButton)
       return;
 
@@ -401,7 +444,8 @@ class WebsiteController {
   /**
    * Contact form
    */
-  initContactForm() {
+  initContactForm()
+  {
     if (this.contactForm) {
       // Create validation message container
       const validationContainer = document.createElement('div');
@@ -549,7 +593,8 @@ class WebsiteController {
    * outcome) and the helper fields are composed into the template's "message".
    * No-op on pages without the form.
    */
-  initOfferForm() {
+  initOfferForm()
+  {
     if( ! this.offerForm ) return;
 
     const isDe = (document.documentElement.lang || 'en').toLowerCase().startsWith('de');
@@ -673,7 +718,8 @@ class WebsiteController {
    * @param {string} email - Email to validate
    * @return {boolean} True if valid or false
    */
-  isValidEmail(email) {
+  isValidEmail(email)
+  {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
@@ -687,7 +733,8 @@ class WebsiteController {
   /**
    * AI development skills modal (opened from the link in the Skills section)
    */
-  initSkillsModal() {
+  initSkillsModal()
+  {
     const trigger = document.getElementById('aiSkillsTrigger');
     const modal = document.getElementById('aiSkillsModal');
     if (!trigger || !modal) return;
@@ -723,7 +770,8 @@ class WebsiteController {
   /**
    * Responsive adjustments
    */
-  initResponsiveAdjustments() {
+  initResponsiveAdjustments()
+  {
     // Set the --vh value initially
     this.setVhProperty();
 
@@ -769,7 +817,8 @@ class WebsiteController {
   /**
    * Adjust viewport height for mobile browsers
    */
-  setVhProperty() {
+  setVhProperty()
+  {
     // First we get the viewport height and multiply it by 1% to get a value for a vh unit
     const vh = window.innerHeight * 0.01;
     // Then we set the value in the --vh custom property to the root of the document
@@ -779,7 +828,8 @@ class WebsiteController {
   /**
    * Tab navigation for projects section
    */
-  initTabNavigation() {
+  initTabNavigation()
+  {
     if( this.tabLinks.length > 0 ) {
       this.tabLinks.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -831,7 +881,8 @@ class WebsiteController {
   /**
    * Initialize info icons with popover functionality
    */
-  initInfoIcons() {
+  initInfoIcons()
+  {
     if( !this.infoIcons.length ) return;
 
     // Add click event to each info icon
@@ -871,7 +922,8 @@ class WebsiteController {
   /**
    * Initialize typewriter effect and hide cursor after typing
    */
-  initTypewriterEffect() {
+  initTypewriterEffect()
+  {
     const typewriterElement = document.querySelector('.typewriter');
 
     if( typewriterElement ) {
@@ -933,7 +985,8 @@ class WebsiteController {
   /**
    * Initialize project carousel
    */
-  initProjectCarousel() {
+  initProjectCarousel()
+  {
     const carouselContainer = document.querySelector('.project-cards-container');
     const prevArrow = document.querySelector('.carousel-arrow.prev');
     const nextArrow = document.querySelector('.carousel-arrow.next');
@@ -995,7 +1048,8 @@ class WebsiteController {
    * Update carousel arrows visibility based on scroll position
    * @param {HTMLElement} container - The carousel container element
    */
-  updateCarouselArrows(container) {
+  updateCarouselArrows(container)
+  {
     const prevArrow = document.querySelector('.carousel-arrow.prev');
     const nextArrow = document.querySelector('.carousel-arrow.next');
 
@@ -1027,7 +1081,8 @@ class WebsiteController {
    * @param {number} startX - Touch start X position
    * @param {number} endX - Touch end X position
    */
-  handleSwipe(container, startX, endX) {
+  handleSwipe(container, startX, endX)
+  {
     const cardWidth = container.querySelector('.project-card').offsetWidth;
     const gap = parseInt(window.getComputedStyle(container).getPropertyValue('gap'));
     const scrollAmount = cardWidth + gap;
@@ -1052,7 +1107,8 @@ class WebsiteController {
   /**
    * Initialize past skills toggle functionality
    */
-  initPastSkillsToggle() {
+  initPastSkillsToggle()
+  {
     const toggleButton = document.getElementById('past-skills-toggle');
     const content = document.getElementById('past-skills-content');
 
@@ -1067,7 +1123,8 @@ class WebsiteController {
   /**
    * Check if header is over white or light sections
    */
-  checkHeaderBackground() {
+  checkHeaderBackground()
+  {
     // Only run this check on mobile devices
     if( window.innerWidth > 768 ) {
       this.header.classList.remove('over-white');
@@ -1105,7 +1162,8 @@ class WebsiteController {
  * Copy text to clipboard
  * @param {string} text - Text to copy
  */
-function copyToClipboard(text) {
+function copyToClipboard(text)
+{
   // Create a temporary textarea element
   const textarea = document.createElement('textarea');
   textarea.value = text;

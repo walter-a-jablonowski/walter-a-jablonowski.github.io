@@ -1,0 +1,175 @@
+/*
+ * Reusable service / offer page components.
+ * Extracted verbatim from the per-page inline <style> blocks (identical
+ * across the service & offer pages). Imported globally via styles.css;
+ * every class here is exclusive to those pages, so it has no effect
+ * anywhere else.
+ */
+
+.offer-lead {
+  font-size: 1.2rem;
+  color: var(--lighter-gray);
+  line-height: 1.8;
+  font-weight: 300;
+}
+.offer-lead .price-hl { color: var(--primary); font-weight: 700; }
+
+/* Feature cards (icon + title + text) */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+  margin: 0 0 var(--spacing-md);
+}
+.feature-box {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--border-radius-sm);
+  padding: 1.1rem 1.2rem;
+}
+.feature-box .fb-icon {
+  color: var(--primary);
+  font-size: 1.5rem;
+  margin-bottom: .6rem;
+}
+.feature-box h4 { color: var(--white); margin: 0 0 .35rem; font-size: 1.05rem; }
+.feature-box p { margin: 0; font-size: .95rem; color: var(--light-gray); }
+
+/* Foldable samples reveal */
+.samples-reveal { margin: 0 0 var(--spacing-md); }
+.samples-reveal > summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+.samples-reveal > summary::-webkit-details-marker { display: none; }
+.samples-reveal > summary .fa-chevron-down {
+  font-size: .8rem;
+  transition: transform var(--transition-fast);
+}
+.samples-reveal[open] > summary .fa-chevron-down { transform: rotate(180deg); }
+.samples-reveal ul { margin: .75rem 0 0; }
+
+/* Process steps */
+.offer-steps {
+  list-style: none;
+  counter-reset: step;
+  padding: 0;
+  margin: 0 0 var(--spacing-md);
+  display: grid;
+  gap: .85rem;
+}
+.offer-steps li {
+  counter-increment: step;
+  position: relative;
+  padding: .85rem 1rem .85rem 3.25rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--border-radius-sm);
+}
+.offer-steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: .85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.7rem;
+  height: 1.7rem;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: .95rem;
+}
+.offer-steps .step-comment { color: var(--light-gray); font-size: .92rem; }
+.offer-steps li.no-num { counter-increment: none; padding-left: 1rem; }
+.offer-steps li.no-num::before { display: none; }
+
+/* Process steps + explanatory text side by side (50/50) */
+.steps-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  align-items: start;
+  margin: var(--spacing-lg) 0 var(--spacing-md);
+}
+.steps-cols h3 { margin-top: 0; }
+.steps-cols .offer-steps { margin-bottom: 0; }
+.steps-cols .steps-text p:last-child { margin-bottom: 0; }
+@media (max-width: 768px) {
+  .steps-cols { grid-template-columns: 1fr; gap: var(--spacing-sm); align-items: start; }
+}
+
+/* Mini tabs (inside the steps-text column) */
+.mini-tabs .mini-tab-links {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+  padding-bottom: .5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.mini-tab-link {
+  background: none;
+  border: none;
+  font-family: inherit;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: .2rem .15rem;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+.mini-tab-link:hover { color: var(--primary-light); }
+.mini-tab-link.active { color: var(--primary); }
+.mini-tab-sep { color: var(--light-gray); margin: 0 .4rem; }
+.mini-tab-content { display: none; }
+.mini-tab-content.active { display: block; }
+
+/* FAQ mini-tab gated behind LOADING_CONFIG.showFAQ; the controller adds .no-faq
+   to <body> when false. Hides the FAQ tab button, its separator and the FAQ
+   panel, leaving the (active) overview tab in place. */
+body.no-faq .mini-tab-link[data-tab="faq"],
+body.no-faq .mini-tab-sep,
+body.no-faq #mt-faq { display: none; }
+
+/* Highlight / trust callout */
+.highlight-box {
+  margin: var(--spacing-md) 0;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-left: 4px solid var(--primary);
+  background: rgba(255,255,255,0.04);
+  border-radius: var(--border-radius-sm);
+}
+.highlight-box p { margin: 0; }
+
+/* FAQ list (stacked foldables) */
+.faq-list { display: grid; gap: .6rem; margin: 0 0 var(--spacing-md); }
+.faq-list .samples-reveal { margin: 0; padding: .25rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.faq-list .samples-reveal:last-child { border-bottom: none; }
+.faq-list .samples-reveal > summary { color: var(--white); }
+.faq-list .samples-reveal p { margin: .6rem 0 0; font-size: .98rem; }
+
+/* CTA banner */
+.service-cta {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--border-radius-md);
+  text-align: center;
+}
+.service-cta h3 { margin-top: 0; }
+.service-cta .cta-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--spacing-md);
+}

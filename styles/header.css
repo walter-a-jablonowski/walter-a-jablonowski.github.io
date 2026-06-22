@@ -1,0 +1,210 @@
+/* ===== Header & Navigation ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--dark);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all var(--transition-normal);
+}
+
+header.scrolled {
+  padding: 0.5rem 0;
+  background-color: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  font-family: var(--font-code);
+}
+
+.logo a {
+  color: var(--white);
+}
+
+.logo .highlight {
+  color: var(--primary);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  margin-left: var(--spacing-lg);
+}
+
+.nav-menu li.less-spacing {
+  margin-left: calc( var(--spacing-lg) - 2px);
+}
+
+.nav-menu a {
+  color: var(--white);
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-menu a:hover {
+  color: var(--primary);
+}
+
+.nav-menu a.active {
+  color: var(--primary);
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width var(--transition-normal);
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+  width: 100%;
+}
+
+.github-link i {
+  font-size: 1.2rem;
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.lang-switch .lang-sep {
+  color: var(--white);
+  opacity: 0.4;
+}
+
+/* ===== Services dropdown in main nav ===== */
+.nav-dropdown { position: relative; }
+
+.nav-dropdown-head {
+  /* Plain inline wrapper: the "Services" link stays a normal inline nav link,
+     so its box/height/underline match the other nav items exactly. */
+  display: inline;
+}
+
+.nav-dropdown-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--white);
+  /* No vertical padding + shorter than the text line, so it can't make the
+     menu item taller than the others. */
+  padding: 0;
+  margin-left: 0.3rem;
+  font-size: 0.75rem;
+  line-height: 1;
+  vertical-align: middle;
+  transition: color var(--transition-fast);
+}
+.nav-dropdown-toggle:hover { color: var(--primary); }
+
+.nav-dropdown-menu {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Desktop: hover-opened flyout */
+@media (min-width: 769px) {
+  .nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 240px;
+    background-color: var(--dark);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    padding: 0.4rem 0;
+    z-index: 1002;
+  }
+  .nav-dropdown:hover > .nav-dropdown-menu { display: block; }
+  /* Caret turns the same orange as the text on hover; no rotation */
+  .nav-dropdown:hover .nav-dropdown-toggle { color: var(--primary); }
+
+  .nav-dropdown-menu li { margin: 0 !important; }
+  .nav-dropdown-menu a {
+    display: block;
+    white-space: nowrap;
+    padding: 0.55rem 1.15rem !important;
+  }
+  .nav-dropdown-menu a::after { display: none; }
+  .nav-dropdown-menu a:hover {
+    color: var(--primary);
+    background-color: rgba(255, 107, 0, 0.08);
+  }
+}
+
+/* Mobile: inline accordion toggled by the caret */
+@media (max-width: 768px) {
+  .nav-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-dropdown.open > .nav-dropdown-menu { display: block; }
+  .nav-dropdown.open .nav-dropdown-toggle i { transform: rotate(180deg); }
+  .nav-dropdown-toggle { padding: 0.5rem 0.75rem; }
+  .nav-dropdown-menu { text-align: center; }
+  .nav-dropdown-menu li { margin: 0.6rem 0 !important; }
+  .nav-dropdown-menu a { font-size: 0.95rem; opacity: 0.85; }
+}
+
+.menu-toggle {
+  display: none;
+  color: var(--white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1002;
+  /* Ensure it's above the menu */
+  position: relative;
+}
+
+/* Add a background to menu toggle for better visibility on white sections */
+.menu-toggle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background-color: var(--dark);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+/* Show background when header is over white sections */
+header.over-white .menu-toggle::before {
+  opacity: 1;
+}
+

@@ -7,7 +7,24 @@
   // Wait for DOM to be fully loaded
   document.addEventListener('DOMContentLoaded', function() {
     console.log('Cookie fix script loaded');
-    
+
+    // The site uses no tracking/non-essential cookies, so no consent banner is
+    // legally required (§ 25 TDDDG). The banner is kept only as a design sample
+    // and is shown solely when explicitly switched on via LOADING_CONFIG.showBanner
+    // in lib/config.js. Default (config missing or not true): do not show it.
+    function bannerEnabled() {
+      try {
+        return typeof LOADING_CONFIG !== 'undefined' && LOADING_CONFIG.showBanner === true;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    if (!bannerEnabled()) {
+      console.log('Cookie banner disabled (showBanner not true), not showing banner');
+      return;
+    }
+
     // Check if consent is already set
     function hasConsent() {
       try {

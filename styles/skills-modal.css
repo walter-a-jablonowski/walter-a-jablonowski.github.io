@@ -1,0 +1,296 @@
+/* ===== AI Skills Modal ===== */
+.skills-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.skills-modal.open { display: flex; }
+
+.skills-modal-box {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  max-height: 88vh;
+  overflow-y: auto;
+  background: linear-gradient(145deg, var(--dark-gray), var(--dark));
+  border: 1px solid rgba(255, 107, 0, 0.3);
+  border-radius: var(--border-radius-lg, 12px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  animation: skillsModalIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 107, 0, 0.7) rgba(255, 255, 255, 0.06);
+}
+.skills-modal-box::-webkit-scrollbar { width: 10px; }
+.skills-modal-box::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0 var(--border-radius-lg, 12px) var(--border-radius-lg, 12px) 0;
+}
+.skills-modal-box::-webkit-scrollbar-thumb {
+  background: rgba(255, 107, 0, 0.6);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+.skills-modal-box::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 107, 0, 0.9);
+  background-clip: padding-box;
+}
+@keyframes skillsModalIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.skills-modal-close {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: none;
+  border-radius: 50%;
+  color: var(--lighter-gray);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+.skills-modal-close:hover { background: rgba(255, 255, 255, 0.14); color: var(--white); }
+
+.skills-modal-header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+  padding: 0 2rem;
+}
+.skills-modal-header h2 { color: var(--white); margin: 0 0 0.4rem; font-size: 1.7rem; }
+.skills-modal-header p { color: var(--lighter-gray); margin: 0; font-weight: 300; }
+
+/* Capability cards (headline) */
+.capability-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.capability-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem;
+  text-align: center;
+}
+.capability-card .cap-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--primary), var(--accent-red));
+  color: var(--white);
+  font-size: 1.2rem;
+  box-shadow: 0 3px 12px rgba(255, 107, 0, 0.4);
+}
+.capability-card h3 { color: var(--white); font-size: 1.05rem; margin: 0 0 0.35rem; }
+.capability-card p { color: var(--lighter-gray); font-size: 0.9rem; line-height: 1.5; margin: 0; font-weight: 300; }
+
+/* Skill tiles grid */
+.skills-modal-subtitle {
+  color: var(--white);
+  font-size: 1.1rem;
+  margin: 0 0 1rem;
+  text-align: center;
+}
+.skill-tiles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.9rem;
+}
+.skill-tile {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--border-radius-md);
+  padding: 1.1rem 0.85rem;
+  text-align: center;
+}
+.skill-tile-icon { font-size: 1.6rem; color: var(--primary); margin-bottom: 0.6rem; }
+.skill-tile-name {
+  color: var(--white);
+  font-size: 0.92rem;
+  font-weight: 600;
+  margin: 0 0 0.7rem;
+  line-height: 1.3;
+  min-height: 2.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.skill-prof { display: flex; flex-direction: column; align-items: center; gap: 0.35rem; }
+.prof-points { display: inline-flex; gap: 4px; }
+.prof-points span { width: 7px; height: 7px; border-radius: 50%; background: rgba(255, 255, 255, 0.18); }
+.prof-points span.on { background: var(--primary); }
+.prof-label { font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--lighter-gray); }
+
+@media (max-width: 768px) {
+  .skills-modal-box { padding: 1.5rem 1.1rem; }
+  .skills-modal-header { padding: 0; }
+  .capability-cards { grid-template-columns: 1fr; }
+  .skill-tiles { grid-template-columns: repeat(2, 1fr); }
+  .skill-tile.hide-mobile { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-modal-box { animation: none; }
+}
+
+/* Custom QR code icon */
+.qr-code-icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  margin: 0 auto var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  /* Match the size of icons */
+  transition: transform var(--transition-normal);
+}
+
+/* L-shaped corners */
+.qr-corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: var(--primary);
+  border-style: solid;
+  border-width: 0;
+}
+
+.qr-corner.tl {
+  top: 0;
+  left: 0;
+  border-top-width: 4px;
+  border-left-width: 4px;
+}
+
+.qr-corner.tr {
+  top: 0;
+  right: 0;
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+
+.qr-corner.bl {
+  bottom: 0;
+  left: 0;
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+
+.qr-corner.br {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 4px;
+  border-right-width: 4px;
+}
+
+/* QR code pattern */
+.qr-dots {
+  width: 26px;
+  height: 26px;
+  background-color: var(--primary);
+  position: relative;
+}
+
+.qr-dots::before,
+.qr-dots::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+}
+
+.qr-dots::before {
+  top: 4px;
+  left: 4px;
+}
+
+.qr-dots::after {
+  bottom: 4px;
+  right: 4px;
+}
+
+/* QR code hover effect */
+.contact-card:hover .qr-code-icon {
+  transform: scale(1.2);
+}
+
+/* Media queries for responsive carousel */
+@media (max-width: 768px) {
+
+  /* Voice agent mobile responsiveness */
+  .about-text {
+    display: none;
+    /* Hide about text on mobile */
+  }
+
+  .tech-stack {
+    display: block !important;
+    /* Show voice agent on mobile */
+    flex: 1;
+    max-width: 100%;
+  }
+
+  .about-content {
+    justify-content: center;
+  }
+
+  /* Project carousel */
+  .project-card {
+    min-width: 250px;
+    width: 250px;
+  }
+
+  .carousel-arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Past skills mobile adjustments */
+  .past-skills-period ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-cards {
+    padding: 0 var(--spacing-md);
+  }
+
+  .project-card {
+    min-width: 220px;
+    width: 220px;
+    padding: var(--spacing-md);
+  }
+
+  .carousel-arrow {
+    width: 32px;
+    height: 32px;
+  }
+}
+

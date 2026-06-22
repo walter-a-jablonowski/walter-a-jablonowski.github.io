@@ -1,0 +1,54 @@
+/* ===== Variables ===== */
+:root {
+  /* Color Palette */
+  --primary: #FF6B00;
+  /* Orange from alternative design */
+  --primary-light: #FF8C5A;
+  --primary-dark: #E05A2B;
+  --secondary: #FF3E00;
+  /* Orange-red from alternative design */
+  --secondary-light: #FF5A2B;
+  --secondary-dark: #E03600;
+  --accent-red: #FF0000;
+  /* Red from alternative design */
+  --accent-gold: #FFC107;
+  /* Gold from alternative design */
+  --dark: #0E0E0E;
+  /* Darker black from alternative design */
+  --dark-gray: #1A1A1A;
+  /* Darker gray */
+  --medium-gray: #2A2A2A;
+  /* Medium gray adjusted */
+  --light-gray: #888888;
+  /* Original light gray */
+  --lighter-gray: #EEEEEE;
+  /* Original lighter gray */
+  --white: #FFFFFF;
+
+  /* Typography */
+  --font-main: 'Roboto', sans-serif;
+  --font-code: 'Source Code Pro', monospace;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-xxl: 5rem;
+
+  /* Border Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+  --border-radius-pill: 30px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Mobile viewport height fix */
+  --vh: 1vh;
+}
+

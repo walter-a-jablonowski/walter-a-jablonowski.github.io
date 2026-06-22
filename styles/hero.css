@@ -1,0 +1,309 @@
+/* ===== Hero Section ===== */
+.hero {
+  min-height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: var(--dark);
+  color: var(--white);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(14, 14, 14, 0.95) 0%, rgba(26, 26, 26, 0.8) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  margin-bottom: var(--spacing-sm);
+  font-size: 3.5rem;
+}
+
+.hero-text h2 {
+  margin-bottom: var(--spacing-md);
+  font-size: 2rem;
+}
+
+.hero-text .highlight {
+  color: var(--primary);
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-lg);
+  max-width: 600px;
+}
+
+.map-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 165, 0, 0.08);
+  color: #ffd9a0;
+  font-size: 0.85rem;
+  line-height: 1;
+  border: 1px solid rgba(255, 165, 0, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.map-badge i {
+  color: #ffb347;
+  font-size: 0.9rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+/* Hero offer / teaser callout — hidden by default; controller adds .is-on
+   when LOADING_CONFIG.showHeroOffer is true (so the hero is unchanged when off). */
+.hero-offer {
+  display: none;
+  align-items: center;
+  gap: 0.7rem;
+  max-width: 600px;
+  margin-top: var(--spacing-lg);
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(255, 107, 0, 0.45);
+  border-radius: var(--border-radius-md);
+  background: rgba(255, 107, 0, 0.07);
+  color: var(--white);
+  font-size: 1.02rem;
+  line-height: 1.4;
+  text-align: left;
+  text-decoration: none;
+}
+.hero-offer.is-on { display: flex; }
+/* Keep color static on hover (override the global a:hover color change) */
+.hero-offer:hover { color: var(--white); }
+.hero-offer-icon {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.95rem;
+}
+.hero-offer-text { flex: 1; }
+.hero-offer-text strong { color: var(--primary); white-space: nowrap; }
+.hero-offer-arrow {
+  flex-shrink: 0;
+  color: var(--primary);
+}
+
+/* Site-wide announcement bar — injected by the controller inside the fixed
+   header, directly below the nav. Full-width strip, centered inner container. */
+.announcement-bar {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(255, 107, 0, 0.18), rgba(255, 107, 0, 0.10));
+  border-top: 1px solid rgba(255, 107, 0, 0.30);
+}
+.announcement-bar-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.5rem 2.25rem;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  text-align: center;
+}
+.announcement-bar-link i.fa-bolt,
+.announcement-bar-link strong { color: var(--primary); }
+.announcement-bar-link strong { white-space: nowrap; }
+.announcement-bar-arrow { color: var(--primary); }
+/* Keep colors static on hover (override the global a:hover color change) */
+.announcement-bar-link:hover { color: var(--white); }
+/* 'texts' mode: a plain HTML message (may include its own links). */
+.announcement-bar-content {
+  display: block;
+  padding: 0.5rem 2.25rem;
+  color: var(--white);
+  font-size: 0.95rem;
+  line-height: 1.3;
+  text-align: center;
+}
+.announcement-bar-content a { color: var(--primary); text-decoration: none; }
+.announcement-bar-content a:hover { text-decoration: underline; }
+.announcement-bar-close {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  width: 1.7rem;
+  height: 1.7rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--lighter-gray);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+.announcement-bar-close:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Compensate the extra header height on pages that reserve space for the
+   fixed header, so content is not tucked underneath when the bar is present. */
+body.has-announcement .page-wrap {
+  padding-top: calc(80px + 2.6rem);
+  min-height: calc(100vh - 80px - 2.6rem);
+}
+/* Default top spacing above the first element in the content area (bar hidden).
+   Overrides the per-page inline `.project-detail { padding: var(--spacing-xxl) 0 }`
+   base via the extra `body` specificity; the has-announcement rule below is more
+   specific still, so it keeps winning when the announcement bar is shown. */
+body .project-detail { padding-top: calc(var(--spacing-xxl) + var(--spacing-md)); }
+body.has-announcement .project-detail { padding-top: calc(var(--spacing-xxl) + 2.6rem + var(--spacing-md)); }
+
+/* "New feature" CTAs (currently the service-page .service-cta banner) are gated
+   behind LOADING_CONFIG.showCTA; the controller adds .no-new-features to
+   <body> when that flag is false. Visible by default. */
+body.no-new-features .service-cta { display: none; }
+
+@media (max-width: 480px) {
+  .announcement-bar-link { font-size: 0.85rem; padding: 0.45rem 2rem; gap: 0.45rem; }
+  .announcement-bar-content { font-size: 0.85rem; padding: 0.45rem 2rem; }
+  .announcement-bar-arrow { display: none; }
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.developer-illustration {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mouse {
+  width: 30px;
+  height: 50px;
+  border: 2px solid var(--white);
+  border-radius: 20px;
+  position: relative;
+}
+
+.wheel {
+  width: 6px;
+  height: 6px;
+  background-color: var(--white);
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+}
+
+.arrow {
+  margin-top: var(--spacing-sm);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.arrow span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid var(--white);
+  border-right: 2px solid var(--white);
+  transform: rotate(45deg);
+  margin: 0 auto;
+  animation: arrow 2s infinite;
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+

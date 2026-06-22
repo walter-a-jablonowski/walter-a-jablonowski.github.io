@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Selbstverbessernde KI-Systeme: das Unternehmen als geschlossener Kreislauf, der sich mit jedem Durchlauf verbessert &ndash; mehr als Automatisierung. Sicher durch Append-only-Log und menschliche Freigabe. Bamberg, N&uuml;rnberg und online.">
+  <meta name="keywords" content="Selbstverbessernde KI, selbstlernende KI, geschlossener Kreislauf, closed loop, KI-Agenten, Artefakt, self-improving company, Automatisierung, KI f&uuml;r KMU, Bamberg, N&uuml;rnberg">
+  <meta name="author" content="Walter A. Jablonowski">
+  <title>Selbstverbessernde KI-Systeme | Walter A. Jablonowski</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Walter A. Jablonowski">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="Selbstverbessernde KI-Systeme">
+  <meta property="og:description" content="Das Unternehmen als geschlossener Kreislauf, der sich mit jedem Durchlauf verbessert &ndash; mehr als Automatisierung.">
+  <meta property="og:url" content="https://walter-a-jablonowski.github.io/pages/services/self-improving.html">
+  <meta property="og:image" content="https://walter-a-jablonowski.github.io/misc/logo_2.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://walter-a-jablonowski.github.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Leistungen", "item": "https://walter-a-jablonowski.github.io/#services" },
+          { "@type": "ListItem", "position": 3, "name": "Selbstverbessernde KI-Systeme", "item": "https://walter-a-jablonowski.github.io/pages/services/self-improving.html" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Selbstverbessernde KI-Systeme",
+        "serviceType": "Selbstverbessernde KI-Systeme",
+        "description": "Das Unternehmen als geschlossener, sich selbst verbessernder Kreislauf: jede Aktion wird zum Artefakt, aus dem die KI lernt &ndash; sicher durch Append-only-Log und menschliche Freigabe.",
+        "inLanguage": "de",
+        "url": "https://walter-a-jablonowski.github.io/pages/services/self-improving.html",
+        "provider": { "@type": "Person", "name": "Walter A. Jablonowski", "url": "https://walter-a-jablonowski.github.io/" },
+        "areaServed": [
+          { "@type": "City", "name": "Bamberg" },
+          { "@type": "City", "name": "N&uuml;rnberg" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="canonical" href="https://walter-a-jablonowski.github.io/pages/services/self-improving.html">
+  <link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/self-improving.html">
+  <link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/self-improving.html">
+  <link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/self-improving.html">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="manifest" href="../../site.webmanifest">
+  <link rel="stylesheet" href="../../styles.css?v=26062201">
+  <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css?v=26062201">
+  <link rel="stylesheet" href="../../lib/fonts/fonts.css?v=26062201">
+  <style>
+    /* Service page styles (built on the shared design tokens, aligned with offer.html) */
+    .project-detail {
+      padding: var(--spacing-xxl) 0;
+      background-color: var(--dark);
+      color: var(--white);
+      position: relative;
+    }
+    .project-detail::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(14,14,14,0.95) 0%, rgba(26,26,26,0.85) 100%);
+      z-index: 1;
+    }
+    .project-detail .container { position: relative; z-index: 2; }
+
+    .content { color: var(--lighter-gray); line-height: 1.75; }
+    .content h3 { color: var(--white); margin-top: var(--spacing-lg); }
+    .content h3 .h3-sub { color: var(--light-gray); font-weight: 400; font-size: .9rem; }
+    .content p { margin: 0 0 var(--spacing-md); }
+    .content ul { padding-left: 1.25rem; margin: 0 0 var(--spacing-md); }
+    .content li { margin: .45rem 0; }
+    .content a { color: var(--primary); }
+    .content strong { color: var(--white); }
+    /* Buttons keep their own text color (override the generic .content a rule) */
+    .content a.btn-primary, .content a.btn-secondary { color: var(--white); }
+    .content a.btn-outline { color: var(--primary); }
+    .content a.btn-outline:hover { color: var(--white); }
+
+    /* The closed-loop SVG figure — contained panel (content width), slightly darker than the page */
+    .loop-figure {
+      margin: var(--spacing-lg) 0 var(--spacing-md);
+      padding: var(--spacing-lg) var(--spacing-md);
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--border-radius-md);
+    }
+    .loop-figure svg { width: 100%; height: auto; display: block; max-width: 560px; margin: 0 auto; }
+    .loop-figure figcaption { text-align: center; color: var(--light-gray); font-size: .9rem; margin: .75rem auto 0; max-width: 560px; }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="../../index.html#hero" class="nav-link">Start</a></li>
+          <li><a href="../../index.html#about" class="nav-link">&Uuml;ber mich</a></li>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-head">
+              <a href="../../index.html#services" class="nav-link">Leistungen</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Untermen&uuml; Leistungen"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="automation.html" class="nav-link">Automatisierung</a></li>
+              <li><a href="self-improving.html" class="nav-link">Selbstverbessernde KI</a></li>
+              <li><a href="data-solutions.html" class="nav-link">KI-Datenl&ouml;sungen</a></li>
+              <li><a href="consulting.html" class="nav-link">KI Beratung</a></li>
+              <li><a href="security.html" class="nav-link">KI Security &amp; Evaluierung</a></li>
+              <li><a href="../placeholder.html" class="nav-link">KI Visualisierung</a></li>
+              <li><a href="../placeholder.html" class="nav-link">Apps, die arbeiten</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../index.html#skills" class="nav-link">Kenntnisse</a></li>
+          <li><a href="../../index.html#proj" class="nav-link">Projekte</a></li>
+          <li><a href="../../index.html#contact" class="nav-link">Kontakt</a></li>
+          <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
+              title="Mein LinkedIn-Profil besuchen"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link" title="Mein GitHub-Profil besuchen"><i class="fab fa-github"></i></a></li>
+          <li class="lang-switch">
+            <a href="self-improving.html" class="nav-link active" hreflang="de" title="Deutsch">DE</a>
+            <span class="lang-sep">|</span>
+            <a href="../../en/pages/services/self-improving.html" class="nav-link" hreflang="en" title="English">EN</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="project-detail">
+    <div class="container">
+      <div class="section-header">
+        <h2 style="color: var(--white);">Selbstverbessernde KI-Systeme</h2>
+      </div>
+
+      <p class="offer-lead">
+        Mehr als Automatisierung: das Unternehmen als <span class="price-hl">sich selbst verbessernder Kreislauf</span>.
+        Jede Aktion wird zum Artefakt, aus dem die KI lernt &ndash; und mit jedem Durchlauf besser wird.
+      </p>
+
+      <div class="content">
+
+        <figure class="loop-figure">
+          <svg viewBox="0 0 600 488" role="img" aria-labelledby="loopTitle loopDesc" xmlns="http://www.w3.org/2000/svg">
+            <title id="loopTitle">Der selbstverbessernde Kreislauf</title>
+            <desc id="loopDesc">Sechs Schritte im Kreislauf: Erfassen, Aufnehmen, Analysieren, Vorschlagen, Freigabe und Verbessern. Alle Schritte schreiben in einen Append-only Artefakt-Speicher; Verbessern speist den n&auml;chsten Lauf.</desc>
+
+            <defs>
+              <linearGradient id="accent" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffce33"/>
+                <stop offset="0.55" stop-color="#ff7a1a"/>
+                <stop offset="1" stop-color="#ff3d2e"/>
+              </linearGradient>
+              <linearGradient id="accentGate" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ff7a1a"/>
+                <stop offset="1" stop-color="#ff3d2e"/>
+              </linearGradient>
+              <linearGradient id="stepbg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#1d1816"/>
+                <stop offset="1" stop-color="#161311"/>
+              </linearGradient>
+              <radialGradient id="topGlow" cx="0.5" cy="0.02" r="0.62">
+                <stop offset="0" stop-color="#ff7a1a" stop-opacity="0.14"/>
+                <stop offset="0.6" stop-color="#ff7a1a" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="botGlow" cx="1" cy="1" r="0.6">
+                <stop offset="0" stop-color="#ff3d2e" stop-opacity="0.10"/>
+                <stop offset="0.6" stop-color="#ff3d2e" stop-opacity="0"/>
+              </radialGradient>
+              <filter id="glowOrange" x="-60%" y="-60%" width="220%" height="220%">
+                <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#ff7a1a" flood-opacity="0.85"/>
+              </filter>
+              <filter id="glowSoft" x="-60%" y="-60%" width="220%" height="220%">
+                <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#ff7a1a" flood-opacity="0.45"/>
+              </filter>
+            </defs>
+
+            <!-- frame -->
+            <rect x="0" y="0" width="600" height="488" rx="18" fill="#0a0908"/>
+            <rect x="0" y="0" width="600" height="488" rx="18" fill="url(#topGlow)"/>
+            <rect x="0" y="0" width="600" height="488" rx="18" fill="url(#botGlow)"/>
+
+            <!-- ===== STEP BOXES ===== -->
+            <!-- Row 1: 1 Erfassen, 2 Aufnehmen, 3 Analysieren -->
+            <g>
+              <rect x="30" y="28" width="156" height="78" rx="14" fill="url(#stepbg)" stroke="#322b25"/>
+              <rect x="34" y="38" width="3" height="58" rx="1.5" fill="url(#accent)"/>
+              <rect x="44" y="44" width="32" height="32" rx="9" fill="url(#accent)" filter="url(#glowSoft)"/>
+              <text x="60" y="65" text-anchor="middle" font-size="16" font-weight="800" fill="#1a1208">1</text>
+              <text x="84" y="65" font-size="13" font-weight="800" letter-spacing="0.5" fill="#f4efe7">ERFASSEN</text>
+              <text x="44" y="90" font-size="11.5" fill="#9a9088">Neue Artefakte rein</text>
+            </g>
+            <g>
+              <rect x="222" y="28" width="156" height="78" rx="14" fill="url(#stepbg)" stroke="#322b25"/>
+              <rect x="226" y="38" width="3" height="58" rx="1.5" fill="url(#accent)"/>
+              <rect x="236" y="44" width="32" height="32" rx="9" fill="url(#accent)" filter="url(#glowSoft)"/>
+              <text x="252" y="65" text-anchor="middle" font-size="16" font-weight="800" fill="#1a1208">2</text>
+              <text x="276" y="65" font-size="13" font-weight="800" letter-spacing="0.5" fill="#f4efe7">AUFNEHMEN</text>
+              <text x="236" y="90" font-size="11.5" fill="#9a9088">Relevante Historie</text>
+            </g>
+            <g>
+              <rect x="414" y="28" width="156" height="78" rx="14" fill="url(#stepbg)" stroke="#322b25"/>
+              <rect x="418" y="38" width="3" height="58" rx="1.5" fill="url(#accent)"/>
+              <rect x="428" y="44" width="32" height="32" rx="9" fill="url(#accent)" filter="url(#glowSoft)"/>
+              <text x="444" y="65" text-anchor="middle" font-size="16" font-weight="800" fill="#1a1208">3</text>
+              <text x="468" y="65" font-size="13" font-weight="800" letter-spacing="0.5" fill="#f4efe7">ANALYSIEREN</text>
+              <text x="428" y="90" font-size="11.5" fill="#9a9088">Messen am Ziel</text>
+            </g>
+
+            <!-- Row 1 arrows -->
+            <text x="204" y="76" text-anchor="middle" font-size="26" font-weight="900" fill="#ff7a1a" filter="url(#glowOrange)">&#8594;</text>
+            <text x="396" y="76" text-anchor="middle" font-size="26" font-weight="900" fill="#ff7a1a" filter="url(#glowOrange)">&#8594;</text>
+
+            <!-- Mid arrows -->
+            <text x="492" y="137" text-anchor="middle" font-size="26" font-weight="900" fill="#ff7a1a" filter="url(#glowOrange)">&#8595;</text>
+            <text x="108" y="137" text-anchor="middle" font-size="26" font-weight="900" fill="#ff7a1a" filter="url(#glowOrange)">&#8593;</text>
+
+            <!-- Row 2: 6 Verbessern, 5 Freigabe (gate), 4 Vorschlagen -->
+            <g>
+              <rect x="30" y="150" width="156" height="78" rx="14" fill="url(#stepbg)" stroke="#322b25"/>
+              <rect x="34" y="160" width="3" height="58" rx="1.5" fill="url(#accent)"/>
+              <rect x="44" y="166" width="32" height="32" rx="9" fill="url(#accent)" filter="url(#glowSoft)"/>
+              <text x="60" y="187" text-anchor="middle" font-size="16" font-weight="800" fill="#1a1208">6</text>
+              <text x="84" y="187" font-size="13" font-weight="800" letter-spacing="0.5" fill="#f4efe7">VERBESSERN</text>
+              <text x="44" y="212" font-size="11.5" fill="#9a9088">Speist den Folgelauf</text>
+            </g>
+            <g>
+              <rect x="222" y="150" width="156" height="78" rx="14" fill="url(#stepbg)" stroke="#5a3128"/>
+              <rect x="226" y="160" width="3" height="58" rx="1.5" fill="url(#accentGate)"/>
+              <rect x="236" y="166" width="32" height="32" rx="9" fill="url(#accentGate)" filter="url(#glowSoft)"/>
+              <text x="252" y="187" text-anchor="middle" font-size="16" font-weight="800" fill="#1a1208">5</text>
+              <text x="276" y="187" font-size="13" font-weight="800" letter-spacing="0.5" fill="#ff7e5f">FREIGABE</text>
+              <text x="236" y="212" font-size="11.5" fill="#9a9088">Auto-Run oder Mensch</text>
+            </g>
+            <g>
+              <rect x="414" y="150" width="156" height="78" rx="14" fill="url(#stepbg)" stroke="#322b25"/>
+              <rect x="418" y="160" width="3" height="58" rx="1.5" fill="url(#accent)"/>
+              <rect x="428" y="166" width="32" height="32" rx="9" fill="url(#accent)" filter="url(#glowSoft)"/>
+              <text x="444" y="187" text-anchor="middle" font-size="16" font-weight="800" fill="#1a1208">4</text>
+              <text x="468" y="187" font-size="13" font-weight="800" letter-spacing="0.5" fill="#f4efe7">VORSCHLAGEN</text>
+              <text x="428" y="212" font-size="11.5" fill="#9a9088">Aktionen nach Risiko</text>
+            </g>
+
+            <!-- Row 2 arrows (point left) -->
+            <text x="396" y="198" text-anchor="middle" font-size="26" font-weight="900" fill="#ff7a1a" filter="url(#glowOrange)">&#8592;</text>
+            <text x="204" y="198" text-anchor="middle" font-size="26" font-weight="900" fill="#ff7a1a" filter="url(#glowOrange)">&#8592;</text>
+
+            <!-- ===== ARTIFACT STORE BAND ===== -->
+            <rect x="30" y="248" width="540" height="72" rx="13" fill="#171310" stroke="#4a3f36" stroke-dasharray="6 5"/>
+            <text x="300" y="276" text-anchor="middle" font-size="12.5" font-weight="800" letter-spacing="1.5" fill="#ffce33">&#10737; &#160; ARTEFAKT-SPEICHER &#160; &#10737;</text>
+            <text x="300" y="296" text-anchor="middle" font-size="11.5" fill="#9a9088">Append-only &#8212; jeder Input, jede Entscheidung &amp; jedes Ergebnis, mit Begr&#252;ndung</text>
+            <text x="300" y="312" text-anchor="middle" font-size="10" letter-spacing="0.6" fill="#7d756c">LOG UND GED&#196;CHTNIS SIND DASSELBE &#183; KEIN &#220;BERSCHREIBEN</text>
+
+            <!-- ===== LOOP-BACK PILL ===== -->
+            <line x1="30" y1="361" x2="118" y2="361" stroke="#ff7a1a" stroke-width="1" stroke-dasharray="8 8" opacity="0.5"/>
+            <line x1="482" y1="361" x2="570" y2="361" stroke="#ff7a1a" stroke-width="1" stroke-dasharray="8 8" opacity="0.5"/>
+            <rect x="120" y="342" width="360" height="38" rx="19" fill="url(#stepbg)" stroke="#5a3128"/>
+            <text x="300" y="366" text-anchor="middle" font-size="12.5" fill="#f4efe7"><tspan fill="#ffce33" font-size="15">&#10227;</tspan>&#160; <tspan fill="#ff7a1a" font-weight="700">Verbessern</tspan> &#8594; der n&#228;chste Lauf startet kl&#252;ger</text>
+
+            <!-- ===== LEGEND ===== -->
+            <circle cx="182" cy="403" r="5.5" fill="#ffce33" filter="url(#glowSoft)"/>
+            <text x="198" y="407" font-size="11.5" fill="#9a9088">umkehrbar &amp; erlaubt &#8594; l&#228;uft autonom</text>
+            <circle cx="168" cy="427" r="5.5" fill="#ff3d2e"/>
+            <text x="184" y="431" font-size="11.5" fill="#9a9088">unumkehrbar &#8594; wartet auf einen Menschen</text>
+
+            <!-- ===== FOOTER ===== -->
+            <text x="300" y="466" text-anchor="middle" font-size="12.5" fill="#9a9088"><tspan fill="#f4efe7" font-weight="800">Menschen am Rand</tspan> &#8212; leiten &amp; freigeben, kein Routen jeder Nachricht</text>
+          </svg>
+          <figcaption>Der Kreislauf: jeder Schritt schreibt in den Artefakt-Speicher &ndash; &bdquo;Verbessern&ldquo; speist den n&auml;chsten Lauf.</figcaption>
+        </figure>
+
+        <h3>Wof&uuml;r Sie es einsetzen k&ouml;nnen</h3>
+        <p>
+          Im Prinzip l&auml;sst sich vieles im Unternehmen als Artefakt abbilden, das sich selbst verbessert.
+          Ein paar Beispiele:
+        </p>
+        <details class="samples-reveal">
+          <summary>Einsatzbeispiele zeigen <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+          <ul>
+            <li><strong>Kundenservice:</strong> Support-Tickets l&ouml;sen sich durch historisches Lernen zunehmend autonom.</li>
+            <li><strong>Onboarding:</strong> HR-Prozesse und Schulungen passen sich automatisch an Feedback an.</li>
+            <li><strong>Softwareentwicklung:</strong> Code-Generierung und Bugfixes verbessern sich pro Deployment.</li>
+            <li><strong>Beschaffung &amp; Einkauf:</strong> Lieferanten- und Vertragsauswertungen optimieren sich von selbst.</li>
+            <li><strong>Qualit&auml;tsmanagement:</strong> Fehlerlisten korrigieren direkt die zugrundeliegenden Abl&auml;ufe.</li>
+            <li><strong>Marketing &amp; Content:</strong> Kampagnen analysieren ihren ROI und passen die n&auml;chste Iteration selbst an.</li>
+            <li><strong>Produktmanagement:</strong> Nutzerfeedback flie&szlig;t direkt in optimierte Feature-Spezifikationen ein.</li>
+            <li><strong>Vertrieb &amp; Sales:</strong> Angebote und Pitch-Decks verbessern ihre Konversion anhand gewonnener/verlorener Deals.</li>
+            <li><strong>Finanzen &amp; Controlling:</strong> Budgetabweichungen verfeinern automatisch die Modelle f&uuml;rs Folgequartal.</li>
+            <li><strong>Recht &amp; Compliance:</strong> Vertragsvorlagen passen sich an neu verhandelte Klauseln und Risikobewertungen an.</li>
+            <li><strong>Wissensmanagement:</strong> Die interne Dokumentation aktualisiert und strukturiert sich durch t&auml;gliche Chats selbst.</li>
+          </ul>
+        </details>
+
+        <h3>Mehr als ein Workflow</h3>
+        <p>
+          Die meisten KI-L&ouml;sungen werden an bestehende Abl&auml;ufe angeflanscht. Hier ist der Ansatz ein
+          anderer: nicht ein einzelnes Ergebnis erzeugen, sondern ein Ergebnis <strong>dauerhaft verbessern</strong>.
+        </p>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-arrow-right-long"></i></div>
+            <h4>KI-Workflow</h4>
+            <p>Erzeugt einmalig ein Ergebnis. Was danach passiert, flie&szlig;t nicht zur&uuml;ck.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-arrows-rotate"></i></div>
+            <h4>Selbstverbesserndes System</h4>
+            <p>Verbessert dasselbe Ergebnis permanent &ndash; jeder Lauf lernt aus der gesammelten Historie.</p>
+          </div>
+        </div>
+
+        <h3>Was macht es sicher?</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-clock-rotate-left"></i></div>
+            <h4>Append-only Log</h4>
+            <p>Jede Entscheidung und jedes Ergebnis inkl. Begr&uuml;ndung. Der Audit-Trail <em>ist</em> das Ged&auml;chtnis.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-shield-halved"></i></div>
+            <h4>Sicherheits-Hard-Floor</h4>
+            <p>Umkehrbare Aktionen laufen autonom; alles Unumkehrbare ist <em>im Code</em> blockiert und wartet auf einen Menschen.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-user-check"></i></div>
+            <h4>Menschen am Rand</h4>
+            <p>Sie leiten und geben frei &ndash; statt jede Nachricht selbst zu routen. Die KI macht die Arbeit.</p>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <p><i class="fas fa-lock" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>Sicher in zwei Stufen:</strong> In Stufe 1 werden nur Dokumente bearbeitet &ndash; es werden keine
+            Aktionen ausgel&ouml;st, das ist v&ouml;llig ungef&auml;hrlich. Echte Aktionen kommen erst in Stufe 2,
+            kontrolliert &uuml;ber die Freigabe.</p>
+        </div>
+
+        <div class="service-cta">
+          <h3>In Entwicklung &ndash; werden Sie Partner</h3>
+          <p>
+            Dieses System entsteht gerade. Wenn Sie Ihr Unternehmen als sich selbst verbessernden Kreislauf
+            denken m&ouml;chten, sprechen wir &uuml;ber ein Projekt &ndash; vor Ort in Bamberg und Umgebung oder online.
+          </p>
+          <div class="cta-actions">
+            <a href="../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Pilotprojekt besprechen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-links">
+          <a href="../../privacy.html">Datenschutz</a>
+          <a href="../../imprint.html">Impressum</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>powered by &copy; Walter A. Jablonowski 2019-2026. Made with AI. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="../../lib/config.js?v=26062201"></script>
+  <script src="../../controller.js?v=26062201"></script>
+  <script>
+    new WebsiteController();
+  </script>
+</body>
+</html>
