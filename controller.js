@@ -41,6 +41,12 @@ class WebsiteController
     // Inject the site-wide announcement bar (if enabled) below the header.
     this.initAnnouncementBar();
 
+    // Persistent voice-agent overlay: apply the site-wide DOM changes (body
+    // class, #about neutralization, nav label, about text) synchronously so
+    // there is no flash before paint. The overlay widget itself is built by
+    // voice-agent.js. No-op unless VOICE_AGENT_CONFIG.persistentAgent is true.
+    this.initPersistentAgent();
+
     // Gate "new feature" CTAs (e.g. the .service-cta banner) via config.
     this.initNewFeatures();
 
@@ -204,6 +210,85 @@ class WebsiteController
       document.body.classList.remove('has-announcement');
       try { sessionStorage.setItem('waj:homepage:offerDismissed', '1'); } catch (e) { /* ignore */ }
     });
+  }
+
+  /**
+   * Persistent voice-agent overlay — site-wide DOM changes (see
+   * lib/voice-agent-persistent-overlay-plan.md). Runs only when
+   * VOICE_AGENT_CONFIG.persistentAgent is true; otherwise the site is unchanged.
+   * The always-on overlay widget is created separately by voice-agent.js.
+   *
+   * When on:
+   *  - adds body.persistent-agent (CSS hook, incl. the mobile #about flip),
+   *  - replaces the in-#about live widget with a static illustration so there is
+   *    only one live agent (the overlay),
+   *  - hides the legacy .floating-ai-button (the overlay is the entry point now),
+   *  - reverts the #about nav label from "Ask AI"/"KI fragen" back to
+   *    "About"/"Über mich" (the section is just About again),
+   *  - swaps the about intro to the shorter, personal first-person copy.
+   */
+  initPersistentAgent()
+  {
+    if( typeof VOICE_AGENT_CONFIG === 'undefined' || !VOICE_AGENT_CONFIG.persistentAgent )
+      return;
+
+    const isDe = (document.documentElement.lang || 'en').toLowerCase().startsWith('de');
+    document.body.classList.add('persistent-agent');
+
+    // 1. Neutralize the in-#about live widget (index pages only) with a static,
+    //    on-brand "talk to AI" illustration. Removing the live mic/status here
+    //    guarantees a single live instance (the overlay).
+    const container = document.querySelector('.voice-agent-container');
+    if( container ) {
+      const caption = isDe ? 'Fragen Sie meine KI-Assistentin in der Ecke' : 'Ask my AI assistant in the corner';
+      container.classList.add('va-dummy');
+      container.innerHTML =
+        '<svg class="va-dummy-art" viewBox="0 0 120 120" role="img" aria-label="' + caption + '">' +
+          '<defs><linearGradient id="vaDummyGrad" x1="0" y1="0" x2="1" y2="1">' +
+            '<stop offset="0" stop-color="var(--primary)"/><stop offset="1" stop-color="var(--accent-red)"/>' +
+          '</linearGradient></defs>' +
+          '<circle cx="60" cy="60" r="56" fill="url(#vaDummyGrad)" opacity="0.12"/>' +
+          '<circle cx="60" cy="60" r="40" fill="url(#vaDummyGrad)" opacity="0.18"/>' +
+          '<rect x="50" y="34" width="20" height="34" rx="10" fill="url(#vaDummyGrad)"/>' +
+          '<path d="M42 60 a18 18 0 0 0 36 0" fill="none" stroke="url(#vaDummyGrad)" stroke-width="4" stroke-linecap="round"/>' +
+          '<line x1="60" y1="78" x2="60" y2="88" stroke="url(#vaDummyGrad)" stroke-width="4" stroke-linecap="round"/>' +
+        '</svg>' +
+        '<p class="va-dummy-caption">' + caption + '</p>';
+    }
+
+    // 2. Hide the legacy floating link (controller.initFloatingAiButton would
+    //    otherwise add .show on scroll).
+    document.querySelectorAll('.floating-ai-button').forEach(el => {
+      el.classList.remove('show');
+      el.style.display = 'none';
+    });
+
+    // 3. Revert the #about nav label (per page language).
+    document.querySelectorAll('a.nav-link[href$="#about"]').forEach(a => {
+      a.textContent = isDe ? 'Über mich' : 'About';
+    });
+
+    // 4. Swap the about intro to the shorter, personal first-person copy. Keep
+    //    the feature list + CTA; just replace the leading paragraphs.
+    const aboutText = document.querySelector('.about-text');
+    if( aboutText ) {
+      const intro = isDe
+        ? 'Hallo, ich bin Walter. Seit über 25 Jahren entwickle ich Software — und inzwischen dreht sich bei mir alles um KI. Ich mag es, aus einer vagen Idee etwas zu machen, das wirklich funktioniert, am liebsten mit möglichst wenig Drumherum: weniger Frameworks, mehr Ergebnis. Ich sitze in <a href="#map" class="highlight">Bamberg</a> und arbeite mit Unternehmen hier, in Nürnberg und online. Neugierig, ob KI Ihnen helfen kann? Fragen Sie meine Assistentin in der Ecke — oder melden Sie sich einfach.'
+        : "Hi, I'm Walter. For over 25 years I've built software — and these days I'm all-in on AI. I love turning a vague idea into something that actually works, ideally with as little ceremony as possible: fewer frameworks, more results. I'm based in <a href=\"#map\" class=\"highlight\">Bamberg</a> and work with companies here, in Nuremberg and online. Curious whether AI can help you? Ask my assistant in the corner — or just reach out.";
+
+      // Replace every direct <p> before the feature list with the single intro.
+      const list = aboutText.querySelector('.feature-list');
+      let node = aboutText.firstElementChild;
+      while( node && node !== list ) {
+        const next = node.nextElementSibling;
+        if( node.tagName === 'P' )
+          node.remove();
+        node = next;
+      }
+      const p = document.createElement('p');
+      p.innerHTML = intro;
+      aboutText.insertBefore(p, aboutText.firstChild);
+    }
   }
 
   /**
