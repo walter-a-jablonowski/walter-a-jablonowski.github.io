@@ -31,3 +31,5 @@ User-agent: CCBot
 Allow: /
 
 Sitemap: https://walter-a-jablonowski.github.io/sitemap.xml
+
+# Agent-friendly site overview (llms.txt convention): https://walter-a-jablonowski.github.io/llms.txt

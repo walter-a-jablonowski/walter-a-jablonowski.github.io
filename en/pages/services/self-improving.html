@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Self-improving AI: the company as a closed loop that gets better with every run &ndash; more than automation. Safe through an append-only log and human approval. Bamberg, Nuremberg and online.">
   <meta name="keywords" content="self-improving AI, self-learning AI, closed loop, AI agents, artifact, self-improving company, automation, AI for SMB, Bamberg, Nuremberg">
   <meta name="author" content="Walter A. Jablonowski">
@@ -52,9 +52,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
   <link rel="manifest" href="../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../styles.css?v=26062202">
-  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26062202">
-  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26062202">
+  <link rel="stylesheet" href="../../../styles.css?v=26062301">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26062301">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26062301">
   <style>
     /* Service page styles (built on the shared design tokens, aligned with offer.html) */
     .project-detail {
@@ -84,17 +84,6 @@
     .content a.btn-primary, .content a.btn-secondary { color: var(--white); }
     .content a.btn-outline { color: var(--primary); }
     .content a.btn-outline:hover { color: var(--white); }
-
-    /* The closed-loop SVG figure — contained panel (content width), slightly darker than the page */
-    .loop-figure {
-      margin: var(--spacing-lg) 0 var(--spacing-md);
-      padding: var(--spacing-lg) var(--spacing-md);
-      background: rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: var(--border-radius-md);
-    }
-    .loop-figure svg { width: 100%; height: auto; display: block; max-width: 560px; margin: 0 auto; }
-    .loop-figure figcaption { text-align: center; color: var(--light-gray); font-size: .9rem; margin: .75rem auto 0; max-width: 560px; }
 
   </style>
 </head>
@@ -368,6 +357,7 @@
       <div class="footer-content">
         <div class="footer-logo">
           <a href="../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+          <a href="../../../llms.txt" class="footer-agent-link">For AI agents</a>
         </div>
         <div class="footer-social">
           <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
@@ -389,8 +379,8 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../lib/config.js?v=26062202"></script>
-  <script src="../../../controller.js?v=26062202"></script>
+  <script src="../../../lib/config.js?v=26062301"></script>
+  <script src="../../../controller.js?v=26062301"></script>
   <script>
     new WebsiteController();
   </script>

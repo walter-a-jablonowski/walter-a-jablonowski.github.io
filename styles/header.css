@@ -171,10 +171,25 @@ nav {
   }
   .nav-dropdown.open > .nav-dropdown-menu { display: block; }
   .nav-dropdown.open .nav-dropdown-toggle i { transform: rotate(180deg); }
-  .nav-dropdown-toggle { padding: 0.5rem 0.75rem; }
+  /* Center the "Leistungen" text and caret together as one group. */
+  .nav-dropdown-head {
+    display: inline-flex;
+    align-items: center;
+    /* Nudge the group right so the text reads as optically centered. */
+    margin-left: 0.9rem;
+  }
+  .nav-dropdown-toggle {
+    padding: 0.5rem 0.5rem;
+    color: var(--primary);
+  }
   .nav-dropdown-menu { text-align: center; }
-  .nav-dropdown-menu li { margin: 0.6rem 0 !important; }
-  .nav-dropdown-menu a { font-size: 0.95rem; opacity: 0.85; }
+  .nav-dropdown-menu li { margin: 0.75rem 0 !important; }
+  .nav-dropdown-menu a {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    display: inline-block;
+    padding: 0.35rem 0.5rem;
+  }
 }
 
 .menu-toggle {

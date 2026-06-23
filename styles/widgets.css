@@ -16,6 +16,23 @@ footer {
   font-size: 1.5rem;
   font-weight: 700;
   font-family: var(--font-code);
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-md);
+}
+
+/* Secondary "Für KI-Agenten" / "For AI agents" link sitting beside the footer
+   logo (points to /llms.txt). Muted by default, primary accent on hover. */
+.footer-agent-link {
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--light-gray);
+  transition: color var(--transition-fast);
+}
+
+.footer-agent-link:hover {
+  color: var(--primary);
 }
 
 .footer-social {
@@ -56,7 +73,7 @@ footer {
 /* ===== Back to Top Button ===== */
 .back-to-top {
   position: fixed;
-  bottom: 2rem;
+  bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
   right: 2rem;
   width: 50px;
   height: 50px;
@@ -85,7 +102,7 @@ footer {
 /* ===== Floating AI Button ===== */
 .floating-ai-button {
   position: fixed;
-  bottom: 2rem;
+  bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
   right: 2rem;
   background: linear-gradient(45deg, var(--primary), var(--accent-red));
   color: var(--white);

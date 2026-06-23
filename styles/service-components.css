@@ -173,3 +173,14 @@ body.no-faq #mt-faq { display: none; }
   flex-wrap: wrap;
   margin-top: var(--spacing-md);
 }
+
+/* Loop figure — contained panel (content width), slightly darker than the page */
+.loop-figure {
+  margin: var(--spacing-lg) 0 var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-md);
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--border-radius-md);
+}
+.loop-figure svg { width: 100%; height: auto; display: block; max-width: 560px; margin: 0 auto; }
+.loop-figure figcaption { text-align: center; color: var(--light-gray); font-size: .9rem; margin: .75rem auto 0; max-width: 560px; }

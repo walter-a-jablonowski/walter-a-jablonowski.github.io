@@ -234,7 +234,9 @@ body.no-new-features .service-cta { display: none; }
 
 .scroll-indicator {
   position: absolute;
-  bottom: 2rem;
+  /* Lift above the device's system nav bar / home indicator when the browser
+     draws content edge-to-edge (env() is 0 on devices without one). */
+  bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;

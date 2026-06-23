@@ -262,12 +262,13 @@ section {
 
 .past-skills-toggle {
   background: none;
-  border: none;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--border-radius-pill);
   color: var(--light-gray);
-  font-size: 1.1rem;
+  font-size: 1rem;
   cursor: pointer;
-  padding: var(--spacing-sm) var(--spacing-md);
-  transition: color var(--transition-fast);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  transition: color var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast);
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-xs);
@@ -275,6 +276,8 @@ section {
 
 .past-skills-toggle:hover {
   color: var(--primary);
+  border-color: var(--primary);
+  background-color: rgba(255, 255, 255, 0.04);
 }
 
 .past-skills-toggle i {
@@ -305,10 +308,9 @@ section {
 
 .past-skills-comment {
   color: var(--light-gray);
-  font-size: 1rem;
+  font-size: 1.1rem;
   text-align: center;
   margin-bottom: var(--spacing-lg);
-  font-style: italic;
 }
 
 .past-skills-period {

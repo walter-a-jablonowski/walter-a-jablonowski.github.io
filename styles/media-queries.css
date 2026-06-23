@@ -64,7 +64,8 @@
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
   }
 
-  .nav-menu li {
+  .nav-menu li,
+  .nav-menu li.less-spacing {
     margin: var(--spacing-md) 0;
     margin-left: 0;
   }
@@ -161,6 +162,10 @@
     flex-direction: column;
     gap: var(--spacing-lg);
     text-align: center;
+  }
+
+  .footer-logo {
+    justify-content: center;
   }
 
   .footer-social {

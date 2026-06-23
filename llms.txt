@@ -1,0 +1,35 @@
+# Walter A. Jablonowski — AI Developer & AI Consultant
+
+> Freelance AI developer and consultant based in Stegaurach near Bamberg,
+> serving businesses in Bamberg, Nuremberg and the wider Franconia/Bavaria
+> region (and remotely). 25+ years in software development, with a focus on
+> AI integration, AI agents, automation, web and database development.
+
+This site is a static, bilingual (German / English) profile and business site.
+The German version is the default; English lives under `/en/`. There is no
+tracking and no analytics. A built-in voice agent (Google Gemini Live) lets
+visitors talk to an AI about these services directly on the home page.
+
+- Home (German, default): https://walter-a-jablonowski.github.io/
+- Home (English): https://walter-a-jablonowski.github.io/en/
+- Contact: walter.a.jablonowski@gmail.com · +49 160 99658047
+
+## Services
+
+- [AI Automation](https://walter-a-jablonowski.github.io/en/pages/services/automation.html): Automate recurring work with AI agents or workflows, integrated with existing systems (CRM/ERP). Saves time and resources every year.
+- [Self-improving AI](https://walter-a-jablonowski.github.io/en/pages/services/self-improving.html): The company as a closed loop that gets better with every run — more than automation. Kept safe through an append-only log and human approval.
+- [AI Data Solutions](https://walter-a-jablonowski.github.io/en/pages/services/data-solutions.html): Structure unordered company data with AI, make it searchable, and query it in natural language — the basis for automation and new insights.
+- [AI Consulting](https://walter-a-jablonowski.github.io/en/pages/services/consulting.html): Vendor-neutral clarification of where AI delivers real value — use cases, strategy, technology. Free initial consultation.
+- [AI Security & Evaluation](https://walter-a-jablonowski.github.io/en/pages/services/security.html): Secure AI systems and make them observable and verifiable — guardrails, monitoring, quality measurement, GDPR.
+
+## About
+
+- [About / profile (English)](https://walter-a-jablonowski.github.io/en/#about): Background, skills and experience. Core areas: AI integration, AI agents, AI automation, machine learning, LLMs, web development, database design, SQL, PHP, Python, TypeScript.
+- [Contact form](https://walter-a-jablonowski.github.io/en/#contact): Reach out about a project or a free initial consultation.
+
+## Optional
+
+- [Projects](https://walter-a-jablonowski.github.io/en/#proj): Selected projects and demos.
+- [Blog](https://walter-a-jablonowski.github.io/blog.html): Articles on AI-first development.
+- [Privacy Policy](https://walter-a-jablonowski.github.io/en/privacy.html)
+- [Imprint](https://walter-a-jablonowski.github.io/en/imprint.html)

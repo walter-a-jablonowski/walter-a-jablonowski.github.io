@@ -28,7 +28,7 @@ html.skip-loading .loading-screen {
 /* Language hint — refined suggestion card for cross-language visitors */
 .lang-hint {
   position: fixed;
-  bottom: 2rem;
+  bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
   left: 2rem;
   max-width: 340px;
   display: flex;
@@ -115,7 +115,7 @@ html.skip-loading .loading-screen {
 }
 
 @media (max-width: 480px) {
-  .lang-hint { left: 1rem; right: 1rem; bottom: 1rem; max-width: none; }
+  .lang-hint { left: 1rem; right: 1rem; bottom: calc(1rem + env(safe-area-inset-bottom, 0px)); max-width: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
