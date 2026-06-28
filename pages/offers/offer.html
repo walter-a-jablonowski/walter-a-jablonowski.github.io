@@ -57,9 +57,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
   <link rel="manifest" href="../../site.webmanifest">
-  <link rel="stylesheet" href="../../styles.css?v=26062304">
-  <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css?v=26062304">
-  <link rel="stylesheet" href="../../lib/fonts/fonts.css?v=26062304">
+  <link rel="stylesheet" href="../../styles.css?v=26062801">
+  <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css?v=26062801">
+  <link rel="stylesheet" href="../../lib/fonts/fonts.css?v=26062801">
   <style>
     /* Offer page specific styles (built on the shared design tokens) */
     .project-detail {
@@ -325,11 +325,11 @@
             <table class="pricing-comment">
               <tr>
                 <td>*</td>
-                <td><b>Sonderpreis</b> zzgl. MwSt. 50% Anzhalung vorab (regulärer Preis: 80 EUR/Stunde).</td>
+                <td><b>Sonderpreis</b> zzgl. MwSt. - einmal pro Kunde. 50% Anzhalung vorab. (Regulär: 80 EUR/h)</td>
               </tr>
               <tr>
                 <td></td>
-                <td><b>Vor Ort:</b> zzgl. Spesen oder Pasuchale (Bamberg ohne Aufpreis).</td>
+                <td><b>Vor Ort:</b> zzgl. Spesen oder Pasuchale. Bamberg oder online ohne Aufpreis.</td>
               </tr>
               <tr>
                 <td></td>
@@ -354,10 +354,18 @@
             <div class="form-group">
               <label for="of-current">Aktuelle Situation / Aufgabe heute *</label>
               <textarea id="of-current" name="current" rows="4"
-                placeholder="Welche wiederkehrende Aufgabe m&ouml;chten Sie automatisieren?&#10;Wie l&auml;uft das heute ab, wer macht es, und welche Programme/Systeme sind beteiligt?&#10;Gern ein kurzes Beispiel."></textarea>
+                placeholder="Welche wiederkehrende Aufgabe m&ouml;chten Sie automatisieren?&#10;Wie l&auml;uft das heute ab und wer macht es?&#10;Gern ein kurzes Beispiel."></textarea>
             </div>
             <div class="form-group">
-              <label for="of-outcome">Gew&uuml;nschtes Ergebnis *</label>
+              <label for="of-inputs">Ihre Inputs / Unterlagen (falls zutreffend)</label>
+              <input id="of-inputs" type="text" name="inputs" placeholder="z. B. Dokumente, Tabellen, E-Mails &hellip;">
+            </div>
+            <div class="form-group">
+              <label for="of-systems">Beteiligte Systeme / Tools</label>
+              <input id="of-systems" type="text" name="systems" placeholder="z. B. Outlook, Excel, CRM, ERP &hellip;">
+            </div>
+            <div class="form-group">
+              <label for="of-outcome">Gew&uuml;nschtes Ergebnis</label>
               <textarea id="of-outcome" name="outcome" rows="3"
                 placeholder="Was soll am Ende herauskommen?&#10;Woran erkennen Sie, dass es funktioniert?"></textarea>
             </div>
@@ -366,8 +374,8 @@
               <input id="of-frequency" type="text" name="frequency" placeholder="z. B. ca. 20 Mails t&auml;glich, 50 Rechnungen/Monat">
             </div>
             <div class="form-group">
-              <label for="of-systems">Beteiligte Systeme / Tools</label>
-              <input id="of-systems" type="text" name="systems" placeholder="z. B. Outlook, Excel, CRM, ERP &hellip;">
+              <label for="of-budget">Zeit- und Budgetvorstellung</label>
+              <input id="of-budget" type="text" name="budget" placeholder="ggf. ungef&auml;hre Zeit- und Budgetvorstellung">
             </div>
             <button type="submit" class="btn btn-primary"><i class="fas fa-bolt"></i> Use case schicken</button>
           </form>
@@ -409,9 +417,9 @@
       emailjs.init({ publicKey: "xvNrfCyYGqQD5cuoU" });
     })();
   </script>
-  <script src="../../lib/config.js?v=26062304"></script>
-  <script src="../../controller.js?v=26062304"></script>
-  <script src="../../lib/voice-agent/agent.js?v=26062304"></script>
+  <script src="../../lib/config.js?v=26062801"></script>
+  <script src="../../controller.js?v=26062801"></script>
+  <script src="../../lib/voice-agent/agent.js?v=26062801"></script>
   <script>
     new WebsiteController();
   </script>

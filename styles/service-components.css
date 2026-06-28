@@ -12,6 +12,13 @@
   line-height: 1.8;
   font-weight: 300;
 }
+
+/* Deep-link offset: section headings reachable via #hash (e.g. the voice
+   agent's navigate tool linking to en/pages/services/automation.html#process)
+   must not hide under the fixed header. Only applies to anchored headings. */
+.project-detail .content h3[id] {
+  scroll-margin-top: 90px;
+}
 .offer-lead .price-hl { color: var(--primary); font-weight: 700; }
 
 /* Feature cards (icon + title + text) */

@@ -175,51 +175,6 @@
   font-weight: 600;
 }
 
-/* Live transcript under the mic — what the user said + what the agent speaks.
-   Base colours suit the light in-page widget; the overlay overrides them below
-   for its dark card. Each line is a role icon + text (.va-tr-user / .va-tr-ai). */
-.voice-agent-transcript {
-  width: 100%;
-  max-width: 400px;
-  max-height: 120px;
-  overflow-y: auto;
-  margin: 0 auto var(--spacing-md);
-  font-size: 0.85rem;
-  line-height: 1.35;
-  text-align: left;
-  /* Slim, themed scrollbar (Firefox) */
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 107, 0, 0.55) transparent;
-}
-/* Slim, themed scrollbar (WebKit/Blink) */
-.voice-agent-transcript::-webkit-scrollbar {
-  width: 6px;
-}
-.voice-agent-transcript::-webkit-scrollbar-track {
-  background: transparent;
-}
-.voice-agent-transcript::-webkit-scrollbar-thumb {
-  background: rgba(255, 107, 0, 0.55);
-  border-radius: 3px;
-}
-.voice-agent-transcript::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
-}
-.va-tr-line {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-  margin-bottom: 0.25rem;
-}
-.va-tr-line i {
-  flex-shrink: 0;
-  margin-top: 0.2em;
-  font-size: 0.8em;
-  opacity: 0.8;
-}
-.va-tr-user { color: var(--dark); }
-.va-tr-ai   { color: var(--primary); }
-
 /* Loading state with animated dots */
 .voice-agent-status.loading {
   display: flex;
@@ -304,20 +259,20 @@
     min-height: 300px;
     padding: var(--spacing-md);
   }
-
+  
   .voice-agent-mic {
     width: 100px;
     height: 100px;
   }
-
+  
   .voice-agent-mic i {
     font-size: 2.5rem;
   }
-
+  
   .voice-agent-title {
     font-size: 1.25rem;
   }
-
+  
   .voice-agent-subtitle {
     font-size: 0.9rem;
   }
@@ -359,28 +314,6 @@
 .va-launcher:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 25px rgba(255, 107, 0, 0.5);
-}
-
-/* 'text' style (config.launcherStyle): a wider pill — "Ask AI [mic]" — instead
-   of the round icon-only button. Same gradient/state behaviour as the round one. */
-.va-launcher.va-launcher-text {
-  width: auto;
-  height: 56px;
-  border-radius: var(--border-radius-pill);
-  gap: 0.6rem;
-  padding: 0 1.4rem;
-}
-
-.va-launcher-text .va-launcher-label {
-  color: var(--white);
-  font-weight: 600;
-  font-size: 1.05rem;
-  white-space: nowrap;
-  line-height: 1;
-}
-
-.va-launcher-text i {
-  font-size: 1.35rem;
 }
 
 /* Launcher mirrors the call state (so it pulses while a call is live and the
@@ -469,20 +402,6 @@
   padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
 }
 
-/* "Test mode" badge above the mic, shown when VOICE_AGENT_CONFIG.trying is true */
-.va-trying {
-  margin-bottom: calc(var(--spacing-sm) + 6px);
-  padding: 2px 10px;
-  border-radius: 999px;
-  border: 1px solid var(--primary);
-  background: rgba(255, 107, 0, 0.12);
-  color: var(--primary);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
 /* The panel reuses .voice-agent-mic, but smaller to fit the card */
 .va-panel .voice-agent-mic {
   width: 92px;
@@ -500,85 +419,11 @@
   margin-bottom: var(--spacing-sm);
 }
 
-/* Transcript on the dark card: lighten the user text (agent stays primary) */
-.va-panel .voice-agent-transcript {
-  max-height: 96px;
-  margin-bottom: var(--spacing-sm);
-}
-.va-panel .va-tr-user { color: var(--lighter-gray); }
-
 .va-example {
   font-size: 0.8rem;
   color: var(--light-gray);
   font-style: italic;
   margin: var(--spacing-xs) 0 0;
-}
-
-/* Footer with runtime toggle switches (transcript / auto-nav). Built only when a
-   *Toggle flag is on; right-aligned below the example line, separated by a rule. */
-.va-footer {
-  width: 100%;
-  margin-top: var(--spacing-md);
-  padding-top: var(--spacing-sm);
-  border-top: 1px solid var(--medium-gray);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: var(--spacing-md);
-}
-
-/* A labelled pill switch (role="switch"); aria-checked drives the on/off look. */
-.va-switch {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  color: var(--light-gray);
-  font-size: 0.75rem;
-}
-
-.va-switch-label {
-  white-space: nowrap;
-}
-
-.va-switch-track {
-  position: relative;
-  width: 30px;
-  height: 16px;
-  border-radius: 999px;
-  background: var(--medium-gray);
-  transition: background var(--transition-fast);
-}
-
-.va-switch-thumb {
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--white);
-  transition: transform var(--transition-fast);
-}
-
-.va-switch[aria-checked="true"] {
-  color: var(--lighter-gray);
-}
-
-.va-switch[aria-checked="true"] .va-switch-track {
-  background: var(--primary);
-}
-
-.va-switch[aria-checked="true"] .va-switch-thumb {
-  transform: translateX(14px);
-}
-
-/* Transcript hidden via the footer switch (or shown only after enabling it) */
-.voice-agent-transcript.va-hidden {
-  display: none;
 }
 
 /* Resume state: badge a circular arrow onto the mic */
@@ -606,13 +451,13 @@
 }
 
 /* Navigate tool — 'link' mode breadcrumb rendered in the panel */
-.va-link-insert {
+.va-link-slot {
   display: none;
   width: 100%;
   margin-bottom: var(--spacing-sm);
 }
 
-.va-link-insert.show {
+.va-link-slot.show {
   display: block;
 }
 
@@ -650,8 +495,7 @@
 }
 
 /* Navigate tool — multiple options: a scrollable list of link rows. Capped so a
-   long list scrolls inside the panel instead of pushing the mic off-screen.
-   Mirrors the transcript's slim, themed scrollbar. */
+   long list scrolls inside the panel instead of pushing the mic off-screen. */
 .va-link-list {
   display: flex;
   flex-direction: column;
@@ -659,23 +503,8 @@
   width: 100%;
   max-height: 168px;
   overflow-y: auto;
-  padding-right: 2px;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 107, 0, 0.55) transparent;
+  padding-right: 2px;            /* breathing room for the scrollbar */
   -webkit-overflow-scrolling: touch;
-}
-.va-link-list::-webkit-scrollbar {
-  width: 6px;
-}
-.va-link-list::-webkit-scrollbar-track {
-  background: transparent;
-}
-.va-link-list::-webkit-scrollbar-thumb {
-  background: rgba(255, 107, 0, 0.55);
-  border-radius: 3px;
-}
-.va-link-list::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
 }
 
 /* Rows fill the width (vs. the single breadcrumb's inline pill) and push the
@@ -686,8 +515,17 @@
   width: 100%;
   max-width: 100%;
 }
+
 .va-link-list .va-nav-link span {
   flex: 1;
+}
+
+.va-link-list::-webkit-scrollbar {
+  width: 6px;
+}
+.va-link-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 3px;
 }
 
 /* Persistent-agent mode: the #about section is just the personal intro, so hide

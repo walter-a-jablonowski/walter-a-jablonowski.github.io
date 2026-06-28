@@ -89,7 +89,20 @@ class WebsiteController
     if (typeof LOADING_CONFIG === 'undefined' || !LOADING_CONFIG.showHeroOffer)
       return;
 
-    document.querySelectorAll('.hero-offer').forEach(el => el.classList.add('is-on'));
+    const isDe = (document.documentElement.lang || 'en').toLowerCase().startsWith('de');
+    const offers = Array.isArray(LOADING_CONFIG.heroOffers) ? LOADING_CONFIG.heroOffers : [];
+    const offer = offers[LOADING_CONFIG.heroOfferIndex || 0] || {};
+    const text = (isDe ? offer.de : offer.en) || offer.en || offer.de || '';
+
+    document.querySelectorAll('.hero-offer').forEach(el => {
+      const span = el.querySelector('.hero-offer-text');
+      if (span && text) span.innerHTML = text;
+      el.classList.add('is-on');
+    });
+
+    // The callout makes the left column taller; drop the hero CTA buttons while
+    // it is shown so the column heights stay balanced (hero.css hides them).
+    document.body.classList.add('hero-offer-on');
   }
 
   /**
@@ -126,7 +139,7 @@ class WebsiteController
    *   'off'    - nothing is added.
    *   'offer'  - bar links to the offer page (legacy boolean true == 'offer').
    *   'texts'  - shows announcementTexts[announcementTextIndex], an HTML string
-   *              that may contain links; the {root} placeholder is replaced with
+   *              that may contain links; the {base} placeholder is replaced with
    *              the path to the current language root.
    * The relative paths are derived from the logo link (which always points to
    * the current language's root) so they are correct on every page and in both
@@ -183,9 +196,8 @@ class WebsiteController
         '</div>';
     } else {
       // 'offer'
-      const text = isDe
-        ? 'Kleine KI-Automatisierung? Schicken Sie es mir &ndash; ich baue es ab <strong>1.000&nbsp;&euro;</strong>'
-        : 'Have a small AI automation Send it to me &mdash; I&rsquo;ll build it starting at <strong>&euro;1000</strong>.';
+      const offer = config.announcementOffer || {};
+      const text = (isDe ? offer.de : offer.en) || offer.en || offer.de || '';
       const href = prefix + 'pages/offers/offer.html';
       inner =
         '<div class="container">' +
@@ -236,24 +248,15 @@ class WebsiteController
     document.body.classList.add('persistent-agent');
 
     // 1. Neutralize the in-#about live widget (index pages only) with a static,
-    //    on-brand "talk to AI" illustration. Removing the live mic/status here
-    //    guarantees a single live instance (the overlay).
+    //    on-brand "talk to AI" illustration. The markup lives as a hidden
+    //    <template id="va-dummy-art"> in the index page (per language), so it is
+    //    not duplicated here. Removing the live mic/status guarantees a single
+    //    live instance (the overlay).
     const container = document.querySelector('.voice-agent-container');
-    if( container ) {
-      const caption = isDe ? 'Fragen Sie meine KI-Assistentin in der Ecke' : 'Ask my AI assistant in the corner';
+    const dummyTpl = document.getElementById('va-dummy-art');
+    if( container && dummyTpl ) {
       container.classList.add('va-dummy');
-      container.innerHTML =
-        '<svg class="va-dummy-art" viewBox="0 0 120 120" role="img" aria-label="' + caption + '">' +
-          '<defs><linearGradient id="vaDummyGrad" x1="0" y1="0" x2="1" y2="1">' +
-            '<stop offset="0" stop-color="var(--primary)"/><stop offset="1" stop-color="var(--accent-red)"/>' +
-          '</linearGradient></defs>' +
-          '<circle cx="60" cy="60" r="56" fill="url(#vaDummyGrad)" opacity="0.12"/>' +
-          '<circle cx="60" cy="60" r="40" fill="url(#vaDummyGrad)" opacity="0.18"/>' +
-          '<rect x="50" y="34" width="20" height="34" rx="10" fill="url(#vaDummyGrad)"/>' +
-          '<path d="M42 60 a18 18 0 0 0 36 0" fill="none" stroke="url(#vaDummyGrad)" stroke-width="4" stroke-linecap="round"/>' +
-          '<line x1="60" y1="78" x2="60" y2="88" stroke="url(#vaDummyGrad)" stroke-width="4" stroke-linecap="round"/>' +
-        '</svg>' +
-        '<p class="va-dummy-caption">' + caption + '</p>';
+      container.replaceChildren(dummyTpl.content.cloneNode(true));
     }
 
     // 2. Hide the legacy floating link (controller.initFloatingAiButton would
@@ -268,15 +271,14 @@ class WebsiteController
       a.textContent = isDe ? 'Über mich' : 'About';
     });
 
-    // 4. Swap the about intro to the shorter, personal first-person copy. Keep
-    //    the feature list + CTA; just replace the leading paragraphs.
+    // 4. Swap the about intro to the shorter, personal first-person copy. The
+    //    copy lives as a hidden <template id="va-about-intro"> in the index page
+    //    (per language). Keep the feature list + CTA; just replace the leading
+    //    paragraphs.
     const aboutText = document.querySelector('.about-text');
-    if( aboutText ) {
-      const intro = isDe
-        ? 'Hallo, ich bin Walter. Seit über 25 Jahren entwickle ich Software — und inzwischen dreht sich bei mir alles um KI. Ich mag es, aus einer vagen Idee etwas zu machen, das wirklich funktioniert, am liebsten mit möglichst wenig Drumherum: weniger Frameworks, mehr Ergebnis. Ich sitze in <a href="#map" class="highlight">Bamberg</a> und arbeite mit Unternehmen hier, in Nürnberg und online. Neugierig, ob KI Ihnen helfen kann? Fragen Sie meine Assistentin in der Ecke — oder melden Sie sich einfach.'
-        : "Hi, I'm Walter. For over 25 years I've built software — and these days I'm all-in on AI. I love turning a vague idea into something that actually works, ideally with as little ceremony as possible: fewer frameworks, more results. I'm based in <a href=\"#map\" class=\"highlight\">Bamberg</a> and work with companies here, in Nuremberg and online. Curious whether AI can help you? Ask my assistant in the corner — or just reach out.";
-
-      // Replace every direct <p> before the feature list with the single intro.
+    const introTpl = document.getElementById('va-about-intro');
+    if( aboutText && introTpl ) {
+      // Replace every direct <p> before the feature list with the page's intro.
       const list = aboutText.querySelector('.feature-list');
       let node = aboutText.firstElementChild;
       while( node && node !== list ) {
@@ -285,9 +287,50 @@ class WebsiteController
           node.remove();
         node = next;
       }
-      const p = document.createElement('p');
-      p.innerHTML = intro;
-      aboutText.insertBefore(p, aboutText.firstChild);
+      aboutText.insertBefore(introTpl.content.cloneNode(true), aboutText.firstChild);
+    }
+
+    // 5. Re-wire the index CTAs for persistent-agent mode (site-specific; index
+    //    pages only). The #about live widget moved to the overlay, so the hero
+    //    "Ask AI" button no longer jumps to #about — instead, with the round
+    //    launcher it opens the overlay panel directly (via the agent's public
+    //    open() method), and with the text launcher it points to Services. The
+    //    two about CTAs become Contact + Services in both styles.
+    const launcherStyle = VOICE_AGENT_CONFIG.launcherStyle || 'round';
+
+    const heroPrimary = document.querySelector('.hero-cta .btn');   // first hero button
+    if( heroPrimary ) {
+      if( launcherStyle === 'round' ) {
+        heroPrimary.setAttribute('href', '#about');   // graceful fallback if JS fails
+        heroPrimary.addEventListener('click', (e) => {
+          // Magically open the overlay panel instead of navigating.
+          if( window.voiceAgent && typeof window.voiceAgent.open === 'function' ) {
+            e.preventDefault();
+            window.voiceAgent.open();
+          }
+        });
+      } else {
+        // Text launcher: the pill is the AI entry point, so this button is no
+        // longer "Ask AI" — drop the mic and relabel it to its new target.
+        heroPrimary.setAttribute('href', '#services');
+        heroPrimary.textContent = isDe ? 'Leistungen' : 'Services';
+
+        // The second button would otherwise duplicate Services, so point it at
+        // Projects instead.
+        const heroSecondary = document.querySelectorAll('.hero-cta .btn')[1];
+        if( heroSecondary ) {
+          heroSecondary.setAttribute('href', '#proj');
+          heroSecondary.textContent = isDe ? 'Projekte' : 'Projects';
+        }
+      }
+    }
+
+    const ctaButtons = document.querySelectorAll('.cta-buttons .btn');
+    if( ctaButtons[0] ) ctaButtons[0].setAttribute('href', '#contact');   // first -> Contact (label already fits)
+    if( ctaButtons[1] ) {
+      // Second -> Services: retarget and relabel (was "See samples" -> #proj).
+      ctaButtons[1].setAttribute('href', '#services');
+      ctaButtons[1].textContent = isDe ? 'Leistungen' : 'Services';
     }
   }
 
@@ -712,28 +755,30 @@ class WebsiteController
       errMail:    'Bitte geben Sie Ihre E-Mail-Adresse ein',
       errMailInv: 'Bitte geben Sie eine gültige E-Mail-Adresse ein',
       errCurrent: 'Bitte beschreiben Sie die aktuelle Situation',
-      errOutcome: 'Bitte beschreiben Sie das gewünschte Ergebnis',
       success:    '<i class="fas fa-check-circle"></i> Vielen Dank! Ich melde mich zeitnah bei Ihnen.',
       error:      '<i class="fas fa-exclamation-circle"></i> Hoppla, da ist etwas schiefgelaufen. Bitte versuchen Sie es später erneut.',
       subject:    'Use-Case-Anfrage (Angebotsseite)',
       lCurrent:   'Aktuelle Situation / Aufgabe heute',
+      lInputs:    'Ihre Inputs / Unterlagen',
+      lSystems:   'Beteiligte Systeme / Tools',
       lOutcome:   'Gewünschtes Ergebnis',
       lFrequency: 'Häufigkeit / Volumen',
-      lSystems:   'Beteiligte Systeme / Tools',
+      lBudget:    'Zeit- und Budgetvorstellung',
       notGiven:   '(keine Angabe)'
     } : {
       errName:    'Please enter your name',
       errMail:    'Please enter your email address',
       errMailInv: 'Please enter a valid email address',
       errCurrent: 'Please describe the current situation',
-      errOutcome: 'Please describe the desired outcome',
       success:    '<i class="fas fa-check-circle"></i> Thank you! I will get back to you soon.',
       error:      '<i class="fas fa-exclamation-circle"></i> Oops! Something went wrong. Please try again later.',
       subject:    'Use case inquiry (offer page)',
       lCurrent:   'Current situation / task today',
+      lInputs:    'Your inputs / documents',
+      lSystems:   'Systems / tools involved',
       lOutcome:   'Desired outcome',
       lFrequency: 'Frequency / volume',
-      lSystems:   'Systems / tools involved',
+      lBudget:    'Timeline and budget expectations',
       notGiven:   '(not specified)'
     };
 
@@ -762,6 +807,8 @@ class WebsiteController
       const outcome   = document.getElementById('of-outcome').value.trim();
       const frequency = document.getElementById('of-frequency').value.trim();
       const systems   = document.getElementById('of-systems').value.trim();
+      const inputs    = document.getElementById('of-inputs').value.trim();
+      const budget    = document.getElementById('of-budget').value.trim();
 
       validationContainer.innerHTML = '';
       validationContainer.style.display = 'none';
@@ -773,7 +820,6 @@ class WebsiteController
       if( ! email )                        { errors.push(t.errMail); isValid = false; }
       else if( ! this.isValidEmail(email)) { errors.push(t.errMailInv); isValid = false; }
       if( ! current )                      { errors.push(t.errCurrent); isValid = false; }
-      if( ! outcome )                      { errors.push(t.errOutcome); isValid = false; }
 
       if( ! isValid ) {
         validationContainer.style.display = 'block';
@@ -790,9 +836,11 @@ class WebsiteController
       // Compose the message body from the two textareas plus the helper fields
       const message =
         t.lCurrent + ':\n' + current + '\n\n' +
+        t.lInputs + ': ' + (inputs || t.notGiven) + '\n' +
+        t.lSystems + ': ' + (systems || t.notGiven) + '\n\n' +
         t.lOutcome + ':\n' + outcome + '\n\n' +
         t.lFrequency + ': ' + (frequency || t.notGiven) + '\n' +
-        t.lSystems + ': ' + (systems || t.notGiven);
+        t.lBudget + ': ' + (budget || t.notGiven);
 
       const templateParams = { name: name, mail: email, subject: t.subject, message: message };
 

@@ -97,6 +97,9 @@
   text-decoration: none;
 }
 .hero-offer.is-on { display: flex; }
+/* When the callout is on it lengthens the left column; hiding the CTA buttons
+   keeps it roughly level with the hero image (controller adds the body class). */
+body.hero-offer-on .hero-cta { display: none; }
 /* Keep color static on hover (override the global a:hover color change) */
 .hero-offer:hover { color: var(--white); }
 .hero-offer-icon {
@@ -113,6 +116,9 @@
 }
 .hero-offer-text { flex: 1; }
 .hero-offer-text strong { color: var(--primary); white-space: nowrap; }
+/* Highlighted word that reads as a link; the whole .hero-offer is the actual
+   anchor to #contact, so this is styled (not a nested <a>) to stay valid HTML. */
+.hero-offer-text .hero-offer-link { color: var(--primary); }
 .hero-offer-arrow {
   flex-shrink: 0;
   color: var(--primary);

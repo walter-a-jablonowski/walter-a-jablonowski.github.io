@@ -28,9 +28,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=26062304">
-  <link rel="stylesheet" href="lib/fontawesome/css/all.min.css?v=26062304">
-  <link rel="stylesheet" href="lib/fonts/fonts.css?v=26062304">
+  <link rel="stylesheet" href="styles.css?v=26062801">
+  <link rel="stylesheet" href="lib/fontawesome/css/all.min.css?v=26062801">
+  <link rel="stylesheet" href="lib/fonts/fonts.css?v=26062801">
   <!-- Suppress the loading screen instantly when navigating within the site (e.g. back from a sub page) -->
   <script>
     try {
@@ -39,7 +39,7 @@
     } catch (e) {}
   </script>
   <!-- Alternative cookie consent implementation for GitHub Pages (original doesn't work) -->
-  <script src="cookie-fix.js?v=26062304"></script>
+  <script src="cookie-fix.js?v=26062801"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -50,7 +50,7 @@
         "url": "https://walter-a-jablonowski.github.io/",
         "name": "KI-Beratung & KI-Entwicklung Bamberg & Nürnberg | Walter A. Jablonowski",
         "inLanguage": "de",
-        "dateModified": "2026-06-23",
+        "dateModified": "2026-06-28",
         "about": { "@id": "https://walter-a-jablonowski.github.io/#person" },
         "mainEntity": { "@id": "https://walter-a-jablonowski.github.io/#service" }
       },
@@ -202,7 +202,7 @@
           </div>
           <a href="#contact" class="hero-offer">
             <span class="hero-offer-icon"><i class="fas fa-bolt" aria-hidden="true"></i></span>
-            <span class="hero-offer-text">Sie wollen KI einf&uuml;hren, aber wissen nicht wof&uuml;r genau und wie? Erstberatung <strong>kostenfrei</strong> in Bamberg und Umgebung oder online.</span>
+            <span class="hero-offer-text"></span>
             <i class="fas fa-arrow-right hero-offer-arrow" aria-hidden="true"></i>
           </a>
         </div>
@@ -305,6 +305,34 @@
             </a>
           </div>
         </div>
+        <!-- Persistent-overlay mode (VOICE_AGENT_CONFIG.persistentAgent): the
+             controller swaps the live widget below for this static illustration
+             and replaces the about intro above with this personal copy. Kept as
+             inert <template>s so they ship per language but render nothing here. -->
+        <template id="va-dummy-art">
+          <svg class="va-dummy-art" viewBox="0 0 120 120" role="img" aria-label="Meine KI-Assistentin ist umgezogen - siehe unten rechts">
+            <defs><linearGradient id="vaDummyGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="var(--primary)"/><stop offset="1" stop-color="var(--accent-red)"/>
+            </linearGradient></defs>
+            <!-- soft halo + a gentle pulse ring that draws the eye toward the corner -->
+            <circle cx="60" cy="60" r="52" fill="url(#vaDummyGrad)" opacity="0.08"/>
+            <circle cx="60" cy="60" r="38" fill="url(#vaDummyGrad)" opacity="0.12"/>
+            <circle cx="60" cy="60" r="38" fill="none" stroke="url(#vaDummyGrad)" stroke-width="2" opacity="0.5">
+              <animate attributeName="r" values="38;52" dur="2.6s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.5;0" dur="2.6s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Font Awesome "fas fa-microphone" (viewBox 0 0 384 512), scaled to
+                 ~60px and centered: translate(37.5 30) scale(0.117) -> center (60,60) -->
+            <path transform="translate(37.5 30) scale(0.117)" fill="url(#vaDummyGrad)" d="M192 0C139 0 96 43 96 96l0 160c0 53 43 96 96 96s96-43 96-96l0-160c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40c0 89.1 66.2 162.7 152 174.4l0 41.6-48 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l72 0 72 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-48 0 0-41.6c85.8-11.7 152-85.3 152-174.4l0-40c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40c0 70.7-57.3 128-128 128s-128-57.3-128-128l0-40z"/>
+          </svg>
+          <p class="va-dummy-caption">Meine KI-Assistentin ist <b style="color:#000">umgezogen</b> - siehe unten rechts</p>
+        </template>
+        <template id="va-about-intro">
+          <p>Hallo, ich bin Walter. Seit &uuml;ber 25 Jahren entwickle ich Software &mdash; und inzwischen dreht sich bei mir alles um KI. Ich mag es, aus einer vagen Idee etwas zu machen, das wirklich funktioniert: am liebsten KI-nativ und ohne viel Ballast, weniger Frameworks, mehr Ergebnis.</p>
+          <p>Mir geht es um echte Wirkung statt Buzzwords. Ich h&ouml;re zu, denke mit und baue L&ouml;sungen, die zu Ihrem Arbeitsalltag passen &mdash; pragmatisch, verst&auml;ndlich und ohne Sie in Technik-Details zu verlieren.</p>
+          <p>Ich bin aus <a href="#map" class="highlight">Bamberg</a> und arbeite für Unternehmen hier, in N&uuml;rnberg und in ganz Franken &mdash; genauso gut aber auch komplett online.</p>
+          <p>F&uuml;r Freelance-Projekte bin ich verf&uuml;gbar, vom schnellen KI-Feature bis zum kompletten Agenten. Gern helfe ich Ihnen herauszufinden, was KI realistisch f&uuml;r Ihr Unternehmen leisten kann.</p>
+        </template>
         <div class="tech-stack hide-on-mobile">
           <div class="voice-agent-container">
             <h3 class="voice-agent-title">Fragen Sie meine KI-Assistentin</h3>
@@ -315,6 +343,7 @@
             </button>
 
             <div id="voice-agent-status" class="voice-agent-status">Wird geladen...</div>
+            <div id="voice-agent-transcript" class="voice-agent-transcript"></div>
             <p class="voice-agent-example">
               <b class="hide-on-mobile">Fragen Sie zum Beispiel:</b> <img src="lib/flags/us.png" alt="US" style="vertical-align: middle; margin-left: 4px;"> "Can Walter help me build AI features?" <br>
               <img src="lib/flags/de.png" alt="DE" style="vertical-align: middle; margin-left: 4px;"> "Kann Walter mir mit KI-Integration helfen?"
@@ -1005,11 +1034,11 @@
       });
     })();
   </script>
-  <script src="controller.js?v=26062304"></script>
-  <script src="lib/map.js?v=26062304"></script>
-  <script src="lib/popover.js?v=26062304"></script>
-  <script src="lib/config.js?v=26062304"></script>
-  <script src="lib/voice-agent/agent.js?v=26062304"></script>
+  <script src="controller.js?v=26062801"></script>
+  <script src="lib/map.js?v=26062801"></script>
+  <script src="lib/popover.js?v=26062801"></script>
+  <script src="lib/config.js?v=26062801"></script>
+  <script src="lib/voice-agent/agent.js?v=26062801"></script>
   <script>
     new WebsiteController();
     new MapController();
