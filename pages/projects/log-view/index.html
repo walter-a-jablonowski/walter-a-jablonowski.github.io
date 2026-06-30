@@ -8,7 +8,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Walter A. Jablonowski">
   <meta property="og:locale" content="de_DE">
-  <meta property="og:title" content="Log Viewer ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ KI-gest&uuml;tzte Logs">
+  <meta property="og:title" content="Log Viewer &ndash; KI-gest&uuml;tzte Logs">
   <meta property="og:description" content="Universeller Log-Viewer mit KI-Unterst&uuml;tzung.">
   <meta property="og:url" content="https://walter-a-jablonowski.github.io/pages/projects/log-view/">
   <meta property="og:image" content="https://walter-a-jablonowski.github.io/misc/log-2.png">
@@ -28,8 +28,8 @@
       {
         "@type": "CreativeWork",
         "name": "Log Viewer",
-        "headline": "Universeller Log-Viewer mit KI-UnterstÃƒÆ’Ã‚Â¼tzung",
-        "description": "Universeller Log-Viewer mit KI-UnterstÃƒÆ’Ã‚Â¼tzung.",
+        "headline": "Universeller Log-Viewer mit KI-Unterstützung",
+        "description": "Universeller Log-Viewer mit KI-Unterstützung.",
         "inLanguage": "de",
         "url": "https://walter-a-jablonowski.github.io/pages/projects/log-view/",
         "image": "https://walter-a-jablonowski.github.io/misc/log-2.png",
@@ -46,9 +46,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
   <link rel="manifest" href="../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../styles.css?v=26063002">
-  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26063002">
-  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26063002">
+  <link rel="stylesheet" href="../../../styles.css?v=26063003">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26063003">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26063003">
   <style>
     /* Project detail page specific styles */
     .project-detail {
@@ -192,7 +192,7 @@
             Universeller Log-Viewer mit KI-Unterst&uuml;tzung
           </p>
           <p>
-            In nur 3 Tagen erstellt: Ein universeller Log-Viewer, der alle Ihre Logdateien an einem Ort zusammenf&uuml;hrt ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ unabh&auml;ngig vom Format. Analysieren Sie gro&szlig;e Logdateien mit KI, navigieren Sie durch Eintr&auml;ge mit umfangreichen Details und erweitern Sie das System um neue Log-Typen, ohne den Hauptcode anzufassen.
+            In nur 3 Tagen erstellt: Ein universeller Log-Viewer, der alle Ihre Logdateien an einem Ort zusammenf&uuml;hrt &ndash; unabh&auml;ngig vom Format. Analysieren Sie gro&szlig;e Logdateien mit KI, navigieren Sie durch Eintr&auml;ge mit umfangreichen Details und erweitern Sie das System um neue Log-Typen, ohne den Hauptcode anzufassen.
           </p>
         </div>
         <div class="project-media">
@@ -205,7 +205,7 @@
         <h3>Hauptfunktionen</h3>
         <ul>
           <li><strong>KI-Analyse</strong>: Senden Sie jedes Log an einen KI-Assistenten f&uuml;r automatisierte Analyse, Anomalieerkennung und KI-generierte Filterausdr&uuml;cke</li>
-          <li><strong>Modulares Typsystem</strong>: Unterst&uuml;tzen Sie neue Log-Formate, indem Sie einfach einen Parser und Renderer hinzuf&uuml;gen ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ ohne &Auml;nderungen an der Hauptanwendung</li>
+          <li><strong>Modulares Typsystem</strong>: Unterst&uuml;tzen Sie neue Log-Formate, indem Sie einfach einen Parser und Renderer hinzuf&uuml;gen &ndash; ohne &Auml;nderungen an der Hauptanwendung</li>
           <li><strong>Unterst&uuml;tzung gro&szlig;er Dateien</strong>: Verarbeitet Logs mit mehr als 100.000 Eintr&auml;gen durch Hintergrund-Import in SQLite oder MySQL</li>
           <li><strong>Zusammenf&uuml;hrung mehrerer Quellen</strong>: Kombinieren Sie mehrere Dateien oder ganze Ordnerb&auml;ume zu einer einzigen, einheitlichen Log-Ansicht</li>
           <li><strong>Umfangreiche Filtersyntax</strong>: Ausdrucksbasiertes Filtern mit Feldvergleichen, <code>contains</code>, <code>in [...]</code>, Regex und boolescher Logik; Filter werden pro Log gespeichert</li>
@@ -216,17 +216,17 @@
 
         <h3>Technische Architektur</h3>
         <ul>
-          <li><strong>Backend</strong>: PHP 8+ mit einer modularen Pipeline aus Typ ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ Parser ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ Renderer</li>
+          <li><strong>Backend</strong>: PHP 8+ mit einer modularen Pipeline aus Typ &rarr; Parser &rarr; Renderer</li>
           <li><strong>Speicherung</strong>: SQLite (ohne Einrichtung) oder MySQL; ein Hintergrund-Import-Worker h&auml;lt die Datenbank kontinuierlich aktuell</li>
           <li><strong>Typerkennung</strong>: Automatische Erkennung des Log-Typs mit optionaler &Uuml;berschreibung per URL-Parameter</li>
-          <li><strong>Frontend</strong>: Vanilla JavaScript mit Fetch API ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ ohne schwergewichtige Frameworks</li>
+          <li><strong>Frontend</strong>: Vanilla JavaScript mit Fetch API &ndash; ohne schwergewichtige Frameworks</li>
           <li><strong>KI-Integration</strong>: Konfigurierbares LLM-Backend f&uuml;r Log-Analyse und Filtergenerierung</li>
           <li><strong>Mandantenf&auml;hig</strong>: Einstellungen pro Benutzer und pro Organisation, gespeicherte Filter und benutzerdefinierte Typ-&Uuml;berschreibungen</li>
         </ul>
 
         <h3>Tech-Stack</h3>
         <p class="tech-stack">
-          PHP ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ SQLite ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ MySQL ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ YAML ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Vanilla JavaScript ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Fetch API ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ AI / LLM
+          PHP &bull; SQLite &bull; MySQL &bull; YAML &bull; Vanilla JavaScript &bull; Fetch API &bull; AI / LLM
         </p>
 
         <h3>Integrierte Log-Typen</h3>
@@ -239,7 +239,7 @@
 
         <h3>Anwendungsf&auml;lle</h3>
         <p>
-          Entwickler und DevOps-Teams k&ouml;nnen den Viewer auf jede beliebige Logdatei oder jeden Ordner richten ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ Trading-Systeme, Batch-Jobs, Order-Pipelines, PHP-Fehler ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ und Eintr&auml;ge sofort filtern, durchsuchen und analysieren. Der KI-Assistent &uuml;bernimmt die Schwerarbeit: ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Zeige mir alle abgelehnten Orders mit einer Latenz &uuml;ber 100 ms" erzeugt den Filterausdruck automatisch.
+          Entwickler und DevOps-Teams k&ouml;nnen den Viewer auf jede beliebige Logdatei oder jeden Ordner richten &ndash; Trading-Systeme, Batch-Jobs, Order-Pipelines, PHP-Fehler &ndash; und Eintr&auml;ge sofort filtern, durchsuchen und analysieren. Der KI-Assistent &uuml;bernimmt die Schwerarbeit: &bdquo;Zeige mir alle abgelehnten Orders mit einer Latenz &uuml;ber 100 ms" erzeugt den Filterausdruck automatisch.
         </p>
       </div>
     </div>
@@ -272,9 +272,9 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../lib/config.js?v=26063002"></script>
-  <script src="../../../controller.js?v=26063002"></script>
-  <script src="../../../lib/voice-agent/agent.js?v=26063002"></script>
+  <script src="../../../lib/config.js?v=26063003"></script>
+  <script src="../../../controller.js?v=26063003"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26063003"></script>
   <script>
     new WebsiteController();
   </script>

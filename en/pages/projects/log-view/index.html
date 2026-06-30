@@ -8,7 +8,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Walter A. Jablonowski">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="Log Viewer ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ AI-Powered Logs">
+  <meta property="og:title" content="Log Viewer &ndash; AI-Powered Logs">
   <meta property="og:description" content="General-Purpose Log Viewer with AI Support.">
   <meta property="og:url" content="https://walter-a-jablonowski.github.io/en/pages/projects/log-view/">
   <meta property="og:image" content="https://walter-a-jablonowski.github.io/misc/log-2.png">
@@ -46,9 +46,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../../favicon-16x16.png">
   <link rel="manifest" href="../../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../../styles.css?v=26063002">
-  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26063002">
-  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26063002">
+  <link rel="stylesheet" href="../../../../styles.css?v=26063003">
+  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26063003">
+  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26063003">
   <style>
     /* Project detail page specific styles */
     .project-detail {
@@ -192,7 +192,7 @@
             General-Purpose Log Viewer with AI Support
           </p>
           <p>
-            Done in one 3 days: A universal log viewer that brings all your log files into one place ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â regardless of format. Analyse large log files with AI, navigate entries with rich details, and extend the system with new log types without touching any main code.
+            Done in one 3 days: A universal log viewer that brings all your log files into one place &mdash; regardless of format. Analyse large log files with AI, navigate entries with rich details, and extend the system with new log types without touching any main code.
           </p>
         </div>
         <div class="project-media">
@@ -205,7 +205,7 @@
         <h3>Key Features</h3>
         <ul>
           <li><strong>AI Analysis</strong>: Send any log to an AI assistant for automated analysis, anomaly detection, and AI-generated filter expressions</li>
-          <li><strong>Pluggable Type System</strong>: Add support for new log formats by dropping in a parser and renderer ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â no changes to the main application</li>
+          <li><strong>Pluggable Type System</strong>: Add support for new log formats by dropping in a parser and renderer &mdash; no changes to the main application</li>
           <li><strong>Large File Support</strong>: Handles logs with more than 100,000 entries via background ingestion into SQLite or MySQL</li>
           <li><strong>Multi-Source Merging</strong>: Combine multiple files or entire folder trees into a single unified log view</li>
           <li><strong>Rich Filter Syntax</strong>: Expression-based filtering with field comparisons, <code>contains</code>, <code>in [...]</code>, regex, and boolean logic; filters are saved per log</li>
@@ -216,17 +216,17 @@
 
         <h3>Technical Architecture</h3>
         <ul>
-          <li><strong>Backend</strong>: PHP 8+ with a pluggable type ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ parser ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ renderer pipeline</li>
+          <li><strong>Backend</strong>: PHP 8+ with a pluggable type &rarr; parser &rarr; renderer pipeline</li>
           <li><strong>Storage</strong>: SQLite (zero-setup) or MySQL; background ingest worker keeps the DB continuously up to date</li>
           <li><strong>Type Detection</strong>: Automatic log type detection with optional URL parameter override</li>
-          <li><strong>Frontend</strong>: Vanilla JavaScript with Fetch API ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â no heavy frameworks</li>
+          <li><strong>Frontend</strong>: Vanilla JavaScript with Fetch API &mdash; no heavy frameworks</li>
           <li><strong>AI Integration</strong>: Configurable LLM backend for log analysis and filter generation</li>
           <li><strong>Multi-Tenant Ready</strong>: Per-user and per-organisation settings, saved filters, and custom type overrides</li>
         </ul>
 
         <h3>Tech Stack</h3>
         <p class="tech-stack">
-          PHP ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ SQLite ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ MySQL ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ YAML ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Vanilla JavaScript ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Fetch API ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ AI / LLM
+          PHP &bull; SQLite &bull; MySQL &bull; YAML &bull; Vanilla JavaScript &bull; Fetch API &bull; AI / LLM
         </p>
 
         <h3>Built-in Log Types</h3>
@@ -239,7 +239,7 @@
 
         <h3>Use Cases</h3>
         <p>
-          Engineers and DevOps teams can point the viewer at any log file or folder ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â trading systems, batch jobs, order pipelines, PHP errors ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â and immediately filter, navigate, and analyse entries. The AI assistant handles the heavy lifting: "Show me all rejected orders with a latency above 100 ms" generates the filter expression automatically.
+          Engineers and DevOps teams can point the viewer at any log file or folder &mdash; trading systems, batch jobs, order pipelines, PHP errors &mdash; and immediately filter, navigate, and analyse entries. The AI assistant handles the heavy lifting: "Show me all rejected orders with a latency above 100 ms" generates the filter expression automatically.
         </p>
       </div>
     </div>
@@ -272,9 +272,9 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../../lib/config.js?v=26063002"></script>
-  <script src="../../../../controller.js?v=26063002"></script>
-  <script src="../../../../lib/voice-agent/agent.js?v=26063002"></script>
+  <script src="../../../../lib/config.js?v=26063003"></script>
+  <script src="../../../../controller.js?v=26063003"></script>
+  <script src="../../../../lib/voice-agent/agent.js?v=26063003"></script>
   <script>
     new WebsiteController();
   </script>
