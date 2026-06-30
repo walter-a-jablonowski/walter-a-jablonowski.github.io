@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Website AI Agent: an AI assistant your visitors can talk to. Answers questions in real time, guides them to the right page, multilingual. Key and data stay server-side. Bamberg, Nuremberg and online.">
+  <meta name="keywords" content="website AI assistant, voice assistant, voice AI, website agent, AI agent for website, Gemini Live, AI for SMEs, Bamberg, Nuremberg">
+  <meta name="author" content="Walter A. Jablonowski">
+  <title>Website AI Agent &ndash; AI voice assistant for your website | Walter A. Jablonowski</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Walter A. Jablonowski">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Website AI Agent &ndash; AI voice assistant for your website">
+  <meta property="og:description" content="An AI assistant your visitors can talk to: answer questions in real time and guide them to the right page.">
+  <meta property="og:url" content="https://walter-a-jablonowski.github.io/en/pages/systems/web_agent/">
+  <meta property="og:image" content="https://walter-a-jablonowski.github.io/misc/voice_2.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://walter-a-jablonowski.github.io/en/" },
+          { "@type": "ListItem", "position": 2, "name": "Systems", "item": "https://walter-a-jablonowski.github.io/en/" },
+          { "@type": "ListItem", "position": 3, "name": "Website AI Agent", "item": "https://walter-a-jablonowski.github.io/en/pages/systems/web_agent/" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Website AI Agent",
+        "serviceType": "AI voice assistant for websites",
+        "description": "An AI assistant for your website that visitors can talk to: answers questions in real time, guides them to the right page and is multilingual.",
+        "inLanguage": "en",
+        "url": "https://walter-a-jablonowski.github.io/en/pages/systems/web_agent/",
+        "provider": { "@type": "Person", "name": "Walter A. Jablonowski", "url": "https://walter-a-jablonowski.github.io/" },
+        "areaServed": [
+          { "@type": "City", "name": "Bamberg" },
+          { "@type": "City", "name": "Nuremberg" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="canonical" href="https://walter-a-jablonowski.github.io/en/pages/systems/web_agent/">
+  <link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/web_agent/">
+  <link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/web_agent/">
+  <link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/web_agent/">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../../favicon-16x16.png">
+  <link rel="manifest" href="../../../../site.webmanifest">
+  <link rel="stylesheet" href="../../../../styles.css?v=26063001">
+  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26063001">
+  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26063001">
+  <style>
+    /* Product page styles. Reusable parts (.product-hero, .spec-list, .service-cta
+       exemption) live in page-components.css; the blocks below are local to this page. */
+    .project-detail {
+      padding: var(--spacing-xxl) 0;
+      background-color: var(--dark);
+      color: var(--white);
+      position: relative;
+    }
+    .project-detail::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(14,14,14,0.95) 0%, rgba(26,26,26,0.85) 100%);
+      z-index: 1;
+    }
+    .project-detail .container { position: relative; z-index: 2; }
+
+    .content { color: var(--lighter-gray); line-height: 1.75; }
+    .content h3 { color: var(--white); margin-top: var(--spacing-xl); }
+    /* Keep the shared reset: the heading in the two-column steps block must top-align
+       with the text column (our .content h3 margin would otherwise push it down). */
+    .content .steps-cols h3 { margin-top: 0; }
+    .content p { margin: 0 0 var(--spacing-md); }
+    .content ul { padding-left: 1.25rem; margin: 0 0 var(--spacing-md); }
+    .content li { margin: .45rem 0; }
+    .content a { color: var(--primary); }
+    .content strong { color: var(--white); }
+    .content a.btn-primary, .content a.btn-secondary { color: var(--white); }
+
+    /* ---- Live-demo callout ---------------------------------------------- */
+    .live-demo { margin: var(--spacing-xl) 0; padding: var(--spacing-lg) var(--spacing-xl);
+      border-radius: var(--border-radius-lg); text-align: center;
+      background: linear-gradient(135deg, rgba(255,107,0,.14), rgba(255,62,0,.06));
+      border: 1px solid rgba(255,107,0,.30); }
+    .live-demo h3 { margin-top: 0 !important; }
+    .live-demo p { color: var(--lighter-gray); margin: 0 0 1.1rem; }
+
+    /* ---- Price line (gated by .biz-only / hideBiz) --------------------- */
+    .price-line { color: var(--lighter-gray); }
+    .price-line strong { color: var(--primary); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="../../../index.html#hero" class="nav-link">Home</a></li>
+          <li><a href="../../../index.html#about" class="nav-link">Ask AI</a></li>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-head">
+              <a href="../../../index.html#services" class="nav-link">Services</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Services submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../../../pages/services/automation.html" class="nav-link">Automation</a></li>
+              <li><a href="../../../pages/services/self-improving.html" class="nav-link">Self-improving AI</a></li>
+              <li><a href="../../../pages/services/data-solutions.html" class="nav-link">AI Data Solutions</a></li>
+              <li><a href="../../../pages/services/consulting.html" class="nav-link">AI Consulting</a></li>
+              <li><a href="../../../pages/services/security.html" class="nav-link">AI Security &amp; Evaluation</a></li>
+              <li><a href="../../../pages/placeholder.html" class="nav-link">AI Visualization</a></li>
+              <li><a href="../../../pages/placeholder.html" class="nav-link">Apps that work</a></li>
+            </ul>
+          </li>
+          <li class="nav-dropdown new-content less-spacing">
+            <span class="nav-dropdown-head">
+              <span class="nav-dropdown-label">Systems</span>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Systems submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="index.html" class="nav-link active">Website AI Agent</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../../index.html#skills" class="nav-link">Skills</a></li>
+          <li><a href="../../../index.html#proj" class="nav-link">Projects</a></li>
+          <li><a href="../../../index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
+              title="Visit my LinkedIn profile"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link" title="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
+          <li class="lang-switch">
+            <a href="../../../../pages/systems/web_agent/index.html" class="nav-link" hreflang="de" title="Deutsch">DE</a>
+            <span class="lang-sep">|</span>
+            <a href="index.html" class="nav-link active" hreflang="en" title="English">EN</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="project-detail">
+    <div class="container">
+
+      <!-- 1) Product hero -->
+      <div class="product-hero">
+        <div class="ph-text">
+          <p class="ph-eyebrow">Systems</p>
+          <h1>Website AI Agent</h1>
+          <p class="ph-tagline">An AI assistant your visitors can <strong>talk to</strong>.</p>
+          <p class="ph-lead">
+            Answers questions in real time, guides visitors to the right page and speaks the
+            visitor&rsquo;s language &ndash; right on your website.
+          </p>
+          <div class="ph-actions">
+            <a href="#" class="btn btn-primary js-open-agent"><i class="fas fa-microphone"></i> Try it now</a>
+            <a href="../../../index.html#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> Contact</a>
+          </div>
+          <p class="ph-live"><i class="fas fa-circle"></i> You&rsquo;re using it right now &ndash; the button is bottom-right.</p>
+        </div>
+        <div class="ph-visual">
+          <img src="../../../../misc/voice_2.png" alt="Website AI Agent: voice overlay with microphone button on the website" loading="lazy">
+        </div>
+      </div>
+
+      <div class="content">
+
+        <!-- 2) What is it? -->
+        <h3 id="what">What is it?</h3>
+        <p>
+          A small assistant that runs in the bottom-right corner on every page. Visitors click
+          the microphone and ask their question <strong>by voice</strong>. The assistant knows your
+          website, answers instantly &ndash; and can guide them to the right page.
+        </p>
+        <ul>
+          <li>Speaks instead of typing &ndash; natural real-time voice</li>
+          <li>Knows your offering &ndash; tuned to your content</li>
+          <li>Actively guides through the website</li>
+          <li>Available on every page and remembers the conversation</li>
+        </ul>
+
+        <!-- 3) Features -->
+        <h3 id="features">Features</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-microphone"></i></div>
+            <h4>Speak instead of type</h4>
+            <p>Real-time voice dialogue with a natural voice and low latency.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-book"></i></div>
+            <h4>Knows your website</h4>
+            <p>Tuned to your content and offering &ndash; answers real questions.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-route"></i></div>
+            <h4>Guides to the right page</h4>
+            <p>Suggests relevant pages or navigates straight there.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-language"></i></div>
+            <h4>Multilingual</h4>
+            <p>Replies automatically in the visitor&rsquo;s language (DE/EN &hellip;).</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-window-restore"></i></div>
+            <h4>Always there</h4>
+            <p>Persistent overlay on every page; continues the conversation after a page change.</p>
+          </div>
+        </div>
+
+        <!-- 4) How it works -->
+        <div class="steps-cols">
+          <div>
+            <h3 id="how">How it works</h3>
+            <ol class="offer-steps">
+              <li>Visitor clicks the microphone and speaks</li>
+              <li>The assistant understands and <strong>answers instantly with voice</strong></li>
+              <li>On request, it guides them to the right page</li>
+              <li class="no-num"><strong>How:</strong> Browser &rarr; your Worker (key &amp; context secure) &rarr; AI voice model</li>
+            </ol>
+          </div>
+          <div class="steps-text">
+            <p>
+              Sensitive data &ndash; the API key and the context about your offering &ndash; stays
+              <strong>server-side</strong> (e.g. a Cloudflare Worker), not in the visitor&rsquo;s browser.
+            </p>
+            <p>
+              Optionally, a <strong>live transcript</strong> can be shown so visitors can read along
+              with what was said and answered.
+            </p>
+          </div>
+        </div>
+
+        <!-- 5) What for? -->
+        <h3 id="use-cases">What for?</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-headset"></i></div>
+            <h4>Advise visitors</h4>
+            <p>Answer questions about your offering &ndash; around the clock.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-map-signs"></i></div>
+            <h4>Guide through the site</h4>
+            <p>Visitors reach the right subpage directly.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-user-plus"></i></div>
+            <h4>First contact</h4>
+            <p>A low-barrier way into a conversation &ndash; ideal for leads.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-star"></i></div>
+            <h4>Modern impression</h4>
+            <p>Sets your site apart from the competition.</p>
+          </div>
+        </div>
+
+        <!-- 6) Customizable -->
+        <h3 id="custom">Customizable</h3>
+        <ul>
+          <li>Persona, greeting and example questions are freely configurable</li>
+          <li>Navigation mode: actively guide <strong>or</strong> just offer a link</li>
+          <li>Live transcript on/off, optionally as a runtime switch</li>
+          <li>Launcher style: round microphone button <strong>or</strong> text pill (&bdquo;Ask AI&ldquo;)</li>
+          <li>Languages extensible, AI model interchangeable</li>
+        </ul>
+
+        <!-- 7) Privacy & control -->
+        <div class="highlight-box">
+          <p><i class="fas fa-shield-halved" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>Privacy &amp; control:</strong> The API key and context stay server-side, not in the
+            client code. <strong>No tracking cookies</strong> needed, navigation is limited to your site
+            (&bdquo;sandboxed&ldquo;) &ndash; with support for a GDPR-compliant integration.</p>
+        </div>
+
+        <!-- 8) Try it live -->
+        <div class="live-demo">
+          <h3>Try it live</h3>
+          <p>Talk to the assistant right now &ndash; no sign-up needed.</p>
+          <a href="#" class="btn btn-primary js-open-agent"><i class="fas fa-microphone"></i> Open the assistant</a>
+        </div>
+
+        <!-- 9) At a glance -->
+        <h3 id="specs">At a glance</h3>
+        <div class="spec-list">
+          <div class="spec-row"><span class="spec-k">Integration</span><span class="spec-v">one script include per page</span></div>
+          <div class="spec-row"><span class="spec-k">Languages</span><span class="spec-v">German, English (extensible)</span></div>
+          <div class="spec-row"><span class="spec-k">Mode</span><span class="spec-v">real-time voice, optional transcript</span></div>
+          <div class="spec-row"><span class="spec-k">AI</span><span class="spec-v">Gemini Live (interchangeable)</span></div>
+          <div class="spec-row"><span class="spec-k">Operation</span><span class="spec-v">Worker/server, key server-side</span></div>
+          <div class="spec-row"><span class="spec-k">Privacy</span><span class="spec-v">no tracking cookies, sandboxed navigation</span></div>
+        </div>
+
+        <!-- 10) FAQ -->
+        <h3 id="faq">Frequently asked questions</h3>
+        <div class="faq-list">
+          <details class="samples-reveal">
+            <summary>What does it cost? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>
+              <span class="biz-only price-line"><strong>Setup from &euro;1,000</strong> &middot; plus ongoing usage costs
+              (AI model/Worker). </span>The price depends on scope and customization &ndash; the initial consultation is free.
+            </p>
+          </details>
+          <details class="samples-reveal">
+            <summary>Which languages are supported? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>German and English are included out of the box, and more languages are possible. The
+              assistant replies automatically in the language of the page.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>Does it run on my website? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Yes. The assistant is added as a small script; the key and context run through your own
+              Worker or server.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>Do visitors need a microphone? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>For the voice dialogue, yes. The greeting and hints also work without one &ndash; and the
+              microphone is only used after a click and permission.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>What about privacy? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>No tracking cookies are needed, sensitive data stays server-side, and navigation is limited
+              to your site. I support a GDPR-compliant integration.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>Which AI is behind it? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Currently Gemini Live. The model can be swapped without changing the integration.</p>
+          </details>
+        </div>
+
+        <!-- 11) Closing CTA -->
+        <div class="service-cta product-cta">
+          <h3>Website AI Agent for your site</h3>
+          <p>Initial consultation free of charge &ndash; on-site in Bamberg/Nuremberg or online.</p>
+          <div class="cta-actions">
+            <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Get in touch</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+          <a href="../../../../llms.txt" class="footer-agent-link">For AI agents</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-links">
+          <a href="../../../privacy.html">Privacy</a>
+          <a href="../../../imprint.html">Imprint</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>powered by &copy; Walter A. Jablonowski 2019-2026. Made with AI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="../../../../lib/config.js?v=26063001"></script>
+  <script src="../../../../controller.js?v=26063001"></script>
+  <script src="../../../../lib/voice-agent/agent.js?v=26063001"></script>
+  <script>
+    new WebsiteController();
+
+    // "Try it now" buttons open the voice overlay via its public API.
+    document.querySelectorAll('.js-open-agent').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        if( window.voiceAgent && typeof window.voiceAgent.open === 'function' )
+          window.voiceAgent.open();
+      });
+    });
+  </script>
+</body>
+</html>

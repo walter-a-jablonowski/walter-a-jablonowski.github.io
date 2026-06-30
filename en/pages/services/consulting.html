@@ -52,9 +52,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
   <link rel="manifest" href="../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../styles.css?v=26062801">
-  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26062801">
-  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26062801">
+  <link rel="stylesheet" href="../../../styles.css?v=26063001">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26063001">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26063001">
   <style>
     /* Service page styles (built on the shared design tokens, aligned with offer.html) */
     .project-detail {
@@ -85,6 +85,19 @@
     .content a.btn-outline { color: var(--primary); }
     .content a.btn-outline:hover { color: var(--white); }
 
+    /* Pin the hero to the top so the eyebrow/headline don't shift when the reveal opens */
+    .product-hero { align-items: start; margin-top: var(--spacing-lg); }
+
+    /* Keep the orange highlight (shared CSS scopes .price-hl to .offer-lead only) */
+    .ph-lead .price-hl { color: var(--primary); font-weight: 700; }
+
+    /* Tighter gap below the lead on this page (component default is larger) */
+    .ph-lead { margin-bottom: .6rem; }
+
+    /* Examples reveal sits in the hero, between lead and the CTA button */
+    .ph-live-slo { margin: 0 0 1.4rem; color: var(--lighter-gray); }
+    .ph-live-slo ul { padding-left: 1.25rem; }
+    .ph-live-slo li { margin: .45rem 0; }
   </style>
 </head>
 <body>
@@ -115,6 +128,15 @@
               <li><a href="../placeholder.html" class="nav-link">Apps that work</a></li>
             </ul>
           </li>
+          <li class="nav-dropdown new-content less-spacing">
+            <span class="nav-dropdown-head">
+              <span class="nav-dropdown-label">Systems</span>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Systems submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
+            </ul>
+          </li>
           <li class="less-spacing"><a href="../../index.html#skills" class="nav-link">Skills</a></li>
           <li><a href="../../index.html#proj" class="nav-link">Projects</a></li>
           <li><a href="../../index.html#contact" class="nav-link">Contact</a></li>
@@ -133,26 +155,35 @@
 
   <section class="project-detail">
     <div class="container">
-      <div class="section-header">
-        <h2 style="color: var(--white);">AI Consulting</h2>
+      <!-- 1) Product hero -->
+      <div class="product-hero">
+        <div class="ph-text">
+          <p class="ph-eyebrow">Services</p>
+          <h1>AI Consulting</h1>
+          <p class="ph-tagline">Where does AI <strong>really</strong> help in your business &ndash; and how do you start?</p>
+          <p class="ph-lead">
+            I help you separate the hype from real value.
+            <span class="price-hl">Initial consultation free of charge</span> &ndash; on-site in Bamberg/surroundings or online.
+          </p>
+          <details class="samples-reveal ph-live-slo">
+            <summary>Typical questions we clarify <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <ul>
+              <li>Where does AI deliver real value for us?</li>
+              <li>Build it ourselves or buy a ready-made solution?</li>
+              <li>Which technology fits our case?</li>
+              <li>What about data protection and GDPR?</li>
+              <li>What does it cost &ndash; and what&rsquo;s the return (ROI)?</li>
+            </ul>
+          </details>
+          <div class="ph-actions">
+            <a href="../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Contact</a>
+          </div>
+        </div>
+        <div class="ph-visual">
+          <!-- Dummy image, replace with the real image later -->
+          <img src="../../../misc/automation-placeholder.svg" alt="AI consulting" loading="lazy">
+        </div>
       </div>
-
-      <p class="offer-lead">
-        Where does AI <strong>really</strong> help in your business &ndash; and how do you start the right way?
-        I help you separate the hype from real value.
-        <span class="price-hl">Initial consultation free of charge</span> &ndash; on-site in Bamberg/surroundings or online.
-      </p>
-
-      <details class="samples-reveal">
-        <summary>Typical questions we clarify <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-        <ul>
-          <li>Where does AI deliver real value for us?</li>
-          <li>Build it ourselves or buy a ready-made solution?</li>
-          <li>Which technology fits our case?</li>
-          <li>What about data protection and GDPR?</li>
-          <li>What does it cost &ndash; and what&rsquo;s the return (ROI)?</li>
-        </ul>
-      </details>
 
       <div class="content">
 
@@ -301,9 +332,9 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../lib/config.js?v=26062801"></script>
-  <script src="../../../controller.js?v=26062801"></script>
-  <script src="../../../lib/voice-agent/agent.js?v=26062801"></script>
+  <script src="../../../lib/config.js?v=26063001"></script>
+  <script src="../../../controller.js?v=26063001"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26063001"></script>
   <script>
     new WebsiteController();
   </script>

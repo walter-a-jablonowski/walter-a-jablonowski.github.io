@@ -199,10 +199,10 @@ body.has-announcement .page-wrap {
 body .project-detail { padding-top: calc(var(--spacing-xxl) + var(--spacing-md)); }
 body.has-announcement .project-detail { padding-top: calc(var(--spacing-xxl) + 2.6rem + var(--spacing-md)); }
 
-/* "New feature" CTAs (currently the service-page .service-cta banner) are gated
-   behind LOADING_CONFIG.showCTA; the controller adds .no-new-features to
-   <body> when that flag is false. Visible by default. */
-body.no-new-features .service-cta { display: none; }
+/* The service-page .service-cta banner is gated behind LOADING_CONFIG.hideBiz;
+   the controller adds .hide-biz to <body> when true. Visible by default. The
+   product page exempts its own closing CTA via .service-cta.product-cta. */
+body.hide-biz .service-cta { display: none; }
 
 @media (max-width: 480px) {
   .announcement-bar-link { font-size: 0.85rem; padding: 0.45rem 2rem; gap: 0.45rem; }

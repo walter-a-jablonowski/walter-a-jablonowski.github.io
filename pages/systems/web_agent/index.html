@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Website AI Agent: ein KI-Assistent, mit dem Ihre Besucher sprechen k&ouml;nnen. Beantwortet Fragen in Echtzeit, f&uuml;hrt zur richtigen Seite, mehrsprachig. Schl&uuml;ssel und Daten serverseitig. Bamberg, N&uuml;rnberg und online.">
+  <meta name="keywords" content="KI-Assistent Website, Sprachassistent, Voice AI, Website-Agent, KI-Agent f&uuml;r Website, Gemini Live, KI f&uuml;r KMU, Bamberg, N&uuml;rnberg">
+  <meta name="author" content="Walter A. Jablonowski">
+  <title>Website AI Agent &ndash; KI-Sprachassistent f&uuml;r Ihre Website | Walter A. Jablonowski</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Walter A. Jablonowski">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="Website AI Agent &ndash; KI-Sprachassistent f&uuml;r Ihre Website">
+  <meta property="og:description" content="Ein KI-Assistent, mit dem Ihre Besucher sprechen k&ouml;nnen: Fragen in Echtzeit beantworten und zur richtigen Seite f&uuml;hren.">
+  <meta property="og:url" content="https://walter-a-jablonowski.github.io/pages/systems/web_agent/">
+  <meta property="og:image" content="https://walter-a-jablonowski.github.io/misc/voice_2.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://walter-a-jablonowski.github.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Systeme", "item": "https://walter-a-jablonowski.github.io/" },
+          { "@type": "ListItem", "position": 3, "name": "Website AI Agent", "item": "https://walter-a-jablonowski.github.io/pages/systems/web_agent/" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Website AI Agent",
+        "serviceType": "KI-Sprachassistent f&uuml;r Websites",
+        "description": "Ein KI-Assistent f&uuml;r Ihre Website, mit dem Besucher sprechen k&ouml;nnen: beantwortet Fragen in Echtzeit, f&uuml;hrt zur richtigen Seite und ist mehrsprachig.",
+        "inLanguage": "de",
+        "url": "https://walter-a-jablonowski.github.io/pages/systems/web_agent/",
+        "provider": { "@type": "Person", "name": "Walter A. Jablonowski", "url": "https://walter-a-jablonowski.github.io/" },
+        "areaServed": [
+          { "@type": "City", "name": "Bamberg" },
+          { "@type": "City", "name": "N&uuml;rnberg" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="canonical" href="https://walter-a-jablonowski.github.io/pages/systems/web_agent/">
+  <link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/web_agent/">
+  <link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/web_agent/">
+  <link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/web_agent/">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
+  <link rel="manifest" href="../../../site.webmanifest">
+  <link rel="stylesheet" href="../../../styles.css?v=26063001">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26063001">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26063001">
+  <style>
+    /* Product page styles. Reusable parts (.product-hero, .spec-list, .service-cta
+       exemption) live in page-components.css; the blocks below are local to this page. */
+    .project-detail {
+      padding: var(--spacing-xxl) 0;
+      background-color: var(--dark);
+      color: var(--white);
+      position: relative;
+    }
+    .project-detail::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(14,14,14,0.95) 0%, rgba(26,26,26,0.85) 100%);
+      z-index: 1;
+    }
+    .project-detail .container { position: relative; z-index: 2; }
+
+    .content { color: var(--lighter-gray); line-height: 1.75; }
+    .content h3 { color: var(--white); margin-top: var(--spacing-xl); }
+    /* Keep the shared reset: the heading in the two-column steps block must top-align
+       with the text column (our .content h3 margin would otherwise push it down). */
+    .content .steps-cols h3 { margin-top: 0; }
+    .content p { margin: 0 0 var(--spacing-md); }
+    .content ul { padding-left: 1.25rem; margin: 0 0 var(--spacing-md); }
+    .content li { margin: .45rem 0; }
+    .content a { color: var(--primary); }
+    .content strong { color: var(--white); }
+    .content a.btn-primary, .content a.btn-secondary { color: var(--white); }
+
+    /* ---- Live-demo callout ---------------------------------------------- */
+    .live-demo { margin: var(--spacing-xl) 0; padding: var(--spacing-lg) var(--spacing-xl);
+      border-radius: var(--border-radius-lg); text-align: center;
+      background: linear-gradient(135deg, rgba(255,107,0,.14), rgba(255,62,0,.06));
+      border: 1px solid rgba(255,107,0,.30); }
+    .live-demo h3 { margin-top: 0 !important; }
+    .live-demo p { color: var(--lighter-gray); margin: 0 0 1.1rem; }
+
+    /* ---- Price line (gated by .biz-only / hideBiz) --------------------- */
+    .price-line { color: var(--lighter-gray); }
+    .price-line strong { color: var(--primary); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="../../../index.html#hero" class="nav-link">Start</a></li>
+          <li><a href="../../../index.html#about" class="nav-link">KI fragen</a></li>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-head">
+              <a href="../../../index.html#services" class="nav-link">Leistungen</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Untermen&uuml; Leistungen"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../../../pages/services/automation.html" class="nav-link">Automatisierung</a></li>
+              <li><a href="../../../pages/services/self-improving.html" class="nav-link">Selbstverbessernde KI</a></li>
+              <li><a href="../../../pages/services/data-solutions.html" class="nav-link">KI-Datenl&ouml;sungen</a></li>
+              <li><a href="../../../pages/services/consulting.html" class="nav-link">KI Beratung</a></li>
+              <li><a href="../../../pages/services/security.html" class="nav-link">KI Security &amp; Evaluierung</a></li>
+              <li><a href="../../../pages/placeholder.html" class="nav-link">KI Visualisierung</a></li>
+              <li><a href="../../../pages/placeholder.html" class="nav-link">Apps, die arbeiten</a></li>
+            </ul>
+          </li>
+          <li class="nav-dropdown new-content less-spacing">
+            <span class="nav-dropdown-head">
+              <span class="nav-dropdown-label">Systeme</span>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Untermen&uuml; Systeme"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="index.html" class="nav-link active">Website AI Agent</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../../index.html#skills" class="nav-link">Kenntnisse</a></li>
+          <li><a href="../../../index.html#proj" class="nav-link">Projekte</a></li>
+          <li><a href="../../../index.html#contact" class="nav-link">Kontakt</a></li>
+          <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
+              title="Mein LinkedIn-Profil besuchen"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link" title="Mein GitHub-Profil besuchen"><i class="fab fa-github"></i></a></li>
+          <li class="lang-switch">
+            <a href="index.html" class="nav-link active" hreflang="de" title="Deutsch">DE</a>
+            <span class="lang-sep">|</span>
+            <a href="../../../en/pages/systems/web_agent/index.html" class="nav-link" hreflang="en" title="English">EN</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="project-detail">
+    <div class="container">
+
+      <!-- 1) Product hero -->
+      <div class="product-hero">
+        <div class="ph-text">
+          <p class="ph-eyebrow">Systeme</p>
+          <h1>Website AI Agent</h1>
+          <p class="ph-tagline">Ein KI-Assistent, mit dem Ihre Besucher <strong>sprechen</strong> k&ouml;nnen.</p>
+          <p class="ph-lead">
+            Beantwortet Fragen in Echtzeit, f&uuml;hrt zur richtigen Seite und spricht die Sprache
+            des Besuchers &ndash; direkt auf Ihrer Website.
+          </p>
+          <div class="ph-actions">
+            <a href="#" class="btn btn-primary js-open-agent"><i class="fas fa-microphone"></i> Jetzt ausprobieren</a>
+            <a href="../../../index.html#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> Kontakt</a>
+          </div>
+          <p class="ph-live"><i class="fas fa-circle"></i> Sie nutzen ihn gerade &ndash; der Button ist unten rechts.</p>
+        </div>
+        <div class="ph-visual">
+          <img src="../../../misc/voice_2.png" alt="Website AI Agent: Sprach-Overlay mit Mikrofon-Button auf der Website" loading="lazy">
+        </div>
+      </div>
+
+      <div class="content">
+
+        <!-- 2) Was ist das? -->
+        <h3 id="what">Was ist das?</h3>
+        <p>
+          Ein kleiner Assistent, der unten rechts auf jeder Seite mitl&auml;uft. Besucher klicken
+          aufs Mikrofon und stellen ihre Frage <strong>per Sprache</strong>. Der Assistent kennt Ihre
+          Website, antwortet sofort &ndash; und kann zur passenden Seite weiterleiten.
+        </p>
+        <ul>
+          <li>Spricht statt zu tippen &ndash; nat&uuml;rliche Echtzeit-Stimme</li>
+          <li>Kennt Ihr Geschäft &ndash; auf Ihre Inhalte abgestimmt</li>
+          <li>F&uuml;hrt aktiv durch die Website</li>
+          <li>Auf jeder Seite verf&uuml;gbar und merkt sich das Gespr&auml;ch</li>
+        </ul>
+
+        <!-- 3) Funktionen -->
+        <h3 id="features">Funktionen</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-microphone"></i></div>
+            <h4>Sprechen statt tippen</h4>
+            <p>Echtzeit-Sprachdialog mit nat&uuml;rlicher Stimme und geringer Latenz.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-book"></i></div>
+            <h4>Kennt Ihre Website</h4>
+            <p>Auf Ihre Inhalte und Ihr Geschäft abgestimmt &ndash; beantwortet echte Fragen.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-route"></i></div>
+            <h4>F&uuml;hrt zur richtigen Seite</h4>
+            <p>Schl&auml;gt passende Seiten vor oder navigiert direkt dorthin.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-language"></i></div>
+            <h4>Mehrsprachig</h4>
+            <p>Antwortet automatisch in der Sprache des Besuchers (DE/EN &hellip;).</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-window-restore"></i></div>
+            <h4>Immer dabei</h4>
+            <p>Persistentes Overlay auf allen Seiten; setzt das Gespr&auml;ch nach Seitenwechsel fort.</p>
+          </div>
+        </div>
+
+        <!-- 4) So funktioniert es -->
+        <div class="steps-cols">
+          <div>
+            <h3 id="how">So funktioniert es</h3>
+            <ol class="offer-steps">
+              <li>Besucher klickt aufs Mikrofon und spricht</li>
+              <li>Der Assistent versteht und <strong>antwortet sofort mit Stimme</strong></li>
+              <li>Auf Wunsch f&uuml;hrt er zur passenden Seite</li>
+              <li class="no-num"><strong>Technik:</strong> Browser &rarr; Ihr Worker (Schl&uuml;ssel &amp; Kontext sicher) &rarr; KI-Sprachmodell</li>
+            </ol>
+          </div>
+          <div class="steps-text">
+            <p>
+              Sensible Daten &ndash; API-Schl&uuml;ssel und der Kontext &uuml;ber Ihr Geschäft &ndash; liegen
+              <strong>serverseitig</strong> (z.&nbsp;B. ein Cloudflare Worker), nicht im Browser des Besuchers.
+            </p>
+            <p>
+              Optional l&auml;sst sich ein <strong>Live-Transkript</strong> einblenden, sodass Besucher
+              mitlesen k&ouml;nnen, was gesagt und geantwortet wurde.
+            </p>
+          </div>
+        </div>
+
+        <!-- 5) Wof&uuml;r? -->
+        <h3 id="use-cases">Wof&uuml;r?</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-headset"></i></div>
+            <h4>Besucher beraten</h4>
+            <p>Fragen rund ums Geschäft beantworten &ndash; rund um die Uhr.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-map-signs"></i></div>
+            <h4>Durch die Seite f&uuml;hren</h4>
+            <p>Besucher gelangen direkt zur richtigen Unterseite.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-user-plus"></i></div>
+            <h4>Erster Kontakt</h4>
+            <p>Niederschwelliger Einstieg ins Gespr&auml;ch &ndash; ideal f&uuml;r Leads.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-star"></i></div>
+            <h4>Moderner Eindruck</h4>
+            <p>Hebt Ihre Seite vom Wettbewerb ab.</p>
+          </div>
+        </div>
+
+        <!-- 6) Anpassbar -->
+        <h3 id="custom">Anpassbar</h3>
+        <ul>
+          <li>Persona, Begr&uuml;&szlig;ung und Beispiel-Fragen frei definierbar</li>
+          <li>Navigationsmodus: aktiv weiterleiten <strong>oder</strong> nur einen Link anbieten</li>
+          <li>Live-Transkript ein/aus, optional als Laufzeit-Schalter</li>
+          <li>Launcher-Stil: runder Mikrofon-Button <strong>oder</strong> Text-Pill (&bdquo;Ask AI&ldquo;)</li>
+          <li>Sprachen erweiterbar, KI-Modell austauschbar</li>
+        </ul>
+
+        <!-- 7) Datenschutz & Kontrolle -->
+        <div class="highlight-box">
+          <p><i class="fas fa-shield-halved" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>Datenschutz &amp; Kontrolle:</strong> API-Schl&uuml;ssel und Kontext liegen serverseitig,
+            nicht im Client-Code. <strong>Keine Tracking-Cookies</strong> n&ouml;tig, die Navigation ist auf
+            Ihre Seite beschr&auml;nkt (&bdquo;sandboxed&ldquo;) &ndash; mit Unterst&uuml;tzung bei der
+            DSGVO-konformen Einbindung.</p>
+        </div>
+
+        <!-- 8) Live ausprobieren -->
+        <div class="live-demo">
+          <h3>Live ausprobieren</h3>
+          <p>Reden Sie jetzt mit dem Assistenten &ndash; ganz ohne Anmeldung.</p>
+          <a href="#" class="btn btn-primary js-open-agent"><i class="fas fa-microphone"></i> Assistent &ouml;ffnen</a>
+        </div>
+
+        <!-- 9) Auf einen Blick -->
+        <h3 id="specs">Auf einen Blick</h3>
+        <div class="spec-list">
+          <div class="spec-row"><span class="spec-k">Einbindung</span><span class="spec-v">eine Skript-Einbindung pro Seite</span></div>
+          <div class="spec-row"><span class="spec-k">Sprachen</span><span class="spec-v">Deutsch, Englisch (erweiterbar)</span></div>
+          <div class="spec-row"><span class="spec-k">Modus</span><span class="spec-v">Echtzeit-Sprache, optional Transkript</span></div>
+          <div class="spec-row"><span class="spec-k">KI</span><span class="spec-v">Gemini Live (austauschbar)</span></div>
+          <div class="spec-row"><span class="spec-k">Betrieb</span><span class="spec-v">Worker/Server, Schl&uuml;ssel serverseitig</span></div>
+          <div class="spec-row"><span class="spec-k">Datenschutz</span><span class="spec-v">keine Tracking-Cookies, sandboxed Navigation</span></div>
+        </div>
+
+        <!-- 10) FAQ -->
+        <h3 id="faq">H&auml;ufige Fragen</h3>
+        <div class="faq-list">
+          <details class="samples-reveal">
+            <summary>Was kostet das? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>
+              <span class="biz-only price-line"><strong>Einrichtung ab 1.000&nbsp;&euro;</strong> &middot; zzgl. laufender Nutzungskosten
+              (KI-Modell/Worker). </span>Der Preis h&auml;ngt von Umfang und Anpassungen ab &ndash; das Erstgespr&auml;ch ist kostenfrei.
+            </p>
+          </details>
+          <details class="samples-reveal">
+            <summary>Welche Sprachen werden unterst&uuml;tzt? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Deutsch und Englisch sind direkt dabei, weitere Sprachen sind m&ouml;glich. Der Assistent
+              antwortet automatisch in der Sprache der jeweiligen Seite.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>L&auml;uft das auf meiner Website? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Ja. Der Assistent wird als kleines Skript eingebunden; Schl&uuml;ssel und Kontext laufen
+              &uuml;ber Ihren eigenen Worker oder Server.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>Brauchen Besucher ein Mikrofon? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>F&uuml;r den Sprachdialog ja. Begr&uuml;&szlig;ung und Hinweise funktionieren auch ohne &ndash;
+              und das Mikrofon wird erst nach Klick und Freigabe genutzt.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>Wie steht es um den Datenschutz? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Es sind keine Tracking-Cookies n&ouml;tig, sensible Daten liegen serverseitig und die
+              Navigation ist auf Ihre Seite beschr&auml;nkt. Ich unterst&uuml;tze bei der DSGVO-konformen Einbindung.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>Welche KI steckt dahinter? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Aktuell Gemini Live. Das Modell l&auml;sst sich austauschen, ohne die Einbindung zu &auml;ndern.</p>
+          </details>
+        </div>
+
+        <!-- 11) Abschluss-CTA -->
+        <div class="service-cta product-cta">
+          <h3>Website AI Agent f&uuml;r Ihre Seite</h3>
+          <p>Erstgespr&auml;ch kostenfrei &ndash; vor Ort in Bamberg/N&uuml;rnberg oder online.</p>
+          <div class="cta-actions">
+            <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Kontakt aufnehmen</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+          <a href="../../../llms.txt" class="footer-agent-link">F&uuml;r KI-Agenten</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-links">
+          <a href="../../../privacy.html">Datenschutz</a>
+          <a href="../../../imprint.html">Impressum</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>powered by &copy; Walter A. Jablonowski 2019-2026. Made with AI. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="../../../lib/config.js?v=26063001"></script>
+  <script src="../../../controller.js?v=26063001"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26063001"></script>
+  <script>
+    new WebsiteController();
+
+    // "Jetzt ausprobieren" buttons open the voice overlay via its public API.
+    document.querySelectorAll('.js-open-agent').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        if( window.voiceAgent && typeof window.voiceAgent.open === 'function' )
+          window.voiceAgent.open();
+      });
+    });
+  </script>
+</body>
+</html>

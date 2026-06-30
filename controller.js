@@ -47,11 +47,11 @@ class WebsiteController
     // voice-agent.js. No-op unless VOICE_AGENT_CONFIG.persistentAgent is true.
     this.initPersistentAgent();
 
-    // Gate "new feature" CTAs (e.g. the .service-cta banner) via config.
-    this.initNewFeatures();
+    // Reveal new/unfinished content (e.g. the "Systeme" nav dropdown) via config.
+    this.initNewContent();
 
-    // Gate the FAQ mini-tab on the service pages via config.
-    this.initFAQ();
+    // Hide commercial content (prices, service-page FAQ + CTA) when hideBiz is true.
+    this.initHideBiz();
 
     // Wait for DOM to be fully loaded
     document.addEventListener('DOMContentLoaded', () => {
@@ -106,30 +106,32 @@ class WebsiteController
   }
 
   /**
-   * Hide "new feature" CTAs (e.g. the .service-cta banner on the service pages)
-   * when LOADING_CONFIG.showCTA is explicitly false. Adds a body class
-   * that styles.css uses to hide the gated elements; the default (true/absent)
-   * leaves them visible, so they still show if config or JS is unavailable.
-   * To gate further CTAs, add their selector to the `body.no-new-features` rule
-   * in styles.css. Tolerant of config being absent.
+   * Reveal new or unfinished content that is hidden by default until it is ready
+   * for publishing (currently the "Systeme" nav dropdown). The gated elements
+   * carry the .new-content class and CSS hides them unless body.show-new-content
+   * is present; this method adds that class only when LOADING_CONFIG.showNewContent
+   * is explicitly true. Hidden-by-default is the safe choice: if config or JS is
+   * unavailable, the unfinished content stays out of sight. Tolerant of config
+   * being absent.
    */
-  initNewFeatures()
+  initNewContent()
   {
-    if (typeof LOADING_CONFIG !== 'undefined' && LOADING_CONFIG.showCTA === false)
-      document.body.classList.add('no-new-features');
+    if (typeof LOADING_CONFIG !== 'undefined' && LOADING_CONFIG.showNewContent === true)
+      document.body.classList.add('show-new-content');
   }
 
   /**
-   * Hide the FAQ mini-tab ("Häufige Fragen") on the service pages when
-   * LOADING_CONFIG.showFAQ is explicitly false. Adds a body class that CSS uses
-   * to hide the FAQ tab button, its separator and the FAQ panel; the overview
-   * tab stays active. The default (true/absent) leaves the FAQ visible, so it
-   * still shows if config or JS is unavailable. Tolerant of config being absent.
+   * Hide commercial content when LOADING_CONFIG.hideBiz is true: prices and any
+   * element marked .biz-only, plus the service-page FAQ mini-tab and the
+   * .service-cta banner. Adds the single body class .hide-biz; the CSS rules
+   * (components.css, page-components.css, hero.css) key off it. Visible by
+   * default (absent/false), so everything still shows if config or JS is
+   * unavailable. Tolerant of config being absent.
    */
-  initFAQ()
+  initHideBiz()
   {
-    if (typeof LOADING_CONFIG !== 'undefined' && LOADING_CONFIG.showFAQ === false)
-      document.body.classList.add('no-faq');
+    if (typeof LOADING_CONFIG !== 'undefined' && LOADING_CONFIG.hideBiz === true)
+      document.body.classList.add('hide-biz');
   }
 
   /**

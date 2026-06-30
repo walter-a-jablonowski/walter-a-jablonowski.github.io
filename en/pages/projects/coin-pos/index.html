@@ -8,7 +8,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Walter A. Jablonowski">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="Crypto Position Tracker – Real-Time Anomaly Detection">
+  <meta property="og:title" content="Crypto Position Tracker ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ Real-Time Anomaly Detection">
   <meta property="og:description" content="Real-Time Anomaly Detection for the Top 100 Crypto Coins.">
   <meta property="og:url" content="https://walter-a-jablonowski.github.io/en/pages/projects/coin-pos/">
   <meta property="og:image" content="https://walter-a-jablonowski.github.io/misc/btc.png">
@@ -46,9 +46,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../../favicon-16x16.png">
   <link rel="manifest" href="../../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../../styles.css?v=26062801">
-  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26062801">
-  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26062801">
+  <link rel="stylesheet" href="../../../../styles.css?v=26063001">
+  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26063001">
+  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26063001">
   <style>
     /* Project detail page specific styles */
     .project-detail {
@@ -155,6 +155,15 @@
               <li><a href="../../placeholder.html" class="nav-link">Apps that work</a></li>
             </ul>
           </li>
+          <li class="nav-dropdown new-content less-spacing">
+            <span class="nav-dropdown-head">
+              <span class="nav-dropdown-label">Systems</span>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Systems submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../../systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
+            </ul>
+          </li>
           <li class="less-spacing"><a href="../../../index.html#skills" class="nav-link">Skills</a></li>
           <li><a href="../../../index.html#proj" class="nav-link">Projects</a></li>
           <li><a href="../../../index.html#contact" class="nav-link">Contact</a></li>
@@ -195,10 +204,10 @@
 
         <h3>Key Features</h3>
         <ul>
-          <li><strong>Anomaly Scoring</strong>: Two complementary scorers — a regime-change detector and a Z-score mover detector — highlight coins outside their normal patterns</li>
+          <li><strong>Anomaly Scoring</strong>: Two complementary scorers ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â a regime-change detector and a Z-score mover detector ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â highlight coins outside their normal patterns</li>
           <li><strong>Automated Collection</strong>: Scheduler-driven <code>collect.php</code> pulls live data from the CoinGecko API every 15 minutes and stores atomic JSON snapshots in SQLite</li>
           <li><strong>30-Day Backfill</strong>: One-time history seeder populates the scorer database so anomalies are detectable from day one, no waiting weeks for data</li>
-          <li><strong>AI Coin Enrichment</strong>: <code>enrich_coins.php</code> fetches CoinGecko descriptions and uses an LLM to generate ≤6-word summaries and AI-relevance badges</li>
+          <li><strong>AI Coin Enrichment</strong>: <code>enrich_coins.php</code> fetches CoinGecko descriptions and uses an LLM to generate ÃƒÂ¢Ã¢â‚¬Â°Ã‚Â¤6-word summaries and AI-relevance badges</li>
           <li><strong>Clean Dashboard UI</strong>: Browser-based single-page interface renders ranked coin cards with score indicators and enrichment badges in real time via AJAX</li>
           <li><strong>Configurable Constants</strong>: All key thresholds and parameters live in <code>config.yml</code> for easy tuning without touching code</li>
         </ul>
@@ -207,19 +216,19 @@
         <ul>
           <li><strong>Backend</strong>: PHP with SQLite (<code>data/snapsh.db</code>) storing full snapshots as single JSON columns per scorer table</li>
           <li><strong>Scorer Design</strong>: <code>AnomalyScorer</code> factory routes to pluggable scorer implementations via <code>ScorerInterface</code></li>
-          <li><strong>Data Pipeline</strong>: CoinGecko API → <code>collect.php</code> → SQLite → scorers → <code>ajax/get_coins.php</code> → Browser UI</li>
+          <li><strong>Data Pipeline</strong>: CoinGecko API ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ <code>collect.php</code> ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ SQLite ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ scorers ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ <code>ajax/get_coins.php</code> ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ Browser UI</li>
           <li><strong>Frontend</strong>: Vanilla JavaScript with Fetch API, no heavy frameworks</li>
           <li><strong>Scheduling</strong>: Cron (Linux/macOS) or Windows System Scheduler running <code>collect.php</code> every 15 minutes</li>
         </ul>
 
         <h3>Tech Stack</h3>
         <p class="tech-stack">
-          PHP • SQLite • CoinGecko API • LLM (OpenRouter / Ollama) • YAML • Vanilla JavaScript
+          PHP ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ SQLite ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ CoinGecko API ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ LLM (OpenRouter / Ollama) ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ YAML ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ Vanilla JavaScript
         </p>
 
         <h3>Use Cases</h3>
         <p>
-          Quickly identify when a coin is gaining value unusually fast relative to its normal speed — useful for seeing early breakout moves across the top 100 by market cap. Filter by AI-relevance badges to focus on the subset most likely tied to AI narratives in the current market regime.
+          Quickly identify when a coin is gaining value unusually fast relative to its normal speed ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â useful for seeing early breakout moves across the top 100 by market cap. Filter by AI-relevance badges to focus on the subset most likely tied to AI narratives in the current market regime.
         </p>
       </div>
     </div>
@@ -252,9 +261,9 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../../lib/config.js?v=26062801"></script>
-  <script src="../../../../controller.js?v=26062801"></script>
-  <script src="../../../../lib/voice-agent/agent.js?v=26062801"></script>
+  <script src="../../../../lib/config.js?v=26063001"></script>
+  <script src="../../../../controller.js?v=26063001"></script>
+  <script src="../../../../lib/voice-agent/agent.js?v=26063001"></script>
   <script>
     new WebsiteController();
   </script>

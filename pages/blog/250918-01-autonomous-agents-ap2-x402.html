@@ -16,10 +16,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
   <link rel="manifest" href="../../site.webmanifest">
-  <link rel="stylesheet" href="../../styles.css?v=26062801">
-  <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css?v=26062801">
-  <link rel="stylesheet" href="../../lib/fonts/fonts.css?v=26062801">
-  <script src="../../cookie-fix.js?v=26062801"></script>
+  <link rel="stylesheet" href="../../styles.css?v=26063001">
+  <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css?v=26063001">
+  <link rel="stylesheet" href="../../lib/fonts/fonts.css?v=26063001">
+  <script src="../../cookie-fix.js?v=26063001"></script>
 </head>
 <body>
   <header>
@@ -49,6 +49,15 @@
               <li><a href="../../en/pages/placeholder.html" class="nav-link">Apps that work</a></li>
             </ul>
           </li>
+          <li class="nav-dropdown new-content less-spacing">
+            <span class="nav-dropdown-head">
+              <span class="nav-dropdown-label">Systems</span>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Systems submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../../en/pages/systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
+            </ul>
+          </li>
           <li class="less-spacing"><a href="../../index.html#skills" class="nav-link">Skills</a></li>
           <li><a href="../../index.html#proj" class="nav-link">Projects</a></li>
           <li><a href="../../index.html#contact" class="nav-link">Contact</a></li>
@@ -75,19 +84,19 @@
     <section class="article-content">
       <div class="container">
         <div class="article-text">
-          <p>Autonomous agents are quickly getting a practical stack: build agents with Google’s Agent Development Kit (ADK), publish and discover them via Coinbase’s x402 Bazaar, and enable compliant money flows using Agent Payments Pro (AP2). Below is a concise map of what each part does and how they fit together.</p>
+          <p>Autonomous agents are quickly getting a practical stack: build agents with GoogleÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢s Agent Development Kit (ADK), publish and discover them via CoinbaseÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢s x402 Bazaar, and enable compliant money flows using Agent Payments Pro (AP2). Below is a concise map of what each part does and how they fit together.</p>
 
-          <h2>TL;DR — Key points</h2>
+          <h2>TL;DR ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Key points</h2>
           <ul>
             <li><strong>Build:</strong> Google <em>Agent Development Kit</em> offers a quickstart to scaffold tools, memory, and execution for agents on Vertex AI.</li>
             <li><strong>Discover:</strong> Coinbase <em>x402 Bazaar</em> is an agent/app directory and distribution surface with developer docs and launch guide.</li>
             <li><strong>Transact:</strong> <em>AP2</em> (Agent Payments Pro) provides primitives for programmatic payments, wallets, and compliance rails.</li>
-            <li><strong>A2A:</strong> Emerging agent‑to‑agent patterns enable agents to call misc agents and exchange value or capabilities.</li>
+            <li><strong>A2A:</strong> Emerging agentÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ËœtoÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Ëœagent patterns enable agents to call misc agents and exchange value or capabilities.</li>
           </ul>
 
           <h2>Components at a glance</h2>
           <h3>Google Agent Development Kit (ADK)</h3>
-          <p>Google’s ADK (Vertex AI) provides scaffolding and runtime support to build agents that call tools, keep state, and orchestrate tasks. The <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/agent-development-kit/quickstart?hl=de" target="_blank" rel="noopener">Quickstart</a> shows how to:</p>
+          <p>GoogleÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢s ADK (Vertex AI) provides scaffolding and runtime support to build agents that call tools, keep state, and orchestrate tasks. The <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/agent-development-kit/quickstart?hl=de" target="_blank" rel="noopener">Quickstart</a> shows how to:</p>
           <ul>
             <li>Define tools/functions an agent can invoke</li>
             <li>Configure memory and planning/execution</li>
@@ -97,15 +106,15 @@
           <h3>Coinbase x402 and the Bazaar</h3>
           <p>x402 focuses on agent discovery, distribution, and mini-apps. The <a href="https://www.coinbase.com/de/developer-platform/discover/launches/x402-bazaar" target="_blank" rel="noopener">Bazaar launch</a> and the <a href="https://docs.cdp.coinbase.com/x402/bazaar" target="_blank" rel="noopener">developer docs</a> outline:</p>
           <ul>
-            <li>How to publish agents or mini‑apps to a marketplace-like directory</li>
+            <li>How to publish agents or miniÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Ëœapps to a marketplace-like directory</li>
             <li>Discovery metadata and versioning</li>
             <li>Distribution surfaces and user onboarding</li>
           </ul>
 
           <h3>Agent Payments Pro (AP2)</h3>
-          <p>AP2 adds payment primitives for agents: account creation, pay‑ins/pay‑outs, balances, and compliance tooling. Combined with x402, it enables agents to charge for work or pay misc agents.</p>
+          <p>AP2 adds payment primitives for agents: account creation, payÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Ëœins/payÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Ëœouts, balances, and compliance tooling. Combined with x402, it enables agents to charge for work or pay misc agents.</p>
 
-          <h3>A2A (Agent‑to‑Agent)</h3>
+          <h3>A2A (AgentÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ËœtoÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ËœAgent)</h3>
           <p>A2A patterns allow agents to invoke capabilities (e.g., retrieval, booking, payments). With AP2+x402, A2A can include metered usage and settlement.</p>
 
           <h2>How they fit together</h2>
@@ -127,15 +136,15 @@
           <h2>Risks and open questions</h2>
           <ul>
             <li>Compliance and KYC/AML responsibilities when agents move money</li>
-            <li>Trust, safety, and rate‑limiting for A2A invocation chains</li>
-            <li>Vendor lock‑in across cloud runtime vs. distribution/payment rails</li>
+            <li>Trust, safety, and rateÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Ëœlimiting for A2A invocation chains</li>
+            <li>Vendor lockÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Ëœin across cloud runtime vs. distribution/payment rails</li>
           </ul>
 
           <h2>Sources</h2>
           <ul>
-            <li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/agent-development-kit/quickstart?hl=de" target="_blank" rel="noopener">Google Agent Development Kit — Quickstart</a></li>
-            <li><a href="https://www.coinbase.com/de/developer-platform/discover/launches/x402-bazaar" target="_blank" rel="noopener">Coinbase — x402 Bazaar launch</a></li>
-            <li><a href="https://docs.cdp.coinbase.com/x402/bazaar" target="_blank" rel="noopener">Coinbase — x402 Bazaar docs</a></li>
+            <li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/agent-development-kit/quickstart?hl=de" target="_blank" rel="noopener">Google Agent Development Kit ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Quickstart</a></li>
+            <li><a href="https://www.coinbase.com/de/developer-platform/discover/launches/x402-bazaar" target="_blank" rel="noopener">Coinbase ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â x402 Bazaar launch</a></li>
+            <li><a href="https://docs.cdp.coinbase.com/x402/bazaar" target="_blank" rel="noopener">Coinbase ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â x402 Bazaar docs</a></li>
           </ul>
         </div>
       </div>
@@ -175,11 +184,11 @@
       emailjs.init({ publicKey: "xvNrfCyYGqQD5cuoU" });
     })();
   </script>
-  <script src="../../lib/config.js?v=26062801"></script>
-  <script src="../../controller.js?v=26062801"></script>
-  <script src="../../lib/voice-agent/agent.js?v=26062801"></script>
-  <script src="../../lib/map.js?v=26062801"></script>
-  <script src="../../lib/popover.js?v=26062801"></script>
+  <script src="../../lib/config.js?v=26063001"></script>
+  <script src="../../controller.js?v=26063001"></script>
+  <script src="../../lib/voice-agent/agent.js?v=26063001"></script>
+  <script src="../../lib/map.js?v=26063001"></script>
+  <script src="../../lib/popover.js?v=26063001"></script>
   <script>
     new WebsiteController();
     if( typeof MapController !== 'undefined' ) { new MapController(); }

@@ -124,12 +124,27 @@ nav {
 }
 .nav-dropdown-toggle:hover { color: var(--primary); }
 
+/* Dropdown label without its own link (e.g. "Systeme"): looks like the other
+   nav items but is non-interactive — the caret (mobile) or hover (desktop)
+   opens the submenu. */
+.nav-dropdown-label {
+  color: var(--white);
+  font-weight: 500;
+  padding: 0.5rem 0;
+  cursor: default;
+}
+
 .nav-dropdown-menu {
   display: none;
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
+/* New/unfinished content (e.g. the "Systeme" nav dropdown) stays hidden until
+   the controller adds body.show-new-content per LOADING_CONFIG.showNewContent.
+   Hidden by default so it never leaks if config or JS is unavailable. */
+body:not(.show-new-content) .new-content { display: none !important; }
 
 /* Desktop: hover-opened flyout */
 @media (min-width: 769px) {
@@ -148,6 +163,7 @@ nav {
   .nav-dropdown:hover > .nav-dropdown-menu { display: block; }
   /* Caret turns the same orange as the text on hover; no rotation */
   .nav-dropdown:hover .nav-dropdown-toggle { color: var(--primary); }
+  .nav-dropdown:hover .nav-dropdown-label { color: var(--primary); }
 
   .nav-dropdown-menu li { margin: 0 !important; }
   .nav-dropdown-menu a {
