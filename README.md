@@ -1,7 +1,5 @@
 # Home of Walter A. Jablonowski
 
-Trigger deploy
-
 
 ## License
 
