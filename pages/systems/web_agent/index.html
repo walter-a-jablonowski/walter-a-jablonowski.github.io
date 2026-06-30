@@ -51,9 +51,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
   <link rel="manifest" href="../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../styles.css?v=26063001">
-  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26063001">
-  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26063001">
+  <link rel="stylesheet" href="../../../styles.css?v=26063002">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26063002">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26063002">
   <style>
     /* Product page styles. Reusable parts (.product-hero, .spec-list, .service-cta
        exemption) live in page-components.css; the blocks below are local to this page. */
@@ -95,6 +95,10 @@
     /* ---- Price line (gated by .biz-only / hideBiz) --------------------- */
     .price-line { color: var(--lighter-gray); }
     .price-line strong { color: var(--primary); }
+
+    /* On this page the closing CTA is commercial: hide it under hideBiz
+       (overrides the shared .product-cta exemption via later source order). */
+    body.hide-biz .service-cta.product-cta { display: none; }
   </style>
 </head>
 <body>
@@ -305,9 +309,9 @@
           <div class="spec-row"><span class="spec-k">Datenschutz</span><span class="spec-v">keine Tracking-Cookies, sandboxed Navigation</span></div>
         </div>
 
-        <!-- 10) FAQ -->
-        <h3 id="faq">H&auml;ufige Fragen</h3>
-        <div class="faq-list">
+        <!-- 10) FAQ (commercial: hidden under hideBiz via .biz-only) -->
+        <h3 id="faq" class="biz-only">H&auml;ufige Fragen</h3>
+        <div class="faq-list biz-only">
           <details class="samples-reveal">
             <summary>Was kostet das? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
             <p>
@@ -381,9 +385,9 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../lib/config.js?v=26063001"></script>
-  <script src="../../../controller.js?v=26063001"></script>
-  <script src="../../../lib/voice-agent/agent.js?v=26063001"></script>
+  <script src="../../../lib/config.js?v=26063002"></script>
+  <script src="../../../controller.js?v=26063002"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26063002"></script>
   <script>
     new WebsiteController();
 
