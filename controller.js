@@ -999,21 +999,29 @@ class WebsiteController
   /**
    * Position the scroll indicator above the system navigation bar.
    *
-   * We can't trust env(safe-area-inset-bottom): it is 0 on Android devices with
-   * the classic 3-button navigation bar (the browser doesn't paint behind it),
-   * so the CSS-only fix failed there. Instead we measure the real gap between the
-   * layout viewport and the visible viewport via the visualViewport API, which is
-   * consistent across devices and nav modes, and expose it as --indicator-bottom.
+   * The hero uses min-height:100vh, and on Android Chrome CSS 100vh is the
+   * *largest* viewport (URL bar hidden). While the URL bar is shown the hero is
+   * therefore taller than the visible area, pushing the bottom-anchored indicator
+   * below the fold where the buttons bar clips it. env(safe-area-inset-bottom) is
+   * also 0 on 3-button-nav devices, so it can't help.
+   *
+   * We measure the hero's real rendered height against the actual visible
+   * viewport (visualViewport API) and expose the overshoot as --indicator-bottom.
+   * This is a direct pixel measurement, so it is correct on any device / nav mode.
    */
   setIndicatorBottom()
   {
     const vv = window.visualViewport;
     if( ! vv ) return;   // CSS fallback (env + fixed offset) stays in effect
 
-    // Space below the visible viewport that is hidden by system UI / URL bar
-    const hiddenBottom = Math.max(0, window.innerHeight - (vv.height + vv.offsetTop));
+    if( ! this.heroEl )
+      this.heroEl = document.querySelector('.hero');
+    if( ! this.heroEl ) return;
 
-    document.documentElement.style.setProperty('--indicator-bottom', `${hiddenBottom}px`);
+    // How far the hero's bottom extends past the visible viewport bottom
+    const overshoot = Math.max(0, this.heroEl.offsetHeight - (vv.height + vv.offsetTop));
+
+    document.documentElement.style.setProperty('--indicator-bottom', `${overshoot}px`);
   }
 
   /**
