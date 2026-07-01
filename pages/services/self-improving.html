@@ -51,9 +51,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
   <link rel="manifest" href="../../site.webmanifest">
-  <link rel="stylesheet" href="../../styles.css?v=26063003">
-  <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css?v=26063003">
-  <link rel="stylesheet" href="../../lib/fonts/fonts.css?v=26063003">
+  <link rel="stylesheet" href="../../styles.css?v=26070101">
+  <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css?v=26070101">
+  <link rel="stylesheet" href="../../lib/fonts/fonts.css?v=26070101">
+  <link rel="stylesheet" href="../../lib/img_overlay/img_overlay.css?v=26070101">
   <style>
     /* Service page styles (built on the shared design tokens, aligned with offer.html) */
     .project-detail {
@@ -83,6 +84,30 @@
     .content a.btn-primary, .content a.btn-secondary { color: var(--white); }
     .content a.btn-outline { color: var(--primary); }
     .content a.btn-outline:hover { color: var(--white); }
+
+    /* Pin the hero to the top so the eyebrow/headline don't shift when the reveal opens */
+    .product-hero { align-items: start; margin-top: var(--spacing-lg); }
+
+    /* Keep the orange highlight (shared CSS scopes .price-hl to .offer-lead only) */
+    .ph-lead .price-hl { color: var(--primary); font-weight: 700; }
+
+    /* Tighter gap below the lead on this page (component default is larger) */
+    .ph-lead { margin-bottom: 1.2rem; }
+
+    .ph-visual { flex-direction: column; align-items: center; }
+    .ph-visual figure { margin: 0; width: 100%; max-width: 560px; }
+    .ph-visual svg { width: 100%; height: auto; display: block; border-radius: var(--border-radius-lg);
+      box-shadow: 0 24px 60px rgba(0,0,0,.55); border: 1px solid rgba(255,255,255,.08); }
+    .ph-visual figcaption { display: flex; align-items: flex-start; justify-content: center; gap: .45rem;
+      text-align: left; color: var(--light-gray); font-size: .9rem; margin: .75rem 0 0; line-height: 1.5; }
+    .ph-visual figcaption i { color: var(--primary); flex-shrink: 0; margin-top: .15rem; font-size: .85rem; }
+    .ph-visual .loop-zoom-hint { cursor: pointer; }
+
+    .ph-text h1 .h1-short { display: none; }
+    @media (max-width: 768px) {
+      .ph-text h1 .h1-full { display: none; }
+      .ph-text h1 .h1-short { display: inline; }
+    }
 
   </style>
 </head>
@@ -141,19 +166,23 @@
 
   <section class="project-detail">
     <div class="container">
-      <div class="section-header">
-        <h2 style="color: var(--white);">Selbstverbessernde KI-Systeme</h2>
-      </div>
-
-      <p class="offer-lead">
-        Mehr als Automatisierung: das Unternehmen als <span class="price-hl">sich selbst verbessernder Kreislauf</span>.
-        Jede Aktion wird zum Artefakt, aus dem die KI lernt &ndash; und mit jedem Durchlauf besser wird.
-      </p>
-
-      <div class="content">
-
-        <figure class="loop-figure">
-          <svg viewBox="0 0 600 488" role="img" aria-labelledby="loopTitle loopDesc" xmlns="http://www.w3.org/2000/svg">
+      <!-- 1) Product hero -->
+      <div class="product-hero">
+        <div class="ph-text">
+          <p class="ph-eyebrow">Leistungen</p>
+          <h1><span class="h1-full">Selbstverbessernde KI-Systeme</span><span class="h1-short">Selbstverbessernde KI</span></h1>
+          <p class="ph-tagline">Mehr als Automatisierung &ndash; das Unternehmen als <strong>sich selbst verbessernder Kreislauf</strong>.</p>
+          <p class="ph-lead">
+            Jede Aktion wird zum Artefakt, <span class="price-hl">aus dem die KI lernt</span> &ndash; und mit jedem Durchlauf
+            wird die KI besser.
+          </p>
+          <div class="ph-actions">
+            <a href="../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Kontakt</a>
+          </div>
+        </div>
+        <div class="ph-visual">
+          <figure>
+            <svg viewBox="0 0 600 488" role="img" aria-labelledby="loopTitle loopDesc" xmlns="http://www.w3.org/2000/svg">
             <title id="loopTitle">Der selbstverbessernde Kreislauf</title>
             <desc id="loopDesc">Sechs Schritte im Kreislauf: Erfassen, Aufnehmen, Analysieren, Vorschlagen, Freigabe und Verbessern. Alle Schritte schreiben in einen Append-only Artefakt-Speicher; Verbessern speist den n&auml;chsten Lauf.</desc>
 
@@ -277,9 +306,13 @@
 
             <!-- ===== FOOTER ===== -->
             <text x="300" y="466" text-anchor="middle" font-size="12.5" fill="#9a9088"><tspan fill="#f4efe7" font-weight="800">Menschen am Rand</tspan> &#8212; leiten &amp; freigeben, kein Routen jeder Nachricht</text>
-          </svg>
-          <figcaption>Der Kreislauf: jeder Schritt schreibt in den Artefakt-Speicher &ndash; &bdquo;Verbessern&ldquo; speist den n&auml;chsten Lauf.</figcaption>
-        </figure>
+            </svg>
+            <figcaption class="loop-zoom-hint" title="Vergr&ouml;&szlig;ern"><i class="fas fa-magnifying-glass-plus" aria-hidden="true"></i> Der Kreislauf: jeder Schritt schreibt in den Artefakt-Speicher &ndash; &bdquo;Verbessern&ldquo; speist den n&auml;chsten Lauf.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="content">
 
         <h3 id="use-cases">Wof&uuml;r Sie es einsetzen k&ouml;nnen</h3>
         <p>
@@ -388,11 +421,13 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../lib/config.js?v=26063003"></script>
-  <script src="../../controller.js?v=26063003"></script>
-  <script src="../../lib/voice-agent/agent.js?v=26063003"></script>
+  <script src="../../lib/config.js?v=26070101"></script>
+  <script src="../../controller.js?v=26070101"></script>
+  <script src="../../lib/voice-agent/agent.js?v=26070101"></script>
+  <script src="../../lib/img_overlay/img_overlay.js?v=26070101"></script>
   <script>
     new WebsiteController();
+    ImageOverlay.init('.ph-visual svg');
   </script>
 </body>
 </html>

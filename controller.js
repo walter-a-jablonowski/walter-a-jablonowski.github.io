@@ -934,9 +934,20 @@ class WebsiteController
     // Set the --vh value initially
     this.setVhProperty();
 
+    // Position the scroll indicator above the system nav bar (measured, not inferred)
+    this.setIndicatorBottom();
+
+    // Track the visible viewport live so the indicator follows the URL bar and
+    // stays clear of the Android buttons bar as it shows/hides on scroll.
+    if( window.visualViewport ) {
+      window.visualViewport.addEventListener('resize', () => this.setIndicatorBottom());
+      window.visualViewport.addEventListener('scroll', () => this.setIndicatorBottom());
+    }
+
     // Update the --vh value on resize and orientation change
     window.addEventListener('resize', () => {
       this.setVhProperty();
+      this.setIndicatorBottom();
 
       // Update menu height if it's open
       if( this.navMenu.classList.contains('active') ) {
@@ -954,6 +965,7 @@ class WebsiteController
         if( this.navMenu.classList.contains('active') ) {
           this.navMenu.style.height = `${window.innerHeight}px`;
         }
+        this.setIndicatorBottom();
         this.checkHeaderBackground();
       }, 100);
     });
@@ -982,6 +994,26 @@ class WebsiteController
     const vh = window.innerHeight * 0.01;
     // Then we set the value in the --vh custom property to the root of the document
     document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
+  /**
+   * Position the scroll indicator above the system navigation bar.
+   *
+   * We can't trust env(safe-area-inset-bottom): it is 0 on Android devices with
+   * the classic 3-button navigation bar (the browser doesn't paint behind it),
+   * so the CSS-only fix failed there. Instead we measure the real gap between the
+   * layout viewport and the visible viewport via the visualViewport API, which is
+   * consistent across devices and nav modes, and expose it as --indicator-bottom.
+   */
+  setIndicatorBottom()
+  {
+    const vv = window.visualViewport;
+    if( ! vv ) return;   // CSS fallback (env + fixed offset) stays in effect
+
+    // Space below the visible viewport that is hidden by system UI / URL bar
+    const hiddenBottom = Math.max(0, window.innerHeight - (vv.height + vv.offsetTop));
+
+    document.documentElement.style.setProperty('--indicator-bottom', `${hiddenBottom}px`);
   }
 
   /**

@@ -240,9 +240,12 @@ body.hide-biz .service-cta { display: none; }
 
 .scroll-indicator {
   position: absolute;
-  /* Lift above the device's system nav bar / home indicator when the browser
-     draws content edge-to-edge (env() is 0 on devices without one). */
-  bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
+  /* Lift above the device's system nav bar / home indicator.
+     --indicator-bottom is measured live from the visualViewport API (see
+     controller.js) and covers the Android buttons bar, where env() reports 0.
+     env() is kept as an extra cushion for the gesture pill / iPhone home
+     indicator; both default to 0 so the base 2rem offset always applies. */
+  bottom: calc(2rem + var(--indicator-bottom, 0px) + env(safe-area-inset-bottom, 0px));
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
