@@ -141,13 +141,20 @@ nav {
   padding: 0;
 }
 
+/* Items inside a flyout are not highlighted just for being the current page;
+   only hover marks them (unifies with the Services dropdown, which never marks
+   an item active). Desktop hover restores the accent via the rule further down. */
+.nav-dropdown-menu a.active { color: var(--white); }
+.nav-dropdown-menu a.active::after { width: 0; }
+
 /* New/unfinished content (e.g. the "Systeme" nav dropdown) stays hidden until
    the controller adds body.show-new-content per LOADING_CONFIG.showNewContent.
    Hidden by default so it never leaks if config or JS is unavailable. */
 body:not(.show-new-content) .new-content { display: none !important; }
 
-/* Desktop: hover-opened flyout */
-@media (min-width: 769px) {
+/* Desktop: hover-opened flyout. Requires enough height too, so phones in
+   landscape (wide but short) fall through to the mobile accordion instead. */
+@media (min-width: 769px) and (min-height: 501px) {
   .nav-dropdown-menu {
     position: absolute;
     top: 100%;
@@ -178,8 +185,9 @@ body:not(.show-new-content) .new-content { display: none !important; }
   }
 }
 
-/* Mobile: inline accordion toggled by the caret */
-@media (max-width: 768px) {
+/* Mobile: inline accordion toggled by the caret. Also applies to landscape
+   phones (short viewport), which use the mobile nav panel. */
+@media (max-width: 768px), (orientation: landscape) and (max-height: 500px) {
   .nav-dropdown {
     display: flex;
     flex-direction: column;

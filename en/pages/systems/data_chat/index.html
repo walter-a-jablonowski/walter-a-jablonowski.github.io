@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Chat with Data: ask your company data questions in plain language &ndash; answers as tables, summaries and charts. Tailor-made AI data solutions, on your server or fully local. Bamberg, Nuremberg and online.">
+  <meta name="keywords" content="chat with data, AI database query, text to SQL, AI data solutions, automate reporting, natural language SQL, AI for SMEs, Bamberg, Nuremberg">
+  <meta name="author" content="Walter A. Jablonowski">
+  <title>Chat with Data &ndash; Talk to your data | Walter A. Jablonowski</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Walter A. Jablonowski">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Chat with Data &ndash; Talk to your data">
+  <meta property="og:description" content="Ask your data questions in plain language &ndash; answers as tables, summaries and charts.">
+  <meta property="og:url" content="https://walter-a-jablonowski.github.io/en/pages/systems/data_chat/">
+  <meta property="og:image" content="https://walter-a-jablonowski.github.io/pages/projects/db-assistant/img.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://walter-a-jablonowski.github.io/en/" },
+          { "@type": "ListItem", "position": 2, "name": "Systems", "item": "https://walter-a-jablonowski.github.io/en/" },
+          { "@type": "ListItem", "position": 3, "name": "Chat with Data", "item": "https://walter-a-jablonowski.github.io/en/pages/systems/data_chat/" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Chat with Data",
+        "serviceType": "AI-powered data querying in natural language",
+        "description": "Ask your own company data questions in natural language &ndash; the AI builds the query and presents answers as tables, summaries and charts.",
+        "inLanguage": "en",
+        "url": "https://walter-a-jablonowski.github.io/en/pages/systems/data_chat/",
+        "provider": { "@type": "Person", "name": "Walter A. Jablonowski", "url": "https://walter-a-jablonowski.github.io/" },
+        "areaServed": [
+          { "@type": "City", "name": "Bamberg" },
+          { "@type": "City", "name": "Nuremberg" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="canonical" href="https://walter-a-jablonowski.github.io/en/pages/systems/data_chat/">
+  <link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/data_chat/">
+  <link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/data_chat/">
+  <link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/data_chat/">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../../favicon-16x16.png">
+  <link rel="manifest" href="../../../../site.webmanifest">
+  <link rel="stylesheet" href="../../../../styles.css?v=26070201">
+  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26070201">
+  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26070201">
+  <style>
+    /* Product page styles. Reusable parts (.product-hero, .spec-list, .service-cta
+       exemption) live in page-components.css; the blocks below are local to this page. */
+    .project-detail {
+      padding: var(--spacing-xxl) 0;
+      background-color: var(--dark);
+      color: var(--white);
+      position: relative;
+    }
+    .project-detail::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(14,14,14,0.95) 0%, rgba(26,26,26,0.85) 100%);
+      z-index: 1;
+    }
+    .project-detail .container { position: relative; z-index: 2; }
+
+    .content { color: var(--lighter-gray); line-height: 1.75; }
+    .content h3 { color: var(--white); margin-top: var(--spacing-xl); }
+    /* Keep the shared reset: the heading in the two-column steps block must top-align
+       with the text column (our .content h3 margin would otherwise push it down). */
+    .content .steps-cols h3 { margin-top: 0; }
+    .content p { margin: 0 0 var(--spacing-md); }
+    .content ul { padding-left: 1.25rem; margin: 0 0 var(--spacing-md); }
+    .content li { margin: .45rem 0; }
+    .content a { color: var(--primary); }
+    .content strong { color: var(--white); }
+    .content a.btn-primary, .content a.btn-secondary { color: var(--white); }
+
+    /* ---- Demo callout --------------------------------------------------- */
+    .live-demo { margin: var(--spacing-xl) 0; padding: var(--spacing-lg) var(--spacing-xl);
+      border-radius: var(--border-radius-lg); text-align: center;
+      background: linear-gradient(135deg, rgba(255,107,0,.14), rgba(255,62,0,.06));
+      border: 1px solid rgba(255,107,0,.30); }
+    .live-demo h3 { margin-top: 0 !important; }
+    .live-demo p { color: var(--lighter-gray); margin: 0 0 1.1rem; }
+
+    /* ---- Price line (gated by .biz-only / hideBiz) --------------------- */
+    .price-line { color: var(--lighter-gray); }
+    .price-line strong { color: var(--primary); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="../../../index.html#hero" class="nav-link">Home</a></li>
+          <li><a href="../../../index.html#about" class="nav-link">Ask AI</a></li>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-head">
+              <a href="../../../index.html#services" class="nav-link">Services</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Services submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../../../pages/services/automation.html" class="nav-link">Automation</a></li>
+              <li><a href="../../../pages/services/self-improving.html" class="nav-link">Self-improving AI</a></li>
+              <li><a href="../../../pages/services/data-solutions.html" class="nav-link">AI Data Solutions</a></li>
+              <li><a href="../../../pages/services/consulting.html" class="nav-link">AI Consulting</a></li>
+              <li><a href="../../../pages/services/security.html" class="nav-link">AI Security &amp; Evaluation</a></li>
+              <li><a href="../../../pages/placeholder.html" class="nav-link">AI Visualization</a></li>
+              <li><a href="../../../pages/placeholder.html" class="nav-link">Apps that work</a></li>
+            </ul>
+          </li>
+          <li class="nav-dropdown new-content less-spacing">
+            <span class="nav-dropdown-head">
+              <span class="nav-dropdown-label">Systems</span>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Systems submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../web_agent/index.html" class="nav-link">Website AI Agent</a></li>
+              <li><a href="index.html" class="nav-link active">Chat with Data</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../../index.html#skills" class="nav-link">Skills</a></li>
+          <li><a href="../../../index.html#proj" class="nav-link">Projects</a></li>
+          <li><a href="../../../index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
+              title="Visit my LinkedIn profile"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link" title="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
+          <li class="lang-switch">
+            <a href="../../../../pages/systems/data_chat/index.html" class="nav-link" hreflang="de" title="Deutsch">DE</a>
+            <span class="lang-sep">|</span>
+            <a href="index.html" class="nav-link active" hreflang="en" title="English">EN</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="project-detail">
+    <div class="container">
+
+      <!-- 1) Product hero -->
+      <div class="product-hero">
+        <div class="ph-text">
+          <p class="ph-eyebrow">Systems</p>
+          <h1>Chat with Data</h1>
+          <p class="ph-tagline">Talk to your <strong>data</strong> &ndash; in plain everyday language.</p>
+          <p class="ph-lead">
+            Ask questions like you would a colleague, instead of writing queries. The AI
+            understands your question, fetches the answer from your database and shows it as a
+            table, summary or chart &ndash; in seconds.
+          </p>
+          <div class="ph-actions">
+            <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Request a demo</a>
+            <a href="../../projects/db-assistant/index.html" class="btn btn-secondary"><i class="fas fa-code"></i> Technical details</a>
+          </div>
+          <p class="ph-live"><i class="fas fa-circle"></i> Tailored to your data sources &ndash; fully local on request.</p>
+        </div>
+        <div class="ph-visual">
+          <img src="../../../../pages/projects/db-assistant/img.png" alt="Chat with Data: chat interface with an answer shown as a table and chart" loading="lazy">
+        </div>
+      </div>
+
+      <div class="content">
+
+        <!-- 2) What is it? -->
+        <h3 id="what">What is it?</h3>
+        <p>
+          <strong>Chat with Data</strong> is a chat interface for your company data. You type a question in
+          everyday language, the AI translates it into a safe database query behind the scenes,
+          runs it and explains the result &ndash; including a fitting chart. No SQL, no report tools,
+          no waiting on IT.
+        </p>
+        <ul>
+          <li>Questions in natural language instead of complex queries</li>
+          <li>Answers as a table, a plain-text summary <strong>and</strong> a chart</li>
+          <li>Knows your data model &ndash; tailored to your database</li>
+          <li>Runs on your server or fully local &ndash; your data stays with you</li>
+        </ul>
+
+        <!-- 3) Features -->
+        <h3 id="features">Features</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-comments"></i></div>
+            <h4>Questions, not queries</h4>
+            <p>&bdquo;Top 5 customers last quarter?&ldquo; &ndash; the AI builds the query itself.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-chart-column"></i></div>
+            <h4>Answers with charts</h4>
+            <p>Results as a table, a summary and a chart (bar, line, pie &hellip;).</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-database"></i></div>
+            <h4>Knows your data</h4>
+            <p>Tuned to your schema &ndash; reads it itself and validates every query.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-clock-rotate-left"></i></div>
+            <h4>History &amp; follow-ups</h4>
+            <p>Conversations are kept; you can dig deeper and refine.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-shield-halved"></i></div>
+            <h4>Read-only &amp; validated</h4>
+            <p>Schema validation and read-only queries &ndash; no risk to your data.</p>
+          </div>
+        </div>
+
+        <!-- 4) How it works -->
+        <div class="steps-cols">
+          <div>
+            <h3 id="how">How it works</h3>
+            <ol class="offer-steps">
+              <li>You ask your question in natural language</li>
+              <li>The AI reads the schema and builds a <strong>validated</strong> query</li>
+              <li>The result appears as a table, text and chart</li>
+              <li class="no-num"><strong>How:</strong> Chat &rarr; AI agent (tool-calling) &rarr; validation &rarr; your database</li>
+            </ol>
+          </div>
+          <div class="steps-text">
+            <p>
+              The AI agent retrieves the <strong>database schema</strong> on its own, picks the right
+              tables and validates every query before it runs. That keeps results reliable and the
+              database protected.
+            </p>
+            <p>
+              The language model is <strong>interchangeable</strong>: cloud (Google&nbsp;Gemini, OpenRouter) or
+              local (Ollama) &ndash; depending on how sensitive your data is.
+            </p>
+          </div>
+        </div>
+
+        <!-- 5) What for? -->
+        <h3 id="use-cases">What for?</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-chart-line"></i></div>
+            <h4>Metrics on demand</h4>
+            <p>Revenue, trends, top values &ndash; without waiting on a reporting team.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-users"></i></div>
+            <h4>Data for everyone</h4>
+            <p>Colleagues without SQL get their own answers too.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-file-lines"></i></div>
+            <h4>Ease reporting</h4>
+            <p>Recurring analyses run as a dialogue instead of via tickets.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+            <h4>New insights</h4>
+            <p>Explore with follow-up questions and discover connections.</p>
+          </div>
+        </div>
+
+        <!-- 6) Tailor-made -->
+        <h3 id="custom">Tailor-made for you</h3>
+        <p>
+          Chat with Data is not a rigid off-the-shelf product but the blueprint for an
+          <strong>individual AI data solution</strong>. I adapt it to your data sources, your vocabulary
+          and your workflows:
+        </p>
+        <ul>
+          <li>Connect your databases (MySQL, SQL&nbsp;Server, SQLite &hellip;) &ndash; individually or combined</li>
+          <li>Additional sources like files, PDFs or emails can be integrated on request</li>
+          <li>Your organization&rsquo;s terminology and typical questions taught in</li>
+          <li>Chart and report templates to your specifications</li>
+          <li>AI model of your choice: cloud for speed or local for maximum confidentiality</li>
+        </ul>
+
+        <!-- 7) Privacy & control -->
+        <div class="highlight-box">
+          <p><i class="fas fa-lock" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>Privacy &amp; control:</strong> Runs on your own server or fully local &ndash; your data
+            never leaves your premises. Read-only queries and server-side schema validation against
+            injection &ndash; with support for a GDPR-compliant implementation.</p>
+        </div>
+
+        <!-- 8) See it in action -->
+        <div class="live-demo">
+          <h3>See it in action</h3>
+          <p>I&rsquo;m happy to show you Chat with Data live on an example &ndash; or straight away with your own data.</p>
+          <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Request a demo</a>
+        </div>
+
+        <!-- 9) At a glance -->
+        <h3 id="specs">At a glance</h3>
+        <div class="spec-list">
+          <div class="spec-row"><span class="spec-k">Input</span><span class="spec-v">questions in natural language (DE/EN)</span></div>
+          <div class="spec-row"><span class="spec-k">Output</span><span class="spec-v">table, summary, charts</span></div>
+          <div class="spec-row"><span class="spec-k">Data sources</span><span class="spec-v">MySQL, SQL&nbsp;Server, SQLite &hellip; (extensible)</span></div>
+          <div class="spec-row"><span class="spec-k">AI</span><span class="spec-v">Gemini, OpenRouter or local (Ollama)</span></div>
+          <div class="spec-row"><span class="spec-k">Operation</span><span class="spec-v">your server or fully local</span></div>
+          <div class="spec-row"><span class="spec-k">Security</span><span class="spec-v">read-only, schema-validated queries</span></div>
+        </div>
+
+        <!-- 10) FAQ -->
+        <h3 id="faq">Frequently asked questions</h3>
+        <div class="faq-list">
+          <details class="samples-reveal">
+            <summary>What does it cost? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>
+              <span class="biz-only price-line"><strong>Small projects at a fixed price</strong>, larger ones by effort. </span>The
+              price depends on data sources and customization &ndash; the initial consultation is free.
+            </p>
+          </details>
+          <details class="samples-reveal">
+            <summary>Does it work with my database? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Usually yes. MySQL, SQL&nbsp;Server and SQLite are included out of the box, and further
+              sources &ndash; including files, PDFs or emails &ndash; can be connected.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>Where does my data run? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>On your own server or fully local. With a local model (Ollama), neither data nor
+              questions leave your premises. I support a GDPR-compliant implementation.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>Can the AI change my data? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>No. Only read-only queries are allowed, and every query is validated against the
+              schema beforehand &ndash; write access is technically ruled out.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>Which AI is behind it? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Google&nbsp;Gemini, OpenRouter or a local model (Ollama), as you prefer. The model can be
+              swapped without rebuilding the solution.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>How quickly is it ready to use? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>We start small with a clearly scoped data source and expand step by step &ndash; so you see
+              first results quickly.</p>
+          </details>
+        </div>
+
+        <!-- 11) More on the topic -->
+        <div class="highlight-box">
+          <p><i class="fas fa-lightbulb" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>More than Chat with Data:</strong> Chat with Data is one building block of my
+            <a href="../../services/data-solutions.html">AI data solutions</a> &ndash; from structuring
+            messy data to a searchable knowledge base. The technical details of the implementation
+            are on the <a href="../../projects/db-assistant/index.html">DB&nbsp;Assistant</a> page.</p>
+        </div>
+
+        <!-- 12) Closing CTA -->
+        <div class="service-cta product-cta">
+          <h3>Chat with Data for your data</h3>
+          <p>Initial consultation free of charge &ndash; on-site in Bamberg/Nuremberg or online.</p>
+          <div class="cta-actions">
+            <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Get in touch</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+          <a href="../../../../llms.txt" class="footer-agent-link">For AI agents</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-links">
+          <a href="../../../privacy.html">Privacy</a>
+          <a href="../../../imprint.html">Imprint</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>powered by &copy; Walter A. Jablonowski 2019-2026. Made with AI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="../../../../lib/config.js?v=26070201"></script>
+  <script src="../../../../controller.js?v=26070201"></script>
+  <script src="../../../../lib/voice-agent/agent.js?v=26070201"></script>
+  <script>
+    new WebsiteController();
+  </script>
+</body>
+</html>

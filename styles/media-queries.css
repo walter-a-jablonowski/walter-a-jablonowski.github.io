@@ -112,6 +112,71 @@
   }
 }
 
+/* Landscape phones are wider than 768px but too short for the desktop nav bar,
+   so use the slide-in mobile nav panel there as well (mirrors the nav rules of
+   the max-width:768px block; layout rules stay desktop). */
+@media (orientation: landscape) and (max-height: 500px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--dark);
+    flex-direction: column;
+    align-items: center;
+    /* Start items from the top (not centered): the short landscape panel holds
+       more items than fit, so centering would push the first ones past the top
+       edge and drop the top spacing. flex-start keeps the top padding visible
+       and lets the rest scroll. */
+    justify-content: flex-start;
+    transition: right var(--transition-normal);
+    z-index: 1001;
+    overflow-y: auto;
+    padding: 4rem 0 2rem;
+  }
+
+  .nav-menu.active {
+    right: 0;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-menu li,
+  .nav-menu li.less-spacing {
+    margin: var(--spacing-md) 0;
+    margin-left: 0;
+  }
+
+  /* Hero: on a short landscape viewport the full-height centered hero clips the
+     left column under the fixed header. Keep the section full-height (so it still
+     fills the screen), but anchor the content to the top and clear the header
+     with padding instead of centering. Shrink the type and the illustration (its
+     square viewBox renders ~400px tall with empty space that wastes vertical room
+     here) so text and image sit comfortably. Portrait mobile and desktop are
+     untouched and keep the full-size, centered hero. */
+  .hero {
+    align-items: flex-start;
+    padding-top: 5rem;
+    padding-bottom: 1.5rem;
+  }
+  /* Extra top space only when the announcement bar makes the fixed header taller. */
+  body.has-announcement .hero { padding-top: 7rem; }
+  /* A narrow landscape phone (<=768w) also matches the max-width:768 block, which
+     stacks and centers the hero. Restore the side-by-side row layout here. */
+  .hero-content { flex-direction: row; text-align: left; }
+  .hero-text { margin-bottom: 0; }
+  .hero-cta { justify-content: flex-start; gap: 0.6rem; }
+  .developer-illustration { max-width: 210px; margin: 0; }
+  .hero-text h1 { font-size: 2rem; margin-bottom: 0.2rem; }
+  .hero-text h2 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .hero-text p { font-size: 0.95rem; margin: 0 0 0.9rem; }
+}
+
 @media (max-width: 480px) {
   html {
     font-size: 14px;

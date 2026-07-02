@@ -22,6 +22,13 @@ visitors talk to an AI about these services directly on the home page.
 - [AI Consulting](https://walter-a-jablonowski.github.io/en/pages/services/consulting.html): Vendor-neutral clarification of where AI delivers real value — use cases, strategy, technology. Free initial consultation.
 - [AI Security & Evaluation](https://walter-a-jablonowski.github.io/en/pages/services/security.html): Secure AI systems and make them observable and verifiable — guardrails, monitoring, quality measurement, GDPR.
 
+## Systems
+
+Ready-to-adapt products built from these services.
+
+- [Website AI Agent](https://walter-a-jablonowski.github.io/en/pages/systems/web_agent/): An AI voice assistant embedded on your website — visitors talk to it, it answers in real time, guides them to the right page, and is multilingual. API key and context stay server-side.
+- [Chat with Data](https://walter-a-jablonowski.github.io/en/pages/systems/data_chat/): Ask your company data questions in natural language — the AI builds a safe, read-only query and returns tables, summaries and charts. Runs on your server or fully local. A tailor-made AI data solution.
+
 ## About
 
 - [About / profile (English)](https://walter-a-jablonowski.github.io/en/#about): Background, skills and experience. Core areas: AI integration, AI agents, AI automation, machine learning, LLMs, web development, database design, SQL, PHP, Python, TypeScript.
