@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="AI Log Viewer: ein universeller Log-Viewer, der Logdateien jedes Formats an einem Ort zusammenf&uuml;hrt &ndash; mit m&auml;chtiger Filtersyntax, KI-Analyse und modularem Typsystem. SQLite ohne Einrichtung, MySQL f&uuml;r 100.000+ Eintr&auml;ge. Bamberg, N&uuml;rnberg und online.">
+  <meta name="keywords" content="AI Log Viewer, Log-Analyse, KI Log-Analyse, Logdateien filtern, Log Parser, SQLite, MySQL, DevOps, KI f&uuml;r KMU, Bamberg, N&uuml;rnberg">
+  <meta name="author" content="Walter A. Jablonowski">
+  <title>AI Log Viewer &ndash; Universeller Log-Viewer mit KI-Analyse | Walter A. Jablonowski</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Walter A. Jablonowski">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="AI Log Viewer &ndash; Universeller Log-Viewer mit KI-Analyse">
+  <meta property="og:description" content="Alle Ihre Logs an einem Ort &ndash; gefiltert, analysiert und von KI erkl&auml;rt. Jedes Format, modular erweiterbar, SQLite oder MySQL.">
+  <meta property="og:url" content="https://walter-a-jablonowski.github.io/pages/systems/log-view/">
+  <meta property="og:image" content="https://walter-a-jablonowski.github.io/misc/log-2.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://walter-a-jablonowski.github.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Systeme", "item": "https://walter-a-jablonowski.github.io/" },
+          { "@type": "ListItem", "position": 3, "name": "AI Log Viewer", "item": "https://walter-a-jablonowski.github.io/pages/systems/log-view/" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "AI Log Viewer",
+        "serviceType": "Universeller Log-Viewer mit KI-Analyse und modularem Typsystem",
+        "description": "Ein universeller Log-Viewer, der Logdateien jedes Formats an einem Ort zusammenf&uuml;hrt &ndash; mit m&auml;chtiger Ausdrucks-Filtersyntax, KI-Analyse, umfangreichen Detailansichten und einem modularen Typsystem, das ohne &Auml;nderungen am Hauptcode um neue Log-Formate erweitert wird. SQLite ohne Einrichtung oder MySQL f&uuml;r sehr gro&szlig;e Logs.",
+        "inLanguage": "de",
+        "url": "https://walter-a-jablonowski.github.io/pages/systems/log-view/",
+        "provider": { "@type": "Person", "name": "Walter A. Jablonowski", "url": "https://walter-a-jablonowski.github.io/" },
+        "areaServed": [
+          { "@type": "City", "name": "Bamberg" },
+          { "@type": "City", "name": "N&uuml;rnberg" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="canonical" href="https://walter-a-jablonowski.github.io/pages/systems/log-view/">
+  <link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/log-view/">
+  <link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/log-view/">
+  <link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/log-view/">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
+  <link rel="manifest" href="../../../site.webmanifest">
+  <link rel="stylesheet" href="../../../styles.css?v=26070401">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26070401">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26070401">
+  <link rel="stylesheet" href="../../../lib/img_overlay/img_overlay.css?v=26070401">
+  <style>
+    /* Product page styles. Reusable parts (.product-hero, .spec-list, .service-cta
+       exemption) live in page-components.css; the blocks below are local to this page. */
+    .project-detail {
+      padding: var(--spacing-xxl) 0;
+      background-color: var(--dark);
+      color: var(--white);
+      position: relative;
+    }
+    .project-detail::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(14,14,14,0.95) 0%, rgba(26,26,26,0.85) 100%);
+      z-index: 1;
+    }
+    .project-detail .container { position: relative; z-index: 2; }
+
+    .content { color: var(--lighter-gray); line-height: 1.75; }
+    .content h3 { color: var(--white); margin-top: var(--spacing-xl); }
+    /* Keep the shared reset: the heading in the two-column steps block must top-align
+       with the text column (our .content h3 margin would otherwise push it down). */
+    .content .steps-cols h3 { margin-top: 0; }
+    .content p { margin: 0 0 var(--spacing-md); }
+    .content ul { padding-left: 1.25rem; margin: 0 0 var(--spacing-md); }
+    .content li { margin: .45rem 0; }
+    .content a { color: var(--primary); }
+    .content strong { color: var(--white); }
+    .content code { font-family: var(--font-code); color: var(--primary); }
+    .content a.btn-primary, .content a.btn-secondary { color: var(--white); }
+
+    /* ---- Hero image: click to zoom (img_overlay) ----------------------- */
+    .ph-visual figure { margin: 0; display: flex; flex-direction: column; align-items: center; }
+    .ph-visual figcaption { display: flex; align-items: center; justify-content: center; gap: .45rem;
+      color: var(--light-gray); font-size: .85rem; margin: .7rem 0 0; text-align: center; }
+    .ph-visual figcaption i { color: var(--primary); }
+    .ph-visual .zoom-hint { cursor: pointer; }
+
+    /* ---- Tech-Stack line ------------------------------------------------ */
+    .tech-stack { color: var(--primary); font-weight: 500; font-size: 1.05rem; }
+
+    /* ---- Demo callout --------------------------------------------------- */
+    .live-demo { margin: var(--spacing-xl) 0; padding: var(--spacing-lg) var(--spacing-xl);
+      border-radius: var(--border-radius-lg); text-align: center;
+      background: linear-gradient(135deg, rgba(255,107,0,.14), rgba(255,62,0,.06));
+      border: 1px solid rgba(255,107,0,.30); }
+    .live-demo h3 { margin-top: 0 !important; }
+    .live-demo p { color: var(--lighter-gray); margin: 0 0 1.1rem; }
+
+    /* ---- Price line (gated by .biz-only / hideBiz) --------------------- */
+    .price-line { color: var(--lighter-gray); }
+    .price-line strong { color: var(--primary); }
+
+    /* On this page the closing CTA is commercial: hide it under hideBiz
+       (overrides the shared .product-cta exemption via later source order). */
+    body.hide-biz .service-cta.product-cta { display: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="../../../index.html#hero" class="nav-link">Start</a></li>
+          <li><a href="../../../index.html#about" class="nav-link">KI fragen</a></li>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-head">
+              <a href="../../../index.html#services" class="nav-link">Leistungen</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Untermen&uuml; Leistungen"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../../../pages/services/automation.html" class="nav-link">Automatisierung</a></li>
+              <li><a href="../../../pages/services/self-improving.html" class="nav-link">Selbstverbessernde KI</a></li>
+              <li><a href="../../../pages/services/data-solutions.html" class="nav-link">KI-Datenl&ouml;sungen</a></li>
+              <li><a href="../../../pages/services/consulting.html" class="nav-link">KI Beratung</a></li>
+              <li><a href="../../../pages/services/security.html" class="nav-link">KI Security &amp; Evaluierung</a></li>
+              <li><a href="../../../pages/placeholder.html" class="nav-link">KI Visualisierung</a></li>
+              <li><a href="../../../pages/placeholder.html" class="nav-link">Apps, die arbeiten</a></li>
+            </ul>
+          </li>
+          <li class="nav-dropdown new-content less-spacing">
+            <span class="nav-dropdown-head">
+              <span class="nav-dropdown-label">Systeme</span>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Untermen&uuml; Systeme"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../web_agent/index.html" class="nav-link">Website AI Agent</a></li>
+              <li><a href="../data_chat/index.html" class="nav-link">Chat with Data</a></li>
+              <li><a href="../seo_agent/index.html" class="nav-link">SEO Agent</a></li>
+              <li><a href="index.html" class="nav-link active">AI Log Viewer</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../../index.html#skills" class="nav-link">Kenntnisse</a></li>
+          <li><a href="../../../index.html#proj" class="nav-link">Projekte</a></li>
+          <li><a href="../../../index.html#contact" class="nav-link">Kontakt</a></li>
+          <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
+              title="Mein LinkedIn-Profil besuchen"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link" title="Mein GitHub-Profil besuchen"><i class="fab fa-github"></i></a></li>
+          <li class="lang-switch">
+            <a href="index.html" class="nav-link active" hreflang="de" title="Deutsch">DE</a>
+            <span class="lang-sep">|</span>
+            <a href="../../../en/pages/systems/log-view/index.html" class="nav-link" hreflang="en" title="English">EN</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="project-detail">
+    <div class="container">
+
+      <!-- 1) Product hero -->
+      <div class="product-hero">
+        <div class="ph-text">
+          <p class="ph-eyebrow">Systeme</p>
+          <h1>AI Log Viewer</h1>
+          <p class="ph-tagline">Alle Ihre Logs an einem Ort &ndash; <strong>gefiltert</strong>, <strong>analysiert</strong> und von <strong>KI</strong> erkl&auml;rt.</p>
+          <p class="ph-lead">
+            Ein universeller Log-Viewer, der Logdateien jedes Formats zusammenf&uuml;hrt. Navigieren Sie
+            durch Eintr&auml;ge mit umfangreichen Details, filtern Sie mit einer m&auml;chtigen
+            Ausdruckssyntax und lassen Sie eine KI gro&szlig;e Logs analysieren &ndash; erweiterbar um
+            neue Log-Typen, ohne den Hauptcode anzufassen.
+          </p>
+          <div class="ph-actions">
+            <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Demo anfragen</a>
+            <a href="#how" class="btn btn-secondary"><i class="fas fa-gears"></i> So funktioniert es</a>
+          </div>
+          <p class="ph-live"><i class="fas fa-circle"></i> In 3 Tagen gebaut &ndash; l&auml;uft mit SQLite ohne Einrichtung, skaliert mit MySQL auf >100.000.</p>
+        </div>
+        <div class="ph-visual">
+          <figure>
+            <img src="../../../misc/log-2.png" alt="AI Log Viewer: Log-Liste mit Filterzeile und umfangreicher Detailansicht rechts" loading="lazy">
+            <figcaption class="zoom-hint" title="Vergr&ouml;&szlig;ern"><i class="fas fa-magnifying-glass-plus" aria-hidden="true"></i> Zum Vergr&ouml;&szlig;ern anklicken</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="content">
+
+        <!-- 2) Was ist das? -->
+        <h3 id="what">Was ist das?</h3>
+        <p>
+          <strong>AI Log Viewer</strong> ist ein universeller Log-Viewer, der alle Ihre Logdateien an
+          einem Ort zusammenf&uuml;hrt &ndash; unabh&auml;ngig vom Format. Statt sich durch rohe
+          Textdateien zu w&uuml;hlen, sehen Sie Ihre Eintr&auml;ge sauber aufbereitet in einer Liste,
+          &ouml;ffnen jeden Eintrag mit umfangreichen Details und filtern mit einer ausdrucksstarken
+          Syntax. Eine KI &uuml;bernimmt die Schwerarbeit: Sie analysiert gro&szlig;e Logs, erkennt
+          Auff&auml;lligkeiten und erzeugt Filterausdr&uuml;cke aus einer einfachen Frage.
+        </p>
+        <ul>
+          <li>Jedes Format &ndash; auch mehrzeilige, eigene Formate mit spezieller Parser-Logik</li>
+          <li>Modular erweiterbar: neuer Log-Typ = Parser + Renderer, kein Eingriff in den Hauptcode</li>
+          <li>KI-Analyse und KI-generierte Filter direkt aus der Oberfl&auml;che</li>
+          <li>SQLite ohne Einrichtung &ndash; oder MySQL f&uuml;r Logs mit 100.000+ Eintr&auml;gen</li>
+        </ul>
+
+        <!-- 3) Funktionen -->
+        <h3 id="features">Funktionen</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+            <h4>KI-Analyse</h4>
+            <p>Jedes Log an einen KI-Assistenten senden &ndash; f&uuml;r Analyse, Anomalieerkennung und generierte Filterausdr&uuml;cke.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-database"></i></div>
+            <h4>Gro&szlig;e Dateien</h4>
+            <p>Logs mit mehr als 100.000 Eintr&auml;gen durch Hintergrund-Import in SQLite oder MySQL.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-layer-group"></i></div>
+            <h4>Mehrere Quellen</h4>
+            <p>Mehrere Dateien oder ganze Ordnerb&auml;ume zu einer einzigen, einheitlichen Log-Ansicht kombinieren.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-filter"></i></div>
+            <h4>M&auml;chtige Filter</h4>
+            <p>Ausdrucksbasiert mit Feldvergleichen, <code>contains</code>, <code>in [...]</code>, Regex und boolescher Logik &ndash; Filter werden pro Log gespeichert.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-table-list"></i></div>
+            <h4>Detailbereich</h4>
+            <p>Typspezifische Layouts mit Tabellen, einklappbaren Pipeline-Schritten und hervorgehobenen Fehlerzeilen.</p>
+          </div>
+        </div>
+
+        <!-- 4) So funktioniert es -->
+        <div class="steps-cols">
+          <div>
+            <h3 id="how">So funktioniert es</h3>
+            <ol class="offer-steps">
+              <li>Sie richten den Viewer auf eine Datei, einen Ordner oder einen ganzen Ordnerbaum</li>
+              <li>Der passende <strong>Parser</strong> zerlegt das Format, ein <strong>Renderer</strong> bereitet die Eintr&auml;ge auf</li>
+              <li>Sie filtern, w&auml;hlen bereichsweise aus, kopieren &ndash; oder fragen die KI</li>
+              <li class="no-num"><strong>Pipeline:</strong> Typ &rarr; Parser &rarr; Renderer &rarr; Liste &amp; Detail</li>
+            </ol>
+          </div>
+          <div class="steps-text">
+            <p>
+              Der Log-Typ wird <strong>automatisch erkannt</strong> und l&auml;sst sich per URL-Parameter
+              gezielt &uuml;berschreiben. Jeder Typ bringt seine eigenen Renderer f&uuml;r Liste,
+              Mobilansicht und Detail mit &ndash; so sieht jedes Log so aus, wie es am besten lesbar ist.
+            </p>
+            <p>
+              F&uuml;r kleine Logs gen&uuml;gt <strong>SQLite ohne jede Einrichtung</strong>. Wird es gro&szlig;,
+              h&auml;lt ein Hintergrund-Import <strong>MySQL</strong> kontinuierlich aktuell &ndash; auch Logs
+              mit sechsstelliger Zeilenzahl bleiben fl&uuml;ssig durchsuchbar.
+            </p>
+          </div>
+        </div>
+
+        <!-- 5) Wof&uuml;r? -->
+        <h3 id="use-cases">Wof&uuml;r?</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-terminal"></i></div>
+            <h4>Entwickler &amp; DevOps</h4>
+            <p>Viewer auf jede Logdatei oder jeden Ordner richten und sofort filtern, navigieren und analysieren.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-chart-line"></i></div>
+            <h4>Trading-Systeme</h4>
+            <p>Orderdaten mit BUY/SELL-Badges, Status-Pills und Latenz-Hervorhebung im Blick behalten.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-clock-rotate-left"></i></div>
+            <h4>Batch-Jobs</h4>
+            <p>Ein Lauf pro Datei mit Kopfblock und Zeitstempeln &ndash; farblich codierter Erfolg/Fehler-Rand.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-triangle-exclamation"></i></div>
+            <h4>Fehler-Logs</h4>
+            <p>PHP-Fehlerlogs mit gruppierten Stack-Traces und farblich codierten Schweregrad-Pills.</p>
+          </div>
+        </div>
+
+        <!-- 6) Integrierte Log-Typen -->
+        <h3 id="types">Integrierte Log-Typen</h3>
+        <ul>
+          <li><strong>TradingLog</strong>: Pipe-getrennte Orderdatens&auml;tze mit BUY/SELL-Badges, Status-Pills und Latenz-Hervorhebung</li>
+          <li><strong>BatchJobLog</strong>: Eine Datei pro Job-Lauf mit Kopfblock und mit Zeitstempeln versehenen Zeilen; farblich codierter Erfolg/Fehler-Rand</li>
+          <li><strong>OrderPipeline</strong>: Ein Unterordner pro Order mit Zusammenfassungs-JSON und nummerierten Schrittdateien; einklappbare Schritte mit automatischem Aufklappen bei Fehlern</li>
+          <li><strong>PhpErrorLog</strong>: Standard-PHP-Fehlerlog mit gruppierten Stack-Traces und farblich codierten Schweregrad-Pills</li>
+        </ul>
+
+        <!-- 7) Ma&szlig;geschneidert -->
+        <h3 id="custom">Ma&szlig;geschneidert f&uuml;r Ihre Logs</h3>
+        <p>
+          AI Log Viewer ist kein starres Tool von der Stange, sondern modular aufgebaut und wird auf Ihre
+          Log-Formate und Ihren Workflow eingestellt. Jeder Baustein ist austauschbar:
+        </p>
+        <ul>
+          <li>Eigener Log-Typ f&uuml;r Ihr Format &ndash; ein Parser und Renderer gen&uuml;gen</li>
+          <li>Speicherung w&auml;hlbar: SQLite ohne Einrichtung oder MySQL f&uuml;r sehr gro&szlig;e Logs</li>
+          <li>Vordefinierte Logs und Quellen pro Nutzer und pro Organisation</li>
+          <li>KI-Backend konfigurierbar &ndash; f&uuml;r Analyse und Filtergenerierung</li>
+          <li>Helle und dunkle Oberfl&auml;chendesigns</li>
+        </ul>
+
+        <!-- 8) Architektur & Sicherheit -->
+        <div class="highlight-box">
+          <p><i class="fas fa-shield-halved" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>Architektur &amp; Kontrolle:</strong> Backend in <strong>PHP&nbsp;8+</strong> mit einer
+            modularen Pipeline aus Typ &rarr; Parser &rarr; Renderer; Frontend als schlankes
+            <strong>Vanilla&nbsp;JavaScript</strong> mit Fetch&nbsp;API, ohne schwergewichtige Frameworks.
+            Einstellungen, gespeicherte Filter und Typ-&Uuml;berschreibungen liegen pro Nutzer und pro
+            Organisation &ndash; die Anwendung l&auml;uft auf Ihrem Rechner oder Server.</p>
+        </div>
+
+        <!-- 9) Tech-Stack -->
+        <h3 id="stack">Tech-Stack</h3>
+        <p class="tech-stack">
+          PHP &bull; SQLite &bull; MySQL &bull; YAML &bull; Vanilla JavaScript &bull; Fetch API &bull; AI / LLM
+        </p>
+
+        <!-- 10) Demo anfragen -->
+        <div class="live-demo">
+          <h3>In Aktion sehen</h3>
+          <p>Ich zeige Ihnen den AI Log Viewer gerne live an Beispiel-Logs &ndash; oder direkt an Ihren eigenen Logdateien.</p>
+          <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Demo anfragen</a>
+        </div>
+
+        <!-- 11) Auf einen Blick -->
+        <h3 id="specs">Auf einen Blick</h3>
+        <div class="spec-list">
+          <div class="spec-row"><span class="spec-k">Aufgabe</span><span class="spec-v">universeller Log-Viewer mit KI-Analyse</span></div>
+          <div class="spec-row"><span class="spec-k">Formate</span><span class="spec-v">beliebig &ndash; auch mehrzeilige, eigene Formate via Parser</span></div>
+          <div class="spec-row"><span class="spec-k">Quellen</span><span class="spec-v">einzelne Dateien, Ordner oder ganze Ordnerb&auml;ume, zusammengef&uuml;hrt</span></div>
+          <div class="spec-row"><span class="spec-k">Speicherung</span><span class="spec-v">SQLite (ohne Einrichtung) oder MySQL (100.000+ Eintr&auml;ge)</span></div>
+          <div class="spec-row"><span class="spec-k">KI</span><span class="spec-v">konfigurierbares LLM f&uuml;r Analyse und Filtergenerierung</span></div>
+          <div class="spec-row"><span class="spec-k">Betrieb</span><span class="spec-v">auf Ihrem Rechner/Server, pro Nutzer und Organisation</span></div>
+        </div>
+
+        <!-- 12) FAQ (commercial: hidden under hideBiz via .biz-only) -->
+        <h3 id="faq" class="biz-only">H&auml;ufige Fragen</h3>
+        <div class="faq-list biz-only">
+          <details class="samples-reveal">
+            <summary>Was kostet das? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>
+              <span class="biz-only price-line"><strong>Einrichtung zum Festpreis</strong> &middot; zzgl. laufender Nutzungskosten
+              (KI-Modell/APIs, sofern KI genutzt wird). </span>Der Preis h&auml;ngt von Ihren Log-Formaten und dem Umfang ab &ndash; das Erstgespr&auml;ch ist kostenfrei.
+            </p>
+          </details>
+          <details class="samples-reveal">
+            <summary>Funktioniert das mit meinem Log-Format? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Ja. F&uuml;r ein eigenes Format wird ein Parser und Renderer erg&auml;nzt &ndash; ohne &Auml;nderung am
+              Hauptcode. Auch mehrzeilige und ordnerbasierte Formate (ein Eintrag pro Datei oder Unterordner) sind m&ouml;glich.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>Wie gro&szlig; d&uuml;rfen die Logs sein? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>F&uuml;r kleinere Logs gen&uuml;gt SQLite ohne Einrichtung. Bei sehr gro&szlig;en Logs
+              (100.000+ Eintr&auml;ge) importiert ein Hintergrund-Worker die Daten fortlaufend in MySQL,
+              damit die Ansicht fl&uuml;ssig bleibt.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>Brauche ich zwingend KI? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Nein. Filtern, Navigieren und die Detailansichten funktionieren komplett ohne KI. Die
+              KI-Analyse und die KI-generierten Filter sind eine zuschaltbare Erg&auml;nzung.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>Wo laufen meine Daten? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Die Anwendung l&auml;uft auf Ihrem Rechner oder Server. Ohne KI verlassen Ihre Logs Ihr Haus
+              nicht; mit KI wird ausschlie&szlig;lich das an das gew&auml;hlte Modell geschickt, was Sie
+              zur Analyse freigeben.</p>
+          </details>
+        </div>
+
+        <!-- 13) Mehr zum Thema -->
+        <div class="highlight-box">
+          <p><i class="fas fa-lightbulb" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>Mehr als ein Log-Viewer:</strong> AI Log Viewer ist ein Beispiel meiner
+            <a href="../../services/data-solutions.html">KI-Datenl&ouml;sungen</a> und
+            <a href="../../services/automation.html">Automatisierung</a> &ndash; ma&szlig;geschneiderte
+            Werkzeuge, die aus rohen Daten nutzbare Einblicke machen.</p>
+        </div>
+
+        <!-- 14) Abschluss-CTA -->
+        <div class="service-cta product-cta">
+          <h3>AI Log Viewer f&uuml;r Ihre Logs</h3>
+          <p>Erstgespr&auml;ch kostenfrei &ndash; vor Ort in Bamberg/N&uuml;rnberg oder online.</p>
+          <div class="cta-actions">
+            <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Kontakt aufnehmen</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+          <a href="../../../llms.txt" class="footer-agent-link">F&uuml;r KI-Agenten</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-links">
+          <a href="../../../privacy.html">Datenschutz</a>
+          <a href="../../../imprint.html">Impressum</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>powered by &copy; Walter A. Jablonowski 2019-2026. Made with AI. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="../../../lib/config.js?v=26070401"></script>
+  <script src="../../../controller.js?v=26070401"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26070401"></script>
+  <script src="../../../lib/img_overlay/img_overlay.js?v=26070401"></script>
+  <script>
+    new WebsiteController();
+    ImageOverlay.init('.ph-visual img');
+  </script>
+</body>
+</html>

@@ -240,3 +240,25 @@ body.hide-biz .service-cta.product-cta { display: block; }
   .spec-list { grid-template-columns: 1fr; }
   .spec-list .spec-row:nth-child(2) { border-top: 1px solid rgba(255,255,255,.06); }
 }
+
+/* Status badge: a small pill shown beside a headline (e.g. "experimental").
+   Base .badge is neutral/reusable; add a variant like .badge-experimental for
+   colour. Beside a heading it keeps its own small size and gains left spacing. */
+.badge {
+  display: inline-block;
+  vertical-align: middle;
+  padding: .3em .7em;
+  border-radius: 999px;
+  font-size: .7rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.badge-experimental {
+  color: var(--primary);
+  background: rgba(255, 107, 0, 0.12);
+  border: 1px solid rgba(255, 107, 0, 0.4);
+}
+h1 .badge, h2 .badge, h3 .badge, h4 .badge { margin-left: .65em; }

@@ -28,6 +28,8 @@ Ready-to-adapt products built from these services.
 
 - [Website AI Agent](https://walter-a-jablonowski.github.io/en/pages/systems/web_agent/): An AI voice assistant embedded on your website — visitors talk to it, it answers in real time, guides them to the right page, and is multilingual. API key and context stay server-side.
 - [Chat with Data](https://walter-a-jablonowski.github.io/en/pages/systems/data_chat/): Ask your company data questions in natural language — the AI builds a safe, read-only query and returns tables, summaries and charts. Runs on your server or fully local. A tailor-made AI data solution.
+- [SEO Agent](https://walter-a-jablonowski.github.io/en/pages/systems/seo_agent/): A scheduled AI agent that audits your website and optimizes it for Google and AI search (GEO) — meta tags, content, structured data, new pages. Runs on its own or alongside the other systems.
+- [AI Log Viewer](https://walter-a-jablonowski.github.io/en/pages/systems/log-view/): A universal log viewer that brings log files of any format into one place — with a powerful expression filter syntax, AI analysis and a pluggable type system. SQLite with zero setup or MySQL for logs with 100,000+ entries.
 
 ## About
 

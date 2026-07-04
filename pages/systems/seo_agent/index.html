@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="SEO AI Agent: ein zeitgesteuerter KI-Agent, der Ihre Website auditiert und f&uuml;r Google und KI-Suche (GEO) optimiert &ndash; Meta, Inhalte, JSON-LD, neue Seiten. &Auml;nderungen gehen erst nach Ihrer Freigabe live. Bamberg, N&uuml;rnberg und online.">
+  <meta name="keywords" content="SEO Agent, KI SEO, GEO, AI Search Optimierung, automatische SEO Optimierung, Google Search Console, KI f&uuml;r KMU, Bamberg, N&uuml;rnberg">
+  <meta name="author" content="Walter A. Jablonowski">
+  <title>SEO AI Agent &ndash; Website automatisch f&uuml;r Google &amp; KI-Suche optimieren | Walter A. Jablonowski</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Walter A. Jablonowski">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="SEO AI Agent &ndash; Website automatisch f&uuml;r Google &amp; KI-Suche optimieren">
+  <meta property="og:description" content="Ein zeitgesteuerter KI-Agent, der Ihre Website auditiert und f&uuml;r Google und KI-Suche optimiert &ndash; &Auml;nderungen gehen erst nach Ihrer Freigabe live.">
+  <meta property="og:url" content="https://walter-a-jablonowski.github.io/pages/systems/seo_agent/">
+  <meta property="og:image" content="https://walter-a-jablonowski.github.io/misc/automation-placeholder.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://walter-a-jablonowski.github.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Systeme", "item": "https://walter-a-jablonowski.github.io/" },
+          { "@type": "ListItem", "position": 3, "name": "SEO AI Agent", "item": "https://walter-a-jablonowski.github.io/pages/systems/seo_agent/" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "SEO AI Agent",
+        "serviceType": "KI-gest&uuml;tzte SEO- und GEO-Optimierung f&uuml;r Websites",
+        "description": "Ein zeitgesteuerter KI-Agent, der eine Website auditiert und f&uuml;r Google und KI-Suche (GEO) optimiert &ndash; Meta, Inhalte, JSON-LD, Alt-Texte und ganze neue Seiten. &Auml;nderungen landen auf einem Branch zur Freigabe, der Agent pusht nie selbst.",
+        "inLanguage": "de",
+        "url": "https://walter-a-jablonowski.github.io/pages/systems/seo_agent/",
+        "provider": { "@type": "Person", "name": "Walter A. Jablonowski", "url": "https://walter-a-jablonowski.github.io/" },
+        "areaServed": [
+          { "@type": "City", "name": "Bamberg" },
+          { "@type": "City", "name": "N&uuml;rnberg" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="canonical" href="https://walter-a-jablonowski.github.io/pages/systems/seo_agent/">
+  <link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/seo_agent/">
+  <link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/seo_agent/">
+  <link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/seo_agent/">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
+  <link rel="manifest" href="../../../site.webmanifest">
+  <link rel="stylesheet" href="../../../styles.css?v=26070401">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26070401">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26070401">
+  <style>
+    /* Product page styles. Reusable parts (.product-hero, .spec-list, .service-cta
+       exemption) live in page-components.css; the blocks below are local to this page. */
+    .project-detail {
+      padding: var(--spacing-xxl) 0;
+      background-color: var(--dark);
+      color: var(--white);
+      position: relative;
+    }
+    .project-detail::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(14,14,14,0.95) 0%, rgba(26,26,26,0.85) 100%);
+      z-index: 1;
+    }
+    .project-detail .container { position: relative; z-index: 2; }
+
+    .content { color: var(--lighter-gray); line-height: 1.75; }
+    .content h3 { color: var(--white); margin-top: var(--spacing-xl); }
+    /* Keep the shared reset: the heading in the two-column steps block must top-align
+       with the text column (our .content h3 margin would otherwise push it down). */
+    .content .steps-cols h3 { margin-top: 0; }
+    .content p { margin: 0 0 var(--spacing-md); }
+    .content ul { padding-left: 1.25rem; margin: 0 0 var(--spacing-md); }
+    .content li { margin: .45rem 0; }
+    .content a { color: var(--primary); }
+    .content strong { color: var(--white); }
+    .content a.btn-primary, .content a.btn-secondary { color: var(--white); }
+
+    /* ---- Demo callout --------------------------------------------------- */
+    .live-demo { margin: var(--spacing-xl) 0; padding: var(--spacing-lg) var(--spacing-xl);
+      border-radius: var(--border-radius-lg); text-align: center;
+      background: linear-gradient(135deg, rgba(255,107,0,.14), rgba(255,62,0,.06));
+      border: 1px solid rgba(255,107,0,.30); }
+    .live-demo h3 { margin-top: 0 !important; }
+    .live-demo p { color: var(--lighter-gray); margin: 0 0 1.1rem; }
+
+    /* ---- Price line (gated by .biz-only / hideBiz) --------------------- */
+    .price-line { color: var(--lighter-gray); }
+    .price-line strong { color: var(--primary); }
+
+    /* On this page the closing CTA is commercial: hide it under hideBiz
+       (overrides the shared .product-cta exemption via later source order). */
+    body.hide-biz .service-cta.product-cta { display: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="../../../index.html#hero" class="nav-link">Start</a></li>
+          <li><a href="../../../index.html#about" class="nav-link">KI fragen</a></li>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-head">
+              <a href="../../../index.html#services" class="nav-link">Leistungen</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Untermen&uuml; Leistungen"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../../../pages/services/automation.html" class="nav-link">Automatisierung</a></li>
+              <li><a href="../../../pages/services/self-improving.html" class="nav-link">Selbstverbessernde KI</a></li>
+              <li><a href="../../../pages/services/data-solutions.html" class="nav-link">KI-Datenl&ouml;sungen</a></li>
+              <li><a href="../../../pages/services/consulting.html" class="nav-link">KI Beratung</a></li>
+              <li><a href="../../../pages/services/security.html" class="nav-link">KI Security &amp; Evaluierung</a></li>
+              <li><a href="../../../pages/placeholder.html" class="nav-link">KI Visualisierung</a></li>
+              <li><a href="../../../pages/placeholder.html" class="nav-link">Apps, die arbeiten</a></li>
+            </ul>
+          </li>
+          <li class="nav-dropdown new-content less-spacing">
+            <span class="nav-dropdown-head">
+              <span class="nav-dropdown-label">Systeme</span>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Untermen&uuml; Systeme"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../web_agent/index.html" class="nav-link">Website AI Agent</a></li>
+              <li><a href="../data_chat/index.html" class="nav-link">Chat with Data</a></li>
+              <li><a href="index.html" class="nav-link active">SEO Agent</a></li>
+              <li><a href="../log-view/index.html" class="nav-link">AI Log Viewer</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../../index.html#skills" class="nav-link">Kenntnisse</a></li>
+          <li><a href="../../../index.html#proj" class="nav-link">Projekte</a></li>
+          <li><a href="../../../index.html#contact" class="nav-link">Kontakt</a></li>
+          <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
+              title="Mein LinkedIn-Profil besuchen"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link" title="Mein GitHub-Profil besuchen"><i class="fab fa-github"></i></a></li>
+          <li class="lang-switch">
+            <a href="index.html" class="nav-link active" hreflang="de" title="Deutsch">DE</a>
+            <span class="lang-sep">|</span>
+            <a href="../../../en/pages/systems/seo_agent/index.html" class="nav-link" hreflang="en" title="English">EN</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="project-detail">
+    <div class="container">
+
+      <!-- 1) Product hero -->
+      <div class="product-hero">
+        <div class="ph-text">
+          <p class="ph-eyebrow">Systeme</p>
+          <h1>SEO AI Agent <span class="badge badge-experimental">Experimentell</span></h1>
+          <p class="ph-tagline">Ihre Website, laufend optimiert &ndash; f&uuml;r <strong>Google</strong> und die <strong>KI-Suche</strong>.</p>
+          <p class="ph-lead">
+            Ein zeitgesteuerter KI-Agent auditiert Ihre Seite, recherchiert, was fehlt, und
+            verbessert Texte, Meta-Angaben und Struktur &ndash; und legt bei Bedarf ganze neue Seiten an.
+            Jede &Auml;nderung landet zur Freigabe auf einem eigenen Branch. Der Agent pusht nie selbst.
+          </p>
+          <div class="ph-actions">
+            <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Beratung anfragen</a>
+            <a href="#how" class="btn btn-secondary"><i class="fas fa-gears"></i> So funktioniert es</a>
+          </div>
+          <p class="ph-live"><i class="fas fa-circle"></i> L&auml;uft nach Zeitplan &ndash; &Auml;nderungen gehen erst nach Ihrer Freigabe live.</p>
+        </div>
+        <div class="ph-visual">
+          <img src="../../../misc/automation-placeholder.svg" alt="SEO AI Agent: automatisiertes SEO- und GEO-Audit mit vorgeschlagenen Seiten&auml;nderungen" loading="lazy">
+        </div>
+      </div>
+
+      <div class="content">
+
+        <!-- 2) Was ist das? -->
+        <h3 id="what">Was ist das?</h3>
+        <p>
+          <strong>SEO AI Agent</strong> ist ein KI-Agent, der Ihre Website eigenst&auml;ndig f&uuml;r die
+          Suche fit h&auml;lt &ndash; f&uuml;r Google genauso wie f&uuml;r KI-Antwortmaschinen (GEO). Er l&auml;uft
+          nach Zeitplan, sammelt echte Daten &uuml;ber Ihre Seite, findet Schwachstellen und schl&auml;gt
+          gezielte Verbesserungen vor. Nichts geht ungefragt live: Der Agent legt seine &Auml;nderungen
+          auf einem eigenen Branch ab, den Sie pr&uuml;fen und freigeben.
+        </p>
+        <ul>
+          <li>Optimiert f&uuml;r klassische Suche <strong>und</strong> KI-Suche (GEO) in einem Durchlauf</li>
+          <li>Arbeitet mit echten Daten: Google Search Console, GA4, SERP, KI-Zitationen</li>
+          <li>&Auml;ndert gezielt Meta, Inhalte, JSON-LD und Alt-Texte &ndash; und schreibt neue Seiten (DE+EN)</li>
+          <li>&Auml;nderungen zur Freigabe auf einem Branch &ndash; der Agent pusht nie selbst</li>
+        </ul>
+
+        <!-- 3) Funktionen -->
+        <h3 id="features">Funktionen</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+            <h4>Audit mit echten Daten</h4>
+            <p>Crawlt die Seite und wertet Search Console, GA4, SERP und KI-Zitationen aus.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+            <h4>Gezielte Edits</h4>
+            <p>&Auml;ndert Meta-Titel, Textbl&ouml;cke, JSON-LD und Alt-Texte &ndash; punktgenau, nicht pauschal.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-robot"></i></div>
+            <h4>Sichtbar in der KI-Suche</h4>
+            <p>GEO: pr&uuml;ft, ob ChatGPT, Gemini &amp; Perplexity Sie zitieren &ndash; und arbeitet daran.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-file-circle-plus"></i></div>
+            <h4>Neue Seiten</h4>
+            <p>F&uuml;r Keywords ohne Ranking schreibt er ganze Seiten (DE+EN) und verlinkt sie.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-code-branch"></i></div>
+            <h4>Freigabe per Branch</h4>
+            <p>Jeder Lauf committet auf einen Branch zur Review &ndash; Sie mergen, was live geht.</p>
+          </div>
+        </div>
+
+        <!-- 4) So funktioniert es -->
+        <div class="steps-cols">
+          <div>
+            <h3 id="how">So funktioniert es</h3>
+            <ol class="offer-steps">
+              <li>Der Agent sammelt Daten und misst, wo die Seite steht</li>
+              <li>Er recherchiert L&uuml;cken und erstellt ein <strong>Briefing</strong> f&uuml;r das KI-Modell</li>
+              <li>Das Modell liefert gezielte Edits &ndash; und neue Seiten f&uuml;r fehlende Keywords</li>
+              <li class="no-num"><strong>Ablauf:</strong> Collect &rarr; Measure &rarr; Research &rarr; Brief &rarr; Edit &rarr; Guardrails &rarr; Commit</li>
+            </ol>
+          </div>
+          <div class="steps-text">
+            <p>
+              Vor dem Commit pr&uuml;fen <strong>Guardrails</strong> die gesamte bearbeitete Seite &ndash;
+              defekte Links, JSON-LD, Meta-L&auml;ngen, doppelte Titel, valides HTML. Schl&auml;gt eine
+              Pr&uuml;fung fehl, wird jede Datei zur&uuml;ckgesetzt und <strong>nichts</strong> committet.
+            </p>
+            <p>
+              Das Sprachmodell ist <strong>austauschbar</strong>: Cloud (OpenRouter mit Gemini&nbsp;3.5&nbsp;Flash,
+              Google&nbsp;Gemini) oder lokal (Ollama) &ndash; je nachdem, wie viel im Haus bleiben soll.
+            </p>
+          </div>
+        </div>
+
+        <!-- 5) Wof&uuml;r? -->
+        <h3 id="use-cases">Wof&uuml;r?</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-arrow-trend-up"></i></div>
+            <h4>Besser bei Google</h4>
+            <p>Laufende Optimierung von Titeln, Inhalten und Struktur statt einmaliger Aktionen.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-comment-dots"></i></div>
+            <h4>Gefunden von KI</h4>
+            <p>Sichtbar und zitierf&auml;hig in ChatGPT, Gemini und Perplexity (GEO).</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-clock-rotate-left"></i></div>
+            <h4>Ohne Daueraufwand</h4>
+            <p>L&auml;uft nach Zeitplan im Hintergrund &ndash; Sie pr&uuml;fen nur die Vorschl&auml;ge.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-store"></i></div>
+            <h4>Ideal f&uuml;r KMU</h4>
+            <p>SEO-Pflege ohne eigenes Team &ndash; mit voller Kontrolle &uuml;ber jede &Auml;nderung.</p>
+          </div>
+        </div>
+
+        <!-- 6) Ma&szlig;geschneidert -->
+        <h3 id="custom">Ma&szlig;geschneidert f&uuml;r Sie</h3>
+        <p>
+          Der SEO AI Agent ist kein starres Tool von der Stange, sondern modular aufgebaut und wird
+          auf Ihre Website und Ihre Ziele eingestellt. Jeder Baustein ist austauschbar:
+        </p>
+        <ul>
+          <li>Ziel-Keywords, Bearbeitungsbudget und Zeitplan pro Website frei w&auml;hlbar</li>
+          <li>Datenquellen zuschaltbar: Search Console, GA4, SERP, KI-Zitationen</li>
+          <li>KI-Modell w&auml;hlbar: Cloud f&uuml;r Tempo oder lokal (Ollama) f&uuml;r maximale Vertraulichkeit</li>
+          <li>Design-sensible Seiten schonen: nur kleine Edits (Meta, Alt, JSON-LD), keine neuen Abschnitte</li>
+          <li>Betrieb wahlweise als Vorschlag (propose) oder als Commit zur Freigabe</li>
+        </ul>
+
+        <!-- 7) Datenschutz & Kontrolle -->
+        <div class="highlight-box">
+          <p><i class="fas fa-shield-halved" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>Kontrolle &amp; Sicherheit:</strong> Der Agent ist auf Ihr Website-Verzeichnis
+            <strong>sandboxed</strong> &ndash; er schreibt nie au&szlig;erhalb. Jede Datei wird vor der
+            &Auml;nderung gesichert; scheitert eine Guardrail, wird alles zur&uuml;ckgesetzt. &Auml;nderungen
+            landen auf einem Branch zur Freigabe &ndash; der Agent <strong>pusht nie selbst</strong>.</p>
+        </div>
+
+        <!-- 8) Demo anfragen -->
+        <div class="live-demo">
+          <h3>In Aktion sehen</h3>
+          <p>Ich zeige Ihnen den SEO AI Agent gerne live an einem Beispiellauf &ndash; oder direkt an Ihrer eigenen Website.</p>
+          <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Demo anfragen</a>
+        </div>
+
+        <!-- 9) Auf einen Blick -->
+        <h3 id="specs">Auf einen Blick</h3>
+        <div class="spec-list">
+          <div class="spec-row"><span class="spec-k">Aufgabe</span><span class="spec-v">automatisches SEO- &amp; KI-Suche-Audit + Optimierung</span></div>
+          <div class="spec-row"><span class="spec-k">Datenquellen</span><span class="spec-v">Search Console, GA4, SERP, KI-Zitationen</span></div>
+          <div class="spec-row"><span class="spec-k">&Auml;nderungen</span><span class="spec-v">Meta, Inhalte, JSON-LD, Alt-Texte, neue Seiten (DE+EN)</span></div>
+          <div class="spec-row"><span class="spec-k">KI</span><span class="spec-v">OpenRouter (Gemini&nbsp;3.5&nbsp;Flash), Gemini oder lokal (Ollama)</span></div>
+          <div class="spec-row"><span class="spec-k">Betrieb</span><span class="spec-v">zeitgesteuert (z.&nbsp;B. Task Scheduler), auf Ihrem Rechner/Server</span></div>
+          <div class="spec-row"><span class="spec-k">Sicherheit</span><span class="spec-v">Guardrails, Backups, Commit zur Freigabe &ndash; kein Auto-Push</span></div>
+        </div>
+
+        <!-- 10) FAQ (commercial: hidden under hideBiz via .biz-only) -->
+        <h3 id="faq" class="biz-only">H&auml;ufige Fragen</h3>
+        <div class="faq-list biz-only">
+          <details class="samples-reveal">
+            <summary>Was kostet das? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>
+              <span class="biz-only price-line"><strong>Einrichtung zum Festpreis</strong> &middot; zzgl. laufender Nutzungskosten
+              (KI-Modell/APIs). </span>Der Preis h&auml;ngt von Umfang und Datenquellen ab &ndash; das Erstgespr&auml;ch ist kostenfrei.
+            </p>
+          </details>
+          <details class="samples-reveal">
+            <summary>&Auml;ndert der Agent meine Seite ohne Kontrolle? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Nein. Jeder Lauf committet auf einen eigenen Branch; Sie pr&uuml;fen den Diff und mergen erst,
+              was live gehen soll. Der Agent pusht nie selbst. Im Modus &bdquo;propose&ldquo; schreibt er nur Vorschl&auml;ge.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>Was ist GEO / KI-Suche? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>GEO steht f&uuml;r &bdquo;Generative Engine Optimization&ldquo; &ndash; also Sichtbarkeit in KI-Antworten
+              (ChatGPT, Gemini, Perplexity). Der Agent pr&uuml;ft, ob diese Sie zitieren, und arbeitet gezielt daran.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>L&auml;uft das mit meiner Website? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Der Agent ist f&uuml;r Websites in einem Git-Repository gebaut (z.&nbsp;B. GitHub&nbsp;Pages), mit
+              deutscher und englischer Sprachversion. Andere Setups pr&uuml;fe ich gern im Erstgespr&auml;ch.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>Wo laufen meine Daten? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Der Agent l&auml;uft auf Ihrem Rechner oder Server und ist auf Ihr Website-Verzeichnis
+              sandboxed. Mit einem lokalen Modell (Ollama) verlassen Ihre Inhalte Ihr Haus nicht.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>Welche KI steckt dahinter? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Standardm&auml;&szlig;ig OpenRouter mit Gemini&nbsp;3.5&nbsp;Flash; ebenso m&ouml;glich sind Google&nbsp;Gemini
+              oder ein lokales Modell (Ollama). Das Modell l&auml;sst sich austauschen, ohne den Agenten neu zu bauen.</p>
+          </details>
+        </div>
+
+        <!-- 11) Mehr zum Thema -->
+        <div class="highlight-box">
+          <p><i class="fas fa-lightbulb" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>Mehr als SEO:</strong> Der SEO AI Agent ist ein Beispiel meiner
+            <a href="../../services/automation.html">Automatisierung</a> und
+            <a href="../../services/self-improving.html">selbstverbessernden KI</a> &ndash; Agenten, die
+            wiederkehrende Arbeit &uuml;bernehmen und aus Ergebnissen lernen.</p>
+        </div>
+
+        <!-- 12) Abschluss-CTA -->
+        <div class="service-cta product-cta">
+          <h3>SEO AI Agent f&uuml;r Ihre Website</h3>
+          <p>Erstgespr&auml;ch kostenfrei &ndash; vor Ort in Bamberg/N&uuml;rnberg oder online.</p>
+          <div class="cta-actions">
+            <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Kontakt aufnehmen</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+          <a href="../../../llms.txt" class="footer-agent-link">F&uuml;r KI-Agenten</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-links">
+          <a href="../../../privacy.html">Datenschutz</a>
+          <a href="../../../imprint.html">Impressum</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>powered by &copy; Walter A. Jablonowski 2019-2026. Made with AI. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="../../../lib/config.js?v=26070401"></script>
+  <script src="../../../controller.js?v=26070401"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26070401"></script>
+  <script>
+    new WebsiteController();
+  </script>
+</body>
+</html>

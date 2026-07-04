@@ -194,7 +194,7 @@ class WebsiteController
       if (!html) return; // nothing configured to show
       inner =
         '<div class="container">' +
-          '<span class="announcement-bar-content">' + html.replace(/\{root\}/g, prefix) + '</span>' +
+          '<span class="announcement-bar-content">' + html.replace(/\{base\}/g, prefix) + '</span>' +
         '</div>';
     } else {
       // 'offer'
@@ -218,6 +218,20 @@ class WebsiteController
 
     header.appendChild(bar);
     document.body.classList.add('has-announcement');
+
+    // In persistent-agent mode, links to #about in the bar open the AI overlay
+    // directly (same pattern as the hero "Ask AI" CTA in initPersistentAgent);
+    // the href stays untouched as graceful fallback if the agent is unavailable.
+    if( typeof VOICE_AGENT_CONFIG !== 'undefined' && VOICE_AGENT_CONFIG.persistentAgent ) {
+      bar.querySelectorAll('a[href$="#about"]').forEach(a => {
+        a.addEventListener('click', (e) => {
+          if( window.voiceAgent && typeof window.voiceAgent.open === 'function' ) {
+            e.preventDefault();
+            window.voiceAgent.open();
+          }
+        });
+      });
+    }
 
     bar.querySelector('.announcement-bar-close').addEventListener('click', () => {
       bar.remove();

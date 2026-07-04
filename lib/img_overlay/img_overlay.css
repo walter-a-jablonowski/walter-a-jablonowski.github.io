@@ -19,10 +19,10 @@
 
 .img-overlay-content {
   position: relative;
-  width: 100%;
-  height: 100%;
-  max-width: 90%;
-  max-height: 90%;
+  /* Shrink-wrap the media so the corner buttons anchor to the image edges,
+     not the viewport (mobile re-enables the full-size box below). */
+  max-width: 90vw;
+  max-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,6 +83,8 @@
   }
 
   .img-overlay-content {
+    width: 100%;
+    height: 100%;
     max-width: 100%;
     max-height: 100%;
   }

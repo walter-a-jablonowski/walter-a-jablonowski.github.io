@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Have a small AI automation? Automate recurring work with AI agents or workflows &ndash; from &euro;1,000. Fixed price, integration with existing systems (CRM, ERP). Bamberg, Nuremberg and online.">
+  <meta name="keywords" content="AI use case, AI automation, AI agents, workflow automation, fixed price, CRM integration, ERP integration, AI for SMB, Bamberg, Nuremberg">
+  <meta name="author" content="Walter A. Jablonowski">
+  <title>Have a small AI automation? From &euro;1,000 | Walter A. Jablonowski</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Walter A. Jablonowski">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:title" content="Have a small AI automation? I&rsquo;ll build it for &euro;1&szlig;00">
+  <meta property="og:description" content="Automate recurring work with AI agents or workflows. Fixed price, integration with your existing systems.">
+  <meta property="og:url" content="https://walter-a-jablonowski.github.io/en/pages/offers/offer.html">
+  <meta property="og:image" content="https://walter-a-jablonowski.github.io/misc/logo_2.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://walter-a-jablonowski.github.io/en/" },
+          { "@type": "ListItem", "position": 2, "name": "Offer", "item": "https://walter-a-jablonowski.github.io/en/pages/offers/offer.html" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "AI Automation &ndash; Small Use Case",
+        "serviceType": "AI Automation",
+        "description": "Automate recurring work with AI agents or workflows, integrated with existing systems such as CRM and ERP.",
+        "inLanguage": "en",
+        "url": "https://walter-a-jablonowski.github.io/en/pages/offers/offer.html",
+        "provider": { "@type": "Person", "name": "Walter A. Jablonowski", "url": "https://walter-a-jablonowski.github.io/" },
+        "areaServed": [
+          { "@type": "City", "name": "Bamberg" },
+          { "@type": "City", "name": "Nuremberg" }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "price": "1000",
+          "priceCurrency": "EUR",
+          "description": "Small use case, up to 2 working days, plus VAT."
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="canonical" href="https://walter-a-jablonowski.github.io/en/pages/offers/offer.html">
+  <link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/offers/offer.html">
+  <link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/offers/offer.html">
+  <link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/offers/offer.html">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
+  <link rel="manifest" href="../../../site.webmanifest">
+  <link rel="stylesheet" href="../../../styles.css?v=26070401">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26070401">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26070401">
+  <style>
+    /* Offer page specific styles (built on the shared design tokens) */
+    .project-detail {
+      /* Extra top spacing for the announcement bar is added only when it is
+         visible, via styles.css: body.has-announcement .project-detail. */
+      padding: var(--spacing-xxl) 0;
+      background-color: var(--dark);
+      color: var(--white);
+      position: relative;
+    }
+    .project-detail::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(14,14,14,0.95) 0%, rgba(26,26,26,0.85) 100%);
+      z-index: 1;
+    }
+    .project-detail .container { position: relative; z-index: 2; }
+
+    .content { color: var(--lighter-gray); line-height: 1.75; }
+    .content h3 { color: var(--white); margin-top: var(--spacing-lg); }
+    .content h3 .h3-sub { color: var(--light-gray); font-weight: 400; }
+    .content p { margin: 0 0 var(--spacing-md); }
+    .content ul { padding-left: 1.25rem; margin: 0 0 var(--spacing-md); }
+    .content li { margin: .45rem 0; }
+    .content strong { color: var(--white); }
+
+    /* Two-column layout: process (narrow) + pricing (wider) side by side */
+    .offer-cols {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: var(--spacing-lg);
+      align-items: start;
+      margin-top: var(--spacing-lg);
+    }
+    /* Headings flush to the grid top + no wrap, so steps and table start level */
+    .offer-cols h3 { margin-top: 0; white-space: nowrap; }
+    /* Nudge the step cards up so they sit level with the pricing table */
+    .offer-cols .offer-steps { margin-top: -.4rem; }
+
+    @media (max-width: 768px) {
+      .offer-cols { grid-template-columns: 1fr; gap: 0; }
+      .offer-cols > div + div h3 { margin-top: var(--spacing-lg); }
+    }
+
+    /* Pricing table */
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0 0 var(--spacing-sm);
+      overflow: hidden;
+      border-radius: var(--border-radius-sm);
+    }
+    .pricing-table th, .pricing-table td {
+      text-align: left;
+      padding: .9rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .pricing-table thead th {
+      color: var(--white);
+      font-weight: 600;
+      background: rgba(255,255,255,0.04);
+      text-transform: uppercase;
+      font-size: .82rem;
+      letter-spacing: .04em;
+    }
+    .pricing-table td { color: var(--lighter-gray); }
+    .pricing-table tbody tr:hover { background: rgba(255,255,255,0.03); }
+    .pricing-table .scope { color: var(--white); font-weight: 500; }
+    .pricing-table .price { color: var(--primary); font-weight: 700; white-space: nowrap; }
+    .pricing-table .price-small { font-size: 1.15rem; }
+    .pricing-comment { font-size: .9rem; color: var(--light-gray); margin: .5rem 0 var(--spacing-md); border-collapse: collapse; }
+    .pricing-comment td { border: none; padding: 0 .4rem 0 0; vertical-align: top; }
+    .pricing-comment td:first-child { white-space: nowrap; }
+    .pricing-table .scope-info {
+      display: inline-block;
+      margin-left: .4rem;
+      padding: 0;
+      font-size: .75rem;
+      color: var(--accent-gold);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      vertical-align: middle;
+      transition: transform var(--transition-fast);
+    }
+    .pricing-table .scope-info[aria-expanded="true"] { transform: rotate(180deg); }
+    .pricing-table .scope-samples td { padding-top: .35rem; padding-bottom: .85rem; color: var(--light-gray); }
+    .pricing-table .scope-samples .samples-label { display: block; color: var(--white); font-weight: 600; font-size: .85rem; margin-bottom: .3rem; }
+    .pricing-table .scope-samples ul { margin: 0; padding-left: 1.25rem; font-size: .9rem; }
+    .pricing-table .scope-samples li { margin: .2rem 0; }
+
+    /* CTA */
+    .offer-cta {
+      margin-top: var(--spacing-lg);
+      text-align: center;
+    }
+    .offer-cta .btn { font-size: 1.05rem; }
+
+    @media (max-width: 600px) {
+      .pricing-table thead { display: none; }
+      .pricing-table, .pricing-table tbody, .pricing-table tr, .pricing-table td { display: block; width: 100%; }
+      .pricing-table tr {
+        margin-bottom: .75rem;
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: var(--border-radius-sm);
+      }
+      .pricing-table td { border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .pricing-table td:last-child { border-bottom: none; }
+      .pricing-table td::before {
+        content: attr(data-label);
+        display: block;
+        font-size: .72rem;
+        text-transform: uppercase;
+        letter-spacing: .04em;
+        color: var(--light-gray);
+        margin-bottom: .2rem;
+      }
+      .pricing-table .scope-samples td::before { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="../../index.html#hero" class="nav-link">Home</a></li>
+          <li><a href="../../index.html#about" class="nav-link">Ask AI</a></li>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-head">
+              <a href="../../index.html#services" class="nav-link">Services</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Services submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../services/automation.html" class="nav-link">Automation</a></li>
+              <li><a href="../services/self-improving.html" class="nav-link">Self-improving AI</a></li>
+              <li><a href="../services/data-solutions.html" class="nav-link">AI Data Solutions</a></li>
+              <li><a href="../services/consulting.html" class="nav-link">AI Consulting</a></li>
+              <li><a href="../services/security.html" class="nav-link">AI Security &amp; Evaluation</a></li>
+              <li><a href="../placeholder.html" class="nav-link">AI Visualization</a></li>
+              <li><a href="../placeholder.html" class="nav-link">Apps that work</a></li>
+            </ul>
+          </li>
+          <li class="nav-dropdown new-content less-spacing">
+            <span class="nav-dropdown-head">
+              <span class="nav-dropdown-label">Systems</span>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Systems submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
+              <li><a href="../systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
+              <li><a href="../systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
+              <li><a href="../systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../index.html#skills" class="nav-link">Skills</a></li>
+          <li><a href="../../index.html#proj" class="nav-link">Projects</a></li>
+          <li><a href="../../index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
+              title="Visit my LinkedIn profile"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link" title="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
+          <li class="lang-switch">
+            <a href="../../../pages/offers/offer.html" class="nav-link" hreflang="de" title="Deutsch">DE</a>
+            <span class="lang-sep">|</span>
+            <a href="offer.html" class="nav-link active" hreflang="en" title="English">EN</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="project-detail">
+    <div class="container">
+      <div class="section-header">
+        <h2 style="color: var(--white);">Small AI automation starting at <span class="highlight">&euro; 1,000</span></h2>
+<!--
+        <div class="underline"></div>
+-->
+      </div>
+
+      <p class="offer-lead">
+        Automate recurring work &ndash; with <strong>AI agents or workflow</strong>, integrated with your existing systems (e.g. CRM and ERP).
+        Once installed, <span class="price-hl">an automation saves you much time, effort and resources every year.</span>
+      </p>
+
+      <details class="samples-reveal">
+        <summary>Show samples for automations <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+        <ul>
+          <li>Invoices or reports automatically</li>
+          <li>Sort, answer or forward emails</li>
+          <li>Extract data from PDFs, forms or emails</li>
+          <li>Sync information between systems (CRM, ERP)</li>
+          <li>Recurring research and summaries</li>
+        </ul>
+      </details>
+
+      <div class="content">
+        <div class="offer-cols">
+          <div>
+            <h3>How it works</h3>
+            <ol class="offer-steps">
+              <li class="no-num"><strong>Runs locally or web server.</strong> Support with GDPR.</li>
+              <li>Clarify / identify the use case<br>
+                <span class="step-comment">free initial consultation, on-site in the region or online</span></li>
+              <li>Proposed solution</li>
+              <li>Implementation</li>
+            </ol>
+          </div>
+          <div>
+            <h3>Kickstart offer <span class="h3-sub">(fixed price, no risk)</span></h3>
+            <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Scope</th>
+              <th>Effort</th>
+              <th>Price *</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="scope" data-label="Scope">Small use case<button type="button" class="scope-info" aria-expanded="false" aria-label="Show examples"><i class="fas fa-chevron-down" aria-hidden="true"></i></button></td>
+              <td data-label="Effort">up to 2 working days</td>
+              <td class="price price-small" data-label="Price">&euro;1,000</td>
+            </tr>
+            <tr class="scope-samples" hidden>
+              <td colspan="3">
+                <span class="samples-label">Examples:</span>
+                <ul>
+                  <li>Simple API connection</li>
+                  <li>Workflow automation &amp; system integration</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="scope" data-label="Scope">Normal use case<button type="button" class="scope-info" aria-expanded="false" aria-label="Show examples"><i class="fas fa-chevron-down" aria-hidden="true"></i></button></td>
+              <td data-label="Effort">3&ndash;5 working days</td>
+              <td class="price" data-label="Price">&euro;1,500 - &euro;2,500</td>
+            </tr>
+            <tr class="scope-samples" hidden>
+              <td colspan="3">
+                <span class="samples-label">Examples:</span>
+                <ul>
+                  <li>Multi-step workflows across several systems</li>
+                  <li>AI-assisted document or email processing</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="scope" data-label="Scope">Larger project<button type="button" class="scope-info" aria-expanded="false" aria-label="Show examples"><i class="fas fa-chevron-down" aria-hidden="true"></i></button></td>
+              <td data-label="Effort">&ndash;</td>
+              <td class="price" data-label="Price">on request</td>
+            </tr>
+            <tr class="scope-samples" hidden>
+              <td colspan="3">
+                <span class="samples-label">Examples:</span>
+                <ul>
+                  <li>Custom AI agents / custom dashboards</li>
+                  <li>Ongoing support &amp; further development</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+            <table class="pricing-comment">
+              <tr>
+                <td>*</td>
+                <td><b>Special price</b> plus VAT - once per customer. 50% deposit upfront. (Regular price: 80 EUR/h)</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b>On-site:</b> plus expenses or flat rate. Bamberg or online at no extra charge.</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b>Excluded:</b> recurring cost like AI usage, cloud or professional GDPR review.</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <h3>Send your use case <span class="h3-sub">(non-binding offer)</span></h3>
+        <p>Describe your use case &ndash; I&rsquo;ll get back to you shortly with an assessment.</p>
+        <div class="contact-form-container">
+          <form id="offer-form" class="contact-form" novalidate>
+            <div class="form-group">
+              <label for="of-name">Name *</label>
+              <input id="of-name" type="text" name="name">
+            </div>
+            <div class="form-group">
+              <label for="of-email">Mail *</label>
+              <input id="of-email" type="email" name="email">
+            </div>
+            <div class="form-group">
+              <label for="of-current">Current situation / task today *</label>
+              <textarea id="of-current" name="current" rows="4"
+                placeholder="Which recurring task would you like to automate?&#10;How is it done currently and who does it?&#10;A short example helps."></textarea>
+            </div>
+            <div class="form-group">
+              <label for="of-inputs">Your inputs / documents (if applicable)</label>
+              <input id="of-inputs" type="text" name="inputs" placeholder="e.g. documents, spreadsheets, emails &hellip;">
+            </div>
+            <div class="form-group">
+              <label for="of-systems">Systems / tools involved</label>
+              <input id="of-systems" type="text" name="systems" placeholder="e.g. Outlook, Excel, CRM, ERP &hellip;">
+            </div>
+            <div class="form-group">
+              <label for="of-outcome">Desired outcome</label>
+              <textarea id="of-outcome" name="outcome" rows="3"
+                placeholder="What should the end result be?&#10;How will you know it works?"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="of-frequency">Frequency / volume</label>
+              <input id="of-frequency" type="text" name="frequency" placeholder="e.g. ~20 emails per day, 50 invoices/month">
+            </div>
+            <div class="form-group">
+              <label for="of-budget">Timeline and budget expectations</label>
+              <input id="of-budget" type="text" name="budget" placeholder="if neccessary timeframe, approximate budget">
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-bolt"></i> Send your use case</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+          <a href="../../../llms.txt" class="footer-agent-link">For AI agents</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-links">
+          <a href="../../privacy.html">Privacy</a>
+          <a href="../../imprint.html">Imprint</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>powered by &copy; Walter A. Jablonowski 2019-2026. Made with AI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script type="text/javascript" src="../../../lib/emailjs/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init({ publicKey: "xvNrfCyYGqQD5cuoU" });
+    })();
+  </script>
+  <script src="../../../lib/config.js?v=26070401"></script>
+  <script src="../../../controller.js?v=26070401"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26070401"></script>
+  <script>
+    new WebsiteController();
+  </script>
+  <script>
+    document.querySelectorAll('.pricing-table .scope-info').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var row = btn.closest('tr');
+        var samples = row.nextElementSibling;
+        if (!samples || !samples.classList.contains('scope-samples')) return;
+        var willOpen = samples.hasAttribute('hidden');
+        if (willOpen) { samples.removeAttribute('hidden'); } else { samples.setAttribute('hidden', ''); }
+        btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      });
+    });
+  </script>
+</body>
+</html>
