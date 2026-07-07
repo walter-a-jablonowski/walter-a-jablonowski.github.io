@@ -30,6 +30,7 @@ Ready-to-adapt products built from these services.
 - [Chat with Data](https://walter-a-jablonowski.github.io/en/pages/systems/data_chat/): Ask your company data questions in natural language — the AI builds a safe, read-only query and returns tables, summaries and charts. Runs on your server or fully local. A tailor-made AI data solution.
 - [SEO Agent](https://walter-a-jablonowski.github.io/en/pages/systems/seo_agent/): A scheduled AI agent that audits your website and optimizes it for Google and AI search (GEO) — meta tags, content, structured data, new pages. Runs on its own or alongside the other systems.
 - [AI Log Viewer](https://walter-a-jablonowski.github.io/en/pages/systems/log-view/): A universal log viewer that brings log files of any format into one place — with a powerful expression filter syntax, AI analysis and a pluggable type system. SQLite with zero setup or MySQL for logs with 100,000+ entries.
+- [Agent DB](https://walter-a-jablonowski.github.io/en/pages/systems/agentic_db/): A file-based Markdown knowledge base that an AI KeeperAgent organizes on its own — places, splits, merges, indexes and archives. Atomic, versioned, fully undoable. Works standalone as plain files too.
 
 ## About
 

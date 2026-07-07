@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="SEO AI Agent: a scheduled AI agent that audits your website and optimizes it for Google and AI search (GEO) &ndash; meta, content, JSON-LD, new pages. Changes go live only after your approval. Bamberg, Nuremberg and online.">
-  <meta name="keywords" content="SEO agent, AI SEO, GEO, AI search optimization, automated SEO, Google Search Console, AI for SMEs, Bamberg, Nuremberg">
+  <meta name="description" content="Agent DB: a file-based Markdown knowledge base that an AI KeeperAgent organizes on its own &ndash; places, splits, merges, indexes and archives. Atomic, versioned, fully undoable. Bamberg, Nuremberg and online.">
+  <meta name="keywords" content="Agent DB, AI knowledge base, KeeperAgent, Markdown database, AI-organized knowledge, file-based database, AI, Artificial Intelligence, Bamberg, Nuremberg">
   <meta name="author" content="Walter A. Jablonowski">
-  <title>SEO AI Agent &ndash; Optimize your website for Google &amp; AI search automatically | Walter A. Jablonowski</title>
+  <title>Agent DB &ndash; AI-organized knowledge base | Walter A. Jablonowski</title>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Walter A. Jablonowski">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="SEO AI Agent &ndash; Optimize your website for Google &amp; AI search automatically">
-  <meta property="og:description" content="A scheduled AI agent that audits your website and optimizes it for Google and AI search &ndash; changes go live only after your approval.">
-  <meta property="og:url" content="https://walter-a-jablonowski.github.io/en/pages/systems/seo_agent/">
+  <meta property="og:title" content="Agent DB &ndash; AI-organized knowledge base">
+  <meta property="og:description" content="A file-based Markdown knowledge base that an AI agent organizes on its own &ndash; atomic, versioned, fully undoable.">
+  <meta property="og:url" content="https://walter-a-jablonowski.github.io/en/pages/systems/agentic_db/">
   <meta property="og:image" content="https://walter-a-jablonowski.github.io/misc/automation-placeholder.svg">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">
@@ -24,16 +24,16 @@
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://walter-a-jablonowski.github.io/en/" },
           { "@type": "ListItem", "position": 2, "name": "Systems", "item": "https://walter-a-jablonowski.github.io/en/" },
-          { "@type": "ListItem", "position": 3, "name": "SEO AI Agent", "item": "https://walter-a-jablonowski.github.io/en/pages/systems/seo_agent/" }
+          { "@type": "ListItem", "position": 3, "name": "Agent DB", "item": "https://walter-a-jablonowski.github.io/en/pages/systems/agentic_db/" }
         ]
       },
       {
-        "@type": "Service",
-        "name": "SEO AI Agent",
-        "serviceType": "AI-powered SEO and GEO optimization for websites",
-        "description": "A scheduled AI agent that audits a website and optimizes it for Google and AI search (GEO) &ndash; meta, content, JSON-LD, alt texts and whole new pages. Changes land on a branch for review; the agent never pushes.",
+        "@type": "SoftwareApplication",
+        "name": "Agent DB",
+        "applicationCategory": "KnowledgeManagement",
+        "description": "A file-based Markdown knowledge base that an AI KeeperAgent organizes on its own &ndash; places, splits, merges, indexes and archives. Atomic, versioned, fully undoable.",
         "inLanguage": "en",
-        "url": "https://walter-a-jablonowski.github.io/en/pages/systems/seo_agent/",
+        "url": "https://walter-a-jablonowski.github.io/en/pages/systems/agentic_db/",
         "provider": { "@type": "Person", "name": "Walter A. Jablonowski", "url": "https://walter-a-jablonowski.github.io/" },
         "areaServed": [
           { "@type": "City", "name": "Bamberg" },
@@ -43,10 +43,10 @@
     ]
   }
   </script>
-  <link rel="canonical" href="https://walter-a-jablonowski.github.io/en/pages/systems/seo_agent/">
-  <link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/seo_agent/">
-  <link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/seo_agent/">
-  <link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/seo_agent/">
+  <link rel="canonical" href="https://walter-a-jablonowski.github.io/en/pages/systems/agentic_db/">
+  <link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/agentic_db/">
+  <link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/agentic_db/">
+  <link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/agentic_db/">
   <link rel="apple-touch-icon" sizes="180x180" href="../../../../apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../../favicon-16x16.png">
@@ -75,7 +75,7 @@
     .content { color: var(--lighter-gray); line-height: 1.75; }
     .content h3 { color: var(--white); margin-top: var(--spacing-xl); }
     /* Keep the shared reset: the heading in the two-column steps block must top-align
-       with the text column (our .content h3 margin would otherwise push it down). */
+       with the text column (our .content h3 margin would push it down). */
     .content .steps-cols h3 { margin-top: 0; }
     .content p { margin: 0 0 var(--spacing-md); }
     .content ul { padding-left: 1.25rem; margin: 0 0 var(--spacing-md); }
@@ -134,9 +134,9 @@
             <ul class="nav-dropdown-menu">
               <li><a href="../web_agent/index.html" class="nav-link">Website AI Agent</a></li>
               <li><a href="../data_chat/index.html" class="nav-link">Chat with Data</a></li>
-              <li><a href="index.html" class="nav-link active">SEO Agent</a></li>
+              <li><a href="../seo_agent/index.html" class="nav-link">SEO Agent</a></li>
               <li><a href="../log-view/index.html" class="nav-link">AI Log Viewer</a></li>
-              <li><a href="../agentic_db/index.html" class="nav-link">Agent DB</a></li>
+              <li><a href="index.html" class="nav-link active">Agent DB</a></li>
             </ul>
           </li>
           <li class="less-spacing"><a href="../../../index.html#contact" class="nav-link">Contact</a></li>
@@ -144,7 +144,7 @@
               title="Visit my LinkedIn profile"><i class="fab fa-linkedin-in"></i></a></li>
           <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link" title="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
           <li class="lang-switch">
-            <a href="../../../../pages/systems/seo_agent/index.html" class="nav-link" hreflang="de" title="Deutsch">DE</a>
+            <a href="../../../../pages/systems/agentic_db/index.html" class="nav-link" hreflang="de" title="Deutsch">DE</a>
             <span class="lang-sep">|</span>
             <a href="index.html" class="nav-link active" hreflang="en" title="English">EN</a>
           </li>
@@ -160,21 +160,21 @@
       <div class="product-hero">
         <div class="ph-text">
           <p class="ph-eyebrow">Systems</p>
-          <h1>SEO AI Agent <span class="badge badge-experimental">Experimental</span></h1>
-          <p class="ph-tagline">Your website, continuously optimized &ndash; for <strong>Google</strong> and <strong>AI search</strong>.</p>
+          <h1>Agent DB <span class="badge badge-experimental">Experimental</span></h1>
+          <p class="ph-tagline">A Markdown knowledge base that lets <strong>AI organize itself</strong>.</p>
           <p class="ph-lead">
-            A scheduled AI agent audits your site, researches what&rsquo;s missing and improves copy,
-            meta tags and structure &ndash; and writes whole new pages when needed. Every change lands
-            on its own branch for review. The agent never pushes.
+            A file-based knowledge-base system: AI agents read and add content, a KeeperAgent
+            sorts, splits, merges and indexes them on its own. Everything is atomic, versioned
+            and fully undoable &ndash; works standalone as a plain file collection too.
           </p>
           <div class="ph-actions">
             <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Request advice</a>
             <a href="#how" class="btn btn-secondary"><i class="fas fa-gears"></i> How it works</a>
           </div>
-          <p class="ph-live"><i class="fas fa-circle"></i> Runs on a schedule &ndash; changes go live only after your approval.</p>
+          <p class="ph-live"><i class="fas fa-circle"></i> File-based &ndash; no server, no database, just Markdown files.</p>
         </div>
         <div class="ph-visual">
-          <img src="../../../../misc/automation-placeholder.svg" alt="SEO AI Agent: automated SEO and GEO audit with proposed page changes" loading="lazy">
+          <img src="../../../../misc/automation-placeholder.svg" alt="Agent DB: file-based AI knowledge base with KeeperAgent organizing content" loading="lazy">
         </div>
       </div>
 
@@ -183,46 +183,46 @@
         <!-- 2) What is it? -->
         <h3 id="what">What is it?</h3>
         <p>
-          <strong>SEO AI Agent</strong> is an AI agent that keeps your website fit for search on its
-          own &ndash; for Google as much as for AI answer engines (GEO). It runs on a schedule, collects
-          real data about your site, finds weak spots and proposes targeted improvements. Nothing
-          goes live unasked: the agent puts its changes on a dedicated branch for you to review and
-          approve.
+          <strong>Agent DB</strong> is a file-based Markdown knowledge base that an internal LLM
+          agent &ndash; the <strong>KeeperAgent</strong> &ndash; organizes on its own. External AI
+          agents read freely and drop content into an intake folder; the KeeperAgent places, splits,
+          merges, trims and indexes them. Everything is atomic, logged, versioned and undoable. On
+          any inconsistency the database freezes (HALT) rather than acting on a corrupt state.
         </p>
         <ul>
-          <li>Optimizes for classic search <strong>and</strong> AI search (GEO) in one pass</li>
-          <li>Works with real data: Google Search Console, GA4, SERP, AI citations</li>
-          <li>Targets meta, content, JSON-LD and alt texts &ndash; and writes new pages (DE+EN)</li>
-          <li>Changes land on a branch for approval &ndash; the agent never pushes</li>
+          <li>Pure Markdown files &ndash; no server, no database, works with any file tooling or Git</li>
+          <li>The KeeperAgent alone decides placement, splitting, merging and indexing</li>
+          <li>Agents read freely (never blocked); writes go through the KeeperAgent</li>
+          <li>Every change is atomic, logged, versioned and undoable</li>
         </ul>
 
         <!-- 3) Features -->
         <h3 id="features">Features</h3>
         <div class="feature-grid">
           <div class="feature-box">
-            <div class="fb-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
-            <h4>Audit on real data</h4>
-            <p>Crawls the site and reads Search Console, GA4, SERP and AI citations.</p>
+            <div class="fb-icon"><i class="fas fa-code-merge"></i></div>
+            <h4>Autonomous organizing</h4>
+            <p>The KeeperAgent places, splits, merges, deduplicates and indexes &ndash; driven by a user-authored schema.</p>
           </div>
           <div class="feature-box">
-            <div class="fb-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
-            <h4>Targeted edits</h4>
-            <p>Changes meta titles, text blocks, JSON-LD and alt texts &ndash; precisely, not wholesale.</p>
+            <div class="fb-icon"><i class="fas fa-link"></i></div>
+            <h4>Durable links</h4>
+            <p>ID-based references survive every move, merge or split. Alias files (<code>(lnk)</code>) place objects at multiple locations.</p>
           </div>
           <div class="feature-box">
-            <div class="fb-icon"><i class="fas fa-robot"></i></div>
-            <h4>Visible in AI search</h4>
-            <p>GEO: checks whether ChatGPT, Gemini &amp; Perplexity cite you &ndash; and works on it.</p>
+            <div class="fb-icon"><i class="fas fa-rotate-left"></i></div>
+            <h4>Fully undoable</h4>
+            <p>Every content change is versioned; deletions archived. <code>ui_undo</code> reverses any action via the log.</p>
           </div>
           <div class="feature-box">
-            <div class="fb-icon"><i class="fas fa-file-circle-plus"></i></div>
-            <h4>New pages</h4>
-            <p>For keywords with no ranking page it writes whole pages (DE+EN) and links them.</p>
+            <div class="fb-icon"><i class="fas fa-shield-halved"></i></div>
+            <h4>Safe by construction</h4>
+            <p>Atomic writes, global lock, HALT on inconsistency. The DB freezes rather than acting on a corrupt state.</p>
           </div>
           <div class="feature-box">
-            <div class="fb-icon"><i class="fas fa-code-branch"></i></div>
-            <h4>Approval by branch</h4>
-            <p>Each run commits to a branch for review &ndash; you merge what goes live.</p>
+            <div class="fb-icon"><i class="fas fa-magnifying-glass"></i></div>
+            <h4>Indexed search</h4>
+            <p>Chained index files with routing summaries. <code>db_search</code> traverses the index via LLM scoring.</p>
           </div>
         </div>
 
@@ -231,21 +231,24 @@
           <div>
             <h3 id="how">How it works</h3>
             <ol class="offer-steps">
-              <li>The agent collects data and measures where the site stands</li>
-              <li>It researches gaps and builds a <strong>briefing</strong> for the AI model</li>
-              <li>The model returns targeted edits &ndash; and new pages for missing keywords</li>
-              <li class="no-num"><strong>Flow:</strong> Collect &rarr; Measure &rarr; Research &rarr; Brief &rarr; Edit &rarr; Guardrails &rarr; Commit</li>
+              <li>Content is dropped into <code>/_in</code> (or sent directly via <code>db_store</code>)</li>
+              <li>Dedup check: exact re-drops are detected and skipped</li>
+              <li>The KeeperAgent <strong>places</strong>: create, update, merge or refuse</li>
+              <li>On a full run: <strong>restructure</strong> the neighbourhood + <strong>housekeeping</strong></li>
+              <li class="no-num"><strong>Flow:</strong> Intake &rarr; Dedup &rarr; Place &rarr; Restructure &rarr; Trim &rarr; Lint &rarr; Index</li>
             </ol>
           </div>
           <div class="steps-text">
             <p>
-              Before the commit, <strong>guardrails</strong> check the entire edited site &ndash; broken
-              links, JSON-LD, meta lengths, duplicate titles, valid HTML. If a check fails, every
-              file is restored and <strong>nothing</strong> is committed.
+              The <strong>KeeperAgent</strong> makes all organizational decisions &ndash;
+              placement, splitting, merging, indexing. External agents read freely and write
+              via <code>db_store</code>; they never move files themselves.
             </p>
             <p>
-              The language model is <strong>interchangeable</strong>: cloud (OpenRouter with Gemini&nbsp;3.5&nbsp;Flash,
-              Google&nbsp;Gemini) or local (Ollama) &ndash; depending on how much should stay in-house.
+              The <strong>schema</strong> (<code>_schema.md</code>) is user-authored and drives
+              the KeeperAgent: <code>Domain</code> sets the atomic grain, <code>keeperStyle</code>
+              the willingness to act. Split and merge share one grain &ndash; merge never undoes
+              a grain-justified split.
             </p>
           </div>
         </div>
@@ -254,66 +257,66 @@
         <h3 id="use-cases">What for?</h3>
         <div class="feature-grid">
           <div class="feature-box">
-            <div class="fb-icon"><i class="fas fa-arrow-trend-up"></i></div>
-            <h4>Better on Google</h4>
-            <p>Ongoing optimization of titles, content and structure instead of one-off actions.</p>
+            <div class="fb-icon"><i class="fas fa-brain"></i></div>
+            <h4>Agent memory</h4>
+            <p>Structured long-term memory for AI agents &ndash; they read and write, the DB organizes.</p>
           </div>
           <div class="feature-box">
-            <div class="fb-icon"><i class="fas fa-comment-dots"></i></div>
-            <h4>Found by AI</h4>
-            <p>Visible and citable in ChatGPT, Gemini and Perplexity (GEO).</p>
+            <div class="fb-icon"><i class="fas fa-book"></i></div>
+            <h4>Personal knowledge base</h4>
+            <p>Works without AI as a plain Markdown collection &ndash; the KeeperAgent is optional.</p>
           </div>
           <div class="feature-box">
-            <div class="fb-icon"><i class="fas fa-clock-rotate-left"></i></div>
-            <h4>No constant effort</h4>
-            <p>Runs on a schedule in the background &ndash; you only review the proposals.</p>
+            <div class="fb-icon"><i class="fas fa-users"></i></div>
+            <h4>Team knowledge</h4>
+            <p>Git-based knowledge base for teams &ndash; every change is traceable and undoable.</p>
           </div>
           <div class="feature-box">
-            <div class="fb-icon"><i class="fas fa-store"></i></div>
-            <h4>Ideal for SMEs</h4>
-            <p>SEO upkeep without your own team &ndash; with full control over every change.</p>
+            <div class="fb-icon"><i class="fas fa-database"></i></div>
+            <h4>Documentation &amp; reference</h4>
+            <p>Technical docs that structure themselves &ndash; the KeeperAgent keeps them consistent.</p>
           </div>
         </div>
 
         <!-- 6) Tailor-made -->
         <h3 id="custom">Tailor-made for you</h3>
         <p>
-          SEO AI Agent is not a rigid off-the-shelf tool but modular by design, tuned to your website
-          and your goals. Every building block is interchangeable:
+          Agent DB is modular by design, tuned to your use case via schema and configuration:
         </p>
         <ul>
-          <li>Target keywords, edit budget and schedule freely chosen per website</li>
-          <li>Data sources toggled on: Search Console, GA4, SERP, AI citations</li>
-          <li>AI model of your choice: cloud for speed or local (Ollama) for maximum confidentiality</li>
-          <li>Design-sensitive pages spared: only small edits (meta, alt, JSON-LD), no new sections</li>
-          <li>Run either as a proposal (propose) or as a commit for approval</li>
+          <li><code>Domain</code> defines what an atomic object is &ndash; drives split and merge behaviour</li>
+          <li><code>keeperStyle</code> (conservative / balanced / aggressive) controls willingness to restructure</li>
+          <li><code>deletionPercent</code> controls content trimming (<code>0</code> disables)</li>
+          <li><code>naming</code> sets the naming convention (kebab-case, snake_case, Title Case, natural)</li>
+          <li>LLM model and temperature freely chosen &ndash; <code>temperature: 0</code> for reproducible runs</li>
+          <li>Cron schedule or manual trigger &ndash; full control over maintenance intervals</li>
         </ul>
 
         <!-- 7) Privacy & control -->
         <div class="highlight-box">
           <p><i class="fas fa-shield-halved" style="color: var(--primary); margin-right:.5rem;"></i>
-            <strong>Control &amp; safety:</strong> The agent is <strong>sandboxed</strong> to your website
-            directory &ndash; it never writes outside it. Every file is backed up before a change; if a
-            guardrail fails, everything is restored. Changes land on a branch for approval &ndash; the
-            agent <strong>never pushes</strong>.</p>
+            <strong>Safety &amp; consistency:</strong> Every write is atomic (temp &rarr; fsync &rarr; rename).
+            A global lock serializes writes; reads never block. On inconsistency the DB freezes
+            (<strong>HALT</strong>) &ndash; only diagnose and recovery tools run. Lint detects and
+            auto-repairs structural issues on every run.</p>
         </div>
 
         <!-- 8) See it in action -->
         <div class="live-demo">
           <h3>See it in action</h3>
-          <p>I&rsquo;m happy to show you SEO AI Agent live on an example run &ndash; or straight away on your own website.</p>
+          <p>I&rsquo;m happy to show you Agent DB on an example setup &ndash; or set it up for your use case.</p>
           <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Request a demo</a>
         </div>
 
         <!-- 9) At a glance -->
         <h3 id="specs">At a glance</h3>
         <div class="spec-list">
-          <div class="spec-row"><span class="spec-k">Task</span><span class="spec-v">automated SEO &amp; AI-search audit + optimization</span></div>
-          <div class="spec-row"><span class="spec-k">Data sources</span><span class="spec-v">Search Console, GA4, SERP, AI citations</span></div>
-          <div class="spec-row"><span class="spec-k">Changes</span><span class="spec-v">meta, content, JSON-LD, alt texts, new pages (DE+EN)</span></div>
-          <div class="spec-row"><span class="spec-k">AI</span><span class="spec-v">OpenRouter (Gemini&nbsp;3.5&nbsp;Flash), Gemini or local (Ollama)</span></div>
-          <div class="spec-row"><span class="spec-k">Operation</span><span class="spec-v">scheduled (e.g. Task Scheduler), on your machine/server</span></div>
-          <div class="spec-row"><span class="spec-k">Security</span><span class="spec-v">guardrails, backups, commit for approval &ndash; no auto-push</span></div>
+          <div class="spec-row"><span class="spec-k">Task</span><span class="spec-v">AI-organized file-based knowledge base</span></div>
+          <div class="spec-row"><span class="spec-k">Format</span><span class="spec-v">Markdown files + resources (images, PDFs, CSVs)</span></div>
+          <div class="spec-row"><span class="spec-k">AI</span><span class="spec-v">KeeperAgent (LLM) &ndash; model freely chosen, temperature configurable</span></div>
+          <div class="spec-row"><span class="spec-k">Safety</span><span class="spec-v">atomic writes, global lock, HALT, versioning, archiving, undo</span></div>
+          <div class="spec-row"><span class="spec-k">Action</span><span class="spec-v">file-based (no server) &ndash; cron or manual</span></div>
+          <div class="spec-row"><span class="spec-k">Interfaces</span><span class="spec-v">db_store, db_search, db_read, db_process, db_lint, ui_undo and more</span></div>
         </div>
 
         <!-- 10) FAQ -->
@@ -323,48 +326,48 @@
             <summary>What does it cost? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
             <p>
               <span class="biz-only price-line"><strong>Setup at a fixed price</strong> &middot; plus ongoing usage costs
-              (AI model/APIs). </span>The price depends on scope and data sources &ndash; the initial consultation is free.
+              (AI model/APIs). </span>The price depends on scope &ndash; the initial consultation is free.
             </p>
           </details>
           <details class="samples-reveal">
-            <summary>Does the agent change my site without oversight? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>No. Each run commits to a dedicated branch; you review the diff and merge only what
-              should go live. The agent never pushes. In &bdquo;propose&ldquo; mode it only writes suggestions.</p>
+            <summary>Do I need a server? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>No. Agent DB is purely file-based &ndash; a folder of Markdown files. Back it up with
+              ordinary file tooling or Git. The KeeperAgent runs on your machine or server.</p>
           </details>
           <details class="samples-reveal">
-            <summary>What is GEO / AI search? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>GEO stands for &bdquo;Generative Engine Optimization&ldquo; &ndash; visibility in AI answers
-              (ChatGPT, Gemini, Perplexity). The agent checks whether they cite you and works on it deliberately.</p>
+            <summary>Does it work without AI? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Yes. The files are plain Markdown &ndash; readable and editable with any text editor.
+              The KeeperAgent organizes, but isn't required to use the data.</p>
           </details>
           <details class="samples-reveal">
-            <summary>Does it work with my website? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>The agent is built for websites in a Git repository (e.g. GitHub&nbsp;Pages) with a German
-              and English language version. I&rsquo;m happy to check other setups in an initial call.</p>
+            <summary>What happens on errors? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>On inconsistency the database freezes (HALT) and blocks all writes. Only diagnose
+              and recovery tools continue. After fixing the cause, HALT is cleared manually.</p>
           </details>
           <details class="samples-reveal">
-            <summary>Where does my data run? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>The agent runs on your machine or server and is sandboxed to your website directory.
-              With a local model (Ollama), your content does not leave your premises.</p>
+            <summary>Can I undo changes? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Yes. Every content change is versioned, every deletion archived. <code>ui_undo</code>
+              reverses actions via the log &ndash; with an all-or-none preflight.</p>
           </details>
           <details class="samples-reveal">
             <summary>Which AI is behind it? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>By default OpenRouter with Gemini&nbsp;3.5&nbsp;Flash; Google&nbsp;Gemini or a local model (Ollama)
-              are equally possible. The model can be swapped without rebuilding the agent.</p>
+            <p>The LLM model is freely chosen (cloud or local). For reproducible runs,
+              <code>temperature: 0</code> is recommended. The model used is recorded per action.</p>
           </details>
         </div>
 
         <!-- 11) More on the topic -->
         <div class="highlight-box">
           <p><i class="fas fa-lightbulb" style="color: var(--primary); margin-right:.5rem;"></i>
-            <strong>More than SEO:</strong> SEO AI Agent is one example of my
+            <strong>More than storage:</strong> Agent DB is one example of my
             <a href="../../services/automation.html">automation</a> and
-            <a href="../../services/self-improving.html">self-improving AI</a> &ndash; agents that take
-            over recurring work and learn from their results.</p>
+            <a href="../../services/self-improving.html">self-improving AI</a> &ndash; systems
+            that organize themselves and learn from their inputs.</p>
         </div>
 
         <!-- 12) Closing CTA -->
         <div class="service-cta product-cta">
-          <h3>SEO AI Agent for your website</h3>
+          <h3>Agent DB for your use case</h3>
           <p>Initial consultation free of charge &ndash; on-site in Bamberg/Nuremberg or online.</p>
           <div class="cta-actions">
             <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Get in touch</a>
