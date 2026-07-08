@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="description" content="On-premise LLMs for the Bamberg and Nuremberg Mittelstand: how local companies use AI without sending data outside.">
+  <meta name="keywords" content="Blog, AI, Mittelstand, On-Premise, Data Privacy, Bamberg, Nuremberg, Upper Franconia, LLM, Open Weights">
+  <meta name="author" content="Walter A. Jablonowski">
+  <meta property="og:title" content="Local AI for the Mittelstand: On-Premise LLMs in Bamberg and Nuremberg - Walter A. Jablonowski">
+  <meta property="og:description" content="How Mittelstand companies in Upper Franconia use open-weights models on their own hardware &mdash; without sending data to the cloud.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://walter-a-jablonowski.github.io/en/pages/blog/260708-01-lokale-ki-mittelstand-on-premise.html">
+  <title>Local AI for the Mittelstand: On-Premise LLMs in Bamberg and Nuremberg | Walter A. Jablonowski</title>
+  <link rel="canonical" href="https://walter-a-jablonowski.github.io/en/pages/blog/260708-01-lokale-ki-mittelstand-on-premise.html">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
+  <link rel="manifest" href="../../../site.webmanifest">
+  <link rel="stylesheet" href="../../../styles.css?v=26070801">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26070801">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26070801">
+  <script src="../../../cookie-fix.js?v=26070801"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="../../../index.html#hero" class="nav-link">Home</a></li>
+          <li><a href="../../../index.html#about" class="nav-link">Ask AI</a></li>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-head">
+              <a href="../../../index.html#services" class="nav-link">Services</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Services submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../services/automation.html" class="nav-link">Automation</a></li>
+              <li><a href="../services/self-improving.html" class="nav-link">Self-improving AI</a></li>
+              <li><a href="../services/data-solutions.html" class="nav-link">AI Data Solutions</a></li>
+              <li><a href="../services/consulting.html" class="nav-link">AI Consulting</a></li>
+              <li><a href="../services/security.html" class="nav-link">AI Security &amp; Evaluation</a></li>
+              <li><a href="../placeholder.html" class="nav-link">UIs for AI</a></li>
+              <li><a href="../placeholder.html" class="nav-link">Apps that work</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../../index.html#skills" class="nav-link">Skills</a></li>
+          <li class="nav-dropdown less-spacing">
+            <span class="nav-dropdown-head">
+              <a href="../../../index.html#proj" class="nav-link">Projects</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Projects submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
+              <li><a href="../systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
+              <li><a href="../systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
+              <li><a href="../systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
+              <li><a href="../systems/agentic_db/index.html" class="nav-link">Agent DB</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../../index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="../../../blog.html" class="nav-link">Blog</a></li>
+          <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
+              title="Visit my LinkedIn profile"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link" title="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
+          <li class="lang-switch">
+            <a href="../../../pages/blog/260708-01-lokale-ki-mittelstand-on-premise.html" class="nav-link" hreflang="de" title="Deutsch">DE</a>
+            <span class="lang-sep">|</span>
+            <a href="260708-01-lokale-ki-mittelstand-on-premise.html" class="nav-link active" hreflang="en" title="English">EN</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <section class="article-header">
+      <div class="container">
+        <h1>Local AI for the Mittelstand: On-Premise LLMs in Bamberg and Nuremberg</h1>
+        <div class="article-meta">
+          <span><i class="far fa-calendar"></i> <time datetime="2026-07-08">July 8, 2026</time></span>
+          <span>|</span>
+          <span><i class="fas fa-tags"></i> <span class="tag">AI</span><span class="tag alt">Mittelstand</span><span class="tag">On-Premise</span><span class="tag alt">Data Privacy</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-content">
+      <div class="container">
+        <div class="article-text">
+          <p>The Mittelstand in Upper Franconia is the engine of the regional economy &mdash; specialized, export-driven, and deeply rooted in Bamberg and Nuremberg. Yet when it comes to artificial intelligence, many companies hesitate. Not out of disinterest, but out of a well-founded unease: sensitive data should never leave the building. Cloud dependencies are to be avoided. And a one-size-fits-all solution from Silicon Valley rarely fits the highly specific processes of a Franconian traditional business.</p>
+
+          <p>The good news: AI doesn't have to mean sending data to foreign servers. On-premise LLMs &mdash; locally hosted language models &mdash; make artificial intelligence tangible for the Mittelstand without compromising on data privacy.</p>
+
+          <h2>Why the Mittelstand thinks differently</h2>
+          <p>A Mittelstand company in Bamberg or Nuremberg thinks about technology differently than a startup in Berlin. Processes have grown over decades, employees know their craft, and the data &mdash; customer relationships, engineering drawings, financial records &mdash; is the company's capital.</p>
+
+          <p>This gives rise to concrete concerns about public-cloud-based AI:</p>
+          <ul>
+            <li><strong>Data privacy:</strong> GDPR compliance is not optional, and sending data to US clouds operates in a gray area.</li>
+            <li><strong>Cloud skepticism:</strong> Dependence on a single vendor, monthly costs without a clear ceiling, lock-in effects.</li>
+            <li><strong>Specialization:</strong> Standard SaaS products don't cover industry-specific workflows &mdash; a Bamberg machine builder needs different AI than a Nuremberg insurer.</li>
+            <li><strong>Cost transparency:</strong> An in-house server is an investment with predictable costs; a cloud API is a black box.</li>
+          </ul>
+
+          <h2>Open-weights models on your own hardware</h2>
+          <p>Until recently, running capable language models locally seemed unthinkable. That has fundamentally changed. Open-weights models like Llama 3, Mistral, or Qwen are now good enough for most business applications &mdash; and they can be quantized to run on commodity hardware.</p>
+
+          <p>What used to require a data-center rack now runs on a single GPU:</p>
+          <ul>
+            <li><strong>Llama 3 (8B):</strong> Quantized to 4-bit on a consumer GPU (e.g., RTX 4060 with 8&nbsp;GB VRAM) &mdash; sufficient for document analysis and internal Q&amp;A.</li>
+            <li><strong>Mistral 7B:</strong> Similarly compact, fast, and well-established in the European space.</li>
+            <li><strong>Qwen 2.5 (14B):</strong> Needs 12&ndash;16&nbsp;GB VRAM but delivers noticeably better reasoning quality.</li>
+            <li><strong>Llama 3 (70B):</strong> With 4-bit quantization on an RTX 4090 or a small server with 24&nbsp;GB VRAM &mdash; approaching GPT-4-class, fully local.</li>
+          </ul>
+
+          <p>The key point: not a single byte leaves the corporate network. The model, the prompts, the responses &mdash; everything stays on-premise.</p>
+
+          <h2>In practice: From traditional business to AI-assisted enterprise</h2>
+          <p>What does this mean concretely for a Mittelstand company in the region? The use cases are less spectacular than in tech media, but immediately usable:</p>
+          <ul>
+            <li><strong>Document analysis:</strong> Automatically summarize contracts, specifications, and quotes; extract key clauses; flag risks.</li>
+            <li><strong>Internal knowledge:</strong> A chat interface on the company's own document base &mdash; employees ask, the AI answers with source references, all in-house.</li>
+            <li><strong>Customer communication:</strong> Email drafts, proposal texts, and translations in the company voice, without sending data to external services.</li>
+            <li><strong>Quality assurance:</strong> Automatically evaluate production and inspection logs, detect deviations, generate reports.</li>
+            <li><strong>Training and onboarding:</strong> New employees can ask questions about internal processes in natural language and get answers from company knowledge.</li>
+          </ul>
+
+          <p>None of these scenarios requires a research lab. A small server, a quantized model, a lean web interface &mdash; that's set up in days, not months.</p>
+
+          <h2>The regional dimension &mdash; why local expertise matters</h2>
+          <p>Technology is one half. The other is trust. A Mittelstand company doesn't want to entrust its AI strategy to a call center overseas. They want someone who knows the regional economy, understands GDPR in a German context, and can be on-site in Bamberg or Nuremberg &mdash; not in three weeks, but tomorrow.</p>
+
+          <p>This isn't a luxury; it's a competitive advantage. Regional proximity means faster iteration, shorter feedback loops, and solutions that fit the company rather than the other way around. Successfully introducing AI in the Mittelstand requires both: technical competence and cultural proximity.</p>
+
+          <h2>Conclusion</h2>
+          <p>On-premise LLMs are no longer an experiment. They're a pragmatic path for Mittelstand companies in Bamberg, Nuremberg, and across Upper Franconia to harness the benefits of artificial intelligence &mdash; without surrendering their data, their independence, or their sovereignty. The models are mature, the hardware is affordable, and the regional expertise is here. What's often missing is just the first step.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+          <a href="../../../llms.txt" class="footer-agent-link">For AI agents</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-links">
+          <a href="../../../privacy.html">Privacy</a>
+          <a href="../../../imprint.html">Imprint</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>powered by &copy; Walter A. Jablonowski 2019-2026. Made with AI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script type="text/javascript" src="../../../lib/emailjs/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init({ publicKey: "xvNrfCyYGqQD5cuoU" });
+    })();
+  </script>
+  <script src="../../../lib/config.js?v=26070801"></script>
+  <script src="../../../controller.js?v=26070801"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26070801"></script>
+  <script src="../../../lib/map.js?v=26070801"></script>
+  <script src="../../../lib/popover.js?v=26070801"></script>
+  <script>
+    new WebsiteController();
+    if( typeof MapController !== 'undefined' ) { new MapController(); }
+  </script>
+</body>
+</html>

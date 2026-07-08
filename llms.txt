@@ -1,4 +1,4 @@
-# Walter A. Jablonowski — AI Developer & AI Consultant
+# Walter A. Jablonowski - AI Developer & AI Consultant
 
 > Freelance AI developer and consultant based in Stegaurach near Bamberg,
 > serving businesses in Bamberg, Nuremberg and the wider Franconia/Bavaria
@@ -40,6 +40,9 @@ Ready-to-adapt products built from these services.
 ## Optional
 
 - [Projects](https://walter-a-jablonowski.github.io/en/#proj): Selected projects and demos.
-- [Blog](https://walter-a-jablonowski.github.io/blog.html): Articles on AI-first development.
+- [Blog](https://walter-a-jablonowski.github.io/en/blog.html): Articles on AI-first development and local AI.
+  - [Local AI for the Mittelstand in Bamberg and Nuremberg](https://walter-a-jablonowski.github.io/en/pages/blog/260708-01-lokale-ki-mittelstand-on-premise.html): Why on-premise open-weights LLMs (Llama 3, Mistral, Qwen) fit privacy-conscious SMEs in Upper Franconia — GDPR-compliant, no data leaving the building.
+  - [Autonomous agents with Google ADK, Coinbase x402, and AP2](https://walter-a-jablonowski.github.io/en/pages/blog/250918-01-autonomous-agents-ap2-x402.html): The emerging agent stack — build with Google's Agent Dev Kit, distribute via x402 Bazaar, monetize with AP2.
+  - [AI-first development boosts productivity](https://walter-a-jablonowski.github.io/en/pages/blog/250918-02-ai-first-development-boosts-productivity.html): How to leverage AI across the lifecycle of small to mid-size apps — from ideation to code generation and quality assurance.
 - [Privacy Policy](https://walter-a-jablonowski.github.io/en/privacy.html)
 - [Imprint](https://walter-a-jablonowski.github.io/en/imprint.html)

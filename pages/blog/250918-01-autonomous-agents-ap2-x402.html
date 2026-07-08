@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <meta name="description" content="How Google Agent Dev Kit, Coinbase x402 Bazaar, and Agent Payments Pro (AP2) fit together to build, discover, and monetize autonomous agents.">
-  <meta name="keywords" content="Blog, Agents, AI first, Payments, Google Cloud, Coinbase, x402, AP2">
+  <meta name="description" content="Wie Google Agent Dev Kit, Coinbase x402 Bazaar und Agent Payments Pro (AP2) zusammenwirken, um autonome Agenten zu bauen, zu entdecken und zu monetarisieren.">
+  <meta name="keywords" content="Blog, Agenten, AI first, Payments, Google Cloud, Coinbase, x402, AP2">
   <meta name="author" content="Walter A. Jablonowski">
-  <meta property="og:title" content="Autonomous Agents with Google ADK, Coinbase x402, and AP2 - Walter A. Jablonowski">
-  <meta property="og:description" content="A concise overview of the emerging agent stack: build with Google's Agent Dev Kit, distribute via x402 Bazaar, and handle money flows with AP2.">
+  <meta property="og:title" content="Autonome Agenten mit Google ADK, Coinbase x402 und AP2 &ndash; Walter A. Jablonowski">
+  <meta property="og:description" content="Ein kompakter &Uuml;berblick &uuml;ber den entstehenden Agenten-Stack: Bauen mit Googles Agent Dev Kit, verteilen &uuml;ber x402 Bazaar und Geldfl&uuml;sse mit AP2 abwickeln.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://walter-a-jablonowski.github.io/pages/blog/250918-01-autonomous-agents-ap2-x402.html">
-  <title>Autonomous agents with Google ADK, Coinbase x402, and AP2 | Walter A. Jablonowski</title>
+  <title>Autonome Agenten mit Google ADK, Coinbase x402 und AP2 | Walter A. Jablonowski</title>
   <link rel="canonical" href="https://walter-a-jablonowski.github.io/pages/blog/250918-01-autonomous-agents-ap2-x402.html">
   <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
   <link rel="manifest" href="../../site.webmanifest">
-  <link rel="stylesheet" href="../../styles.css?v=26070701">
-  <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css?v=26070701">
-  <link rel="stylesheet" href="../../lib/fonts/fonts.css?v=26070701">
-  <script src="../../cookie-fix.js?v=26070701"></script>
+  <link rel="stylesheet" href="../../styles.css?v=26070801">
+  <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css?v=26070801">
+  <link rel="stylesheet" href="../../lib/fonts/fonts.css?v=26070801">
+  <script src="../../cookie-fix.js?v=26070801"></script>
 </head>
 <body>
   <header>
@@ -32,41 +32,47 @@
           <i class="fas fa-bars"></i>
         </div>
         <ul class="nav-menu">
-          <li><a href="../../index.html#hero" class="nav-link">Home</a></li>
-          <li><a href="../../index.html#about" class="nav-link">Ask AI</a></li>
+          <li><a href="../../index.html#hero" class="nav-link">Start</a></li>
+          <li><a href="../../index.html#about" class="nav-link">KI fragen</a></li>
           <li class="nav-dropdown">
             <span class="nav-dropdown-head">
-              <a href="../../index.html#services" class="nav-link">Services</a>
-              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Services submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+              <a href="../../index.html#services" class="nav-link">Leistungen</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Untermen&uuml; Leistungen"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
             </span>
             <ul class="nav-dropdown-menu">
-              <li><a href="../../en/pages/placeholder.html" class="nav-link">Automation</a></li>
-              <li><a href="../../en/pages/placeholder.html" class="nav-link">Self-improving AI</a></li>
-              <li><a href="../projects/db-assistant/index.html" class="nav-link">AI Data Solutions</a></li>
-              <li><a href="../../en/pages/placeholder.html" class="nav-link">AI Consulting</a></li>
-              <li><a href="../../en/pages/placeholder.html" class="nav-link">AI Security &amp; Evaluation</a></li>
-              <li><a href="../../en/pages/placeholder.html" class="nav-link">UIs for AI</a></li>
-              <li><a href="../../en/pages/placeholder.html" class="nav-link">Apps that work</a></li>
+              <li><a href="../services/automation.html" class="nav-link">Automatisierung</a></li>
+              <li><a href="../services/self-improving.html" class="nav-link">Selbstverbessernde KI</a></li>
+              <li><a href="../services/data-solutions.html" class="nav-link">KI-Datenl&ouml;sungen</a></li>
+              <li><a href="../services/consulting.html" class="nav-link">AI Beratung</a></li>
+              <li><a href="../services/security.html" class="nav-link">Security &amp; Evaluierung</a></li>
+              <li><a href="../placeholder.html" class="nav-link">Oberfl&auml;chen f&uuml;r KI</a></li>
+              <li><a href="../placeholder.html" class="nav-link">Apps, die arbeiten</a></li>
             </ul>
           </li>
-          <li class="less-spacing"><a href="../../index.html#skills" class="nav-link">Skills</a></li>
+          <li class="less-spacing"><a href="../../index.html#skills" class="nav-link">Kenntnisse</a></li>
           <li class="nav-dropdown less-spacing">
             <span class="nav-dropdown-head">
-              <a href="../../index.html#proj" class="nav-link">Projects</a>
-              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Projects submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+              <a href="../../index.html#proj" class="nav-link">Projekte</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Untermen&uuml; Projekte"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
             </span>
             <ul class="nav-dropdown-menu">
-              <li><a href="../../en/pages/systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
-              <li><a href="../../en/pages/systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
-              <li><a href="../../en/pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
-              <li><a href="../../en/pages/systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
-              <li><a href="../../en/pages/systems/agentic_db/index.html" class="nav-link">Agent DB</a></li>
+              <li><a href="../systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
+              <li><a href="../systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
+              <li><a href="../systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
+              <li><a href="../systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
+              <li><a href="../systems/agentic_db/index.html" class="nav-link">Agent DB</a></li>
             </ul>
           </li>
-          <li class="less-spacing"><a href="../../index.html#contact" class="nav-link">Contact</a></li>
+          <li class="less-spacing"><a href="../../index.html#contact" class="nav-link">Kontakt</a></li>
+          <li><a href="../../blog.html" class="nav-link">Blog</a></li>
           <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
-              title="Visit my LinkedIn profile"><i class="fab fa-linkedin-in"></i></a></li>
-          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link" title="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
+              title="Mein LinkedIn-Profil besuchen"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link" title="Mein GitHub-Profil besuchen"><i class="fab fa-github"></i></a></li>
+          <li class="lang-switch">
+            <a href="250918-01-autonomous-agents-ap2-x402.html" class="nav-link active" hreflang="de" title="Deutsch">DE</a>
+            <span class="lang-sep">|</span>
+            <a href="../../en/pages/blog/250918-01-autonomous-agents-ap2-x402.html" class="nav-link" hreflang="en" title="English">EN</a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -75,11 +81,11 @@
   <main class="page-wrap">
     <section class="article-header">
       <div class="container">
-        <h1>Autonomous agents with Google ADK, Coinbase x402, and AP2</h1>
+        <h1>Autonome Agenten mit Google ADK, Coinbase x402 und AP2</h1>
         <div class="article-meta">
-          <span><i class="far fa-calendar"></i> <time datetime="2025-09-18">September 18, 2025</time></span>
+          <span><i class="far fa-calendar"></i> <time datetime="2025-09-18">18. September 2025</time></span>
           <span>|</span>
-          <span><i class="fas fa-tags"></i> <span class="tag">Agents</span><span class="tag alt">AI first</span><span class="tag">Payments</span></span>
+          <span><i class="fas fa-tags"></i> <span class="tag">Agenten</span><span class="tag alt">AI first</span><span class="tag">Payments</span></span>
         </div>
       </div>
     </section>
@@ -87,67 +93,67 @@
     <section class="article-content">
       <div class="container">
         <div class="article-text">
-          <p>Autonomous agents are quickly getting a practical stack: build agents with Google&rsquo;s Agent Development Kit (ADK), publish and discover them via Coinbase&rsquo;s x402 Bazaar, and enable compliant money flows using Agent Payments Pro (AP2). Below is a concise map of what each part does and how they fit together.</p>
+          <p>Autonome Agenten bekommen schnell einen praktischen Stack: Agenten bauen mit Googles Agent Development Kit (ADK), ver&ouml;ffentlichen und entdecken &uuml;ber Coinbase&rsquo; x402 Bazaar und konforme Geldfl&uuml;sse mit Agent Payments Pro (AP2) erm&ouml;glichen. Unten eine kompakte &Uuml;bersicht, was jeder Teil tut und wie sie zusammenpassen.</p>
 
-          <h2>TL;DR &mdash; Key points</h2>
+          <h2>Kernpunkte</h2>
           <ul>
-            <li><strong>Build:</strong> Google <em>Agent Development Kit</em> offers a quickstart to scaffold tools, memory, and execution for agents on Vertex AI.</li>
-            <li><strong>Discover:</strong> Coinbase <em>x402 Bazaar</em> is an agent/app directory and distribution surface with developer docs and launch guide.</li>
-            <li><strong>Transact:</strong> <em>AP2</em> (Agent Payments Pro) provides primitives for programmatic payments, wallets, and compliance rails.</li>
-            <li><strong>A2A:</strong> Emerging agent&#8209;to&#8209;agent patterns enable agents to call misc agents and exchange value or capabilities.</li>
+            <li><strong>Bauen:</strong> Googles <em>Agent Development Kit</em> bietet einen Quickstart zum Scaffolding von Tools, Memory und Execution f&uuml;r Agenten auf Vertex AI.</li>
+            <li><strong>Entdecken:</strong> Coinbase <em>x402 Bazaar</em> ist ein Agenten-/App-Verzeichnis und Verbreitungsplattform mit Entwickler-Doku und Launch-Guide.</li>
+            <li><strong>Transagieren:</strong> <em>AP2</em> (Agent Payments Pro) stellt Primitive f&uuml;r programmatische Zahlungen, Wallets und Compliance-Rails bereit.</li>
+            <li><strong>A2A:</strong> Aufkommende Agent&#8209;to&#8209;Agent-Patterns erm&ouml;glichen Agenten, andere Agenten aufzurufen und Wert oder F&auml;higkeiten auszutauschen.</li>
           </ul>
 
-          <h2>Components at a glance</h2>
+          <h2>Komponenten im &Uuml;berblick</h2>
           <h3>Google Agent Development Kit (ADK)</h3>
-          <p>Google&rsquo;s ADK (Vertex AI) provides scaffolding and runtime support to build agents that call tools, keep state, and orchestrate tasks. The <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/agent-development-kit/quickstart?hl=de" target="_blank" rel="noopener">Quickstart</a> shows how to:</p>
+          <p>Googles ADK (Vertex AI) bietet Scaffolding und Runtime-Unterst&uuml;tzung, um Agenten zu bauen, die Tools aufrufen, State halten und Tasks orchestrieren. Der <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/agent-development-kit/quickstart?hl=de" target="_blank" rel="noopener">Quickstart</a> zeigt, wie man:</p>
           <ul>
-            <li>Define tools/functions an agent can invoke</li>
-            <li>Configure memory and planning/execution</li>
-            <li>Run locally or deploy to Google Cloud endpoints</li>
+            <li>Tools/Funktionen definiert, die ein Agent aufrufen kann</li>
+            <li>Memory und Planung/Execution konfiguriert</li>
+            <li>Lokal ausf&uuml;hrt oder auf Google-Cloud-Endpoints deployt</li>
           </ul>
 
-          <h3>Coinbase x402 and the Bazaar</h3>
-          <p>x402 focuses on agent discovery, distribution, and mini-apps. The <a href="https://www.coinbase.com/de/developer-platform/discover/launches/x402-bazaar" target="_blank" rel="noopener">Bazaar launch</a> and the <a href="https://docs.cdp.coinbase.com/x402/bazaar" target="_blank" rel="noopener">developer docs</a> outline:</p>
+          <h3>Coinbase x402 und der Bazaar</h3>
+          <p>x402 fokussiert auf Agent-Discovery, -Verbreitung und Mini-Apps. Der <a href="https://www.coinbase.com/de/developer-platform/discover/launches/x402-bazaar" target="_blank" rel="noopener">Bazaar-Launch</a> und die <a href="https://docs.cdp.coinbase.com/x402/bazaar" target="_blank" rel="noopener">Entwickler-Doku</a> beschreiben:</p>
           <ul>
-            <li>How to publish agents or mini&#8209;apps to a marketplace-like directory</li>
-            <li>Discovery metadata and versioning</li>
-            <li>Distribution surfaces and user onboarding</li>
+            <li>Wie man Agenten oder Mini-Apps in einem marktplatz&auml;hnlichen Verzeichnis ver&ouml;ffentlicht</li>
+            <li>Discovery-Metadaten und Versionierung</li>
+            <li>Verbreitungsfl&auml;chen und User-Onboarding</li>
           </ul>
 
           <h3>Agent Payments Pro (AP2)</h3>
-          <p>AP2 adds payment primitives for agents: account creation, pay&#8209;ins/pay&#8209;outs, balances, and compliance tooling. Combined with x402, it enables agents to charge for work or pay misc agents.</p>
+          <p>AP2 erg&auml;nzt Zahlungs-Primitive f&uuml;r Agenten: Kontoerstellung, Pay&#8209;ins/Pay&#8209;outs, Salden und Compliance-Tools. Kombiniert mit x402 k&ouml;nnen Agenten f&uuml;r Arbeit bezahlen oder andere Agenten bezahlen.</p>
 
           <h3>A2A (Agent&#8209;to&#8209;Agent)</h3>
-          <p>A2A patterns allow agents to invoke capabilities (e.g., retrieval, booking, payments). With AP2+x402, A2A can include metered usage and settlement.</p>
+          <p>A2A-Patterns erlauben Agenten, F&auml;higkeiten aufzurufen (z.&nbsp;B. Retrieval, Booking, Payments). Mit AP2+x402 kann A2A abgerechnete Nutzung und Settlement umfassen.</p>
 
-          <h2>How they fit together</h2>
+          <h2>Wie sie zusammenpassen</h2>
           <ol>
-            <li><strong>Develop</strong> your agent with ADK: tools, memory, execution loop.</li>
-            <li><strong>Distribute</strong> via x402 Bazaar: publish, document, and version your agent.</li>
-            <li><strong>Monetize</strong> with AP2: accept payments, pay collaborators or upstream agents.</li>
+            <li><strong>Entwickeln</strong> Sie Ihren Agenten mit ADK: Tools, Memory, Execution-Loop.</li>
+            <li><strong>Verteilen</strong> &uuml;ber x402 Bazaar: ver&ouml;ffentlichen, dokumentieren und versionieren Sie Ihren Agenten.</li>
+            <li><strong>Monetarisieren</strong> mit AP2: Zahlungen annehmen, Mitarbeiter oder Upstream-Agenten bezahlen.</li>
           </ol>
 
-          <h2>Reference workflow (developer)</h2>
+          <h2>Referenz-Workflow (Entwickler)</h2>
           <ul>
-            <li>Locally using the ADK Quickstart.</li>
-            <li>Add core tools (search, RAG, service APIs) and guardrails.</li>
-            <li>Integrate AP2 for pricing and settlement (per task or subscription).</li>
-            <li>Publish to x402 Bazaar with clear metadata, pricing, and docs.</li>
-            <li>Enable A2A by exposing a simple, stable tool interface.</li>
+            <li>Lokal &uuml;ber den ADK-Quickstart starten.</li>
+            <li>Kern-Tools hinzuf&uuml;gen (Search, RAG, Service-APIs) und Guardrails.</li>
+            <li>AP2 f&uuml;r Pricing und Settlement integrieren (pro Task oder Abo).</li>
+            <li>Bei x402 Bazaar ver&ouml;ffentlichen mit klaren Metadaten, Pricing und Doku.</li>
+            <li>A2A aktivieren durch Bereitstellung einer einfachen, stabilen Tool-Schnittstelle.</li>
           </ul>
 
-          <h2>Risks and open questions</h2>
+          <h2>Risiken und offene Fragen</h2>
           <ul>
-            <li>Compliance and KYC/AML responsibilities when agents move money</li>
-            <li>Trust, safety, and rate&#8209;limiting for A2A invocation chains</li>
-            <li>Vendor lock&#8209;in across cloud runtime vs. distribution/payment rails</li>
+            <li>Compliance- und KYC/AML-Verantwortlichkeiten, wenn Agenten Geld bewegen</li>
+            <li>Vertrauen, Sicherheit und Rate-Limiting f&uuml;r A2A-Aufrufketten</li>
+            <li>Vendor-Lock-in zwischen Cloud-Runtime vs. Verbreitungs-/Zahlungs-Rails</li>
           </ul>
 
-          <h2>Sources</h2>
+          <h2>Quellen</h2>
           <ul>
             <li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/agent-development-kit/quickstart?hl=de" target="_blank" rel="noopener">Google Agent Development Kit &mdash; Quickstart</a></li>
-            <li><a href="https://www.coinbase.com/de/developer-platform/discover/launches/x402-bazaar" target="_blank" rel="noopener">Coinbase &mdash; x402 Bazaar launch</a></li>
-            <li><a href="https://docs.cdp.coinbase.com/x402/bazaar" target="_blank" rel="noopener">Coinbase &mdash; x402 Bazaar docs</a></li>
+            <li><a href="https://www.coinbase.com/de/developer-platform/discover/launches/x402-bazaar" target="_blank" rel="noopener">Coinbase &mdash; x402 Bazaar Launch</a></li>
+            <li><a href="https://docs.cdp.coinbase.com/x402/bazaar" target="_blank" rel="noopener">Coinbase &mdash; x402 Bazaar Doku</a></li>
           </ul>
         </div>
       </div>
@@ -167,12 +173,12 @@
           <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
         <div class="footer-links">
-          <a href="../../privacy.html">Privacy</a>
-          <a href="../../imprint.html">Imprint</a>
+          <a href="../../privacy.html">Datenschutz</a>
+          <a href="../../imprint.html">Impressum</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>powered by &copy; Walter A. Jablonowski 2019-2026. Made with AI. All rights reserved.</p>
+        <p>powered by &copy; Walter A. Jablonowski 2019-2026. Made with AI. Alle Rechte vorbehalten.</p>
       </div>
     </div>
   </footer>
@@ -187,11 +193,11 @@
       emailjs.init({ publicKey: "xvNrfCyYGqQD5cuoU" });
     })();
   </script>
-  <script src="../../lib/config.js?v=26070701"></script>
-  <script src="../../controller.js?v=26070701"></script>
-  <script src="../../lib/voice-agent/agent.js?v=26070701"></script>
-  <script src="../../lib/map.js?v=26070701"></script>
-  <script src="../../lib/popover.js?v=26070701"></script>
+  <script src="../../lib/config.js?v=26070801"></script>
+  <script src="../../controller.js?v=26070801"></script>
+  <script src="../../lib/voice-agent/agent.js?v=26070801"></script>
+  <script src="../../lib/map.js?v=26070801"></script>
+  <script src="../../lib/popover.js?v=26070801"></script>
   <script>
     new WebsiteController();
     if( typeof MapController !== 'undefined' ) { new MapController(); }
