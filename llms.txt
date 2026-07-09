@@ -32,6 +32,14 @@ Ready-to-adapt products built from these services.
 - [AI Log Viewer](https://walter-a-jablonowski.github.io/en/pages/systems/log-view/): A universal log viewer that brings log files of any format into one place — with a powerful expression filter syntax, AI analysis and a pluggable type system. SQLite with zero setup or MySQL for logs with 100,000+ entries.
 - [Agent DB](https://walter-a-jablonowski.github.io/en/pages/systems/agentic_db/): A file-based Markdown knowledge base that an AI KeeperAgent organizes on its own — places, splits, merges, indexes and archives. Atomic, versioned, fully undoable. Works standalone as plain files too.
 
+## Regions
+
+Location landing pages for AI services in Franconia/Bavaria (on-site or remote).
+
+- [KI Firma Nürnberg (German)](https://walter-a-jablonowski.github.io/pages/regionen/ki-firma-nuernberg.html) / [AI Company Nuremberg (English)](https://walter-a-jablonowski.github.io/en/pages/regionen/ai-company-nuremberg.html): AI consulting, development and automation for businesses in Nuremberg, Fürth, Erlangen and Middle Franconia.
+- [KI Firma Bamberg (German)](https://walter-a-jablonowski.github.io/pages/regionen/ki-firma-bamberg.html) / [AI Company Bamberg (English)](https://walter-a-jablonowski.github.io/en/pages/regionen/ai-company-bamberg.html): AI consulting, development and automation for businesses in Bamberg and Upper Franconia.
+- [Regions overview (German)](https://walter-a-jablonowski.github.io/pages/regionen/) / [Regions overview (English)](https://walter-a-jablonowski.github.io/en/pages/regionen/): Hub for all regional AI landing pages.
+
 ## About
 
 - [About / profile (English)](https://walter-a-jablonowski.github.io/en/#about): Background, skills and experience. Core areas: AI integration, AI agents, AI automation, machine learning, LLMs, web development, database design, SQL, PHP, Python, TypeScript.

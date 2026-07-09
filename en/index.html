@@ -28,9 +28,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
   <link rel="manifest" href="../site.webmanifest">
-  <link rel="stylesheet" href="../styles.css?v=26070801">
-  <link rel="stylesheet" href="../lib/fontawesome/css/all.min.css?v=26070801">
-  <link rel="stylesheet" href="../lib/fonts/fonts.css?v=26070801">
+  <link rel="stylesheet" href="../styles.css?v=26070901">
+  <link rel="stylesheet" href="../lib/fontawesome/css/all.min.css?v=26070901">
+  <link rel="stylesheet" href="../lib/fonts/fonts.css?v=26070901">
   <!-- Suppress the loading screen instantly when navigating within the site (e.g. back from a sub page) -->
   <script>
     try {
@@ -39,7 +39,7 @@
     } catch (e) {}
   </script>
   <!-- Alternative cookie consent implementation for GitHub Pages (original doesn't work) -->
-  <script src="../cookie-fix.js?v=26070801"></script>
+  <script src="../cookie-fix.js?v=26070901"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -50,7 +50,7 @@
         "url": "https://walter-a-jablonowski.github.io/en/",
         "name": "AI Developer & AI Consultant Bamberg & Nuremberg | Walter A. Jablonowski",
         "inLanguage": "en",
-        "dateModified": "2026-07-08",
+        "dateModified": "2026-07-09",
         "about": { "@id": "https://walter-a-jablonowski.github.io/#person" },
         "mainEntity": { "@id": "https://walter-a-jablonowski.github.io/#service" }
       },
@@ -205,7 +205,7 @@
           </p>
           <div class="hero-cta">
             <a href="#about" class="btn btn-primary"><i class="fas fa-microphone"></i> Ask AI</a>
-            <a href="#services" class="btn btn-outline">My Services</a>
+            <a href="#services" class="btn btn-outline" id="use-case-finder-trigger">Use Case finder</a>
 <!--
             <a href="#contact" class="btn btn-outline">Contact Me</a>
 -->
@@ -1024,6 +1024,10 @@
       </div>
       <div class="footer-bottom">
         <p>powered by &copy; Walter A. Jablonowski 2019-2026. Made with AI. All rights reserved.</p>
+        <div class="footer-region-links">
+          <a href="pages/regionen/ai-company-nuremberg.html">AI Company Nuremberg</a>
+          - <a href="pages/regionen/ai-company-bamberg.html">AI Company Bamberg</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -1044,11 +1048,12 @@
       });
     })();
   </script>
-  <script src="../controller.js?v=26070801"></script>
-  <script src="../lib/map.js?v=26070801"></script>
-  <script src="../lib/popover.js?v=26070801"></script>
-  <script src="../lib/config.js?v=26070801"></script>
-  <script src="../lib/voice-agent/agent.js?v=26070801"></script>
+  <script src="../controller.js?v=26070901"></script>
+  <script src="../lib/map.js?v=26070901"></script>
+  <script src="../lib/popover.js?v=26070901"></script>
+  <script src="../lib/config.js?v=26070901"></script>
+  <script src="../lib/voice-agent/agent.js?v=26070901"></script>
+  <script src="../lib/voice-agent/sidebar.js?v=26070901"></script>
   <script>
     new WebsiteController();
     new MapController();

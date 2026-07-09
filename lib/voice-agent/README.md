@@ -157,7 +157,7 @@ both visible. `transcriptShowUser: false` hides user lines entirely.
 
 ## Footer toggles
 
-When `showNavToggle` and/or `showTranscriptToggle` is on, the overlay grows a
+When `showNavToggle` and/or `showTranscriptToggle` is on, the overlay extends a
 right-aligned `.va-footer` with `role="switch"` toggles (built in `buildOverlay`,
 flipped in `onSwitchToggle`). Each starts from its setting's value and is a
 **per-session override** — nothing is persisted, so a reload returns to config.

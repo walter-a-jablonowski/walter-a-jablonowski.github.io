@@ -70,6 +70,34 @@ footer {
   border-top: 1px solid var(--medium-gray);
 }
 
+/* When the copyright row also carries the region links, lay them out as a row */
+.footer-bottom:has(.footer-region-links) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  text-align: left;
+}
+
+.footer-bottom:has(.footer-region-links) p {
+  margin: 0;
+}
+
+.footer-region-links {
+  display: flex;
+  gap: var(--spacing-lg);
+  flex-shrink: 0;
+}
+
+.footer-region-links a {
+  color: var(--light-gray);
+  transition: color var(--transition-fast);
+}
+
+.footer-region-links a:hover {
+  color: var(--primary);
+}
+
 /* ===== Back to Top Button ===== */
 .back-to-top {
   position: fixed;

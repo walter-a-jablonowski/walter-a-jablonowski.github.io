@@ -241,6 +241,16 @@
     justify-content: center;
   }
 
+  .footer-bottom:has(.footer-region-links) {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    text-align: center;
+  }
+
+  .footer-region-links {
+    justify-content: center;
+  }
+
   .contact-card {
     padding: var(--spacing-md);
   }

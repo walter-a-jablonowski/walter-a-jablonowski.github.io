@@ -9,21 +9,22 @@
  * page regardless of its folder depth.
  */
 
-@import url("styles/variables.css?v=26070801");
-@import url("styles/base.css?v=26070801");
-@import url("styles/loading.css?v=26070801");
-@import url("styles/components.css?v=26070801");
-@import url("styles/header.css?v=26070801");
-@import url("styles/hero.css?v=26070801");
-@import url("styles/sections.css?v=26070801");
-@import url("styles/contact.css?v=26070801");
-@import url("styles/widgets.css?v=26070801");
-@import url("styles/media-queries.css?v=26070801");
-@import url("styles/skills-modal.css?v=26070801");
-@import url("styles/blog.css?v=26070801");
-@import url("styles/page-components.css?v=26070801");
-@import url("styles/print.css?v=26070801");
+@import url("styles/variables.css?v=26070901");
+@import url("styles/base.css?v=26070901");
+@import url("styles/loading.css?v=26070901");
+@import url("styles/components.css?v=26070901");
+@import url("styles/header.css?v=26070901");
+@import url("styles/hero.css?v=26070901");
+@import url("styles/sections.css?v=26070901");
+@import url("styles/contact.css?v=26070901");
+@import url("styles/widgets.css?v=26070901");
+@import url("styles/media-queries.css?v=26070901");
+@import url("styles/skills-modal.css?v=26070901");
+@import url("styles/blog.css?v=26070901");
+@import url("styles/page-components.css?v=26070901");
+@import url("styles/print.css?v=26070901");
 /* Voice agent: in-#about widget + persistent overlay. Bundled here so the
    overlay styles are present on every page (the overlay can appear site-wide),
    not just the two index pages. */
-@import url("lib/voice-agent/style.css?v=26070801");
+@import url("lib/voice-agent/style.css?v=26070901");
+@import url("lib/voice-agent/sidebar.css?v=26070901");
