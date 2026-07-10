@@ -192,7 +192,6 @@
 
 .ucf-submit
 {
-  align-self: flex-start;
   background: linear-gradient( 45deg, var(--primary), var(--accent-red) );
   color: var(--white);
   border: none;
@@ -203,7 +202,6 @@
   cursor: pointer;
   transition: all var(--transition-normal);
   box-shadow: 0 4px 15px rgba( 255, 107, 0, 0.3 );
-  margin-top: var(--spacing-sm);
 }
 
 .ucf-submit:hover
@@ -214,6 +212,71 @@
 .ucf-submit:disabled
 {
   opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ucf-actions
+{
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+
+.ucf-reset
+{
+  background: none;
+  color: var(--light-gray);
+  border: 1px solid var(--medium-gray);
+  border-radius: var(--border-radius-pill);
+  padding: 0.65rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.ucf-reset:hover
+{
+  color: var(--white);
+  border-color: var(--light-gray);
+}
+
+.ucf-icon-btn
+{
+  margin-left: auto;
+  background: none;
+  color: var(--light-gray);
+  border: 1px solid var(--medium-gray);
+  border-radius: var(--border-radius-md);
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.ucf-icon-btn:first-of-type
+{
+  margin-left: auto;
+}
+
+.ucf-icon-btn + .ucf-icon-btn
+{
+  margin-left: 0;
+}
+
+.ucf-icon-btn:hover:not(:disabled)
+{
+  color: var(--white);
+  border-color: var(--light-gray);
+}
+
+.ucf-icon-btn:disabled
+{
+  opacity: 0.35;
   cursor: not-allowed;
 }
 
