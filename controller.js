@@ -593,6 +593,35 @@ class WebsiteController
     if (this.contactForm) {
 
       const isDe = (document.documentElement.lang || 'en').toLowerCase().startsWith('de');
+
+      // Check for pending Use Case Finder inquiry and pre-fill
+      try
+      {
+        const raw = sessionStorage.getItem( 'ucf-inquiry' );
+        if( raw )
+        {
+          const inquiry = JSON.parse( raw );
+          const inquiryLang = isDe ? 'de' : 'en';
+          if( inquiry.lang === inquiryLang )
+          {
+            const subjectField = document.getElementById( 'subject' );
+            if( subjectField )
+              subjectField.value = inquiry.subject || '';
+
+            const messageField = document.getElementById( 'message' );
+            if( messageField )
+              messageField.value = inquiry.message || '';
+
+            sessionStorage.removeItem( 'ucf-inquiry' );
+
+            setTimeout( () => {
+              document.querySelector( '#contact' ).scrollIntoView( { behavior: 'smooth' } );
+            }, 300 );
+          }
+        }
+      }
+      catch( e ) {}
+
       const t = isDe ? {
         errName:    'Bitte geben Sie Ihren Namen ein',
         errMail:    'Bitte geben Sie Ihre E-Mail-Adresse ein',

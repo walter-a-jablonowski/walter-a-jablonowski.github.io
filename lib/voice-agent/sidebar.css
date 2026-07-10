@@ -292,12 +292,68 @@
 
 /* ---- Results ---- */
 
+.ucf-results-header-row
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  margin-bottom: 0.25rem;
+}
+
 .ucf-results-header
 {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--white);
-  margin-bottom: 0.25rem;
+  margin: 0;
+}
+
+.ucf-results-actions
+{
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.ucf-select-toggle
+{
+  background: none;
+  border: none;
+  color: var(--light-gray);
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 0;
+  transition: color var(--transition-fast);
+}
+
+.ucf-select-toggle:hover
+{
+  color: var(--white);
+}
+
+.ucf-inquire-btn
+{
+  background: linear-gradient( 45deg, var(--primary), var(--accent-red) );
+  color: var(--white);
+  border: none;
+  border-radius: var(--border-radius-pill);
+  padding: 0.4rem 1rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.ucf-inquire-btn:hover:not(:disabled)
+{
+  box-shadow: 0 4px 12px rgba( 255, 107, 0, 0.4 );
+}
+
+.ucf-inquire-btn:disabled
+{
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .ucf-results-sub
@@ -343,6 +399,27 @@
   justify-content: center;
   font-size: 0.8rem;
   font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.ucf-card-num:hover
+{
+  box-shadow: 0 0 0 3px rgba( 255, 107, 0, 0.3 );
+}
+
+.ucf-card-num.selected
+{
+  background: var(--accent-green, #10b981);
+  font-size: 0;
+}
+
+.ucf-card-num.selected::after
+{
+  content: '\f00c';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 0.7rem;
 }
 
 .ucf-card-title
@@ -414,24 +491,6 @@
   font-size: 0.8rem;
   color: var(--light-gray);
   line-height: 1.4;
-}
-
-.ucf-contact
-{
-  font-size: 0.85rem;
-  color: var(--light-gray);
-  margin-top: var(--spacing-md);
-}
-
-.ucf-contact a
-{
-  color: var(--primary);
-  text-decoration: underline;
-}
-
-.ucf-contact a:hover
-{
-  color: var(--primary-light);
 }
 
 /* ---- Loading ---- */
