@@ -68,6 +68,7 @@ class WebsiteController
       this.initTypewriterEffect();
       this.initProjectCarousel();
       this.initPastSkillsToggle();
+      this.initUseCaseTooltip();
 
       // Add animation classes to elements
       document.querySelectorAll('.fade-in').forEach((element, index) => {
@@ -103,6 +104,54 @@ class WebsiteController
     // The callout makes the left column taller; drop the hero CTA buttons while
     // it is shown so the column heights stay balanced (hero.css hides them).
     document.body.classList.add('hero-offer-on');
+  }
+
+  /**
+   * Onboarding tooltip pointing at the hero "Use Case finder" button, shown on
+   * page load when LOADING_CONFIG.showUseCaseTooltip is true. It sits below the
+   * button (the hero image occupies the space to the right) and is anchored
+   * inside .hero-cta (position: relative in hero.css); this method only centers
+   * it on the button. No persistence on purpose: it reappears on every load
+   * until the config flag is turned off. Never shown on mobile (hero.css media
+   * query) to save space. Dismissed via its "X" or by clicking the finder
+   * button itself. No-op on pages without the button; tolerant of config
+   * being absent.
+   */
+  initUseCaseTooltip()
+  {
+    if( typeof LOADING_CONFIG === 'undefined' || LOADING_CONFIG.showUseCaseTooltip !== true )
+      return;
+
+    const trigger = document.getElementById('use-case-finder-trigger');
+    if( ! trigger || ! trigger.parentElement )
+      return;
+
+    const isDe = (document.documentElement.lang || 'en').toLowerCase().startsWith('de');
+    const text = isDe
+      ? 'Klicken Sie hier, um Ihren Use Case zu finden'
+      : 'Click here to find your use case';
+    const closeLabel = isDe ? 'Hinweis schlie&szlig;en' : 'Dismiss';
+
+    const tip = document.createElement('div');
+    tip.className = 'use-case-tooltip';
+    tip.setAttribute('role', 'note');
+    tip.innerHTML =
+      '<span class="use-case-tooltip-text">' + text + '</span>' +
+      '<button class="use-case-tooltip-close" type="button" aria-label="' + closeLabel + '" title="' + closeLabel + '">&times;</button>';
+    trigger.parentElement.appendChild(tip);
+
+    // Center the tooltip (and its arrow) on the button; re-run on resize and
+    // on load, since the web font can change the button width after DOM ready.
+    const position = () => {
+      tip.style.left = `${trigger.offsetLeft + trigger.offsetWidth / 2}px`;
+    };
+    position();
+    window.addEventListener('resize', position);
+    window.addEventListener('load', position);
+
+    const dismiss = () => tip.remove();
+    tip.querySelector('.use-case-tooltip-close').addEventListener('click', dismiss);
+    trigger.addEventListener('click', dismiss);  // button used - the hint served its purpose
   }
 
   /**

@@ -14,9 +14,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=26071002">
-  <link rel="stylesheet" href="lib/fontawesome/css/all.min.css?v=26071002">
-  <link rel="stylesheet" href="lib/fonts/fonts.css?v=26071002">
+  <link rel="stylesheet" href="styles.css?v=26071201">
+  <link rel="stylesheet" href="lib/fontawesome/css/all.min.css?v=26071201">
+  <link rel="stylesheet" href="lib/fonts/fonts.css?v=26071201">
   <style>
     .legal-content {
       padding: 120px 0 60px;
@@ -108,7 +108,7 @@
     <div class="container">
       <h1>Datenschutzerkl&auml;rung</h1>
 
-      <p>Stand: 20. Juni 2026</p>
+      <p>Stand: 11. Juli 2026</p>
 
       <p>Der Schutz Ihrer personenbezogenen Daten ist mir ein wichtiges Anliegen. Diese
         Datenschutzerkl&auml;rung informiert Sie gem&auml;&szlig; Art. 13 und 14 der Datenschutz-Grundverordnung (DSGVO)
@@ -176,11 +176,17 @@
 
       <ul>
         <li><strong>Sprach- und Anzeige-Hinweise</strong> (z.&nbsp;B. <code>waj:homepage:langHintDismissed</code>,
-          <code>waj:homepage:siteVisited</code>): steuern, ob Hinweise bzw. der Ladebildschirm erneut erscheinen.</li>
+          <code>waj:homepage:siteVisited</code>, <code>waj:homepage:offerDismissed</code>): steuern, ob Hinweise,
+          der Ladebildschirm oder Aktionshinweise erneut erscheinen.</li>
+        <li><strong>Use-Case-Finder</strong> (<code>ucf-state</code>, <code>ucf-inquiry</code>): speichern
+          w&auml;hrend der Sitzung Ihre eingegebene Beschreibung, die daraus erzeugten Use Cases sowie einen
+          vorausgef&uuml;llten Kontakttext, damit diese beim Wechsel zur Kontaktseite erhalten bleiben. Diese
+          Eintr&auml;ge k&ouml;nnen von Ihnen eingegebene Texte enthalten, verbleiben jedoch ausschlie&szlig;lich
+          lokal in Ihrem Browser (per Tab, beim Schlie&szlig;en gel&ouml;scht) und werden nicht an mich &uuml;bermittelt.</li>
       </ul>
 
-      <p>Diese Eintr&auml;ge dienen ausschlie&szlig;lich der Funktion und dem Komfort der Seite, enthalten keine
-        personenbezogenen Profile und werden nicht an Dritte &uuml;bermittelt. Rechtsgrundlage f&uuml;r technisch
+      <p>Diese Eintr&auml;ge dienen ausschlie&szlig;lich der Funktion und dem Komfort der Seite, dienen keiner
+        werblichen Profilbildung und werden nicht an Dritte &uuml;bermittelt. Rechtsgrundlage f&uuml;r technisch
         notwendige Speicherung ist § 25 Abs. 2 TDDDG sowie Art. 6 Abs. 1 lit. f DSGVO. Sie k&ouml;nnen diese
         Eintr&auml;ge jederzeit &uuml;ber die Einstellungen Ihres Browsers l&ouml;schen.</p>
 
@@ -221,7 +227,28 @@
         Art. 6 Abs. 1 lit. a DSGVO</strong>, die Sie durch das Starten des Assistenten und die Erteilung der
         Mikrofonberechtigung erteilen und jederzeit durch Beenden der Sitzung widerrufen k&ouml;nnen.</p>
 
-      <h2>7. Karte (OpenStreetMap)</h2>
+      <h2>7. KI-Use-Case-Finder (KI-Textanalyse)</h2>
+
+      <p>Auf der Website wird optional ein KI-gest&uuml;tzter &bdquo;Use-Case-Finder" angeboten. Dieser wird
+        <strong>ausschlie&szlig;lich dann aktiv, wenn Sie ihn ausdr&uuml;cklich nutzen</strong>, indem Sie eine
+        Beschreibung Ihres Unternehmens bzw. Ihrer Aufgabenstellung eingeben und absenden. Ohne diese aktive
+        Handlung werden keine Inhalte &uuml;bermittelt.</p>
+
+      <p>Nach dem Absenden wird der von Ihnen eingegebene Text &uuml;ber einen von mir betriebenen
+        Vermittlungsdienst (Cloudflare Worker) an die <strong>KI-Textmodelle von Google (Google AI Studio /
+        Gemini)</strong> &uuml;bertragen, dort analysiert und als Vorschlag passender KI-Use-Cases zur&uuml;ckgegeben.
+        Beteiligte Empf&auml;nger sind die Cloudflare Inc. (USA) und Google LLC (USA); eine Verarbeitung in den USA
+        findet statt. Beide Anbieter sind unter dem EU-US Data Privacy Framework zertifiziert, erg&auml;nzend gelten
+        EU-Standardvertragsklauseln (Art. 46 DSGVO).</p>
+
+      <p>Bitte geben Sie in das Beschreibungsfeld <strong>keine sensiblen personenbezogenen Daten</strong> ein.
+        Ich selbst speichere die &uuml;bermittelten Inhalte nicht dauerhaft; sie dienen nur der unmittelbaren
+        Erstellung der Vorschl&auml;ge w&auml;hrend der Sitzung. F&uuml;r die Verarbeitung durch Google gelten zus&auml;tzlich
+        die Datenschutzbestimmungen von Google. Rechtsgrundlage ist Ihre <strong>Einwilligung gem&auml;&szlig;
+        Art. 6 Abs. 1 lit. a DSGVO</strong>, die Sie durch das Absenden Ihrer Beschreibung erteilen, sowie
+        &ndash; soweit Ihre Anfrage auf einen Vertrag abzielt &ndash; Art. 6 Abs. 1 lit. b DSGVO.</p>
+
+      <h2>8. Karte (OpenStreetMap)</h2>
 
       <p>Auf der Startseite wird im Kontaktbereich eine interaktive Karte eingebunden, um meinen Standort
         anzuzeigen. Die Kartensoftware <strong>Leaflet</strong> wird lokal von diesem Server ausgeliefert.
@@ -237,7 +264,7 @@
         Datenschutzerkl&auml;rung von OpenStreetMap:
         <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener">wiki.osmfoundation.org/wiki/Privacy_Policy</a>.</p>
 
-      <h2>8. Empf&auml;nger und &Uuml;bermittlung in Drittl&auml;nder</h2>
+      <h2>9. Empf&auml;nger und &Uuml;bermittlung in Drittl&auml;nder</h2>
 
       <p>Eine Weitergabe Ihrer Daten an Dritte erfolgt nur in dem oben beschriebenen Umfang. Empf&auml;nger bzw.
         Kategorien von Empf&auml;ngern sind:</p>
@@ -246,7 +273,7 @@
         <li><strong>GitHub Inc. / Microsoft (USA)</strong> &ndash; Hosting der Website (Server-Logfiles),</li>
         <li><strong>EmailJS Inc. (USA)</strong> &ndash; Zustellung von Kontaktformular-Nachrichten,</li>
         <li><strong>Cloudflare Inc. (USA) und Google LLC (USA)</strong> &ndash; nur bei aktiver Nutzung des
-          Sprachassistenten,</li>
+          Sprachassistenten oder des Use-Case-Finders,</li>
         <li><strong>OpenStreetMap Foundation (Vereinigtes K&ouml;nigreich)</strong> &ndash; Bereitstellung der
           Kartenkacheln.</li>
       </ul>
@@ -256,14 +283,14 @@
         bzw. auf <strong>EU-Standardvertragsklauseln</strong> gem&auml;&szlig; Art. 46 DSGVO. F&uuml;r &Uuml;bermittlungen in das
         Vereinigte K&ouml;nigreich besteht ein Angemessenheitsbeschluss der EU-Kommission.</p>
 
-      <h2>9. Speicherdauer</h2>
+      <h2>10. Speicherdauer</h2>
 
       <p>Server-Logfiles werden vom Hoster nur f&uuml;r einen begrenzten Zeitraum gespeichert. Daten aus
         Kontaktanfragen speichere ich so lange, wie es zur Bearbeitung Ihrer Anfrage und im Rahmen
         gesetzlicher Aufbewahrungspflichten erforderlich ist; danach werden sie gel&ouml;scht. Auf Wunsch l&ouml;sche
         ich Ihre Anfrage jederzeit, sofern keine gesetzlichen Pflichten entgegenstehen.</p>
 
-      <h2>10. Ihre Rechte</h2>
+      <h2>11. Ihre Rechte</h2>
 
       <p>Sie haben nach der DSGVO insbesondere folgende Rechte hinsichtlich der Sie betreffenden
         personenbezogenen Daten:</p>
@@ -281,7 +308,7 @@
 
       <p>Zur Aus&uuml;bung dieser Rechte gen&uuml;gt eine formlose Mitteilung an die oben genannten Kontaktdaten.</p>
 
-      <h2>11. Beschwerderecht bei einer Aufsichtsbeh&ouml;rde</h2>
+      <h2>12. Beschwerderecht bei einer Aufsichtsbeh&ouml;rde</h2>
 
       <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbeh&ouml;rde zu beschweren. Die f&uuml;r mich
         zust&auml;ndige Beh&ouml;rde ist:</p>
@@ -290,14 +317,14 @@
       Promenade 18, 91522 Ansbach, Deutschland<br>
       <a href="https://www.lda.bayern.de" target="_blank" rel="noopener">www.lda.bayern.de</a></p>
 
-      <h2>12. Externe Links</h2>
+      <h2>13. Externe Links</h2>
 
       <p>Diese Website enth&auml;lt Links zu externen Websites Dritter (z.&nbsp;B. LinkedIn, GitHub, X, YouTube,
         Google Maps). Beim Anklicken dieser Links gelangen Sie auf die Seiten der jeweiligen Anbieter, auf
         deren Datenverarbeitung ich keinen Einfluss habe. Es gelten die Datenschutzbestimmungen der
         jeweiligen Anbieter.</p>
 
-      <h2>13. &Auml;nderungen dieser Datenschutzerkl&auml;rung</h2>
+      <h2>14. &Auml;nderungen dieser Datenschutzerkl&auml;rung</h2>
 
       <p>Ich passe diese Datenschutzerkl&auml;rung an, sobald &Auml;nderungen der angebotenen Funktionen oder
         &Auml;nderungen der rechtlichen Rahmenbedingungen dies erforderlich machen. Es gilt jeweils die hier
@@ -334,9 +361,9 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="lib/config.js?v=26071002"></script>
-  <script src="controller.js?v=26071002"></script>
-  <script src="lib/voice-agent/agent.js?v=26071002"></script>
+  <script src="lib/config.js?v=26071201"></script>
+  <script src="controller.js?v=26071201"></script>
+  <script src="lib/voice-agent/agent.js?v=26071201"></script>
   <script>
     new WebsiteController();
   </script>

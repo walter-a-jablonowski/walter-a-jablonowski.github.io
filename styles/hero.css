@@ -76,6 +76,86 @@
 .hero-cta {
   display: flex;
   gap: var(--spacing-md);
+  position: relative;  /* anchor for .use-case-tooltip */
+}
+
+/* Use-case-finder onboarding tooltip — built by controller.js when
+   LOADING_CONFIG.showUseCaseTooltip is true. Sits below the finder button and
+   points at it with a small arrow; controller.js sets `left` to the button's
+   center. Fades in shortly after load. */
+.use-case-tooltip {
+  position: absolute;
+  top: calc(100% + 24px);
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  width: max-content;
+  max-width: 300px;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid rgba(255, 107, 0, 0.55);
+  border-radius: var(--border-radius-md);
+  background: var(--dark-gray);
+  color: var(--white);
+  font-size: 0.92rem;
+  line-height: 1.4;
+  text-align: left;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  animation: use-case-tooltip-in 0.4s ease 1.2s forwards;
+}
+
+/* Arrow pointing up at the button: an elongated triangle built from two
+   stacked border-triangles — ::before draws the orange outline, ::after the
+   fill in the box background, inset by 2px on the sides (same 2:1 slope, so
+   the outline stays evenly ~2px thick). Both reach 1px into the box so the
+   base covers the box's top border seamlessly. */
+.use-case-tooltip::before {
+  content: '';
+  position: absolute;
+  top: -19px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: solid transparent;
+  border-width: 0 10px 20px 10px;
+  border-bottom-color: rgba(255, 107, 0, 0.55);
+}
+
+.use-case-tooltip::after {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: solid transparent;
+  border-width: 0 8px 16px 8px;
+  border-bottom-color: var(--dark-gray);
+}
+
+.use-case-tooltip-close {
+  flex-shrink: 0;
+  margin: -0.1rem -0.25rem 0 0;
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--light-gray);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.use-case-tooltip-close:hover { color: var(--primary); }
+
+@keyframes use-case-tooltip-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(-6px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* Never shown on mobile (even when enabled) to save space */
+@media (max-width: 768px) {
+  .use-case-tooltip { display: none; }
 }
 
 /* Hero offer / teaser callout — hidden by default; controller adds .is-on

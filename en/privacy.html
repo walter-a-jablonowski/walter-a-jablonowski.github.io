@@ -14,9 +14,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
   <link rel="manifest" href="../site.webmanifest">
-  <link rel="stylesheet" href="../styles.css?v=26071002">
-  <link rel="stylesheet" href="../lib/fontawesome/css/all.min.css?v=26071002">
-  <link rel="stylesheet" href="../lib/fonts/fonts.css?v=26071002">
+  <link rel="stylesheet" href="../styles.css?v=26071201">
+  <link rel="stylesheet" href="../lib/fontawesome/css/all.min.css?v=26071201">
+  <link rel="stylesheet" href="../lib/fonts/fonts.css?v=26071201">
   <style>
     .legal-content {
       padding: 120px 0 60px;
@@ -108,7 +108,7 @@
     <div class="container">
       <h1>Privacy Policy</h1>
 
-      <p>Last updated: June 20, 2026</p>
+      <p>Last updated: July 11, 2026</p>
 
       <p>Protecting your personal data is important to me. This Privacy Policy informs you, in accordance with
         Articles 13 and 14 of the General Data Protection Regulation (GDPR), which personal data is processed
@@ -173,12 +173,18 @@
 
       <ul>
         <li><strong>Language and display hints</strong> (e.g. <code>waj:homepage:langHintDismissed</code>,
-          <code>waj:homepage:siteVisited</code>): control whether hints or the loading screen appear again.</li>
+          <code>waj:homepage:siteVisited</code>, <code>waj:homepage:offerDismissed</code>): control whether hints,
+          the loading screen or promotional notices appear again.</li>
+        <li><strong>Use Case Finder</strong> (<code>ucf-state</code>, <code>ucf-inquiry</code>): store, for the
+          duration of the session, the description you entered, the use cases generated from it and a
+          pre-filled contact text, so these are preserved when you switch to the contact page. These entries
+          may contain text you entered, but they remain solely local in your browser (per tab, deleted when it
+          is closed) and are not transmitted to me.</li>
       </ul>
 
-      <p>These entries serve solely the function and convenience of the site, contain no personal profiles and
-        are not transmitted to third parties. The legal basis for technically necessary storage is § 25(2) TDDDG
-        and Art. 6(1)(f) GDPR. You can delete these entries at any time via your browser settings.</p>
+      <p>These entries serve solely the function and convenience of the site, are not used for advertising
+        profiling and are not transmitted to third parties. The legal basis for technically necessary storage is
+        § 25(2) TDDDG and Art. 6(1)(f) GDPR. You can delete these entries at any time via your browser settings.</p>
 
       <h2>5. Contact form and e-mail contact</h2>
 
@@ -213,7 +219,25 @@
         is your <strong>consent under Art. 6(1)(a) GDPR</strong>, which you give by starting the assistant and
         granting microphone permission and which you can withdraw at any time by ending the session.</p>
 
-      <h2>7. Map (OpenStreetMap)</h2>
+      <h2>7. AI Use Case Finder (AI text analysis)</h2>
+
+      <p>The website optionally offers an AI-based "Use Case Finder". It only becomes <strong>active when
+        you explicitly use it</strong>, by entering a description of your company or task and submitting it.
+        Without this active step, no content is transmitted.</p>
+
+      <p>Once submitted, the text you entered is transmitted via a relay service operated by me (a Cloudflare
+        Worker) to the <strong>AI text models of Google (Google AI Studio / Gemini)</strong>, analysed there and
+        returned as a proposal of suitable AI use cases. The recipients involved are Cloudflare Inc. (USA) and
+        Google LLC (USA); processing takes place in the USA. Both providers are certified under the EU-US Data
+        Privacy Framework; in addition, EU Standard Contractual Clauses (Art. 46 GDPR) apply.</p>
+
+      <p>Please <strong>do not enter any sensitive personal data</strong> into the description field. I do not
+        store the transmitted content permanently myself; it serves only to immediately create the suggestions
+        during the session. Google's privacy terms additionally apply to processing by Google. The legal basis
+        is your <strong>consent under Art. 6(1)(a) GDPR</strong>, which you give by submitting your description,
+        as well as &ndash; where your request relates to a contract &ndash; Art. 6(1)(b) GDPR.</p>
+
+      <h2>8. Map (OpenStreetMap)</h2>
 
       <p>The home page embeds an interactive map in the contact area to show my location. The map software
         <strong>Leaflet</strong> is served locally from this server. The map material (the individual map
@@ -228,15 +252,15 @@
         OpenStreetMap's privacy policy:
         <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener">wiki.osmfoundation.org/wiki/Privacy_Policy</a>.</p>
 
-      <h2>8. Recipients and transfers to third countries</h2>
+      <h2>9. Recipients and transfers to third countries</h2>
 
       <p>Your data is only shared to the extent described above. Recipients or categories of recipients are:</p>
 
       <ul>
         <li><strong>GitHub Inc. / Microsoft (USA)</strong> &ndash; hosting of the website (server log files),</li>
         <li><strong>EmailJS Inc. (USA)</strong> &ndash; delivery of contact form messages,</li>
-        <li><strong>Cloudflare Inc. (USA) and Google LLC (USA)</strong> &ndash; only when the voice assistant is
-          actively used,</li>
+        <li><strong>Cloudflare Inc. (USA) and Google LLC (USA)</strong> &ndash; only when the voice assistant or
+          the Use Case Finder is actively used,</li>
         <li><strong>OpenStreetMap Foundation (United Kingdom)</strong> &ndash; provision of the map tiles.</li>
       </ul>
 
@@ -245,14 +269,14 @@
         Clauses</strong> pursuant to Art. 46 GDPR. For transfers to the United Kingdom, an adequacy decision of
         the European Commission is in place.</p>
 
-      <h2>9. Storage period</h2>
+      <h2>10. Storage period</h2>
 
       <p>Server log files are stored by the host only for a limited period. I retain data from contact requests
         for as long as is necessary to handle your request and within the scope of statutory retention
         obligations; thereafter it is deleted. On request, I will delete your enquiry at any time, unless legal
         obligations prevent this.</p>
 
-      <h2>10. Your rights</h2>
+      <h2>11. Your rights</h2>
 
       <p>Under the GDPR you have, in particular, the following rights regarding your personal data:</p>
 
@@ -268,7 +292,7 @@
 
       <p>To exercise these rights, an informal message to the contact details above is sufficient.</p>
 
-      <h2>11. Right to lodge a complaint with a supervisory authority</h2>
+      <h2>12. Right to lodge a complaint with a supervisory authority</h2>
 
       <p>You have the right to lodge a complaint with a data protection supervisory authority. The authority
         responsible for me is:</p>
@@ -277,13 +301,13 @@
       Promenade 18, 91522 Ansbach, Germany<br>
       <a href="https://www.lda.bayern.de" target="_blank" rel="noopener">www.lda.bayern.de</a></p>
 
-      <h2>12. External links</h2>
+      <h2>13. External links</h2>
 
       <p>This website contains links to external third-party websites (e.g. LinkedIn, GitHub, X, YouTube,
         Google Maps). When you click these links you are taken to the respective providers' sites, over whose
         data processing I have no influence. The privacy terms of the respective providers apply.</p>
 
-      <h2>13. Changes to this Privacy Policy</h2>
+      <h2>14. Changes to this Privacy Policy</h2>
 
       <p>I will update this Privacy Policy whenever changes to the features offered or to the legal framework
         make this necessary. The current version published here applies in each case.</p>
@@ -319,9 +343,9 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../lib/config.js?v=26071002"></script>
-  <script src="../controller.js?v=26071002"></script>
-  <script src="../lib/voice-agent/agent.js?v=26071002"></script>
+  <script src="../lib/config.js?v=26071201"></script>
+  <script src="../controller.js?v=26071201"></script>
+  <script src="../lib/voice-agent/agent.js?v=26071201"></script>
   <script>
     new WebsiteController();
   </script>

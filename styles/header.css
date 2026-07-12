@@ -147,6 +147,18 @@ nav {
 .nav-dropdown-menu a.active { color: var(--white); }
 .nav-dropdown-menu a.active::after { width: 0; }
 
+/* Group headlines inside a dropdown (small uppercase eyebrows, matching
+   .ph-eyebrow on the service pages). Plain non-interactive <li>. */
+.nav-dropdown-group {
+  color: var(--light-gray);
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: default;
+  white-space: nowrap;
+}
+
 /* New/unfinished content (e.g. the "Systeme" nav dropdown) stays hidden until
    the controller adds body.show-new-content per LOADING_CONFIG.showNewContent.
    Hidden by default so it never leaks if config or JS is unavailable. */
@@ -183,6 +195,14 @@ body:not(.show-new-content) .new-content { display: none !important; }
     color: var(--primary);
     background-color: rgba(255, 107, 0, 0.08);
   }
+
+  .nav-dropdown-menu .nav-dropdown-group { padding: 0.55rem 1.15rem 0.15rem; }
+  /* Divider between groups (not above the first) */
+  .nav-dropdown-menu .nav-dropdown-group:not(:first-child) {
+    margin-top: 0.35rem !important;
+    padding-top: 0.7rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
 }
 
 /* Mobile: inline accordion toggled by the caret. Also applies to landscape
@@ -192,6 +212,8 @@ body:not(.show-new-content) .new-content { display: none !important; }
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* Full panel width, so the unfolded surface can span edge to edge */
+    align-self: stretch;
   }
   .nav-dropdown.open > .nav-dropdown-menu { display: block; }
   .nav-dropdown.open .nav-dropdown-toggle i { transform: rotate(180deg); }
@@ -206,7 +228,15 @@ body:not(.show-new-content) .new-content { display: none !important; }
     padding: 0.5rem 0.5rem;
     color: var(--primary);
   }
-  .nav-dropdown-menu { text-align: center; }
+  .nav-dropdown-menu {
+    text-align: center;
+    /* Unfolded area sits on its own slightly lighter surface, spanning the
+       full panel width (both this ul and its parent li stretch) */
+    align-self: stretch;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.35rem 1.2rem 0.55rem;
+    margin-top: 0.4rem;
+  }
   .nav-dropdown-menu li { margin: 0.75rem 0 !important; }
   .nav-dropdown-menu a {
     font-size: 0.95rem;
@@ -214,6 +244,9 @@ body:not(.show-new-content) .new-content { display: none !important; }
     display: inline-block;
     padding: 0.35rem 0.5rem;
   }
+
+  /* Group headlines are too much in the compact accordion; hide them */
+  .nav-dropdown-menu .nav-dropdown-group { display: none; }
 }
 
 .menu-toggle {

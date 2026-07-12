@@ -473,7 +473,9 @@
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
-  background: rgba( 255, 107, 0, 0.08 );
+  /* Neutral lighten of the card bg (no orange fill — reads brown on dark);
+     the orange ROI label carries the accent */
+  background: rgba( 255, 255, 255, 0.05 );
   border-radius: var(--border-radius-sm);
   padding: 0.5rem 0.75rem;
 }
