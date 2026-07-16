@@ -1,0 +1,17 @@
+# Published to the GitHub-Pages repo by tools/publish.php. Pins the deploy repo
+# to LF so its working tree never drifts to CRLF (which would make publish.php's
+# byte comparison re-copy every file). Mirror of the source repo's root .gitattributes.
+* text=auto eol=lf
+
+# Binary assets: never apply text/eol filters
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.webp binary
+*.zip  binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.eot   binary
