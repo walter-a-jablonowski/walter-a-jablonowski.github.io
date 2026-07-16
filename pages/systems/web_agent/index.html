@@ -51,9 +51,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
   <link rel="manifest" href="../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../styles.css?v=26071601">
-  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26071601">
-  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26071601">
+  <link rel="stylesheet" href="../../../styles.css?v=26071602">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26071602">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26071602">
   <style>
     /* Product page styles. Reusable parts (.product-hero, .spec-list, .service-cta
        exemption) live in page-components.css; the blocks below are local to this page. */
@@ -112,6 +112,7 @@
           <i class="fas fa-bars"></i>
         </div>
         <ul class="nav-menu">
+          <!-- nav-menu:start | DON'T edit the menu here - edit the template in tools/upd_menu.php, then run it (see CLAUDE.md) -->
           <li><a href="../../../index.html#hero" class="nav-link">Start</a></li>
           <li><a href="../../../index.html#about" class="nav-link">KI fragen</a></li>
           <li class="nav-dropdown">
@@ -143,18 +144,20 @@
               <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Untermen&uuml; Projekte"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
             </span>
             <ul class="nav-dropdown-menu">
-              <li><a href="index.html" class="nav-link active">Website AI Agent</a></li>
-              <li><a href="../data_chat/index.html" class="nav-link">Chat with Data</a></li>
-              <li><a href="../seo_agent/index.html" class="nav-link">SEO Agent</a></li>
-              <li><a href="../log-view/index.html" class="nav-link">AI Log Viewer</a></li>
-              <li><a href="../agentic_db/index.html" class="nav-link">Agent DB</a></li>
+              <li><a href="../../../pages/systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
+              <li><a href="../../../pages/systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
+              <li><a href="../../../pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
+              <li><a href="../../../pages/systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
+              <li><a href="../../../pages/systems/agentic_db/index.html" class="nav-link">Agent DB</a></li>
             </ul>
           </li>
           <li class="less-spacing"><a href="../../../index.html#contact" class="nav-link">Kontakt</a></li>
           <li><a href="../../../blog.html" class="nav-link">Blog</a></li>
           <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
               title="Mein LinkedIn-Profil besuchen"><i class="fab fa-linkedin-in"></i></a></li>
-          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link" title="Mein GitHub-Profil besuchen"><i class="fab fa-github"></i></a></li>
+          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link"
+              title="Mein GitHub-Profil besuchen"><i class="fab fa-github"></i></a></li>
+          <!-- nav-menu:end -->
           <li class="lang-switch">
             <a href="index.html" class="nav-link active" hreflang="de" title="Deutsch">DE</a>
             <span class="lang-sep">|</span>
@@ -396,9 +399,9 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../lib/config.js?v=26071601"></script>
-  <script src="../../../controller.js?v=26071601"></script>
-  <script src="../../../lib/voice-agent/agent.js?v=26071601"></script>
+  <script src="../../../lib/config.js?v=26071602"></script>
+  <script src="../../../controller.js?v=26071602"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26071602"></script>
   <script>
     new WebsiteController();
 

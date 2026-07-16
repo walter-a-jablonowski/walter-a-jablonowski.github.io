@@ -527,6 +527,9 @@ class WebsiteController
         this.body.style.overflow = '';
       }
     });
+
+    // Highlight the current section on load (menu markup carries no hard-coded active)
+    this.updateActiveNavLink();
   }
 
   /**
