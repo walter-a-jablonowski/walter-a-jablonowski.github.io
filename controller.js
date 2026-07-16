@@ -67,6 +67,7 @@ class WebsiteController
       this.initInfoIcons();
       this.initTypewriterEffect();
       this.initProjectCarousel();
+      this.initFeatureCarousels();
       this.initPastSkillsToggle();
       this.initUseCaseTooltip();
 
@@ -1219,6 +1220,15 @@ class WebsiteController
 
     if( typewriterElement ) {
       const text = typewriterElement.textContent;
+
+      // Respect reduced motion preference: keep the text as is, no cursor
+      if( window.matchMedia('(prefers-reduced-motion: reduce)').matches ) {
+        typewriterElement.classList.add('typing-done');
+        return;
+      }
+
+      // Expose the full text to screen readers while the animation runs
+      typewriterElement.setAttribute('aria-label', text);
       typewriterElement.textContent = '';
 
       let charIndex = 0;
@@ -1232,28 +1242,36 @@ class WebsiteController
           // Variable typing speed for more realistic effect
           // Faster for most characters, slower for punctuation
           const currentChar = text.charAt(charIndex - 1);
-          let delay = 70; // Base typing speed
+          let delay = 55; // Base typing speed
 
           // Add random variation to typing speed
-          delay += Math.random() * 50; // Add 0-50ms random delay
+          delay += Math.random() * 45; // Add 0-45ms random delay
 
-          // Slow down for punctuation or spaces
-          if( currentChar === ' ' || currentChar === '-' || currentChar === '.' ) {
-            delay += 50; // Additional delay for these characters
+          // Slow down for word breaks and punctuation
+          if( currentChar === ' ' || currentChar === '-' || currentChar === '.' || currentChar === '&' ) {
+            delay += 60; // Additional delay for these characters
           }
+
+          // Occasional short hesitation, like a human pausing while typing
+          if( Math.random() < 0.06 )
+            delay += 150 + Math.random() * 150;
 
           setTimeout(typeNextChar, delay);
         } else {
-          // Typing is complete, hide the cursor after a short delay
+          // Typing is complete: let the cursor blink for a moment, then fade it out
+          typewriterElement.classList.remove('typing');
           setTimeout(() => {
             typewriterElement.classList.add('typing-done');
-          }, 1500); // Wait 1.5 seconds before hiding cursor
+          }, 1800);
         }
       }
 
-      // Function to start typing
+      // Function to start typing: blink the idle cursor first, then type with a solid cursor
       function startTyping() {
-        setTimeout(typeNextChar, 800);
+        setTimeout(() => {
+          typewriterElement.classList.add('typing');
+          typeNextChar();
+        }, 800);
       }
 
       // Check if loading screen is enabled and wait for it to complete
@@ -1285,7 +1303,7 @@ class WebsiteController
     if( !carouselContainer || !prevArrow || !nextArrow ) return;
 
     // Set initial state - hide prev arrow if at start
-    this.updateCarouselArrows(carouselContainer);
+    this.updateCarouselArrows( carouselContainer, prevArrow, nextArrow );
 
     // Handle next arrow click
     nextArrow.addEventListener('click', () => {
@@ -1313,12 +1331,12 @@ class WebsiteController
 
     // Update arrows visibility on scroll
     carouselContainer.addEventListener('scroll', () => {
-      this.updateCarouselArrows(carouselContainer);
+      this.updateCarouselArrows( carouselContainer, prevArrow, nextArrow );
     });
 
     // Update arrows on window resize
     window.addEventListener('resize', () => {
-      this.updateCarouselArrows(carouselContainer);
+      this.updateCarouselArrows( carouselContainer, prevArrow, nextArrow );
     });
 
     // Touch swipe functionality for mobile
@@ -1336,14 +1354,62 @@ class WebsiteController
   }
 
   /**
-   * Update carousel arrows visibility based on scroll position
-   * @param {HTMLElement} container - The carousel container element
+   * Initialize feature grid carousels (used on all pages with .feature-grid;
+   * arrows only show on small screens, see page-components.css)
    */
-  updateCarouselArrows(container)
+  initFeatureCarousels()
   {
-    const prevArrow = document.querySelector('.carousel-arrow.prev');
-    const nextArrow = document.querySelector('.carousel-arrow.next');
+    document.querySelectorAll('.feature-grid').forEach( grid => {
 
+      // Wrap the grid and inject the arrows, so pages need no extra markup
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'feature-carousel';
+      grid.parentNode.insertBefore( wrapper, grid );
+
+      const prevArrow = document.createElement('div');
+      prevArrow.className = 'carousel-arrow prev';
+      prevArrow.innerHTML = '<i class="fas fa-chevron-left"></i>';
+
+      const nextArrow = document.createElement('div');
+      nextArrow.className = 'carousel-arrow next';
+      nextArrow.innerHTML = '<i class="fas fa-chevron-right"></i>';
+
+      wrapper.appendChild(prevArrow);
+      wrapper.appendChild(grid);
+      wrapper.appendChild(nextArrow);
+
+      // Scroll one box per arrow click; native touch scrolling covers swiping
+
+      const scrollByBox = direction => {
+        const boxWidth = grid.querySelector('.feature-box').offsetWidth;
+        const gap = parseInt(window.getComputedStyle(grid).getPropertyValue('gap'));
+
+        grid.scrollBy({
+          left: direction * (boxWidth + gap),
+          behavior: 'smooth'
+        });
+      };
+
+      prevArrow.addEventListener('click', () => scrollByBox(-1));
+      nextArrow.addEventListener('click', () => scrollByBox(1));
+
+      grid.addEventListener('scroll', () => this.updateCarouselArrows( grid, prevArrow, nextArrow ));
+      window.addEventListener('resize', () => this.updateCarouselArrows( grid, prevArrow, nextArrow ));
+
+      // Set initial state - hide prev arrow at start, next arrow when nothing to scroll
+      this.updateCarouselArrows( grid, prevArrow, nextArrow );
+    });
+  }
+
+  /**
+   * Update carousel arrows visibility based on scroll position
+   * @param {HTMLElement} container - The scrolling carousel container element
+   * @param {HTMLElement} prevArrow - The carousel's prev arrow
+   * @param {HTMLElement} nextArrow - The carousel's next arrow
+   */
+  updateCarouselArrows( container, prevArrow, nextArrow )
+  {
     if( !container || !prevArrow || !nextArrow ) return;
 
     // Show/hide prev arrow based on scroll position

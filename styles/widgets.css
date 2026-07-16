@@ -211,10 +211,16 @@ footer {
   width: 3px;
   background-color: var(--primary);
   animation: blink-caret 0.75s step-end infinite;
+  transition: opacity 0.4s ease;
+}
+
+.typewriter.typing::after {
+  animation: none;  /* solid cursor while actively typing, blink only when idle */
 }
 
 .typewriter.typing-done::after {
-  display: none;
+  animation: none;
+  opacity: 0;       /* fade the cursor out instead of removing it abruptly */
 }
 
 @keyframes blink-caret {
@@ -226,6 +232,13 @@ footer {
 
   50% {
     background-color: var(--primary)
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .typewriter::after {
+    animation: none;
   }
 }
 

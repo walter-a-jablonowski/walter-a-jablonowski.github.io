@@ -9,10 +9,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
   <link rel="manifest" href="../../site.webmanifest">
-  <link rel="stylesheet" href="../../styles.css?v=26071201">
-  <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css?v=26071201">
-  <link rel="stylesheet" href="../../lib/fonts/fonts.css?v=26071201">
-  <link rel="stylesheet" href="../../lib/img_overlay/img_overlay.css?v=26071201">
+  <link rel="stylesheet" href="../../styles.css?v=26071601">
+  <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css?v=26071601">
+  <link rel="stylesheet" href="../../lib/fonts/fonts.css?v=26071601">
+  <link rel="stylesheet" href="../../lib/img_overlay/img_overlay.css?v=26071601">
   <style>
     /* Samples page specific styles */
     .samples-section {
@@ -43,39 +43,7 @@
       color: var(--white);
     }
 
-    .samples-list {
-      margin-top: var(--spacing-lg);
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-xl);
-    }
-
-    .sample-card {
-      display: flex;
-      background-color: rgba(26, 26, 26, 0.5);
-      border-radius: var(--border-radius-md);
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .sample-info {
-      flex: 1;
-      padding: var(--spacing-lg);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .sample-image-container {
-      width: 40%;
-      overflow: hidden;
-    }
-
-    .sample-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: left top;
-    }
+    /* samples-list / sample-card styles moved to styles/page-components.css */
 
     .intro-text {
       font-size: 1.2rem;
@@ -86,19 +54,6 @@
       margin-left: 0.2rem;
     }
 
-    .sample-name {
-      font-weight: 600;
-      font-size: 1.5rem;
-      color: var(--primary);
-      margin-bottom: var(--spacing-md);
-    }
-
-    .sample-description {
-      color: var(--lighter-gray);
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
     .add-sample-btn {
       margin-top: var(--spacing-xl);
       display: inline-flex;
@@ -107,30 +62,6 @@
 
     .add-sample-btn i {
       margin-right: var(--spacing-xs);
-    }
-
-    .sample-image:not(svg) {
-      transition: opacity 0.3s ease;
-    }
-
-    .sample-image:not(svg):hover {
-      opacity: 0.9;
-    }
-
-    @media (max-width: 768px) {
-      .sample-card {
-        flex-direction: column;
-      }
-
-      .sample-info {
-        order: 2;
-      }
-
-      .sample-image-container {
-        width: 100%;
-        height: 200px;
-        order: 1;
-      }
     }
   </style>
 </head>
@@ -338,10 +269,10 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../lib/config.js?v=26071201"></script>
-  <script src="../../controller.js?v=26071201"></script>
-  <script src="../../lib/voice-agent/agent.js?v=26071201"></script>
-  <script src="../../lib/img_overlay/img_overlay.js?v=26071201"></script>
+  <script src="../../lib/config.js?v=26071601"></script>
+  <script src="../../controller.js?v=26071601"></script>
+  <script src="../../lib/voice-agent/agent.js?v=26071601"></script>
+  <script src="../../lib/img_overlay/img_overlay.js?v=26071601"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function()
     {
