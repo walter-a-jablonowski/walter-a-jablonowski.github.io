@@ -125,6 +125,20 @@
   color: var(--primary);
   margin-bottom: var(--spacing-md);
 }
+.sample-tag {  /* small "Beispiel" / "Sample" pill next to a card title */
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  padding: .1rem .65rem .15rem;
+  border: 1.5px solid var(--accent-gold);
+  border-radius: var(--border-radius-pill);
+  color: var(--accent-gold);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
 .sample-description {
   color: var(--lighter-gray);
   font-size: 1rem;

@@ -1,0 +1,74 @@
+<svg viewBox="0 0 560 410" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <title>AI support triage flow: a ticket is classified, answered from a knowledge base, then auto-sent or routed to a human for approval</title>
+
+  <!-- Background -->
+  <rect width="560" height="410" fill="#1a1a1a"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#FF6B00"/>
+    </marker>
+  </defs>
+
+  <!-- Start: a new support ticket comes in -->
+  <rect x="56" y="18" width="96" height="30" rx="15" fill="#2d2d2d" stroke="#666" stroke-width="1.5"/>
+  <text x="104" y="38" text-anchor="middle" fill="#ffffff" font-size="14">New ticket</text>
+  <line x1="104" y1="48" x2="104" y2="66" stroke="#FF6B00" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Pipeline: classify -> retrieve -> draft (LLM steps) -->
+  <rect x="40" y="68" width="128" height="50" rx="8" fill="#2d2d2d" stroke="#FF6B00" stroke-width="2"/>
+  <text x="104" y="90" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="600">Classify</text>
+  <text x="104" y="107" text-anchor="middle" fill="#999999" font-size="11.5">category &#183; priority</text>
+
+  <line x1="168" y1="93" x2="216" y2="93" stroke="#FF6B00" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="216" y="68" width="128" height="50" rx="8" fill="#2d2d2d" stroke="#FF6B00" stroke-width="2"/>
+  <text x="280" y="90" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="600">Retrieve</text>
+  <text x="280" y="107" text-anchor="middle" fill="#999999" font-size="11.5">KB facts</text>
+
+  <line x1="344" y1="93" x2="392" y2="93" stroke="#FF6B00" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="392" y="68" width="128" height="50" rx="8" fill="#2d2d2d" stroke="#FF6B00" stroke-width="2"/>
+  <text x="456" y="90" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="600">Draft</text>
+  <text x="456" y="107" text-anchor="middle" fill="#999999" font-size="11.5">grounded reply</text>
+
+  <!-- Connector: draft down and across into the decision gate -->
+  <path d="M456,118 V148 H280 V176" fill="none" stroke="#FF6B00" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Decision gate: auto-send policy -->
+  <polygon points="280,178 386,222 280,266 174,222" fill="#2d2d2d" stroke="#FF6B00" stroke-width="2"/>
+  <text x="280" y="219" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="600">Auto-send?</text>
+  <text x="280" y="236" text-anchor="middle" fill="#999999" font-size="11">policy gate</text>
+
+  <!-- Left branch: low risk -> send automatically -->
+  <path d="M174,222 H127 V300" fill="none" stroke="#FF6B00" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="97" y="245" width="60" height="17" rx="3" fill="#1a1a1a"/>
+  <text x="127" y="258" text-anchor="middle" fill="#cccccc" font-size="11">low risk</text>
+
+  <!-- Right branch: money / urgent / low confidence -> human review -->
+  <path d="M386,222 H435 V300" fill="none" stroke="#FFC107" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="388" y="240" width="96" height="31" rx="3" fill="#1a1a1a"/>
+  <text x="436" y="253" text-anchor="middle" fill="#FFC107" font-size="10.5">money &#183; urgent</text>
+  <text x="436" y="266" text-anchor="middle" fill="#FFC107" font-size="10.5">low confidence</text>
+
+  <!-- Send (auto-reply) -->
+  <rect x="52" y="300" width="150" height="50" rx="8" fill="#2d2d2d" stroke="#FF6B00" stroke-width="2"/>
+  <text x="127" y="322" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="600">Send</text>
+  <text x="127" y="339" text-anchor="middle" fill="#999999" font-size="11.5">auto-reply</text>
+
+  <!-- Human review (human-in-the-loop) -->
+  <rect x="350" y="300" width="170" height="50" rx="8" fill="#2d2d2d" stroke="#FFC107" stroke-width="2"/>
+  <circle cx="372" cy="316" r="5" fill="none" stroke="#FFC107" stroke-width="1.5"/>
+  <path d="M364,331 q8,-10 16,0" fill="none" stroke="#FFC107" stroke-width="1.5"/>
+  <text x="437" y="320" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="600">Human review</text>
+  <text x="437" y="338" text-anchor="middle" fill="#999999" font-size="10.5">approve &#183; reject &#183; edit</text>
+
+  <!-- Loop back: an approved / edited reply is sent -->
+  <line x1="350" y1="325" x2="205" y2="325" stroke="#FF6B00" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="277" y="318" text-anchor="middle" fill="#999999" font-size="10">approve / edit</text>
+
+  <!-- Send -> resolved -->
+  <line x1="127" y1="350" x2="127" y2="368" stroke="#FF6B00" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="79" y="370" width="96" height="30" rx="15" fill="#2d2d2d" stroke="#FFC107" stroke-width="1.5"/>
+  <text x="127" y="390" text-anchor="middle" fill="#FFC107" font-size="14" font-weight="600">Resolved</text>
+</svg>

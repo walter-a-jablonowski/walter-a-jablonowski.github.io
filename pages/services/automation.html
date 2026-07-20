@@ -51,9 +51,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
   <link rel="manifest" href="../../site.webmanifest">
-  <link rel="stylesheet" href="../../styles.css?v=26071603">
-  <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css?v=26071603">
-  <link rel="stylesheet" href="../../lib/fonts/fonts.css?v=26071603">
+  <link rel="stylesheet" href="../../styles.css?v=26072001">
+  <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css?v=26072001">
+  <link rel="stylesheet" href="../../lib/fonts/fonts.css?v=26072001">
   <style>
     /* Service page styles (built on the shared design tokens, aligned with offer.html) */
     .project-detail {
@@ -123,10 +123,10 @@
               <li><a href="../../pages/services/automation.html" class="nav-link">Automatisierung</a></li>
               <li><a href="../../pages/services/self-improving.html" class="nav-link">Selbstverbessernde KI</a></li>
               <li><a href="../../pages/services/data-solutions.html" class="nav-link">KI-Datenl&ouml;sungen</a></li>
-              <li class="nav-dropdown-group">Consulting</li>
+              <li class="nav-dropdown-group">Consulting &amp; Integration</li>
               <li><a href="../../pages/services/consulting.html" class="nav-link">AI Beratung</a></li>
-              <li class="nav-dropdown-group">Security</li>
               <li><a href="../../pages/services/security.html" class="nav-link">Security &amp; Evaluierung</a></li>
+              <li><a href="../../pages/services/integration.html" class="nav-link">KI-Integration &amp; MCP</a></li>
               <li class="nav-dropdown-group">Human Interface</li>
               <li><a href="../../pages/placeholder.html" class="nav-link">Oberfl&auml;chen f&uuml;r KI</a></li>
               <li><a href="../../pages/services/dashboards.html" class="nav-link">KI Dashboards</a></li>
@@ -252,16 +252,49 @@
         <div class="samples-list">
           <div class="sample-card">
             <div class="sample-info">
-              <div class="sample-name">Lead-Qualifizierung mit KI-Agenten</div>
+              <div class="sample-name">Lead-Qualifizierung mit KI-Agenten&nbsp;&nbsp;<span class="sample-tag">Beispiel</span></div>
               <div class="sample-description">
-                Ein kleines Multi-Agenten-System: Eine eingehende Anfrage wird automatisch nach BANT bewertet
+                <p>Ein kleines Multi-Agenten-System: <b>Besser Kunden gewinnen</b> mit KI-Agenten. Individuell anschreiben statt Textvorlagen.
+                Eine eingehende Anfrage wird automatisch nach BANT bewertet
                 (Score 0&ndash;100, Super/Warm/Cold &ndash; deterministisch per Tool berechnet, nicht von der KI
                 &bdquo;gesch&auml;tzt&ldquo;). Anschlie&szlig;end entwirft ein zweiter KI-Agent die passende erste
-                Antwort-E-Mail. Ergebnis ist ein strukturierter, gepr&uuml;fter Lead-Datensatz statt loser Texte.
+                Antwort-E-Mail. Ergebnis ist ein strukturierter, gepr&uuml;fter Lead-Datensatz statt loser Texte.</p>
+                <p>Ein Workflow (etwa n8n) ist nicht dasselbe wie ein echter Agent &ndash; dieses System ist ein echter KI-Agenten.</p>
               </div>
             </div>
             <div class="sample-image-container">
               <img src="../../lib/img/lead-qualifier.svg" alt="Ablauf: Eingehende Anfrage wird per BANT bewertet und eine Antwort-E-Mail entworfen" class="sample-image">
+            </div>
+          </div>
+          <div class="sample-card">
+            <div class="sample-info">
+              <div class="sample-name">KI-Support: Tickets automatisch bearbeiten&nbsp;&nbsp;<span class="sample-tag">Beispiel</span></div>
+              <div class="sample-description">
+                <p>Ein Langgraph-Agent f&uuml;r den Support: Eingehende Tickets werden automatisch klassifiziert
+                (Kategorie, Priorit&auml;t) und aus einer Wissensdatenbank beantwortet. Einfache Anfragen gehen
+                direkt raus, heikle F&auml;lle &ndash; Geld, Dringlichkeit oder Unsicherheit &ndash; landen bei einem
+                Mitarbeiter zur Freigabe. So bekommen Sie schnelle Automatisierung, wo sie unkritisch ist, und
+                menschliche Kontrolle, wo es z&auml;hlt. Die Antworten st&uuml;tzen sich nur auf gepr&uuml;fte
+                Fakten aus der Wissensdatenbank.</p>
+              </div>
+            </div>
+            <div class="sample-image-container">
+              <img src="../../lib/img/support-triage.svg" alt="Ablauf: Support-Ticket wird klassifiziert, aus der Wissensdatenbank beantwortet und automatisch versendet oder von einem Menschen freigegeben" class="sample-image">
+            </div>
+          </div>
+          <div class="sample-card">
+            <div class="sample-info">
+              <div class="sample-name">Auch ein festes Programm ist Automatisierung</div>
+              <div class="sample-description">
+                Workflow-Plattformen wie n8n sind beliebt &ndash; aber ein festes Programm ist dasselbe:
+                Schritte, die zuverl&auml;ssig automatisch ablaufen. Je nach Aufgabe ist ein eigenes kleines
+                Programm die bessere Wahl. Mit KI-Unterst&uuml;tzung entsteht es heute deutlich schneller als
+                fr&uuml;her, l&auml;uft ohne Plattform-Abh&auml;ngigkeit (geringe Kosten) und kann bei Bedarf
+                eine eigene Oberfl&auml;che oder Visualisierung bekommen.
+              </div>
+            </div>
+            <div class="sample-image-container">
+              <img src="../../lib/img/code-is-automation.svg" alt="Ein Programm aus festem Code entspricht einem Workflow und kann optional eine eigene Oberfl&auml;che haben" class="sample-image">
             </div>
           </div>
         </div>
@@ -389,10 +422,10 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../lib/config.js?v=26071603"></script>
-  <script src="../../controller.js?v=26071603"></script>
-  <script src="../../lib/voice-agent/agent.js?v=26071603"></script>
-  <script src="../../lib/voice-agent/sidebar.js?v=26071603"></script>
+  <script src="../../lib/config.js?v=26072001"></script>
+  <script src="../../controller.js?v=26072001"></script>
+  <script src="../../lib/voice-agent/agent.js?v=26072001"></script>
+  <script src="../../lib/voice-agent/sidebar.js?v=26072001"></script>
   <script>
     new WebsiteController();
   </script>

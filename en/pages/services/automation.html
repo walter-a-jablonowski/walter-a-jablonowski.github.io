@@ -52,9 +52,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
   <link rel="manifest" href="../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../styles.css?v=26071603">
-  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26071603">
-  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26071603">
+  <link rel="stylesheet" href="../../../styles.css?v=26072001">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26072001">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26072001">
   <style>
     /* Service page styles (built on the shared design tokens, aligned with offer.html) */
     .project-detail {
@@ -124,10 +124,10 @@
               <li><a href="../../pages/services/automation.html" class="nav-link">Automation</a></li>
               <li><a href="../../pages/services/self-improving.html" class="nav-link">Self-improving AI</a></li>
               <li><a href="../../pages/services/data-solutions.html" class="nav-link">AI Data Solutions</a></li>
-              <li class="nav-dropdown-group">Consulting</li>
+              <li class="nav-dropdown-group">Consulting &amp; Integration</li>
               <li><a href="../../pages/services/consulting.html" class="nav-link">AI Consulting</a></li>
-              <li class="nav-dropdown-group">Security</li>
               <li><a href="../../pages/services/security.html" class="nav-link">AI Security &amp; Evaluation</a></li>
+              <li><a href="../../pages/services/integration.html" class="nav-link">AI Integration &amp; MCP</a></li>
               <li class="nav-dropdown-group">Human Interface</li>
               <li><a href="../../pages/placeholder.html" class="nav-link">UIs for AI</a></li>
               <li><a href="../../pages/services/dashboards.html" class="nav-link">AI Dashboards</a></li>
@@ -253,16 +253,48 @@
         <div class="samples-list">
           <div class="sample-card">
             <div class="sample-info">
-              <div class="sample-name">Lead qualification with AI agents</div>
+              <div class="sample-name">Lead qualification with AI agents&nbsp;&nbsp;<span class="sample-tag">Sample</span></div>
               <div class="sample-description">
-                A small multi-agent system: an inbound sales request is scored automatically using BANT
+                <p>A small multi-agent system: <b>Win customers more effectively</b> with AI agents. Individual
+                outreach instead of text templates. An inbound sales request is scored automatically using BANT
                 (score 0&ndash;100, super/warm/cold &ndash; computed deterministically by a tool, not
                 &ldquo;guessed&rdquo; by the AI). A second AI agent then drafts a matching first reply email.
-                The result is a structured, validated lead record instead of loose text.
+                The result is a structured, validated lead record instead of loose text.</p>
+                <p>A workflow (e.g. n8n) isn't the same as a real agent &ndash; this system is a real AI agent.</p>
               </div>
             </div>
             <div class="sample-image-container">
               <img src="../../../lib/img/lead-qualifier.svg" alt="Flow: inbound lead is scored using BANT and a reply email is drafted" class="sample-image">
+            </div>
+          </div>
+          <div class="sample-card">
+            <div class="sample-info">
+              <div class="sample-name">AI support: handle tickets automatically&nbsp;&nbsp;<span class="sample-tag">Sample</span></div>
+              <div class="sample-description">
+                <p>An Langgraph agent for support: incoming tickets are automatically classified (category, priority) and
+                answered from a knowledge base. Easy requests go out directly, while sensitive cases &ndash; money,
+                urgency or uncertainty &ndash; are handed to a staff member for approval. You get fast automation
+                where it is low-risk and human oversight where it matters. Replies are grounded only in verified
+                facts from the knowledge base.</p>
+              </div>
+            </div>
+            <div class="sample-image-container">
+              <img src="../../../lib/img/support-triage.svg" alt="Flow: support ticket is classified, answered from a knowledge base, and auto-sent or approved by a human" class="sample-image">
+            </div>
+          </div>
+          <div class="sample-card">
+            <div class="sample-info">
+              <div class="sample-name">Fixed code is automation too</div>
+              <div class="sample-description">
+                Workflow platforms like n8n are popular &ndash; but a fixed program is essentially the same
+                thing: steps that run reliably and automatically. Depending on the task, a small custom
+                program is the better choice. With AI assistance it can be developed much faster than in
+                the past, runs without platform dependencies (low cost), and can get its own UI or
+                visualization if needed.
+              </div>
+            </div>
+            <div class="sample-image-container">
+              <img src="../../../lib/img/code-is-automation.svg" alt="A program made of fixed code equals a workflow and can optionally have its own UI" class="sample-image">
             </div>
           </div>
         </div>
@@ -389,10 +421,10 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../lib/config.js?v=26071603"></script>
-  <script src="../../../controller.js?v=26071603"></script>
-  <script src="../../../lib/voice-agent/agent.js?v=26071603"></script>
-  <script src="../../../lib/voice-agent/sidebar.js?v=26071603"></script>
+  <script src="../../../lib/config.js?v=26072001"></script>
+  <script src="../../../controller.js?v=26072001"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26072001"></script>
+  <script src="../../../lib/voice-agent/sidebar.js?v=26072001"></script>
   <script>
     new WebsiteController();
   </script>
