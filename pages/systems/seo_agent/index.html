@@ -51,9 +51,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
   <link rel="manifest" href="../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../styles.css?v=26072001">
-  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26072001">
-  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26072001">
+  <link rel="stylesheet" href="../../../styles.css?v=26072201">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26072201">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26072201">
   <style>
     /* Product page styles. Reusable parts (.product-hero, .spec-list, .service-cta
        exemption) live in page-components.css; the blocks below are local to this page. */
@@ -100,6 +100,66 @@
        (overrides the shared .product-cta exemption via later source order). */
     body.hide-biz .service-cta.product-cta { display: none; }
   </style>
+  <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "de",
+    "url": "https://walter-a-jablonowski.github.io/pages/systems/seo_agent/index.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was kostet das?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Der Preis hängt von Umfang und Datenquellen ab und muss individuell eingeschätzt werden."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ändert der Agent meine Seite ohne Kontrolle?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nein. Jeder Lauf committet auf einen eigenen Branch; Sie prüfen den Diff und mergen erst, was live gehen soll. Der Agent pusht nie selbst. Im Modus „propose“ schreibt er nur Vorschläge."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was ist GEO / KI-Suche?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GEO steht für „Generative Engine Optimization“ – also Sichtbarkeit in KI-Antworten (ChatGPT, Gemini, Perplexity). Der Agent prüft, ob diese Sie zitieren, und arbeitet gezielt daran."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Läuft das mit meiner Website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Der Agent ist für Websites in einem Git-Repository gebaut (z. B. GitHub Pages), mit deutscher und englischer Sprachversion. Andere Setups prüfe ich gern im Erstgespräch."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wo laufen meine Daten?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Der Agent läuft auf Ihrem Rechner oder Server und ist auf Ihr Website-Verzeichnis sandboxed. Mit einem lokalen Modell (Ollama) verlassen Ihre Inhalte Ihr Haus nicht."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche KI steckt dahinter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standardmäßig OpenRouter mit Gemini 3.5 Flash; ebenso möglich sind Google Gemini oder ein lokales Modell (Ollama). Das Modell lässt sich austauschen, ohne den Agenten neu zu bauen."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- faq-schema:end -->
 </head>
 <body>
   <header>
@@ -252,16 +312,60 @@
               <li class="no-num"><strong>Ablauf:</strong> Collect &rarr; Measure &rarr; Research &rarr; Brief &rarr; Edit &rarr; Guardrails &rarr; Commit</li>
             </ol>
           </div>
-          <div class="steps-text">
-            <p>
-              Vor dem Commit pr&uuml;fen <strong>Guardrails</strong> die gesamte bearbeitete Seite &ndash;
-              defekte Links, JSON-LD, Meta-L&auml;ngen, doppelte Titel, valides HTML. Schl&auml;gt eine
-              Pr&uuml;fung fehl, wird jede Datei zur&uuml;ckgesetzt und <strong>nichts</strong> committet.
-            </p>
-            <p>
-              Das Sprachmodell ist <strong>austauschbar</strong>: Cloud (OpenRouter mit Gemini&nbsp;3.5&nbsp;Flash,
-              Google&nbsp;Gemini) oder lokal (Ollama) &ndash; je nachdem, wie viel im Haus bleiben soll.
-            </p>
+          <div class="steps-text mini-tabs">
+            <h3 class="mt-heading">Gut zu wissen</h3>
+            <div class="mini-tab-links">
+              <button type="button" class="mini-tab-link active" data-tab="overview">&Uuml;berblick</button>
+              <span class="mini-tab-sep">|</span>
+              <button type="button" class="mini-tab-link" data-tab="faq">H&auml;ufige Fragen</button>
+            </div>
+            <div class="mini-tab-content active" id="mt-overview">
+              <p>
+                Vor dem Commit pr&uuml;fen <strong>Guardrails</strong> die gesamte bearbeitete Seite &ndash;
+                defekte Links, JSON-LD, Meta-L&auml;ngen, doppelte Titel, valides HTML. Schl&auml;gt eine
+                Pr&uuml;fung fehl, wird jede Datei zur&uuml;ckgesetzt und <strong>nichts</strong> committet.
+              </p>
+              <p>
+                Das Sprachmodell ist <strong>austauschbar</strong>: Cloud (OpenRouter mit Gemini&nbsp;3.5&nbsp;Flash,
+                Google&nbsp;Gemini) oder lokal (Ollama) &ndash; je nachdem, wie viel im Haus bleiben soll.
+              </p>
+            </div>
+            <div class="mini-tab-content" id="mt-faq">
+              <div class="faq-list">
+                <details class="samples-reveal">
+                  <summary>Was kostet das? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>
+                    <span class="biz-only price-line"><strong>Einrichtung zum Festpreis</strong> &middot; zzgl. laufender Nutzungskosten
+                    (KI-Modell/APIs). </span>Der Preis h&auml;ngt von Umfang und Datenquellen ab und muss individuell eingesch&auml;tzt werden.
+                  </p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>&Auml;ndert der Agent meine Seite ohne Kontrolle? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Nein. Jeder Lauf committet auf einen eigenen Branch; Sie pr&uuml;fen den Diff und mergen erst,
+                    was live gehen soll. Der Agent pusht nie selbst. Im Modus &bdquo;propose&ldquo; schreibt er nur Vorschl&auml;ge.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Was ist GEO / KI-Suche? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>GEO steht f&uuml;r &bdquo;Generative Engine Optimization&ldquo; &ndash; also Sichtbarkeit in KI-Antworten
+                    (ChatGPT, Gemini, Perplexity). Der Agent pr&uuml;ft, ob diese Sie zitieren, und arbeitet gezielt daran.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>L&auml;uft das mit meiner Website? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Der Agent ist f&uuml;r Websites in einem Git-Repository gebaut (z.&nbsp;B. GitHub&nbsp;Pages), mit
+                    deutscher und englischer Sprachversion. Andere Setups pr&uuml;fe ich gern im Erstgespr&auml;ch.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Wo laufen meine Daten? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Der Agent l&auml;uft auf Ihrem Rechner oder Server und ist auf Ihr Website-Verzeichnis
+                    sandboxed. Mit einem lokalen Modell (Ollama) verlassen Ihre Inhalte Ihr Haus nicht.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Welche KI steckt dahinter? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Standardm&auml;&szlig;ig OpenRouter mit Gemini&nbsp;3.5&nbsp;Flash; ebenso m&ouml;glich sind Google&nbsp;Gemini
+                    oder ein lokales Modell (Ollama). Das Modell l&auml;sst sich austauschen, ohne den Agenten neu zu bauen.</p>
+                </details>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -331,44 +435,7 @@
           <div class="spec-row"><span class="spec-k">Sicherheit</span><span class="spec-v">Guardrails, Backups, Commit zur Freigabe &ndash; kein Auto-Push</span></div>
         </div>
 
-        <!-- 10) FAQ (commercial: hidden under hideBiz via .biz-only) -->
-        <h3 id="faq" class="biz-only">H&auml;ufige Fragen</h3>
-        <div class="faq-list biz-only">
-          <details class="samples-reveal">
-            <summary>Was kostet das? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>
-              <span class="biz-only price-line"><strong>Einrichtung zum Festpreis</strong> &middot; zzgl. laufender Nutzungskosten
-              (KI-Modell/APIs). </span>Der Preis h&auml;ngt von Umfang und Datenquellen ab &ndash; das Erstgespr&auml;ch ist kostenfrei.
-            </p>
-          </details>
-          <details class="samples-reveal">
-            <summary>&Auml;ndert der Agent meine Seite ohne Kontrolle? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>Nein. Jeder Lauf committet auf einen eigenen Branch; Sie pr&uuml;fen den Diff und mergen erst,
-              was live gehen soll. Der Agent pusht nie selbst. Im Modus &bdquo;propose&ldquo; schreibt er nur Vorschl&auml;ge.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Was ist GEO / KI-Suche? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>GEO steht f&uuml;r &bdquo;Generative Engine Optimization&ldquo; &ndash; also Sichtbarkeit in KI-Antworten
-              (ChatGPT, Gemini, Perplexity). Der Agent pr&uuml;ft, ob diese Sie zitieren, und arbeitet gezielt daran.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>L&auml;uft das mit meiner Website? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>Der Agent ist f&uuml;r Websites in einem Git-Repository gebaut (z.&nbsp;B. GitHub&nbsp;Pages), mit
-              deutscher und englischer Sprachversion. Andere Setups pr&uuml;fe ich gern im Erstgespr&auml;ch.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Wo laufen meine Daten? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>Der Agent l&auml;uft auf Ihrem Rechner oder Server und ist auf Ihr Website-Verzeichnis
-              sandboxed. Mit einem lokalen Modell (Ollama) verlassen Ihre Inhalte Ihr Haus nicht.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Welche KI steckt dahinter? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>Standardm&auml;&szlig;ig OpenRouter mit Gemini&nbsp;3.5&nbsp;Flash; ebenso m&ouml;glich sind Google&nbsp;Gemini
-              oder ein lokales Modell (Ollama). Das Modell l&auml;sst sich austauschen, ohne den Agenten neu zu bauen.</p>
-          </details>
-        </div>
-
-        <!-- 11) Mehr zum Thema -->
+        <!-- 10) Mehr zum Thema -->
         <div class="highlight-box">
           <p><i class="fas fa-lightbulb" style="color: var(--primary); margin-right:.5rem;"></i>
             <strong>Mehr als SEO:</strong> Der SEO AI Agent ist ein Beispiel meiner
@@ -377,7 +444,7 @@
             wiederkehrende Arbeit &uuml;bernehmen und aus Ergebnissen lernen.</p>
         </div>
 
-        <!-- 12) Abschluss-CTA -->
+        <!-- 11) Abschluss-CTA -->
         <div class="service-cta product-cta">
           <h3>SEO AI Agent f&uuml;r Ihre Website</h3>
           <p>Erstgespr&auml;ch kostenfrei &ndash; vor Ort in Bamberg/N&uuml;rnberg oder online.</p>
@@ -385,7 +452,6 @@
             <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Kontakt aufnehmen</a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -417,9 +483,9 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../lib/config.js?v=26072001"></script>
-  <script src="../../../controller.js?v=26072001"></script>
-  <script src="../../../lib/voice-agent/agent.js?v=26072001"></script>
+  <script src="../../../lib/config.js?v=26072201"></script>
+  <script src="../../../controller.js?v=26072201"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26072201"></script>
   <script>
     new WebsiteController();
   </script>

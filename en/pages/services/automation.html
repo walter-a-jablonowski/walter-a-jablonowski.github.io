@@ -52,9 +52,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
   <link rel="manifest" href="../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../styles.css?v=26072001">
-  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26072001">
-  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26072001">
+  <link rel="stylesheet" href="../../../styles.css?v=26072201">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26072201">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26072201">
   <style>
     /* Service page styles (built on the shared design tokens, aligned with offer.html) */
     .project-detail {
@@ -99,6 +99,50 @@
     .ph-live-slo ul { padding-left: 1.25rem; }
     .ph-live-slo li { margin: .45rem 0; }
   </style>
+  <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "en",
+    "url": "https://walter-a-jablonowski.github.io/en/pages/services/automation.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does an automation cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Small use cases are available from approx. €1,000, larger projects depend on the effort. A specific use case needs to be assessed individually in a consultation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does implementation take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A small use case is often ready within a few days. I deliberately start small and expand the automation step by step."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about data protection?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The solution can run locally or on your own server. I support a GDPR-compliant implementation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Am I locked in to a vendor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The solutions rely on open, replaceable components – you keep control over your data and systems."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- faq-schema:end -->
 </head>
 <body>
   <header>
@@ -191,10 +235,10 @@
           </details>
           <div class="ph-actions">
             <a href="../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Contact</a>
-            <a href="#" class="btn btn-outline" id="use-case-finder-trigger">Use Case finder</a>
+            <a href="#" class="btn btn-outline" id="use-case-finder-trigger" data-ucf-topic="automation">Use Case finder</a>
           </div>
         </div>
-        <div class="ph-visual">
+        <div class="ph-visual hide-on-mobile">
           <!-- Dummy image, replace with the real image later -->
           <img src="../../../misc/automation-placeholder.svg" alt="AI automation for businesses" loading="lazy">
         </div>
@@ -305,12 +349,13 @@
             <ol class="offer-steps">
               <li class="no-num"><strong>Runs locally or on a web server.</strong> Support with GDPR.</li>
               <li>Clarify / identify the use case<br>
-                <span class="step-comment">Free initial consultation, on-site in the region or online</span></li>
+                <span class="step-comment">Initial call, on-site in the region or online</span></li>
               <li>Proposed solution</li>
               <li>Implementation</li>
             </ol>
           </div>
           <div class="steps-text mini-tabs">
+            <h3 class="mt-heading">Good to know</h3>
             <div class="mini-tab-links">
               <button type="button" class="mini-tab-link active" data-tab="overview">Overview</button>
               <span class="mini-tab-sep">|</span>
@@ -332,8 +377,8 @@
               <div class="faq-list">
                 <details class="samples-reveal">
                   <summary>What does an automation cost? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-                  <p>Small use cases are available from approx. &euro;1,000, larger projects are billed
-                    by effort. In a free initial consultation I assess your case concretely.</p>
+                  <p>Small use cases are available from approx. &euro;1,000, larger projects depend on
+                    the effort. A specific use case needs to be assessed individually in a consultation.</p>
                 </details>
                 <details class="samples-reveal">
                   <summary>How long does implementation take? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
@@ -421,25 +466,13 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../lib/config.js?v=26072001"></script>
-  <script src="../../../controller.js?v=26072001"></script>
-  <script src="../../../lib/voice-agent/agent.js?v=26072001"></script>
-  <script src="../../../lib/voice-agent/sidebar.js?v=26072001"></script>
+  <script src="../../../lib/config.js?v=26072201"></script>
+  <script src="../../../controller.js?v=26072201"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26072201"></script>
+  <script src="../../../lib/voice-agent/sidebar.js?v=26072201"></script>
+  <script src="../../../lib/voice-agent/use-case-finder.js?v=26072201"></script>
   <script>
     new WebsiteController();
-  </script>
-  <script>
-    document.querySelectorAll('.mini-tabs').forEach(function (tabs) {
-      var links = tabs.querySelectorAll('.mini-tab-link');
-      var panels = tabs.querySelectorAll('.mini-tab-content');
-      links.forEach(function (link) {
-        link.addEventListener('click', function () {
-          var target = link.getAttribute('data-tab');
-          links.forEach(function (l) { l.classList.toggle('active', l === link); });
-          panels.forEach(function (p) { p.classList.toggle('active', p.id === 'mt-' + target); });
-        });
-      });
-    });
   </script>
 </body>
 </html>

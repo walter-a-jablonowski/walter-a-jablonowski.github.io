@@ -51,9 +51,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
   <link rel="manifest" href="../../site.webmanifest">
-  <link rel="stylesheet" href="../../styles.css?v=26072001">
-  <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css?v=26072001">
-  <link rel="stylesheet" href="../../lib/fonts/fonts.css?v=26072001">
+  <link rel="stylesheet" href="../../styles.css?v=26072201">
+  <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css?v=26072201">
+  <link rel="stylesheet" href="../../lib/fonts/fonts.css?v=26072201">
   <style>
     /* Service page styles (built on the shared design tokens, aligned with offer.html) */
     .project-detail {
@@ -98,6 +98,66 @@
     .ph-live-slo ul { padding-left: 1.25rem; }
     .ph-live-slo li { margin: .45rem 0; }
   </style>
+  <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "de",
+    "url": "https://walter-a-jablonowski.github.io/pages/services/dashboards.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was kostet ein Dashboard?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kleine Dashboards lassen sich gut abgrenzen, größere nach Aufwand. Der konkrete Umfang muss in einer Beratung individuell eingeschätzt werden."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche Systeme lassen sich anbinden?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Datenbanken (z. B. MySQL, SQL Server, SQLite), ERP- und CRM-Systeme, Excel-Tabellen, E-Mails und APIs – einzeln oder kombiniert."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wo läuft das Dashboard?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Auf Wunsch lokal oder auf Ihrem eigenen Server – Ihre Daten bleiben unter Ihrer Kontrolle. Ich unterstütze bei einer DSGVO-konformen Umsetzung."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie aktuell sind die Daten?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Je nach Quelle live oder in festen Intervallen aktualisiert. Auf Wunsch mit Warnungen, sobald Werte definierte Grenzen über- oder unterschreiten."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was kann die KI im Dashboard?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sie fragen in natürlicher Sprache – per Seitenleiste oder Stimme. Die KI bereitet Daten auf (z. B. eine Auswertung nach Region) oder stößt Aktionen an, etwa eine Erinnerung an einen Kunden."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Können wir später erweitern?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Dashboards sind modular aufgebaut – neue Kacheln, Datenquellen und KI-Funktionen lassen sich jederzeit ergänzen."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- faq-schema:end -->
 </head>
 <body>
   <header>
@@ -195,7 +255,7 @@
             <a href="../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Kontakt</a>
           </div>
         </div>
-        <div class="ph-visual">
+        <div class="ph-visual hide-on-mobile">
           <!-- Dummy-Bild, sp&auml;ter durch das echte Bild ersetzen -->
           <img src="../../misc/automation-placeholder.svg" alt="Individuelle KI Dashboards" loading="lazy">
         </div>
@@ -238,7 +298,7 @@
             <ol class="offer-steps">
               <li class="no-num"><strong>Lokaler Betrieb oder eigener Server.</strong> Unterst&uuml;tzung bei DSGVO.</li>
               <li>Ziele &amp; Kennzahlen kl&auml;ren<br>
-                <span class="step-comment">Kostenfreie Erstberatung, regional vor Ort oder online</span></li>
+                <span class="step-comment">Erstgespr&auml;ch, regional vor Ort oder online</span></li>
               <li>Datenquellen anbinden</li>
               <li>Dashboard gestalten &amp; bereitstellen<br>
                 <span class="step-comment">Auf Wunsch mit KI-Assistent (Seitenleiste oder Sprache)</span></li>
@@ -247,6 +307,7 @@
             </ol>
           </div>
           <div class="steps-text mini-tabs">
+            <h3 class="mt-heading">Gut zu wissen</h3>
             <div class="mini-tab-links">
               <button type="button" class="mini-tab-link active" data-tab="overview">&Uuml;berblick</button>
               <span class="mini-tab-sep">|</span>
@@ -269,8 +330,8 @@
               <div class="faq-list">
                 <details class="samples-reveal">
                   <summary>Was kostet ein Dashboard? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-                  <p>Kleine Dashboards gibt es zum Festpreis, gr&ouml;&szlig;ere nach Aufwand. In einer kostenlosen
-                    Erstberatung sch&auml;tze ich Ihren Fall konkret ein.</p>
+                  <p>Kleine Dashboards lassen sich gut abgrenzen, gr&ouml;&szlig;ere nach Aufwand.
+                    Der konkrete Umfang muss in einer Beratung individuell eingesch&auml;tzt werden.</p>
                 </details>
                 <details class="samples-reveal">
                   <summary>Welche Systeme lassen sich anbinden? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
@@ -364,24 +425,11 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../lib/config.js?v=26072001"></script>
-  <script src="../../controller.js?v=26072001"></script>
-  <script src="../../lib/voice-agent/agent.js?v=26072001"></script>
+  <script src="../../lib/config.js?v=26072201"></script>
+  <script src="../../controller.js?v=26072201"></script>
+  <script src="../../lib/voice-agent/agent.js?v=26072201"></script>
   <script>
     new WebsiteController();
-  </script>
-  <script>
-    document.querySelectorAll('.mini-tabs').forEach(function (tabs) {
-      var links = tabs.querySelectorAll('.mini-tab-link');
-      var panels = tabs.querySelectorAll('.mini-tab-content');
-      links.forEach(function (link) {
-        link.addEventListener('click', function () {
-          var target = link.getAttribute('data-tab');
-          links.forEach(function (l) { l.classList.toggle('active', l === link); });
-          panels.forEach(function (p) { p.classList.toggle('active', p.id === 'mt-' + target); });
-        });
-      });
-    });
   </script>
 </body>
 </html>

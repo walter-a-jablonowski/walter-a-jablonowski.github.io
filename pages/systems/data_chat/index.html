@@ -51,9 +51,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
   <link rel="manifest" href="../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../styles.css?v=26072001">
-  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26072001">
-  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26072001">
+  <link rel="stylesheet" href="../../../styles.css?v=26072201">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26072201">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26072201">
   <style>
     /* Product page styles. Reusable parts (.product-hero, .spec-list, .service-cta
        exemption) live in page-components.css; the blocks below are local to this page. */
@@ -100,6 +100,66 @@
        (overrides the shared .product-cta exemption via later source order). */
     body.hide-biz .service-cta.product-cta { display: none; }
   </style>
+  <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "de",
+    "url": "https://walter-a-jablonowski.github.io/pages/systems/data_chat/index.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was kostet das?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Der Preis hängt von Datenquellen und Anpassungen ab und muss individuell eingeschätzt werden."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Läuft das mit meiner Datenbank?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In der Regel ja. MySQL, SQL Server und SQLite sind direkt dabei, weitere Quellen – auch Dateien, PDFs oder E-Mails – lassen sich anbinden."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wo laufen meine Daten?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Auf Ihrem eigenen Server oder komplett lokal. Mit einem lokalen Modell (Ollama) verlassen weder Daten noch Fragen Ihr Haus. Ich unterstütze bei der DSGVO-konformen Umsetzung."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann die KI meine Daten verändern?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nein. Es sind ausschließlich lesende Abfragen erlaubt, jede Abfrage wird vorab gegen das Schema validiert – ein Schreibzugriff ist technisch ausgeschlossen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche KI steckt dahinter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wahlweise Google Gemini, OpenRouter oder ein lokales Modell (Ollama). Das Modell lässt sich austauschen, ohne die Lösung neu zu bauen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie schnell ist das einsatzbereit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wir starten klein mit einer klar abgegrenzten Datenquelle und bauen schrittweise aus – so sehen Sie schnell erste Ergebnisse."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- faq-schema:end -->
 </head>
 <body>
   <header>
@@ -251,16 +311,60 @@
               <li class="no-num"><strong>Technik:</strong> Chat &rarr; KI-Agent (Tool-Calling) &rarr; Validierung &rarr; Ihre Datenbank</li>
             </ol>
           </div>
-          <div class="steps-text">
-            <p>
-              Der KI-Agent ruft eigenst&auml;ndig das <strong>Datenbankschema</strong> ab, w&auml;hlt die richtigen
-              Tabellen und validiert jede Abfrage, bevor sie ausgef&uuml;hrt wird. So bleiben die
-              Ergebnisse belastbar und die Datenbank gesch&uuml;tzt.
-            </p>
-            <p>
-              Das Sprachmodell ist <strong>austauschbar</strong>: Cloud (Google&nbsp;Gemini, OpenRouter) oder
-              lokal (Ollama) &ndash; je nachdem, wie sensibel Ihre Daten sind.
-            </p>
+          <div class="steps-text mini-tabs">
+            <h3 class="mt-heading">Gut zu wissen</h3>
+            <div class="mini-tab-links">
+              <button type="button" class="mini-tab-link active" data-tab="overview">&Uuml;berblick</button>
+              <span class="mini-tab-sep">|</span>
+              <button type="button" class="mini-tab-link" data-tab="faq">H&auml;ufige Fragen</button>
+            </div>
+            <div class="mini-tab-content active" id="mt-overview">
+              <p>
+                Der KI-Agent ruft eigenst&auml;ndig das <strong>Datenbankschema</strong> ab, w&auml;hlt die richtigen
+                Tabellen und validiert jede Abfrage, bevor sie ausgef&uuml;hrt wird. So bleiben die
+                Ergebnisse belastbar und die Datenbank gesch&uuml;tzt.
+              </p>
+              <p>
+                Das Sprachmodell ist <strong>austauschbar</strong>: Cloud (Google&nbsp;Gemini, OpenRouter) oder
+                lokal (Ollama) &ndash; je nachdem, wie sensibel Ihre Daten sind.
+              </p>
+            </div>
+            <div class="mini-tab-content" id="mt-faq">
+              <div class="faq-list">
+                <details class="samples-reveal">
+                  <summary>Was kostet das? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>
+                    <span class="biz-only price-line"><strong>Kleine Vorhaben zum Festpreis</strong>, gr&ouml;&szlig;ere nach Aufwand. </span>Der
+                    Preis h&auml;ngt von Datenquellen und Anpassungen ab und muss individuell eingesch&auml;tzt werden.
+                  </p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>L&auml;uft das mit meiner Datenbank? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>In der Regel ja. MySQL, SQL&nbsp;Server und SQLite sind direkt dabei, weitere Quellen &ndash;
+                    auch Dateien, PDFs oder E-Mails &ndash; lassen sich anbinden.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Wo laufen meine Daten? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Auf Ihrem eigenen Server oder komplett lokal. Mit einem lokalen Modell (Ollama)
+                    verlassen weder Daten noch Fragen Ihr Haus. Ich unterst&uuml;tze bei der DSGVO-konformen Umsetzung.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Kann die KI meine Daten ver&auml;ndern? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Nein. Es sind ausschlie&szlig;lich lesende Abfragen erlaubt, jede Abfrage wird vorab gegen
+                    das Schema validiert &ndash; ein Schreibzugriff ist technisch ausgeschlossen.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Welche KI steckt dahinter? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Wahlweise Google&nbsp;Gemini, OpenRouter oder ein lokales Modell (Ollama). Das Modell
+                    l&auml;sst sich austauschen, ohne die L&ouml;sung neu zu bauen.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Wie schnell ist das einsatzbereit? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Wir starten klein mit einer klar abgegrenzten Datenquelle und bauen schrittweise aus &ndash;
+                    so sehen Sie schnell erste Ergebnisse.</p>
+                </details>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -331,44 +435,7 @@
           <div class="spec-row"><span class="spec-k">Sicherheit</span><span class="spec-v">nur lesende, schema-validierte Abfragen</span></div>
         </div>
 
-        <!-- 10) FAQ (commercial: hidden under hideBiz via .biz-only) -->
-        <h3 id="faq" class="biz-only">H&auml;ufige Fragen</h3>
-        <div class="faq-list biz-only">
-          <details class="samples-reveal">
-            <summary>Was kostet das? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>
-              <span class="biz-only price-line"><strong>Kleine Vorhaben zum Festpreis</strong>, gr&ouml;&szlig;ere nach Aufwand. </span>Der
-              Preis h&auml;ngt von Datenquellen und Anpassungen ab &ndash; das Erstgespr&auml;ch ist kostenfrei.
-            </p>
-          </details>
-          <details class="samples-reveal">
-            <summary>L&auml;uft das mit meiner Datenbank? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>In der Regel ja. MySQL, SQL&nbsp;Server und SQLite sind direkt dabei, weitere Quellen &ndash;
-              auch Dateien, PDFs oder E-Mails &ndash; lassen sich anbinden.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Wo laufen meine Daten? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>Auf Ihrem eigenen Server oder komplett lokal. Mit einem lokalen Modell (Ollama)
-              verlassen weder Daten noch Fragen Ihr Haus. Ich unterst&uuml;tze bei der DSGVO-konformen Umsetzung.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Kann die KI meine Daten ver&auml;ndern? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>Nein. Es sind ausschlie&szlig;lich lesende Abfragen erlaubt, jede Abfrage wird vorab gegen
-              das Schema validiert &ndash; ein Schreibzugriff ist technisch ausgeschlossen.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Welche KI steckt dahinter? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>Wahlweise Google&nbsp;Gemini, OpenRouter oder ein lokales Modell (Ollama). Das Modell
-              l&auml;sst sich austauschen, ohne die L&ouml;sung neu zu bauen.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Wie schnell ist das einsatzbereit? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>Wir starten klein mit einer klar abgegrenzten Datenquelle und bauen schrittweise aus &ndash;
-              so sehen Sie schnell erste Ergebnisse.</p>
-          </details>
-        </div>
-
-        <!-- 11) Mehr zum Thema -->
+        <!-- 10) Mehr zum Thema -->
         <div class="highlight-box">
           <p><i class="fas fa-lightbulb" style="color: var(--primary); margin-right:.5rem;"></i>
             <strong>Mehr als Chat with Data:</strong> Chat with Data ist ein Baustein meiner
@@ -377,7 +444,7 @@
             Umsetzung finden Sie beim <a href="../../projects/db-assistant/index.html">DB&nbsp;Assistant</a>.</p>
         </div>
 
-        <!-- 12) Abschluss-CTA -->
+        <!-- 11) Abschluss-CTA -->
         <div class="service-cta product-cta">
           <h3>Chat with Data f&uuml;r Ihre Daten</h3>
           <p>Erstgespr&auml;ch kostenfrei &ndash; vor Ort in Bamberg/N&uuml;rnberg oder online.</p>
@@ -385,7 +452,6 @@
             <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Kontakt aufnehmen</a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -417,9 +483,9 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../lib/config.js?v=26072001"></script>
-  <script src="../../../controller.js?v=26072001"></script>
-  <script src="../../../lib/voice-agent/agent.js?v=26072001"></script>
+  <script src="../../../lib/config.js?v=26072201"></script>
+  <script src="../../../controller.js?v=26072201"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26072201"></script>
   <script>
     new WebsiteController();
   </script>

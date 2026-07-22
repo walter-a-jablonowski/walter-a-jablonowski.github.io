@@ -51,9 +51,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../../favicon-16x16.png">
   <link rel="manifest" href="../../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../../styles.css?v=26072001">
-  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26072001">
-  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26072001">
+  <link rel="stylesheet" href="../../../../styles.css?v=26072201">
+  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26072201">
+  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26072201">
   <style>
     /* Product page styles. Reusable parts (.product-hero, .spec-list, .service-cta
        exemption) live in page-components.css; the blocks below are local to this page. */
@@ -95,7 +95,71 @@
     /* ---- Price line (gated by .biz-only / hideBiz) --------------------- */
     .price-line { color: var(--lighter-gray); }
     .price-line strong { color: var(--primary); }
+
+    /* On this page the closing CTA is commercial: hide it under hideBiz
+       (overrides the shared .product-cta exemption via later source order). */
+    body.hide-biz .service-cta.product-cta { display: none; }
   </style>
+  <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "en",
+    "url": "https://walter-a-jablonowski.github.io/en/pages/systems/web_agent/index.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does it cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The price depends on scope and customization and needs to be assessed individually."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which languages are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "German and English are included out of the box, and more languages are possible. The assistant replies automatically in the language of the page."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it run on my website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The assistant is added as a small script; the key and context run through your own Worker or server."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do visitors need a microphone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For the voice dialogue, yes. The greeting and hints also work without one – and the microphone is only used after a click and permission."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about privacy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No tracking cookies are needed, sensitive data stays server-side, and navigation is limited to your site. I support a GDPR-compliant integration."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which AI is behind it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Currently Gemini Live. The model can be swapped without changing the integration."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- faq-schema:end -->
 </head>
 <body>
   <header>
@@ -245,15 +309,58 @@
               <li class="no-num"><strong>How:</strong> Browser &rarr; your Worker (key &amp; context secure) &rarr; AI voice model</li>
             </ol>
           </div>
-          <div class="steps-text">
-            <p>
-              Sensitive data &ndash; the API key and the context about your offering &ndash; stays
-              <strong>server-side</strong> (e.g. a Cloudflare Worker), not in the visitor&rsquo;s browser.
-            </p>
-            <p>
-              Optionally, a <strong>live transcript</strong> can be shown so visitors can read along
-              with what was said and answered.
-            </p>
+          <div class="steps-text mini-tabs">
+            <h3 class="mt-heading">Good to know</h3>
+            <div class="mini-tab-links">
+              <button type="button" class="mini-tab-link active" data-tab="overview">Overview</button>
+              <span class="mini-tab-sep">|</span>
+              <button type="button" class="mini-tab-link" data-tab="faq">FAQ</button>
+            </div>
+            <div class="mini-tab-content active" id="mt-overview">
+              <p>
+                Sensitive data &ndash; the API key and the context about your offering &ndash; stays
+                <strong>server-side</strong> (e.g. a Cloudflare Worker), not in the visitor&rsquo;s browser.
+              </p>
+              <p>
+                Optionally, a <strong>live transcript</strong> can be shown so visitors can read along
+                with what was said and answered.
+              </p>
+            </div>
+            <div class="mini-tab-content" id="mt-faq">
+              <div class="faq-list">
+                <details class="samples-reveal">
+                  <summary>What does it cost? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>
+                    <span class="biz-only price-line"><strong>Setup from &euro;1,000</strong> &middot; plus ongoing usage costs
+                    (AI model/Worker). </span>The price depends on scope and customization and needs to be assessed individually.
+                  </p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Which languages are supported? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>German and English are included out of the box, and more languages are possible. The
+                    assistant replies automatically in the language of the page.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Does it run on my website? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Yes. The assistant is added as a small script; the key and context run through your own
+                    Worker or server.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Do visitors need a microphone? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>For the voice dialogue, yes. The greeting and hints also work without one &ndash; and the
+                    microphone is only used after a click and permission.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>What about privacy? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>No tracking cookies are needed, sensitive data stays server-side, and navigation is limited
+                    to your site. I support a GDPR-compliant integration.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Which AI is behind it? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Currently Gemini Live. The model can be swapped without changing the integration.</p>
+                </details>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -318,43 +425,7 @@
           <div class="spec-row"><span class="spec-k">Privacy</span><span class="spec-v">no tracking cookies, sandboxed navigation</span></div>
         </div>
 
-        <!-- 10) FAQ -->
-        <h3 id="faq">Frequently asked questions</h3>
-        <div class="faq-list">
-          <details class="samples-reveal">
-            <summary>What does it cost? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>
-              <span class="biz-only price-line"><strong>Setup from &euro;1,000</strong> &middot; plus ongoing usage costs
-              (AI model/Worker). </span>The price depends on scope and customization &ndash; the initial consultation is free.
-            </p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Which languages are supported? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>German and English are included out of the box, and more languages are possible. The
-              assistant replies automatically in the language of the page.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Does it run on my website? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>Yes. The assistant is added as a small script; the key and context run through your own
-              Worker or server.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Do visitors need a microphone? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>For the voice dialogue, yes. The greeting and hints also work without one &ndash; and the
-              microphone is only used after a click and permission.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>What about privacy? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>No tracking cookies are needed, sensitive data stays server-side, and navigation is limited
-              to your site. I support a GDPR-compliant integration.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Which AI is behind it? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>Currently Gemini Live. The model can be swapped without changing the integration.</p>
-          </details>
-        </div>
-
-        <!-- 11) Closing CTA -->
+        <!-- 10) Closing CTA -->
         <div class="service-cta product-cta">
           <h3>Website AI Agent for your site</h3>
           <p>Initial consultation free of charge &ndash; on-site in Bamberg/Nuremberg or online.</p>
@@ -362,7 +433,6 @@
             <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Get in touch</a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -394,9 +464,9 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../../lib/config.js?v=26072001"></script>
-  <script src="../../../../controller.js?v=26072001"></script>
-  <script src="../../../../lib/voice-agent/agent.js?v=26072001"></script>
+  <script src="../../../../lib/config.js?v=26072201"></script>
+  <script src="../../../../controller.js?v=26072201"></script>
+  <script src="../../../../lib/voice-agent/agent.js?v=26072201"></script>
   <script>
     new WebsiteController();
 

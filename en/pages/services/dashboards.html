@@ -52,9 +52,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
   <link rel="manifest" href="../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../styles.css?v=26072001">
-  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26072001">
-  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26072001">
+  <link rel="stylesheet" href="../../../styles.css?v=26072201">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26072201">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26072201">
   <style>
     /* Service page styles (built on the shared design tokens, aligned with offer.html) */
     .project-detail {
@@ -99,6 +99,66 @@
     .ph-live-slo ul { padding-left: 1.25rem; }
     .ph-live-slo li { margin: .45rem 0; }
   </style>
+  <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "en",
+    "url": "https://walter-a-jablonowski.github.io/en/pages/services/dashboards.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does a dashboard cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Small dashboards can be scoped well, larger ones depend on the effort. The actual scope needs to be assessed individually in a consultation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which systems can be connected?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Databases (e.g. MySQL, SQL Server, SQLite), ERP and CRM systems, Excel spreadsheets, emails and APIs – individually or combined."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where does the dashboard run?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On request locally or on your own server – your data stays under your control. I support a GDPR-compliant implementation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How current is the data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Depending on the source, updated live or at fixed intervals. On request with alerts as soon as values exceed or fall below defined limits."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What can the AI in the dashboard do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You ask in natural language – via sidebar or voice. The AI prepares data (e.g. an analysis by region) or triggers actions, such as a reminder to a customer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can we extend it later?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Dashboards are built modularly – new tiles, data sources and AI features can be added at any time."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- faq-schema:end -->
 </head>
 <body>
   <header>
@@ -196,7 +256,7 @@
             <a href="../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Contact</a>
           </div>
         </div>
-        <div class="ph-visual">
+        <div class="ph-visual hide-on-mobile">
           <!-- Dummy image, replace with the real image later -->
           <img src="../../../misc/automation-placeholder.svg" alt="Custom AI dashboards" loading="lazy">
         </div>
@@ -239,7 +299,7 @@
             <ol class="offer-steps">
               <li class="no-num"><strong>Runs locally or on your own server.</strong> Support with GDPR.</li>
               <li>Clarify goals &amp; KPIs<br>
-                <span class="step-comment">Free initial consultation, on-site in the region or online</span></li>
+                <span class="step-comment">Initial call, on-site in the region or online</span></li>
               <li>Connect data sources</li>
               <li>Design &amp; deliver the dashboard<br>
                 <span class="step-comment">On request with an AI assistant (sidebar or voice)</span></li>
@@ -248,6 +308,7 @@
             </ol>
           </div>
           <div class="steps-text mini-tabs">
+            <h3 class="mt-heading">Good to know</h3>
             <div class="mini-tab-links">
               <button type="button" class="mini-tab-link active" data-tab="overview">Overview</button>
               <span class="mini-tab-sep">|</span>
@@ -269,8 +330,8 @@
               <div class="faq-list">
                 <details class="samples-reveal">
                   <summary>What does a dashboard cost? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-                  <p>Small dashboards are available at a fixed price, larger ones are billed by effort. In a free
-                    initial consultation we assess your case concretely.</p>
+                  <p>Small dashboards can be scoped well, larger ones depend on the effort.
+                    The actual scope needs to be assessed individually in a consultation.</p>
                 </details>
                 <details class="samples-reveal">
                   <summary>Which systems can be connected? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
@@ -363,24 +424,11 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../lib/config.js?v=26072001"></script>
-  <script src="../../../controller.js?v=26072001"></script>
-  <script src="../../../lib/voice-agent/agent.js?v=26072001"></script>
+  <script src="../../../lib/config.js?v=26072201"></script>
+  <script src="../../../controller.js?v=26072201"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26072201"></script>
   <script>
     new WebsiteController();
-  </script>
-  <script>
-    document.querySelectorAll('.mini-tabs').forEach(function (tabs) {
-      var links = tabs.querySelectorAll('.mini-tab-link');
-      var panels = tabs.querySelectorAll('.mini-tab-content');
-      links.forEach(function (link) {
-        link.addEventListener('click', function () {
-          var target = link.getAttribute('data-tab');
-          links.forEach(function (l) { l.classList.toggle('active', l === link); });
-          panels.forEach(function (p) { p.classList.toggle('active', p.id === 'mt-' + target); });
-        });
-      });
-    });
   </script>
 </body>
 </html>

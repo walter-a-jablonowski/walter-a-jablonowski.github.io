@@ -51,9 +51,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../../favicon-16x16.png">
   <link rel="manifest" href="../../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../../styles.css?v=26072001">
-  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26072001">
-  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26072001">
+  <link rel="stylesheet" href="../../../../styles.css?v=26072201">
+  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26072201">
+  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26072201">
   <style>
     /* Product page styles. Reusable parts (.product-hero, .spec-list, .service-cta
        exemption) live in page-components.css; the blocks below are local to this page. */
@@ -95,7 +95,71 @@
     /* ---- Price line (gated by .biz-only / hideBiz) --------------------- */
     .price-line { color: var(--lighter-gray); }
     .price-line strong { color: var(--primary); }
+
+    /* On this page the closing CTA is commercial: hide it under hideBiz
+       (overrides the shared .product-cta exemption via later source order). */
+    body.hide-biz .service-cta.product-cta { display: none; }
   </style>
+  <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "en",
+    "url": "https://walter-a-jablonowski.github.io/en/pages/systems/data_chat/index.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does it cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The price depends on data sources and customization and needs to be assessed individually."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work with my database?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Usually yes. MySQL, SQL Server and SQLite are included out of the box, and further sources – including files, PDFs or emails – can be connected."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where does my data run?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On your own server or fully local. With a local model (Ollama), neither data nor questions leave your premises. I support a GDPR-compliant implementation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the AI change my data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Only read-only queries are allowed, and every query is validated against the schema beforehand – write access is technically ruled out."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which AI is behind it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Google Gemini, OpenRouter or a local model (Ollama), as you prefer. The model can be swapped without rebuilding the solution."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How quickly is it ready to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We start small with a clearly scoped data source and expand step by step – so you see first results quickly."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- faq-schema:end -->
 </head>
 <body>
   <header>
@@ -247,16 +311,60 @@
               <li class="no-num"><strong>How:</strong> Chat &rarr; AI agent (tool-calling) &rarr; validation &rarr; your database</li>
             </ol>
           </div>
-          <div class="steps-text">
-            <p>
-              The AI agent retrieves the <strong>database schema</strong> on its own, picks the right
-              tables and validates every query before it runs. That keeps results reliable and the
-              database protected.
-            </p>
-            <p>
-              The language model is <strong>interchangeable</strong>: cloud (Google&nbsp;Gemini, OpenRouter) or
-              local (Ollama) &ndash; depending on how sensitive your data is.
-            </p>
+          <div class="steps-text mini-tabs">
+            <h3 class="mt-heading">Good to know</h3>
+            <div class="mini-tab-links">
+              <button type="button" class="mini-tab-link active" data-tab="overview">Overview</button>
+              <span class="mini-tab-sep">|</span>
+              <button type="button" class="mini-tab-link" data-tab="faq">FAQ</button>
+            </div>
+            <div class="mini-tab-content active" id="mt-overview">
+              <p>
+                The AI agent retrieves the <strong>database schema</strong> on its own, picks the right
+                tables and validates every query before it runs. That keeps results reliable and the
+                database protected.
+              </p>
+              <p>
+                The language model is <strong>interchangeable</strong>: cloud (Google&nbsp;Gemini, OpenRouter) or
+                local (Ollama) &ndash; depending on how sensitive your data is.
+              </p>
+            </div>
+            <div class="mini-tab-content" id="mt-faq">
+              <div class="faq-list">
+                <details class="samples-reveal">
+                  <summary>What does it cost? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>
+                    <span class="biz-only price-line"><strong>Small projects at a fixed price</strong>, larger ones by effort. </span>The
+                    price depends on data sources and customization and needs to be assessed individually.
+                  </p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Does it work with my database? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Usually yes. MySQL, SQL&nbsp;Server and SQLite are included out of the box, and further
+                    sources &ndash; including files, PDFs or emails &ndash; can be connected.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Where does my data run? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>On your own server or fully local. With a local model (Ollama), neither data nor
+                    questions leave your premises. I support a GDPR-compliant implementation.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Can the AI change my data? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>No. Only read-only queries are allowed, and every query is validated against the
+                    schema beforehand &ndash; write access is technically ruled out.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Which AI is behind it? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Google&nbsp;Gemini, OpenRouter or a local model (Ollama), as you prefer. The model can be
+                    swapped without rebuilding the solution.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>How quickly is it ready to use? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>We start small with a clearly scoped data source and expand step by step &ndash; so you see
+                    first results quickly.</p>
+                </details>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -326,44 +434,7 @@
           <div class="spec-row"><span class="spec-k">Security</span><span class="spec-v">read-only, schema-validated queries</span></div>
         </div>
 
-        <!-- 10) FAQ -->
-        <h3 id="faq">Frequently asked questions</h3>
-        <div class="faq-list">
-          <details class="samples-reveal">
-            <summary>What does it cost? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>
-              <span class="biz-only price-line"><strong>Small projects at a fixed price</strong>, larger ones by effort. </span>The
-              price depends on data sources and customization &ndash; the initial consultation is free.
-            </p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Does it work with my database? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>Usually yes. MySQL, SQL&nbsp;Server and SQLite are included out of the box, and further
-              sources &ndash; including files, PDFs or emails &ndash; can be connected.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Where does my data run? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>On your own server or fully local. With a local model (Ollama), neither data nor
-              questions leave your premises. I support a GDPR-compliant implementation.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Can the AI change my data? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>No. Only read-only queries are allowed, and every query is validated against the
-              schema beforehand &ndash; write access is technically ruled out.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Which AI is behind it? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>Google&nbsp;Gemini, OpenRouter or a local model (Ollama), as you prefer. The model can be
-              swapped without rebuilding the solution.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>How quickly is it ready to use? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>We start small with a clearly scoped data source and expand step by step &ndash; so you see
-              first results quickly.</p>
-          </details>
-        </div>
-
-        <!-- 11) More on the topic -->
+        <!-- 10) More on the topic -->
         <div class="highlight-box">
           <p><i class="fas fa-lightbulb" style="color: var(--primary); margin-right:.5rem;"></i>
             <strong>More than Chat with Data:</strong> Chat with Data is one building block of my
@@ -372,7 +443,7 @@
             are on the <a href="../../projects/db-assistant/index.html">DB&nbsp;Assistant</a> page.</p>
         </div>
 
-        <!-- 12) Closing CTA -->
+        <!-- 11) Closing CTA -->
         <div class="service-cta product-cta">
           <h3>Chat with Data for your data</h3>
           <p>Initial consultation free of charge &ndash; on-site in Bamberg/Nuremberg or online.</p>
@@ -380,7 +451,6 @@
             <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Get in touch</a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -412,9 +482,9 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../../lib/config.js?v=26072001"></script>
-  <script src="../../../../controller.js?v=26072001"></script>
-  <script src="../../../../lib/voice-agent/agent.js?v=26072001"></script>
+  <script src="../../../../lib/config.js?v=26072201"></script>
+  <script src="../../../../controller.js?v=26072201"></script>
+  <script src="../../../../lib/voice-agent/agent.js?v=26072201"></script>
   <script>
     new WebsiteController();
   </script>

@@ -116,7 +116,7 @@
   object-fit: cover;
   object-position: left top;
 }
-.sample-image[src$=".svg"] { object-fit: contain; }  /* diagrams scale fully instead of being cropped */
+.sample-image[src$=".svg"] { object-fit: contain; object-position: center; }  /* diagrams scale fully instead of being cropped, centered in the card */
 .sample-image:not(svg) { transition: opacity 0.3s ease; }
 .sample-image:not(svg):hover { opacity: 0.9; }
 .sample-name {
@@ -209,6 +209,18 @@
 }
 
 /* Mini tabs (inside the steps-text column) */
+
+/* Small heading above the tab strip. Balances the <h3> of the steps column on
+   the left, and puts the block into the heading outline. Deliberately quieter
+   than a content h3 — the tab labels below it carry the emphasis. */
+.mini-tabs .mt-heading {
+  margin: 0 0 .6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--light-gray);
+  letter-spacing: .02em;
+}
+
 .mini-tabs .mini-tab-links {
   display: flex;
   align-items: center;
@@ -233,12 +245,11 @@
 .mini-tab-content { display: none; }
 .mini-tab-content.active { display: block; }
 
-/* FAQ mini-tab gated behind LOADING_CONFIG.hideBiz; the controller adds .hide-biz
-   to <body> when true. Hides the FAQ tab button, its separator and the FAQ
-   panel, leaving the (active) overview tab in place. */
-body.hide-biz .mini-tab-link[data-tab="faq"],
-body.hide-biz .mini-tab-sep,
-body.hide-biz #mt-faq { display: none; }
+/* The FAQ mini-tab stays visible under LOADING_CONFIG.hideBiz (unlike prices and
+   the .service-cta banner, which stay hidden). Reason: the service pages carry
+   FAQPage structured data generated from this panel (tools/upd_faq_schema.php),
+   and markup describing content a visitor cannot reach counts as misleading
+   structured data. Collapsed-by-default is fine — unreachable is not. */
 
 /* Highlight / trust callout */
 .highlight-box {
@@ -313,6 +324,7 @@ body.hide-biz .service-cta.product-cta { display: block; }
 @media (max-width: 768px) {
   .product-hero { grid-template-columns: 1fr; gap: var(--spacing-lg); }
   .ph-visual img { max-width: 260px; }
+  .ph-visual.hide-on-mobile { display: none; }  /* service pages hide the hero visual on mobile (except self-improving) */
   .ph-text h1 { font-size: 2.1rem; }
 }
 

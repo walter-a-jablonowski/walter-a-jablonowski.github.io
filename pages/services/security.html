@@ -51,9 +51,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
   <link rel="manifest" href="../../site.webmanifest">
-  <link rel="stylesheet" href="../../styles.css?v=26072001">
-  <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css?v=26072001">
-  <link rel="stylesheet" href="../../lib/fonts/fonts.css?v=26072001">
+  <link rel="stylesheet" href="../../styles.css?v=26072201">
+  <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css?v=26072201">
+  <link rel="stylesheet" href="../../lib/fonts/fonts.css?v=26072201">
   <style>
     /* Service page styles (built on the shared design tokens, aligned with offer.html) */
     .project-detail {
@@ -98,6 +98,50 @@
     .ph-live-slo ul { padding-left: 1.25rem; }
     .ph-live-slo li { margin: .45rem 0; }
   </style>
+  <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "de",
+    "url": "https://walter-a-jablonowski.github.io/pages/services/security.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was bedeutet Observability?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sie sehen jederzeit, was die KI tut und warum – durch Logging und Monitoring werden Entscheidungen nachvollziehbar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie wird die Qualität gemessen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Über definierte Testfälle und Kennzahlen. So erkennen Sie Verbesserungen und Verschlechterungen (Regression) objektiv."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was ist mit dem Datenschutz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Betrieb wahlweise lokal oder auf Ihrem eigenen Server, mit Unterstützung bei der DSGVO-konformen Umsetzung."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Auch für bestehende KI-Systeme?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Sicherheit, Observability und Evaluierung lassen sich auch nachträglich ergänzen."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- faq-schema:end -->
 </head>
 <body>
   <header>
@@ -191,7 +235,7 @@
             <a href="../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Kontakt</a>
           </div>
         </div>
-        <div class="ph-visual">
+        <div class="ph-visual hide-on-mobile">
           <!-- Dummy-Bild, sp&auml;ter durch das echte Bild ersetzen -->
           <img src="../../misc/automation-placeholder.svg" alt="Security &amp; Evaluierung" loading="lazy">
         </div>
@@ -229,13 +273,14 @@
             <ol class="offer-steps">
               <li class="no-num"><strong>Auch f&uuml;r bestehende KI-Systeme.</strong> Nachr&uuml;sten jederzeit m&ouml;glich.</li>
               <li>Ist-Analyse &amp; Risiken<br>
-                <span class="step-comment">Kostenfreie Erstberatung, regional vor Ort oder online</span></li>
+                <span class="step-comment">Erstgespr&auml;ch, regional vor Ort oder online</span></li>
               <li>Schutz &amp; Guardrails einrichten</li>
               <li>Observability &amp; Evaluierung</li>
               <li>Laufende &Uuml;berwachung</li>
             </ol>
           </div>
           <div class="steps-text mini-tabs">
+            <h3 class="mt-heading">Gut zu wissen</h3>
             <div class="mini-tab-links">
               <button type="button" class="mini-tab-link active" data-tab="overview">&Uuml;berblick</button>
               <span class="mini-tab-sep">|</span>
@@ -344,24 +389,11 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../lib/config.js?v=26072001"></script>
-  <script src="../../controller.js?v=26072001"></script>
-  <script src="../../lib/voice-agent/agent.js?v=26072001"></script>
+  <script src="../../lib/config.js?v=26072201"></script>
+  <script src="../../controller.js?v=26072201"></script>
+  <script src="../../lib/voice-agent/agent.js?v=26072201"></script>
   <script>
     new WebsiteController();
-  </script>
-  <script>
-    document.querySelectorAll('.mini-tabs').forEach(function (tabs) {
-      var links = tabs.querySelectorAll('.mini-tab-link');
-      var panels = tabs.querySelectorAll('.mini-tab-content');
-      links.forEach(function (link) {
-        link.addEventListener('click', function () {
-          var target = link.getAttribute('data-tab');
-          links.forEach(function (l) { l.classList.toggle('active', l === link); });
-          panels.forEach(function (p) { p.classList.toggle('active', p.id === 'mt-' + target); });
-        });
-      });
-    });
   </script>
 </body>
 </html>

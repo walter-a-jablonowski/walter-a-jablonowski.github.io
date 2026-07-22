@@ -51,10 +51,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
   <link rel="manifest" href="../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../styles.css?v=26072001">
-  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26072001">
-  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26072001">
-  <link rel="stylesheet" href="../../../lib/img_overlay/img_overlay.css?v=26072001">
+  <link rel="stylesheet" href="../../../styles.css?v=26072201">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26072201">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26072201">
+  <link rel="stylesheet" href="../../../lib/img_overlay/img_overlay.css?v=26072201">
   <style>
     /* Product page styles. Reusable parts (.product-hero, .spec-list, .service-cta
        exemption) live in page-components.css; the blocks below are local to this page. */
@@ -112,6 +112,58 @@
        (overrides the shared .product-cta exemption via later source order). */
     body.hide-biz .service-cta.product-cta { display: none; }
   </style>
+  <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "de",
+    "url": "https://walter-a-jablonowski.github.io/pages/systems/log-view/index.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was kostet das?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Der Preis hängt von Ihren Log-Formaten und dem Umfang ab und muss individuell eingeschätzt werden."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Funktioniert das mit meinem Log-Format?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Für ein eigenes Format wird ein Parser und Renderer ergänzt – ohne Änderung am Hauptcode. Auch mehrzeilige und ordnerbasierte Formate (ein Eintrag pro Datei oder Unterordner) sind möglich."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie groß dürfen die Logs sein?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Für kleinere Logs genügt SQLite ohne Einrichtung. Bei sehr großen Logs (100.000+ Einträge) importiert ein Hintergrund-Worker die Daten fortlaufend in MySQL, damit die Ansicht flüssig bleibt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Brauche ich zwingend KI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nein. Filtern, Navigieren und die Detailansichten funktionieren komplett ohne KI. Die KI-Analyse und die KI-generierten Filter sind eine zuschaltbare Ergänzung."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wo laufen meine Daten?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Die Anwendung läuft auf Ihrem Rechner oder Server. Ohne KI verlassen Ihre Logs Ihr Haus nicht; mit KI wird ausschließlich das an das gewählte Modell geschickt, was Sie zur Analyse freigeben."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- faq-schema:end -->
 </head>
 <body>
   <header>
@@ -269,17 +321,58 @@
               <li class="no-num"><strong>Pipeline:</strong> Typ &rarr; Parser &rarr; Renderer &rarr; Liste &amp; Detail</li>
             </ol>
           </div>
-          <div class="steps-text">
-            <p>
-              Der Log-Typ wird <strong>automatisch erkannt</strong> und l&auml;sst sich per URL-Parameter
-              gezielt &uuml;berschreiben. Jeder Typ bringt seine eigenen Renderer f&uuml;r Liste,
-              Mobilansicht und Detail mit &ndash; so sieht jedes Log so aus, wie es am besten lesbar ist.
-            </p>
-            <p>
-              F&uuml;r kleine Logs gen&uuml;gt <strong>SQLite ohne jede Einrichtung</strong>. Wird es gro&szlig;,
-              h&auml;lt ein Hintergrund-Import <strong>MySQL</strong> kontinuierlich aktuell &ndash; auch Logs
-              mit sechsstelliger Zeilenzahl bleiben fl&uuml;ssig durchsuchbar.
-            </p>
+          <div class="steps-text mini-tabs">
+            <h3 class="mt-heading">Gut zu wissen</h3>
+            <div class="mini-tab-links">
+              <button type="button" class="mini-tab-link active" data-tab="overview">&Uuml;berblick</button>
+              <span class="mini-tab-sep">|</span>
+              <button type="button" class="mini-tab-link" data-tab="faq">H&auml;ufige Fragen</button>
+            </div>
+            <div class="mini-tab-content active" id="mt-overview">
+              <p>
+                Der Log-Typ wird <strong>automatisch erkannt</strong> und l&auml;sst sich per URL-Parameter
+                gezielt &uuml;berschreiben. Jeder Typ bringt seine eigenen Renderer f&uuml;r Liste,
+                Mobilansicht und Detail mit &ndash; so sieht jedes Log so aus, wie es am besten lesbar ist.
+              </p>
+              <p>
+                F&uuml;r kleine Logs gen&uuml;gt <strong>SQLite ohne jede Einrichtung</strong>. Wird es gro&szlig;,
+                h&auml;lt ein Hintergrund-Import <strong>MySQL</strong> kontinuierlich aktuell &ndash; auch Logs
+                mit sechsstelliger Zeilenzahl bleiben fl&uuml;ssig durchsuchbar.
+              </p>
+            </div>
+            <div class="mini-tab-content" id="mt-faq">
+              <div class="faq-list">
+                <details class="samples-reveal">
+                  <summary>Was kostet das? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>
+                    <span class="biz-only price-line"><strong>Einrichtung zum Festpreis</strong> &middot; zzgl. laufender Nutzungskosten
+                    (KI-Modell/APIs, sofern KI genutzt wird). </span>Der Preis h&auml;ngt von Ihren Log-Formaten und dem Umfang ab und muss individuell eingesch&auml;tzt werden.
+                  </p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Funktioniert das mit meinem Log-Format? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Ja. F&uuml;r ein eigenes Format wird ein Parser und Renderer erg&auml;nzt &ndash; ohne &Auml;nderung am
+                    Hauptcode. Auch mehrzeilige und ordnerbasierte Formate (ein Eintrag pro Datei oder Unterordner) sind m&ouml;glich.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Wie gro&szlig; d&uuml;rfen die Logs sein? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>F&uuml;r kleinere Logs gen&uuml;gt SQLite ohne Einrichtung. Bei sehr gro&szlig;en Logs
+                    (100.000+ Eintr&auml;ge) importiert ein Hintergrund-Worker die Daten fortlaufend in MySQL,
+                    damit die Ansicht fl&uuml;ssig bleibt.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Brauche ich zwingend KI? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Nein. Filtern, Navigieren und die Detailansichten funktionieren komplett ohne KI. Die
+                    KI-Analyse und die KI-generierten Filter sind eine zuschaltbare Erg&auml;nzung.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Wo laufen meine Daten? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Die Anwendung l&auml;uft auf Ihrem Rechner oder Server. Ohne KI verlassen Ihre Logs Ihr Haus
+                    nicht; mit KI wird ausschlie&szlig;lich das an das gew&auml;hlte Modell geschickt, was Sie
+                    zur Analyse freigeben.</p>
+                </details>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -365,41 +458,7 @@
           <div class="spec-row"><span class="spec-k">Betrieb</span><span class="spec-v">auf Ihrem Rechner/Server, pro Nutzer und Organisation</span></div>
         </div>
 
-        <!-- 12) FAQ (commercial: hidden under hideBiz via .biz-only) -->
-        <h3 id="faq" class="biz-only">H&auml;ufige Fragen</h3>
-        <div class="faq-list biz-only">
-          <details class="samples-reveal">
-            <summary>Was kostet das? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>
-              <span class="biz-only price-line"><strong>Einrichtung zum Festpreis</strong> &middot; zzgl. laufender Nutzungskosten
-              (KI-Modell/APIs, sofern KI genutzt wird). </span>Der Preis h&auml;ngt von Ihren Log-Formaten und dem Umfang ab &ndash; das Erstgespr&auml;ch ist kostenfrei.
-            </p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Funktioniert das mit meinem Log-Format? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>Ja. F&uuml;r ein eigenes Format wird ein Parser und Renderer erg&auml;nzt &ndash; ohne &Auml;nderung am
-              Hauptcode. Auch mehrzeilige und ordnerbasierte Formate (ein Eintrag pro Datei oder Unterordner) sind m&ouml;glich.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Wie gro&szlig; d&uuml;rfen die Logs sein? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>F&uuml;r kleinere Logs gen&uuml;gt SQLite ohne Einrichtung. Bei sehr gro&szlig;en Logs
-              (100.000+ Eintr&auml;ge) importiert ein Hintergrund-Worker die Daten fortlaufend in MySQL,
-              damit die Ansicht fl&uuml;ssig bleibt.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Brauche ich zwingend KI? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>Nein. Filtern, Navigieren und die Detailansichten funktionieren komplett ohne KI. Die
-              KI-Analyse und die KI-generierten Filter sind eine zuschaltbare Erg&auml;nzung.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Wo laufen meine Daten? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>Die Anwendung l&auml;uft auf Ihrem Rechner oder Server. Ohne KI verlassen Ihre Logs Ihr Haus
-              nicht; mit KI wird ausschlie&szlig;lich das an das gew&auml;hlte Modell geschickt, was Sie
-              zur Analyse freigeben.</p>
-          </details>
-        </div>
-
-        <!-- 13) Mehr zum Thema -->
+        <!-- 12) Mehr zum Thema -->
         <div class="highlight-box">
           <p><i class="fas fa-lightbulb" style="color: var(--primary); margin-right:.5rem;"></i>
             <strong>Mehr als ein Log-Viewer:</strong> AI Log Viewer ist ein Beispiel meiner
@@ -408,7 +467,7 @@
             Werkzeuge, die aus rohen Daten nutzbare Einblicke machen.</p>
         </div>
 
-        <!-- 14) Abschluss-CTA -->
+        <!-- 13) Abschluss-CTA -->
         <div class="service-cta product-cta">
           <h3>AI Log Viewer f&uuml;r Ihre Logs</h3>
           <p>Erstgespr&auml;ch kostenfrei &ndash; vor Ort in Bamberg/N&uuml;rnberg oder online.</p>
@@ -416,7 +475,6 @@
             <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Kontakt aufnehmen</a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -448,10 +506,10 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../lib/config.js?v=26072001"></script>
-  <script src="../../../controller.js?v=26072001"></script>
-  <script src="../../../lib/voice-agent/agent.js?v=26072001"></script>
-  <script src="../../../lib/img_overlay/img_overlay.js?v=26072001"></script>
+  <script src="../../../lib/config.js?v=26072201"></script>
+  <script src="../../../controller.js?v=26072201"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26072201"></script>
+  <script src="../../../lib/img_overlay/img_overlay.js?v=26072201"></script>
   <script>
     new WebsiteController();
     ImageOverlay.init('.ph-visual img');

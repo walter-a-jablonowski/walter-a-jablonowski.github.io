@@ -64,6 +64,7 @@ class WebsiteController
       this.initSkillsModal();
       this.initResponsiveAdjustments();
       this.initTabNavigation();
+      this.initMiniTabs();
       this.initInfoIcons();
       this.initTypewriterEffect();
       this.initProjectCarousel();
@@ -172,11 +173,14 @@ class WebsiteController
 
   /**
    * Hide commercial content when LOADING_CONFIG.hideBiz is true: prices and any
-   * element marked .biz-only, plus the service-page FAQ mini-tab and the
-   * .service-cta banner. Adds the single body class .hide-biz; the CSS rules
-   * (components.css, page-components.css, hero.css) key off it. Visible by
-   * default (absent/false), so everything still shows if config or JS is
-   * unavailable. Tolerant of config being absent.
+   * element marked .biz-only, plus the .service-cta banner. Adds the single body
+   * class .hide-biz; the CSS rules (components.css, page-components.css,
+   * hero.css) key off it. Visible by default (absent/false), so everything still
+   * shows if config or JS is unavailable. Tolerant of config being absent.
+   *
+   * The service-page FAQ mini-tab is deliberately NOT hidden: it is the source of
+   * the FAQPage structured data (tools/upd_faq_schema.php), and schema for
+   * content a visitor cannot reach counts as misleading markup.
    */
   initHideBiz()
   {
@@ -1171,6 +1175,67 @@ class WebsiteController
         });
       });
     }
+  }
+
+  /**
+   * Mini-tabs on the service pages ("Überblick" | "Häufige Fragen").
+   *
+   * Also makes a tab addressable by URL hash, so a deep link opens it instead of
+   * landing on a hidden panel: the hash is matched against the buttons'
+   * data-tab, with an optional "mt-" prefix tolerated. So #faq (preferred, and
+   * the same anchor the systems pages use for their FAQ heading) and #mt-faq
+   * both open the FAQ tab. Runs on load and on every hashchange.
+   *
+   * A panel is shown by the .active class (page-components.css); the markup
+   * ships with the first tab active, so without JS the page still reads.
+   */
+  initMiniTabs()
+  {
+    const groups = document.querySelectorAll('.mini-tabs');
+
+    if( ! groups.length ) return;
+
+    // Activate one tab within its group
+    const activate = ( group, name ) =>
+    {
+      const links  = group.querySelectorAll('.mini-tab-link');
+      const panels = group.querySelectorAll('.mini-tab-content');
+
+      links.forEach(l => l.classList.toggle('active', l.getAttribute('data-tab') === name));
+      panels.forEach(p => p.classList.toggle('active', p.id === `mt-${name}`));
+    };
+
+    groups.forEach(group => {
+      group.querySelectorAll('.mini-tab-link').forEach(link => {
+        link.addEventListener('click', () => activate(group, link.getAttribute('data-tab')));
+      });
+    });
+
+    // Open the tab a URL hash points at, and bring it into view
+    const openFromHash = ( scroll ) =>
+    {
+      const name = location.hash.replace(/^#/, '').replace(/^mt-/, '');
+
+      if( ! name ) return;
+
+      for( const group of groups )
+      {
+        if( ! group.querySelector(`.mini-tab-link[data-tab="${CSS.escape(name)}"]`) )
+          continue;
+
+        activate(group, name);
+
+        // The hash has no element to jump to (the panel id is prefixed), so
+        // scroll the group ourselves
+        if( scroll )
+          group.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        return;
+      }
+    };
+
+    openFromHash(true);
+    window.addEventListener('hashchange', () => openFromHash(true));
   }
 
   /**

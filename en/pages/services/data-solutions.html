@@ -52,9 +52,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
   <link rel="manifest" href="../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../styles.css?v=26072001">
-  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26072001">
-  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26072001">
+  <link rel="stylesheet" href="../../../styles.css?v=26072201">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26072201">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26072201">
   <style>
     /* Service page styles (built on the shared design tokens, aligned with offer.html) */
     .project-detail {
@@ -99,6 +99,50 @@
     .ph-live-slo ul { padding-left: 1.25rem; }
     .ph-live-slo li { margin: .45rem 0; }
   </style>
+  <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "en",
+    "url": "https://walter-a-jablonowski.github.io/en/pages/services/data-solutions.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does a data solution cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Small projects can be scoped well, larger ones depend on the effort. The actual scope needs to be assessed individually in a consultation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where does my data run?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On request locally or on your own server – your data stays under your control. I support a GDPR-compliant implementation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which data sources are possible?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Files, PDFs, emails, spreadsheets and databases (e.g. MySQL, SQL Server, SQLite) can be connected – individually or combined."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much preparation is involved?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We start small with one clearly scoped data source and expand step by step – so you see first results quickly."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- faq-schema:end -->
 </head>
 <body>
   <header>
@@ -193,7 +237,7 @@
             <a href="../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Contact</a>
           </div>
         </div>
-        <div class="ph-visual">
+        <div class="ph-visual hide-on-mobile">
           <!-- Dummy image, replace with the real image later -->
           <img src="../../../misc/automation-placeholder.svg" alt="AI data solutions" loading="lazy">
         </div>
@@ -231,12 +275,13 @@
             <ol class="offer-steps">
               <li class="no-num"><strong>Runs locally or on your own server.</strong> Support with GDPR.</li>
               <li>Review data &amp; sources<br>
-                <span class="step-comment">Free initial consultation, on-site in the region or online</span></li>
+                <span class="step-comment">Initial call, on-site in the region or online</span></li>
               <li>Structure &amp; enrich</li>
               <li>Provide &amp; make queryable</li>
             </ol>
           </div>
           <div class="steps-text mini-tabs">
+            <h3 class="mt-heading">Good to know</h3>
             <div class="mini-tab-links">
               <button type="button" class="mini-tab-link active" data-tab="overview">Overview</button>
               <span class="mini-tab-sep">|</span>
@@ -258,8 +303,8 @@
               <div class="faq-list">
                 <details class="samples-reveal">
                   <summary>What does a data solution cost? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-                  <p>Small projects are available at a fixed price, larger ones are billed by effort. In a free
-                    initial consultation we assess your case concretely.</p>
+                  <p>Small projects can be scoped well, larger ones depend on the effort.
+                    The actual scope needs to be assessed individually in a consultation.</p>
                 </details>
                 <details class="samples-reveal">
                   <summary>Where does my data run? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
@@ -348,24 +393,11 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../lib/config.js?v=26072001"></script>
-  <script src="../../../controller.js?v=26072001"></script>
-  <script src="../../../lib/voice-agent/agent.js?v=26072001"></script>
+  <script src="../../../lib/config.js?v=26072201"></script>
+  <script src="../../../controller.js?v=26072201"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26072201"></script>
   <script>
     new WebsiteController();
-  </script>
-  <script>
-    document.querySelectorAll('.mini-tabs').forEach(function (tabs) {
-      var links = tabs.querySelectorAll('.mini-tab-link');
-      var panels = tabs.querySelectorAll('.mini-tab-content');
-      links.forEach(function (link) {
-        link.addEventListener('click', function () {
-          var target = link.getAttribute('data-tab');
-          links.forEach(function (l) { l.classList.toggle('active', l === link); });
-          panels.forEach(function (p) { p.classList.toggle('active', p.id === 'mt-' + target); });
-        });
-      });
-    });
   </script>
 </body>
 </html>

@@ -10,6 +10,34 @@ Real-time voice chat (Gemini Live API over WebSocket).
 
 Client → Worker (`get_session_config`) → Gemini Live WebSocket (direct).
 
+## Sidebar & views (separate from the voice agent)
+
+The slide-in sidebar is its own module, independent of the voice agent, but ships
+from this folder and shares the same Worker (`lib/config.js` `proxyUrl`).
+
+- **`sidebar.js`** — generic `Sidebar` host: open/close panel, tab strip, a small
+  **view registry**. One shared instance via `Sidebar.instance()`. Shows one view at
+  a time; with several registered views it grows tabs in the header.
+- **`use-case-finder.js`** — the first view (`UseCaseFinder`). Business-description →
+  ranked AI use cases (Worker action `find_use_cases`, text model). Self-registers on
+  load and wires the hero `#use-case-finder-trigger` button.
+- **CSS** — `sidebar.css` (panel + tabs) and `use-case-finder.css` (the view). Both
+  imported centrally from `styles.css`.
+
+**View contract** (implement to add another sidebar component, e.g. a page
+summary): `id`, `getTitle()`, `render(root)` — render into the given container
+(called once, lazily, on first show). Register with
+`Sidebar.instance().registerView(view)`; it becomes a tab automatically.
+
+**Voice-agent interaction** (not yet wired): the agent can reach the same panel via
+`Sidebar.instance()` — `open(id)` / `showView(id)` / `getView(id)` — to open a view or
+read/trigger it. To make this work on every page, `agent.js` would need `sidebar.js`
+loaded site-wide (today it loads only where the finder trigger exists: both index
+pages + the automation/integration service pages).
+
+The scripts must load in order **`config.js` → `sidebar.js` → `use-case-finder.js`**
+(the view needs the `Sidebar` class defined first).
+
 ## System prompt
 
 The prompt is split by **stable shared knowledge vs. runtime facts only the client knows**:

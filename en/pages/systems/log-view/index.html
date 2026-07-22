@@ -51,10 +51,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../../favicon-16x16.png">
   <link rel="manifest" href="../../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../../styles.css?v=26072001">
-  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26072001">
-  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26072001">
-  <link rel="stylesheet" href="../../../../lib/img_overlay/img_overlay.css?v=26072001">
+  <link rel="stylesheet" href="../../../../styles.css?v=26072201">
+  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26072201">
+  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26072201">
+  <link rel="stylesheet" href="../../../../lib/img_overlay/img_overlay.css?v=26072201">
   <style>
     /* Product page styles. Reusable parts (.product-hero, .spec-list, .service-cta
        exemption) live in page-components.css; the blocks below are local to this page. */
@@ -112,6 +112,58 @@
        (overrides the shared .product-cta exemption via later source order). */
     body.hide-biz .service-cta.product-cta { display: none; }
   </style>
+  <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "en",
+    "url": "https://walter-a-jablonowski.github.io/en/pages/systems/log-view/index.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does it cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The price depends on your log formats and scope and needs to be assessed individually."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work with my log format?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. For a custom format, a parser and renderer are added – without changing the main code. Multi-line and folder-based formats (one entry per file or subfolder) are supported too."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How large can the logs be?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For smaller logs, SQLite with zero setup is enough. For very large logs (100,000+ entries) a background worker keeps ingesting the data into MySQL so the view stays fluid."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Filtering, navigation and the detail views work entirely without AI. The AI analysis and AI-generated filters are an optional add-on."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where does my data run?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The application runs on your own machine or server. Without AI your logs never leave your premises; with AI, only what you release for analysis is sent to the chosen model."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- faq-schema:end -->
 </head>
 <body>
   <header>
@@ -267,17 +319,56 @@
               <li class="no-num"><strong>Pipeline:</strong> type &rarr; parser &rarr; renderer &rarr; list &amp; detail</li>
             </ol>
           </div>
-          <div class="steps-text">
-            <p>
-              The log type is <strong>detected automatically</strong> and can be overridden explicitly via
-              a URL parameter. Each type ships its own renderers for list, mobile and detail &ndash; so every
-              log looks the way it reads best.
-            </p>
-            <p>
-              For small logs, <strong>SQLite with zero setup</strong> is enough. For larger, a
-              background ingest keeps <strong>MySQL</strong> continuously up to date &ndash; even logs with
-              six-figure line counts stay fluid to search.
-            </p>
+          <div class="steps-text mini-tabs">
+            <h3 class="mt-heading">Good to know</h3>
+            <div class="mini-tab-links">
+              <button type="button" class="mini-tab-link active" data-tab="overview">Overview</button>
+              <span class="mini-tab-sep">|</span>
+              <button type="button" class="mini-tab-link" data-tab="faq">FAQ</button>
+            </div>
+            <div class="mini-tab-content active" id="mt-overview">
+              <p>
+                The log type is <strong>detected automatically</strong> and can be overridden explicitly via
+                a URL parameter. Each type ships its own renderers for list, mobile and detail &ndash; so every
+                log looks the way it reads best.
+              </p>
+              <p>
+                For small logs, <strong>SQLite with zero setup</strong> is enough. For larger, a
+                background ingest keeps <strong>MySQL</strong> continuously up to date &ndash; even logs with
+                six-figure line counts stay fluid to search.
+              </p>
+            </div>
+            <div class="mini-tab-content" id="mt-faq">
+              <div class="faq-list">
+                <details class="samples-reveal">
+                  <summary>What does it cost? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>
+                    <span class="biz-only price-line"><strong>Fixed-price setup</strong> &middot; plus ongoing usage costs
+                    (AI model/APIs, if AI is used). </span>The price depends on your log formats and scope and needs to be assessed individually.
+                  </p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Does it work with my log format? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Yes. For a custom format, a parser and renderer are added &ndash; without changing the main
+                    code. Multi-line and folder-based formats (one entry per file or subfolder) are supported too.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>How large can the logs be? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>For smaller logs, SQLite with zero setup is enough. For very large logs (100,000+ entries) a
+                    background worker keeps ingesting the data into MySQL so the view stays fluid.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Do I need AI? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>No. Filtering, navigation and the detail views work entirely without AI. The AI analysis and
+                    AI-generated filters are an optional add-on.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Where does my data run? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>The application runs on your own machine or server. Without AI your logs never leave your
+                    premises; with AI, only what you release for analysis is sent to the chosen model.</p>
+                </details>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -363,39 +454,7 @@
           <div class="spec-row"><span class="spec-k">Operation</span><span class="spec-v">on your machine/server, per user and organisation</span></div>
         </div>
 
-        <!-- 12) FAQ (commercial: hidden under hideBiz via .biz-only) -->
-        <h3 id="faq" class="biz-only">Frequently asked</h3>
-        <div class="faq-list biz-only">
-          <details class="samples-reveal">
-            <summary>What does it cost? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>
-              <span class="biz-only price-line"><strong>Fixed-price setup</strong> &middot; plus ongoing usage costs
-              (AI model/APIs, if AI is used). </span>The price depends on your log formats and scope &ndash; the first call is free.
-            </p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Does it work with my log format? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>Yes. For a custom format, a parser and renderer are added &ndash; without changing the main
-              code. Multi-line and folder-based formats (one entry per file or subfolder) are supported too.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>How large can the logs be? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>For smaller logs, SQLite with zero setup is enough. For very large logs (100,000+ entries) a
-              background worker keeps ingesting the data into MySQL so the view stays fluid.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Do I need AI? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>No. Filtering, navigation and the detail views work entirely without AI. The AI analysis and
-              AI-generated filters are an optional add-on.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Where does my data run? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>The application runs on your own machine or server. Without AI your logs never leave your
-              premises; with AI, only what you release for analysis is sent to the chosen model.</p>
-          </details>
-        </div>
-
-        <!-- 13) More on the topic -->
+        <!-- 12) More on the topic -->
         <div class="highlight-box">
           <p><i class="fas fa-lightbulb" style="color: var(--primary); margin-right:.5rem;"></i>
             <strong>More than a log viewer:</strong> AI Log Viewer is an example of my
@@ -404,7 +463,7 @@
             data into usable insight.</p>
         </div>
 
-        <!-- 14) Closing CTA -->
+        <!-- 13) Closing CTA -->
         <div class="service-cta product-cta">
           <h3>AI Log Viewer for your logs</h3>
           <p>First call is free &ndash; on site in Bamberg/Nuremberg or online.</p>
@@ -412,7 +471,6 @@
             <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Get in touch</a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -444,10 +502,10 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../../lib/config.js?v=26072001"></script>
-  <script src="../../../../controller.js?v=26072001"></script>
-  <script src="../../../../lib/voice-agent/agent.js?v=26072001"></script>
-  <script src="../../../../lib/img_overlay/img_overlay.js?v=26072001"></script>
+  <script src="../../../../lib/config.js?v=26072201"></script>
+  <script src="../../../../controller.js?v=26072201"></script>
+  <script src="../../../../lib/voice-agent/agent.js?v=26072201"></script>
+  <script src="../../../../lib/img_overlay/img_overlay.js?v=26072201"></script>
   <script>
     new WebsiteController();
     ImageOverlay.init('.ph-visual img');

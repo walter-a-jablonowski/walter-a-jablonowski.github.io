@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Agentic commerce: open your existing offer to AI shopping assistants &ndash; agent-readable product data, an agent API (MCP), agent checkout (ACP, AP2) and visibility in AI search. Bamberg, Nuremberg and online.">
-  <meta name="keywords" content="agentic commerce, AI shopping assistant, instant checkout, ACP, Agentic Commerce Protocol, AP2, MCP, shopping agent, AI search, product data, e-commerce, AI for SMB, Bamberg, Nuremberg">
+  <meta name="keywords" content="agentic commerce, AI shopping assistant, instant checkout, ACP, AP2, MCP, shopping agent, AI search, product data, e-commerce, AI for SMB, Bamberg, Nuremberg">
   <meta name="author" content="Walter A. Jablonowski">
   <title>Agentic Commerce for Businesses | Walter A. Jablonowski</title>
   <meta property="og:type" content="website">
@@ -52,9 +52,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
   <link rel="manifest" href="../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../styles.css?v=26072001">
-  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26072001">
-  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26072001">
+  <link rel="stylesheet" href="../../../styles.css?v=26072201">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26072201">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26072201">
   <style>
     /* Service page styles (built on the shared design tokens, aligned with offer.html) */
     .project-detail {
@@ -99,6 +99,50 @@
     .ph-live-slo ul { padding-left: 1.25rem; }
     .ph-live-slo li { margin: .45rem 0; }
   </style>
+  <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "en",
+    "url": "https://walter-a-jablonowski.github.io/en/pages/services/agentic-commerce.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Isn’t this too early?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For fully automated buying: partly yes – the technologies are young. The groundwork pays off immediately though, because the same clean data already decides today whether AI searches find your products and represent them correctly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I have to replace my shop?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Agentic commerce sits alongside your existing shop – same catalog, same prices, just additionally accessible to agents."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which standards do you use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vendor-neutral, depending on the case: MCP for the agent API, ACP (ChatGPT Instant Checkout) and Google AP2 for buying, plus structured product data. Where nothing has settled yet, we build so that switching stays open."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I keep control over prices and orders?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Which products, which prices and which quantities an agent may see and order is up to you – with limits, approvals and a traceable log."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- faq-schema:end -->
 </head>
 <body>
   <header>
@@ -174,7 +218,7 @@
         <div class="ph-text">
           <p class="ph-eyebrow">Services</p>
           <h1>Agentic Commerce <span class="badge badge-experimental">Experimental</span></h1>
-          <p class="ph-tagline">Soon your customer will send <strong>their AI</strong> to do the shopping.</p>
+          <p class="ph-tagline">Your customer will send <strong>his AI</strong> do the shopping.</p>
           <p class="ph-lead">
             Shopping assistants research, compare and order. If your offer isn&rsquo;t
             <span class="price-hl">findable and machine-readable</span> for them, it simply won&rsquo;t
@@ -194,7 +238,7 @@
             <a href="../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Contact</a>
           </div>
         </div>
-        <div class="ph-visual">
+        <div class="ph-visual hide-on-mobile">
           <!-- Dummy image, replace with the real image later -->
           <img src="../../../misc/automation-placeholder.svg" alt="Agentic commerce" loading="lazy">
         </div>
@@ -217,7 +261,7 @@
           <div class="feature-box">
             <div class="fb-icon"><i class="fas fa-credit-card"></i></div>
             <h4>Agent checkout</h4>
-            <p>Connected to the new purchase protocols &ndash; buying without a break.</p>
+            <p>Connected to the new purchase technologies &ndash; buying without a break.</p>
           </div>
           <div class="feature-box">
             <div class="fb-icon"><i class="fas fa-magnifying-glass"></i></div>
@@ -232,12 +276,13 @@
             <ol class="offer-steps">
               <li class="no-num"><strong>Start small, no lock-in.</strong> Your existing systems stay.</li>
               <li>Review offer &amp; visibility<br>
-                <span class="step-comment">Free initial consultation, on-site in the region or online</span></li>
+                <span class="step-comment">Initial call, on-site in the region or online</span></li>
               <li>Build data &amp; agent interface</li>
               <li>Add checkout &amp; control</li>
             </ol>
           </div>
           <div class="steps-text mini-tabs">
+            <h3 class="mt-heading">Good to know</h3>
             <div class="mini-tab-links">
               <button type="button" class="mini-tab-link active" data-tab="overview">Overview</button>
               <span class="mini-tab-sep">|</span>
@@ -260,7 +305,7 @@
               <div class="faq-list">
                 <details class="samples-reveal">
                   <summary>Isn&rsquo;t this too early? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-                  <p>For fully automated buying: partly yes &ndash; the protocols are young. The groundwork pays
+                  <p>For fully automated buying: partly yes &ndash; the technologies are young. The groundwork pays
                     off immediately though, because the same clean data already decides today whether AI
                     searches find your products and represent them correctly.</p>
                 </details>
@@ -301,7 +346,7 @@
           <div class="feature-box">
             <div class="fb-icon"><i class="fas fa-flask"></i></div>
             <h4>Early on it</h4>
-            <p>I have followed the new purchase protocols since their launch and test them in practice.</p>
+            <p>I have followed the new purchase technologies since their launch and test them in practice.</p>
           </div>
           <div class="feature-box">
             <div class="fb-icon"><i class="fas fa-brain"></i></div>
@@ -353,24 +398,11 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../lib/config.js?v=26072001"></script>
-  <script src="../../../controller.js?v=26072001"></script>
-  <script src="../../../lib/voice-agent/agent.js?v=26072001"></script>
+  <script src="../../../lib/config.js?v=26072201"></script>
+  <script src="../../../controller.js?v=26072201"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26072201"></script>
   <script>
     new WebsiteController();
-  </script>
-  <script>
-    document.querySelectorAll('.mini-tabs').forEach(function (tabs) {
-      var links = tabs.querySelectorAll('.mini-tab-link');
-      var panels = tabs.querySelectorAll('.mini-tab-content');
-      links.forEach(function (link) {
-        link.addEventListener('click', function () {
-          var target = link.getAttribute('data-tab');
-          links.forEach(function (l) { l.classList.toggle('active', l === link); });
-          panels.forEach(function (p) { p.classList.toggle('active', p.id === 'mt-' + target); });
-        });
-      });
-    });
   </script>
 </body>
 </html>

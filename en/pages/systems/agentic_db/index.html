@@ -51,9 +51,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../../favicon-16x16.png">
   <link rel="manifest" href="../../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../../styles.css?v=26072001">
-  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26072001">
-  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26072001">
+  <link rel="stylesheet" href="../../../../styles.css?v=26072201">
+  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26072201">
+  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26072201">
   <style>
     /* Product page styles. Reusable parts (.product-hero, .spec-list, .service-cta
        exemption) live in page-components.css; the blocks below are local to this page. */
@@ -95,7 +95,71 @@
     /* ---- Price line (gated by .biz-only / hideBiz) --------------------- */
     .price-line { color: var(--lighter-gray); }
     .price-line strong { color: var(--primary); }
+
+    /* On this page the closing CTA is commercial: hide it under hideBiz
+       (overrides the shared .product-cta exemption via later source order). */
+    body.hide-biz .service-cta.product-cta { display: none; }
   </style>
+  <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "en",
+    "url": "https://walter-a-jablonowski.github.io/en/pages/systems/agentic_db/index.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I use Agent DB already?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Agent DB is an experimental project. The concept and the core workflows are in place, the implementation is ongoing. Feel free to get in touch."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Agent DB is purely file-based – a folder of Markdown files. Back it up with ordinary file tooling or Git. The KeeperAgent runs on your machine or server."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work without AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The files are plain Markdown – readable and editable with any text editor. The KeeperAgent organizes, but isn't required to use the data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens on errors?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On inconsistency the database freezes (HALT) and blocks all writes. Only diagnose and recovery tools continue. After fixing the cause, HALT is cleared manually."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I undo changes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Every content change is versioned, every deletion archived. ui_undo reverses actions via the log – with an all-or-none preflight."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which AI is behind it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The LLM model is freely chosen (cloud or local). For reproducible runs, temperature: 0 is recommended. The model used is recorded per action."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- faq-schema:end -->
 </head>
 <body>
   <header>
@@ -249,18 +313,60 @@
               <li class="no-num"><strong>Flow:</strong> Intake &rarr; Dedup &rarr; Place &rarr; Restructure &rarr; Trim &rarr; Lint &rarr; Index</li>
             </ol>
           </div>
-          <div class="steps-text">
-            <p>
-              The <strong>KeeperAgent</strong> makes all organizational decisions &ndash;
-              placement, splitting, merging, indexing. External agents read freely and write
-              via <code>db_store</code>; they never move files themselves.
-            </p>
-            <p>
-              The <strong>schema</strong> (<code>_schema.md</code>) is user-authored and drives
-              the KeeperAgent: <code>Domain</code> sets the atomic grain, <code>keeperStyle</code>
-              the willingness to act. Split and merge share one grain &ndash; merge never undoes
-              a grain-justified split.
-            </p>
+          <div class="steps-text mini-tabs">
+            <h3 class="mt-heading">Good to know</h3>
+            <div class="mini-tab-links">
+              <button type="button" class="mini-tab-link active" data-tab="overview">Overview</button>
+              <span class="mini-tab-sep">|</span>
+              <button type="button" class="mini-tab-link" data-tab="faq">FAQ</button>
+            </div>
+            <div class="mini-tab-content active" id="mt-overview">
+              <p>
+                The <strong>KeeperAgent</strong> makes all organizational decisions &ndash;
+                placement, splitting, merging, indexing. External agents read freely and write
+                via <code>db_store</code>; they never move files themselves.
+              </p>
+              <p>
+                The <strong>schema</strong> (<code>_schema.md</code>) is user-authored and drives
+                the KeeperAgent: <code>Domain</code> sets the atomic grain, <code>keeperStyle</code>
+                the willingness to act. Split and merge share one grain &ndash; merge never undoes
+                a grain-justified split.
+              </p>
+            </div>
+            <div class="mini-tab-content" id="mt-faq">
+              <div class="faq-list">
+                <details class="samples-reveal">
+                  <summary>Can I use Agent DB already? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Agent DB is an experimental project. The concept and the core
+                    workflows are in place, the implementation is ongoing. Feel free to get in touch.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Do I need a server? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>No. Agent DB is purely file-based &ndash; a folder of Markdown files. Back it up with
+                    ordinary file tooling or Git. The KeeperAgent runs on your machine or server.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Does it work without AI? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Yes. The files are plain Markdown &ndash; readable and editable with any text editor.
+                    The KeeperAgent organizes, but isn't required to use the data.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>What happens on errors? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>On inconsistency the database freezes (HALT) and blocks all writes. Only diagnose
+                    and recovery tools continue. After fixing the cause, HALT is cleared manually.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Can I undo changes? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Yes. Every content change is versioned, every deletion archived. <code>ui_undo</code>
+                    reverses actions via the log &ndash; with an all-or-none preflight.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Which AI is behind it? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>The LLM model is freely chosen (cloud or local). For reproducible runs,
+                    <code>temperature: 0</code> is recommended. The model used is recorded per action.</p>
+                </details>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -330,44 +436,7 @@
           <div class="spec-row"><span class="spec-k">Interfaces</span><span class="spec-v">db_store, db_search, db_read, db_process, db_lint, ui_undo and more</span></div>
         </div>
 
-        <!-- 10) FAQ -->
-        <h3 id="faq">Frequently asked questions</h3>
-        <div class="faq-list">
-          <details class="samples-reveal">
-            <summary>What does it cost? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>
-              <span class="biz-only price-line"><strong>Setup at a fixed price</strong> &middot; plus ongoing usage costs
-              (AI model/APIs). </span>The price depends on scope &ndash; the initial consultation is free.
-            </p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Do I need a server? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>No. Agent DB is purely file-based &ndash; a folder of Markdown files. Back it up with
-              ordinary file tooling or Git. The KeeperAgent runs on your machine or server.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Does it work without AI? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>Yes. The files are plain Markdown &ndash; readable and editable with any text editor.
-              The KeeperAgent organizes, but isn't required to use the data.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>What happens on errors? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>On inconsistency the database freezes (HALT) and blocks all writes. Only diagnose
-              and recovery tools continue. After fixing the cause, HALT is cleared manually.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Can I undo changes? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>Yes. Every content change is versioned, every deletion archived. <code>ui_undo</code>
-              reverses actions via the log &ndash; with an all-or-none preflight.</p>
-          </details>
-          <details class="samples-reveal">
-            <summary>Which AI is behind it? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-            <p>The LLM model is freely chosen (cloud or local). For reproducible runs,
-              <code>temperature: 0</code> is recommended. The model used is recorded per action.</p>
-          </details>
-        </div>
-
-        <!-- 11) More on the topic -->
+        <!-- 10) More on the topic -->
         <div class="highlight-box">
           <p><i class="fas fa-lightbulb" style="color: var(--primary); margin-right:.5rem;"></i>
             <strong>More than storage:</strong> Agent DB is one example of my
@@ -376,7 +445,7 @@
             that organize themselves and learn from their inputs.</p>
         </div>
 
-        <!-- 12) Closing CTA -->
+        <!-- 11) Closing CTA -->
         <div class="service-cta product-cta">
           <h3>Agent DB for your use case</h3>
           <p>Initial consultation free of charge &ndash; on-site in Bamberg/Nuremberg or online.</p>
@@ -384,7 +453,6 @@
             <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Get in touch</a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -416,9 +484,9 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../../lib/config.js?v=26072001"></script>
-  <script src="../../../../controller.js?v=26072001"></script>
-  <script src="../../../../lib/voice-agent/agent.js?v=26072001"></script>
+  <script src="../../../../lib/config.js?v=26072201"></script>
+  <script src="../../../../controller.js?v=26072201"></script>
+  <script src="../../../../lib/voice-agent/agent.js?v=26072201"></script>
   <script>
     new WebsiteController();
   </script>
