@@ -22,6 +22,7 @@ visitors talk to an AI about these services directly on the home page.
 - [AI Consulting](https://walter-a-jablonowski.github.io/en/pages/services/consulting.html): Vendor-neutral clarification of where AI delivers real value — use cases, strategy, technology. Free initial consultation.
 - [AI Security & Evaluation](https://walter-a-jablonowski.github.io/en/pages/services/security.html): Secure AI systems and make them observable and verifiable — guardrails, monitoring, quality measurement, GDPR.
 - [AI Dashboards](https://walter-a-jablonowski.github.io/en/pages/services/dashboards.html): Everything you care about in one place — modular dashboards for the whole company, departments or individual employees, fed with live data from existing systems (databases, ERP/CRM, spreadsheets, APIs). Built-in AI (sidebar or voice) prepares data on request or triggers actions.
+- [Apps that work](https://walter-a-jablonowski.github.io/en/pages/services/ai-apps.html): Custom applications and AI user interfaces with a built-in AI agent that does most of the work — it uses the same functions the user does, so results stay visible and correctable. Also available as an AI feature added to an existing application.
 - [Agentic Commerce](https://walter-a-jablonowski.github.io/en/pages/services/agentic-commerce.html): Open your existing offer to AI shopping assistants — agent-readable product data, an agent API (MCP), agent checkout (ACP, AP2) and visibility in AI search.
 - [AI Integration & MCP](https://walter-a-jablonowski.github.io/en/pages/services/integration.html): Connect AI and AI agents securely to existing systems via custom MCP servers — Microsoft 365, databases, ERP/CRM (SAP, Salesforce, HubSpot) and legacy systems. Read-only by default, on-premise possible, no no-code lock-in. Connect first, then automate.
 
@@ -34,14 +35,6 @@ Ready-to-adapt products built from these services.
 - [SEO Agent](https://walter-a-jablonowski.github.io/en/pages/systems/seo_agent/): A scheduled AI agent that audits your website and optimizes it for Google and AI search (GEO) — meta tags, content, structured data, new pages. Runs on its own or alongside the other systems.
 - [AI Log Viewer](https://walter-a-jablonowski.github.io/en/pages/systems/log-view/): A universal log viewer that brings log files of any format into one place — with a powerful expression filter syntax, AI analysis and a pluggable type system. SQLite with zero setup or MySQL for logs with 100,000+ entries.
 - [Agent DB](https://walter-a-jablonowski.github.io/en/pages/systems/agentic_db/): A file-based Markdown knowledge base that an AI KeeperAgent organizes on its own — places, splits, merges, indexes and archives. Atomic, versioned, fully undoable. Works standalone as plain files too.
-
-## Regions
-
-Location landing pages for AI services in Franconia/Bavaria (on-site or remote).
-
-- [KI Firma Nürnberg (German)](https://walter-a-jablonowski.github.io/pages/regionen/ki-firma-nuernberg.html) / [AI Company Nuremberg (English)](https://walter-a-jablonowski.github.io/en/pages/regionen/ai-company-nuremberg.html): AI consulting, development and automation for businesses in Nuremberg, Fürth, Erlangen and Middle Franconia.
-- [KI Firma Bamberg (German)](https://walter-a-jablonowski.github.io/pages/regionen/ki-firma-bamberg.html) / [AI Company Bamberg (English)](https://walter-a-jablonowski.github.io/en/pages/regionen/ai-company-bamberg.html): AI consulting, development and automation for businesses in Bamberg and Upper Franconia.
-- [Regions overview (German)](https://walter-a-jablonowski.github.io/pages/regionen/) / [Regions overview (English)](https://walter-a-jablonowski.github.io/en/pages/regionen/): Hub for all regional AI landing pages.
 
 ## About
 

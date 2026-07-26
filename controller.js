@@ -65,6 +65,7 @@ class WebsiteController
       this.initResponsiveAdjustments();
       this.initTabNavigation();
       this.initMiniTabs();
+      this.initTextareaMinHeight();
       this.initInfoIcons();
       this.initTypewriterEffect();
       this.initProjectCarousel();
@@ -666,8 +667,10 @@ class WebsiteController
               subjectField.value = inquiry.subject || '';
 
             const messageField = document.getElementById( 'message' );
-            if( messageField )
+            if( messageField ) {
               messageField.value = inquiry.message || '';
+              WebsiteController.fitTextarea( messageField );
+            }
 
             sessionStorage.removeItem( 'ucf-inquiry' );
 
@@ -1175,6 +1178,71 @@ class WebsiteController
         });
       });
     }
+  }
+
+  /**
+   * Pin every resizable textarea's min-height to the height it starts at, so a
+   * drag can only make it taller (the field is resize: vertical, contact.css).
+   *
+   * Measured rather than computed in CSS: the starting height comes from the
+   * rows attribute times the browser's own line-height, which the UA stylesheet
+   * sets on form controls — there is no reliable way to express that in CSS, and
+   * the pages use different row counts (3, 4, 5). Runs after load so web fonts
+   * are already applied; they change the line height and with it the height.
+   */
+  initTextareaMinHeight()
+  {
+    const fields = document.querySelectorAll('.form-group textarea');
+
+    if( ! fields.length ) return;
+
+    const pin = () => fields.forEach(field => WebsiteController.pinTextareaMinHeight(field));
+
+    if( document.readyState === 'complete' )
+      pin();
+    else
+      window.addEventListener('load', pin, { once: true });
+  }
+
+  /**
+   * Remember a textarea's current height as its floor, once.
+   * Static: fitTextarea() below and the use-case finder both need it, and it
+   * must happen before any growing — afterwards the "starting height" is gone.
+   */
+  static pinTextareaMinHeight( field )
+  {
+    // Skip fields that are hidden at this point (offsetHeight 0) — pinning them
+    // to zero would defeat the purpose
+    if( field && ! field.style.minHeight && field.offsetHeight > 0 )
+      field.style.minHeight = `${field.offsetHeight}px`;
+  }
+
+  /**
+   * Grow a textarea toward its content after it was filled programmatically.
+   *
+   * Used when the use-case finder drops the selected use cases into the contact
+   * message: the field starts at 5 rows, which is right for a short note but
+   * shows almost nothing of a multi-use-case text. Deliberately capped rather
+   * than fitted exactly — the whole text does not have to be visible, and a
+   * field that grows without limit would push the send button off-screen. The
+   * rest stays scrollable, and the visitor can still drag it taller.
+   *
+   * Static so the use-case finder can call it without a controller instance.
+   */
+  static fitTextarea( field )
+  {
+    if( ! field || ! field.offsetHeight ) return;
+
+    // Must run first: it captures the pre-grow height as the field's floor
+    WebsiteController.pinTextareaMinHeight(field);
+
+    const start = parseFloat(field.style.minHeight) || field.offsetHeight;
+    const cap   = Math.max(start, Math.min(start * 2.5, window.innerHeight * 0.5));
+
+    field.style.height = 'auto';                              // let scrollHeight report the content
+    const borders = field.offsetHeight - field.clientHeight;  // box-sizing is border-box
+
+    field.style.height = `${Math.min(field.scrollHeight + borders, cap)}px`;
   }
 
   /**
