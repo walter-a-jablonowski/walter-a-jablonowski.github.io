@@ -5,44 +5,10 @@ Real-time voice chat (Gemini Live API over WebSocket).
 ## Parts
 
 - **Client** — `lib/voice-agent/agent.js` + `lib/voice-agent/style.css`. Mic capture, audio playback, overlay UI.
-- **Worker** — `functions/voice-agent/` (Cloudflare), three modules:
-  - `voice-agent.js` — entry: routes a WebSocket upgrade to the relay, POST actions to the legacy handlers
-  - `content.js` — persona, both contexts, both site guides, `NAV_TARGETS`, model switch
-  - `relay.js` — the live session (browser ⇄ Worker ⇄ Gemini)
+- **Worker** — `functions/voice-agent/voice-agent.js` (Cloudflare). Holds API key, context, model. Serves session config only. Redeploy after changes.
 - **Config** — `lib/config.js` → `VOICE_AGENT_CONFIG`.
 
-## Transport — `VOICE_AGENT_CONFIG.transport`
-
-Both paths are implemented and work. Switching is one config line, no redeploy; flip back to
-roll back.
-
-| Value | Path | What the browser holds |
-|---|---|---|
-| `'direct'` (default) | Client → Worker (`get_session_config`) → Gemini Live | API key, full system prompt, both site guides, all 64 nav targets — measured: **~63 KB** |
-| `'relay'` | Client ⇄ Worker (`/live`) ⇄ Gemini Live | none of it — measured: **~1.8 KB**, no key, no provider endpoint, no model name |
-
-In relay mode the client skips the config fetch and sends no setup, no greeting and no tool
-declaration; the Worker owns the session. Mic frames go out as bare base64 and the Worker
-wraps them for whichever model is configured — so `use_legacy_input` no longer exists
-client-side and the two can never drift apart.
-
-Plan, findings and remaining steps:
-[`../../../functions/voice-agent/relay-plan.md`](../../../functions/voice-agent/relay-plan.md).
-
-### Deploying the Worker
-
-Wrangler only — **never the dashboard editor**, or the deployment silently diverges from git.
-
-```
-cd functions/voice-agent
-npx wrangler deploy                        # deploy from git
-npx wrangler secret put GOOGLE_AI_API_KEY  # once, and after any key rotation
-npx wrangler tail                          # server-side errors (the relay's only window)
-node relay-test.mjs wss://homepage-api.<sub>.workers.dev/live de   # smoke test
-```
-
-`wrangler dev` (local) **cannot** test the relay — outbound WebSocket upgrade is unsupported
-locally and hangs. Use `wrangler dev --remote`, or deploy. Local dev is fine for the POST actions.
+Client → Worker (`get_session_config`) → Gemini Live WebSocket (direct).
 
 ## Sidebar & views (separate from the voice agent)
 

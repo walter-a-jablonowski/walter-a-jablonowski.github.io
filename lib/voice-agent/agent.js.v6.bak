@@ -22,14 +22,6 @@ class VoiceAgent
     // NO microphone (e.g. a PC). Leave false on machines that have a mic.
     this.simulateMic = config.simulateMic ?? false;
 
-    // Transport (see functions/voice-agent/relay-plan.md):
-    //   'direct' — legacy: fetch a session config, then talk to Gemini Live
-    //              straight from the browser (key + prompt live in this page)
-    //   'relay'  — talk only to our Worker; it holds the key, the prompt, the
-    //              site guide and the protocol. Nothing sensitive reaches here.
-    this.transport = config.transport ?? 'direct';
-    this.isRelay   = this.transport === 'relay';
-
     // --- Persistent overlay / cross-page resume (see overlay plan) ----------
     this.persistent      = config.persistentAgent ?? false;
     this.resumeStrategy  = config.resumeStrategy ?? 'auto';
@@ -218,13 +210,6 @@ class VoiceAgent
    */
   async loadSessionConfig()
   {
-    // Relay transport: there is nothing to fetch. The Worker builds the session
-    // itself, so the browser never receives a key, a prompt or a model name.
-    if( this.isRelay ) {
-      this.configLoaded = true;
-      return;
-    }
-
     // Already have it, or a fetch is already in flight (overlay loads lazily on
     // first open, so guard against firing the request twice).
     if( this.configLoaded )
@@ -449,9 +434,6 @@ class VoiceAgent
    */
   async connectWebSocket()
   {
-    if( this.isRelay )
-      return this.connectRelay();
-
     return new Promise(async (resolve, reject) => {
 
       // Check if session config is loaded
@@ -581,169 +563,6 @@ class VoiceAgent
         }
       };
     });
-  }
-
-  // =========================================================================
-  // Relay transport (config.transport === 'relay')
-  // =========================================================================
-
-  /**
-   * Connect to our own Worker. No setup message: the Worker owns the session,
-   * so all this side sends is the session's shape as query parameters.
-   */
-  connectRelay()
-  {
-    return new Promise((resolve, reject) => {
-
-      this.ws = new WebSocket( this.buildRelayUrl());
-
-      this.ws.onopen = () => {
-        this.log('Relay connected');
-        resolve();
-      };
-
-      this.ws.onerror = (error) => {
-        console.error('Relay connection error:', error);
-        reject( new Error('Relay connection failed'));
-      };
-
-      this.ws.onmessage = async (event) => {
-        const text = (event.data instanceof Blob) ? await event.data.text() : event.data;
-        this.handleRelayMessage( text );
-      };
-
-      this.ws.onclose = (event) => this.onRelayClose( event );
-    });
-  }
-
-  /**
-   * `wss://…/live?lang=de&nav=link&tx=1&resume=…`
-   *
-   * `tx` is requested whenever transcripts are needed — either on screen, or to
-   * build the handoff summary that seeds a resumed session.
-   */
-  buildRelayUrl()
-  {
-    const base = (this.config.relayUrl || this.config.proxyUrl || '').replace(/\/+$/, '');
-    const params = new URLSearchParams({ lang: this.lang, nav: this.navMode });
-
-    if( this.showTranscript || this.showTranscriptToggle || this.persistent )
-      params.set('tx', '1');
-
-    // Native session resumption: hand the stored handle back. It is opaque here
-    // and useless without the API key, which never leaves the Worker.
-    const handle = this.resuming ? this.getStored('va:handle') : null;
-    if( handle && this.resumeMode !== 'handoff' )
-      params.set('resume', handle);
-
-    return base.replace(/^http/, 'ws') + '/live?' + params.toString();
-  }
-
-  /**
-   * The relay's own protocol — small, neutral and provider-agnostic. Compare
-   * handleWebSocketMessage(), which has to understand Gemini's envelopes.
-   */
-  handleRelayMessage( data )
-  {
-    let msg;
-    try { msg = JSON.parse( data ); }
-    catch (error) { return; }
-
-    this.log('Relay frame:', msg.t);
-
-    switch( msg.t )
-    {
-      case 'ready':
-        this.justResumed = false;      // a native resume connected cleanly
-        break;
-
-      case 'audio':
-        // Already normalized to raw PCM + sample rate by the Worker.
-        this.scheduleAudioChunk( msg.d, 'audio/pcm', msg.r || 24000 );
-        break;
-
-      case 'tx': {
-        const role = msg.r === 'u' ? 'user' : 'ai';
-        this.noteTranscript( role, msg.s );
-        this.appendTranscript( role, msg.s );
-        break;
-      }
-
-      case 'stop':
-        // Barge-in: drop everything queued, it is stale now.
-        this.stopPlayback();
-        break;
-
-      case 'turn':
-        this.turnComplete = true;
-        this.transcriptTurnDone = true;
-        if( this.activeSources.size === 0 ) {
-          this.setState('listening');
-          this.updateStatus(this.t.listening);
-        }
-        break;
-
-      case 'nav':
-        this.showNav( msg.items, msg.auto );
-        break;
-
-      case 'sid':
-        // Opaque resume handle for the next page load.
-        this.setStored('va:handle', msg.v);
-        this.setStored('va:ts', String(Date.now()));
-        break;
-
-      case 'err':
-        this.onRelayError( msg.c );
-        break;
-    }
-  }
-
-  /**
-   * A relay error code, never a provider message. The only one that changes
-   * behaviour is a dead resume handle: fall back to a fresh, seeded session
-   * instead of showing the visitor an error.
-   */
-  onRelayError( code )
-  {
-    this.log('Relay error:', code);
-
-    if( this.justResumed && this.persistent && this.resumeStrategy === 'auto'
-        && this.resumeMode === 'native' && String(code).startsWith('upstream-closed') )
-    {
-      this.justResumed = false;
-      this.relayFallback = true;      // consumed by onRelayClose
-      return;
-    }
-
-    this.showError(`${this.t.serverError}: ${code}`);
-  }
-
-  onRelayClose( event )
-  {
-    this.log('Relay closed:', event.code, event.reason);
-
-    // Native resume failed — retry once as a handoff, seeded with the summary.
-    if( this.relayFallback ) {
-      this.relayFallback = false;
-      this.teardownConnection();
-      this.resuming = true;
-      this.resumeMode = 'handoff';
-      this.startVoiceAgent();
-      return;
-    }
-
-    // A live call that ends without a normal close was dropped (connection lost,
-    // upstream gone). Say so instead of silently returning to idle — otherwise
-    // the mic just stops and the visitor is left guessing.
-    const dropped = event.code !== 1000 && this.state !== 'idle';
-
-    // stopVoiceAgent resets the status, so call it BEFORE showing the error.
-    if( this.state !== 'idle' )
-      this.stopVoiceAgent();
-
-    if( dropped )
-      this.showError(`${this.t.serverError}: ${event.code}`);
   }
 
   /**
@@ -897,14 +716,6 @@ class VoiceAgent
 
         // Convert to base64
         const base64Audio = this.arrayBufferToBase64(int16Data.buffer);
-
-        // Relay: send the bare base64 frame. The Worker wraps it in whatever
-        // envelope the current model wants, so this side no longer knows or
-        // cares which generation is in use.
-        if (this.isRelay) {
-          this.ws.send(base64Audio);
-          return;
-        }
 
         // Send audio data to API. The format depends on the model the worker
         // selected (use_legacy_input): the Gemini 2.5 native-audio model uses the
@@ -1111,11 +922,6 @@ class VoiceAgent
    */
   sendGreetingPrompt()
   {
-    // Relay: the Worker greets as soon as the session is set up — the greeting
-    // text is one more thing this page no longer carries.
-    if( this.isRelay )
-      return;
-
     if( ! this.ws || this.ws.readyState !== WebSocket.OPEN )
     {
       console.error('No WebSocket ready for greeting prompt');
@@ -1501,15 +1307,6 @@ class VoiceAgent
       return;
 
     const summary = this.buildSummary() || this.getStored('va:summary') || '';
-
-    // Relay: send only the summary — it is the visitor's own conversation, and
-    // the Worker has no state across page loads. The framing wording stays there.
-    if( this.isRelay ) {
-      if( summary )
-        this.ws.send(JSON.stringify({ t: 'seed', s: summary }));
-      return;
-    }
-
     const seed = this.isDe
       ? '(Kontext des laufenden Gesprächs: ' + summary + ') Mach natürlich weiter; begrüße mich nicht noch einmal.'
       : '(Context of the ongoing conversation: ' + summary + ') Continue naturally; do not greet again.';
@@ -1701,7 +1498,7 @@ class VoiceAgent
    * Destinations the navigate tool can surface. The Worker is the single source
    * of truth (get_session_config → nav_targets), so the tool enum, URLs and
    * labels stay in sync with SITEMAP_* there — including the finer service-page
-   * anchors. URLs are site-root-relative per language; siteRootPrefix()
+   * anchors. URLs are site-root-relative per language; resolveTargetUrl()
    * prefixes them for the current page depth. path is the human breadcrumb shown
    * on the link.
    *
@@ -1768,27 +1565,23 @@ class VoiceAgent
           .filter(Boolean);
         const labelOf = t => t.path[this.lang] || t.path.en;
 
-        // Normalize to the same {u,l} shape the relay sends, so both transports
-        // share one rendering path.
-        const items = targets.map(t => ({ u: t.url[this.lang] || t.url.en, l: labelOf(t) }));
-
         // Report back what actually happened so the model doesn't offer to
         // navigate in 'link' mode (where it can only display links).
-        if( ! items.length )
+        if( ! targets.length )
           result = 'No such destination; nothing was shown.';
-        else if( items.length > 1 ) {
+        else if( targets.length > 1 ) {
           // Several options: always show a pickable list, even in auto mode.
-          this.showNav(items, false);
+          this.renderNavLinkList(targets.map(t => t.id));
           result = 'A list of clickable links is now shown below the mic (' +
                    targets.map(labelOf).join(', ') + '). You cannot move the page yourself — ' +
                    'tell the visitor they can tap whichever one they want.';
         }
         else if( this.navMode === 'auto' ) {
-          this.showNav(items, true);
+          this.autoNavigate(targets[0].id);
           result = 'Navigating the visitor to "' + labelOf(targets[0]) + '" now.';
         }
         else {
-          this.showNav(items, false);
+          this.renderNavLink(targets[0].id);
           result = 'A clickable link to "' + labelOf(targets[0]) + '" is now shown below the mic. You cannot ' +
                    'move the page yourself — tell the visitor they can tap it.';
         }
@@ -1806,36 +1599,23 @@ class VoiceAgent
     }));
   }
 
-  /**
-   * Single entry point for showing destinations, whichever transport produced
-   * them. Items are {u,l}: a site-root-relative URL and a human breadcrumb.
-   * More than one option is always a pickable list — we never auto-move then.
-   */
-  showNav( items, auto )
-  {
-    if( ! Array.isArray(items) || ! items.length )
-      return;
-
-    if( items.length > 1 )
-      this.renderNavLinkList( items );
-    else if( auto )
-      this.autoNavigate( items[0] );
-    else
-      this.renderNavLink( items[0] );
-  }
-
   /** 'auto' mode: persist resume state, then move the page. */
-  autoNavigate( item )
+  autoNavigate( id )
   {
+    const target = this.navTargets().find(t => t.id === id);
+    if( ! target )
+      return;
+    const url = this.resolveTargetUrl(target);
     this.navigating = true;
     this.persistResume();
-    location.href = this.siteRootPrefix() + item.u;
+    location.href = url;
   }
 
   /** 'link' mode (single target): render one clickable breadcrumb; never auto-move. */
-  renderNavLink( item )
+  renderNavLink( id )
   {
-    if( ! this.linkSlot )
+    const target = this.navTargets().find(t => t.id === id);
+    if( ! target || ! this.linkSlot )
       return;
 
     this.openPanel(false);
@@ -1846,19 +1626,26 @@ class VoiceAgent
     intro.textContent = this.t.linkIntro;
 
     this.linkSlot.appendChild(intro);
-    this.linkSlot.appendChild(this.buildNavAnchor(item));
+    this.linkSlot.appendChild(this.buildNavAnchor(target));
     this.linkSlot.classList.add('show');
   }
 
   /**
    * Several targets: render a scrollable list of links and let the visitor pick
    * (used in both nav modes — we never auto-move when there is more than one
-   * option). Invalid targets are dropped by whoever produced the items.
+   * option). Invalid ids are dropped upstream in handleToolCall.
    */
-  renderNavLinkList( items )
+  renderNavLinkList( ids )
   {
+    const targets = ids
+      .map(id => this.navTargets().find(t => t.id === id))
+      .filter(Boolean);
     if( ! this.linkSlot )
       return;
+    if( targets.length < 2 ) {
+      if( targets.length === 1 ) this.renderNavLink(targets[0].id);
+      return;
+    }
 
     this.openPanel(false);
 
@@ -1869,38 +1656,38 @@ class VoiceAgent
 
     const list = document.createElement('div');
     list.className = 'va-link-list';
-    items.forEach(item => list.appendChild(this.buildNavAnchor(item)));
+    targets.forEach(t => list.appendChild(this.buildNavAnchor(t)));
 
     this.linkSlot.appendChild(intro);
     this.linkSlot.appendChild(list);
     this.linkSlot.classList.add('show');
   }
 
-  /** Build a single .va-nav-link anchor from a {u,l} item. */
-  buildNavAnchor( item )
+  /** Build a single .va-nav-link anchor for a nav target. */
+  buildNavAnchor( target )
   {
     const a = document.createElement('a');
     a.className = 'va-nav-link';
-    a.href = this.siteRootPrefix() + item.u;
+    a.href = this.resolveTargetUrl(target);
     const span = document.createElement('span');
-    span.textContent = item.l;
+    span.textContent = target.path[this.lang] || target.path.en;
     a.appendChild(span);
     a.insertAdjacentHTML('beforeend', '<i class="fas fa-arrow-right" aria-hidden="true"></i>');
     return a;
   }
 
   /**
-   * Prefix that turns a site-root-relative URL into one valid at this page's
-   * depth. The logo link points to the current language's root, from which the
-   * site root is derived (EN pages need one extra "../", since /en/ is a level
-   * deeper). Stays client-side in both transports: it needs the DOM.
+   * Resolve a site-root-relative target URL for the current page depth. The logo
+   * link points to the current language's root, from which the site root prefix
+   * is derived (EN pages need one extra "../" because /en/ is a level deeper).
    */
-  siteRootPrefix()
+  resolveTargetUrl( target )
   {
     const logo = document.querySelector('.logo a');
     const langRootPrefix = (logo ? logo.getAttribute('href') : '')
       .replace(/index\.html$/, '').replace(/^#$/, '');
-    return this.isDe ? langRootPrefix : langRootPrefix + '../';
+    const siteRootPrefix = this.isDe ? langRootPrefix : langRootPrefix + '../';
+    return siteRootPrefix + (target.url[this.lang] || target.url.en);
   }
 
   // ---- small escaping helpers ----------------------------------------------
