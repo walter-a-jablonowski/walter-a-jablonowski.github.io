@@ -11,22 +11,24 @@ Real-time voice chat (Gemini Live API over WebSocket).
   - `relay.js` — the live session (browser ⇄ Worker ⇄ Gemini)
 - **Config** — `lib/config.js` → `VOICE_AGENT_CONFIG`.
 
-## Transport — `VOICE_AGENT_CONFIG.transport`
+## Transport — relay only
 
-Both paths are implemented and work. Switching is one config line, no redeploy; flip back to
-roll back.
+`Client ⇄ Worker (/live) ⇄ Gemini Live`. There is no direct-to-Google mode any more, and no
+endpoint that hands a browser the key or the prompt — the old `get_session_config` was
+deleted. **Don't reintroduce it.**
 
-| Value | Path | What the browser holds |
-|---|---|---|
-| `'direct'` (default) | Client → Worker (`get_session_config`) → Gemini Live | API key, full system prompt, both site guides, all 64 nav targets — measured: **~63 KB** |
-| `'relay'` | Client ⇄ Worker (`/live`) ⇄ Gemini Live | none of it — measured: **~1.8 KB**, no key, no provider endpoint, no model name |
+The browser holds ~2 KB of state: no API key, no system prompt, no site guide, no nav table,
+no model name, no provider endpoint. It streams mic audio up and renders what comes back.
 
-In relay mode the client skips the config fetch and sends no setup, no greeting and no tool
-declaration; the Worker owns the session. Mic frames go out as bare base64 and the Worker
-wraps them for whichever model is configured — so `use_legacy_input` no longer exists
-client-side and the two can never drift apart.
+The Worker owns the session: setup message, system instruction, greeting, voice, transcription,
+session resumption, the `navigate` tool and its targets. Mic frames go out as bare base64 and
+the Worker wraps them for whichever model is configured — so `use_legacy_input` no longer
+exists client-side and client and Worker cannot drift apart.
 
-Plan, findings and remaining steps:
+The client ⇄ Worker protocol is documented at the top of
+[`relay.js`](../../../functions/voice-agent/relay.js); rollback is git, not a config flag.
+
+Plan, findings and remaining work:
 [`../../../functions/voice-agent/relay-plan.md`](../../../functions/voice-agent/relay-plan.md).
 
 ### Deploying the Worker
