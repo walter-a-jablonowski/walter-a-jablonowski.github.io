@@ -72,6 +72,7 @@ class WebsiteController
       this.initFeatureCarousels();
       this.initPastSkillsToggle();
       this.initUseCaseTooltip();
+      this.initSearch();
 
       // Add animation classes to elements
       document.querySelectorAll('.fade-in').forEach((element, index) => {
@@ -501,12 +502,7 @@ class WebsiteController
 
     // Close mobile menu when clicking a link
     this.navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        this.navMenu.classList.remove('active');
-        this.menuToggle.querySelector('i').classList.add('fa-bars');
-        this.menuToggle.querySelector('i').classList.remove('fa-times');
-        this.body.style.overflow = '';
-      });
+      link.addEventListener('click', () => this.closeMobileMenu());
     });
 
     // Services dropdown: caret toggles the submenu on mobile (desktop uses hover)
@@ -526,15 +522,92 @@ class WebsiteController
       if (this.navMenu.classList.contains('active') &&
         !this.navMenu.contains(e.target) &&
         !this.menuToggle.contains(e.target)) {
-        this.navMenu.classList.remove('active');
-        this.menuToggle.querySelector('i').classList.add('fa-bars');
-        this.menuToggle.querySelector('i').classList.remove('fa-times');
-        this.body.style.overflow = '';
+        this.closeMobileMenu();
       }
     });
 
     // Highlight the current section on load (menu markup carries no hard-coded active)
     this.updateActiveNavLink();
+  }
+
+  /**
+   * Close the slide-in mobile menu and reset the burger icon (no-op on desktop,
+   * where the menu never carries .active)
+   */
+  closeMobileMenu()
+  {
+    this.navMenu.classList.remove('active');
+    this.menuToggle.querySelector('i').classList.add('fa-bars');
+    this.menuToggle.querySelector('i').classList.remove('fa-times');
+    this.body.style.overflow = '';
+  }
+
+  /**
+   * Site search: the magnifier in the nav and Ctrl/Cmd+K open the dialog.
+   *
+   * Only the trigger lives here - the dialog (lib/search/search.js) and the
+   * index it walks are fetched on first use, so a visitor who never searches
+   * never downloads them.
+   *
+   * Both paths come from this file's own <script> tag: controller.js sits at the
+   * site root, which every page already addresses relative to its own depth, and
+   * the tag carries the current cache-busting token.
+   */
+  initSearch()
+  {
+    const tag = document.querySelector('script[src*="controller.js"]');
+    const parts = (tag ? tag.getAttribute('src') : '').match(/^(.*?)controller\.js(\?.*)?$/) || [];
+
+    this.searchBase = new URL(parts[1] || './', window.location.href).href;
+    this.searchVersion = parts[2] || '';
+
+    document.querySelectorAll('[data-search-open]').forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.openSearch();
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key && e.key.toLowerCase() === 'k' && (e.ctrlKey || e.metaKey) && !e.altKey) {
+        e.preventDefault();
+        this.openSearch();
+      }
+      else if (e.key === 'Escape' && this.search && this.search.isOpen())
+        this.search.close();
+    });
+  }
+
+  /**
+   * Show the search dialog, loading its script on the first call
+   */
+  openSearch()
+  {
+    this.closeMobileMenu();
+
+    if (this.search) {
+      this.search.open();
+      return;
+    }
+
+    if (!this.searchLoading) {
+      this.searchLoading = new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = `${this.searchBase}lib/search/search.js${this.searchVersion}`;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+
+    this.searchLoading
+      .then(() => {
+        if (!this.search)
+          this.search = new SearchManager({ base: this.searchBase, version: this.searchVersion });
+
+        this.search.open();
+      })
+      .catch(() => console.warn('Search dialog could not be loaded'));
   }
 
   /**
@@ -1490,8 +1563,8 @@ class WebsiteController
   }
 
   /**
-   * Initialize feature grid carousels (used on all pages with .feature-grid;
-   * arrows only show on small screens, see page-components.css)
+   * Initialize feature grid carousels (used on all pages with .feature-grid; a grid only
+   * becomes a carousel when its boxes don't fit one row, see page-components.css)
    */
   initFeatureCarousels()
   {
@@ -1527,15 +1600,78 @@ class WebsiteController
         });
       };
 
+      const canScroll = direction => direction > 0
+        ? grid.scrollLeft < grid.scrollWidth - grid.clientWidth - 10
+        : grid.scrollLeft > 10;
+
       prevArrow.addEventListener('click', () => scrollByBox(-1));
       nextArrow.addEventListener('click', () => scrollByBox(1));
 
-      grid.addEventListener('scroll', () => this.updateCarouselArrows( grid, prevArrow, nextArrow ));
-      window.addEventListener('resize', () => this.updateCarouselArrows( grid, prevArrow, nextArrow ));
+      // The mouse wheel scrolls the carousel sideways (desktop; a wheel has no vertical room
+      // to spare here). Once the last box is reached the event is left untouched, so the page
+      // scrolls on as usual instead of the carousel swallowing the gesture.
 
-      // Set initial state - hide prev arrow at start, next arrow when nothing to scroll
-      this.updateCarouselArrows( grid, prevArrow, nextArrow );
+      let wheelStep = 0;
+
+      grid.addEventListener('wheel', event => {
+
+        if( ! wrapper.classList.contains('is-carousel')) return;
+        if( Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;  // sideways gestures already scroll natively
+
+        const direction = event.deltaY > 0 ? 1 : -1;
+        if( ! canScroll(direction)) return;
+
+        event.preventDefault();
+
+        // One box per turn of the wheel - further events during the smooth scroll are swallowed
+        if( event.timeStamp - wheelStep < 300 ) return;
+
+        wheelStep = event.timeStamp;
+        scrollByBox(direction);
+
+      }, { passive: false });
+
+      grid.addEventListener('scroll', () => this.updateCarouselArrows( grid, prevArrow, nextArrow ));
+
+      // Re-decide whenever the available width changes - which includes the grid becoming
+      // visible inside a panel that was hidden at load. Switching modes only changes the
+      // height, so the observer cannot feed itself.
+
+      let lastWidth = -1;
+
+      const sync = () => {
+        if( wrapper.clientWidth === lastWidth ) return;
+        lastWidth = wrapper.clientWidth;
+
+        this.layOutFeatureCarousel( wrapper, grid );
+        this.updateCarouselArrows( grid, prevArrow, nextArrow );
+      };
+
+      new ResizeObserver(sync).observe(wrapper);
+      sync();
     });
+  }
+
+  /**
+   * Decide whether a feature grid has to scroll: the boxes of the first row are counted
+   * while the grid lays out as a grid, so the carousel shows exactly as many boxes as the
+   * grid itself would have placed in one row
+   * @param {HTMLElement} wrapper - The .feature-carousel wrapping the grid
+   * @param {HTMLElement} grid - The .feature-grid to lay out
+   */
+  layOutFeatureCarousel( wrapper, grid )
+  {
+    const boxes = [...grid.querySelectorAll('.feature-box')];
+    if( boxes.length < 2 ) return;
+
+    wrapper.classList.remove('is-carousel');
+
+    const perRow = boxes.filter( box => box.offsetTop === boxes[0].offsetTop ).length;
+
+    if( perRow >= boxes.length ) return;  // everything fits - keep the plain grid
+
+    wrapper.style.setProperty('--fc-basis', `calc((100% - ${perRow - 1} * var(--spacing-md)) / ${perRow})`);
+    wrapper.classList.add('is-carousel');
   }
 
   /**

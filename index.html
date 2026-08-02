@@ -28,9 +28,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=26072603">
-  <link rel="stylesheet" href="lib/fontawesome/css/all.min.css?v=26072603">
-  <link rel="stylesheet" href="lib/fonts/fonts.css?v=26072603">
+  <link rel="stylesheet" href="styles.css?v=26080201">
+  <link rel="stylesheet" href="lib/fontawesome/css/all.min.css?v=26080201">
+  <link rel="stylesheet" href="lib/fonts/fonts.css?v=26080201">
   <!-- Suppress the loading screen instantly when navigating within the site (e.g. back from a sub page) -->
   <script>
     try {
@@ -39,7 +39,7 @@
     } catch (e) {}
   </script>
   <!-- Alternative cookie consent implementation for GitHub Pages (original doesn't work) -->
-  <script src="cookie-fix.js?v=26072603"></script>
+  <script src="cookie-fix.js?v=26080201"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -50,7 +50,7 @@
         "url": "https://walter-a-jablonowski.github.io/",
         "name": "KI-Beratung & KI-Entwicklung (AI) für Firmen | Bamberg & Nürnberg | Walter A. Jablonowski",
         "inLanguage": "de",
-        "dateModified": "2026-07-26",
+        "dateModified": "2026-08-02",
         "about": { "@id": "https://walter-a-jablonowski.github.io/#person" },
         "mainEntity": { "@id": "https://walter-a-jablonowski.github.io/#service" }
       },
@@ -145,18 +145,18 @@
             </span>
             <ul class="nav-dropdown-menu">
               <li class="nav-dropdown-group">Agents &amp; Workflow</li>
-              <li><a href="pages/services/automation.html" class="nav-link">Automatisierung</a></li>
-              <li><a href="pages/services/self-improving.html" class="nav-link">Selbstverbessernde KI</a></li>
-              <li><a href="pages/services/data-solutions.html" class="nav-link">KI-Datenl&ouml;sungen</a></li>
+              <li><a href="pages/services/automation/index.html" class="nav-link">Automatisierung</a></li>
+              <li><a href="pages/services/self-improving/index.html" class="nav-link">Selbstverbessernde KI</a></li>
+              <li><a href="pages/services/data-solutions/index.html" class="nav-link">KI-Datenl&ouml;sungen</a></li>
               <li class="nav-dropdown-group">Consulting &amp; Integration</li>
-              <li><a href="pages/services/consulting.html" class="nav-link">AI Beratung</a></li>
-              <li><a href="pages/services/security.html" class="nav-link">Security &amp; Evaluierung</a></li>
-              <li><a href="pages/services/integration.html" class="nav-link">KI-Integration &amp; MCP</a></li>
+              <li><a href="pages/services/consulting/index.html" class="nav-link">AI Beratung</a></li>
+              <li><a href="pages/services/security/index.html" class="nav-link">Security &amp; Evaluierung</a></li>
+              <li><a href="pages/services/integration/index.html" class="nav-link">KI-Integration &amp; MCP</a></li>
               <li class="nav-dropdown-group">Human Interface</li>
-              <li><a href="pages/services/dashboards.html" class="nav-link">KI Dashboards</a></li>
-              <li><a href="pages/services/ai-apps.html" class="nav-link">Apps, die arbeiten</a></li>
+              <li><a href="pages/services/dashboards/index.html" class="nav-link">KI Dashboards</a></li>
+              <li><a href="pages/services/ai-apps/index.html" class="nav-link">Apps, die arbeiten</a></li>
               <li class="nav-dropdown-group">Commerce</li>
-              <li><a href="pages/services/agentic-commerce.html" class="nav-link">Agentic Commerce</a></li>
+              <li><a href="pages/services/agentic-commerce/index.html" class="nav-link">Agentic Commerce</a></li>
             </ul>
           </li>
           <li class="less-spacing"><a href="#skills" class="nav-link">Kenntnisse</a></li>
@@ -179,6 +179,8 @@
               title="Mein LinkedIn-Profil besuchen"><i class="fab fa-linkedin-in"></i></a></li>
           <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link"
               title="Mein GitHub-Profil besuchen"><i class="fab fa-github"></i></a></li>
+          <li><button type="button" class="nav-link search-link" data-search-open
+              title="Website durchsuchen (Strg+K)" aria-label="Suche"><i class="fas fa-magnifying-glass"></i></button></li>
           <!-- nav-menu:end -->
           <li class="lang-switch">
             <a href="index.html" class="nav-link active" hreflang="de" title="Deutsch">DE</a>
@@ -213,7 +215,7 @@
           </p>
           <div class="hero-cta">
             <a href="#about" class="btn btn-primary"><i class="fas fa-microphone"></i> KI fragen</a>
-            <a href="#services" class="btn btn-outline" id="use-case-finder-trigger">Use Case finder</a>
+            <a href="#services" class="btn btn-outline use-case-finder-trigger" id="use-case-finder-trigger">Use Case finder</a>
 <!--
             <a href="#contact" class="btn btn-outline">Contact Me</a>
 -->
@@ -367,12 +369,12 @@
           <h3 style="font-size: 1.74rem;">Automatisierung</h3>
           <p>
             <!-- Prozessautomatisierung -->
-            Wiederkehrende Arbeiten <a href="pages/services/automation.html">automatisieren</a> mit KI-Agenten oder Workflow.
+            Wiederkehrende Arbeiten <a href="pages/services/automation/index.html">automatisieren</a> mit KI-Agenten oder Workflow.
           </p>
           <ul>
             <li>Einmal installiert, spart es viel Zeit, M&uuml;he und Ressourcen pro Jahr</li>
-            <li>KI-<a href="pages/services/ai-apps.html">Oberfl&auml;chen</a> / <a href="pages/services/dashboards.html">Dashboards</a></li>
-            <li>CRM- und ERP-<a href="pages/services/integration.html">Integration</a></li>
+            <li>KI-<a href="pages/services/ai-apps/index.html">Oberfl&auml;chen</a> / <a href="pages/services/dashboards/index.html">Dashboards</a></li>
+            <li>CRM- und ERP-<a href="pages/services/integration/index.html">Integration</a></li>
           </ul>
         </div>
         <div class="service-card hide-on-mobile">
@@ -380,7 +382,7 @@
             <i class="fas fa-globe"></i>
           </div>
           <h3>Selbstlernende KI</h3>
-          <p>Die <a href="pages/services/self-improving.html">selbstverbessernde Firma</a> - mehr als eine Automatisierung. <span class="badge badge-new">Tipp</span></p>
+          <p>Die <a href="pages/services/self-improving/index.html">selbstverbessernde Firma</a> - mehr als eine Automatisierung. <span class="badge badge-new">Tipp</span></p>
           <p>Das KI-System verbessert ein und dasselbe Ergebnis immer weiter unter Verwendung von mehr Kontextdaten.</p>
         </div>
         <div class="service-card">
@@ -389,7 +391,7 @@
           </div>
           <h3>KI-Datenl&ouml;sungen</h3>
           <ul>
-            <li>Strukturierung und Bereitstellung ungeordneter <a href="pages/services/data-solutions.html">Firmendaten</a> mit KI</li>
+            <li>Strukturierung und Bereitstellung ungeordneter <a href="pages/services/data-solutions/index.html">Firmendaten</a> mit KI</li>
             <li>Basis f&uuml;r Automatisierung in ungekanntem Umfang</li>
             <li>Neue Einblicke ins eigene Unternehmen</li>
           </ul>
@@ -399,7 +401,7 @@
             <i class="fas fa-lightbulb"></i>
           </div>
           <h3>AI Beratung</h3>
-          <p>AI Check &mdash; Beratung zur erfolgreichen Einf&uuml;hrung von <a href="pages/services/consulting.html">KI im Unternehmen.</a></p>
+          <p>AI Check &mdash; Beratung zur erfolgreichen Einf&uuml;hrung von <a href="pages/services/consulting/index.html">KI im Unternehmen.</a></p>
           <ul>
             <li>Use cases identifizieren</li>
             <li>Umsetzungsstrategien</li>
@@ -411,7 +413,7 @@
             <i class="fas fa-code"></i>
           </div>
           <h3>KI Security</h3>
-          <p><a href="pages/services/security.html">Sicherheit und Evaluierbarkeit</a> von KI-Systemen.</p>
+          <p><a href="pages/services/security/index.html">Sicherheit und Evaluierbarkeit</a> von KI-Systemen.</p>
           <ul>
             <li>Sicherheitsmechanismen</li>
             <li>KI-Verhalten beobachtbar machen (Observability)</li>
@@ -423,7 +425,7 @@
             <i class="fas fa-cogs"></i>
           </div>
           <h3>Apps, die arbeiten</h3>
-          <p>In bestehenden <a href="pages/services/ai-apps.html">Anwendungen</a> integrierte KI-Funktionen k&ouml;nnen echte Arbeit erledigen.</p>
+          <p>In bestehenden <a href="pages/services/ai-apps/index.html">Anwendungen</a> integrierte KI-Funktionen k&ouml;nnen echte Arbeit erledigen.</p>
           <ul>
             <li>KI-Unterst&uuml;tzung macht Umsetzung schnell und kosteng&uuml;nstig</li>
             <li>Es muss nicht immer nur ein Chat sein...</li>
@@ -1038,13 +1040,13 @@
       });
     })();
   </script>
-  <script src="controller.js?v=26072603"></script>
-  <script src="lib/map.js?v=26072603"></script>
-  <script src="lib/popover.js?v=26072603"></script>
-  <script src="lib/config.js?v=26072603"></script>
-  <script src="lib/voice-agent/agent.js?v=26072603"></script>
-  <script src="lib/voice-agent/sidebar.js?v=26072603"></script>
-  <script src="lib/voice-agent/use-case-finder.js?v=26072603"></script>
+  <script src="controller.js?v=26080201"></script>
+  <script src="lib/map.js?v=26080201"></script>
+  <script src="lib/popover.js?v=26080201"></script>
+  <script src="lib/config.js?v=26080201"></script>
+  <script src="lib/voice-agent/agent.js?v=26080201"></script>
+  <script src="lib/voice-agent/sidebar.js?v=26080201"></script>
+  <script src="lib/voice-agent/use-case-finder.js?v=26080201"></script>
   <script>
     new WebsiteController();
     new MapController();

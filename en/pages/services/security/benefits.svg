@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="883" viewBox="0 0 800 883" role="img" aria-labelledby="t">
+  <title id="t">Guardrails set clear boundaries, data stays in-house, every decision is traceable</title>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#19191b"/>
+      <stop offset="1" stop-color="#09090a"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF6B00"/>
+      <stop offset="1" stop-color="#FF3E00"/>
+    </linearGradient>
+    <linearGradient id="row" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f1c1a"/>
+      <stop offset="1" stop-color="#161413"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.72">
+      <stop offset="0" stop-color="#FF6B00" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#FF6B00" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="gl" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="0" stdDeviation="7" flood-color="#FF6B00" flood-opacity="0.45"/>
+    </filter>
+
+    <!-- Guardrails: the AI runs, but only inside the lane it was given -->
+    <g id="icRails">
+      <g fill="#170f08">
+        <rect x="-28" y="-26" width="8" height="52" rx="4"/>
+        <rect x="20" y="-26" width="8" height="52" rx="4"/>
+      </g>
+      <path d="M0 24 V-14" fill="none" stroke="#170f08" stroke-width="6" stroke-linecap="round"/>
+      <path d="M-11 -5 L0 -16 L11 -5" fill="none" stroke="#170f08" stroke-width="6"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Sensitive data stays where it belongs -->
+    <g id="icLock">
+      <rect x="-22" y="-2" width="44" height="34" rx="7" fill="none" stroke="#170f08" stroke-width="5"/>
+      <path d="M-13 -2 V-16 A13 13 0 0 1 13 -16 V-2" fill="none" stroke="#170f08" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="0" cy="11" r="4.5" fill="#170f08"/>
+      <rect x="-2" y="11" width="4" height="10" rx="2" fill="#170f08"/>
+    </g>
+
+    <!-- An audit trail: every step written down and checked -->
+    <g id="icLog">
+      <path d="M-20 -28 H10 L22 -16 V28 H-20 Z" fill="none" stroke="#170f08" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M10 -28 V-16 H22" fill="none" stroke="#170f08" stroke-width="5" stroke-linejoin="round"/>
+      <g stroke="#170f08" stroke-width="5" stroke-linecap="round">
+        <path d="M-11 -6 H13"/>
+        <path d="M-11 4 H13"/>
+      </g>
+      <path d="M-11 15 L-5 21 L7 9" fill="none" stroke="#170f08" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </defs>
+
+  <rect width="800" height="883" rx="28" fill="url(#bg)"/>
+  <rect width="800" height="883" rx="28" fill="url(#glow)"/>
+
+  <!-- Clear boundaries -->
+  <rect x="56" y="68" width="688" height="248" rx="20" fill="url(#row)" stroke="#FF6B00" stroke-opacity=".2" stroke-width="2"/>
+  <g filter="url(#gl)">
+    <rect x="88" y="140" width="104" height="104" rx="26" fill="url(#acc)"/>
+  </g>
+  <use href="#icRails" x="140" y="192"/>
+  <text x="220" y="190" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="58" font-weight="700" fill="#ffffff">Clear boundaries</text>
+  <text x="220" y="234" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="32" fill="#FFC107">guardrails on every AI action</text>
+
+  <!-- Your data stays -->
+  <rect x="56" y="324" width="688" height="248" rx="20" fill="url(#row)" stroke="#FF6B00" stroke-opacity=".2" stroke-width="2"/>
+  <g filter="url(#gl)">
+    <rect x="88" y="396" width="104" height="104" rx="26" fill="url(#acc)"/>
+  </g>
+  <use href="#icLock" x="140" y="448"/>
+  <text x="220" y="446" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="58" font-weight="700" fill="#ffffff">Your data stays</text>
+  <text x="220" y="490" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="32" fill="#FFC107">in-house, GDPR-compliant</text>
+
+  <!-- Fully traceable -->
+  <rect x="56" y="580" width="688" height="248" rx="20" fill="url(#row)" stroke="#FF6B00" stroke-opacity=".2" stroke-width="2"/>
+  <g filter="url(#gl)">
+    <rect x="88" y="652" width="104" height="104" rx="26" fill="url(#acc)"/>
+  </g>
+  <use href="#icLog" x="140" y="704"/>
+  <text x="220" y="702" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="58" font-weight="700" fill="#ffffff">Fully traceable</text>
+  <text x="220" y="746" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="32" fill="#FFC107">every decision logged</text>
+</svg>

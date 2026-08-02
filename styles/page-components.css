@@ -21,6 +21,38 @@
 }
 .offer-lead .price-hl { color: var(--primary); font-weight: 700; }
 
+/* Heading with an action link on its right; the link drops under the heading
+   as soon as both no longer fit one line */
+
+.head-action {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .5rem var(--spacing-md);
+  margin: var(--spacing-lg) 0 var(--spacing-md);  /* the row carries the spacing the heading gave away */
+}
+.head-action h3 { margin: 0; }
+
+.head-action .action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .4rem .9rem;
+  border: 1px solid rgba(255,193,7,0.35);  /* --accent-gold, dimmed */
+  border-radius: var(--border-radius-pill);
+  background: rgba(255,255,255,0.03);  /* same surface as the feature boxes below */
+  color: var(--accent-gold);
+  font-size: .95rem;
+  font-weight: 600;
+  transition: color var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast);
+}
+.head-action .action-link:hover {
+  background: var(--accent-gold);
+  border-color: var(--accent-gold);
+  color: var(--dark);  /* gold is too light to carry white text */
+}
+
 /* Feature cards (icon + title + text) */
 .feature-grid {
   display: grid;
@@ -42,28 +74,34 @@
 .feature-box h4 { color: var(--white); margin: 0 0 .35rem; font-size: 1.05rem; }
 .feature-box p { margin: 0; font-size: .95rem; color: var(--light-gray); }
 
-/* Feature grid carousel on small screens (wrapper + arrows injected in controller.js);
-   on larger screens the arrows are hidden and the grid renders as usual */
+/* Feature grid carousel (wrapper + arrows injected in controller.js): the grid turns into a
+   horizontal scroller as soon as its boxes no longer fit one row - on small screens that is
+   almost always the case, on larger ones only for long lists. As long as everything fits,
+   nothing is switched on and the plain grid above renders as usual.
+   controller.js sets .is-carousel plus --fc-basis, the width of one box, so a scrolled row
+   looks exactly like the grid row it replaces */
 
 .feature-carousel { position: relative; }
 .feature-carousel .carousel-arrow { display: none; }
 
+.feature-carousel.is-carousel .carousel-arrow { display: flex; }
+.feature-carousel.is-carousel .feature-grid {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 1.5rem;  /* scrolled boxes rest right of the prev arrow; the first box starts flush left */
+}
+.feature-carousel.is-carousel .feature-grid::-webkit-scrollbar { display: none; }
+.feature-carousel.is-carousel .feature-box {
+  flex: 0 0 var(--fc-basis);
+  scroll-snap-align: start;
+}
+
 @media (max-width: 480px) {
-  .feature-carousel .carousel-arrow { display: flex; }
-  .feature-carousel .feature-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    scroll-snap-type: x mandatory;
-    scroll-padding-left: 1.5rem;  /* scrolled boxes rest right of the prev arrow; the first box starts flush left */
-  }
-  .feature-carousel .feature-grid::-webkit-scrollbar { display: none; }
-  .feature-carousel .feature-box {
-    flex: 0 0 82%;  /* sliver of the next box hints scrollability */
-    scroll-snap-align: start;
-  }
+  .feature-carousel.is-carousel .feature-box { flex-basis: 82%; }  /* sliver of the next box hints scrollability */
 }
 
 /* Foldable samples reveal */

@@ -1,7 +1,5 @@
 # Home of Walter A. Jablonowski
 
-Trying
-
 ## License
 
 Copyright \(C\) Walter A. Jablonowski 2019-2026
