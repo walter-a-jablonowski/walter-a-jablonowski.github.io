@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="AI Task Board: ein zeitbasiertes Aufgaben-Board mit integriertem KI-Agenten, der die Aufgabenverwaltung &uuml;bernimmt &ndash; anlegen, umplanen, aufr&auml;umen. Jede &Auml;nderung wird vorgeschlagen und einzeln best&auml;tigt. Daten in YAML auf Ihrem Rechner. Bamberg, N&uuml;rnberg und online.">
+  <meta name="keywords" content="AI Task Board, KI Aufgabenverwaltung, KI Agent Aufgaben, Task Board, Aufgabenplanung, Zeitplanung, Half Done Hero, KI f&uuml;r KMU, AI, Artificial Intelligence, K&uuml;nstliche Intelligenz, Bamberg, N&uuml;rnberg">
+  <meta name="author" content="Walter A. Jablonowski">
+  <title>AI Task Board &ndash; Aufgaben-Board mit KI-Agent | Walter A. Jablonowski</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Walter A. Jablonowski">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="AI Task Board &ndash; Aufgaben-Board mit KI-Agent">
+  <meta property="og:description" content="Ein Aufgaben-Board, das die Verwaltung selbst &uuml;bernimmt: Der KI-Agent plant um, r&auml;umt auf und legt an &ndash; Sie best&auml;tigen nur noch.">
+  <meta property="og:url" content="https://walter-a-jablonowski.github.io/pages/systems/task_board/">
+  <meta property="og:image" content="https://walter-a-jablonowski.github.io/misc/hdh.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://walter-a-jablonowski.github.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Systeme", "item": "https://walter-a-jablonowski.github.io/" },
+          { "@type": "ListItem", "position": 3, "name": "AI Task Board", "item": "https://walter-a-jablonowski.github.io/pages/systems/task_board/" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "AI Task Board",
+        "serviceType": "Zeitbasiertes Aufgaben-Board mit integriertem KI-Agenten",
+        "description": "Ein zeitbasiertes Aufgaben-Board, dessen integrierter KI-Agent die Aufgabenverwaltung selbst &uuml;bernimmt: Er kennt das gesamte Board, legt Aufgaben an, plant um, r&auml;umt auf und erledigt mit eigenen Werkzeugen auch gro&szlig;e Umbauten. Jede &Auml;nderung wird als Vorschlag angezeigt und einzeln oder gesammelt best&auml;tigt. Daten liegen als YAML-Dateien auf Ihrem Rechner oder Server.",
+        "inLanguage": "de",
+        "url": "https://walter-a-jablonowski.github.io/pages/systems/task_board/",
+        "provider": { "@type": "Person", "name": "Walter A. Jablonowski", "url": "https://walter-a-jablonowski.github.io/" },
+        "areaServed": [
+          { "@type": "City", "name": "Bamberg" },
+          { "@type": "City", "name": "N&uuml;rnberg" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="canonical" href="https://walter-a-jablonowski.github.io/pages/systems/task_board/">
+  <link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/task_board/">
+  <link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/task_board/">
+  <link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/task_board/">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
+  <link rel="manifest" href="../../../site.webmanifest">
+  <link rel="stylesheet" href="../../../styles.css?v=26080501">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26080501">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26080501">
+  <link rel="stylesheet" href="../../../lib/img_overlay/img_overlay.css?v=26080501">
+  <style>
+    /* Product page styles. Reusable parts (.product-hero, .spec-list, .service-cta
+       exemption) live in page-components.css; the blocks below are local to this page. */
+
+    .content h3 { color: var(--white); margin-top: var(--spacing-xl); }
+    .content code { color: var(--primary); }  /* systems pages tint inline code */
+
+    /* On this page the closing CTA is commercial: hide it under hideBiz
+       (overrides the shared .product-cta exemption via later source order). */
+    body.hide-biz .service-cta.product-cta { display: none; }
+  </style>
+  <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "de",
+    "url": "https://walter-a-jablonowski.github.io/pages/systems/task_board/index.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was kostet das?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Der Preis hängt davon ab, wie stark das Board an Ihre Arbeitsweise angepasst wird, und muss individuell eingeschätzt werden."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann der Agent mein Board durcheinanderbringen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nein. Er ändert nichts direkt, sondern schlägt jede Anlage, Änderung, Löschung und Verschiebung vor. Die Vorschläge liegen farbig über dem Board und werden erst wirksam, wenn Sie sie annehmen – einzeln oder alle zusammen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Brauche ich zwingend KI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nein. Das Board lässt sich vollständig von Hand bedienen: Aufgaben anlegen, per Drag-and-drop verschieben, suchen, gruppieren. Der KI-Agent ist eine zuschaltbare Ergänzung."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welches KI-Modell wird verwendet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Das ist konfigurierbar: OpenRouter (Zugang zu praktisch allen gängigen Modellen), Google Gemini oder Ollama für ein Modell, das lokal auf Ihrer eigenen Hardware läuft."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wo liegen meine Daten?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In lesbaren YAML-Dateien auf Ihrem Rechner oder Server – pro Nutzer, mit einem eigenen Archiv je Monat. Ohne KI verlassen Ihre Aufgaben Ihr Haus nicht; mit KI geht an das gewählte Modell, was der Agent als Kontext braucht, und mit einem lokalen Modell gar nichts."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- faq-schema:end -->
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <!-- nav-menu:start | DON'T edit the menu here - edit the template in tools/upd_menu.php, then run it (see CLAUDE.md) -->
+          <li><a href="../../../index.html#hero" class="nav-link">Start</a></li>
+          <li><a href="../../../index.html#about" class="nav-link">KI fragen</a></li>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-head">
+              <a href="../../../index.html#services" class="nav-link">Leistungen</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Untermen&uuml; Leistungen"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li class="nav-dropdown-group">Agents &amp; Workflow</li>
+              <li><a href="../../../pages/services/automation/index.html" class="nav-link">Automatisierung</a></li>
+              <li><a href="../../../pages/services/self-improving/index.html" class="nav-link">Selbstverbessernde KI</a></li>
+              <li><a href="../../../pages/services/data-solutions/index.html" class="nav-link">KI-Datenl&ouml;sungen</a></li>
+              <li class="nav-dropdown-group">Consulting &amp; Integration</li>
+              <li><a href="../../../pages/services/consulting/index.html" class="nav-link">AI Beratung</a></li>
+              <li><a href="../../../pages/services/security/index.html" class="nav-link">Security &amp; Evaluierung</a></li>
+              <li><a href="../../../pages/services/integration/index.html" class="nav-link">KI-Integration &amp; MCP</a></li>
+              <li class="nav-dropdown-group">Human Interface</li>
+              <li><a href="../../../pages/services/dashboards/index.html" class="nav-link">KI Dashboards</a></li>
+              <li><a href="../../../pages/services/ai-apps/index.html" class="nav-link">Apps, die arbeiten</a></li>
+              <li class="nav-dropdown-group">Commerce</li>
+              <li><a href="../../../pages/services/agentic-commerce/index.html" class="nav-link">Agentic Commerce</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../../index.html#skills" class="nav-link">Kenntnisse</a></li>
+          <li class="nav-dropdown less-spacing">
+            <span class="nav-dropdown-head">
+              <a href="../../../index.html#proj" class="nav-link">Projekte</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Untermen&uuml; Projekte"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../../../pages/systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
+              <li><a href="../../../pages/systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
+              <li><a href="../../../pages/systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
+              <li><a href="../../../pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
+              <li><a href="../../../pages/systems/task_board/index.html" class="nav-link">AI Task Board</a></li>
+              <li><a href="../../../pages/systems/agentic_db/index.html" class="nav-link">Agentic DB</a></li>
+              <li><a href="../../../pages/systems/editor/index.html" class="nav-link">AI Built Editor</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../../index.html#contact" class="nav-link">Kontakt</a></li>
+          <li><a href="../../../blog.html" class="nav-link">Blog</a></li>
+          <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
+              title="Mein LinkedIn-Profil besuchen"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link"
+              title="Mein GitHub-Profil besuchen"><i class="fab fa-github"></i></a></li>
+          <li><button type="button" class="nav-link search-link" data-search-open
+              title="Website durchsuchen (Strg+K)" aria-label="Suche"><i class="fas fa-magnifying-glass"></i></button></li>
+          <!-- nav-menu:end -->
+          <li class="lang-switch">
+            <a href="index.html" class="nav-link active" hreflang="de" title="Deutsch">DE</a>
+            <span class="lang-sep">|</span>
+            <a href="../../../en/pages/systems/task_board/index.html" class="nav-link" hreflang="en" title="English">EN</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="project-detail">
+    <div class="container">
+
+      <!-- 1) Product hero -->
+      <div class="product-hero">
+        <div class="ph-text">
+          <p class="ph-eyebrow">Systeme</p>
+          <h1>AI Task Board</h1>
+          <p class="ph-tagline">Ein Aufgaben-Board, das die <strong>Verwaltung selbst &uuml;bernimmt</strong> &ndash; Sie <strong>best&auml;tigen</strong> nur noch.</p>
+          <p class="ph-lead">
+            Aufgaben liegen nicht in einer endlosen Liste, sondern auf einer Zeitachse: Aktuell,
+            Demn&auml;chst und danach jeder Monat, jede Woche, jedes kommende Jahr. Das Besondere ist
+            der eingebaute <strong>KI-Agent</strong>: Er kennt das gesamte Board und erledigt die
+            Aufgabenverwaltung mit eigenen Werkzeugen &ndash; anlegen, umplanen, aufr&auml;umen &ndash;
+            w&auml;hrend Sie jede &Auml;nderung vorher sehen und best&auml;tigen.
+          </p>
+          <div class="ph-actions">
+            <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Demo anfragen</a>
+            <a href="#agent" class="btn btn-secondary"><i class="fas fa-robot"></i> Der KI-Agent</a>
+          </div>
+          <p class="ph-live"><i class="fas fa-circle"></i> Projekt <strong>Half Done Hero</strong> &ndash; Daten als YAML-Dateien, l&auml;uft auf Ihrem Rechner oder Server.</p>
+        </div>
+        <div class="ph-visual">
+          <figure>
+            <img src="../../../misc/hdh.png" alt="AI Task Board: Spalten f&uuml;r Aktuell und Demn&auml;chst, daneben die Zeitachse aus Monaten mit farbig markierten Aufgabenkarten" loading="lazy">
+            <figcaption class="zoom-hint" title="Vergr&ouml;&szlig;ern"><i class="fas fa-magnifying-glass-plus" aria-hidden="true"></i> Zum Vergr&ouml;&szlig;ern anklicken</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="content">
+
+        <!-- 2) Was ist das? -->
+        <h3 id="what">Was ist das?</h3>
+        <p>
+          <strong>AI Task Board</strong> ist ein zeitbasiertes Aufgaben-Board. Statt einer Liste, die
+          immer l&auml;nger wird, hat jede Aufgabe ihren Platz in der Zeit: <strong>Aktuell</strong> und
+          <strong>Demn&auml;chst</strong> f&uuml;r das, was jetzt ansteht, und dahinter eine durchgehende
+          Zeitachse aus Monaten, Wochen und Tagen bis in kommende Jahre. Verschieben Sie eine Aufgabe
+          per Drag-and-drop &ndash; oder sagen Sie dem KI-Agenten, was passieren soll.
+        </p>
+        <ul>
+          <li>KI-Agent mit eigenen Werkzeugen, der die Aufgabenverwaltung wirklich ausf&uuml;hrt &ndash; nicht nur Vorschl&auml;ge formuliert</li>
+          <li>Jede &Auml;nderung wird farbig angezeigt und einzeln oder gesammelt angenommen oder verworfen</li>
+          <li>Zeitachse statt Liste: Aktuell, Demn&auml;chst, Monate, Wochen, Tage, Folgejahre</li>
+          <li>Automatische Archivierung zum Monatswechsel, abgelaufene Aufgaben wandern selbst&auml;ndig weiter</li>
+          <li>Daten als YAML-Dateien auf Ihrem Rechner &ndash; kein fremder Dienst dazwischen</li>
+        </ul>
+
+        <!-- 3) Funktionen -->
+        <h3 id="features">Funktionen</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-robot"></i></div>
+            <h4>KI-Agent</h4>
+            <p>Kennt das ganze Board, legt an, &auml;ndert, l&ouml;scht und verschiebt &ndash; mit Werkzeugen auch f&uuml;r gro&szlig;e Umbauten.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-timeline"></i></div>
+            <h4>Zeitachse</h4>
+            <p>Monat, Woche und Tag als eigene Spalten &ndash; alle folgenden Zeitr&auml;ume bis in die n&auml;chsten Jahre in einer Ansicht.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-box-archive"></i></div>
+            <h4>Selbst&auml;ndige Pflege</h4>
+            <p>Erledigtes wandert zum Monatswechsel ins Archiv, &uuml;berf&auml;llige Aufgaben in den richtigen Monat &ndash; ohne Zutun.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-tags"></i></div>
+            <h4>Tags &amp; Gruppenansicht</h4>
+            <p>Hierarchische Tags direkt im Text; die Gruppenansicht stellt daraus Spalten mit Unterbereichen zusammen.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-magnifying-glass"></i></div>
+            <h4>Volltextsuche</h4>
+            <p>Mit <code>Strg+K</code> durch das gesamte Board &ndash; Name, Beschreibung und Tags, inklusive Unteraufgaben.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-pen-to-square"></i></div>
+            <h4>Reichhaltige Aufgaben</h4>
+            <p>Priorit&auml;t, F&auml;lligkeit, Dauer, Unteraufgaben, Anh&auml;nge und eine Beschreibung mit eigener Syntax.</p>
+          </div>
+        </div>
+
+        <!-- 4) So funktioniert es -->
+        <div class="steps-cols">
+          <div>
+            <h3 id="how">So funktioniert es</h3>
+            <ol class="offer-steps">
+              <li>Sie schreiben Ihr Anliegen in die KI-Seitenleiste &ndash; in normaler Sprache</li>
+              <li>Der Agent liest das <strong>gesamte Board</strong> und w&auml;hlt seine <strong>Werkzeuge</strong></li>
+              <li>Alle &Auml;nderungen erscheinen als farbige &Uuml;berlagerung direkt auf den Karten</li>
+              <li class="no-num"><strong>Ablauf:</strong> Anliegen &rarr; Agent &rarr; Vorschlag &rarr; Ihre Freigabe</li>
+            </ol>
+          </div>
+          <div class="steps-text mini-tabs">
+            <h3 class="mt-heading">Gut zu wissen</h3>
+            <div class="mini-tab-links">
+              <button type="button" class="mini-tab-link active" data-tab="overview">&Uuml;berblick</button>
+              <span class="mini-tab-sep">|</span>
+              <button type="button" class="mini-tab-link" data-tab="faq">H&auml;ufige Fragen</button>
+            </div>
+            <div class="mini-tab-content active" id="mt-overview">
+              <p>
+                Der Agent arbeitet <strong>vorschlagend</strong>, nicht eigenm&auml;chtig. Angelegte Karten
+                erscheinen gr&uuml;n, ge&auml;nderte blau, gel&ouml;schte rot, verschobene orange &ndash; Sie
+                nehmen jede einzeln an oder verwerfen alles auf einmal.
+              </p>
+              <p>
+                Das <strong>Modell ist frei w&auml;hlbar</strong>: OpenRouter f&uuml;r die gro&szlig;en
+                Anbieter, Gemini &ndash; oder <strong>Ollama</strong> lokal auf Ihrer eigenen Maschine, dann
+                verl&auml;sst kein einziger Aufgabentext Ihr Haus.
+              </p>
+            </div>
+            <div class="mini-tab-content" id="mt-faq">
+              <div class="faq-list">
+                <details class="samples-reveal">
+                  <summary>Was kostet das? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>
+                    <span class="biz-only price-line"><strong>Einrichtung zum Festpreis</strong> &middot; zzgl. laufender Nutzungskosten
+                    (KI-Modell/APIs, sofern KI genutzt wird). </span>Der Preis h&auml;ngt davon ab, wie stark das Board an Ihre
+                    Arbeitsweise angepasst wird, und muss individuell eingesch&auml;tzt werden.
+                  </p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Kann der Agent mein Board durcheinanderbringen? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Nein. Er &auml;ndert nichts direkt, sondern schl&auml;gt jede Anlage, &Auml;nderung, L&ouml;schung und
+                    Verschiebung vor. Die Vorschl&auml;ge liegen farbig &uuml;ber dem Board und werden erst wirksam, wenn Sie
+                    sie annehmen &ndash; einzeln oder alle zusammen.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Brauche ich zwingend KI? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Nein. Das Board l&auml;sst sich vollst&auml;ndig von Hand bedienen: Aufgaben anlegen, per Drag-and-drop
+                    verschieben, suchen, gruppieren. Der KI-Agent ist eine zuschaltbare Erg&auml;nzung.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Welches KI-Modell wird verwendet? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Das ist konfigurierbar: OpenRouter (Zugang zu praktisch allen g&auml;ngigen Modellen), Google Gemini oder
+                    Ollama f&uuml;r ein Modell, das lokal auf Ihrer eigenen Hardware l&auml;uft.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Wo liegen meine Daten? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>In lesbaren YAML-Dateien auf Ihrem Rechner oder Server &ndash; pro Nutzer, mit einem eigenen Archiv je
+                    Monat. Ohne KI verlassen Ihre Aufgaben Ihr Haus nicht; mit KI geht an das gew&auml;hlte Modell, was der
+                    Agent als Kontext braucht, und mit einem lokalen Modell gar nichts.</p>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5) Der KI-Agent -->
+        <h3 id="agent">Der KI-Agent</h3>
+        <p>
+          Die meisten Aufgabenverwaltungen mit &bdquo;KI&ldquo; schlagen Text vor. Hier arbeitet der Agent
+          am Board selbst. Er bekommt Ihre Aufgaben als Kontext und verf&uuml;gt &uuml;ber
+          <strong>mehrere Werkzeuge</strong>, mit denen er die eigentliche Verwaltungsarbeit
+          &uuml;bernimmt &ndash; auch die, f&uuml;r die man sonst eine halbe Stunde klickt:
+        </p>
+        <ul>
+          <li><strong>Anlegen, &Auml;ndern, L&ouml;schen, Verschieben</strong> einzelner Aufgaben und Unteraufgaben</li>
+          <li><strong>Werkzeuge f&uuml;r gro&szlig;e Umbauten</strong> &ndash; etwa den gesamten Kalender aufr&auml;umen oder einen &uuml;berladenen Monat neu verteilen</li>
+          <li><strong>Umplanen</strong> nach Ihren Vorgaben: &bdquo;Alles aus dieser Woche, was nicht dringend ist, in den n&auml;chsten Monat&ldquo;</li>
+          <li><strong>Vorschlagsmodus</strong>: jede &Auml;nderung farbig markiert &ndash; gr&uuml;n neu, blau ge&auml;ndert, rot gel&ouml;scht, orange verschoben</li>
+          <li><strong>Freigabe in Ihrer Hand</strong>: einzeln annehmen, einzeln verwerfen oder alles auf einmal</li>
+        </ul>
+        <div class="highlight-box">
+          <p><i class="fas fa-circle-check" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>Warum das den Unterschied macht:</strong> Ein Assistent, der nur antwortet, verlagert die
+            Arbeit nur. Ein Agent mit Werkzeugen erledigt sie &ndash; und weil nichts ohne Ihre Best&auml;tigung
+            wirksam wird, geben Sie daf&uuml;r keine Kontrolle auf.</p>
+        </div>
+
+        <!-- 6) Wof&uuml;r? -->
+        <h3 id="use-cases">Wof&uuml;r?</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-user-tie"></i></div>
+            <h4>Selbst&auml;ndige &amp; Gesch&auml;ftsf&uuml;hrung</h4>
+            <p>Viele parallele Vorhaben &uuml;ber Monate hinweg im Blick behalten, ohne st&auml;ndig zu sortieren.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-diagram-project"></i></div>
+            <h4>Projektplanung</h4>
+            <p>Meilensteine auf der Zeitachse, Unteraufgaben je Schritt, Umplanung per Ansage an den Agenten.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-calendar-day"></i></div>
+            <h4>Tagesplanung</h4>
+            <p>Die aktuelle Spalte als schlichte Liste, als Zeitbl&ouml;cke oder als Stundenraster mit festen Terminen.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-list-check"></i></div>
+            <h4>Wiederkehrendes</h4>
+            <p>Regelm&auml;&szlig;ige Aufgaben mit eigenen Badges, dazu automatische Archivierung des Erledigten.</p>
+          </div>
+        </div>
+
+        <!-- 7) Das Board im Detail -->
+        <h3 id="board">Das Board im Detail</h3>
+        <ul>
+          <li><strong>Aktuelle Spalte in drei Modi</strong>: einfache Liste, benannte Zeitbl&ouml;cke (Vormittag, Nachmittag &hellip;) oder Tageskalender mit Stundenraster</li>
+          <li><strong>Aufgabenkarte</strong>: Datums- und Zeit-Badge, Priorit&auml;tssymbol, Wiederholungs-Badge und Wartestatus &ndash; immer das Wichtigste zuerst</li>
+          <li><strong>Aufgabendialog</strong> mit Registern f&uuml;r Beschreibung, Anh&auml;nge und Unteraufgaben; die Beschreibung selbst l&auml;sst sich in eigene Register aufteilen</li>
+          <li><strong>Beschreibungssyntax</strong>: Markdown, Checklisten, einklappbare Bereiche, Verweise auf andere Aufgaben, wiederverwendbare Textbausteine</li>
+          <li><strong>Tags im Text</strong>: <code>#projekt/teil</code> direkt in der Beschreibung wird zum Tag &ndash; kein zweites Feld zu pflegen</li>
+          <li><strong>Markiermodus</strong>: Aufgaben mit einem Klick orange, gelb oder gr&uuml;n f&auml;rben, um ad hoc zu gruppieren</li>
+        </ul>
+
+        <!-- 8) Ma&szlig;geschneidert -->
+        <h3 id="custom">Ma&szlig;geschneidert f&uuml;r Ihre Arbeitsweise</h3>
+        <p>
+          AI Task Board ist kein starres Werkzeug von der Stange, sondern wird auf Ihren Ablauf
+          eingestellt. Anpassbar sind unter anderem:
+        </p>
+        <ul>
+          <li>KI-Anbieter und Modell &ndash; von der Cloud bis zum lokalen Modell ohne Internet</li>
+          <li>Werkzeuge des Agenten: was er tun darf und was ausdr&uuml;cklich nicht</li>
+          <li>Zeitbl&ouml;cke und Kalenderraster nach Ihrem Arbeitstag</li>
+          <li>Eigene Textsyntax f&uuml;r Badges, Hervorhebungen und Kennzeichen</li>
+          <li>Zeitzone, Dringlichkeitsschwellen und Anzeigemodi je Nutzer</li>
+        </ul>
+
+        <!-- 9) Architektur & Sicherheit -->
+        <div class="highlight-box">
+          <p><i class="fas fa-shield-halved" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>Architektur &amp; Kontrolle:</strong> Backend in <strong>PHP&nbsp;8+</strong>, Frontend als
+            schlankes <strong>Vanilla&nbsp;JavaScript</strong> mit Fetch&nbsp;API &ndash; ohne schwergewichtige
+            Frameworks. Aufgaben, Archiv und Einstellungen liegen als <strong>YAML-Dateien</strong> pro Nutzer,
+            also lesbar, versionierbar und jederzeit exportierbar. Die Anwendung l&auml;uft auf Ihrem Rechner
+            oder Server; mit einem lokalen Modell arbeitet auch der Agent vollst&auml;ndig offline.</p>
+        </div>
+
+        <!-- 10) Tech-Stack -->
+        <h3 id="stack">Tech-Stack</h3>
+        <p class="tech-stack">
+          PHP &bull; YAML &bull; Vanilla JavaScript &bull; Fetch API &bull; Drag &amp; Drop API &bull; AI / LLM &bull; OpenRouter &bull; Ollama &bull; Gemini
+        </p>
+
+        <!-- 11) Demo anfragen -->
+        <div class="live-demo">
+          <h3>In Aktion sehen</h3>
+          <p>Ich zeige Ihnen das AI Task Board gerne live &ndash; am besten an einer Planung, die Sie gerade wirklich besch&auml;ftigt.</p>
+          <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Demo anfragen</a>
+        </div>
+
+        <!-- 12) Auf einen Blick -->
+        <h3 id="specs">Auf einen Blick</h3>
+        <div class="spec-list">
+          <div class="spec-row"><span class="spec-k">Aufgabe</span><span class="spec-v">zeitbasiertes Aufgaben-Board mit KI-Agent</span></div>
+          <div class="spec-row"><span class="spec-k">KI-Agent</span><span class="spec-v">mehrere Werkzeuge, arbeitet im Vorschlagsmodus mit Freigabe</span></div>
+          <div class="spec-row"><span class="spec-k">Struktur</span><span class="spec-v">Aktuell, Demn&auml;chst, Monate, Wochen, Tage, Folgejahre</span></div>
+          <div class="spec-row"><span class="spec-k">Ansichten</span><span class="spec-v">Board, Gruppierung nach Tags, Zeitbl&ouml;cke, Tageskalender</span></div>
+          <div class="spec-row"><span class="spec-k">Speicherung</span><span class="spec-v">YAML-Dateien pro Nutzer, Archiv je Monat</span></div>
+          <div class="spec-row"><span class="spec-k">Modelle</span><span class="spec-v">OpenRouter, Gemini oder Ollama (lokal)</span></div>
+          <div class="spec-row"><span class="spec-k">Betrieb</span><span class="spec-v">auf Ihrem Rechner oder Server</span></div>
+        </div>
+
+        <!-- 13) Mehr zum Thema -->
+        <div class="highlight-box">
+          <p><i class="fas fa-lightbulb" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>Mehr als ein Task Board:</strong> AI Task Board ist ein Beispiel meiner
+            <a href="../../services/ai-apps/index.html">Apps, die arbeiten</a> und der
+            <a href="../../services/automation/index.html">Automatisierung</a> &ndash; Anwendungen, in denen
+            ein Agent die Arbeit &uuml;bernimmt, statt sie nur zu kommentieren.</p>
+        </div>
+
+        <!-- 14) Abschluss-CTA -->
+        <div class="service-cta product-cta">
+          <h3>AI Task Board f&uuml;r Ihre Planung</h3>
+          <p>Erstgespr&auml;ch kostenfrei &ndash; vor Ort in Bamberg/N&uuml;rnberg oder online.</p>
+          <div class="cta-actions">
+            <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Kontakt aufnehmen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+          <a href="../../../llms.txt" class="footer-agent-link">F&uuml;r KI-Agenten</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-links">
+          <a href="../../../privacy.html">Datenschutz</a>
+          <a href="../../../imprint.html">Impressum</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>powered by &copy; Walter A. Jablonowski 2019-2026. Made with AI. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="../../../lib/config.js?v=26080501"></script>
+  <script src="../../../controller.js?v=26080501"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26080501"></script>
+  <script src="../../../lib/img_overlay/img_overlay.js?v=26080501"></script>
+  <script>
+    new WebsiteController();
+    ImageOverlay.init('.ph-visual img');
+  </script>
+</body>
+</html>

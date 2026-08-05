@@ -1,7 +1,7 @@
 /*
- * Reusable service / offer page components.
+ * Reusable service / offer / product page components.
  * Extracted verbatim from the per-page inline <style> blocks (identical
- * across the service & offer pages). Imported globally via styles.css;
+ * across the service, offer & systems pages). Imported globally via styles.css;
  * every class here is exclusive to those pages, so it has no effect
  * anywhere else.
  */
@@ -19,7 +19,18 @@
 .project-detail .content h3[id] {
   scroll-margin-top: 90px;
 }
+/* Price highlight inside a lead paragraph, in either of the two lead styles. */
 .offer-lead .price-hl { color: var(--primary); font-weight: 700; }
+.ph-lead .price-hl { color: var(--primary); font-weight: 700; }
+
+/* Lead-in paragraph of a project page — the .offer-lead of that page family. */
+.intro-text {
+  font-size: 1.2rem;
+  color: var(--lighter-gray);
+  line-height: 1.8;
+  font-weight: 300;
+  margin-left: 0;
+}
 
 /* Heading with an action link on its right; the link drops under the heading
    as soon as both no longer fit one line */
@@ -102,6 +113,36 @@
 
 @media (max-width: 480px) {
   .feature-carousel.is-carousel .feature-box { flex-basis: 82%; }  /* sliver of the next box hints scrollability */
+}
+
+/* Number row: a few hard figures that carry a claim the surrounding prose only
+   asserts (size, count, duration). Same surface as the feature boxes, but the
+   value leads and the label explains it - so a row of them scans in one look. */
+.num-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--spacing-md);
+  margin: var(--spacing-lg) 0 var(--spacing-xl);
+}
+.num-box {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-md);
+  text-align: center;
+}
+.num-box .num-v {
+  display: block;
+  color: var(--primary);
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.num-box .num-k {
+  display: block;
+  color: var(--light-gray);
+  font-size: .87rem;
+  margin-top: .35rem;
 }
 
 /* Foldable samples reveal */
@@ -359,6 +400,15 @@ body.hide-biz .service-cta.product-cta { display: block; }
 .ph-visual img { max-width: 320px; width: 100%; height: auto; border-radius: var(--border-radius-lg);
   box-shadow: 0 24px 60px rgba(0,0,0,.55); border: 1px solid rgba(255,255,255,.08); }
 
+/* Hero screenshot with a "click to enlarge" caption (img_overlay). The caption
+   is centred under the image; a page showing a wide diagram instead overrides
+   this locally to align the caption left. */
+.ph-visual figure { margin: 0; display: flex; flex-direction: column; align-items: center; }
+.ph-visual figcaption { display: flex; align-items: center; justify-content: center; gap: .45rem;
+  color: var(--light-gray); font-size: .85rem; margin: .7rem 0 0; text-align: center; }
+.ph-visual figcaption i { color: var(--primary); }
+.ph-visual .zoom-hint { cursor: pointer; }
+
 @media (max-width: 768px) {
   .product-hero { grid-template-columns: 1fr; gap: var(--spacing-lg); }
   .ph-visual img { max-width: 260px; }
@@ -406,4 +456,172 @@ body.hide-biz .service-cta.product-cta { display: block; }
   background: rgba(255, 107, 0, 0.12);
   border: 1px solid rgba(255, 107, 0, 0.4);
 }
+
+/* Project detail header: cover image beside the title block, stacking on
+   mobile. Kept above the page shell below, matching the order these rules had
+   inside the project pages (.project-title h2 must still lose to .content h2). */
+.project-header {
+  display: block;
+}
+.project-media {
+  flex: 1 1 340px;
+  background: rgba(255,255,255,0.03);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.project-media img { width: 100%; height: 100%; object-fit: cover; }
+.project-title {
+  flex: 2 1 460px;
+}
+.project-title h2 { color: var(--white); margin-top: 0.5rem; }
+.project-title .underline { margin-top: .5rem; }
+
+@media (max-width: 768px) {
+  .project-header { flex-direction: column; }
+}
+
+/* Row of links to the regional landing pages. */
+.region-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin: var(--spacing-md) 0;
+}
+
+/* ---- Legal pages (imprint, privacy) --------------------------------------
+   Their own narrow, light-on-dark reading column — no .project-detail shell. */
+.legal-content {
+  padding: 120px 0 60px;
+}
+.legal-content .container {
+  max-width: 800px;
+}
+.legal-content h1 {
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+.legal-content h3 {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+.legal-content p, .legal-content ul, .legal-content ol {
+  margin-bottom: 1rem;
+}
+.legal-content ul, .legal-content ol {
+  padding-left: 2rem;
+}
+.legal-content a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+.legal-content a:hover {
+  color: var(--primary-dark);
+}
+.back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+.back-link i {
+  margin-right: 0.5rem;
+}
+
+/* ---- Page shell ----------------------------------------------------------
+   The dark section that every service, systems, project, region and offer page
+   wraps its body in, plus the base typography of the .content column inside it.
+   These were identical in all 50 inline <style> blocks, so they live here now.
+
+   KEEP THIS BLOCK LAST. Element selectors like .content p and .content li have
+   the same specificity as the component rules above (.feature-box p,
+   .highlight-box p, .sample-description, …), so the cascade is decided by source
+   order alone. Inline in a page, this block came after the whole stylesheet and
+   won; moved to the top of this file it would silently lose, and paragraphs
+   inside feature boxes and callouts would collapse their bottom margin.
+
+   A page needing a different value still overrides it locally: its inline
+   <style> is parsed after styles.css, so an equally specific rule there wins. */
+
+.project-detail {
+  padding: var(--spacing-xxl) 0;
+  background-color: var(--dark);
+  color: var(--white);
+  position: relative;
+}
+.project-detail::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(14,14,14,0.95) 0%, rgba(26,26,26,0.85) 100%);
+  z-index: 1;
+}
+.project-detail .container { position: relative; z-index: 2; }
+
+.content { color: var(--lighter-gray); line-height: 1.75; }
+.content h2 { color: var(--white); margin-top: var(--spacing-lg); }
+.content h3 { color: var(--white); margin-top: var(--spacing-lg); }  /* systems pages widen this to --spacing-xl */
+.content h3 .h3-sub { color: var(--light-gray); font-weight: 400; }
+/* No .content h4 here on purpose: 36 pages put an <h4> inside .content as the
+   heading of a .feature-box, and an equally specific .content h4 in this block
+   would beat .feature-box h4 and push every card heading down. The project
+   pages that do want it keep the rule in their own <style>. */
+.content p { margin: 0 0 var(--spacing-md); }
+.content ul { padding-left: 1.25rem; margin: 0 0 var(--spacing-md); }
+.content li { margin: .45rem 0; }
+.content a { color: var(--primary); }
+.content strong { color: var(--white); }
+.content code { font-family: var(--font-code); }  /* systems pages also tint it with --primary */
+/* Buttons keep their own text color (override the generic .content a rule) */
+.content a.btn-primary, .content a.btn-secondary { color: var(--white); }
+.content a.btn-outline { color: var(--primary); }
+.content a.btn-outline:hover { color: var(--white); }
+
+/* Converted-markdown blocks on the project pages. */
+.content blockquote {
+  margin: var(--spacing-md) 0;
+  padding: var(--spacing-md);
+  border-left: 4px solid var(--primary);
+  background: rgba(255,255,255,0.04);
+  border-radius: var(--border-radius-sm);
+}
+.content pre {
+  background: #0f0f0f;
+  color: #eee;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  overflow: auto;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ---- Product-page components that sit inside .content --------------------
+   These follow the page shell for the same source-order reason it comes last:
+   .live-demo p must win over the .content p above it, exactly as it did when
+   both rules lived in the page's own <style>. */
+
+/* Tech-stack line: the technologies a product is built from, as one accented
+   sentence of bullet-separated names. */
+.tech-stack { color: var(--primary); font-weight: 500; font-size: 1.05rem; }
+
+/* Demo callout: a warm panel mid-page inviting the reader to ask for a live
+   demo. Distinct from .service-cta, which closes the page. */
+.live-demo { margin: var(--spacing-xl) 0; padding: var(--spacing-lg) var(--spacing-xl);
+  border-radius: var(--border-radius-lg); text-align: center;
+  background: linear-gradient(135deg, rgba(255,107,0,.14), rgba(255,62,0,.06));
+  border: 1px solid rgba(255,107,0,.30); }
+.live-demo h3 { margin-top: 0 !important; }
+.live-demo p { color: var(--lighter-gray); margin: 0 0 1.1rem; }
+
+/* Price line inside an FAQ answer. Always sits in a .biz-only span, so it
+   disappears with the rest of the commercial content under hideBiz. */
+.price-line { color: var(--lighter-gray); }
+.price-line strong { color: var(--primary); }
+
+/* Examples reveal in the hero of a service or region page (between the lead and
+   the CTA). Sits here rather than with .product-hero above so its list rules
+   keep winning over the .content ones, as they did inside the pages. */
+.ph-live-slo { margin: 0 0 1.4rem; color: var(--lighter-gray); }
+.ph-live-slo ul { padding-left: 1.25rem; }
+.ph-live-slo li { margin: .45rem 0; }
 h1 .badge, h2 .badge, h3 .badge, h4 .badge { margin-left: .65em; }

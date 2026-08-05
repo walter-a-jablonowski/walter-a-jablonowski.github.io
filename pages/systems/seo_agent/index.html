@@ -51,50 +51,14 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
   <link rel="manifest" href="../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../styles.css?v=26080201">
-  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26080201">
-  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26080201">
+  <link rel="stylesheet" href="../../../styles.css?v=26080501">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26080501">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26080501">
   <style>
     /* Product page styles. Reusable parts (.product-hero, .spec-list, .service-cta
        exemption) live in page-components.css; the blocks below are local to this page. */
-    .project-detail {
-      padding: var(--spacing-xxl) 0;
-      background-color: var(--dark);
-      color: var(--white);
-      position: relative;
-    }
-    .project-detail::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(14,14,14,0.95) 0%, rgba(26,26,26,0.85) 100%);
-      z-index: 1;
-    }
-    .project-detail .container { position: relative; z-index: 2; }
 
-    .content { color: var(--lighter-gray); line-height: 1.75; }
     .content h3 { color: var(--white); margin-top: var(--spacing-xl); }
-    /* Keep the shared reset: the heading in the two-column steps block must top-align
-       with the text column (our .content h3 margin would otherwise push it down). */
-    .content .steps-cols h3 { margin-top: 0; }
-    .content p { margin: 0 0 var(--spacing-md); }
-    .content ul { padding-left: 1.25rem; margin: 0 0 var(--spacing-md); }
-    .content li { margin: .45rem 0; }
-    .content a { color: var(--primary); }
-    .content strong { color: var(--white); }
-    .content a.btn-primary, .content a.btn-secondary { color: var(--white); }
-
-    /* ---- Demo callout --------------------------------------------------- */
-    .live-demo { margin: var(--spacing-xl) 0; padding: var(--spacing-lg) var(--spacing-xl);
-      border-radius: var(--border-radius-lg); text-align: center;
-      background: linear-gradient(135deg, rgba(255,107,0,.14), rgba(255,62,0,.06));
-      border: 1px solid rgba(255,107,0,.30); }
-    .live-demo h3 { margin-top: 0 !important; }
-    .live-demo p { color: var(--lighter-gray); margin: 0 0 1.1rem; }
-
-    /* ---- Price line (gated by .biz-only / hideBiz) --------------------- */
-    .price-line { color: var(--lighter-gray); }
-    .price-line strong { color: var(--primary); }
 
     /* On this page the closing CTA is commercial: hide it under hideBiz
        (overrides the shared .product-cta exemption via later source order). */
@@ -205,9 +169,11 @@
             <ul class="nav-dropdown-menu">
               <li><a href="../../../pages/systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
               <li><a href="../../../pages/systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
-              <li><a href="../../../pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
               <li><a href="../../../pages/systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
-              <li><a href="../../../pages/systems/agentic_db/index.html" class="nav-link">Agent DB</a></li>
+              <li><a href="../../../pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
+              <li><a href="../../../pages/systems/task_board/index.html" class="nav-link">AI Task Board</a></li>
+              <li><a href="../../../pages/systems/agentic_db/index.html" class="nav-link">Agentic DB</a></li>
+              <li><a href="../../../pages/systems/editor/index.html" class="nav-link">AI Built Editor</a></li>
             </ul>
           </li>
           <li class="less-spacing"><a href="../../../index.html#contact" class="nav-link">Kontakt</a></li>
@@ -484,9 +450,9 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../lib/config.js?v=26080201"></script>
-  <script src="../../../controller.js?v=26080201"></script>
-  <script src="../../../lib/voice-agent/agent.js?v=26080201"></script>
+  <script src="../../../lib/config.js?v=26080501"></script>
+  <script src="../../../controller.js?v=26080501"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26080501"></script>
   <script>
     new WebsiteController();
   </script>

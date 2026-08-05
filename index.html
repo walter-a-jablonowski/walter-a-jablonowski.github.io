@@ -28,9 +28,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=26080201">
-  <link rel="stylesheet" href="lib/fontawesome/css/all.min.css?v=26080201">
-  <link rel="stylesheet" href="lib/fonts/fonts.css?v=26080201">
+  <link rel="stylesheet" href="styles.css?v=26080501">
+  <link rel="stylesheet" href="lib/fontawesome/css/all.min.css?v=26080501">
+  <link rel="stylesheet" href="lib/fonts/fonts.css?v=26080501">
   <!-- Suppress the loading screen instantly when navigating within the site (e.g. back from a sub page) -->
   <script>
     try {
@@ -39,7 +39,7 @@
     } catch (e) {}
   </script>
   <!-- Alternative cookie consent implementation for GitHub Pages (original doesn't work) -->
-  <script src="cookie-fix.js?v=26080201"></script>
+  <script src="cookie-fix.js?v=26080501"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -50,7 +50,7 @@
         "url": "https://walter-a-jablonowski.github.io/",
         "name": "KI-Beratung & KI-Entwicklung (AI) für Firmen | Bamberg & Nürnberg | Walter A. Jablonowski",
         "inLanguage": "de",
-        "dateModified": "2026-08-02",
+        "dateModified": "2026-08-05",
         "about": { "@id": "https://walter-a-jablonowski.github.io/#person" },
         "mainEntity": { "@id": "https://walter-a-jablonowski.github.io/#service" }
       },
@@ -168,9 +168,11 @@
             <ul class="nav-dropdown-menu">
               <li><a href="pages/systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
               <li><a href="pages/systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
-              <li><a href="pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
               <li><a href="pages/systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
-              <li><a href="pages/systems/agentic_db/index.html" class="nav-link">Agent DB</a></li>
+              <li><a href="pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
+              <li><a href="pages/systems/task_board/index.html" class="nav-link">AI Task Board</a></li>
+              <li><a href="pages/systems/agentic_db/index.html" class="nav-link">Agentic DB</a></li>
+              <li><a href="pages/systems/editor/index.html" class="nav-link">AI Built Editor</a></li>
             </ul>
           </li>
           <li class="less-spacing"><a href="#contact" class="nav-link">Kontakt</a></li>
@@ -669,112 +671,94 @@
             <div class="project-cards-container">
               <div class="project-card">
                 <div class="project-image">
-                  <img src="misc/agent-thumb.png" alt="ShelfSurfer">
+                  <a href="pages/systems/web_agent/index.html">
+                    <img src="misc/voice.png" alt="Website AI Agent">
+                  </a>
                 </div>
-                <h3>Eigener KI-Agent</h3>
-                <p>Umgesetzt in PHP, das auf den meisten Webservern verf&uuml;gbar ist. <span class="project-badge">Preview</span></p>
-                <span class="project-link">[ Early preview ]</span>
+                <h3>Website AI Agent</h3>
+                <p>Ein KI-Assistent, mit dem Ihre Besucher sprechen k&ouml;nnen: antwortet in Echtzeit, f&uuml;hrt zur passenden Seite,
+                  mehrsprachig. Sie nutzen ihn gerade &ndash; der Button unten rechts.</p>
+                <div class="project-links">
+                  <a href="pages/systems/web_agent/index.html" class="project-link">Projektseite</a>
+                  <span class="project-link-sep">|</span>
+                  <!-- opens the agent overlay via controller.bindAgentOpen(); #about is the fallback -->
+                  <a href="#about" class="project-link" data-agent-open>Demo</a>
+                </div>
               </div>
               <div class="project-card">
                 <div class="project-image">
-                  <a href="pages/projects/coin-pos/index.html">
-                    <img src="misc/btc-thumb.png" alt="Voice Agent">
+                  <a href="pages/systems/data_chat/index.html">
+                    <img src="misc/db-agent.png" alt="Chat with Data">
                   </a>
                 </div>
-                <h3>KI und Blockchain</h3>
-                <p>Verfolgen, wann ein KI-/Blockchain-Anwendungsfall durch die Decke geht.</p>
-                <a href="pages/projects/coin-pos/index.html" class="project-link">Projektseite</a>
+                <h3>Chat with Data</h3>
+                <p>Firmendaten in ganz normaler Sprache befragen. Die KI baut eine sichere, nur lesende Abfrage und liefert
+                  Tabellen, Zusammen-fassungen und Diagramme &ndash; auf Wunsch komplett lokal.</p>
+                <a href="pages/systems/data_chat/index.html" class="project-link">Projektseite</a>
               </div>
               <div class="project-card">
                 <div class="project-image">
-                  <a href="pages/projects/log-view/index.html">
-                    <img src="misc/log-2-thumb.png" alt="Voice Agent">
+                  <a href="pages/systems/log-view/index.html">
+                    <img src="misc/log-2-thumb.png" alt="AI Log Viewer">
                   </a>
                 </div>
-                <h3>KI-gest&uuml;tzte Logs</h3>
-                <p>In nur 3 Tagen umgesetzt: KI Fragen zu riesigen Logs stellen.</p>
-                <a href="pages/projects/log-view/index.html" class="project-link">Projektseite</a>
+                <h3>AI Log Viewer</h3>
+                <p>Alle Logs an einem Ort: mit einer m&auml;chtigen Ausdruckssyntax filtern und von der KI erkl&auml;ren lassen.
+                  Jedes Format, auch 100.000+ Eintr&auml;ge &ndash; in 3 Tagen gebaut.</p>
+                <a href="pages/systems/log-view/index.html" class="project-link">Projektseite</a>
               </div>
               <div class="project-card">
                 <div class="project-image">
-                  <a href="pages/projects/dashb/index.html">
-                    <img src="misc/dashb-2-thumb.png" alt="Voice Agent">
+                  <a href="pages/systems/seo_agent/index.html">
+                    <img src="misc/automation-placeholder.svg" alt="SEO Agent">
                   </a>
                 </div>
-                <h3>Dashboard <span class="project-badge">Preview</span></h3>
-                <p>Alles, was Ihnen wichtig ist, an einem Ort. KI-Integration und Steuerung eines pers&ouml;nlichen KI-Schwarms.</p>
-                <a href="pages/projects/dashb/index.html" class="project-link">Projektseite</a>
+                <h3>SEO Agent</h3>
+                <p>Ein zeitgesteuerter KI-Agent verbessert die Website, Content und Struktur
+                  &ndash; f&uuml;r Google und die KI-Suche. &Auml;nderungen gehen erst nach Ihrer Freigabe live. <span class="state-badge">Experimentell</span></p>
+                <a href="pages/systems/seo_agent/index.html" class="project-link">Projektseite</a>
               </div>
               <div class="project-card">
                 <div class="project-image">
-                  <a href="https://waj.42web.io/edit_2_demo" target="_blank">
-                    <img src="misc/edit-thumb.png" alt="Voice Agent">
+                  <a href="pages/systems/task_board/index.html">
+                    <img src="misc/hdh-thumb.png" alt="Half Done Hero">
                   </a>
                 </div>
-                <h3>In-Browser-Editor</h3>
-                <p>Rich-Content direkt im Browser bearbeiten. Erweiterte Markdown-Syntax, advanced UI-Elemente. <span class="state-badge">Testing</span></p>
-                <a href="https://waj.42web.io/edit_2_demo"  target="_blank" class="project-link">Live-Demo testen</a>
+                <h3>AI Task Board</h3>
+                <p>Aufgaben auf einer Zeitachse statt in endlosen Listen. Der eingebaute KI-Agent legt an, plant um und r&auml;umt
+                  auf &ndash; best&auml;tigt wird jede &Auml;nderung von Ihnen. <span class="state-badge">Testing</span></p>
+                <a href="pages/systems/task_board/index.html" class="project-link">Projektseite</a>
               </div>
               <div class="project-card">
                 <div class="project-image">
-                  <a href="https://waj.42web.io/hdh_demo" target="_blank">
-                    <img src="misc/hdh-thumb.png" alt="Voice Agent">
+                  <a href="pages/systems/agentic_db/index.html">
+                    <img src="misc/automation-placeholder.svg" alt="Agentic DB">
                   </a>
                 </div>
-                <h3>Half Done Hero</h3>
-                <p>Zeitmanagement-Anwendung (in Entwicklung). Besseren &Uuml;berblick gewinnen, durch KI-Features weniger arbeiten. <span class="state-badge">Testing</span></p>
-                <a href="https://waj.42web.io/hdh_demo"  target="_blank" class="project-link">Live-Demo testen</a>
+                <h3>Agentic DB</h3>
+                <p>Eine Wissensbasis, die ein KeeperAgent selbst sortiert, teilt und indiziert.
+                  Atomar, versioniert, r&uuml;ckg&auml;ngig zu machen &ndash; und ohne KI eine ganz normale Dateisammlung. <span class="state-badge">Experimentell</span></p>
+                <a href="pages/systems/agentic_db/index.html" class="project-link">Projektseite</a>
               </div>
               <div class="project-card">
                 <div class="project-image">
-                  <a href="pages/projects/db-assistant/index.html">
-                    <img src="misc/db-agent.png" alt="Voice Agent">
+                  <a href="pages/systems/editor/index.html">
+                    <img src="misc/edit-thumb.png" alt="AI Built Editor">
                   </a>
                 </div>
-                <h3>Chat mit Daten</h3>
-                <p>Fragen zu den Daten in Datenbank(en) stellen. Inklusive KI-generierter Diagramme. Erstellt mit Python und Flask.</p>
-                <a href="pages/projects/db-assistant/index.html" class="project-link">Projektseite</a>
-              </div>
-              <div class="project-card">
-                <div class="project-image">
-                  <a href="#about">
-                    <img src="misc/voice.png" alt="Voice Agent">
-                  </a>
-                </div>
-                <h3>Voice Agent</h3>
-                <p>KI-Sprachassistent f&uuml;r Websites. Er kann Fragen &uuml;ber ein Unternehmen oder eine Person anhand benutzerdefinierter Inhalte beantworten.</p>
-                <a href="#about" class="project-link">Demo testen</a>
-              </div>
-              <div class="project-card">
-                <div class="project-image">
-                  <a href="pages/projects/ninja-snipp/index.html">
-                    <img src="pages/projects/ninja-snipp/img.png" alt="Sample App">
-                  </a>
-                </div>
-                <h3>NinjaSnipp</h3>
-                <p>Dateisystembasierte Snippet-App mit verschachtelten Includes, auch f&uuml;r Prompt-Management. Mit KI erstellt. <span class="state-badge">Extending</span></p>
-                <a href="pages/projects/ninja-snipp/index.html" class="project-link">Projektseite</a>
-              </div>
-              <div class="project-card">
-                <div class="project-image">
-                  <a href="https://waj.42web.io/overview/index.php?board=default&tab=2" target="_blank">
-                    <img src="misc/app.png" alt="Sample App">
-                  </a>
-                </div>
-                <h3>Overview <span class="state-badge">Extending</span></h3>
-                <p>App, die eine gro&szlig;e Menge an Informationen in einer kleinen &Uuml;bersicht komprimiert. Code von KI unter menschlicher Anleitung erstellt.</p>
-                <a href="https://waj.42web.io/overview/index.php?board=default&tab=2" class="project-link" target="_blank">
-                  Demo ansehen
-                </a>
+                <h3>AI Built Editor</h3>
+                <p>Rich-Content direkt im Browser bearbeiten: erweiterte Markdown-Syntax, eigenes Dokumentmodell. 4.600 Zeilen JavaScript &ndash; mit KI in Tagen statt Monaten. <span class="state-badge">Testing</span></p>
+                <a href="pages/systems/editor/index.html" class="project-link">Projektseite</a>
               </div>
               <div class="project-card">
                 <div class="project-image">
                   <a href="https://github.com/walter-a-jablonowski/Filter" target="_blank">
-                    <img src="misc/img/bool-filter.svg" alt="Sample Class">
+                    <img src="misc/img/bool-filter.svg" alt="Filter-Bibliothek">
                   </a>
                 </div>
-                <h3>Beispielklasse</h3>
-                <p>Komplexe Bedingungen einfach definieren, z. B. nutzbar zum Filtern von Daten, f&uuml;r Web-Crawler usw. Es gibt auch
+                <h3>Filter-Bibliothek</h3>
+                <p>Komplexe Bedingungen deklarativ beschreiben statt sie auszuprogrammieren &ndash; zum Filtern von Daten, f&uuml;r
+                  Web-Crawler und &Auml;hnliches. Es gibt auch
                   eine <a href="https://github.com/walter-a-jablonowski/Filter.py" target="_blank">Python-Version</a>.
                 </p>
                 <a href="https://github.com/walter-a-jablonowski/Filter" target="_blank">Projekt ansehen</a>
@@ -785,41 +769,23 @@
                     <img src="misc/comp.png" alt="Component">
                   </a>
                 </div>
-                <h3>Komponente</h3>
-                <p>Komponente, die das Senden von Nachrichten vom Server zum Browser erm&ouml;glicht. Mit Hilfe von KI erstellt.</p>
+                <h3>Server-Nachrichten</h3>
+                <p>Kleine Komponente, die Meldungen vom Server im Browser anzeigt &ndash; einmal einbinden, &uuml;berall
+                  verwenden. Mit Hilfe von KI erstellt.</p>
                 <a href="https://github.com/walter-a-jablonowski/msgs" class="project-link" target="_blank">Projekt
                   ansehen</a>
               </div>
               <div class="project-card">
                 <div class="project-image">
                   <a href="https://github.com/walter-a-jablonowski/file-loader" target="_blank">
-                    <img src="misc/img/file-loader.svg" alt="Sample Class">
+                    <img src="misc/img/file-loader.svg" alt="File Loader">
                   </a>
                 </div>
-                <h3>Beispielklasse</h3>
-                <p>Erm&ouml;glicht das Auffinden von Dateien, die m&ouml;glicherweise verschoben wurden. Eigener Code mit KI verbessert.</p>
+                <h3>File Loader</h3>
+                <p>Findet Dateien auch dann noch, wenn sie zwischenzeitlich verschoben wurden. Eigener Code, mit KI
+                  &uuml;berarbeitet.</p>
                 <a href="https://github.com/walter-a-jablonowski/file-loader" class="project-link" target="_blank">Projekt
                   ansehen</a>
-              </div>
-              <div class="project-card">
-                <div class="project-image">
-                  <img src="misc/ShelfSurfer.png" alt="ShelfSurfer">
-                </div>
-                <h3>ShelfSurfer</h3>
-                <p>Einkaufs-App, nutzt Daten vom Sprachassistenten, ist schnell und bietet Preisverfolgung. Code von
-                  KI unter menschlicher Anleitung.</p>
-                <span class="project-link">[ Closed Source ]</span>
-              </div>
-              <div class="project-card">
-                <div class="project-image">
-                  <a href="https://github.com/walter-a-jablonowski/Scheduler/blob/main/lib/Scheduler.php" target="_blank">
-                    <img src="misc/img/scheduler.svg" alt="Sample Code">
-                  </a>
-                </div>
-                <h3>Beispielcode</h3>
-                <p>All-in-One-Scheduler-Klasse. Reduziert den Konfigurationsaufwand bei Cron oder Scheduler und f&uuml;gt Features hinzu.</p>
-                <a href="https://github.com/walter-a-jablonowski/Scheduler/blob/main/lib/Scheduler.php" class="project-link"
-                  target="_blank">Code ansehen</a>
               </div>
               <div class="project-card">
                 <div class="project-image"
@@ -831,7 +797,7 @@
                   </a>
                 </div>
                 <h3>Mehr auf GitHub</h3>
-                <p>Weitere und neue Projekte auf GitHub</p>
+                <p>Weitere Bibliotheken, Werkzeuge und Experimente &ndash; auch das, was gerade neu entsteht.</p>
                 <a href="https://github.com/walter-a-jablonowski" class="project-link" target="_blank">Projekte ansehen</a>
               </div>
             </div>
@@ -1040,13 +1006,13 @@
       });
     })();
   </script>
-  <script src="controller.js?v=26080201"></script>
-  <script src="lib/map.js?v=26080201"></script>
-  <script src="lib/popover.js?v=26080201"></script>
-  <script src="lib/config.js?v=26080201"></script>
-  <script src="lib/voice-agent/agent.js?v=26080201"></script>
-  <script src="lib/voice-agent/sidebar.js?v=26080201"></script>
-  <script src="lib/voice-agent/use-case-finder.js?v=26080201"></script>
+  <script src="controller.js?v=26080501"></script>
+  <script src="lib/map.js?v=26080501"></script>
+  <script src="lib/popover.js?v=26080501"></script>
+  <script src="lib/config.js?v=26080501"></script>
+  <script src="lib/voice-agent/agent.js?v=26080501"></script>
+  <script src="lib/voice-agent/sidebar.js?v=26080501"></script>
+  <script src="lib/voice-agent/use-case-finder.js?v=26080501"></script>
   <script>
     new WebsiteController();
     new MapController();

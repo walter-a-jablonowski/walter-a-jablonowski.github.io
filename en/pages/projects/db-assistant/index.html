@@ -46,85 +46,15 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../../favicon-16x16.png">
   <link rel="manifest" href="../../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../../styles.css?v=26080201">
-  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26080201">
-  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26080201">
+  <link rel="stylesheet" href="../../../../styles.css?v=26080501">
+  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26080501">
+  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26080501">
   <style>
-    /* Project detail page specific styles */
-    .project-detail {
-      padding: var(--spacing-xxl) 0;
-      background-color: var(--dark);
-      color: var(--white);
-      position: relative;
-    }
-    .project-detail::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(14,14,14,0.95) 0%, rgba(26,26,26,0.85) 100%);
-      z-index: 1;
-    }
-    .project-detail .container { position: relative; z-index: 2; }
-
-    .project-header {
-      display: block;
-    }
-    .project-media {
-      flex: 1 1 340px;
-      background: rgba(255,255,255,0.03);
-      border-radius: var(--border-radius-md);
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-    .project-media img { width: 100%; height: 100%; object-fit: cover; }
-
-    .project-title {
-      flex: 2 1 460px;
-    }
-    .project-title h2 { color: var(--white); margin-top: 0.5rem; }
-    .project-title .underline { margin-top: .5rem; }
-
     /* Typography for converted markdown */
-    .intro-text {
-      font-size: 1.2rem;
-      color: var(--lighter-gray);
-      line-height: 1.8;
-      font-weight: 300;
-      margin-left: 0;
-    }
-    .content { color: var(--lighter-gray); line-height: 1.75; }
-    .content h2, .content h3, .content h4 { color: var(--white); margin-top: var(--spacing-lg); }
-    .content p { margin: 0 0 var(--spacing-md); }
-    .content ul { padding-left: 1.25rem; margin: 0 0 var(--spacing-md); }
+    /* h2/h3 come from page-components.css; h4 stays here on purpose - a shared
+       .content h4 would beat .feature-box h4 on every page with feature cards. */
+    .content h4 { color: var(--white); margin-top: var(--spacing-lg); }
     .content li { margin: .35rem 0; }
-    .content a { color: var(--primary); }
-    .content strong { color: var(--white); }
-    .content blockquote {
-      margin: var(--spacing-md) 0;
-      padding: var(--spacing-md);
-      border-left: 4px solid var(--primary);
-      background: rgba(255,255,255,0.04);
-      border-radius: var(--border-radius-sm);
-    }
-    .content pre {
-      background: #0f0f0f;
-      color: #eee;
-      padding: var(--spacing-md);
-      border-radius: var(--border-radius-sm);
-      overflow: auto;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-    .content code { font-family: var(--font-code); }
-
-    .tech-stack {
-      color: var(--primary);
-      font-weight: 500;
-      font-size: 1.05rem;
-    }
-
-    @media (max-width: 768px) {
-      .project-header { flex-direction: column; }
-    }
   </style>
 </head>
 <body>
@@ -171,9 +101,11 @@
             <ul class="nav-dropdown-menu">
               <li><a href="../../../pages/systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
               <li><a href="../../../pages/systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
-              <li><a href="../../../pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
               <li><a href="../../../pages/systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
-              <li><a href="../../../pages/systems/agentic_db/index.html" class="nav-link">Agent DB</a></li>
+              <li><a href="../../../pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
+              <li><a href="../../../pages/systems/task_board/index.html" class="nav-link">AI Task Board</a></li>
+              <li><a href="../../../pages/systems/agentic_db/index.html" class="nav-link">Agentic DB</a></li>
+              <li><a href="../../../pages/systems/editor/index.html" class="nav-link">AI Built Editor</a></li>
             </ul>
           </li>
           <li class="less-spacing"><a href="../../../index.html#contact" class="nav-link">Contact</a></li>
@@ -276,9 +208,9 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../../lib/config.js?v=26080201"></script>
-  <script src="../../../../controller.js?v=26080201"></script>
-  <script src="../../../../lib/voice-agent/agent.js?v=26080201"></script>
+  <script src="../../../../lib/config.js?v=26080501"></script>
+  <script src="../../../../controller.js?v=26080501"></script>
+  <script src="../../../../lib/voice-agent/agent.js?v=26080501"></script>
   <script>
     new WebsiteController();
   </script>

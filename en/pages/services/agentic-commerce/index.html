@@ -52,52 +52,15 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../../favicon-16x16.png">
   <link rel="manifest" href="../../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../../styles.css?v=26080201">
-  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26080201">
-  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26080201">
+  <link rel="stylesheet" href="../../../../styles.css?v=26080501">
+  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26080501">
+  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26080501">
   <style>
-    /* Service page styles (built on the shared design tokens, aligned with offer.html) */
-    .project-detail {
-      padding: var(--spacing-xxl) 0;
-      background-color: var(--dark);
-      color: var(--white);
-      position: relative;
-    }
-    .project-detail::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(14,14,14,0.95) 0%, rgba(26,26,26,0.85) 100%);
-      z-index: 1;
-    }
-    .project-detail .container { position: relative; z-index: 2; }
-
-    .content { color: var(--lighter-gray); line-height: 1.75; }
-    .content h3 { color: var(--white); margin-top: var(--spacing-lg); }
-    .content h3 .h3-sub { color: var(--light-gray); font-weight: 400; font-size: .9rem; }
-    .content p { margin: 0 0 var(--spacing-md); }
-    .content ul { padding-left: 1.25rem; margin: 0 0 var(--spacing-md); }
-    .content li { margin: .45rem 0; }
-    .content a { color: var(--primary); }
-    .content strong { color: var(--white); }
-    /* Buttons keep their own text color (override the generic .content a rule) */
-    .content a.btn-primary, .content a.btn-secondary { color: var(--white); }
-    .content a.btn-outline { color: var(--primary); }
-    .content a.btn-outline:hover { color: var(--white); }
-
     /* Pin the hero to the top so the eyebrow/headline don't shift when the reveal opens */
     .product-hero { align-items: start; margin-top: var(--spacing-lg); }
 
-    /* Keep the orange highlight (shared CSS scopes .price-hl to .offer-lead only) */
-    .ph-lead .price-hl { color: var(--primary); font-weight: 700; }
-
     /* Tighter gap below the lead on this page (component default is larger) */
     .ph-lead { margin-bottom: .6rem; }
-
-    /* Examples reveal sits in the hero, between lead and the CTA button */
-    .ph-live-slo { margin: 0 0 1.4rem; color: var(--lighter-gray); }
-    .ph-live-slo ul { padding-left: 1.25rem; }
-    .ph-live-slo li { margin: .45rem 0; }
   </style>
   <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
   <script type="application/ld+json">
@@ -188,9 +151,11 @@
             <ul class="nav-dropdown-menu">
               <li><a href="../../../pages/systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
               <li><a href="../../../pages/systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
-              <li><a href="../../../pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
               <li><a href="../../../pages/systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
-              <li><a href="../../../pages/systems/agentic_db/index.html" class="nav-link">Agent DB</a></li>
+              <li><a href="../../../pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
+              <li><a href="../../../pages/systems/task_board/index.html" class="nav-link">AI Task Board</a></li>
+              <li><a href="../../../pages/systems/agentic_db/index.html" class="nav-link">Agentic DB</a></li>
+              <li><a href="../../../pages/systems/editor/index.html" class="nav-link">AI Built Editor</a></li>
             </ul>
           </li>
           <li class="less-spacing"><a href="../../../index.html#contact" class="nav-link">Contact</a></li>
@@ -399,9 +364,9 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../../lib/config.js?v=26080201"></script>
-  <script src="../../../../controller.js?v=26080201"></script>
-  <script src="../../../../lib/voice-agent/agent.js?v=26080201"></script>
+  <script src="../../../../lib/config.js?v=26080501"></script>
+  <script src="../../../../controller.js?v=26080501"></script>
+  <script src="../../../../lib/voice-agent/agent.js?v=26080501"></script>
   <script>
     new WebsiteController();
   </script>

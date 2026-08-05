@@ -276,23 +276,34 @@ class WebsiteController
     document.body.classList.add('has-announcement');
 
     // In persistent-agent mode, links to #about in the bar open the AI overlay
-    // directly (same pattern as the hero "Ask AI" CTA in initPersistentAgent);
-    // the href stays untouched as graceful fallback if the agent is unavailable.
-    if( typeof VOICE_AGENT_CONFIG !== 'undefined' && VOICE_AGENT_CONFIG.persistentAgent ) {
-      bar.querySelectorAll('a[href$="#about"]').forEach(a => {
-        a.addEventListener('click', (e) => {
-          if( window.voiceAgent && typeof window.voiceAgent.open === 'function' ) {
-            e.preventDefault();
-            window.voiceAgent.open();
-          }
-        });
-      });
-    }
+    // directly (same as the hero "Ask AI" CTA and the Voice Agent project card).
+    if( typeof VOICE_AGENT_CONFIG !== 'undefined' && VOICE_AGENT_CONFIG.persistentAgent )
+      this.bindAgentOpen( bar.querySelectorAll('a[href$="#about"]'));
 
     bar.querySelector('.announcement-bar-close').addEventListener('click', () => {
       bar.remove();
       document.body.classList.remove('has-announcement');
       try { sessionStorage.setItem('waj:homepage:offerDismissed', '1'); } catch (e) { /* ignore */ }
+    });
+  }
+
+  /**
+   * Make links open the AI overlay instead of navigating. Their href (#about)
+   * is left untouched and stays the graceful fallback: if the agent never
+   * loaded, or JS is off, the click still lands on the About section.
+   *
+   * Used from three places, all only while persistentAgent is on: the hero
+   * "Ask AI" CTA, the announcement bar, and the Voice Agent project card.
+   */
+  bindAgentOpen( links )
+  {
+    links.forEach(a => {
+      a.addEventListener('click', (e) => {
+        if( window.voiceAgent && typeof window.voiceAgent.open === 'function' ) {
+          e.preventDefault();
+          window.voiceAgent.open();
+        }
+      });
     });
   }
 
@@ -374,13 +385,7 @@ class WebsiteController
     if( heroPrimary ) {
       if( launcherStyle === 'round' ) {
         heroPrimary.setAttribute('href', '#about');   // graceful fallback if JS fails
-        heroPrimary.addEventListener('click', (e) => {
-          // Magically open the overlay panel instead of navigating.
-          if( window.voiceAgent && typeof window.voiceAgent.open === 'function' ) {
-            e.preventDefault();
-            window.voiceAgent.open();
-          }
-        });
+        this.bindAgentOpen([heroPrimary]);            // opens the overlay panel instead of navigating
       } else {
         // Text launcher: the pill is the AI entry point, so this button is no
         // longer "Ask AI" — drop the mic and relabel it to its new target.
@@ -396,6 +401,10 @@ class WebsiteController
         }
       }
     }
+
+    // The Voice Agent project card offers "Projektseite | Demo" - the Demo link
+    // is the agent itself, so it opens the overlay rather than jumping to #about.
+    this.bindAgentOpen( document.querySelectorAll('.project-card a[data-agent-open]'));
 
     const ctaButtons = document.querySelectorAll('.cta-buttons .btn');
     if( ctaButtons[0] ) ctaButtons[0].setAttribute('href', '#contact');   // first -> Contact (label already fits)

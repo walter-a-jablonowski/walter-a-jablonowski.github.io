@@ -579,6 +579,20 @@ span.project-link {
   padding: 8px;
 }
 
+/* Cards that carry two links ("Projektseite | Demo"). .project-card is a column
+   flex container, so each child claims its own row - the pair needs a row
+   wrapper of its own to share one line. */
+.project-links {
+  display: flex;
+  align-items: baseline;
+  gap: .45rem;
+}
+/* Own class rather than span.project-link, whose padding would space it out unevenly. */
+.project-link-sep {
+  margin-top: var(--spacing-sm);
+  color: var(--light-gray);
+}
+
 .carousel-arrow {
   position: absolute;
   top: 50%;

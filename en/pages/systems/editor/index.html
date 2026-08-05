@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="AI Built Editor: a complete in-browser editor library &ndash; about 4,600 lines of demanding JavaScript, its own document model, no framework. Specified and built in steps with AI. Bamberg, Nuremberg and online.">
+  <meta name="keywords" content="AI Built Editor, AI software development, AI-first development, JavaScript library, in-browser editor, contenteditable, Markdown editor, complex software with AI, AI, Artificial Intelligence, Bamberg, Nuremberg">
+  <meta name="author" content="Walter A. Jablonowski">
+  <title>AI Built Editor &ndash; A complex JS library, built with AI | Walter A. Jablonowski</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Walter A. Jablonowski">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="AI Built Editor &ndash; A complex JS library, built with AI">
+  <meta property="og:description" content="4,600 lines of demanding JavaScript, its own document model, no framework &ndash; specified and built with AI. Proof that hard software is within reach today.">
+  <meta property="og:url" content="https://walter-a-jablonowski.github.io/en/pages/systems/editor/">
+  <meta property="og:image" content="https://walter-a-jablonowski.github.io/misc/edit.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://walter-a-jablonowski.github.io/en/" },
+          { "@type": "ListItem", "position": 2, "name": "Systems", "item": "https://walter-a-jablonowski.github.io/en/" },
+          { "@type": "ListItem", "position": 3, "name": "AI Built Editor", "item": "https://walter-a-jablonowski.github.io/en/pages/systems/editor/" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "AI Built Editor",
+        "serviceType": "A complex JavaScript library, specified and built with AI",
+        "description": "A complete in-browser editor library: about 4,600 lines of demanding JavaScript with its own document model, transaction system and cursor synchronisation &ndash; no external library, no build step. Built in ten specified steps with AI, each step with its own test page. At the same time it is evidence that demanding software projects now take days rather than months.",
+        "inLanguage": "en",
+        "url": "https://walter-a-jablonowski.github.io/en/pages/systems/editor/",
+        "provider": { "@type": "Person", "name": "Walter A. Jablonowski", "url": "https://walter-a-jablonowski.github.io/" },
+        "areaServed": [
+          { "@type": "City", "name": "Bamberg" },
+          { "@type": "City", "name": "Nuremberg" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="canonical" href="https://walter-a-jablonowski.github.io/en/pages/systems/editor/">
+  <link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/editor/">
+  <link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/editor/">
+  <link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/editor/">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../../favicon-16x16.png">
+  <link rel="manifest" href="../../../../site.webmanifest">
+  <link rel="stylesheet" href="../../../../styles.css?v=26080501">
+  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26080501">
+  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26080501">
+  <link rel="stylesheet" href="../../../../lib/img_overlay/img_overlay.css?v=26080501">
+  <style>
+    /* Product page styles. Reusable parts (.product-hero, .spec-list, .service-cta
+       exemption) live in page-components.css; the blocks below are local to this page. */
+
+    .content h3 { color: var(--white); margin-top: var(--spacing-xl); }
+    .content code { color: var(--primary); }  /* systems pages tint inline code */
+
+    /* On this page the closing CTA is commercial: hide it under hideBiz
+       (overrides the shared .product-cta exemption via later source order). */
+    body.hide-biz .service-cta.product-cta { display: none; }
+  </style>
+  <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "en",
+    "url": "https://walter-a-jablonowski.github.io/en/pages/systems/editor/index.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does a project like this cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The price depends on the scope and is estimated individually after a first call – what matters is how cleanly the plan can be split into steps you can sign off one by one."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is AI-written code worse code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not when the architecture is settled up front and every step is tested. This library has a cleanly separated model, transactions and rendering – the same structure a hand-written editor would have. The difference is in the pace, not in the quality."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why not use an existing editor library?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Because the well-known editors come with large dependencies, force a build step and resist being bent towards your own syntax. This library is a single <script> tag and it is entirely yours – and that is precisely what AI has made economical."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I put it into my own application?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. A container element, the syntax elements you want and the content as text are enough. Content is read and written as Markdown, so storing it is simple – in a file just as well as in a database."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it finished or still in development?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The library runs and can be tried as a live demo; it is in its testing phase. For use at your company it is tailored to your case and tested along the way."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- faq-schema:end -->
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <!-- nav-menu:start | DON'T edit the menu here - edit the template in tools/upd_menu.php, then run it (see CLAUDE.md) -->
+          <li><a href="../../../index.html#hero" class="nav-link">Home</a></li>
+          <li><a href="../../../index.html#about" class="nav-link">Ask AI</a></li>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-head">
+              <a href="../../../index.html#services" class="nav-link">Services</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Services submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li class="nav-dropdown-group">Agents &amp; Workflow</li>
+              <li><a href="../../../pages/services/automation/index.html" class="nav-link">Automation</a></li>
+              <li><a href="../../../pages/services/self-improving/index.html" class="nav-link">Self-improving AI</a></li>
+              <li><a href="../../../pages/services/data-solutions/index.html" class="nav-link">AI Data Solutions</a></li>
+              <li class="nav-dropdown-group">Consulting &amp; Integration</li>
+              <li><a href="../../../pages/services/consulting/index.html" class="nav-link">AI Consulting</a></li>
+              <li><a href="../../../pages/services/security/index.html" class="nav-link">AI Security &amp; Evaluation</a></li>
+              <li><a href="../../../pages/services/integration/index.html" class="nav-link">AI Integration &amp; MCP</a></li>
+              <li class="nav-dropdown-group">Human Interface</li>
+              <li><a href="../../../pages/services/dashboards/index.html" class="nav-link">AI Dashboards</a></li>
+              <li><a href="../../../pages/services/ai-apps/index.html" class="nav-link">Apps that work</a></li>
+              <li class="nav-dropdown-group">Commerce</li>
+              <li><a href="../../../pages/services/agentic-commerce/index.html" class="nav-link">Agentic Commerce</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../../index.html#skills" class="nav-link">Skills</a></li>
+          <li class="nav-dropdown less-spacing">
+            <span class="nav-dropdown-head">
+              <a href="../../../index.html#proj" class="nav-link">Projects</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Projects submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../../../pages/systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
+              <li><a href="../../../pages/systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
+              <li><a href="../../../pages/systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
+              <li><a href="../../../pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
+              <li><a href="../../../pages/systems/task_board/index.html" class="nav-link">AI Task Board</a></li>
+              <li><a href="../../../pages/systems/agentic_db/index.html" class="nav-link">Agentic DB</a></li>
+              <li><a href="../../../pages/systems/editor/index.html" class="nav-link">AI Built Editor</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../../index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="../../../blog.html" class="nav-link">Blog</a></li>
+          <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
+              title="Visit my LinkedIn profile"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link"
+              title="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
+          <li><button type="button" class="nav-link search-link" data-search-open
+              title="Search the site (Ctrl+K)" aria-label="Search"><i class="fas fa-magnifying-glass"></i></button></li>
+          <!-- nav-menu:end -->
+          <li class="lang-switch">
+            <a href="../../../../pages/systems/editor/index.html" class="nav-link" hreflang="de" title="Deutsch">DE</a>
+            <span class="lang-sep">|</span>
+            <a href="index.html" class="nav-link active" hreflang="en" title="English">EN</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="project-detail">
+    <div class="container">
+
+      <!-- 1) Product hero -->
+      <div class="product-hero">
+        <div class="ph-text">
+          <p class="ph-eyebrow">Systems</p>
+          <h1>AI Built Editor</h1>
+          <p class="ph-tagline">4,600 lines of <strong>hard</strong> JavaScript &ndash; built with <strong>AI</strong>, in <strong>days</strong> instead of months.</p>
+          <p class="ph-lead">
+            A complete in-browser editor library: its own document model, a transaction system,
+            cursor synchronisation, extensible syntax &ndash; no framework, no build step, no external
+            library. Exactly the kind of code that is normally filed under "don't write that
+            yourself". This page shows a finished product and, at the same time, how far
+            AI-assisted development carries today.
+          </p>
+          <div class="ph-actions">
+            <a href="https://waj.42web.io/edit_2_demo" target="_blank" class="btn btn-primary"><i class="fas fa-play"></i> Try the live demo</a>
+            <a href="#how" class="btn btn-secondary"><i class="fas fa-gears"></i> How it was built</a>
+          </div>
+          <p class="ph-live"><i class="fas fa-circle"></i> Core engine in 3 days &ndash; the full feature set in roughly two weeks of work.</p>
+        </div>
+        <div class="ph-visual">
+          <figure>
+            <img src="../../../../misc/edit.png" alt="AI Built Editor: collapsible section, list, code block with syntax highlighting, quote and table in the dark theme" loading="lazy">
+            <figcaption class="zoom-hint" title="Enlarge"><i class="fas fa-magnifying-glass-plus" aria-hidden="true"></i> Click to enlarge</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="content">
+
+        <!-- 2) What is it? -->
+        <h3 id="what">What is it?</h3>
+        <p>
+          <strong>AI Built Editor</strong> is an editor library that makes rich content editable
+          right in the browser &ndash; text, headings, lists, tables, code blocks, images, collapsible
+          sections. It is added with a single <code>&lt;script&gt;</code> tag: no npm, no bundler,
+          no server.
+        </p>
+        <p>
+          The remarkable part is not the feature list, it is what sits underneath. An editor that
+          feels right while you type is one of the most thankless problems in frontend development:
+          the browser insists on managing the content, the library insists it knows better, and the
+          cursor ends up in the wrong place either way. This library solves that with a document
+          model of its own &ndash; which makes it solid evidence of what AI produces in a short time.
+        </p>
+        <div class="num-row">
+          <div class="num-box"><span class="num-v">4,600</span><span class="num-k">lines of JavaScript</span></div>
+          <div class="num-box"><span class="num-v">0</span><span class="num-k">external dependencies</span></div>
+          <div class="num-box"><span class="num-v">10</span><span class="num-k">specified build steps</span></div>
+          <div class="num-box"><span class="num-v">3&nbsp;days</span><span class="num-k">to a working engine</span></div>
+        </div>
+
+        <!-- 3) Features -->
+        <h3 id="features">Features</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-feather-pointed"></i></div>
+            <h4>Two modes</h4>
+            <p>Power users see the syntax as soon as the cursor is on a line. In <strong>end user mode</strong> it stays hidden for good &ndash; only the finished result is visible, driven by a toolbar.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-table-cells"></i></div>
+            <h4>Rich content</h4>
+            <p>Tables in two notations, code blocks with syntax highlighting, images, links, quotes and collapsible sections.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-puzzle-piece"></i></div>
+            <h4>Extensible syntax</h4>
+            <p>Every element is its own spec class. A new element means adding one file &ndash; the engine stays untouched.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-code"></i></div>
+            <h4>Your own shorthands</h4>
+            <p>Define inline replacements in JSON: <code>(i)</code> becomes an info icon, <code>((text))</code> becomes dimmed secondary text.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-palette"></i></div>
+            <h4>Themes</h4>
+            <p>Four themes included, light and dark &ndash; or your own CSS. Switchable at runtime.</p>
+          </div>
+        </div>
+
+        <!-- 4) How it was built -->
+        <div class="steps-cols">
+          <div>
+            <h3 id="how">How it was built</h3>
+            <ol class="offer-steps">
+              <li>Architecture first: document model, transactions and rendering settled on paper</li>
+              <li>Broken down into <strong>ten steps</strong> &ndash; each with its own spec and its own test page</li>
+              <li>The AI builds step by step; every step runs before the next one starts</li>
+              <li class="no-num"><strong>The loop:</strong> spec &rarr; implementation &rarr; test page &rarr; next step</li>
+            </ol>
+          </div>
+          <div class="steps-text mini-tabs">
+            <h3 class="mt-heading">Good to know</h3>
+            <div class="mini-tab-links">
+              <button type="button" class="mini-tab-link active" data-tab="overview">Overview</button>
+              <span class="mini-tab-sep">|</span>
+              <button type="button" class="mini-tab-link" data-tab="faq">FAQ</button>
+            </div>
+            <div class="mini-tab-content active" id="mt-overview">
+              <p>
+                The key is not the prompting, it is the <strong>decomposition</strong>. Ask an AI to
+                "build an editor" and you get something that falls apart after five minutes of typing.
+                Specify ten steps and verify each one on its own, and you get a library that holds up.
+              </p>
+              <p>
+                This is exactly the way of working I bring into client projects: <strong>AI does not
+                replace the engineering</strong> &ndash; a clean specification is what turns AI into a fast
+                and dependable tool. The result is ordinary code that you can read, review and carry
+                on developing yourself.
+              </p>
+            </div>
+            <div class="mini-tab-content" id="mt-faq">
+              <div class="faq-list">
+                <details class="samples-reveal">
+                  <summary>What does a project like this cost? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>
+                    <span class="biz-only price-line"><strong>Fixed price once specified</strong> &middot; breaking the work into steps
+                    is part of the offer. </span>The price depends on the scope and is estimated individually
+                    after a first call &ndash; what matters is how cleanly the plan can be split into steps
+                    you can sign off one by one.
+                  </p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Is AI-written code worse code? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Not when the architecture is settled up front and every step is tested. This library has a
+                    cleanly separated model, transactions and rendering &ndash; the same structure a hand-written
+                    editor would have. The difference is in the pace, not in the quality.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Why not use an existing editor library? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Because the well-known editors come with large dependencies, force a build step and resist
+                    being bent towards your own syntax. This library is a single <code>&lt;script&gt;</code> tag and
+                    it is entirely yours &ndash; and that is precisely what AI has made economical.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Can I put it into my own application? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Yes. A container element, the syntax elements you want and the content as text are enough.
+                    Content is read and written as Markdown, so storing it is simple &ndash; in a file just as well
+                    as in a database.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Is it finished or still in development? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>The library runs and can be tried as a live demo; it is in its testing phase. For use at your
+                    company it is tailored to your case and tested along the way.</p>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5) Use cases -->
+        <h3 id="use-cases">Who is it for?</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-lightbulb"></i></div>
+            <h4>The proof of feasibility</h4>
+            <p>If an editor engine can be built in days, so can the tool that has been sitting on your wish list for years.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-file-lines"></i></div>
+            <h4>Editing inside your own apps</h4>
+            <p>Knowledge bases, documentation, notes and reports edited right inside your application &ndash; without a second system.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-users"></i></div>
+            <h4>Non-technical users</h4>
+            <p>End user mode hides every syntax character: anyone who can use a word processor can use this editor.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-robot"></i></div>
+            <h4>A surface for AI content</h4>
+            <p>Review and rework AI-generated text &ndash; in the same Markdown format language models write in anyway.</p>
+          </div>
+        </div>
+
+        <!-- 6) What the editor handles -->
+        <h3 id="syntax">What the editor handles</h3>
+        <ul>
+          <li><strong>Text</strong>: headings, paragraphs, bold, italic, strikethrough, inline code</li>
+          <li><strong>Structure</strong>: nested lists (Tab/Shift+Tab), quotes, horizontal rules</li>
+          <li><strong>Tables</strong>: pipe tables with column alignment plus a simple notation without special characters</li>
+          <li><strong>Code</strong>: fenced blocks with a language tag, optionally syntax highlighted</li>
+          <li><strong>Collapsible sections</strong>: long documents stay readable</li>
+          <li><strong>Images and links</strong>: inserted through a dialog and editable again later via right-click</li>
+        </ul>
+
+        <!-- 7) Tailored -->
+        <h3 id="custom">Tailored to your application</h3>
+        <p>
+          The library is not a closed product, it is a construction kit. For use at your company it is
+          assembled to fit exactly what you need:
+        </p>
+        <ul>
+          <li>Load only the syntax elements that make sense in your context</li>
+          <li>Custom elements for your domain language &ndash; as one more spec class</li>
+          <li>Toolbar and right-click menu composed to your requirements</li>
+          <li>A theme in the design of your application, light or dark</li>
+          <li>Storage as Markdown &ndash; in files, a database or your existing system</li>
+        </ul>
+
+        <!-- 8) Architecture & control -->
+        <div class="highlight-box">
+          <p><i class="fas fa-shield-halved" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>Architecture &amp; control:</strong> A single <code>contenteditable</code> element,
+            but nothing is left to the browser: the library keeps its own <strong>document model</strong>,
+            applies every input to it as a <strong>transaction</strong>, rebuilds the view and then sets
+            the cursor back explicitly from the model. No framework, no build step, no server &ndash; all
+            the code runs in the browser and belongs to you.</p>
+        </div>
+
+        <!-- 9) Tech stack -->
+        <h3 id="stack">Tech stack</h3>
+        <p class="tech-stack">
+          Vanilla JavaScript &bull; contenteditable &bull; custom document model &bull; Markdown &bull; CSS themes &bull; highlight.js (optional)
+        </p>
+
+        <!-- 10) Live demo -->
+        <div class="live-demo">
+          <h3>Try it yourself</h3>
+          <p>The demo runs entirely in the browser &ndash; start typing and watch syntax turn into finished content.</p>
+          <a href="https://waj.42web.io/edit_2_demo" target="_blank" class="btn btn-primary"><i class="fas fa-play"></i> Try the live demo</a>
+        </div>
+
+        <!-- 11) At a glance -->
+        <h3 id="specs">At a glance</h3>
+        <div class="spec-list">
+          <div class="spec-row"><span class="spec-k">Purpose</span><span class="spec-v">edit rich content in the browser, as an embeddable library</span></div>
+          <div class="spec-row"><span class="spec-k">Size</span><span class="spec-v">about 4,600 lines of JavaScript, no external dependency</span></div>
+          <div class="spec-row"><span class="spec-k">How it was made</span><span class="spec-v">with AI, in ten specified steps, each with a test page</span></div>
+          <div class="spec-row"><span class="spec-k">Time</span><span class="spec-v">engine in 3 days, full feature set in roughly two weeks</span></div>
+          <div class="spec-row"><span class="spec-k">Integration</span><span class="spec-v">one <code>&lt;script&gt;</code> tag &ndash; no npm, no bundler, no server</span></div>
+          <div class="spec-row"><span class="spec-k">Format</span><span class="spec-v">Markdown, extended with elements of your own</span></div>
+          <div class="spec-row"><span class="spec-k">Status</span><span class="spec-v">running, in testing &ndash; live demo available</span></div>
+        </div>
+
+        <!-- 12) Related -->
+        <div class="highlight-box">
+          <p><i class="fas fa-lightbulb" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>More than an editor:</strong> this project shows the way of working behind my
+            <a href="../../services/ai-apps/index.html">Apps that work</a> and my
+            <a href="../../services/automation/index.html">Automation</a> &ndash; for the details, see the post
+            <a href="../../blog/250918-02-ai-first-development-boosts-productivity.html">AI-first development boosts productivity</a>.</p>
+        </div>
+
+        <!-- 13) Closing CTA -->
+        <div class="service-cta product-cta">
+          <h3>What would you build if it were quick?</h3>
+          <p>First call is free &ndash; on site in Bamberg/Nuremberg or online.</p>
+          <div class="cta-actions">
+            <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+          <a href="../../../../llms.txt" class="footer-agent-link">For AI agents</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-links">
+          <a href="../../../privacy.html">Privacy</a>
+          <a href="../../../imprint.html">Imprint</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>powered by &copy; Walter A. Jablonowski 2019-2026. Made with AI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="../../../../lib/config.js?v=26080501"></script>
+  <script src="../../../../controller.js?v=26080501"></script>
+  <script src="../../../../lib/voice-agent/agent.js?v=26080501"></script>
+  <script src="../../../../lib/img_overlay/img_overlay.js?v=26080501"></script>
+  <script>
+    new WebsiteController();
+    ImageOverlay.init('.ph-visual img');
+  </script>
+</body>
+</html>

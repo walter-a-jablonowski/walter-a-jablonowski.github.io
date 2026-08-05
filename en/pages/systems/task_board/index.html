@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="AI Task Board: a time-based task board with a built-in AI agent that does the task management for you &ndash; create, replan, clean up. Every change is proposed and confirmed individually. Data in YAML on your own machine. Bamberg, Nuremberg and online.">
+  <meta name="keywords" content="AI task board, AI task management, AI agent tasks, task board, planning, timeline planning, Half Done Hero, AI for SMEs, Bamberg, Nuremberg">
+  <meta name="author" content="Walter A. Jablonowski">
+  <title>AI Task Board &ndash; Task board with an AI agent | Walter A. Jablonowski</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Walter A. Jablonowski">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="AI Task Board &ndash; Task board with an AI agent">
+  <meta property="og:description" content="A task board that does its own housekeeping: the AI agent replans, cleans up and creates &ndash; you just confirm.">
+  <meta property="og:url" content="https://walter-a-jablonowski.github.io/en/pages/systems/task_board/">
+  <meta property="og:image" content="https://walter-a-jablonowski.github.io/misc/hdh.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://walter-a-jablonowski.github.io/en/" },
+          { "@type": "ListItem", "position": 2, "name": "Systems", "item": "https://walter-a-jablonowski.github.io/en/" },
+          { "@type": "ListItem", "position": 3, "name": "AI Task Board", "item": "https://walter-a-jablonowski.github.io/en/pages/systems/task_board/" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "AI Task Board",
+        "serviceType": "Time-based task board with a built-in AI agent",
+        "description": "A time-based task board whose built-in AI agent does the task management itself: it knows the entire board, creates tasks, replans, cleans up and handles large rearrangements with its own tools. Every change is shown as a proposal and accepted individually or all at once. Data lives in YAML files on your own machine or server.",
+        "inLanguage": "en",
+        "url": "https://walter-a-jablonowski.github.io/en/pages/systems/task_board/",
+        "provider": { "@type": "Person", "name": "Walter A. Jablonowski", "url": "https://walter-a-jablonowski.github.io/" },
+        "areaServed": [
+          { "@type": "City", "name": "Bamberg" },
+          { "@type": "City", "name": "Nuremberg" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="canonical" href="https://walter-a-jablonowski.github.io/en/pages/systems/task_board/">
+  <link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/task_board/">
+  <link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/task_board/">
+  <link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/task_board/">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../../favicon-16x16.png">
+  <link rel="manifest" href="../../../../site.webmanifest">
+  <link rel="stylesheet" href="../../../../styles.css?v=26080501">
+  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26080501">
+  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26080501">
+  <link rel="stylesheet" href="../../../../lib/img_overlay/img_overlay.css?v=26080501">
+  <style>
+    /* Product page styles. Reusable parts (.product-hero, .spec-list, .service-cta
+       exemption) live in page-components.css; the blocks below are local to this page. */
+
+    .content h3 { color: var(--white); margin-top: var(--spacing-xl); }
+    .content code { color: var(--primary); }  /* systems pages tint inline code */
+
+    /* On this page the closing CTA is commercial: hide it under hideBiz
+       (overrides the shared .product-cta exemption via later source order). */
+    body.hide-biz .service-cta.product-cta { display: none; }
+  </style>
+  <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "en",
+    "url": "https://walter-a-jablonowski.github.io/en/pages/systems/task_board/index.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does it cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The price depends on how far the board is adapted to the way you work and has to be assessed individually."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the agent mess up my board?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. It changes nothing directly – it proposes every creation, edit, deletion and move. The proposals sit as coloured overlays on the board and only take effect once you accept them, one by one or all together."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I have to use AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The board works entirely by hand: create tasks, drag them around, search, group. The AI agent is an optional addition you can switch on."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which AI model is used?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "That is configurable: OpenRouter (access to practically every common model), Google Gemini, or Ollama for a model running locally on your own hardware."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where does my data live?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In readable YAML files on your own machine or server – per user, with a separate archive per month. Without AI your tasks never leave the building; with AI, whatever the agent needs as context goes to the chosen model – and with a local model, nothing goes anywhere."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- faq-schema:end -->
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <!-- nav-menu:start | DON'T edit the menu here - edit the template in tools/upd_menu.php, then run it (see CLAUDE.md) -->
+          <li><a href="../../../index.html#hero" class="nav-link">Home</a></li>
+          <li><a href="../../../index.html#about" class="nav-link">Ask AI</a></li>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-head">
+              <a href="../../../index.html#services" class="nav-link">Services</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Services submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li class="nav-dropdown-group">Agents &amp; Workflow</li>
+              <li><a href="../../../pages/services/automation/index.html" class="nav-link">Automation</a></li>
+              <li><a href="../../../pages/services/self-improving/index.html" class="nav-link">Self-improving AI</a></li>
+              <li><a href="../../../pages/services/data-solutions/index.html" class="nav-link">AI Data Solutions</a></li>
+              <li class="nav-dropdown-group">Consulting &amp; Integration</li>
+              <li><a href="../../../pages/services/consulting/index.html" class="nav-link">AI Consulting</a></li>
+              <li><a href="../../../pages/services/security/index.html" class="nav-link">AI Security &amp; Evaluation</a></li>
+              <li><a href="../../../pages/services/integration/index.html" class="nav-link">AI Integration &amp; MCP</a></li>
+              <li class="nav-dropdown-group">Human Interface</li>
+              <li><a href="../../../pages/services/dashboards/index.html" class="nav-link">AI Dashboards</a></li>
+              <li><a href="../../../pages/services/ai-apps/index.html" class="nav-link">Apps that work</a></li>
+              <li class="nav-dropdown-group">Commerce</li>
+              <li><a href="../../../pages/services/agentic-commerce/index.html" class="nav-link">Agentic Commerce</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../../index.html#skills" class="nav-link">Skills</a></li>
+          <li class="nav-dropdown less-spacing">
+            <span class="nav-dropdown-head">
+              <a href="../../../index.html#proj" class="nav-link">Projects</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Projects submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../../../pages/systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
+              <li><a href="../../../pages/systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
+              <li><a href="../../../pages/systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
+              <li><a href="../../../pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
+              <li><a href="../../../pages/systems/task_board/index.html" class="nav-link">AI Task Board</a></li>
+              <li><a href="../../../pages/systems/agentic_db/index.html" class="nav-link">Agentic DB</a></li>
+              <li><a href="../../../pages/systems/editor/index.html" class="nav-link">AI Built Editor</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../../index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="../../../blog.html" class="nav-link">Blog</a></li>
+          <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
+              title="Visit my LinkedIn profile"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link"
+              title="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
+          <li><button type="button" class="nav-link search-link" data-search-open
+              title="Search the site (Ctrl+K)" aria-label="Search"><i class="fas fa-magnifying-glass"></i></button></li>
+          <!-- nav-menu:end -->
+          <li class="lang-switch">
+            <a href="../../../../pages/systems/task_board/index.html" class="nav-link" hreflang="de" title="Deutsch">DE</a>
+            <span class="lang-sep">|</span>
+            <a href="index.html" class="nav-link active" hreflang="en" title="English">EN</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="project-detail">
+    <div class="container">
+
+      <!-- 1) Product hero -->
+      <div class="product-hero">
+        <div class="ph-text">
+          <p class="ph-eyebrow">Systems</p>
+          <h1>AI Task Board</h1>
+          <p class="ph-tagline">A task board that does its own <strong>housekeeping</strong> &ndash; you just <strong>confirm</strong>.</p>
+          <p class="ph-lead">
+            Tasks don't pile up in an endless list, they sit on a timeline: Current, Upcoming and then
+            every month, week and coming year. What makes it special is the built-in
+            <strong>AI agent</strong>: it knows the entire board and does the task management with its
+            own tools &ndash; creating, replanning, cleaning up &ndash; while you see and confirm every
+            change before it takes effect.
+          </p>
+          <div class="ph-actions">
+            <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Request a demo</a>
+            <a href="#agent" class="btn btn-secondary"><i class="fas fa-robot"></i> The AI agent</a>
+          </div>
+          <p class="ph-live"><i class="fas fa-circle"></i> Project <strong>Half Done Hero</strong> &ndash; data as YAML files, runs on your own machine or server.</p>
+        </div>
+        <div class="ph-visual">
+          <figure>
+            <img src="../../../../misc/hdh.png" alt="AI Task Board: columns for Current and Upcoming next to a timeline of months with colour-marked task cards" loading="lazy">
+            <figcaption class="zoom-hint" title="Enlarge"><i class="fas fa-magnifying-glass-plus" aria-hidden="true"></i> Click to enlarge</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="content">
+
+        <!-- 2) What is it? -->
+        <h3 id="what">What is it?</h3>
+        <p>
+          <strong>AI Task Board</strong> is a time-based task board. Instead of a list that only ever
+          grows, every task has its place in time: <strong>Current</strong> and <strong>Upcoming</strong>
+          for what is due now, and behind them a continuous timeline of months, weeks and days reaching
+          into future years. Drag a task where it belongs &ndash; or tell the AI agent what should happen.
+        </p>
+        <ul>
+          <li>An AI agent with its own tools that really performs the task management &ndash; it doesn't just phrase suggestions</li>
+          <li>Every change is shown in colour and accepted or rejected individually or all at once</li>
+          <li>A timeline instead of a list: Current, Upcoming, months, weeks, days, following years</li>
+          <li>Automatic archiving at month turn; overdue tasks move themselves to where they belong</li>
+          <li>Data as YAML files on your own machine &ndash; no third-party service in between</li>
+        </ul>
+
+        <!-- 3) Features -->
+        <h3 id="features">Features</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-robot"></i></div>
+            <h4>AI agent</h4>
+            <p>Knows the whole board and creates, edits, deletes and moves &ndash; with tools for large rearrangements too.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-timeline"></i></div>
+            <h4>Timeline</h4>
+            <p>Month, week and day as their own columns &ndash; every following period up to the coming years in a single view.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-box-archive"></i></div>
+            <h4>Keeps itself tidy</h4>
+            <p>Finished tasks move into the archive at month turn, overdue ones into the right month &ndash; without you touching it.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-tags"></i></div>
+            <h4>Tags &amp; grouped view</h4>
+            <p>Hierarchical tags written straight into the text; the grouped view turns them into columns with sub-sections.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-magnifying-glass"></i></div>
+            <h4>Full-text search</h4>
+            <p><code>Ctrl+K</code> searches the entire board &ndash; name, description and tags, sub-tasks included.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-pen-to-square"></i></div>
+            <h4>Rich tasks</h4>
+            <p>Priority, due date, estimated duration, sub-tasks, attachments and a description with its own syntax.</p>
+          </div>
+        </div>
+
+        <!-- 4) How it works -->
+        <div class="steps-cols">
+          <div>
+            <h3 id="how">How it works</h3>
+            <ol class="offer-steps">
+              <li>You write what you need into the AI sidebar &ndash; in plain language</li>
+              <li>The agent reads the <strong>entire board</strong> and picks its <strong>tools</strong></li>
+              <li>Every change appears as a coloured overlay right on the cards</li>
+              <li class="no-num"><strong>Flow:</strong> your request &rarr; agent &rarr; proposal &rarr; your approval</li>
+            </ol>
+          </div>
+          <div class="steps-text mini-tabs">
+            <h3 class="mt-heading">Good to know</h3>
+            <div class="mini-tab-links">
+              <button type="button" class="mini-tab-link active" data-tab="overview">Overview</button>
+              <span class="mini-tab-sep">|</span>
+              <button type="button" class="mini-tab-link" data-tab="faq">FAQ</button>
+            </div>
+            <div class="mini-tab-content active" id="mt-overview">
+              <p>
+                The agent <strong>proposes</strong>, it never acts behind your back. Created cards show up
+                green, edited ones blue, deleted ones red, moved ones orange &ndash; accept each one on its
+                own or discard everything at once.
+              </p>
+              <p>
+                The <strong>model is yours to choose</strong>: OpenRouter for the major providers, Gemini
+                &ndash; or <strong>Ollama</strong> locally on your own machine, in which case not a single
+                task ever leaves the building.
+              </p>
+            </div>
+            <div class="mini-tab-content" id="mt-faq">
+              <div class="faq-list">
+                <details class="samples-reveal">
+                  <summary>What does it cost? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>
+                    <span class="biz-only price-line"><strong>Fixed-price setup</strong> &middot; plus running usage costs
+                    (AI model/APIs, if AI is used). </span>The price depends on how far the board is adapted to the way you
+                    work and has to be assessed individually.
+                  </p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Can the agent mess up my board? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>No. It changes nothing directly &ndash; it proposes every creation, edit, deletion and move. The
+                    proposals sit as coloured overlays on the board and only take effect once you accept them, one by one
+                    or all together.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Do I have to use AI? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>No. The board works entirely by hand: create tasks, drag them around, search, group. The AI agent is
+                    an optional addition you can switch on.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Which AI model is used? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>That is configurable: OpenRouter (access to practically every common model), Google Gemini, or Ollama
+                    for a model running locally on your own hardware.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Where does my data live? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>In readable YAML files on your own machine or server &ndash; per user, with a separate archive per
+                    month. Without AI your tasks never leave the building; with AI, whatever the agent needs as context
+                    goes to the chosen model &ndash; and with a local model, nothing goes anywhere.</p>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5) The AI agent -->
+        <h3 id="agent">The AI agent</h3>
+        <p>
+          Most task managers with &ldquo;AI&rdquo; suggest text. Here the agent works on the board itself.
+          It receives your tasks as context and has <strong>several tools</strong> with which it does the
+          actual management work &ndash; including the kind you would otherwise spend half an hour
+          clicking through:
+        </p>
+        <ul>
+          <li><strong>Create, edit, delete and move</strong> individual tasks and sub-tasks</li>
+          <li><strong>Tools for large rearrangements</strong> &ndash; clean up the whole calendar, or redistribute an overloaded month</li>
+          <li><strong>Replanning</strong> on your terms: &ldquo;everything from this week that isn't urgent goes to next month&rdquo;</li>
+          <li><strong>Proposal mode</strong>: every change marked in colour &ndash; green created, blue edited, red deleted, orange moved</li>
+          <li><strong>Approval stays with you</strong>: accept one, reject one, or apply everything in a single click</li>
+        </ul>
+        <div class="highlight-box">
+          <p><i class="fas fa-circle-check" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>Why this is the difference:</strong> an assistant that only answers just moves the work
+            around. An agent with tools gets it done &ndash; and because nothing takes effect without your
+            confirmation, you give up no control in exchange.</p>
+        </div>
+
+        <!-- 6) Who it fits -->
+        <h3 id="use-cases">Who it fits</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-user-tie"></i></div>
+            <h4>Freelancers &amp; management</h4>
+            <p>Keep many parallel commitments across months in view without constantly re-sorting them.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-diagram-project"></i></div>
+            <h4>Project planning</h4>
+            <p>Milestones on the timeline, sub-tasks per step, replanning by simply telling the agent.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-calendar-day"></i></div>
+            <h4>Day planning</h4>
+            <p>The current column as a plain list, as named time blocks, or as an hour grid with pinned appointments.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-list-check"></i></div>
+            <h4>Recurring work</h4>
+            <p>Regular tasks with their own badges, plus automatic archiving of everything already done.</p>
+          </div>
+        </div>
+
+        <!-- 7) The board in detail -->
+        <h3 id="board">The board in detail</h3>
+        <ul>
+          <li><strong>Current column in three modes</strong>: a plain list, named time blocks (morning, afternoon &hellip;) or a day calendar with an hour grid</li>
+          <li><strong>Task card</strong>: date and time badge, priority icon, recurrence badge and waiting state &ndash; always the most important one first</li>
+          <li><strong>Task dialog</strong> with tabs for description, attachments and sub-tasks; the description itself can be split into tabs of its own</li>
+          <li><strong>Description syntax</strong>: markdown, checklists, foldable sections, links to other tasks, reusable text blocks</li>
+          <li><strong>Tags in the text</strong>: <code>#project/part</code> written into the description becomes a tag &ndash; no second field to maintain</li>
+          <li><strong>Selection mode</strong>: colour tasks orange, yellow or green in one click to group them ad hoc</li>
+        </ul>
+
+        <!-- 8) Tailored -->
+        <h3 id="custom">Tailored to the way you work</h3>
+        <p>
+          AI Task Board is not a rigid off-the-shelf tool &ndash; it is set up around your routine.
+          Adaptable parts include:
+        </p>
+        <ul>
+          <li>AI provider and model &ndash; from the cloud to a local model with no internet at all</li>
+          <li>The agent's tools: what it may do, and what it explicitly may not</li>
+          <li>Time blocks and calendar grid to match your working day</li>
+          <li>Your own text syntax for badges, highlights and markers</li>
+          <li>Time zone, urgency thresholds and display modes per user</li>
+        </ul>
+
+        <!-- 9) Architecture & security -->
+        <div class="highlight-box">
+          <p><i class="fas fa-shield-halved" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>Architecture &amp; control:</strong> backend in <strong>PHP&nbsp;8+</strong>, frontend as
+            lean <strong>vanilla JavaScript</strong> with the Fetch API &ndash; no heavyweight frameworks.
+            Tasks, archive and settings live as <strong>YAML files</strong> per user, so they stay readable,
+            versionable and exportable at any time. The application runs on your own machine or server; with
+            a local model the agent works fully offline as well.</p>
+        </div>
+
+        <!-- 10) Tech stack -->
+        <h3 id="stack">Tech stack</h3>
+        <p class="tech-stack">
+          PHP &bull; YAML &bull; Vanilla JavaScript &bull; Fetch API &bull; Drag &amp; Drop API &bull; AI / LLM &bull; OpenRouter &bull; Ollama &bull; Gemini
+        </p>
+
+        <!-- 11) Request a demo -->
+        <div class="live-demo">
+          <h3>See it in action</h3>
+          <p>I'm happy to show you the AI Task Board live &ndash; ideally on a plan that is actually keeping you busy right now.</p>
+          <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Request a demo</a>
+        </div>
+
+        <!-- 12) At a glance -->
+        <h3 id="specs">At a glance</h3>
+        <div class="spec-list">
+          <div class="spec-row"><span class="spec-k">Purpose</span><span class="spec-v">time-based task board with an AI agent</span></div>
+          <div class="spec-row"><span class="spec-k">AI agent</span><span class="spec-v">several tools, works in proposal mode with your approval</span></div>
+          <div class="spec-row"><span class="spec-k">Structure</span><span class="spec-v">Current, Upcoming, months, weeks, days, following years</span></div>
+          <div class="spec-row"><span class="spec-k">Views</span><span class="spec-v">board, grouped by tag, time blocks, day calendar</span></div>
+          <div class="spec-row"><span class="spec-k">Storage</span><span class="spec-v">YAML files per user, archive per month</span></div>
+          <div class="spec-row"><span class="spec-k">Models</span><span class="spec-v">OpenRouter, Gemini or Ollama (local)</span></div>
+          <div class="spec-row"><span class="spec-k">Operation</span><span class="spec-v">on your own machine or server</span></div>
+        </div>
+
+        <!-- 13) Related -->
+        <div class="highlight-box">
+          <p><i class="fas fa-lightbulb" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>More than a task board:</strong> AI Task Board is an example of my
+            <a href="../../services/ai-apps/index.html">apps that work</a> and of
+            <a href="../../services/automation/index.html">automation</a> &ndash; applications where an agent
+            takes the work over instead of merely commenting on it.</p>
+        </div>
+
+        <!-- 14) Closing CTA -->
+        <div class="service-cta product-cta">
+          <h3>AI Task Board for your planning</h3>
+          <p>First conversation free &ndash; on site in Bamberg/Nuremberg or online.</p>
+          <div class="cta-actions">
+            <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+          <a href="../../../../llms.txt" class="footer-agent-link">For AI agents</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-links">
+          <a href="../../../privacy.html">Privacy</a>
+          <a href="../../../imprint.html">Imprint</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>powered by &copy; Walter A. Jablonowski 2019-2026. Made with AI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="../../../../lib/config.js?v=26080501"></script>
+  <script src="../../../../controller.js?v=26080501"></script>
+  <script src="../../../../lib/voice-agent/agent.js?v=26080501"></script>
+  <script src="../../../../lib/img_overlay/img_overlay.js?v=26080501"></script>
+  <script>
+    new WebsiteController();
+    ImageOverlay.init('.ph-visual img');
+  </script>
+</body>
+</html>

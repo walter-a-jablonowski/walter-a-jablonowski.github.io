@@ -28,9 +28,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
   <link rel="manifest" href="../site.webmanifest">
-  <link rel="stylesheet" href="../styles.css?v=26080201">
-  <link rel="stylesheet" href="../lib/fontawesome/css/all.min.css?v=26080201">
-  <link rel="stylesheet" href="../lib/fonts/fonts.css?v=26080201">
+  <link rel="stylesheet" href="../styles.css?v=26080501">
+  <link rel="stylesheet" href="../lib/fontawesome/css/all.min.css?v=26080501">
+  <link rel="stylesheet" href="../lib/fonts/fonts.css?v=26080501">
   <!-- Suppress the loading screen instantly when navigating within the site (e.g. back from a sub page) -->
   <script>
     try {
@@ -39,7 +39,7 @@
     } catch (e) {}
   </script>
   <!-- Alternative cookie consent implementation for GitHub Pages (original doesn't work) -->
-  <script src="../cookie-fix.js?v=26080201"></script>
+  <script src="../cookie-fix.js?v=26080501"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -50,7 +50,7 @@
         "url": "https://walter-a-jablonowski.github.io/en/",
         "name": "AI Developer & AI Consultant Bamberg & Nuremberg | Walter A. Jablonowski",
         "inLanguage": "en",
-        "dateModified": "2026-08-02",
+        "dateModified": "2026-08-05",
         "about": { "@id": "https://walter-a-jablonowski.github.io/#person" },
         "mainEntity": { "@id": "https://walter-a-jablonowski.github.io/#service" }
       },
@@ -168,9 +168,11 @@
             <ul class="nav-dropdown-menu">
               <li><a href="pages/systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
               <li><a href="pages/systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
-              <li><a href="pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
               <li><a href="pages/systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
-              <li><a href="pages/systems/agentic_db/index.html" class="nav-link">Agent DB</a></li>
+              <li><a href="pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
+              <li><a href="pages/systems/task_board/index.html" class="nav-link">AI Task Board</a></li>
+              <li><a href="pages/systems/agentic_db/index.html" class="nav-link">Agentic DB</a></li>
+              <li><a href="pages/systems/editor/index.html" class="nav-link">AI Built Editor</a></li>
             </ul>
           </li>
           <li class="less-spacing"><a href="#contact" class="nav-link">Contact</a></li>
@@ -673,113 +675,95 @@
             <div class="project-cards-container">
               <div class="project-card">
                 <div class="project-image">
-                  <img src="../misc/agent-thumb.png" alt="ShelfSurfer">
-                </div>
-                <h3>My own AI Agent</h3>
-                <p>Done in PHP which is available on most webservers. <span class="project-badge">preview</span></p>
-                <span class="project-link">[ Early preview ]</span>
-              </div>
-              <div class="project-card">
-                <div class="project-image">
-                  <a href="pages/projects/coin-pos/index.html">
-                    <img src="../misc/btc-thumb.png" alt="Voice Agent">
+                  <a href="pages/systems/web_agent/index.html">
+                    <img src="../misc/voice.png" alt="Website AI Agent">
                   </a>
                 </div>
-                <h3>AI and Blockchain</h3>
-                <p>Track when an AI / blockchain use case goes through the roof.</p>
-                <a href="pages/projects/coin-pos/index.html" class="project-link">Project page</a>
-              </div>
-              <div class="project-card">
-                <div class="project-image">
-                  <a href="pages/projects/log-view/index.html">
-                    <img src="../misc/log-2-thumb.png" alt="Voice Agent">
-                  </a>
+                <h3>Website AI Agent</h3>
+                <p>An AI assistant your visitors can talk to: answers in real time, guides them to the right page,
+                  multilingual. You are using it right now &ndash; the button at the bottom right.</p>
+                <div class="project-links">
+                  <a href="pages/systems/web_agent/index.html" class="project-link">Project page</a>
+                  <span class="project-link-sep">|</span>
+                  <!-- opens the agent overlay via controller.bindAgentOpen(); #about is the fallback -->
+                  <a href="#about" class="project-link" data-agent-open>Demo</a>
                 </div>
-                <h3>AI powered logs</h3>
-                <p>Done in one 3 days: Ask AI questions about huge logs.</p>
-                <a href="pages/projects/log-view/index.html" class="project-link">Project page</a>
               </div>
               <div class="project-card">
                 <div class="project-image">
-                  <a href="pages/projects/dashb/index.html">
-                    <img src="../misc/dashb-2-thumb.png" alt="Voice Agent">
-                  </a>
-                </div>
-                <h3>Dashboard <span class="project-badge">preview</span></h3>
-                <p>Everything you care about in one place. AI integration and control of personal AI swarm.</p>
-                <a href="pages/projects/dashb/index.html" class="project-link">Project page</a>
-              </div>
-              <div class="project-card">
-                <div class="project-image">
-                  <a href="https://waj.42web.io/edit_2_demo" target="_blank">
-                    <img src="../misc/edit-thumb.png" alt="Voice Agent">
-                  </a>
-                </div>
-                <h3>In-Browser editor</h3>
-                <p>Edit rich content directly in the browser. Extended markdown syntax, advanced UI elements. <span class="state-badge">testing</span></p>
-                <a href="https://waj.42web.io/edit_2_demo"  target="_blank" class="project-link">Try live demo</a>
-              </div>
-              <div class="project-card">
-                <div class="project-image">
-                  <a href="https://waj.42web.io/hdh_demo" target="_blank">
-                    <img src="../misc/hdh-thumb.png" alt="Voice Agent">
-                  </a>
-                </div>
-                <h3>Half Done Hero</h3>
-                <p>Time management appplication (in development). Gain better overview, work less through AI features. <span class="state-badge">testing</span></p>
-                <a href="https://waj.42web.io/hdh_demo"  target="_blank" class="project-link">Try live demo</a>
-              </div>
-              <div class="project-card">
-                <div class="project-image">
-                  <a href="pages/projects/db-assistant/index.html">
-                    <img src="../misc/db-agent.png" alt="Voice Agent">
+                  <a href="pages/systems/data_chat/index.html">
+                    <img src="../misc/db-agent.png" alt="Chat with Data">
                   </a>
                 </div>
                 <h3>Chat with Data</h3>
-                <p>Ask questions about the data in database(s). Includes AI generated diagrams. Made with Python and Flask.</p>
-                <a href="pages/projects/db-assistant/index.html" class="project-link">Project page</a>
+                <p>Ask your company data questions in plain everyday language. The AI builds a safe, read-only query and
+                  returns tables, summaries and charts &ndash; fully local on request.</p>
+                <a href="pages/systems/data_chat/index.html" class="project-link">Project page</a>
               </div>
               <div class="project-card">
                 <div class="project-image">
-                  <a href="#about">
-                    <img src="../misc/voice.png" alt="Voice Agent">
+                  <a href="pages/systems/log-view/index.html">
+                    <img src="../misc/log-2-thumb.png" alt="AI Log Viewer">
                   </a>
                 </div>
-                <h3>Voice Agent</h3>
-                <p>AI voice agent for websites. It can answer questions about a company or person using user defined content.</p>
-                <a href="#about" class="project-link">Try Demo</a>
+                <h3>AI Log Viewer</h3>
+                <p>All your logs in one place: filter them with a powerful expression syntax and let the AI explain them.
+                  Any format, 100,000+ entries &ndash; built in 3 days.</p>
+                <a href="pages/systems/log-view/index.html" class="project-link">Project page</a>
               </div>
               <div class="project-card">
                 <div class="project-image">
-                  <a href="pages/projects/ninja-snipp/index.html">
-                    <img src="../pages/projects/ninja-snipp/img.png" alt="Sample App">
+                  <a href="pages/systems/seo_agent/index.html">
+                    <img src="../misc/automation-placeholder.svg" alt="SEO Agent">
                   </a>
                 </div>
-                <h3>NinjaSnipp</h3>
-                <p>File system based snippet app with nested includes, also for prompt management. Made with AI. <span class="state-badge">extending</span></p>
-                <a href="pages/projects/ninja-snipp/index.html" class="project-link">Project page</a>
+                <h3>SEO Agent</h3>
+                <p>A scheduled AI agent improves the website, content and structure &ndash; for Google and
+                  AI search. Changes go live only after your approval. <span class="state-badge">experimental</span></p>
+                <a href="pages/systems/seo_agent/index.html" class="project-link">Project page</a>
               </div>
               <div class="project-card">
                 <div class="project-image">
-                  <a href="https://waj.42web.io/overview/index.php?board=default&tab=2" target="_blank">
-                    <img src="../misc/app.png" alt="Sample App">
+                  <a href="pages/systems/task_board/index.html">
+                    <img src="../misc/hdh-thumb.png" alt="Half Done Hero">
                   </a>
                 </div>
-                <h3>Overview <span class="state-badge">extending</span></h3>
-                <p>App that compresses a large amount of information in a small overview. Code created by AI under human guidance.</p>
-                <a href="https://waj.42web.io/overview/index.php?board=default&tab=2" class="project-link" target="_blank">
-                  View Demo
-                </a>
+                <h3>AI Task Board</h3>
+                <p>Tasks on a timeline instead of an endless list. The built-in AI agent creates, replans and cleans up
+                  &ndash; every change is confirmed by you. <span class="state-badge">testing</span></p>
+                <a href="pages/systems/task_board/index.html" class="project-link">Project page</a>
+              </div>
+              <div class="project-card">
+                <div class="project-image">
+                  <a href="pages/systems/agentic_db/index.html">
+                    <img src="../misc/automation-placeholder.svg" alt="Agentic DB">
+                  </a>
+                </div>
+                <h3>Agentic DB</h3>
+                <p>A knowledge base that a KeeperAgent sorts, splits and indexes on its own. Atomic,
+                  versioned, fully undoable &ndash; and without the AI just an ordinary folder of files. <span class="state-badge">experimental</span></p>
+                <a href="pages/systems/agentic_db/index.html" class="project-link">Project page</a>
+              </div>
+              <div class="project-card">
+                <div class="project-image">
+                  <a href="pages/systems/editor/index.html">
+                    <img src="../misc/edit-thumb.png" alt="AI Built Editor">
+                  </a>
+                </div>
+                <h3>AI Built Editor</h3>
+                <p>Edit rich content directly in the browser: extended markdown syntax, its own document model. 4,600 lines of JavaScript &ndash; built with AI in days instead of months. <span class="state-badge">testing</span></p>
+                <a href="pages/systems/editor/index.html" class="project-link">Project page</a>
               </div>
               <div class="project-card">
                 <div class="project-image">
                   <a href="https://github.com/walter-a-jablonowski/Filter" target="_blank">
-                    <img src="../misc/img/bool-filter.svg" alt="Sample Class">
+                    <img src="../misc/img/bool-filter.svg" alt="Filter library">
                   </a>
                 </div>
-                <h3>Sample Class</h3>
-                <p>Easily define complex conditions, usable e.g. for filtering data, web crawlers, and so on. I also
-                  have a <a href="https://github.com/walter-a-jablonowski/Filter.py" target="_blank">Python version</a>.
+                <h3>Filter library</h3>
+                <p>Describe complex conditions declaratively instead of coding them out &ndash; for filtering data, web
+                  crawlers and the like. There is also
+                  a <a href="https://github.com/walter-a-jablonowski/Filter.py" target="_blank">Python version</a>.
                 </p>
                 <a href="https://github.com/walter-a-jablonowski/Filter" target="_blank">View Project</a>
               </div>
@@ -789,41 +773,22 @@
                     <img src="../misc/comp.png" alt="Component">
                   </a>
                 </div>
-                <h3>Component</h3>
-                <p>Component that enables sending messages from server to browser. Made with help of AI.</p>
+                <h3>Server messages</h3>
+                <p>Small component that shows messages sent from the server in the browser &ndash; drop it in once, use it
+                  everywhere. Made with help of AI.</p>
                 <a href="https://github.com/walter-a-jablonowski/msgs" class="project-link" target="_blank">View
                   Project</a>
               </div>
               <div class="project-card">
                 <div class="project-image">
                   <a href="https://github.com/walter-a-jablonowski/file-loader" target="_blank">
-                    <img src="../misc/img/file-loader.svg" alt="Sample Class">
+                    <img src="../misc/img/file-loader.svg" alt="File Loader">
                   </a>
                 </div>
-                <h3>Sample Class</h3>
-                <p>Enables to find files that might have been moved. Self-made code was improved with AI.</p>
+                <h3>File Loader</h3>
+                <p>Still finds your files after they have been moved somewhere else. Self-made code, reworked with AI.</p>
                 <a href="https://github.com/walter-a-jablonowski/file-loader" class="project-link" target="_blank">View
                   Project</a>
-              </div>
-              <div class="project-card">
-                <div class="project-image">
-                  <img src="../misc/ShelfSurfer.png" alt="ShelfSurfer">
-                </div>
-                <h3>ShelfSurfer</h3>
-                <p>Groceries application, uses data from voice assistant, is fast and features price tracking. Code by
-                  AI under human guidance.</p>
-                <span class="project-link">[ Closed source ]</span>
-              </div>
-              <div class="project-card">
-                <div class="project-image">
-                  <a href="https://github.com/walter-a-jablonowski/Scheduler/blob/main/lib/Scheduler.php" target="_blank">
-                    <img src="../misc/img/scheduler.svg" alt="Sample Code">
-                  </a>
-                </div>
-                <h3>Sample Code</h3>
-                <p>All-in-one scheduler class. Reduces config work in cron or scheduler, adds features.</p>
-                <a href="https://github.com/walter-a-jablonowski/Scheduler/blob/main/lib/Scheduler.php" class="project-link"
-                  target="_blank">View Code</a>
               </div>
               <div class="project-card">
                 <div class="project-image"
@@ -834,8 +799,8 @@
                       style="width: auto; height: auto; max-width: 100px; max-height: 100px; object-fit: contain;">
                   </a>
                 </div>
-                <h3>More on github</h3>
-                <p>More and new projects on github</p>
+                <h3>More on GitHub</h3>
+                <p>Further libraries, tools and experiments &ndash; including whatever is taking shape right now.</p>
                 <a href="https://github.com/walter-a-jablonowski" class="project-link" target="_blank">View Projects</a>
               </div>
             </div>
@@ -1044,13 +1009,13 @@
       });
     })();
   </script>
-  <script src="../controller.js?v=26080201"></script>
-  <script src="../lib/map.js?v=26080201"></script>
-  <script src="../lib/popover.js?v=26080201"></script>
-  <script src="../lib/config.js?v=26080201"></script>
-  <script src="../lib/voice-agent/agent.js?v=26080201"></script>
-  <script src="../lib/voice-agent/sidebar.js?v=26080201"></script>
-  <script src="../lib/voice-agent/use-case-finder.js?v=26080201"></script>
+  <script src="../controller.js?v=26080501"></script>
+  <script src="../lib/map.js?v=26080501"></script>
+  <script src="../lib/popover.js?v=26080501"></script>
+  <script src="../lib/config.js?v=26080501"></script>
+  <script src="../lib/voice-agent/agent.js?v=26080501"></script>
+  <script src="../lib/voice-agent/sidebar.js?v=26080501"></script>
+  <script src="../lib/voice-agent/use-case-finder.js?v=26080501"></script>
   <script>
     new WebsiteController();
     new MapController();
