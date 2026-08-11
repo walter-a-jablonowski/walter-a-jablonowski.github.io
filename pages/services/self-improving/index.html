@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Selbstverbessernde KI-Systeme: das Unternehmen als geschlossener Kreislauf, der sich mit jedem Durchlauf verbessert &ndash; mehr als Automatisierung. Sicher durch Append-only-Log und menschliche Freigabe. Bamberg, N&uuml;rnberg und online.">
+  <meta name="description" content="Das Unternehmen als Kreislauf, der sich mit jedem Durchlauf verbessert &ndash; gesichert durch Append-only-Log und Freigabe. Bamberg, N&uuml;rnberg und online.">
   <meta name="keywords" content="Selbstverbessernde KI, selbstlernende KI, geschlossener Kreislauf, closed loop, KI-Agenten, Artefakt, self-improving company, Automatisierung, KI f&uuml;r KMU, AI, Artificial Intelligence, K&uuml;nstliche Intelligenz, Bamberg, N&uuml;rnberg">
   <meta name="author" content="Walter A. Jablonowski">
-  <title>Selbstverbessernde KI-Systeme | Walter A. Jablonowski</title>
+  <title>Selbstverbessernde KI</title>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Walter A. Jablonowski">
   <meta property="og:locale" content="de_DE">
-  <meta property="og:title" content="Selbstverbessernde KI-Systeme">
+  <meta property="og:title" content="Selbstverbessernde KI">
   <meta property="og:description" content="Das Unternehmen als geschlossener Kreislauf, der sich mit jedem Durchlauf verbessert &ndash; mehr als Automatisierung.">
   <meta property="og:url" content="https://walter-a-jablonowski.github.io/pages/services/self-improving/">
   <meta property="og:image" content="https://walter-a-jablonowski.github.io/misc/logo_2.png">
@@ -24,13 +24,13 @@
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://walter-a-jablonowski.github.io/" },
           { "@type": "ListItem", "position": 2, "name": "Leistungen", "item": "https://walter-a-jablonowski.github.io/#services" },
-          { "@type": "ListItem", "position": 3, "name": "Selbstverbessernde KI-Systeme", "item": "https://walter-a-jablonowski.github.io/pages/services/self-improving/" }
+          { "@type": "ListItem", "position": 3, "name": "Selbstverbessernde KI", "item": "https://walter-a-jablonowski.github.io/pages/services/self-improving/" }
         ]
       },
       {
         "@type": "Service",
-        "name": "Selbstverbessernde KI-Systeme",
-        "serviceType": "Selbstverbessernde KI-Systeme",
+        "name": "Selbstverbessernde KI",
+        "serviceType": "Selbstverbessernde KI",
         "description": "Das Unternehmen als geschlossener, sich selbst verbessernder Kreislauf: jede Aktion wird zum Artefakt, aus dem die KI lernt &ndash; sicher durch Append-only-Log und menschliche Freigabe.",
         "inLanguage": "de",
         "url": "https://walter-a-jablonowski.github.io/pages/services/self-improving/",
@@ -51,16 +51,17 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
   <link rel="manifest" href="../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../styles.css?v=26080501">
-  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26080501">
-  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26080501">
-  <link rel="stylesheet" href="../../../lib/img_overlay/img_overlay.css?v=26080501">
+  <link rel="stylesheet" href="../../../styles.css?v=26081101">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26081101">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26081101">
+  <link rel="stylesheet" href="../../../lib/img_overlay/img_overlay.css?v=26081101">
   <style>
     /* Pin the hero to the top so the eyebrow/headline don't shift when the reveal opens */
     .product-hero { align-items: start; margin-top: var(--spacing-lg); }
 
-    /* Tighter gap below the lead on this page (component default is larger) */
-    .ph-lead { margin-bottom: 1.2rem; }
+    /* Tighter gap below the lead: the samples reveal follows it and brings its own
+       bottom margin (.ph-live-slo), same as on the automation page */
+    .ph-lead { margin-bottom: .6rem; }
 
     .ph-visual { flex-direction: column; align-items: center; }
     /* Wide diagram instead of a screenshot: overrides the shared .ph-visual figure
@@ -73,12 +74,6 @@
       text-align: left; color: var(--light-gray); font-size: .9rem; margin: .75rem 0 0; line-height: 1.5; }
     .ph-visual figcaption i { color: var(--primary); flex-shrink: 0; margin-top: .15rem; font-size: .85rem; }
     .ph-visual .loop-zoom-hint { cursor: pointer; }
-
-    .ph-text h1 .h1-short { display: none; }
-    @media (max-width: 768px) {
-      .ph-text h1 .h1-full { display: none; }
-      .ph-text h1 .h1-short { display: inline; }
-    }
   </style>
 </head>
 <body>
@@ -123,6 +118,7 @@
               <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Untermen&uuml; Projekte"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
             </span>
             <ul class="nav-dropdown-menu">
+              <li><a href="../../../pages/systems/office_agent/index.html" class="nav-link">Office Agent</a></li>
               <li><a href="../../../pages/systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
               <li><a href="../../../pages/systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
               <li><a href="../../../pages/systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
@@ -157,12 +153,24 @@
       <div class="product-hero">
         <div class="ph-text">
           <p class="ph-eyebrow">Leistungen</p>
-          <h1><span class="h1-full">Selbstverbessernde KI-Systeme</span><span class="h1-short">Selbstverbessernde KI</span></h1>
-          <p class="ph-tagline">Mehr als Automatisierung &ndash; das Unternehmen als <strong>sich selbst verbessernder Kreislauf</strong>.</p>
+          <h1>Selbstverbessernde KI</h1>
+          <p class="ph-tagline">Mehr als Automatisierung: Ihr Betrieb als <strong>lernender Kreislauf</strong>.</p>
           <p class="ph-lead">
-            Jede Aktion wird zum Artefakt, <span class="price-hl">aus dem die KI lernt</span> &ndash; und mit jedem Durchlauf
-            wird die KI besser.
+            Jede Aktion, jede Korrektur und jede Freigabe wird zum Artefakt,
+            <span class="price-hl">aus dem die KI lernt</span> &ndash; und mit jedem Durchlauf l&ouml;st sie
+            dieselbe Aufgabe ein St&uuml;ck besser. Im Prinzip l&auml;sst sich vieles im Unternehmen so abbilden.
+            <span class="badge badge-experimental">Experimentell</span>
           </p>
+          <details class="samples-reveal ph-live-slo">
+            <summary>Einsatzbeispiele zeigen <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <ul>
+              <li>Support-Tickets, die sich zunehmend selbst l&ouml;sen</li>
+              <li>Offerten, die aus gewonnenen Deals lernen</li>
+              <li>Code und Bugfixes, die pro Deployment besser werden</li>
+              <li>Vertragsvorlagen, die neue Klauseln &uuml;bernehmen</li>
+              <li>Dokumentation, die sich selbst aktualisiert</li>
+            </ul>
+          </details>
           <div class="ph-actions">
             <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Kontakt</a>
           </div>
@@ -301,28 +309,6 @@
 
       <div class="content">
 
-        <h3 id="use-cases">Wof&uuml;r Sie es einsetzen k&ouml;nnen</h3>
-        <p>
-          Im Prinzip l&auml;sst sich vieles im Unternehmen als Artefakt abbilden, das sich selbst verbessert.
-          Ein paar Beispiele:
-        </p>
-        <details class="samples-reveal">
-          <summary>Einsatzbeispiele zeigen <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-          <ul>
-            <li><strong>Kundenservice:</strong> Support-Tickets l&ouml;sen sich durch historisches Lernen zunehmend autonom.</li>
-            <li><strong>Onboarding:</strong> HR-Prozesse und Schulungen passen sich automatisch an Feedback an.</li>
-            <li><strong>Softwareentwicklung:</strong> Code-Generierung und Bugfixes verbessern sich pro Deployment.</li>
-            <li><strong>Beschaffung &amp; Einkauf:</strong> Lieferanten- und Vertragsauswertungen optimieren sich von selbst.</li>
-            <li><strong>Qualit&auml;tsmanagement:</strong> Fehlerlisten korrigieren direkt die zugrundeliegenden Abl&auml;ufe.</li>
-            <li><strong>Marketing &amp; Content:</strong> Kampagnen analysieren ihren ROI und passen die n&auml;chste Iteration selbst an.</li>
-            <li><strong>Produktmanagement:</strong> Nutzerfeedback flie&szlig;t direkt in optimierte Feature-Spezifikationen ein.</li>
-            <li><strong>Vertrieb &amp; Sales:</strong> Angebote und Pitch-Decks verbessern ihre Konversion anhand gewonnener/verlorener Deals.</li>
-            <li><strong>Finanzen &amp; Controlling:</strong> Budgetabweichungen verfeinern automatisch die Modelle f&uuml;rs Folgequartal.</li>
-            <li><strong>Recht &amp; Compliance:</strong> Vertragsvorlagen passen sich an neu verhandelte Klauseln und Risikobewertungen an.</li>
-            <li><strong>Wissensmanagement:</strong> Die interne Dokumentation aktualisiert und strukturiert sich durch t&auml;gliche Chats selbst.</li>
-          </ul>
-        </details>
-
         <h3 id="how">Mehr als ein Workflow</h3>
         <p>
           Die meisten KI-L&ouml;sungen werden an bestehende Abl&auml;ufe angeflanscht. Hier ist der Ansatz ein
@@ -338,6 +324,65 @@
             <div class="fb-icon"><i class="fas fa-arrows-rotate"></i></div>
             <h4>Selbstverbesserndes System</h4>
             <p>Verbessert dasselbe Ergebnis permanent &ndash; jeder Lauf lernt aus der gesammelten Historie.</p>
+          </div>
+        </div>
+
+        <h3 id="use-cases">Einsatzbereiche</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-headset"></i></div>
+            <h4>Kundenservice</h4>
+            <p>Support-Tickets l&ouml;sen sich durch historisches Lernen zunehmend autonom.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-user-plus"></i></div>
+            <h4>Onboarding</h4>
+            <p>HR-Prozesse und Schulungen passen sich automatisch an Feedback an.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-code"></i></div>
+            <h4>Softwareentwicklung</h4>
+            <p>Code-Generierung und Bugfixes verbessern sich pro Deployment.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-cart-shopping"></i></div>
+            <h4>Beschaffung &amp; Einkauf</h4>
+            <p>Lieferanten- und Vertragsauswertungen optimieren sich von selbst.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-clipboard-check"></i></div>
+            <h4>Qualit&auml;tsmanagement</h4>
+            <p>Fehlerlisten korrigieren direkt die zugrundeliegenden Abl&auml;ufe.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-bullhorn"></i></div>
+            <h4>Marketing &amp; Content</h4>
+            <p>Kampagnen analysieren ihren ROI und passen die n&auml;chste Iteration selbst an.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-lightbulb"></i></div>
+            <h4>Produktmanagement</h4>
+            <p>Nutzerfeedback flie&szlig;t direkt in optimierte Feature-Spezifikationen ein.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-handshake"></i></div>
+            <h4>Vertrieb &amp; Sales</h4>
+            <p>Angebote und Pitch-Decks verbessern ihre Konversion anhand gewonnener und verlorener Deals.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-chart-pie"></i></div>
+            <h4>Finanzen &amp; Controlling</h4>
+            <p>Budgetabweichungen verfeinern automatisch die Modelle f&uuml;rs Folgequartal.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-scale-balanced"></i></div>
+            <h4>Recht &amp; Compliance</h4>
+            <p>Vertragsvorlagen passen sich an neu verhandelte Klauseln und Risikobewertungen an.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-book"></i></div>
+            <h4>Wissensmanagement</h4>
+            <p>Die interne Dokumentation aktualisiert und strukturiert sich durch t&auml;gliche Chats selbst.</p>
           </div>
         </div>
 
@@ -408,10 +453,10 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../lib/config.js?v=26080501"></script>
-  <script src="../../../controller.js?v=26080501"></script>
-  <script src="../../../lib/voice-agent/agent.js?v=26080501"></script>
-  <script src="../../../lib/img_overlay/img_overlay.js?v=26080501"></script>
+  <script src="../../../lib/config.js?v=26081101"></script>
+  <script src="../../../controller.js?v=26081101"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26081101"></script>
+  <script src="../../../lib/img_overlay/img_overlay.js?v=26081101"></script>
   <script>
     new WebsiteController();
     ImageOverlay.init('.ph-visual svg');

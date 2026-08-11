@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Self-improving AI: the company as a closed loop that gets better with every run &ndash; more than automation. Safe through an append-only log and human approval. Bamberg, Nuremberg and online.">
+  <meta name="description" content="The company as a loop that gets better with every run &ndash; kept safe by an append-only log and human approval. Bamberg, Nuremberg and online.">
   <meta name="keywords" content="self-improving AI, self-learning AI, closed loop, AI agents, artifact, self-improving company, automation, AI for SMB, Bamberg, Nuremberg">
   <meta name="author" content="Walter A. Jablonowski">
-  <title>Self-improving AI | Walter A. Jablonowski</title>
+  <title>Self-improving AI</title>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Walter A. Jablonowski">
   <meta property="og:locale" content="en_US">
@@ -52,16 +52,17 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../../favicon-16x16.png">
   <link rel="manifest" href="../../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../../styles.css?v=26080501">
-  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26080501">
-  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26080501">
-  <link rel="stylesheet" href="../../../../lib/img_overlay/img_overlay.css?v=26080501">
+  <link rel="stylesheet" href="../../../../styles.css?v=26081101">
+  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26081101">
+  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26081101">
+  <link rel="stylesheet" href="../../../../lib/img_overlay/img_overlay.css?v=26081101">
   <style>
     /* Pin the hero to the top so the eyebrow/headline don't shift when the reveal opens */
     .product-hero { align-items: start; margin-top: var(--spacing-lg); }
 
-    /* Tighter gap below the lead on this page (component default is larger) */
-    .ph-lead { margin-bottom: 1.2rem; }
+    /* Tighter gap below the lead: the samples reveal follows it and brings its own
+       bottom margin (.ph-live-slo), same as on the automation page */
+    .ph-lead { margin-bottom: .6rem; }
 
     .ph-visual { flex-direction: column; align-items: center; }
     /* Wide diagram instead of a screenshot: overrides the shared .ph-visual figure
@@ -118,6 +119,7 @@
               <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Projects submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
             </span>
             <ul class="nav-dropdown-menu">
+              <li><a href="../../../pages/systems/office_agent/index.html" class="nav-link">Office Agent</a></li>
               <li><a href="../../../pages/systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
               <li><a href="../../../pages/systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
               <li><a href="../../../pages/systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
@@ -153,11 +155,23 @@
         <div class="ph-text">
           <p class="ph-eyebrow">Services</p>
           <h1>Self-improving AI</h1>
-          <p class="ph-tagline">More than automation &ndash; the company as a <strong>self-improving loop</strong>.</p>
+          <p class="ph-tagline">More than automation: your business as a <strong>learning loop</strong>.</p>
           <p class="ph-lead">
-            Every action becomes an artifact the AI learns from &ndash;
-            getting <span class="price-hl">better with every run</span>.
+            Every action, every correction and every approval becomes an artifact
+            <span class="price-hl">the AI learns from</span> &ndash; so with every run the same task
+            gets done a little better. In principle, much of what a company does can be modeled that way.
+            <span class="badge badge-experimental">Experimental</span>
           </p>
+          <details class="samples-reveal ph-live-slo">
+            <summary>Show use cases <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <ul>
+              <li>Support tickets that increasingly resolve themselves</li>
+              <li>Offers that learn from the deals you won</li>
+              <li>Code and bug fixes that improve with every deployment</li>
+              <li>Contract templates that absorb new clauses</li>
+              <li>Documentation that keeps itself up to date</li>
+            </ul>
+          </details>
           <div class="ph-actions">
             <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Contact</a>
           </div>
@@ -296,28 +310,6 @@
 
       <div class="content">
 
-        <h3 id="use-cases">Where you can use it</h3>
-        <p>
-          In principle, much of what a company does can be modeled as an artifact that improves itself.
-          A few examples:
-        </p>
-        <details class="samples-reveal">
-          <summary>Show use cases <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
-          <ul>
-            <li><strong>Customer service:</strong> support tickets resolve increasingly autonomously through historical learning.</li>
-            <li><strong>Onboarding:</strong> HR processes and training adapt automatically to feedback.</li>
-            <li><strong>Software development:</strong> code generation and bug fixes improve with every deployment.</li>
-            <li><strong>Procurement &amp; purchasing:</strong> supplier and contract analyses optimize themselves.</li>
-            <li><strong>Quality management:</strong> defect lists correct the underlying processes directly.</li>
-            <li><strong>Marketing &amp; content:</strong> campaigns analyze their ROI and adjust the next iteration on their own.</li>
-            <li><strong>Product management:</strong> user feedback flows directly into improved feature specs.</li>
-            <li><strong>Sales:</strong> offers and pitch decks improve their conversion based on won/lost deals.</li>
-            <li><strong>Finance &amp; controlling:</strong> budget variances automatically refine the models for the next quarter.</li>
-            <li><strong>Legal &amp; compliance:</strong> contract templates adapt to newly negotiated clauses and risk assessments.</li>
-            <li><strong>Knowledge management:</strong> internal documentation updates and structures itself from daily chats.</li>
-          </ul>
-        </details>
-
         <h3 id="how">More than a workflow</h3>
         <p>
           Most AI solutions are bolted onto existing processes. Here the approach is different:
@@ -333,6 +325,65 @@
             <div class="fb-icon"><i class="fas fa-arrows-rotate"></i></div>
             <h4>Self-improving system</h4>
             <p>Improves the same result permanently &ndash; each run learns from the accumulated history.</p>
+          </div>
+        </div>
+
+        <h3 id="use-cases">Typical areas</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-headset"></i></div>
+            <h4>Customer service</h4>
+            <p>Support tickets resolve increasingly autonomously through historical learning.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-user-plus"></i></div>
+            <h4>Onboarding</h4>
+            <p>HR processes and training adapt automatically to feedback.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-code"></i></div>
+            <h4>Software development</h4>
+            <p>Code generation and bug fixes improve with every deployment.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-cart-shopping"></i></div>
+            <h4>Procurement &amp; purchasing</h4>
+            <p>Supplier and contract analyses optimize themselves.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-clipboard-check"></i></div>
+            <h4>Quality management</h4>
+            <p>Defect lists correct the underlying processes directly.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-bullhorn"></i></div>
+            <h4>Marketing &amp; content</h4>
+            <p>Campaigns analyze their ROI and adjust the next iteration on their own.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-lightbulb"></i></div>
+            <h4>Product management</h4>
+            <p>User feedback flows directly into improved feature specs.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-handshake"></i></div>
+            <h4>Sales</h4>
+            <p>Offers and pitch decks improve their conversion based on won and lost deals.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-chart-pie"></i></div>
+            <h4>Finance &amp; controlling</h4>
+            <p>Budget variances automatically refine the models for the next quarter.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-scale-balanced"></i></div>
+            <h4>Legal &amp; compliance</h4>
+            <p>Contract templates adapt to newly negotiated clauses and risk assessments.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-book"></i></div>
+            <h4>Knowledge management</h4>
+            <p>Internal documentation updates and structures itself from daily chats.</p>
           </div>
         </div>
 
@@ -402,10 +453,10 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../../lib/config.js?v=26080501"></script>
-  <script src="../../../../controller.js?v=26080501"></script>
-  <script src="../../../../lib/voice-agent/agent.js?v=26080501"></script>
-  <script src="../../../../lib/img_overlay/img_overlay.js?v=26080501"></script>
+  <script src="../../../../lib/config.js?v=26081101"></script>
+  <script src="../../../../controller.js?v=26081101"></script>
+  <script src="../../../../lib/voice-agent/agent.js?v=26081101"></script>
+  <script src="../../../../lib/img_overlay/img_overlay.js?v=26081101"></script>
   <script>
     new WebsiteController();
     ImageOverlay.init('.ph-visual svg');

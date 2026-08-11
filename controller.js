@@ -132,8 +132,8 @@ class WebsiteController
 
     const isDe = (document.documentElement.lang || 'en').toLowerCase().startsWith('de');
     const text = isDe
-      ? 'Klicken Sie hier, um Ihren Use Case zu finden'
-      : 'Click here to find your use case';
+      ? 'Klicken Sie hier, um Ihren KI Use Case zu finden'
+      : 'Click here to find your AI use case';
     const closeLabel = isDe ? 'Hinweis schlie&szlig;en' : 'Dismiss';
 
     const tip = document.createElement('div');

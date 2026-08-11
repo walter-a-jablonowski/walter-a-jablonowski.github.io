@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Modulare KI f&uuml;r Back-Office-Arbeit: Rechnungen erfassen, Dokumente einordnen, Tickets vorsortieren. L&auml;uft im Haus, mit Freigabe durch den Menschen.">
+  <meta name="keywords" content="Office Agent, Back-Office Automatisierung, Rechnungseingang KI, Dokumentenverarbeitung, Belegerfassung, GoBD, on-premise KI, AI, Artificial Intelligence, K&uuml;nstliche Intelligenz, Bamberg, N&uuml;rnberg">
+  <meta name="author" content="Walter A. Jablonowski">
+  <title>Office Agent &ndash; KI-Automatisierung f&uuml;rs Back-Office</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Walter A. Jablonowski">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="Office Agent &ndash; KI-Automatisierung f&uuml;rs Back-Office">
+  <meta property="og:description" content="Rechnungen, Dokumente, Tickets: Jeder Anwendungsfall ist eine Konfiguration &uuml;ber denselben gepr&uuml;ften Bausteinen &ndash; im Haus, mit Freigabe durch den Menschen.">
+  <meta property="og:url" content="https://walter-a-jablonowski.github.io/pages/systems/office_agent/">
+  <meta property="og:image" content="https://walter-a-jablonowski.github.io/misc/automation-placeholder.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://walter-a-jablonowski.github.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Systeme", "item": "https://walter-a-jablonowski.github.io/" },
+          { "@type": "ListItem", "position": 3, "name": "Office Agent", "item": "https://walter-a-jablonowski.github.io/pages/systems/office_agent/" }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Office Agent",
+        "applicationCategory": "BusinessApplication",
+        "description": "Modulare KI-Automatisierung f&uuml;r Dokumenten- und Wissensarbeit im Back-Office. Jeder Anwendungsfall ist eine Konfiguration &uuml;ber festen Bausteinen; Freigaben, Nachvollziehbarkeit und Pr&uuml;fungen sind Teil des Systems.",
+        "inLanguage": "de",
+        "url": "https://walter-a-jablonowski.github.io/pages/systems/office_agent/",
+        "provider": { "@type": "Person", "name": "Walter A. Jablonowski", "url": "https://walter-a-jablonowski.github.io/" },
+        "areaServed": [
+          { "@type": "City", "name": "Bamberg" },
+          { "@type": "City", "name": "N&uuml;rnberg" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="canonical" href="https://walter-a-jablonowski.github.io/pages/systems/office_agent/">
+  <link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/office_agent/">
+  <link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/office_agent/">
+  <link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/office_agent/">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
+  <link rel="manifest" href="../../../site.webmanifest">
+  <link rel="stylesheet" href="../../../styles.css?v=26081101">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26081101">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26081101">
+  <style>
+    /* Product page styles. Reusable parts (.product-hero, .loop-figure, .spec-list)
+       live in page-components.css; the blocks below are local to this page. */
+
+    .content h3 { color: var(--white); margin-top: var(--spacing-xl); }
+
+    /* On this page the closing CTA is commercial: hide it under hideBiz
+       (overrides the shared .product-cta exemption via later source order). */
+    body.hide-biz .service-cta.product-cta { display: none; }
+  </style>
+  <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "de",
+    "url": "https://walter-a-jablonowski.github.io/pages/systems/office_agent/index.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Kann ich Office Agent schon einsetzen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Office Agent ist in Entwicklung. Der Kern läuft, der erste Anwendungsfall – Rechnungseingang – entsteht gerade. Bei Interesse melden Sie sich gern: frühe Pilotprojekte bestimmen mit, welche Module zuerst kommen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Läuft das bei uns im Haus?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, auf Ihrer Infrastruktur oder in Ihrer privaten Cloud. Ein Mandant, keine gemeinsam genutzten Dienste, keine Telemetrie."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Verlassen unsere Dokumente das Haus?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nur, wenn Sie ein Cloud-Modell wählen. Der Modell-Endpunkt ist pro Installation konfigurierbar – mit einem lokalen Modell bleibt jedes Dokument auf Ihrer Hardware."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Entscheidet die KI über Zahlungen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nein. Ob eine Freigabe stattfindet, legt das Rezept fest, nie das Modell. Änderungen an Bankverbindung oder Empfänger brauchen ein eigenes Recht und laufen nie automatisch durch."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was passiert bei einem Absturz mitten im Lauf?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Der Lauf ist dauerhaft gespeichert und wird nach dem Neustart fortgesetzt. Jeder Schreibvorgang trägt einen Schlüssel gegen Doppelbuchungen; wo das Zielsystem das nicht hergibt, liest das System nach oder legt den Fall einem Menschen vor."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was ist mit GoBD und DSGVO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Der eingegangene Beleg wird unverändert archiviert, ausgelesene Werte liegen getrennt daneben. Das Audit-Protokoll ist anfügend und ohne Löschrecht, und personenbezogene Daten hängen an einem Geltungsbereich, über den sie gelöscht werden können."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Brauche ich pro Anwendungsfall ein neues Programm?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nein. Ein Anwendungsfall ist eine Konfigurationsdatei über bestehenden Bausteinen. Braucht er wirklich neuen Code, fehlt ein Baustein – und das ist eine bewusste Erweiterung, keine Routine."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- faq-schema:end -->
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <!-- nav-menu:start | DON'T edit the menu here - edit the template in tools/upd_menu.php, then run it (see CLAUDE.md) -->
+          <li><a href="../../../index.html#hero" class="nav-link">Start</a></li>
+          <li><a href="../../../index.html#about" class="nav-link">KI fragen</a></li>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-head">
+              <a href="../../../index.html#services" class="nav-link">Leistungen</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Untermen&uuml; Leistungen"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li class="nav-dropdown-group">Agents &amp; Workflow</li>
+              <li><a href="../../../pages/services/automation/index.html" class="nav-link">Automatisierung</a></li>
+              <li><a href="../../../pages/services/self-improving/index.html" class="nav-link">Selbstverbessernde KI</a></li>
+              <li><a href="../../../pages/services/data-solutions/index.html" class="nav-link">KI-Datenl&ouml;sungen</a></li>
+              <li class="nav-dropdown-group">Consulting &amp; Integration</li>
+              <li><a href="../../../pages/services/consulting/index.html" class="nav-link">AI Beratung</a></li>
+              <li><a href="../../../pages/services/security/index.html" class="nav-link">Security &amp; Evaluierung</a></li>
+              <li><a href="../../../pages/services/integration/index.html" class="nav-link">KI-Integration &amp; MCP</a></li>
+              <li class="nav-dropdown-group">Human Interface</li>
+              <li><a href="../../../pages/services/dashboards/index.html" class="nav-link">KI Dashboards</a></li>
+              <li><a href="../../../pages/services/ai-apps/index.html" class="nav-link">Apps, die arbeiten</a></li>
+              <li class="nav-dropdown-group">Commerce</li>
+              <li><a href="../../../pages/services/agentic-commerce/index.html" class="nav-link">Agentic Commerce</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../../index.html#skills" class="nav-link">Kenntnisse</a></li>
+          <li class="nav-dropdown less-spacing">
+            <span class="nav-dropdown-head">
+              <a href="../../../index.html#proj" class="nav-link">Projekte</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Untermen&uuml; Projekte"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../../../pages/systems/office_agent/index.html" class="nav-link">Office Agent</a></li>
+              <li><a href="../../../pages/systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
+              <li><a href="../../../pages/systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
+              <li><a href="../../../pages/systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
+              <li><a href="../../../pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
+              <li><a href="../../../pages/systems/task_board/index.html" class="nav-link">AI Task Board</a></li>
+              <li><a href="../../../pages/systems/agentic_db/index.html" class="nav-link">Agentic DB</a></li>
+              <li><a href="../../../pages/systems/editor/index.html" class="nav-link">AI Built Editor</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../../index.html#contact" class="nav-link">Kontakt</a></li>
+          <li><a href="../../../blog.html" class="nav-link">Blog</a></li>
+          <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
+              title="Mein LinkedIn-Profil besuchen"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link"
+              title="Mein GitHub-Profil besuchen"><i class="fab fa-github"></i></a></li>
+          <li><button type="button" class="nav-link search-link" data-search-open
+              title="Website durchsuchen (Strg+K)" aria-label="Suche"><i class="fas fa-magnifying-glass"></i></button></li>
+          <!-- nav-menu:end -->
+          <li class="lang-switch">
+            <a href="index.html" class="nav-link active" hreflang="de" title="Deutsch">DE</a>
+            <span class="lang-sep">|</span>
+            <a href="../../../en/pages/systems/office_agent/index.html" class="nav-link" hreflang="en" title="English">EN</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="project-detail">
+    <div class="container">
+
+      <!-- 1) Product hero -->
+      <div class="product-hero">
+        <div class="ph-text">
+          <p class="ph-eyebrow">Systeme</p>
+          <h1>Office Agent</h1>
+          <p class="ph-tagline">Back-Office-Arbeit, die <strong>von selbst l&auml;uft</strong> &ndash; mit Freigabe an den Stellen, wo es z&auml;hlt.</p>
+          <p class="ph-lead">
+            Rechnungen erfassen und pr&uuml;fen, Dokumente einordnen, Tickets vorsortieren,
+            Fragen aus Firmenunterlagen beantworten. Ein modulares System, das bei Ihnen im Haus
+            l&auml;uft: Jeder Anwendungsfall ist eine Konfiguration &uuml;ber immer denselben
+            gepr&uuml;ften Bausteinen &ndash; kein neues Programm pro Aufgabe.
+          </p>
+          <div class="ph-actions">
+            <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Beratung anfragen</a>
+            <a href="#how" class="btn btn-secondary"><i class="fas fa-gears"></i> So funktioniert es</a>
+          </div>
+          <p class="ph-live"><i class="fas fa-circle"></i> Im Haus oder in Ihrer privaten Cloud, ohne Telemetrie.</p>
+        </div>
+        <div class="ph-visual">
+          <img src="../../../misc/automation-placeholder.svg" alt="Office Agent: KI-Automatisierung f&uuml;r Dokumenten- und Wissensarbeit im Back-Office" loading="lazy">
+        </div>
+      </div>
+
+      <div class="content">
+
+        <!-- 2) Was ist das? -->
+        <h3 id="what">Was ist das?</h3>
+        <p>
+          <strong>Office Agent</strong> automatisiert Dokumenten- und Wissensarbeit im
+          B&uuml;ro: Belege und Vorg&auml;nge kommen herein, werden gelesen, ausgewertet, gegen
+          Ihre Systeme abgeglichen, an der richtigen Stelle einem Menschen zur Freigabe
+          vorgelegt und danach zur&uuml;ckgeschrieben. Was dabei entsteht, ist kein Textvorschlag,
+          sondern ein gepr&uuml;fter Datensatz mit einer nachvollziehbaren Entstehungsgeschichte.
+        </p>
+        <ul>
+          <li>Ein Anwendungsfall ist eine <strong>Konfigurationsdatei</strong>, kein eigenes Programm</li>
+          <li>Das Modell entscheidet &uuml;ber Inhalte &ndash; der Ablauf entscheidet &uuml;ber den Weg</li>
+          <li>Kein Modellergebnis geht ungepr&uuml;ft weiter: erst Pr&uuml;fung, Schwelle oder Mensch</li>
+          <li>Jeder Lauf ist dauerhaft gespeichert, &uuml;bersteht einen Neustart und ist im Nachhinein erkl&auml;rbar</li>
+        </ul>
+
+        <!-- 3) Beispiel-Ablauf mit Diagramm -->
+        <h3 id="example">Ein Anwendungsfall von vorn bis hinten</h3>
+        <p>
+          Der Rechnungseingang zeigt das Prinzip am besten, weil in ihm alles vorkommt: ein
+          Beleg in beliebigem Format, Werte, die stimmen m&uuml;ssen, ein Abgleich gegen die
+          Bestellung, eine Freigabe durch einen Menschen und am Ende eine Buchung, die genau
+          einmal passieren darf.
+        </p>
+        <figure class="loop-figure">
+          <img src="recipe-flow.svg" loading="lazy"
+            alt="Ablauf Rechnungseingang: Beleg lesen, Daten auslesen und pr&uuml;fen, gegen Bestellung und Wareneingang abgleichen, vom Mitarbeiter freigeben lassen, im ERP buchen. Passt etwas nicht, sieht sich ein nur lesender Pr&uuml;f-Agent den Fall an.">
+          <figcaption>Rechnungseingang als Rezept &ndash; die Freigabe ist ein fester Schritt, kein Zufall.</figcaption>
+        </figure>
+        <p>
+          Der <strong>Pr&uuml;f-Agent</strong> rechts kommt nur zum Zug, wenn der Abgleich nicht
+          aufgeht. Er darf lesen, nicht schreiben, und sein Ergebnis ist ein Hinweis f&uuml;r den
+          Menschen &ndash; nie eine Entscheidung. Genau so bleibt ein nicht-deterministischer
+          Baustein in einem pr&uuml;fbaren Prozess vertretbar.
+        </p>
+
+        <!-- 4) Funktionen -->
+        <h3 id="features">Funktionen</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-file-code"></i></div>
+            <h4>Rezept statt Programm</h4>
+            <p>Ein neuer Anwendungsfall ist eine Konfiguration &uuml;ber bestehenden Bausteinen &ndash; nicht wochenlange Entwicklung.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-user-check"></i></div>
+            <h4>Freigabe, wo es z&auml;hlt</h4>
+            <p>Rollen, Betragsgrenzen, Vier-Augen-Prinzip, Fristen und Eskalation geh&ouml;ren zum Ablauf, nicht zum Zufall.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-clock-rotate-left"></i></div>
+            <h4>H&auml;lt durch</h4>
+            <p>Ein Lauf &uuml;bersteht einen Neustart und wartet notfalls tagelang auf eine Freigabe &ndash; ohne Verlust.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-clipboard-check"></i></div>
+            <h4>Gerechnet, nicht geraten</h4>
+            <p>Summen, USt-Regeln und IBAN-Format werden gepr&uuml;ft. Was durchf&auml;llt, geht an einen Menschen statt weiter.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-magnifying-glass-location"></i></div>
+            <h4>Zur&uuml;ck bis zum Beleg</h4>
+            <p>Zu jedem Wert geh&ouml;rt die Seite und die Textstelle im Original. Vorschlag und Freigabe stehen beide im Protokoll.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-plug"></i></div>
+            <h4>An Ihre Systeme</h4>
+            <p>Konnektoren zu ERP, Postfach und Dateiablage &ndash; nativ oder &uuml;ber MCP. Der Modell-Anbieter ist Konfiguration.</p>
+          </div>
+        </div>
+
+        <!-- 5) So funktioniert es -->
+        <div class="steps-cols">
+          <div>
+            <h3 id="how">So funktioniert es</h3>
+            <ol class="offer-steps">
+              <li>Ein Ordner, ein Zeitplan oder ein Postfach l&ouml;st einen Lauf aus</li>
+              <li>Das Rezept arbeitet seine Schritte ab: lesen, auslesen, abgleichen, pr&uuml;fen</li>
+              <li>Unsicheres oder Auff&auml;lliges geht zur <strong>Freigabe</strong> an einen Menschen</li>
+              <li>Danach schreibt das System zur&uuml;ck &ndash; einmal, nicht zweimal</li>
+              <li class="no-num"><strong>Nachweiskette:</strong> Beleg &rarr; Werte &rarr; Freigabe &rarr; Buchungsnummer</li>
+            </ol>
+          </div>
+          <div class="steps-text mini-tabs">
+            <h3 class="mt-heading">Gut zu wissen</h3>
+            <div class="mini-tab-links">
+              <button type="button" class="mini-tab-link active" data-tab="overview">&Uuml;berblick</button>
+              <span class="mini-tab-sep">|</span>
+              <button type="button" class="mini-tab-link" data-tab="faq">H&auml;ufige Fragen</button>
+            </div>
+            <div class="mini-tab-content active" id="mt-overview">
+              <p>
+                Der Kniff liegt in der <strong>Zerlegung</strong>. Die Anwendungsf&auml;lle sehen
+                v&ouml;llig verschieden aus, bestehen aber aus rund einem Dutzend immer gleicher
+                Bausteine: lesen, einordnen, auslesen, abgleichen, pr&uuml;fen, bewerten,
+                beantworten, entwerfen, freigeben, zur&uuml;ckschreiben. Wer die einmal sauber
+                baut, bekommt den n&auml;chsten Anwendungsfall als Konfiguration.
+              </p>
+              <p>
+                <strong>Feste H&uuml;lle, KI im Kern:</strong> Das Modell entscheidet &uuml;ber
+                Inhalte, der Ablauf &uuml;ber den Weg. Ob eine Freigabe stattfindet, steht im
+                Rezept &ndash; das Modell kann sie nicht &uuml;berspringen.
+              </p>
+            </div>
+            <div class="mini-tab-content" id="mt-faq">
+              <div class="faq-list">
+                <details class="samples-reveal">
+                  <summary>Kann ich Office Agent schon einsetzen? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Office Agent ist in Entwicklung. Der Kern l&auml;uft, der erste Anwendungsfall &ndash;
+                    Rechnungseingang &ndash; entsteht gerade. Bei Interesse melden Sie sich gern:
+                    fr&uuml;he Pilotprojekte bestimmen mit, welche Module zuerst kommen.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>L&auml;uft das bei uns im Haus? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Ja, auf Ihrer Infrastruktur oder in Ihrer privaten Cloud.
+                    Ein Mandant, keine gemeinsam genutzten Dienste, keine Telemetrie.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Verlassen unsere Dokumente das Haus? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Nur, wenn Sie ein Cloud-Modell w&auml;hlen. Der Modell-Endpunkt ist pro Installation
+                    konfigurierbar &ndash; mit einem lokalen Modell bleibt jedes Dokument auf Ihrer Hardware.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Entscheidet die KI &uuml;ber Zahlungen? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Nein. Ob eine Freigabe stattfindet, legt das Rezept fest, nie das Modell. &Auml;nderungen
+                    an Bankverbindung oder Empf&auml;nger brauchen ein eigenes Recht und laufen nie
+                    automatisch durch.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Was passiert bei einem Absturz mitten im Lauf? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Der Lauf ist dauerhaft gespeichert und wird nach dem Neustart fortgesetzt. Jeder
+                    Schreibvorgang tr&auml;gt einen Schl&uuml;ssel gegen Doppelbuchungen; wo das Zielsystem
+                    das nicht hergibt, liest das System nach oder legt den Fall einem Menschen vor.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Was ist mit GoBD und DSGVO? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Der eingegangene Beleg wird unver&auml;ndert archiviert, ausgelesene Werte liegen
+                    getrennt daneben. Das Audit-Protokoll ist anf&uuml;gend und ohne L&ouml;schrecht,
+                    und personenbezogene Daten h&auml;ngen an einem Geltungsbereich, &uuml;ber den sie
+                    gel&ouml;scht werden k&ouml;nnen.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Brauche ich pro Anwendungsfall ein neues Programm? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Nein. Ein Anwendungsfall ist eine Konfigurationsdatei &uuml;ber bestehenden Bausteinen.
+                    Braucht er wirklich neuen Code, fehlt ein Baustein &ndash; und das ist eine bewusste
+                    Erweiterung, keine Routine.</p>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6) Aufbau mit Diagramm -->
+        <h3 id="architecture">Wie es aufgebaut ist</h3>
+        <p>
+          Alles, was Geld kostet oder Wirkung hat &ndash; jeder Modellaufruf, jeder Zugriff auf
+          ein Firmensystem &ndash; l&auml;uft durch <strong>eine einzige Stelle</strong>. Dort
+          sitzen Rechte, Budget, Doppelbuchungs-Schutz und Protokoll. Ein Schritt kann sie nicht
+          umgehen, weil er Modelle und Werkzeuge gar nicht selbst in der Hand h&auml;lt.
+        </p>
+        <figure class="loop-figure">
+          <img src="architecture.svg" loading="lazy"
+            alt="Aufbau: Zeitplan, Ordner oder Postfach starten ein Rezept. Der Kernel f&uuml;hrt es aus und leitet jeden Modell- und Werkzeugaufruf durch eine einzige Stelle mit Rechten, Budget und Protokoll &ndash; zu Modellen in der Cloud oder lokal und zu Werkzeugen f&uuml;r ERP, Postfach und Dateien.">
+          <figcaption>Ein Nadel&ouml;hr f&uuml;r alles, was z&auml;hlt &ndash; darum ist der Ablauf pr&uuml;fbar.</figcaption>
+        </figure>
+        <p>
+          Bewusst <em>ohne</em> Agenten-Framework gebaut: Solche Bibliotheken &auml;ndern sich
+          schnell, ziehen gro&szlig;e Abh&auml;ngigkeitsb&auml;ume in eine Umgebung, die durch die
+          IT-Sicherheitspr&uuml;fung muss, und l&ouml;sen genau die schweren Teile nicht &ndash;
+          dauerhafte L&auml;ufe, Freigaben, Nachvollziehbarkeit, Anbindung.
+        </p>
+
+        <!-- 7) Wof&uuml;r? -->
+        <h3 id="use-cases">Wof&uuml;r?</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+            <h4>Finanzen</h4>
+            <p>Rechnungseingang erfassen und abgleichen, Reisekosten pr&uuml;fen, Mahnungen entwerfen, Kontoabgleich unterst&uuml;tzen.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-folder-tree"></i></div>
+            <h4>Dokumente</h4>
+            <p>Klassifizieren und weiterleiten, Daten auslesen, in ERP oder CRM eintragen, Stammdaten bereinigen.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-cart-shopping"></i></div>
+            <h4>Einkauf</h4>
+            <p>Bedarfe aufnehmen, Lieferantendaten anlegen, Angebote vergleichen, Verl&auml;ngerungen und Preise im Blick behalten.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-scale-balanced"></i></div>
+            <h4>Recht &amp; Compliance</h4>
+            <p>Klauseln gegen Ihre Standards pr&uuml;fen, Pflichten und Fristen herausziehen, Regel&auml;nderungen &uuml;berwachen.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-headset"></i></div>
+            <h4>IT &amp; Support</h4>
+            <p>Tickets vorsortieren, einfache Fragen aus der Wissensdatenbank beantworten, St&ouml;rungen zusammenfassen.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-users-gear"></i></div>
+            <h4>Verwaltung &amp; HR</h4>
+            <p>Interner Helpdesk, Protokolle und Aufgaben aus Besprechungen, Stellenausschreibungen entwerfen, Onboarding steuern.</p>
+          </div>
+        </div>
+
+        <!-- 8) Ma&szlig;geschneidert -->
+        <h3 id="custom">Ma&szlig;geschneidert f&uuml;r Sie</h3>
+        <p>
+          Office Agent wird nicht programmiert, sondern eingestellt &ndash; auf Ihre Abl&auml;ufe,
+          Ihre Systeme und Ihr internes Kontrollsystem:
+        </p>
+        <ul>
+          <li>Der Anwendungsfall als Rezept: Schritte, Schwellen, Fristen und Zust&auml;ndigkeiten sind Konfiguration</li>
+          <li>Freigabe-Regeln nach Ihren Vorgaben: Rollen, Betragsgrenzen, Vier-Augen-Prinzip</li>
+          <li>Modell frei w&auml;hlbar &ndash; in der Cloud oder lokal auf Ihrer Hardware</li>
+          <li>Konnektoren zu Ihren Systemen: nativ oder &uuml;ber MCP</li>
+          <li>Testlauf-Modus: jeder Schreibvorgang wird nur simuliert und protokolliert</li>
+          <li>Probelauf &uuml;ber Ihre eigenen Altbelege &ndash; Sie sehen die Trefferquote, bevor Sie sich entscheiden</li>
+        </ul>
+
+        <!-- 9) Pr&uuml;fsicherheit -->
+        <h3 id="compliance">Pr&uuml;fsicher von Anfang an</h3>
+        <p>
+          Ein System, durch das Belege auf ihrem Weg in die Buchhaltung laufen, ist ein
+          Vorsystem im Sinne der GoBD. Das l&auml;sst sich nicht nachtr&auml;glich anbauen,
+          also ist es von Beginn an Teil des Entwurfs:
+        </p>
+        <ul>
+          <li><strong>Originalzustand:</strong> der eingegangene Beleg bleibt unver&auml;ndert erhalten &ndash; ausgelesene Werte liegen daneben, nie dar&uuml;ber</li>
+          <li><strong>Belegfunktion:</strong> Beleg &rarr; ausgelesene Werte &rarr; Freigabe &rarr; Buchungsnummer, als Kette abfragbar</li>
+          <li><strong>Audit:</strong> anf&uuml;gend und ohne L&ouml;schrecht &ndash; mit Person, Zeit, Rezept-Version, Modell und Begr&uuml;ndung</li>
+          <li><strong>DSGVO:</strong> Personenbezug h&auml;ngt an einem Geltungsbereich und ist dar&uuml;ber l&ouml;schbar; der Modell-Endpunkt ist konfigurierbar</li>
+          <li><strong>EU AI Act:</strong> die Module bleiben bewusst au&szlig;erhalb der Hochrisiko-Kategorie &ndash; Bewerberauswahl und Leistungsbewertung sind nicht Teil des Systems</li>
+          <li><strong>Betriebsrat:</strong> Kennzahlen pro Person werden nicht gebaut. Zuordnung dient der Kontrolle, nicht der Messung</li>
+        </ul>
+
+        <!-- 10) Sicherheit -->
+        <div class="highlight-box">
+          <p><i class="fas fa-shield-halved" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>Sicherheit:</strong> Jedes verarbeitete Dokument gilt als feindliche Eingabe &ndash;
+            sein Inhalt ist Daten, niemals Anweisung. Dasselbe gilt f&uuml;r die Antwort eines
+            angebundenen Systems. Die Werkzeuge stehen pro Schritt fest, das Modell kann sich keine
+            neuen nehmen, und ein Pr&uuml;f-Agent darf ohne ausdr&uuml;ckliche Freigabe nur lesen.</p>
+        </div>
+
+        <!-- 11) Demo anfragen -->
+        <div class="live-demo">
+          <h3>In Aktion sehen</h3>
+          <p>Ich zeige Ihnen Office Agent gerne an einem Beispiel-Ablauf &ndash; oder wir schauen gemeinsam,
+            welcher Ihrer Vorg&auml;nge sich als Erstes lohnt.</p>
+          <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Demo anfragen</a>
+        </div>
+
+        <!-- 12) Auf einen Blick -->
+        <h3 id="specs">Auf einen Blick</h3>
+        <div class="spec-list">
+          <div class="spec-row"><span class="spec-k">Aufgabe</span><span class="spec-v">Dokumenten- und Wissensarbeit im Back-Office automatisieren</span></div>
+          <div class="spec-row"><span class="spec-k">Anwendungsfall</span><span class="spec-v">eine Konfigurationsdatei (Rezept) &uuml;ber festen Bausteinen</span></div>
+          <div class="spec-row"><span class="spec-k">KI</span><span class="spec-v">Modell frei w&auml;hlbar &ndash; Cloud oder lokal, pro Installation konfigurierbar</span></div>
+          <div class="spec-row"><span class="spec-k">Mensch</span><span class="spec-v">Freigabe mit Rolle, Betragsgrenze, Vier-Augen-Prinzip, Frist und Eskalation</span></div>
+          <div class="spec-row"><span class="spec-k">Belege</span><span class="spec-v">PDF, E-Rechnung (XRechnung / ZUGFeRD), Scan, OCR</span></div>
+          <div class="spec-row"><span class="spec-k">Anschluss</span><span class="spec-v">ERP, Postfach, Dateiablage &ndash; nativ oder &uuml;ber MCP</span></div>
+          <div class="spec-row"><span class="spec-k">Betrieb</span><span class="spec-v"> im Haus oder in Ihrer privaten Cloud</span></div>
+          <div class="spec-row"><span class="spec-k">Nachweis</span><span class="spec-v">unver&auml;nderter Originalbeleg, anf&uuml;gendes Audit-Protokoll, Herkunft je Feld</span></div>
+          <div class="spec-row"><span class="spec-k">Stand</span><span class="spec-v">in Entwicklung &ndash; Kern l&auml;uft, erster Anwendungsfall ist der Rechnungseingang</span></div>
+        </div>
+
+        <!-- 13) Mehr zum Thema -->
+        <div class="highlight-box">
+          <p><i class="fas fa-lightbulb" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>Passt dazu:</strong> Office Agent ist die gro&szlig;e Ausbaustufe meiner
+            <a href="../../services/automation/index.html">Automatisierung</a>; die Anbindung an
+            Ihre Systeme beschreibt die Seite zur
+            <a href="../../services/integration/index.html">KI-Integration &amp; MCP</a>.</p>
+        </div>
+
+        <!-- 14) Abschluss-CTA -->
+        <div class="service-cta product-cta">
+          <h3>Office Agent f&uuml;r Ihren Anwendungsfall</h3>
+          <p>Erstgespr&auml;ch kostenfrei &ndash; vor Ort in Bamberg/N&uuml;rnberg oder online.</p>
+          <div class="cta-actions">
+            <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Kontakt aufnehmen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+          <a href="../../../llms.txt" class="footer-agent-link">F&uuml;r KI-Agenten</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-links">
+          <a href="../../../privacy.html">Datenschutz</a>
+          <a href="../../../imprint.html">Impressum</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>powered by &copy; Walter A. Jablonowski 2019-2026. Made with AI. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="../../../lib/config.js?v=26081101"></script>
+  <script src="../../../controller.js?v=26081101"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26081101"></script>
+  <script>
+    new WebsiteController();
+  </script>
+</body>
+</html>

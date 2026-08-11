@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Modular AI for back-office work: capture invoices, sort documents, triage tickets. Runs on your own infrastructure, with a person approving.">
+  <meta name="keywords" content="Office Agent, back office automation, invoice capture AI, document processing, on-premise AI, GoBD, approval workflow, AI, Artificial Intelligence, Bamberg, Nuremberg">
+  <meta name="author" content="Walter A. Jablonowski">
+  <title>Office Agent &ndash; AI automation for the back office</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Walter A. Jablonowski">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Office Agent &ndash; AI automation for the back office">
+  <meta property="og:description" content="Invoices, documents, tickets: every use case is a configuration over the same checked building blocks &ndash; on your own infrastructure, with a person approving where it matters.">
+  <meta property="og:url" content="https://walter-a-jablonowski.github.io/en/pages/systems/office_agent/">
+  <meta property="og:image" content="https://walter-a-jablonowski.github.io/misc/automation-placeholder.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://walter-a-jablonowski.github.io/en/" },
+          { "@type": "ListItem", "position": 2, "name": "Systems", "item": "https://walter-a-jablonowski.github.io/en/" },
+          { "@type": "ListItem", "position": 3, "name": "Office Agent", "item": "https://walter-a-jablonowski.github.io/en/pages/systems/office_agent/" }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Office Agent",
+        "applicationCategory": "BusinessApplication",
+        "description": "Modular AI automation for document and knowledge work in the back office. Every use case is a configuration over fixed building blocks; approvals, traceability and validation are part of the system.",
+        "inLanguage": "en",
+        "url": "https://walter-a-jablonowski.github.io/en/pages/systems/office_agent/",
+        "provider": { "@type": "Person", "name": "Walter A. Jablonowski", "url": "https://walter-a-jablonowski.github.io/en/" },
+        "areaServed": [
+          { "@type": "City", "name": "Bamberg" },
+          { "@type": "City", "name": "Nuremberg" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="canonical" href="https://walter-a-jablonowski.github.io/en/pages/systems/office_agent/">
+  <link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/office_agent/">
+  <link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/office_agent/">
+  <link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/office_agent/">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../../favicon-16x16.png">
+  <link rel="manifest" href="../../../../site.webmanifest">
+  <link rel="stylesheet" href="../../../../styles.css?v=26081101">
+  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26081101">
+  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26081101">
+  <style>
+    /* Product page styles. Reusable parts (.product-hero, .loop-figure, .spec-list)
+       live in page-components.css; the blocks below are local to this page. */
+
+    .content h3 { color: var(--white); margin-top: var(--spacing-xl); }
+
+    /* On this page the closing CTA is commercial: hide it under hideBiz
+       (overrides the shared .product-cta exemption via later source order). */
+    body.hide-biz .service-cta.product-cta { display: none; }
+  </style>
+  <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "en",
+    "url": "https://walter-a-jablonowski.github.io/en/pages/systems/office_agent/index.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I already use Office Agent?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Office Agent is in development. The core runs and the first use case – invoice intake – is being built. Do get in touch: early pilots have a say in which modules come first."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it run on our own infrastructure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, on your infrastructure or in your private cloud. Single tenant, no shared services, no telemetry."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do our documents leave the building?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Only if you choose a cloud model. The model endpoint is configurable per install – with a local model every document stays on your own hardware."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the AI decide about payments?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Whether an approval happens is set by the recipe, never by the model. Changes to bank details or payee need a separate permission and never go through automatically."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if it crashes mid-run?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The run is stored durably and continues after the restart. Every write carries a key that prevents double postings; where the target system cannot support that, the system reads back or puts the case in front of a person."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about GoBD and GDPR?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The received document is archived unchanged, extracted values are kept separately beside it. The audit log is append-only with no delete grant, and personal data hangs off a scope it can be deleted by."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a new program per use case?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. A use case is a configuration file over existing building blocks. If it really needs new code, a building block is missing – and that is a deliberate extension, not routine work."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- faq-schema:end -->
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <!-- nav-menu:start | DON'T edit the menu here - edit the template in tools/upd_menu.php, then run it (see CLAUDE.md) -->
+          <li><a href="../../../index.html#hero" class="nav-link">Home</a></li>
+          <li><a href="../../../index.html#about" class="nav-link">Ask AI</a></li>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-head">
+              <a href="../../../index.html#services" class="nav-link">Services</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Services submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li class="nav-dropdown-group">Agents &amp; Workflow</li>
+              <li><a href="../../../pages/services/automation/index.html" class="nav-link">Automation</a></li>
+              <li><a href="../../../pages/services/self-improving/index.html" class="nav-link">Self-improving AI</a></li>
+              <li><a href="../../../pages/services/data-solutions/index.html" class="nav-link">AI Data Solutions</a></li>
+              <li class="nav-dropdown-group">Consulting &amp; Integration</li>
+              <li><a href="../../../pages/services/consulting/index.html" class="nav-link">AI Consulting</a></li>
+              <li><a href="../../../pages/services/security/index.html" class="nav-link">AI Security &amp; Evaluation</a></li>
+              <li><a href="../../../pages/services/integration/index.html" class="nav-link">AI Integration &amp; MCP</a></li>
+              <li class="nav-dropdown-group">Human Interface</li>
+              <li><a href="../../../pages/services/dashboards/index.html" class="nav-link">AI Dashboards</a></li>
+              <li><a href="../../../pages/services/ai-apps/index.html" class="nav-link">Apps that work</a></li>
+              <li class="nav-dropdown-group">Commerce</li>
+              <li><a href="../../../pages/services/agentic-commerce/index.html" class="nav-link">Agentic Commerce</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../../index.html#skills" class="nav-link">Skills</a></li>
+          <li class="nav-dropdown less-spacing">
+            <span class="nav-dropdown-head">
+              <a href="../../../index.html#proj" class="nav-link">Projects</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Projects submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../../../pages/systems/office_agent/index.html" class="nav-link">Office Agent</a></li>
+              <li><a href="../../../pages/systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
+              <li><a href="../../../pages/systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
+              <li><a href="../../../pages/systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
+              <li><a href="../../../pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
+              <li><a href="../../../pages/systems/task_board/index.html" class="nav-link">AI Task Board</a></li>
+              <li><a href="../../../pages/systems/agentic_db/index.html" class="nav-link">Agentic DB</a></li>
+              <li><a href="../../../pages/systems/editor/index.html" class="nav-link">AI Built Editor</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../../index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="../../../blog.html" class="nav-link">Blog</a></li>
+          <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
+              title="Visit my LinkedIn profile"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link"
+              title="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
+          <li><button type="button" class="nav-link search-link" data-search-open
+              title="Search the site (Ctrl+K)" aria-label="Search"><i class="fas fa-magnifying-glass"></i></button></li>
+          <!-- nav-menu:end -->
+          <li class="lang-switch">
+            <a href="../../../../pages/systems/office_agent/index.html" class="nav-link" hreflang="de" title="Deutsch">DE</a>
+            <span class="lang-sep">|</span>
+            <a href="index.html" class="nav-link active" hreflang="en" title="English">EN</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="project-detail">
+    <div class="container">
+
+      <!-- 1) Product hero -->
+      <div class="product-hero">
+        <div class="ph-text">
+          <p class="ph-eyebrow">Systems</p>
+          <h1>Office Agent</h1>
+          <p class="ph-tagline">Back-office work that <strong>runs by itself</strong> &ndash; with approval where it counts.</p>
+          <p class="ph-lead">
+            Capture and check invoices, sort documents, triage tickets, answer questions from
+            company files. A modular system that runs on your own infrastructure: every use case
+            is a configuration over the same checked building blocks &ndash; not a new program
+            for every task.
+          </p>
+          <div class="ph-actions">
+            <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Request advice</a>
+            <a href="#how" class="btn btn-secondary"><i class="fas fa-gears"></i> How it works</a>
+          </div>
+          <p class="ph-live"><i class="fas fa-circle"></i> On your infrastructure or private cloud, no telemetry.</p>
+        </div>
+        <div class="ph-visual">
+          <img src="../../../../misc/automation-placeholder.svg" alt="Office Agent: AI automation for document and knowledge work in the back office" loading="lazy">
+        </div>
+      </div>
+
+      <div class="content">
+
+        <!-- 2) What is it? -->
+        <h3 id="what">What is it?</h3>
+        <p>
+          <strong>Office Agent</strong> automates document and knowledge work in the office:
+          documents and events come in, get read, evaluated, matched against your systems, put
+          in front of a person for approval at the right point, and written back afterwards.
+          What comes out is not a suggested text but a validated record with a traceable history.
+        </p>
+        <ul>
+          <li>A use case is a <strong>configuration file</strong>, not a program of its own</li>
+          <li>The model decides the content &ndash; the pipeline decides the path</li>
+          <li>No model result passes unchecked: a validator, a threshold or a person comes first</li>
+          <li>Every run is stored durably, survives a restart and can be explained afterwards</li>
+        </ul>
+
+        <!-- 3) Walkthrough with diagram -->
+        <h3 id="example">One use case, end to end</h3>
+        <p>
+          Invoice intake shows the principle best, because everything is in it: a document in
+          whatever format, values that have to be right, a match against the order, an approval
+          by a person, and a posting at the end that must happen exactly once.
+        </p>
+        <figure class="loop-figure">
+          <img src="recipe-flow.svg" loading="lazy"
+            alt="Invoice intake flow: read the document, extract and check the data, match it against order and goods receipt, have a person approve it, post it to the ERP. If something does not add up, a read-only investigator looks at the case.">
+          <figcaption>Invoice intake as a recipe &ndash; the approval is a fixed step, not an afterthought.</figcaption>
+        </figure>
+        <p>
+          The <strong>investigator</strong> on the right only comes in when the match does not
+          add up. It may read, not write, and its result is advice for the person &ndash; never a
+          decision. That is what keeps a non-deterministic component acceptable inside an
+          auditable process.
+        </p>
+
+        <!-- 4) Features -->
+        <h3 id="features">Features</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-file-code"></i></div>
+            <h4>A recipe, not a program</h4>
+            <p>A new use case is a configuration over existing building blocks &ndash; not weeks of development.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-user-check"></i></div>
+            <h4>Approval where it counts</h4>
+            <p>Roles, amount limits, four-eyes, due dates and escalation are part of the pipeline, not left to chance.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-clock-rotate-left"></i></div>
+            <h4>It holds</h4>
+            <p>A run survives a restart and waits days for an approval if it has to &ndash; without losing anything.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-clipboard-check"></i></div>
+            <h4>Calculated, not guessed</h4>
+            <p>Totals, VAT rules and IBAN format are checked. Whatever fails goes to a person instead of going on.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-magnifying-glass-location"></i></div>
+            <h4>Back to the document</h4>
+            <p>Every value carries its page and the passage it came from. Proposal and approval are both in the log.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-plug"></i></div>
+            <h4>Into your systems</h4>
+            <p>Connectors for ERP, mailbox and file storage &ndash; native or over MCP. The model provider is configuration.</p>
+          </div>
+        </div>
+
+        <!-- 5) How it works -->
+        <div class="steps-cols">
+          <div>
+            <h3 id="how">How it works</h3>
+            <ol class="offer-steps">
+              <li>A folder, a schedule or a mailbox starts a run</li>
+              <li>The recipe works through its steps: read, extract, match, check</li>
+              <li>Anything uncertain or unusual goes to a person for <strong>approval</strong></li>
+              <li>After that the system writes back &ndash; once, not twice</li>
+              <li class="no-num"><strong>Chain of evidence:</strong> document &rarr; values &rarr; approval &rarr; posting id</li>
+            </ol>
+          </div>
+          <div class="steps-text mini-tabs">
+            <h3 class="mt-heading">Good to know</h3>
+            <div class="mini-tab-links">
+              <button type="button" class="mini-tab-link active" data-tab="overview">Overview</button>
+              <span class="mini-tab-sep">|</span>
+              <button type="button" class="mini-tab-link" data-tab="faq">FAQ</button>
+            </div>
+            <div class="mini-tab-content active" id="mt-overview">
+              <p>
+                The trick is the <strong>decomposition</strong>. The use cases look completely
+                different from each other, but they are made of roughly a dozen recurring
+                building blocks: read, classify, extract, match, check, score, answer, draft,
+                approve, write back. Build those properly once and the next use case arrives as
+                a configuration.
+              </p>
+              <p>
+                <strong>Fixed shell, AI at the core:</strong> the model decides the content, the
+                pipeline decides the path. Whether an approval happens is set by the recipe
+                &ndash; the model cannot skip it.
+              </p>
+            </div>
+            <div class="mini-tab-content" id="mt-faq">
+              <div class="faq-list">
+                <details class="samples-reveal">
+                  <summary>Can I already use Office Agent? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Office Agent is in development. The core runs and the first use case &ndash; invoice
+                    intake &ndash; is being built. Do get in touch: early pilots have a say in which
+                    modules come first.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Does it run on our own infrastructure? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Yes, on your infrastructure or in your private cloud.
+                    Single tenant, no shared services, no telemetry.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Do our documents leave the building? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Only if you choose a cloud model. The model endpoint is configurable per install
+                    &ndash; with a local model every document stays on your own hardware.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Does the AI decide about payments? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>No. Whether an approval happens is set by the recipe, never by the model. Changes
+                    to bank details or payee need a separate permission and never go through
+                    automatically.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>What happens if it crashes mid-run? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>The run is stored durably and continues after the restart. Every write carries a key
+                    that prevents double postings; where the target system cannot support that, the
+                    system reads back or puts the case in front of a person.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>What about GoBD and GDPR? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>The received document is archived unchanged, extracted values are kept separately
+                    beside it. The audit log is append-only with no delete grant, and personal data
+                    hangs off a scope it can be deleted by.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Do I need a new program per use case? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>No. A use case is a configuration file over existing building blocks. If it really
+                    needs new code, a building block is missing &ndash; and that is a deliberate
+                    extension, not routine work.</p>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6) Architecture with diagram -->
+        <h3 id="architecture">How it is built</h3>
+        <p>
+          Everything that costs money or has an effect &ndash; every model call, every access to
+          a company system &ndash; goes through <strong>a single point</strong>. Permissions,
+          budget, double-posting protection and the audit trail live there. A step cannot get
+          around it, because it never holds a model or a tool itself.
+        </p>
+        <figure class="loop-figure">
+          <img src="architecture.svg" loading="lazy"
+            alt="Architecture: a schedule, folder or mailbox starts a recipe. The kernel runs it and routes every model and tool call through a single point holding permissions, budget and the audit trail &ndash; on to models in the cloud or local, and to tools for ERP, mailbox and files.">
+          <figcaption>One choke point for everything that matters &ndash; which is what makes the process auditable.</figcaption>
+        </figure>
+        <p>
+          Deliberately built <em>without</em> an agent framework: those libraries change fast,
+          pull large dependency trees into an environment that has to pass a security review,
+          and do not solve the hard parts &ndash; durable runs, approvals, traceability,
+          connectors.
+        </p>
+
+        <!-- 7) What for? -->
+        <h3 id="use-cases">What for?</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+            <h4>Finance</h4>
+            <p>Capture and match incoming invoices, review expenses, draft dunning letters, assist bank reconciliation.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-folder-tree"></i></div>
+            <h4>Documents</h4>
+            <p>Classify and route, extract data, enter it into ERP or CRM, clean up and deduplicate master data.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-cart-shopping"></i></div>
+            <h4>Procurement</h4>
+            <p>Take in requisitions, onboard supplier data, compare quotes, keep an eye on renewals and prices.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-scale-balanced"></i></div>
+            <h4>Legal &amp; compliance</h4>
+            <p>Check clauses against your standards, pull out obligations and deadlines, monitor regulatory change.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-headset"></i></div>
+            <h4>IT &amp; support</h4>
+            <p>Triage tickets, answer simple questions from the knowledge base, summarize incidents.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-users-gear"></i></div>
+            <h4>Admin &amp; HR</h4>
+            <p>Internal helpdesk, minutes and action items from meetings, drafting job ads, orchestrating onboarding.</p>
+          </div>
+        </div>
+
+        <!-- 8) Tailored -->
+        <h3 id="custom">Tailored to you</h3>
+        <p>
+          Office Agent is not programmed but configured &ndash; to your processes, your systems
+          and your internal controls:
+        </p>
+        <ul>
+          <li>The use case as a recipe: steps, thresholds, due dates and responsibilities are configuration</li>
+          <li>Approval rules to your policy: roles, amount limits, four-eyes principle</li>
+          <li>Model of your choice &ndash; in the cloud or local on your own hardware</li>
+          <li>Connectors to your systems: native or over MCP</li>
+          <li>Dry-run mode: every write is only simulated and recorded</li>
+          <li>A trial run over your own historical documents &ndash; you see the hit rate before you decide</li>
+        </ul>
+
+        <!-- 9) Audit-ready -->
+        <h3 id="compliance">Audit-ready from the start</h3>
+        <p>
+          A system that documents pass through on their way into the books is a preliminary
+          system under German GoBD rules. That cannot be bolted on later, so it is part of the
+          design from the beginning:
+        </p>
+        <ul>
+          <li><strong>Original state:</strong> the received document stays unchanged &ndash; extracted values sit beside it, never over it</li>
+          <li><strong>Chain of evidence:</strong> document &rarr; extracted values &rarr; approval &rarr; posting id, queryable as a chain</li>
+          <li><strong>Audit:</strong> append-only with no delete grant &ndash; with person, time, recipe version, model and reason</li>
+          <li><strong>GDPR:</strong> personal data hangs off a scope it can be deleted by; the model endpoint is configurable</li>
+          <li><strong>EU AI Act:</strong> the modules deliberately stay outside the high-risk category &ndash; CV screening and performance rating are not part of the system</li>
+          <li><strong>Works council:</strong> per-person productivity metrics are not built. Attribution serves control, not measurement</li>
+        </ul>
+
+        <!-- 10) Security -->
+        <div class="highlight-box">
+          <p><i class="fas fa-shield-halved" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>Security:</strong> every processed document counts as hostile input &ndash; its
+            content is data, never instruction. The same goes for what a connected system answers.
+            The tools are fixed per step, the model cannot help itself to new ones, and an
+            investigator may only read unless explicitly granted more.</p>
+        </div>
+
+        <!-- 11) Request a demo -->
+        <div class="live-demo">
+          <h3>See it in action</h3>
+          <p>I am happy to walk you through Office Agent on an example flow &ndash; or we look together
+            at which of your processes is worth doing first.</p>
+          <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Request a demo</a>
+        </div>
+
+        <!-- 12) At a glance -->
+        <h3 id="specs">At a glance</h3>
+        <div class="spec-list">
+          <div class="spec-row"><span class="spec-k">Purpose</span><span class="spec-v">automating document and knowledge work in the back office</span></div>
+          <div class="spec-row"><span class="spec-k">Use case</span><span class="spec-v">one configuration file (recipe) over fixed building blocks</span></div>
+          <div class="spec-row"><span class="spec-k">AI</span><span class="spec-v">model of your choice &ndash; cloud or local, configurable per install</span></div>
+          <div class="spec-row"><span class="spec-k">Human</span><span class="spec-v">approval with role, amount limit, four-eyes, due date and escalation</span></div>
+          <div class="spec-row"><span class="spec-k">Documents</span><span class="spec-v">PDF, e-invoice (XRechnung / ZUGFeRD), scan, OCR</span></div>
+          <div class="spec-row"><span class="spec-k">Connects to</span><span class="spec-v">ERP, mailbox, file storage &ndash; native or over MCP</span></div>
+          <div class="spec-row"><span class="spec-k">Operation</span><span class="spec-v"> on your infrastructure or private cloud</span></div>
+          <div class="spec-row"><span class="spec-k">Evidence</span><span class="spec-v">unchanged original document, append-only audit log, provenance per field</span></div>
+          <div class="spec-row"><span class="spec-k">Status</span><span class="spec-v">in development &ndash; core runs, first use case is invoice intake</span></div>
+        </div>
+
+        <!-- 13) Related -->
+        <div class="highlight-box">
+          <p><i class="fas fa-lightbulb" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>Related:</strong> Office Agent is the large-scale version of my
+            <a href="../../services/automation/index.html">automation</a> work; connecting it to
+            your systems is covered on the page about
+            <a href="../../services/integration/index.html">AI integration &amp; MCP</a>.</p>
+        </div>
+
+        <!-- 14) Closing CTA -->
+        <div class="service-cta product-cta">
+          <h3>Office Agent for your use case</h3>
+          <p>First consultation free &ndash; on site in Bamberg/Nuremberg or online.</p>
+          <div class="cta-actions">
+            <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+          <a href="../../../../llms.txt" class="footer-agent-link">For AI agents</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-links">
+          <a href="../../../privacy.html">Privacy</a>
+          <a href="../../../imprint.html">Imprint</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>powered by &copy; Walter A. Jablonowski 2019-2026. Made with AI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="../../../../lib/config.js?v=26081101"></script>
+  <script src="../../../../controller.js?v=26081101"></script>
+  <script src="../../../../lib/voice-agent/agent.js?v=26081101"></script>
+  <script>
+    new WebsiteController();
+  </script>
+</body>
+</html>

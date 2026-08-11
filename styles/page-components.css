@@ -367,7 +367,9 @@
 /* A closing CTA that stays visible even under hideBiz (unlike a plain .service-cta) */
 body.hide-biz .service-cta.product-cta { display: block; }
 
-/* Loop figure — contained panel (content width), slightly darker than the page */
+/* Loop figure — contained panel (content width), slightly darker than the page.
+   Holds one diagram (loop, flow or architecture) at its natural 560px width, either
+   inline as <svg> or as an <img> pointing at an .svg file beside the page. */
 .loop-figure {
   margin: var(--spacing-lg) 0 var(--spacing-md);
   padding: var(--spacing-lg) var(--spacing-md);
@@ -375,7 +377,8 @@ body.hide-biz .service-cta.product-cta { display: block; }
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: var(--border-radius-md);
 }
-.loop-figure svg { width: 100%; height: auto; display: block; max-width: 560px; margin: 0 auto; }
+.loop-figure svg,
+.loop-figure img { width: 100%; height: auto; display: block; max-width: 560px; margin: 0 auto; }
 .loop-figure figcaption { text-align: center; color: var(--light-gray); font-size: .9rem; margin: .75rem auto 0; max-width: 560px; }
 
 /* Product hero: focused product-page header (eyebrow + title + tagline + lead +

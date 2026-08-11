@@ -1,0 +1,78 @@
+<svg viewBox="0 0 560 420" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <title>Rezept-Durchlauf Rechnungseingang: Beleg lesen, Daten auslesen, gegen die Bestellung abgleichen, vom Mitarbeiter freigeben lassen und im ERP buchen</title>
+
+  <!-- Background -->
+  <rect width="560" height="420" fill="#1a1a1a"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#FF6B00"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#FFC107"/>
+    </marker>
+  </defs>
+
+  <!-- Start: an invoice arrives -->
+  <rect x="20" y="12" width="240" height="32" rx="16" fill="#2d2d2d" stroke="#666" stroke-width="1.5"/>
+  <text x="140" y="33" text-anchor="middle" fill="#ffffff" font-size="14">Rechnung kommt an</text>
+  <line x1="140" y1="44" x2="140" y2="62" stroke="#FF6B00" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 1: read the document -->
+  <rect x="20" y="64" width="240" height="52" rx="8" fill="#2d2d2d" stroke="#FF6B00" stroke-width="2"/>
+  <text x="140" y="88" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="600">Beleg lesen</text>
+  <text x="140" y="106" text-anchor="middle" fill="#999999" font-size="11.5">PDF &#183; XML &#183; Scan &#183; OCR</text>
+
+  <line x1="260" y1="90" x2="296" y2="90" stroke="#FFC107" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <rect x="296" y="68" width="244" height="44" rx="8" fill="none" stroke="#FFC107" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="418" y="88" text-anchor="middle" fill="#FFC107" font-size="13" font-weight="600">XRechnung / ZUGFeRD</text>
+  <text x="418" y="105" text-anchor="middle" fill="#999999" font-size="11.5">exakt, ganz ohne KI</text>
+
+  <line x1="140" y1="116" x2="140" y2="134" stroke="#FF6B00" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 2: extract the fields -->
+  <rect x="20" y="136" width="240" height="52" rx="8" fill="#2d2d2d" stroke="#FF6B00" stroke-width="2"/>
+  <text x="140" y="160" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="600">Daten auslesen</text>
+  <text x="140" y="178" text-anchor="middle" fill="#999999" font-size="11.5">Betrag &#183; Datum &#183; Positionen</text>
+
+  <line x1="260" y1="162" x2="296" y2="162" stroke="#FFC107" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <rect x="296" y="140" width="244" height="44" rx="8" fill="none" stroke="#FFC107" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="418" y="160" text-anchor="middle" fill="#FFC107" font-size="13" font-weight="600">Summe &#183; USt &#183; IBAN</text>
+  <text x="418" y="177" text-anchor="middle" fill="#999999" font-size="11.5">gepr&#252;ft, nicht geraten</text>
+
+  <line x1="140" y1="188" x2="140" y2="206" stroke="#FF6B00" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 3: match against the order -->
+  <rect x="20" y="208" width="240" height="52" rx="8" fill="#2d2d2d" stroke="#FF6B00" stroke-width="2"/>
+  <text x="140" y="232" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="600">Abgleich</text>
+  <text x="140" y="250" text-anchor="middle" fill="#999999" font-size="11.5">Bestellung &#183; Wareneingang</text>
+
+  <!-- Side branch: an agent investigates a mismatch, read-only -->
+  <line x1="260" y1="234" x2="292" y2="234" stroke="#FF6B00" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+  <rect x="296" y="206" width="244" height="52" rx="8" fill="#2d2d2d" stroke="#FF6B00" stroke-width="2"/>
+  <text x="418" y="230" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="600">Pr&#252;f-Agent</text>
+  <text x="418" y="248" text-anchor="middle" fill="#999999" font-size="11.5">wenn etwas nicht passt</text>
+
+  <line x1="140" y1="260" x2="140" y2="278" stroke="#FF6B00" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 4: the human gate -->
+  <rect x="20" y="280" width="240" height="56" rx="8" fill="#2d2d2d" stroke="#FFC107" stroke-width="2"/>
+  <circle cx="41" cy="299" r="5" fill="none" stroke="#FFC107" stroke-width="1.5"/>
+  <path d="M33,314 q8,-10 16,0" fill="none" stroke="#FFC107" stroke-width="1.5"/>
+  <text x="140" y="304" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="600">Freigabe</text>
+  <text x="140" y="323" text-anchor="middle" fill="#999999" font-size="11.5">Mitarbeiter &#183; Vier-Augen</text>
+
+  <line x1="260" y1="308" x2="292" y2="308" stroke="#FFC107" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrowAmber)"/>
+  <rect x="296" y="284" width="244" height="48" rx="8" fill="none" stroke="#FFC107" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="418" y="304" text-anchor="middle" fill="#FFC107" font-size="13" font-weight="600">Frist &#183; Erinnerung &#183; Eskalation</text>
+  <text x="418" y="321" text-anchor="middle" fill="#999999" font-size="11.5">der Lauf wartet, auch tagelang</text>
+
+  <line x1="140" y1="336" x2="140" y2="354" stroke="#FF6B00" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Result -->
+  <rect x="20" y="356" width="240" height="32" rx="16" fill="#2d2d2d" stroke="#FFC107" stroke-width="1.5"/>
+  <text x="140" y="377" text-anchor="middle" fill="#FFC107" font-size="14" font-weight="600">Im ERP gebucht</text>
+
+  <!-- What the system does without being asked -->
+  <text x="280" y="407" text-anchor="middle" fill="#888888" font-size="11">Wiederholung, Doppelbuchungs-Schutz und Protokoll laufen automatisch mit</text>
+</svg>
