@@ -3,924 +3,2821 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lebenslauf — Walter A. Jablonowski</title>
+  <title>CV – Walter A. Jablonowski</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    /* ============ Base & print setup ============ */
 
-    /* ============================================================
-       VARIABLES
-    ============================================================ */
-    :root {
-      --c-dark:    #0f1318;
-      --c-gold:    #c89b3c;
-      --c-paper:   #faf9f7;
-      --c-text:    #1c1c1e;
-      --c-muted:   #6b6b72;
-      --c-line:    #e2dfd7;
-      --c-side-t:  #ddd9ce;
-      --c-side-m:  #a09b92;
-      --f-serif:   'Cormorant Garamond', 'Georgia', serif;
-      --f-sans:    'Jost', 'Segoe UI', sans-serif;
+    :root
+    {
+      --ink: #1c1e22;
+      --ink-soft: #43474e;
+      --ink-faint: #7a7f88;
+      --accent: #f28118;
+      --accent-deep: #d96c0a;
+      --accent-tint: #fdf1e3;
+      --line: #e6e2db;
+      --paper: #ffffff;
+      --paper-soft: #faf8f5;
+      --grey-soft: #eeedeb;  /* light grey chip fill */
+      --grey-line: #dfdcd8;
+      --ink-mid: #34383e;    /* between ink and ink-soft, reads crisp on grey */
     }
 
-    /* ============================================================
-       RESET
-    ============================================================ */
-    *, *::before, *::after {
-      box-sizing: border-box;
+    *
+    {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
-    html { font-size: 15px; }
-
-    body {
-      font-family: var(--f-sans);
-      font-weight: 400;
-      color: var(--c-text);
-      background: #dedad2;
-      line-height: 1.55;
-      -webkit-font-smoothing: antialiased;
+    @page
+    {
+      size: A4;
+      margin: 0;
     }
 
-    a { text-decoration: none; color: inherit; }
-
-    /* ============================================================
-       PAGE STRUCTURE — two explicit A4 pages
-    ============================================================ */
-    .cv-wrap {
-      padding: 2rem;
+    html, body
+    {
+      background: #e9e7e3;
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      color: var(--ink);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
     }
 
-    .cv-page {
-      display:    flex;
-      width:      900px;
-      margin:     0 auto 2.5rem;
-      box-shadow: 0 10px 70px rgba(0,0,0,0.32), 0 2px 14px rgba(0,0,0,0.16);
-    }
-
-    /* ============================================================
-       SIDEBAR — shared
-    ============================================================ */
-    .sidebar {
-      width:            30%;
-      flex-shrink:      0;
-      background-color: var(--c-dark);
-      background-image: repeating-linear-gradient(
-        -52deg,
-        transparent 0,
-        transparent 22px,
-        rgba(255,255,255,0.016) 22px,
-        rgba(255,255,255,0.016) 23px
-      );
-      color:    var(--c-side-t);
-      padding:  2.4rem 1.75rem 2rem;
+    .page
+    {
+      width: 210mm;
+      height: 297mm;
+      background: var(--paper);
+      margin: 8mm auto;
       position: relative;
+      overflow: hidden;
+      box-shadow: 0 2px 18px rgba(0, 0, 0, 0.18);
+      page-break-after: always;
     }
 
-    /* Gold accent bar — page 1 only */
-    .p1 .sidebar::before {
-      content:  '';
+    @media print
+    {
+      html, body
+      {
+        background: none;
+      }
+
+      .page
+      {
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+
+    /* ============ Shared elements ============ */
+
+    .mono
+    {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .accent
+    {
+      color: var(--accent);
+    }
+
+    /* Content page header */
+
+    .page-header
+    {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10mm 16mm 0 16mm;
+    }
+
+    .page-header .who
+    {
+      display: flex;
+      align-items: center;
+      gap: 4mm;
+    }
+
+    .page-header img
+    {
+      width: 9mm;
+      height: 9mm;
+    }
+
+    .page-header .who .name
+    {
+      font-size: 10.5pt;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .page-header .who .role
+    {
+      font-size: 7.5pt;
+      color: var(--ink-faint);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .page-header .tag
+    {
+      font-size: 7.5pt;
+      color: var(--ink-faint);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .header-rule
+    {
+      height: 0.6mm;
+      margin: 4mm 16mm 0 16mm;
+      background: linear-gradient(90deg, var(--accent) 0 22mm, var(--line) 22mm);
+    }
+
+    /* Content page foo */
+
+    .page-foo
+    {
       position: absolute;
-      top: 0; left: 0; right: 0;
-      height:     3px;
-      background: linear-gradient(90deg, var(--c-gold) 55%, transparent);
-    }
-
-    /* ============================================================
-       SIDEBAR — shared components
-    ============================================================ */
-    .s-divider {
-      height:     1px;
-      background: linear-gradient(90deg, rgba(200,155,60,0.45), transparent);
-      margin:     1.15rem 0;
-    }
-
-    .s-label {
-      font-size:       0.58rem;
-      font-weight:     600;
-      letter-spacing:  0.24em;
-      text-transform:  uppercase;
-      color:           var(--c-gold);
-      margin-bottom:   0.8rem;
-    }
-
-    /* ============================================================
-       SIDEBAR PAGE 1 — profile
-    ============================================================ */
-    .s-photo {
-      width:           115px;
-      height:          115px;
-      object-fit:      cover;
-      object-position: top center;
-      display:         block;
-      border:          2px solid var(--c-gold);
-      margin-bottom:   1.2rem;
-    }
-
-    .s-name {
-      font-family:    'Plus Jakarta Sans', sans-serif;
-      font-size:      1.7rem;
-      font-weight:    300;
-      font-style:     normal;
-      color:          #ffffff;
-      line-height:    1.2;
-      letter-spacing: 0.06em;
-      margin-bottom:  0.4rem;
-    }
-
-    .s-title {
-      font-size:      0.63rem;
-      font-weight:    600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color:          var(--c-gold);
-      margin-bottom:  1.6rem;
-    }
-
-    /* Contact */
-    .s-contact { list-style: none; }
-
-    .s-contact li {
-      display:     flex;
-      align-items: flex-start;
-      gap:         0.55rem;
-      margin-bottom: 0.55rem;
-      font-size:   0.8rem;
-      line-height: 1.35;
-    }
-
-    .s-contact .ic {
-      color:      var(--c-gold);
-      font-size:  0.85rem;
-      flex-shrink: 0;
-      margin-top: 0.08rem;
-    }
-
-    .s-contact a { color: var(--c-side-t); }
-    .s-contact a:hover { color: var(--c-gold); }
-
-    /* Skills */
-    .s-skill { margin-bottom: 0.72rem; }
-
-    .s-skill-row {
-      display:         flex;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items:     baseline;
-      margin-bottom:   0.22rem;
+      padding: 0 16mm 8mm 16mm;
+      font-size: 7.5pt;
+      color: var(--ink-faint);
     }
 
-    .s-skill-name { font-size: 0.78rem; font-weight: 500; color: var(--c-side-t); }
-    .s-skill-val  { font-size: 0.6rem; color: var(--c-side-m); }
-
-    .s-skill-track {
-      height:        2.5px;
-      background:    rgba(255,255,255,0.08);
-      border-radius: 2px;
+    .page-foo .pagenum
+    {
+      font-weight: 600;
+      color: var(--ink-soft);
     }
 
-    .s-skill-fill {
-      height:        100%;
-      background:    linear-gradient(90deg, var(--c-gold), rgba(200,155,60,0.5));
-      border-radius: 2px;
+    .page-body
+    {
+      padding: 8mm 16mm 0 16mm;
     }
 
-    /* ============================================================
-       SIDEBAR PAGE 2 — languages, personal, QR
-    ============================================================ */
-    .s-langs {
-      display:        flex;
-      flex-direction: column;
-      gap:            0.45rem;
+    /* Section headings */
+
+    .section
+    {
+      margin-bottom: 6mm;  /* section break; stays clearly wider than the 4.5mm title gap */
     }
 
-    .s-lang {
-      display:         flex;
-      justify-content: space-between;
-      font-size:       0.8rem;
+    .section-title
+    {
+      display: flex;
+      align-items: baseline;
+      gap: 3mm;
+      margin-bottom: 4.5mm;
     }
 
-    .s-lang-name  { color: var(--c-side-t); font-weight: 500; }
-    .s-lang-level { color: var(--c-side-m); font-style: italic; }
-
-    .s-personal {
-      width:           100%;
-      border-collapse: collapse;
-      font-size:       0.78rem;
+    .section-title .index
+    {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8pt;
+      font-weight: 600;
+      color: var(--accent);
     }
 
-    .s-personal td { padding: 0.22rem 0; vertical-align: top; }
-    .s-personal td:first-child { color: var(--c-side-m); padding-right: 0.55rem; white-space: nowrap; }
-
-    .s-qr { margin-top: 1.75rem; }
-
-    .s-qr-label {
-      font-size:      0.56rem;
-      letter-spacing: 0.18em;
+    .section-title h2
+    {
+      font-size: 13pt;
+      font-weight: 800;
+      letter-spacing: 0.03em;
       text-transform: uppercase;
-      color:          var(--c-side-m);
-      margin-bottom:  0.5rem;
     }
 
-    .s-qr img {
-      width:      150px;
-      display:    block;
-      border:     1px solid rgba(200,155,60,0.25);
-      padding:    4px;
-      background: rgba(255,255,255,0.04);
+    .section-title .rule
+    {
+      flex: 1;
+      height: 0.35mm;
+      background: var(--line);
+      align-self: center;
     }
 
-    /* ============================================================
-       MAIN — shared
-    ============================================================ */
-    .main {
-      flex:       1;
-      background: var(--c-paper);
-      padding:    2.4rem 2.25rem 2rem;
-    }
+    /* Comment directly under a section heading, as an info callout */
 
-    .m-sec { margin-bottom: 1.6rem; }
-
-    .m-h2 {
-      font-family:    var(--f-serif);
-      font-size:      1.25rem;
-      font-weight:    600;
-      color:          var(--c-dark);
-      letter-spacing: 0.01em;
-      padding-bottom: 0.45rem;
-      margin-bottom:  0.9rem;
-      border-bottom:  1px solid var(--c-line);
-      position:       relative;
-    }
-
-    .m-h2::after {
-      content:    '';
-      position:   absolute;
-      left:       0;
-      bottom:     -1px;
-      width:      2.6rem;
-      height:     2px;
-      background: var(--c-gold);
-    }
-
-    /* ============================================================
-       MAIN PAGE 1 — summary
-    ============================================================ */
-    .m-summary {
-      font-size:   0.9rem;
-      line-height: 1.72;
-    }
-
-    .m-summary strong { color: var(--c-dark); font-weight: 600; }
-
-    /* ============================================================
-       MAIN PAGE 1 — special skills
-    ============================================================ */
-    .skill-block { font-size: 0.88rem; line-height: 1.62; }
-    .skill-block p { margin-bottom: 0.45rem; }
-    .skill-block strong { font-weight: 600; }
-    .skill-block ul { padding-left: 1.1rem; margin-bottom: 0.35rem; }
-    .skill-block li { margin-bottom: 0.1rem; }
-
-    .skill-block .muted {
-      color:      var(--c-muted);
-      font-style: italic;
-      font-size:  0.82rem;
-    }
-
-    .past-grid { display: flex; gap: 1.5rem; margin-top: 0.3rem; }
-    .past-col  { flex: 1; }
-
-    .past-col p { margin-bottom: 0.4rem; }
-
-    .lang-badges {
-      display:   flex;
-      flex-wrap: wrap;
-      gap:       0.3rem;
-    }
-
-    .lang-badge {
-      display:        inline-block;
-      background:     #e9e8e4;
-      border:         1px solid #d4d1c9;
-      color:          #4a4a52;
-      font-size:      0.72rem;
-      font-weight:    500;
-      padding:        0.18rem 0.5rem;
-      border-radius:  3px;
-      letter-spacing: 0.01em;
-    }
-
-    /* ============================================================
-       MAIN PAGE 1 — goals
-    ============================================================ */
-    .goal-list { list-style: none; }
-
-    .goal-list li {
-      display:     flex;
+    .section-comment
+    {
+      display: flex;
       align-items: flex-start;
-      gap:         0.6rem;
-      margin-bottom: 0.32rem;
-      font-size:   0.88rem;
+      gap: 2.5mm;
+      font-size: 9.5pt;
       line-height: 1.5;
+      color: var(--ink-soft);
+      background: var(--accent-tint);
+      border-left: 1mm solid var(--accent);
+      border-radius: 0 2mm 2mm 0;
+      padding: 2.6mm 4mm;
+      margin: 0.8mm 0 4mm 0;
     }
 
-    .goal-list li::before {
-      content:       '';
-      display:       inline-block;
-      width:         5px;
-      height:        5px;
+    .section-comment .info  /* (i) badge drawn in CSS, so no icon font is needed */
+    {
+      flex: 0 0 auto;
+      width: 4mm;
+      height: 4mm;
       border-radius: 50%;
-      background:    var(--c-gold);
-      flex-shrink:   0;
-      margin-top:    0.43rem;
+      background: var(--accent);
+      color: var(--paper);
+      font-size: 8pt;
+      font-weight: 700;
+      line-height: 4mm;
+      text-align: center;
+      margin-top: 0.5mm;
     }
 
-    /* ============================================================
-       MAIN PAGE 1 — app samples
-    ============================================================ */
-    .apps-grid {
-      display:       flex;
-      gap:           1.1rem;
-      margin-bottom: 0.7rem;
+    /* ============ Cover page ============ */
+
+    .cover
+    {
+      display: flex;
+      flex-direction: column;
     }
 
-    .app-card {
-      flex:       1;
-      border:     1px solid var(--c-line);
-      background: #ffffff;
-      overflow:   hidden;
+    .cover-top
+    {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14mm 18mm 0 18mm;
+      position: relative;
+      z-index: 1;
     }
 
-    .app-card img {
-      width:           100%;
-      height:          82px;
-      object-fit:      cover;
-      object-position: top;
-      display:         block;
-      border-bottom:   1px solid var(--c-line);
+    .cover-brand
+    {
+      display: flex;
+      align-items: center;
+      gap: 5mm;
     }
 
-    .app-card-body {
-      padding:     0.45rem 0.6rem;
-      font-size:   0.77rem;
+    .cover-brand img
+    {
+      width: 14mm;
+      height: 14mm;
+    }
+
+    .cover-brand .brand-text
+    {
+      font-size: 9pt;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .cover-doc-tag
+    {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8pt;
+      color: var(--ink-faint);
+      letter-spacing: 0.1em;
+    }
+
+    /* Hero: portrait + name */
+
+    .cover-hero
+    {
+      display: flex;
+      align-items: center;
+      gap: 12mm;
+      padding: 16mm 18mm 0 18mm;
+      position: relative;
+      z-index: 1;
+    }
+
+    .portrait-frame  /* padding covers the offset accent frame, so the hero centers on the whole group */
+    {
+      --portrait-w: 47mm;
+      --portrait-h: 60mm;
+      --frame-offset: 4mm;
+
+      position: relative;
+      flex-shrink: 0;
+      padding-bottom: var(--frame-offset);
+    }
+
+    .portrait-frame img
+    {
+      width: var(--portrait-w);
+      height: var(--portrait-h);
+      object-fit: cover;
+      border-radius: 3mm;
+      display: block;
+    }
+
+    .portrait-frame::after
+    {
+      content: '';
+      position: absolute;
+      top: var(--frame-offset);
+      left: var(--frame-offset);
+      width: var(--portrait-w);
+      height: var(--portrait-h);
+      border: 1mm solid var(--accent);
+      border-radius: 3mm;
+      z-index: -1;
+    }
+
+    .cover-id .kicker
+    {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9pt;
+      color: var(--accent-deep);
+      letter-spacing: 0.08em;
+      margin-bottom: 4mm;
+    }
+
+    .cover-id h1  /* sized so the full name stays on one line next to the portrait */
+    {
+      font-size: 27pt;
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+      white-space: nowrap;
+    }
+
+    .cover-id .role-line
+    {
+      margin-top: 4.5mm;
+      font-size: 12.5pt;
+      font-weight: 500;
+      color: var(--ink-soft);
+    }
+
+    .cover-id .role-line strong
+    {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .cover-id .xp-badge
+    {
+      display: inline-block;
+      margin-top: 6mm;
+      padding: 1.8mm 4.5mm;
+      background: var(--ink);
+      color: #fff;
+      font-size: 9.5pt;
+      font-weight: 600;
+      border-radius: 10mm;
+      letter-spacing: 0.03em;
+    }
+
+    .cover-id .xp-badge .accent
+    {
+      color: var(--accent);
+    }
+
+    /* Value proposition bullets */
+
+    .cover-value
+    {
+      padding: 12mm 18mm 0 18mm;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover-value h3,
+    .cover-skills h3,
+    .cover-langs h3
+    {
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 4mm;
+    }
+
+    .value-grid
+    {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4mm 8mm;
+    }
+
+    .value-item
+    {
+      display: flex;
+      gap: 3.5mm;
+      align-items: flex-start;
+    }
+
+    .value-item .marker
+    {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      font-size: 10pt;
+      color: var(--accent);
+      line-height: 1.45;
+    }
+
+    .value-item .text
+    {
+      font-size: 10pt;
+      line-height: 1.45;
+      color: var(--ink-soft);
+    }
+
+    .value-item .text strong
+    {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* Skill chips */
+
+    .cover-skills
+    {
+      padding: 10mm 18mm 0 18mm;
+      position: relative;
+      z-index: 1;
+    }
+
+    .chip-row
+    {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5mm;
+    }
+
+    .chip
+    {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8.5pt;
+      font-weight: 600;
+      padding: 1.6mm 3.6mm;
+      border: 0.35mm solid var(--line);
+      border-radius: 1.5mm;
+      color: var(--ink-soft);
+      background: var(--paper-soft);
+    }
+
+    /* Compact grey chip, for the narrow skill column */
+
+    .chip-row.sm
+    {
+      gap: 1.6mm;
+    }
+
+    .chip.sm
+    {
+      font-size: 7.5pt;
+      padding: 1mm 2.5mm;
+      border-radius: 1mm;
+      border-color: var(--grey-line);
+      color: var(--ink-mid);
+      background: var(--grey-soft);
+    }
+
+    .chip.super
+    {
+      border-color: var(--accent);
+      background: var(--accent-tint);
+      color: var(--accent-deep);
+    }
+
+    /* Languages */
+
+    .cover-langs
+    {
+      padding: 9mm 18mm 0 18mm;
+      position: relative;
+      z-index: 1;
+    }
+
+    .lang-row
+    {
+      display: flex;
+      gap: 12mm;
+    }
+
+    .lang
+    {
+      display: flex;
+      gap: 3mm;
+      align-items: baseline;
+    }
+
+    .lang .name  /* light grey filled pill, quieter than the outlined tech chips above */
+    {
+      font-size: 9pt;
+      font-weight: 600;
+      padding: 1.4mm 3.4mm;
+      border-radius: 10mm;
+      color: var(--ink-soft);
+      background: var(--line);
+    }
+
+    .lang .level
+    {
+      font-size: 9.5pt;
+      color: var(--ink-soft);
+    }
+
+    /* Cover base: key facts + QR + contact */
+
+    .cover-base
+    {
+      margin-top: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .facts-strip
+    {
+      display: grid;
+      grid-template-columns: repeat(5, auto);
+      justify-content: space-between;  /* flush with 2 content margins */
+      gap: 5mm;
+      margin: 0 18mm;
+      padding: 5mm 0;
+      border-top: 0.35mm solid var(--line);
+    }
+
+    .fact .fact-label
+    {
+      font-size: 7pt;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 1.2mm;
+    }
+
+    .fact .fact-value
+    {
+      font-size: 10pt;
+      font-weight: 600;
+    }
+
+    .fact .fact-value .point
+    {
+      display: inline-block;
+      width: 2.2mm;
+      height: 2.2mm;
+      border-radius: 50%;
+      background: #2fae5f;
+      margin-right: 1.5mm;
+    }
+
+    .cover-contact
+    {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--ink);
+      color: #fff;
+      padding: 6mm 18mm;
+    }
+
+    .contact-items
+    {
+      display: grid;
+      grid-template-columns: repeat(4, max-content);
+      gap: 2mm;
+      font-size: 9pt;
+    }
+
+    .contact-items .row
+    {
+      display: contents;  /* labels and values join the parent grid, so they align in columns */
+    }
+
+    .contact-items .val
+    {
+      color: #d8dade;
+    }
+
+    .contact-items a.val
+    {
+      text-decoration: none;  /* clickable, but looks like the plain text values */
+    }
+
+    .contact-items .lbl
+    {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .contact-items .val + .lbl
+    {
+      margin-left: 6mm;  /* gap between 2 label/value pairs */
+    }
+
+    .cover-qr
+    {
+      display: flex;
+      align-items: center;
+      gap: 4mm;
+      color: inherit;
+      text-decoration: none;  /* opens the large QR page, but looks like the plain block it replaced */
+    }
+
+    .cover-qr img
+    {
+      width: 18mm;
+      height: 18mm;
+      background: #fff;
+      border-radius: 1.5mm;
+      padding: 1mm;
+    }
+
+    .cover-qr .qr-hint
+    {
+      font-size: 7.5pt;
+      color: #a9adb5;
+      max-width: 26mm;
       line-height: 1.4;
     }
 
-    .app-card-body strong { font-weight: 600; }
-    .app-card-body a { color: #9a7020; text-decoration: none; }
+    /* ============ Profile & key facts ============ */
 
-    .apps-links {
-      font-size:     0.9rem;
-      color:         var(--c-muted);
-      margin-bottom: 0.55rem;
+    .profile-text
+    {
+      font-size: 10.5pt;
+      line-height: 1.6;
+      color: var(--ink-soft);
     }
 
-    .apps-links a {
-      color:         #2563eb;
-      border-bottom: 1px solid rgba(37,99,235,0.25);
+    .profile-text strong
+    {
+      color: var(--ink);
+      font-weight: 600;
     }
 
-    .tool-badges { display: flex; gap: 0.45rem; flex-wrap: wrap; }
-
-    .tool-badge {
-      display:       flex;
-      align-items:   center;
-      gap:           0.35rem;
-      border:        1px solid var(--c-line);
-      background:    #ffffff;
-      padding:       0.22rem 0.55rem;
-      font-size:     0.73rem;
-      color:         var(--c-text);
-      border-radius: 2px;
-      transition:    border-color 0.15s;
+    .highlight-cards
+    {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4mm;
+      margin-top: 5mm;
     }
 
-    .tool-badge:hover { border-color: var(--c-gold); }
-    .tool-badge img { height: 16px; width: auto; }
-
-    /* ============================================================
-       MAIN PAGE 2 — timeline (experience & education)
-    ============================================================ */
-    .timeline {
-      position:    relative;
-      padding-left: 1.1rem;
+    .hl-card
+    {
+      background: var(--paper-soft);
+      border: 0.35mm solid var(--line);
+      border-radius: 2mm;
+      padding: 4mm;
     }
 
-    .timeline::before {
-      content:    '';
-      position:   absolute;
-      left:       1px;
-      top:        0.5rem;
-      bottom:     0.5rem;
-      width:      2px;
-      background: linear-gradient(180deg, var(--c-gold) 0%, rgba(200,155,60,0.15) 100%);
+    .hl-card .hl-num
+    {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15pt;
+      font-weight: 600;
+      color: var(--accent-deep);
     }
 
-    .t-item {
-      position:      relative;
-      margin-bottom: 1.3rem;
+    .hl-card .hl-label
+    {
+      font-size: 8pt;
+      color: var(--ink-faint);
+      margin-top: 1mm;
+      line-height: 1.4;
     }
 
-    .t-item:last-child { margin-bottom: 0; }
+    /* ============ Services ============ */
 
-    .t-item::before {
-      content:       '';
-      position:      absolute;
-      left:          calc(2px - 1.1rem);
-      top:           0.4rem;
-      width:         7px;
-      height:        7px;
-      border-radius: 50%;
-      background:    var(--c-gold);
-      box-shadow:    0 0 0 2px var(--c-paper), 0 0 0 3.5px var(--c-gold);
-      transform:     translateX(-50%);
+    .service-grid
+    {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4mm;
     }
 
-    .t-date {
-      font-size:      0.68rem;
-      font-weight:    600;
+    .service
+    {
+      border: 0.35mm solid var(--line);
+      border-left: 1mm solid var(--accent);
+      border-radius: 0 2mm 2mm 0;
+      padding: 4mm 5mm;
+    }
+
+    .service h4
+    {
+      font-size: 10.5pt;
+      font-weight: 700;
+      margin-bottom: 1.5mm;
+    }
+
+    .service p
+    {
+      font-size: 9pt;
+      line-height: 1.5;
+      color: var(--ink-soft);
+    }
+
+    /* ============ Skill matrix ============ */
+
+    .skill-groups
+    {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5mm 8mm;
+    }
+
+    .skill-group h4
+    {
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 2.5mm;
+      padding-bottom: 1.5mm;
+      border-bottom: 0.35mm solid var(--line);
+    }
+
+    .skill-row
+    {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.4mm 0;
+      font-size: 9.5pt;
+    }
+
+    .skill-row .years
+    {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8pt;
+      color: var(--ink-faint);
+      margin-left: auto;
+      margin-right: 3mm;
+    }
+
+    .level
+    {
+      display: flex;
+      gap: 1mm;
+    }
+
+    .level i
+    {
+      width: 4.5mm;
+      height: 1.6mm;
+      border-radius: 1mm;
+      background: var(--line);
+    }
+
+    .level i.on
+    {
+      background: var(--accent);
+    }
+
+    .new-tag
+    {
+      font-size: 6.5pt;
+      font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color:          var(--c-gold);
-      margin-bottom:  0.1rem;
+      color: var(--accent-deep);
+      background: var(--accent-tint);
+      border-radius: 1mm;
+      padding: 0.5mm 1.5mm;
+      margin-left: 1.5mm;
+      vertical-align: 0.3mm;
     }
 
-    .t-pos {
-      font-family:   var(--f-serif);
-      font-size:     1.05rem;
-      font-weight:   600;
-      color:         var(--c-dark);
-      line-height:   1.2;
-      margin-bottom: 0.08rem;
+    /* Tiered AI technology detail */
+
+    .tech-detail
+    {
+      margin-top: 5mm;
     }
 
-    .t-org {
-      font-size:     0.77rem;
-      color:         var(--c-muted);
-      font-weight:   500;
-      margin-bottom: 0.2rem;
-    }
-
-    .t-desc { font-size: 0.84rem; line-height: 1.5; }
-
-    /* ============================================================
-       MAIN PAGE 2 — footer
-    ============================================================ */
-    .cv-footer {
-      margin-top:     1.5rem;
-      padding-top:    0.7rem;
-      border-top:     1px solid var(--c-line);
-      font-size:      0.7rem;
-      color:          var(--c-muted);
-      text-align:     center;
-      letter-spacing: 0.04em;
-    }
-
-    /* ============================================================
-       SCREEN BUTTONS
-    ============================================================ */
-    .print-btn {
-      position:       fixed;
-      top:            1.25rem;
-      right:          1.25rem;
-      background:     var(--c-dark);
-      color:          #fff;
-      border:         1px solid rgba(200,155,60,0.4);
-      padding:        0.5rem 1.05rem;
-      font-family:    var(--f-sans);
-      font-size:      0.68rem;
-      font-weight:    500;
-      letter-spacing: 0.13em;
+    .tech-detail h4
+    {
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      cursor:         pointer;
-      border-radius:  3px;
-      display:        flex;
-      align-items:    center;
-      gap:            0.4rem;
-      box-shadow:     0 2px 16px rgba(0,0,0,0.2);
-      transition:     all 0.2s;
-      z-index:        200;
+      color: var(--ink-soft);
+      margin-bottom: 2.5mm;
+      padding-bottom: 1.5mm;
+      border-bottom: 0.35mm solid var(--line);
     }
 
-    .print-btn:hover {
-      background:   var(--c-gold);
-      color:        var(--c-dark);
-      border-color: var(--c-gold);
+    .tier
+    {
+      display: flex;
+      align-items: flex-start;
+      gap: 3mm;
+      margin-top: 2mm;
     }
 
-    .homepage-fab {
-      position:       fixed;
-      bottom:         1.5rem;
-      right:          1.5rem;
-      background:     var(--c-dark);
-      color:          var(--c-gold);
-      border:         1px solid rgba(200,155,60,0.35);
-      border-radius:  24px;
-      padding:        0.5rem 1.1rem;
-      font-family:    var(--f-sans);
-      font-size:      0.75rem;
-      font-weight:    500;
-      letter-spacing: 0.03em;
-      display:        flex;
-      align-items:    center;
-      gap:            0.4rem;
-      box-shadow:     0 2px 20px rgba(0,0,0,0.25);
-      transition:     opacity 0.2s, transform 0.2s;
-      opacity:        0.85;
-      z-index:        200;
+    .tier .tier-label
+    {
+      flex-shrink: 0;
+      width: 24mm;
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      padding-top: 1.6mm;
     }
 
-    .homepage-fab:hover { opacity: 1; transform: translateY(-2px); }
+    /* ============ Project history ============ */
 
-    /* ============================================================
-       PRINT
-    ============================================================ */
-    @page {
-      size:   A4 portrait;
-      margin: 0;
+    .project
+    {
+      display: grid;
+      grid-template-columns: 32mm 1fr;  /* fits a full date range in one line */
+      gap: 4mm;
+      padding: 5mm 0;
+      border-bottom: 0.35mm solid var(--line);
     }
 
-    @media print {
+    .project:last-child
+    {
+      border-bottom: none;
+    }
 
-      body {
-        background:                 none;
-        print-color-adjust:         exact;
-        -webkit-print-color-adjust: exact;
+    .project .meta .period
+    {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: var(--accent-deep);
+      white-space: nowrap;  /* a date range stays on one line, breaks only where a <br> is set */
+    }
+
+    .project .meta .duration
+    {
+      font-size: 8pt;
+      color: var(--ink-faint);
+      margin-top: 1mm;
+    }
+
+    .project .meta .industry
+    {
+      display: inline-block;
+      margin-top: 2.5mm;
+      font-size: 7.5pt;
+      padding: 1mm 2.5mm;
+      background: var(--paper-soft);
+      border: 0.35mm solid var(--line);
+      border-radius: 1mm;
+      color: var(--ink-soft);
+    }
+
+    .project h4
+    {
+      font-size: 11pt;
+      font-weight: 700;
+    }
+
+    .project .role
+    {
+      font-size: 9pt;
+      color: var(--accent-deep);
+      font-weight: 600;
+      margin-top: 0.8mm;
+    }
+
+    .project ul
+    {
+      margin: 2.5mm 0 0 4mm;
+      font-size: 9.5pt;
+      line-height: 1.5;
+      color: var(--ink-soft);
+    }
+
+    .project ul li
+    {
+      margin-bottom: 1mm;
+    }
+
+    .project .stack
+    {
+      margin-top: 2.5mm;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8pt;
+      color: var(--ink-faint);
+      line-height: 1.6;
+    }
+
+    .project .stack .lbl
+    {
+      color: var(--accent-deep);
+      font-weight: 600;
+    }
+
+    /* ============ Education & certificates ============ */
+
+    .edu-list
+    {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4mm 8mm;
+    }
+
+    .edu-item
+    {
+      display: flex;
+      gap: 4mm;
+      align-items: baseline;
+    }
+
+    .edu-item .year
+    {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: var(--accent-deep);
+      flex-shrink: 0;
+      width: 20mm;
+    }
+
+    .edu-item .what
+    {
+      font-size: 9.5pt;
+      line-height: 1.45;
+    }
+
+    .edu-item .what .org
+    {
+      color: var(--ink-faint);
+      font-size: 8.5pt;
+      display: block;
+    }
+
+    /* ============ Interests ============ */
+
+    .interest-list
+    {
+      display: grid;
+      gap: 2.5mm;
+    }
+
+    .interest-line
+    {
+      display: flex;
+      gap: 4mm;
+      align-items: baseline;
+      font-size: 9.5pt;
+      line-height: 1.45;
+      color: var(--ink-soft);
+    }
+
+    .interest-line .cat  /* same width as .edu-item .year, so 2 sections align */
+    {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: var(--accent-deep);
+      flex-shrink: 0;
+      width: 20mm;
+    }
+
+    /* ============ Web toolbar (screen only, hidden in print) ============ */
+
+    .web-toolbar
+    {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      z-index: 100;
+      display: flex;
+      gap: 10px;
+      padding: 8px;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(28, 30, 34, 0.12);
+    }
+
+    .web-toolbar a
+    {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 15px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .web-toolbar a:active
+    {
+      transform: translateY(1px);
+    }
+
+    .web-toolbar a svg
+    {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+    }
+
+    .web-toolbar .tb-print
+    {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .web-toolbar .tb-print:hover
+    {
+      background: var(--accent-deep);
+    }
+
+    .web-toolbar .tb-site
+    {
+      background: var(--grey-soft);
+      border-color: var(--grey-line);
+      color: var(--ink-mid);
+    }
+
+    .web-toolbar .tb-site:hover
+    {
+      background: var(--accent-tint);
+      border-color: var(--accent);
+      color: var(--accent-deep);
+    }
+
+    @media (max-width: 820px)
+    {
+      .web-toolbar
+      {
+        top: auto;
+        bottom: 14px;
+        left: 14px;
+        right: 14px;
+        justify-content: center;
       }
 
-      .cv-wrap {
-        padding: 0;
+      .web-toolbar a
+      {
+        flex: 1 1 0;
+        justify-content: center;
       }
+    }
 
-      .cv-page {
-        width:            210mm;
-        height:           297mm;
-        overflow:         hidden;
-        margin:           0;
-        box-shadow:       none;
-        page-break-after: always;
-      }
-
-      .cv-page.p2 {
-        page-break-after: auto;
-      }
-
-      /* Sidebar fills full page height via flex stretch — no min-height needed */
-      .sidebar {
-        print-color-adjust:         exact;
-        -webkit-print-color-adjust: exact;
-      }
-
-      .print-btn,
-      .homepage-fab {
+    @media print
+    {
+      .web-toolbar
+      {
         display: none !important;
       }
-
-      a {
-        color:         inherit !important;
-        border-bottom: none !important;
-      }
-
-      .apps-links a { color: #2563eb !important; }
-      .app-card-body a { color: #9a7020 !important; }
     }
-
-    /* ============================================================
-       RESPONSIVE (SCREEN)
-    ============================================================ */
-    @media screen and (max-width: 940px) {
-      .cv-page { width: 100%; }
-    }
-
-    @media screen and (max-width: 680px) {
-      .cv-page  { flex-direction: column; }
-      .sidebar  { width: 100%; }
-      .cv-wrap  { padding: 0; }
-    }
-
   </style>
 </head>
 <body>
 
-<button class="print-btn" onclick="window.print()">
-  <i class="bi bi-printer"></i> Drucken
-</button>
+  <!-- Web only: not printed (see .web-toolbar in @media print) -->
 
-<div class="cv-wrap">
+  <nav class="web-toolbar">
+    <a class="tb-print" href="#" id="btnPrint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 9V2h12v7"></path>
+        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+        <rect x="6" y="14" width="12" height="8"></rect>
+      </svg>
+      Als PDF drucken
+    </a>
+    <a class="tb-site" href="http://walter-a-jablonowski.github.io" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M2 12h20"></path>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+      Zur Webseite
+    </a>
+  </nav>
 
-  <!-- ============================================================
-       PAGE 1
-  ============================================================ -->
-  <div class="cv-page p1">
+  <!-- ==================== PAGE 1: COVER ==================== -->
 
-    <aside class="sidebar">
-
-      <img src="img/img_6.png" class="s-photo" alt="Walter A. Jablonowski">
-
-      <div class="s-name">Walter A.<br>Jablonowski</div>
-      <div class="s-title">AI Developer &middot; Full Stack</div>
-
-      <div class="s-divider"></div>
-
-      <div class="s-label">Kontakt</div>
-      <ul class="s-contact">
-        <li>
-          <i class="bi bi-envelope ic"></i>
-          <a href="mailto:walterjab@outlook.com">walterjab@outlook.com</a>
-        </li>
-        <li>
-          <i class="bi bi-globe2 ic"></i>
-          <a href="https://is.gd/waj_hq" target="_blank">is.gd/waj_hq</a>
-        </li>
-        <li>
-          <i class="bi bi-geo-alt-fill ic"></i>
-          <a href="https://goo.gl/maps/RRCcuAVrxa2qfJr9A" target="_blank">
-            Am Anger 9<br>96135 Stegaurach
-          </a>
-        </li>
-      </ul>
-
-      <div class="s-divider"></div>
-
-      <div class="s-label">Technische Skills</div>
-
-      <div class="s-skill">
-        <div class="s-skill-row">
-          <span class="s-skill-name">PHP</span>
-          <span class="s-skill-val">Expert</span>
-        </div>
-        <div class="s-skill-track"><div class="s-skill-fill" style="width: 100%"></div></div>
+  <section class="page cover">
+    <div class="cover-top">
+      <div class="cover-brand">
+        <img src="img/logo.png" alt="Logo">
+        <div class="brand-text">WAJ · Software Engineering</div>
       </div>
-      <div class="s-skill">
-        <div class="s-skill-row">
-          <span class="s-skill-name">SQL &amp; DB-Design</span>
-          <span class="s-skill-val">Expert</span>
-        </div>
-        <div class="s-skill-track"><div class="s-skill-fill" style="width: 100%"></div></div>
-      </div>
-      <div class="s-skill">
-        <div class="s-skill-row">
-          <span class="s-skill-name">HTML</span>
-          <span class="s-skill-val">Expert</span>
-        </div>
-        <div class="s-skill-track"><div class="s-skill-fill" style="width: 100%"></div></div>
-      </div>
-      <div class="s-skill">
-        <div class="s-skill-row">
-          <span class="s-skill-name">JavaScript</span>
-          <span class="s-skill-val">Fortgeschritten</span>
-        </div>
-        <div class="s-skill-track"><div class="s-skill-fill" style="width: 70%"></div></div>
-      </div>
-      <div class="s-skill">
-        <div class="s-skill-row">
-          <span class="s-skill-name">CSS</span>
-          <span class="s-skill-val">Fortgeschritten</span>
-        </div>
-        <div class="s-skill-track"><div class="s-skill-fill" style="width: 50%"></div></div>
-      </div>
-      <div class="s-skill">
-        <div class="s-skill-row">
-          <span class="s-skill-name">Python</span>
-          <span class="s-skill-val">Grundkenntnisse</span>
-        </div>
-        <div class="s-skill-track"><div class="s-skill-fill" style="width: 40%"></div></div>
-      </div>
-      <div class="s-skill">
-        <div class="s-skill-row">
-          <span class="s-skill-name">TypeScript</span>
-          <span class="s-skill-val">Grundkenntnisse</span>
-        </div>
-        <div class="s-skill-track"><div class="s-skill-fill" style="width: 25%"></div></div>
-      </div>
+      <div class="cover-doc-tag">// PROFIL 2026</div>
+    </div>
 
-    </aside>
+    <div class="cover-hero">
+      <div class="portrait-frame">
+        <img src="img/img_8.png" alt="Portrait">
+      </div>
+      <div class="cover-id">
+        <div class="kicker">&lt;/&gt; AI Software Engineer</div>
+        <h1>Walter A. Jablonowski</h1>
+        <div class="role-line"><strong>KI-Systeme</strong> &amp; App-Entwicklung</div>
+        <div class="xp-badge"><span class="accent">25+ Jahre</span> Entwicklungserfahrung</div>
+      </div>
+    </div>
 
-    <main class="main">
+    <div class="cover-value">
+      <h3>Was ich für Sie umsetze</h3>
+      <div class="value-grid">
+        <div class="value-item">
+          <div class="marker">&#9656;</div>
+          <div class="text"><strong>KI-Agenten &amp; Automationen</strong> – autonome Workflows, die Geschäftsprozesse messbar beschleunigen</div>
+        </div>
+        <div class="value-item">
+          <div class="marker">&#9656;</div>
+          <div class="text"><strong>Datenlösungen</strong> – von Pipelines über Analytics bis zu skalierbaren Datenplattformen</div>
+        </div>
+        <div class="value-item">
+          <div class="marker">&#9656;</div>
+          <div class="text"><strong>App-Entwicklung</strong> – performante Web- &amp; Mobile-Apps, KI-gestützt entwickelt in Rekordzeit</div>
+        </div>
+        <div class="value-item">
+          <div class="marker">&#9656;</div>
+          <div class="text"><strong>Architektur &amp; Beratung</strong> – 25+ Jahre Erfahrung über Sprachen, Stacks und Branchen hinweg</div>
+        </div>
+      </div>
+    </div>
 
-      <section class="m-sec">
-        <h2 class="m-h2">Zusammenfassung</h2>
-        <p class="m-summary">
-          <strong>AI&#8209;nativer</strong> Developer kombiniert mit <strong>25&nbsp;Jahren Erfahrung</strong>
-          in der Programmierung. Vor KI: Entwicklung von Webanwendungen &mdash; dann 2&nbsp;Jahre
-          KI-basierte App-Entwicklung sowie AI&nbsp;Agents. Interessiert an minimalistischen
-          L&ouml;sungen und innovativen Technologien.
+    <div class="cover-skills">
+      <h3>Technologie-Schwerpunkte</h3>
+      <div class="chip-row">
+        <span class="chip super">KI-Agenten</span>
+        <span class="chip super">LLM-Integration</span>
+        <span class="chip super">MCP</span>
+        <span class="chip super">Prompt Engineering</span>
+        <span class="chip">PHP</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">Python</span>
+        <span class="chip">TypeScript</span>
+        <span class="chip">SQL</span>
+        <span class="chip">MySQL / MariaDB</span>
+        <span class="chip">Oracle</span>
+        <span class="chip">SQL Server</span>
+      </div>
+    </div>
+
+    <div class="cover-langs">
+      <h3>Sprachen</h3>
+      <div class="lang-row">
+        <div class="lang">
+          <span class="name">Deutsch</span>
+          <span class="level">Muttersprache</span>
+        </div>
+        <div class="lang">
+          <span class="name">Englisch</span>
+          <span class="level">C1 · sicher in Lesen, Schreiben und Verstehen</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cover-base">
+      <div class="facts-strip">
+        <div class="fact">
+          <div class="fact-label">Verfügbarkeit</div>
+          <div class="fact-value"><span class="point"></span>Ab sofort</div>
+        </div>
+        <div class="fact">
+          <div class="fact-label">Freiberuflich</div>
+          <div class="fact-value">bis 100 %</div>
+        </div>
+        <div class="fact">
+          <div class="fact-label">Festanstellung</div>
+          <div class="fact-value">16–20 h, temporär Vollzeit</div>
+        </div>
+        <div class="fact">
+          <div class="fact-label">Einsatz</div>
+          <div class="fact-value">Remote / Hybrid</div>
+        </div>
+        <div class="fact">
+          <div class="fact-label">Standort</div>
+          <div class="fact-value">Bamberg, DE</div>
+        </div>
+      </div>
+      <div class="cover-contact">
+        <div class="contact-items">
+          <div class="row">
+            <span class="lbl">Mail</span><a class="val" href="mailto:walterjab@outlook.com">walterjab@outlook.com</a>
+            <span class="lbl">Telefon</span><span class="val">+49 160 99658047</span>
+          </div>
+          <div class="row">
+            <span class="lbl">Web</span><a class="val" href="https://walter-a-jablonowski.github.io" target="_blank" rel="noopener">walter-a-jablonowski.github.io</a>
+            <span class="lbl">LinkedIn</span><a class="val" href="https://linkedin.com/in/waj-ai" target="_blank" rel="noopener">linkedin.com/in/waj-ai</a>
+          </div>
+        </div>
+        <a class="cover-qr" href="https://walter-a-jablonowski.github.io/hidden/scan_qr.html" target="_blank" rel="noopener">
+          <div class="qr-hint">Scannen oder klicken für Kontaktdaten</div>
+          <img src="img/qr.png" alt="QR-Code mit Kontaktdaten – öffnet eine große Ansicht zum Scannen">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PAGE 2: PROFILE / SERVICES / SKILLS ==================== -->
+
+  <section class="page">
+    <header class="page-header">
+      <div class="who">
+        <img src="img/logo.png" alt="Logo">
+        <div>
+          <div class="name">Walter A. Jablonowski</div>
+          <div class="role">Software Engineer · KI-Systeme</div>
+        </div>
+      </div>
+      <div class="tag">Profil</div>
+    </header>
+    <div class="header-rule"></div>
+
+    <div class="page-body">
+      <div class="section">
+        <div class="section-title">
+          <span class="index">01</span>
+          <h2>Profil</h2>
+          <span class="rule"></span>
+        </div>
+        <p class="profile-text">
+          Softwareentwickler mit <strong>über 25 Jahren Berufserfahrung</strong> in der Konzeption und Umsetzung
+          anspruchsvoller Anwendungen. Aktueller Fokus: <strong>KI-Systeme</strong> – von autonomen KI-Agenten über
+          Geschäftsprozess-Automationen bis zu Datenlösungen mit LLM-Integration. Ich entwickle selbst konsequent
+          KI-gestützt und liefere dadurch <strong>deutlich schneller bei gleichbleibend hoher Qualität</strong>.
+          Breite Technologie-Erfahrung über viele Sprachen und Stacks ermöglicht mir die schnelle Einarbeitung
+          in jede Umgebung.
         </p>
-      </section>
+        <div class="highlight-cards">
+          <div class="hl-card">
+            <div class="hl-num">25+</div>
+            <div class="hl-label">Jahre professionelle Softwareentwicklung</div>
+          </div>
+          <div class="hl-card">
+            <div class="hl-num">40+</div>
+            <div class="hl-label">Erfolgreich abgeschlossene Projekte</div>
+          </div>
+          <div class="hl-card">
+            <div class="hl-num">10+</div>
+            <div class="hl-label">Programmiersprachen produktiv eingesetzt</div>
+          </div>
+        </div>
+      </div>
 
-      <section class="m-sec">
-        <h2 class="m-h2">Besondere F&auml;higkeiten</h2>
-        <div class="skill-block">
-          <p>
-            <strong>AI Superpowers:</strong> Gesteigerte Produktivit&auml;t durch KI-Einsatz.
-            Begeistert von minimalistischen Ans&auml;tzen, welche die Produktivit&auml;t
-            kombiniert mit KI nochmals erheblich steigern. Lieblingsthemen:
-            Informationsmanagement, Innovationen, Nutrition.
-          </p>
-          <p>
-            <strong>Fr&uuml;here Skills</strong>
-            <span class="muted">&nbsp;&mdash; nicht mehr aktuell</span>
-          </p>
-          <div class="past-grid">
-            <div class="past-col">
-              <p><strong>bis 2015:</strong> iOS &amp; Android Apps</p>
-              <div class="lang-badges">
-                <span class="lang-badge">Objective-C</span>
-                <span class="lang-badge">Xcode</span>
-                <span class="lang-badge">Java</span>
-                <span class="lang-badge">Android Studio</span>
-              </div>
-            </div>
-            <div class="past-col">
-              <p><strong>bis 2010:</strong> Business-Anwendungen</p>
-              <div class="lang-badges">
-                <span class="lang-badge">C#</span>
-                <span class="lang-badge">VB</span>
-                <span class="lang-badge">Java</span>
-                <span class="lang-badge">XML/XSLT</span>
-                <span class="lang-badge">VBA</span>
-                <span class="lang-badge">Visual Basic</span>
-                <span class="lang-badge">C++</span>
-                <span class="lang-badge">C</span>
-              </div>
+      <div class="section">
+        <div class="section-title">
+          <span class="index">02</span>
+          <h2>Leistungen</h2>
+          <span class="rule"></span>
+        </div>
+        <div class="service-grid">
+          <div class="service">
+            <h4>KI-Agenten &amp; Automationen</h4>
+            <p>Autonome Agenten-Systeme und Workflow-Automationen, die repetitive Geschäftsprozesse übernehmen – inkl. Tool-Integration und Monitoring.</p>
+          </div>
+          <div class="service">
+            <h4>Datenlösungen</h4>
+            <p>Retrieval-Augmented Generation, semantische Suche, Daten-Pipelines und Analytics – von der Architektur bis zum Betrieb.</p>
+          </div>
+          <div class="service">
+            <h4>App-Entwicklung</h4>
+            <p>Web- und Mobile-Anwendungen, KI-gestützt entwickelt: kürzere Time-to-Market ohne Qualitätsverlust.</p>
+          </div>
+          <div class="service">
+            <h4>Architektur &amp; Projektleitung</h4>
+            <p>Systemarchitektur, Technologie-Auswahl, Code-Reviews und Modernisierung sowie technische Projektleitung.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <span class="index">03</span>
+          <h2>Kernkompetenzen</h2>
+          <span class="rule"></span>
+        </div>
+        <div class="skill-groups">
+          <div class="skill-group">
+            <h4>KI</h4>
+            <div class="skill-row"><span>KI-gestützte Entwicklung</span><span class="level"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+            <div class="skill-row"><span>Python, TypeScript</span><span class="level"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></div>
+            <div class="skill-row"><span>MS Agent Framework</span><span class="level"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+            <div class="skill-row"><span>OpenClaw, Hermes<span class="new-tag">Neu</span></span><span class="level"><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+          </div>
+          <div class="skill-group">
+            <h4>Webentwicklung</h4>
+            <div class="skill-row"><span>PHP</span><span class="level"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+            <div class="skill-row"><span>OOAD</span><span class="level"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div>
+            <div class="skill-row"><span>JavaScript</span><span class="level"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div>
+            <div class="skill-row"><span>HTML, CSS</span><span class="level"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div>
+          </div>
+          <div class="skill-group">
+            <h4>Datenbank</h4>
+            <div class="skill-row"><span>SQL</span><span class="level"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+            <div class="skill-row"><span>Relationales DB-Design</span><span class="level"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+            <div class="skill-row"><span>MySQL, SQL Server, Oracle</span><span class="level"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+          </div>
+          <div class="skill-group">
+            <h4>Frühere Projekte</h4>
+            <div class="chip-row sm">
+              <span class="chip sm">C#</span>
+              <span class="chip sm">Java</span>
+              <span class="chip sm">C/C++</span>
+              <span class="chip sm">Objective-C</span>
+              <span class="chip sm">.NET</span>
+              <span class="chip sm">iOS-Apps</span>
+              <span class="chip sm">Android</span>
+              <span class="chip sm">UML</span>
+              <span class="chip sm">XML/XSLT</span>
+              <span class="chip sm">Xcode</span>
+              <span class="chip sm">Visual Basic</span>
+              <span class="chip sm">VBA</span>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
 
-      <section class="m-sec">
-        <h2 class="m-h2">Ziele</h2>
-        <ul class="goal-list">
-          <li>KI-basierte Entwicklung und KI-Features</li>
-          <li>Teilzeit 16&ndash;20&thinsp;h (Home Office), tempor&auml;r Vollzeit</li>
-          <li>Work-Life-Balance durch flexible Arbeitszeiten</li>
-        </ul>
-      </section>
+    <footer class="page-foo">
+      <span>Walter A. Jablonowski · walterjab@outlook.com</span>
+      <span class="pagenum">Seite 2 / 17</span>
+    </footer>
+  </section>
 
-      <section class="m-sec">
-        <h2 class="m-h2">App&#8209;Beispiele</h2>
-        <div class="apps-grid">
-          <div class="app-card">
-            <a href="https://walter-a-jablonowski.github.io/pages/projects/log-view/index.html" target="_blank">
-              <img src="img/log-view.jpg" alt="Log-Analyse">
-            </a>
-            <div class="app-card-body">
-              <strong>Fertig in nur 3&nbsp;Tagen:</strong> <a href="https://walter-a-jablonowski.github.io/pages/projects/log-view/index.html" target="_blank">Datenanalyse</a> mit KI (gro&szlig;e Log-Dateien)
-            </div>
-            </a>
+  <!-- ==================== PAGE 3: PROJECT HISTORY ==================== -->
+
+  <section class="page">
+    <header class="page-header">
+      <div class="who">
+        <img src="img/logo.png" alt="Logo">
+        <div>
+          <div class="name">Walter A. Jablonowski</div>
+          <div class="role">Software Engineer · KI-Systeme</div>
+        </div>
+      </div>
+      <div class="tag">Projekthistorie</div>
+    </header>
+    <div class="header-rule"></div>
+
+    <div class="page-body">
+      <div class="section">
+        <div class="section-title">
+          <span class="index">04</span>
+          <h2>KI-Kompetenzen im Detail</h2>
+          <span class="rule"></span>
+        </div>
+        <div class="skill-groups">
+          <div class="skill-group">
+            <h4>Agenten &amp; Orchestrierung</h4>
+            <div class="skill-row"><span>KI-Agenten &amp; Tool-Use</span><span class="level"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+            <div class="skill-row"><span>MCP</span><span class="level"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+            <div class="skill-row"><span>LangChain / LangGraph</span><span class="level"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></div>
           </div>
-          <div class="app-card">
-            <a href="https://walter-a-jablonowski.github.io/pages/projects/dashb/index.html" target="_blank">
-              <img src="img/dashb-2.jpg" alt="Dashboard">
-            </a>
-            <div class="app-card-body">
-              <strong>Gr&ouml;&szlig;ere Anwendung:</strong> <a href="https://walter-a-jablonowski.github.io/pages/projects/dashb/index.html" target="_blank">Dashboard</a> (derzeit in Entwicklung)
-            </div>
+          <div class="skill-group">
+            <h4>LLM-Integration</h4>
+            <div class="skill-row"><span>LLM-Integration</span><span class="level"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+            <div class="skill-row"><span>Prompt Engineering</span><span class="level"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+            <div class="skill-row"><span>Multimodale KI (Vision, Sprache)</span><span class="level"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+          </div>
+          <div class="skill-group">
+            <h4>Daten &amp; Retrieval</h4>
+            <div class="skill-row"><span>Data-Pipelines</span><span class="level"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></div>
+            <div class="skill-row"><span>Embeddings &amp; Semantische Suche</span><span class="level"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+            <div class="skill-row"><span>Vektor-Datenbanken</span><span class="level"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+          </div>
+          <div class="skill-group">
+            <h4>Evaluation &amp; Validierung</h4>
+            <div class="skill-row"><span>LLM Evaluation</span><span class="level"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+            <div class="skill-row"><span>Pydantic</span><span class="level"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></div>
           </div>
         </div>
-        <p class="apps-links">
-          Mehr Apps und Code-Samples auf meiner
-          <a href="https://walter-a-jablonowski.github.io/#proj" target="_blank">Webseite</a> oder
-          <a href="https://www.linkedin.com/in/waj-ai" target="_blank">LinkedIn</a>.
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <span class="index">05</span>
+          <h2>Projekthistorie</h2>
+          <span class="rule"></span>
+        </div>
+
+        <div class="section-comment">
+          <span class="info" aria-hidden="true">i</span>
+          <span>Aufgefphrte neuere Projekte (mit KI) sind nur eine Auswahl – es existieren zahlreiche weitere Projekte, da mit KI eine sehr schnelle Entwicklung möglich ist. Ältere Projekte sind handgeschrieben.</span>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">08/2026 – heute</div>
+            <div class="duration">laufend</div>
+            <span class="industry">KI / Entwicklung</span>
+          </div>
+          <div>
+            <h4>Autonome Software-Entwicklung – Harness für iterative Verbesserung</h4>
+            <div class="role">Konzeption, Architektur, Entwicklung</div>
+            <ul>
+              <li>Runner für autonome iterative Verbesserung: Ziel und Budget werden vorgegeben, das System bearbeitet ein Deliverable in fokussierten Einzelschritten</li>
+              <li>Bewertet wird von einer zweiten, unabhängigen Agenteninstanz mit ausschließlich lesenden Rechten – probabilistische Bewertung, aber deterministischer Kontrollfluss mit definierten Abbruchpfaden</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> Python · Claude Code CLI · YAML · NDJSON · HTML · JavaScript · pytest</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">08/2026 – heute</div>
+            <div class="duration">laufend</div>
+            <span class="industry">KI / Backoffice</span>
+          </div>
+          <div>
+            <h4>Framework zur KI-Automatisierung von Back-Office-Prozessen</h4>
+            <div class="role">Konzeption, Architektur, Entwicklung</div>
+            <ul>
+              <li>Modulare Automatisierung von Dokumenten- und Wissensarbeit als Installation im Hause des Kunden; neun Schritttypen von Parsen bis Freigabe, vier Parse-Stufen bis zur OCR</li>
+              <li>Modul Rechnungseingang auf Basis EN 16931 mit durchgängigem Audit-Trail, Budgetgrenzen, Simulationsmodus und dauerhaften Freigaben durch Menschen</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> Python · SQLite · Gemini · Ollama · YAML · Docker · REST · OCR · pytest</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-foo">
+      <span>Walter A. Jablonowski · walterjab@outlook.com</span>
+      <span class="pagenum">Seite 3 / 17</span>
+    </footer>
+  </section>
+
+  <!-- ==================== PAGE 4: PROJECT HISTORY ==================== -->
+
+  <section class="page">
+    <header class="page-header">
+      <div class="who">
+        <img src="img/logo.png" alt="Logo">
+        <div>
+          <div class="name">Walter A. Jablonowski</div>
+          <div class="role">Software Engineer · KI-Systeme</div>
+        </div>
+      </div>
+      <div class="tag">Projekthistorie</div>
+    </header>
+    <div class="header-rule"></div>
+
+    <div class="page-body">
+      <div class="section">
+        <div class="section-title">
+          <span class="index">05</span>
+          <h2>Projekthistorie (Fortsetzung)</h2>
+          <span class="rule"></span>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">07/2026 – heute</div>
+            <div class="duration">laufend</div>
+            <span class="industry">KI / Entwicklung</span>
+          </div>
+          <div>
+            <h4>Zentrale Überwachung parallel arbeitender KI-Coding-Agenten</h4>
+            <div class="role">Konzeption, Architektur, Entwicklung</div>
+            <ul>
+              <li>Ein Fenster zeigt rein lesend, woran jeder Coding-Agent über alle Projekte hinweg arbeitet – Art der Aktion, Befehl, Zweck und Laufzeit, sortiert nach Dringlichkeit</li>
+              <li>Kennzahlen je Sitzung mit Kosten, Kontextauslastung und geänderten Dateien samt Sprung in die bereits geöffnete Editor-Instanz</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> Python · aiohttp · YAML · HTML · JavaScript · CSS · PowerShell</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">07/2026</div>
+            <div class="duration">1 Monat</div>
+            <span class="industry">KI / Kundenservice</span>
+          </div>
+          <div>
+            <h4>KI-gestütztes Support-System mit Eskalation an Menschen</h4>
+            <div class="role">Analyse, Architektur, Entwicklung</div>
+            <ul>
+              <li>Durchgängige Strecke von der Web-Erfassung über das Ticket und den wissensbasierten Chat bis zur Übergabe an einen menschlichen Bearbeiter</li>
+              <li>Antworten werden gegen eine Wissensbasis geerdet und mit Quellen belegt; der Gesprächszustand je Ticket liegt mandantenfähig in einer YAML-Datei</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> Python · FastAPI · OpenRouter · BM25 · YAML · PHP · JavaScript · pytest</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">07/2026</div>
+            <div class="duration">1 Monat</div>
+            <span class="industry">KI / Marketing</span>
+          </div>
+          <div>
+            <h4>SEO-Agent für klassische und KI-gestützte Suche</h4>
+            <div class="role">Konzeption, Architektur, Entwicklung</div>
+            <ul>
+              <li>Zeitgesteuerter Agent, der eine Website prüft, Seiten für die klassische wie die KI-gestützte Suche überarbeitet und das Ergebnis auf einem eigenen Branch bereitstellt</li>
+              <li>Daten aus Crawl, Search Console, Analytics, SERP und KI-Zitationen werden zu Befunden verdichtet; austauschbare Adapter je Baustein, vollständige Wiederherstellung bei fehlgeschlagener Prüfung</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> Python · OpenRouter · Gemini · Ollama · SQLite · Search Console · GA4 · Git</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">05/2026 – heute</div>
+            <div class="duration">laufend</div>
+            <span class="industry">KI / Wissen</span>
+          </div>
+          <div>
+            <h4>Agentisch gepflegte Wissensdatenbank</h4>
+            <div class="role">Konzeption, Architektur, Entwicklung</div>
+            <ul>
+              <li>Dateibasierte Wissensdatenbank aus Markdown, die ein interner KI-Agent selbstständig ordnet: platzieren, umstrukturieren, Indexpflege und Auflösen von Widersprüchen</li>
+              <li>Jede Änderung atomar, geloggt, versioniert und rücknehmbar; eine erkannte Inkonsistenz friert die Datenbank ein – absturzsicher allein auf Dateisystem-Primitiven</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> Python · Anthropic API · OpenRouter · Gemini · Markdown · YAML · pytest</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-foo">
+      <span>Walter A. Jablonowski · walterjab@outlook.com</span>
+      <span class="pagenum">Seite 4 / 17</span>
+    </footer>
+  </section>
+
+  <!-- ==================== PAGE 5: PROJECT HISTORY ==================== -->
+
+  <section class="page">
+    <header class="page-header">
+      <div class="who">
+        <img src="img/logo.png" alt="Logo">
+        <div>
+          <div class="name">Walter A. Jablonowski</div>
+          <div class="role">Software Engineer · KI-Systeme</div>
+        </div>
+      </div>
+      <div class="tag">Projekthistorie</div>
+    </header>
+    <div class="header-rule"></div>
+
+    <div class="page-body">
+      <div class="section">
+        <div class="section-title">
+          <span class="index">05</span>
+          <h2>Projekthistorie (Fortsetzung)</h2>
+          <span class="rule"></span>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">04/2026 – 07/2026</div>
+            <div class="duration">4 Monate</div>
+            <span class="industry">KI / IT-Betrieb</span>
+          </div>
+          <div>
+            <h4>Log-Viewer mit KI-Analyse für beliebige Formate</h4>
+            <div class="role">Konzeption, Architektur, Entwicklung</div>
+            <ul>
+              <li>Zentrale Ansicht für Logdateien beliebiger Formate mit KI-gestützter Auswertung; über 100.000 Einträge je Datei werden durch Datenbanksynchronisation beherrschbar</li>
+              <li>Steckbares Typsystem aus Erkennung, Parser und Renderer sowie eine Filtersprache, deren Ausdrücke gespeichert und von der KI erzeugt werden können</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> PHP · Symfony YAML · SQLite · MySQL · SQL · JavaScript · HTML · CSS</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">12/2025 – 01/2026</div>
+            <div class="duration">1 Monat</div>
+            <span class="industry">KI / Vertrieb</span>
+          </div>
+          <div>
+            <h4>Datenbankabfrage in natürlicher Sprache</h4>
+            <div class="role">Konzeption, Architektur, Entwicklung</div>
+            <ul>
+              <li>Fragen in natürlicher Sprache werden in SQL übersetzt, vor der Ausführung geprüft und als Tabelle oder Diagramm dargestellt</li>
+              <li>Mehrere Datenbanken gleichzeitig: das Modell wählt selbst die passende Quelle und beantwortet auch Fragen über Datenbankgrenzen hinweg</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> Python · FastAPI · MCP · Gemini · OpenRouter · SQLite · MySQL · Jinja2</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">11/2025 – 07/2026</div>
+            <div class="duration">9 Monate</div>
+            <span class="industry">KI / Web</span>
+          </div>
+          <div>
+            <h4>Sprachagent für die Kundenbetreuung auf der Website</h4>
+            <div class="role">Konzeption, Architektur, Entwicklung</div>
+            <ul>
+              <li>Sprachassistent auf der Website, der Besucherfragen im Dialog beantwortet und dabei Werkzeuge aufruft, etwa die Navigation zur passenden Seite</li>
+              <li>Echtzeit-Audio über WebSocket zu einem Live-Sprachmodell, vermittelt über einen eigenen Relay-Dienst, der Schlüssel und Systemprompt vom Browser fernhält; zweisprachig deutsch und englisch</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> JavaScript · WebSocket · Cloudflare Workers · Gemini Live · Web Audio API</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">10/2025 – 04/2026</div>
+            <div class="duration">6 Monate</div>
+            <span class="industry">Selbstmanagement</span>
+          </div>
+          <div>
+            <h4>Anwendung zur Aktivitäten- und Feedback-Erfassung</h4>
+            <div class="role">Konzeption, Architektur, Entwicklung</div>
+            <ul>
+              <li>Werkzeug zum Festhalten der eigenen Tätigkeiten über das Jahr – was wurde tatsächlich getan und wie viel Zeit kosten Dinge wirklich</li>
+              <li>Projekt- und Kalendersicht auf denselben Bestand, bewusst auf verdichtete Höhepunkte statt Einzelvorgänge ausgelegt; mehrbenutzerfähig und ohne Datenbank</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> PHP · Symfony YAML · JavaScript · HTML · CSS · Composer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-foo">
+      <span>Walter A. Jablonowski · walterjab@outlook.com</span>
+      <span class="pagenum">Seite 5 / 17</span>
+    </footer>
+  </section>
+
+  <!-- ==================== PAGE 6: PROJECT HISTORY ==================== -->
+
+  <section class="page">
+    <header class="page-header">
+      <div class="who">
+        <img src="img/logo.png" alt="Logo">
+        <div>
+          <div class="name">Walter A. Jablonowski</div>
+          <div class="role">Software Engineer · KI-Systeme</div>
+        </div>
+      </div>
+      <div class="tag">Projekthistorie</div>
+    </header>
+    <div class="header-rule"></div>
+
+    <div class="page-body">
+      <div class="section">
+        <div class="section-title">
+          <span class="index">05</span>
+          <h2>Projekthistorie (Fortsetzung)</h2>
+          <span class="rule"></span>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">10/2025 – heute</div>
+            <div class="duration">laufend</div>
+            <span class="industry">KI / Aufgaben</span>
+          </div>
+          <div>
+            <h4>KI-gestütztes zeitbasiertes Aufgaben-Board</h4>
+            <div class="role">Konzeption, Architektur, Entwicklung</div>
+            <ul>
+              <li>Aufgaben-Board entlang der Zeitachse aus laufenden und anstehenden Aufgaben sowie einer scrollbaren Leiste aus Monaten, Wochen und Tagen bis in kommende Jahre</li>
+              <li>KI-Seitenleiste mit Werkzeugzugriff auf das gesamte Board, jede vorgeschlagene Änderung einzeln annehmbar; Archivierung automatisch zum Monatswechsel</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> PHP · Symfony YAML · JavaScript · HTML · CSS · OpenRouter · Gemini · Ollama</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">08/2025 – heute</div>
+            <div class="duration">laufend</div>
+            <span class="industry">Werkzeuge</span>
+          </div>
+          <div>
+            <h4>Snippet- und Prompt-Verwaltung mit Systemintegration</h4>
+            <div class="role">Konzeption, Architektur, Entwicklung</div>
+            <ul>
+              <li>Verwaltung wiederverwendbarer Textbausteine und Prompts auf Dateisystembasis, mit verschachtelter Einbindung und Mehrfachverwendung ohne Duplikate</li>
+              <li>Zwei Oberflächen auf demselben Bestand: eine Web-Anwendung zur Pflege und eine Windows-Anwendung, die per systemweitem Tastenkürzel an der Zeigerposition einfügt</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> PHP · Symfony YAML · JavaScript · CSS · C# · .NET 8 · WinForms</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">06/2025 – 04/2026</div>
+            <div class="duration">10 Monate</div>
+            <span class="industry">Software</span>
+          </div>
+          <div>
+            <h4>Markdown-Editor als abhängigkeitsfreie Browser-Library</h4>
+            <div class="role">Konzeption, Architektur, Entwicklung</div>
+            <ul>
+              <li>Editor-Library für den Browser ohne jede Abhängigkeit: kein Build-Schritt, kein Bundler, kein Server – Einbindung über ein einzelnes Script-Tag</li>
+              <li>Erweiterbar über registrierte Spezifikationsklassen je Auszeichnungselement, mit umschaltbarem Endanwender- und Expertenmodus; vollständig KI-gestützt entwickelt</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> JavaScript · HTML · CSS · Markdown · PHP</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">04/2025 – heute</div>
+            <div class="duration">laufend</div>
+            <span class="industry">Information</span>
+          </div>
+          <div>
+            <h4>Verdichtung großer Informationsmengen in einer Ansicht</h4>
+            <div class="role">Konzeption, Architektur, Entwicklung</div>
+            <ul>
+              <li>Board, das große Informationsmengen auf kleinem Raum bündelt, um Überblick überhaupt erst herzustellen und ihn nutzbar zu halten</li>
+              <li>KI-Seitenleiste, die das Board liest und strukturell verändert; stabile Direktverweise überstehen Umbenennen und Verschieben, Sicherung vor jedem Schreibvorgang</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> PHP · Symfony YAML · JavaScript · HTML · CSS · Composer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-foo">
+      <span>Walter A. Jablonowski · walterjab@outlook.com</span>
+      <span class="pagenum">Seite 6 / 17</span>
+    </footer>
+  </section>
+
+  <!-- ==================== PAGE 7: PROJECT HISTORY ==================== -->
+
+  <section class="page">
+    <header class="page-header">
+      <div class="who">
+        <img src="img/logo.png" alt="Logo">
+        <div>
+          <div class="name">Walter A. Jablonowski</div>
+          <div class="role">Software Engineer · KI-Systeme</div>
+        </div>
+      </div>
+      <div class="tag">Projekthistorie</div>
+    </header>
+    <div class="header-rule"></div>
+
+    <div class="page-body">
+      <div class="section">
+        <div class="section-title">
+          <span class="index">05</span>
+          <h2>Projekthistorie (Fortsetzung)</h2>
+          <span class="rule"></span>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">12/2024 – 06/2026</div>
+            <div class="duration">18 Monate</div>
+            <span class="industry">Software</span>
+          </div>
+          <div>
+            <h4>Filterkomponente mit eigener Ausdruckssprache</h4>
+            <div class="role">Konzeption, Architektur, Entwicklung</div>
+            <ul>
+              <li>Wiederverwendbare Komponente, die komplexe boolesche Filter gegen einen Volltext oder gegen verschachtelte Datensätze prüft – für Crawler und Oberflächen mit eingetippten Filtern</li>
+              <li>Eigene Ausdruckssprache mit Klammerung, regulären Ausdrücken, Mengen- und Längenprüfungen, chronologischem Datumsvergleich und optionaler Synonymliste</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> PHP · Symfony YAML · Composer · reguläre Ausdrücke</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">11/2024 – heute</div>
+            <div class="duration">laufend</div>
+            <span class="industry">KI / Projekte</span>
+          </div>
+          <div>
+            <h4>KI-gestütztes Board zur Steuerung vieler Projekte</h4>
+            <div class="role">Konzeption, Architektur, Entwicklung</div>
+            <ul>
+              <li>Board zur Steuerung einer größeren Zahl paralleler Projekte mit hierarchischen Schlagworten und Suche über den aktuellen, auch ungespeicherten Stand</li>
+              <li>KI-Seitenleiste, die das Board samt verknüpfter Dateien liest und über Werkzeugaufrufe jede Struktur ändert; der Dateizugriff bleibt auf ein Basisverzeichnis eingesperrt</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> PHP · Symfony YAML · JavaScript · HTML · CSS · Google AI Studio · OpenRouter</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">03/2024 – heute</div>
+            <div class="duration">laufend</div>
+            <span class="industry">Gesundheit</span>
+          </div>
+          <div>
+            <h4>Nährstofferfassung mit minimalem Bedienaufwand</h4>
+            <div class="role">Konzeption, Architektur, Entwicklung</div>
+            <ul>
+              <li>Tägliche Erfassung der Nährstoffaufnahme über rund 43 Vitamine, Mineralstoffe, Fett- und Aminosäuren – eine Auswertung, die von Hand nicht zu leisten ist</li>
+              <li>Konsequent auf wenige Bedienschritte ausgelegt und um Sport, Nahrungsergänzung und Finanzen erweitert; seit Anfang 2024 durchgehend im täglichen Eigengebrauch</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> PHP · Symfony YAML · JavaScript · HTML · CSS · Composer</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">08/2021</div>
+            <div class="duration">1 Monat</div>
+            <span class="industry">Recycling</span>
+          </div>
+          <div>
+            <h4>Backend / UI für externen Informationszugriff</h4>
+            <div class="role">Entwicklung</div>
+            <ul>
+              <li>Backend und UI für externe Partner</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> JavaScript · HTML · CSS · C# · .NET</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-foo">
+      <span>Walter A. Jablonowski · walterjab@outlook.com</span>
+      <span class="pagenum">Seite 7 / 17</span>
+    </footer>
+  </section>
+
+  <!-- ==================== PAGE 8: PROJECT HISTORY ==================== -->
+
+  <section class="page">
+    <header class="page-header">
+      <div class="who">
+        <img src="img/logo.png" alt="Logo">
+        <div>
+          <div class="name">Walter A. Jablonowski</div>
+          <div class="role">Software Engineer · KI-Systeme</div>
+        </div>
+      </div>
+      <div class="tag">Projekthistorie</div>
+    </header>
+    <div class="header-rule"></div>
+
+    <div class="page-body">
+      <div class="section">
+        <div class="section-title">
+          <span class="index">05</span>
+          <h2>Projekthistorie (Fortsetzung)</h2>
+          <span class="rule"></span>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">01/2021 – 07/2024</div>
+            <div class="duration">43 Montate</div>
+            <span class="industry">Statistik</span>
+          </div>
+          <div>
+            <h4>Weiterentwicklung Web-Applikation Statistik</h4>
+            <div class="role">Entwicklung</div>
+            <ul>
+              <li>Weiterentwicklung einer Web-Applikation im Bereich Statistik-Daten</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> PHP · HTML · AdminLTE · Chart.js · CSS · JavaScript · jQuery</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">05/2019 – 01/2021</div>
+            <div class="duration">21 Monate</div>
+            <span class="industry">Werbung</span>
+          </div>
+          <div>
+            <h4>Neuentwicklung einer Webapplikation für betriebliche Verwaltung</h4>
+            <div class="role">Entwicklung</div>
+            <ul>
+              <li>Datenbankbasierte Applikation zur Abwicklung betrieblicher Vorgänge, Ablösen eines Altsystems</li>
+              <li>Möglichst abhängigkeitslose Entwicklung, um eine sehr lange Laufzeit der Anwendung zu gewährleisten und Migrationsaufwände durch Frameworks zu minimieren</li>
+              <li>Generieren von Oberflächen aus Bausteinen, weitere Komponenten für ein kleines Framework inklusive ORM</li>
+              <li>Entwickeln von Datenbank und Formularen auf Basis des Frameworks</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> Eigenes Framework · PHP · JavaScript · jQuery · BS · MariaDB · SQL</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">01/2018 – heute</div>
+            <div class="duration">laufend</div>
+            <span class="industry">Open Source</span>
+          </div>
+          <div>
+            <h4>Entwicklung von Open-Source-Applikationen und Komponenten</h4>
+            <div class="role">Entwicklung</div>
+            <ul>
+              <li>Entwicklung von Open-Source-Komponenten und Applikationen (github.com/walter-a-jablonowski), nicht alles davon ist veröffentlicht</li>
+              <li>Fokus auf Einfachheit im Gegensatz zum allgemeinen Trend immer komplexer werdender Webframeworks, sowie auf Automatisierung – häufig lässt sich dasselbe Ergebnis mit deutlich weniger komplexen Mitteln erreichen</li>
+              <li>Interessenbereiche: Informationsmanagement, Tools für Datengewinnung und Kommunikation, Framework-Komponenten, Tools</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> PHP · JavaScript · jQuery · YAML · JSON · BS · HTML · CSS</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">11/2015 – 01/2016</div>
+            <div class="duration">3 Monate</div>
+            <span class="industry">Verlagswesen</span>
+          </div>
+          <div>
+            <h4>Erweiterung einer iOS-Anwendung, iPad-Version, Portierung auf Android</h4>
+            <div class="role">Entwicklung</div>
+            <ul>
+              <li>Erweiterung einer iOS-Anwendung aus dem Verlagsbereich um Filterfunktionen und verschiedene UI-Funktionen</li>
+              <li>Migration der Daten von Files auf SQLite per selbstgeschriebenem Tool, Neuschreiben des Datenkerns</li>
+              <li>iPad-Version, Portierung auf Android</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> Objective-C · Java · PHP · Xcode · Android Studio</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-foo">
+      <span>Walter A. Jablonowski · walterjab@outlook.com</span>
+      <span class="pagenum">Seite 8 / 17</span>
+    </footer>
+  </section>
+
+  <!-- ==================== PAGE 9: PROJECT HISTORY ==================== -->
+
+  <section class="page">
+    <header class="page-header">
+      <div class="who">
+        <img src="img/logo.png" alt="Logo">
+        <div>
+          <div class="name">Walter A. Jablonowski</div>
+          <div class="role">Software Engineer · KI-Systeme</div>
+        </div>
+      </div>
+      <div class="tag">Projekthistorie</div>
+    </header>
+    <div class="header-rule"></div>
+
+    <div class="page-body">
+      <div class="section">
+        <div class="section-title">
+          <span class="index">05</span>
+          <h2>Projekthistorie (Fortsetzung)</h2>
+          <span class="rule"></span>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">09/2015 – 10/2015</div>
+            <div class="duration">2 Monate</div>
+            <span class="industry">Verlagswesen</span>
+          </div>
+          <div>
+            <h4>Erweiterung einer iOS-Anwendung</h4>
+            <div class="role">Entwicklung</div>
+            <ul>
+              <li>Erweiterung einer iOS-Anwendung um UI-Funktionen</li>
+              <li>Umstellung des Barcode-Scanners von Library auf iOS SDK, Libraries aktualisieren</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> Objective-C · Xcode</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">09/2015 – 12/2017</div>
+            <div class="duration">23 Monate</div>
+            <span class="industry">Statistik</span>
+          </div>
+          <div>
+            <h4>Neuentwicklung Web-Applikation Statistik</h4>
+            <div class="role">Entwicklung</div>
+            <ul>
+              <li>Neuentwicklung einer Web-Applikation im Bereich Statistik-Daten</li>
+              <li>Layout auf Basis von AdminLTE, Umsetzung grafisches Design, animierte Menüs u. Ä.</li>
+              <li>Eigene Classes für die App (Base classes, App, ErrorHandler, DB, Log, Data, Captions usw.) sowie Client-Server-Kommunikation, eigenes Templating-System</li>
+              <li>Dashboard mit verschiedenen Charts auf Basis von per SDK gesammelten Daten und Chart.js, Neuanordnen von Widgets</li>
+              <li>Generieren benutzerdefinierter Charts, YAML-Chart-Definitionsformat</li>
+              <li>Datenlisten mit Gruppierung, aufklappbar, Sortierung, (i)-Buttons mit zusätzlichen Popup-Informationen, Detailansicht mit Datenliste, Listenfunktionen, Menüs</li>
+              <li>Mobile Ansicht für Handy und Tablet mit Design-Anpassungen (responsive)</li>
+              <li>User Settings, Admin, User Help, About, Impressum, Privacy und weitere Funktionen</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> PHP 5/7 · HTML · AdminLTE · Chart.js · CSS · JavaScript · jQuery · YAML</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">02/2015 – 03/2015</div>
+            <div class="duration">2 Monate</div>
+            <span class="industry">E-Commerce</span>
+          </div>
+          <div>
+            <h4>Mitarbeit an eCommerce-System</h4>
+            <div class="role">Entwicklung</div>
+            <ul>
+              <li>Mitarbeit an einem eCommerce-System</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> PHP</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">08/2012 – 10/2012</div>
+            <div class="duration">3 Monate</div>
+            <span class="industry">Embedded</span>
+          </div>
+          <div>
+            <h4>Entwicklung mit .NET Gadgeteer</h4>
+            <div class="role">Analyse, Design, Entwicklung</div>
+            <ul>
+              <li>Entwicklung mit .NET Gadgeteer (Eigenentwicklung)</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> C# · .NET Framework · .NET Micro Framework · .NET Gadgeteer Hardware</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-foo">
+      <span>Walter A. Jablonowski · walterjab@outlook.com</span>
+      <span class="pagenum">Seite 9 / 17</span>
+    </footer>
+  </section>
+
+  <!-- ==================== PAGE 10: PROJECT HISTORY ==================== -->
+
+  <section class="page">
+    <header class="page-header">
+      <div class="who">
+        <img src="img/logo.png" alt="Logo">
+        <div>
+          <div class="name">Walter A. Jablonowski</div>
+          <div class="role">Software Engineer · KI-Systeme</div>
+        </div>
+      </div>
+      <div class="tag">Projekthistorie</div>
+    </header>
+    <div class="header-rule"></div>
+
+    <div class="page-body">
+      <div class="section">
+        <div class="section-title">
+          <span class="index">05</span>
+          <h2>Projekthistorie (Fortsetzung)</h2>
+          <span class="rule"></span>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">02/2012</div>
+            <div class="duration">1 Monat</div>
+            <span class="industry">Software</span>
+          </div>
+          <div>
+            <h4>Mitarbeit an einer iPhone-App für eine Web-2.0-Plattform</h4>
+            <div class="role">Entwicklung</div>
+            <ul>
+              <li>Mitarbeit an einer iPhone-App – iPhone-Version einer Web-2.0-Plattform</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> iOS SDK 5 · Objective-C · Xcode</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">07/2011 – 09/2011</div>
+            <div class="duration">3 Monate</div>
+            <span class="industry">Medien</span>
+          </div>
+          <div>
+            <h4>Entwicklung einer Web-2.0-Webapplikation</h4>
+            <div class="role">Planung, Analyse, Architektur, Entwicklung</div>
+            <ul>
+              <li>Entwicklung einer Web-2.0-Applikation im Bereich Feed-Aggregation</li>
+              <li>Backend mit Datenbasis und Backend-Funktionen, Web-Frontend</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> PHP 4 · HTML · CSS · XML · JavaScript · jQuery</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">12/2010</div>
+            <div class="duration">1 Monat</div>
+            <span class="industry">Automobil</span>
+          </div>
+          <div>
+            <h4>iPhone-App Automobil, Schulung von Programmierern</h4>
+            <div class="role">Analyse, Design, Entwicklung</div>
+            <ul>
+              <li>Entwicklung einer iPhone-App im Bereich Fahrzeuginformationen als Basis für weitere App-Entwicklungen; funktionale Details des Projekts sind geheim</li>
+              <li>Schulung von Programmierern anhand der App</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> iOS SDK 4 · Objective-C · Xcode · Interface Builder · Web Services · XML</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">10/2010 – 12/2010</div>
+            <div class="duration">3 Monate</div>
+            <span class="industry">Dienstleistung</span>
+          </div>
+          <div>
+            <h4>Entwicklung einer iPhone-App im Bereich Consumer Services</h4>
+            <div class="role">Analyse, Design, Entwicklung</div>
+            <ul>
+              <li>Mitarbeit bei der Entwicklung einer Dienstleistungsplattform als iPhone-App im Bereich Consumer Services</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> iOS SDK 4 · Objective-C · Xcode · Interface Builder · Web Requests · XML</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">07/2010 – 08/2010</div>
+            <div class="duration">2 Monate</div>
+            <span class="industry">Werbung / B2B</span>
+          </div>
+          <div>
+            <h4>Entwicklung einer News-iPhone-App</h4>
+            <div class="role">Analyse, Design, Entwicklung</div>
+            <ul>
+              <li>Entwicklung einer iPhone-App zur Kommunikation von Newsmeldungen im B2B-Bereich</li>
+              <li>Newsdarstellung als Liste, Detailansicht, PDF-Ansicht, sowie Push-Messages, User-Login und Zugriffs-Log in Datenbank</li>
+              <li>Entwickelt wurden die iPhone-App sowie ein Server-Interface, das vorhandene Daten (News, PDF) für die Verwendung in der App zugänglich macht</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> iOS SDK 4 · Objective-C · Xcode · PHP 4 · MySQL · SOAP · Push</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-foo">
+      <span>Walter A. Jablonowski · walterjab@outlook.com</span>
+      <span class="pagenum">Seite 10 / 17</span>
+    </footer>
+  </section>
+
+  <!-- ==================== PAGE 11: PROJECT HISTORY ==================== -->
+
+  <section class="page">
+    <header class="page-header">
+      <div class="who">
+        <img src="img/logo.png" alt="Logo">
+        <div>
+          <div class="name">Walter A. Jablonowski</div>
+          <div class="role">Software Engineer · KI-Systeme</div>
+        </div>
+      </div>
+      <div class="tag">Projekthistorie</div>
+    </header>
+    <div class="header-rule"></div>
+
+    <div class="page-body">
+      <div class="section">
+        <div class="section-title">
+          <span class="index">05</span>
+          <h2>Projekthistorie (Fortsetzung)</h2>
+          <span class="rule"></span>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">07/2010 – 08/2010</div>
+            <div class="duration">2 Monate</div>
+            <span class="industry">Telekommunikation</span>
+          </div>
+          <div>
+            <h4>Entwicklung einer iPhone-App für Telekommunikationskonzern</h4>
+            <div class="role">Programmdesign, Entwicklung</div>
+            <ul>
+              <li>Entwicklung einer iPhone-App für einen großen deutschen Telekommunikationskonzern im Bereich Gebührenzahlung</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> Apple iPhone SDK 3 · Objective-C · Xcode · Interface Builder</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">11/2009</div>
+            <div class="duration">1 Monat</div>
+            <span class="industry">Immobilien</span>
+          </div>
+          <div>
+            <h4>Neuentwicklung einer iPhone-App für Immobilienportal</h4>
+            <div class="role">Analyse, Design, Entwicklung</div>
+            <ul>
+              <li>Entwicklung einer App als Starter für die Plattform eines Immobilienportals</li>
+              <li>Abfrage von Lokationsinformationen (GPS), Suche und Darstellung von Immobilien aus der DB per Suchtext/Ort oder Geokoordinaten, zudem Benutzerlogin</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> iOS SDK 3 · Objective-C · Xcode · Interface Builder · GPS-API</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">02/2009 – 12/2009</div>
+            <div class="duration">11 Monate</div>
+            <span class="industry">Öffentl. Sektor</span>
+          </div>
+          <div>
+            <h4>Datenbankentwicklung SQL Server</h4>
+            <div class="role">Datenbankentwickler</div>
+            <ul>
+              <li>SQL-Entwicklung in einem umfangreichen Datenbanksystem, mit dem bundesweit das gesamte Inventar einer Bundesbehörde verwaltet wird</li>
+              <li>Umsetzen von RfCs (Request for Change), Entwickeln von Reports, komplexe Massendatenänderungen</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> MS SQL Server 2000/2008 · SQL · Reporting · DTS · Crystal Reports · .NET</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">01/2009 – 03/2009</div>
+            <div class="duration">3 Monate</div>
+            <span class="industry">Medien</span>
+          </div>
+          <div>
+            <h4>iPhone-Radio-Apps</h4>
+            <div class="role">Entwicklung</div>
+            <ul>
+              <li>Mitarbeit an mehreren iPhone-Apps zum Empfangen von Radioprogrammen auf dem iPhone</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> iOS SDK 3 · Objective-C · Xcode · Interface Builder</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-foo">
+      <span>Walter A. Jablonowski · walterjab@outlook.com</span>
+      <span class="pagenum">Seite 11 / 17</span>
+    </footer>
+  </section>
+
+  <!-- ==================== PAGE 12: PROJECT HISTORY ==================== -->
+
+  <section class="page">
+    <header class="page-header">
+      <div class="who">
+        <img src="img/logo.png" alt="Logo">
+        <div>
+          <div class="name">Walter A. Jablonowski</div>
+          <div class="role">Software Engineer · KI-Systeme</div>
+        </div>
+      </div>
+      <div class="tag">Projekthistorie</div>
+    </header>
+    <div class="header-rule"></div>
+
+    <div class="page-body">
+      <div class="section">
+        <div class="section-title">
+          <span class="index">05</span>
+          <h2>Projekthistorie (Fortsetzung)</h2>
+          <span class="rule"></span>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">07/2008</div>
+            <div class="duration">1 Monat</div>
+            <span class="industry">Software</span>
+          </div>
+          <div>
+            <h4>Tool für Zeiterfassung, Projektverfolgung und Abrechnung in SW-Projekten</h4>
+            <div class="role">Analyse, Design, Entwicklung</div>
+            <ul>
+              <li>Hauptzweck: Kontrolle der Budgeteinhaltung in Softwareprojekten</li>
+              <li>Entwicklung einer Access-basierten Mehrbenutzerlösung zur auftrags- bzw. aufgabenbezogenen Erfassung von Arbeitszeiten, mit Auswertung zur Verfolgung der Einhaltung von Zeiten und Budgets, sowie Funktionen zur Abrechnung mit Endkunden und Mitarbeitern</li>
+              <li>Auftragsverwaltung, Aufgabenübersicht je Anwender mit der Möglichkeit, Anwendern Aufgaben zuzuordnen, integriertes Pflichtenheft je Auftrag</li>
+              <li>Benutzerverwaltung mit unterschiedlichen Zugriffsmöglichkeiten je nach Anwenderrolle (Entwickler, Geschäftsführung)</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> MS Access 2003 · VBA · SQL</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">03/2008</div>
+            <div class="duration">1 Monat</div>
+            <span class="industry">Technische Doku</span>
+          </div>
+          <div>
+            <h4>Bug-Reporting-Komponente mit Anbindung an ein Bug-Tracking-System</h4>
+            <div class="role">Entwicklung</div>
+            <ul>
+              <li>Entwicklung einer Problem-Report-Komponente für eine Anwendung aus dem Bereich technische Dokumentation</li>
+              <li>Anbindung an ein Bug-Tracking-System</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> C# · Visual Studio 2008 · .NET Framework 3.0 · WPF · Web Services</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">12/2007 – 03/2008</div>
+            <div class="duration">4 Monate</div>
+            <span class="industry">ERP / KMU</span>
+          </div>
+          <div>
+            <h4>Neuentwicklung eines ERP-Systems</h4>
+            <div class="role">Analyse, Design, Entwicklung</div>
+            <ul>
+              <li>Entwicklung eines ERP-Systems/Fakturierung für KMUs mit Kundenstamm, Lieferantenstamm, Artikel, Preise pro Lieferant, Aufträge, Bestellungen, kompletter Dokumenthistorie pro Vorgang</li>
+              <li>Oberfläche optimiert für einfache Bedienung, Such- und Filterfunktionen, Druckfunktionen</li>
+              <li>Design der relationalen Datenbasis, SQL-Entwicklung, Gestaltung des User Interface, Entwicklung der Client-Applikation</li>
+              <li>Ca. 60 % implementiert, Fertigstellung wurde vom Kunden auf Ende 2008 verschoben</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> Visual Basic .NET · .NET Framework · WinForms · ADO.NET · MS Access</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-foo">
+      <span>Walter A. Jablonowski · walterjab@outlook.com</span>
+      <span class="pagenum">Seite 12 / 17</span>
+    </footer>
+  </section>
+
+  <!-- ==================== PAGE 13: PROJECT HISTORY ==================== -->
+
+  <section class="page">
+    <header class="page-header">
+      <div class="who">
+        <img src="img/logo.png" alt="Logo">
+        <div>
+          <div class="name">Walter A. Jablonowski</div>
+          <div class="role">Software Engineer · KI-Systeme</div>
+        </div>
+      </div>
+      <div class="tag">Projekthistorie</div>
+    </header>
+    <div class="header-rule"></div>
+
+    <div class="page-body">
+      <div class="section">
+        <div class="section-title">
+          <span class="index">05</span>
+          <h2>Projekthistorie (Fortsetzung)</h2>
+          <span class="rule"></span>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">11/2007,<br>07/2008 – 08/2008</div>
+            <div class="duration">3 Monate</div>
+            <span class="industry">Industrie</span>
+          </div>
+          <div>
+            <h4>Neuentwicklung einer Anwendung für Datenbereinigung</h4>
+            <div class="role">Analyse, Design, Entwicklung</div>
+            <ul>
+              <li>Entwicklung einer Software zur flexiblen Prüfung und Bereinigung von großen Oracle-Datenbanken mit mehreren Millionen Datensätzen (Statistik-Daten aus der industriellen Produktion)</li>
+              <li>Später: beratende Tätigkeit bei der Integration des Tools in eine größere Anwendung, Implementierung von weiteren Komponenten</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> Visual Basic .NET · .NET Framework · WinForms · Oracle · PL/SQL · Q-DAS</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">04/2008 – 05/2008</div>
+            <div class="duration">2 Monate</div>
+            <span class="industry">Industrie</span>
+          </div>
+          <div>
+            <h4>Komponente zur Erstellung von hierarchischen Datenfiltern</h4>
+            <div class="role">Analyse, Design, Entwicklung</div>
+            <ul>
+              <li>Entwicklung einer allgemein verwendbaren Komponente (DLL) für die Erstellung von hierarchischen, benutzerdefinierten (Endlos-)Datenfiltern in VB.NET-Anwendungen</li>
+              <li>XML-Format für Filterdefinitionen, die Komponente soll in mehreren Anwendungen zum Einsatz kommen</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> Visual Basic .NET · .NET Framework · WinForms · Oracle · PL/SQL · XML</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">07/2007 – 12/2008</div>
+            <div class="duration">18 Monate</div>
+            <span class="industry">Industrie</span>
+          </div>
+          <div>
+            <h4>Neuentwicklung einer Anwendung für den IT-Support</h4>
+            <div class="role">Analyse, Design, Entwicklung</div>
+            <ul>
+              <li>Neuentwicklung einer Anwendung für den werksinternen IT-Support mit Ticketsystem, Vorgangsspeicherung pro Ticket (komplette Historie), Ticket-Workflow mit Berücksichtigung von Subunternehmern</li>
+              <li>E-Mail-Versand aus der Anwendung, Wissensdatenbank, Auswertungsberichte, umfangreiche grafische Auswertungen (Balken-, Tortendiagramme inkl. hierarchischer Datenfilter), Druckfunktionen aller Daten, Zugriffsberechtigungen und einiges mehr</li>
+              <li>Entwicklung der kompletten Applikation: Design der relationalen Datenbasis, Queries und Procedures mit PL/SQL, komplette Client-Applikation, Weiterentwicklung nach Anforderung</li>
+              <li>08/2008: Entwicklung einer abgewandelten Version der Anwendung für eine weitere Abteilung</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> Visual Basic .NET · .NET Framework · WinForms · ADO.NET · Oracle · PL/SQL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-foo">
+      <span>Walter A. Jablonowski · walterjab@outlook.com</span>
+      <span class="pagenum">Seite 13 / 17</span>
+    </footer>
+  </section>
+
+  <!-- ==================== PAGE 14: PROJECT HISTORY ==================== -->
+
+  <section class="page">
+    <header class="page-header">
+      <div class="who">
+        <img src="img/logo.png" alt="Logo">
+        <div>
+          <div class="name">Walter A. Jablonowski</div>
+          <div class="role">Software Engineer · KI-Systeme</div>
+        </div>
+      </div>
+      <div class="tag">Projekthistorie</div>
+    </header>
+    <div class="header-rule"></div>
+
+    <div class="page-body">
+      <div class="section">
+        <div class="section-title">
+          <span class="index">05</span>
+          <h2>Projekthistorie (Fortsetzung)</h2>
+          <span class="rule"></span>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">02/2007 – 12/2008</div>
+            <div class="duration">23 Monate</div>
+            <span class="industry">Industrie</span>
+          </div>
+          <div>
+            <h4>Neuentwicklung einer werksweiten Anwendung für Anwender-/Zugriffskontrolle</h4>
+            <div class="role">Analyse, Design, Entwicklung</div>
+            <ul>
+              <li>Neuentwicklung einer Anwendung zur zentralisierten Verwaltung, Validierung und Bereitstellung von Daten, Benutzeraccounts und Zugriffsrechten auf inhouse genutzte Anwendungen</li>
+              <li>Umfangreiche Datenimportfunktionen zur Bereitstellung der Daten aus fünf Quellsystemen</li>
+              <li>Anbindung von Drittanwendungen an die Applikation zum Zweck einer Zentralisierung von Programmzugriffen, in der Endausbaustufe bis zu 70 Anwendungen und ein Vielfaches an Installationen</li>
+              <li>Übersichten und Auswertungen zu allen Accountdaten zu Managementzwecken</li>
+              <li>Entwicklung der kompletten Applikation: Design der relationalen Datenbasis, Queries und Procedures mit PL/SQL, komplette Client-Applikation, Weiterentwicklung nach Anforderung</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> Visual Basic .NET · C# · .NET Framework · WinForms · Oracle · PL/SQL · XML</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">01/2007</div>
+            <div class="duration">1 Monat</div>
+            <span class="industry">Industrie</span>
+          </div>
+          <div>
+            <h4>Erweiterung einer Anwendung zum weltweiten Dateiaustausch</h4>
+            <div class="role">Entwicklung</div>
+            <ul>
+              <li>Erweiterung einer Anwendung zur automatisierten weltweiten Aktualisierung/Verteilung von Dateien um einige Funktionen (in User-Clients, Windows-Service)</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> Visual Basic .NET · .NET Framework · SQLite · Sparx EA UML Tool</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">12/2004 – 02/2006</div>
+            <div class="duration">15 Monate</div>
+            <span class="industry">Möbelhandel</span>
+          </div>
+          <div>
+            <h4>Neuentwicklung einer ERP-Applikation für den Massivholzmöbel-Vertrieb</h4>
+            <div class="role">Planung, Analyse, Design, Entwicklung</div>
+            <ul>
+              <li>Entwicklung eines kompletten ERP-Systems für die Abwicklung des Handels mit Massivholzmöbeln und des Verkaufs via Internet</li>
+              <li>Automatisierung des Vertriebs über den eigens entwickelten Webshop und die Ebay-Plattform</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> MS Access XP · MySQL · PHP 4 · Visual Studio · C#</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-foo">
+      <span>Walter A. Jablonowski · walterjab@outlook.com</span>
+      <span class="pagenum">Seite 14 / 17</span>
+    </footer>
+  </section>
+
+  <!-- ==================== PAGE 15: PROJECT HISTORY ==================== -->
+
+  <section class="page">
+    <header class="page-header">
+      <div class="who">
+        <img src="img/logo.png" alt="Logo">
+        <div>
+          <div class="name">Walter A. Jablonowski</div>
+          <div class="role">Software Engineer · KI-Systeme</div>
+        </div>
+      </div>
+      <div class="tag">Projekthistorie</div>
+    </header>
+    <div class="header-rule"></div>
+
+    <div class="page-body">
+      <div class="section">
+        <div class="section-title">
+          <span class="index">05</span>
+          <h2>Projekthistorie (Fortsetzung)</h2>
+          <span class="rule"></span>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">11/2004 – 12/2004</div>
+            <div class="duration">2 Monate</div>
+            <span class="industry">Software</span>
+          </div>
+          <div>
+            <h4>Vorbereitung zum Rework von ca. 10 Access-Anwendungen</h4>
+            <div class="role">Analyse, Design, Entwicklung</div>
+            <ul>
+              <li>Vorbereitungen zur Überarbeitung von ca. 10 Access-Anwendungen nach Umstellung auf das SP 2 von Windows XP</li>
+              <li>Anforderungsanalyse, Implementierung für automatisierte Programm-Umstellung</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> MS Access XP · Visual Studio</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">10/2004</div>
+            <div class="duration">1 Monat</div>
+            <span class="industry">Maschinenbau</span>
+          </div>
+          <div>
+            <h4>Technisches Offerte für Redesign einer Client/Server-Anwendung</h4>
+            <div class="role">Analyse</div>
+            <ul>
+              <li>Pre-Study für das Redesign eines Projektcontrolling-Systems, Analyse des Ist-Systems mit 140 Usern an zwei Standorten</li>
+              <li>Ausarbeitung einer technischen Studie mit mehreren Redesign-Strategien, Zeit- und Kostenkalkulation</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> Sybase Datenbank · PowerBuilder (für Testzwecke)</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">07/2004 – 10/2004</div>
+            <div class="duration">4 Monate</div>
+            <span class="industry">Print / Medien</span>
+          </div>
+          <div>
+            <h4>Entwicklung einer Webplattform für Print-Lösungen</h4>
+            <div class="role">Entwicklung</div>
+            <ul>
+              <li>Entwicklung einer Webplattform für Print-Lösungen (Produktentwicklung)</li>
+              <li>Projekt nach 10/2004 nicht weiter verfolgt</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> PHP 5 · SQL · MySQL · HTML · XAMPP</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">01/2002 – 11/2002</div>
+            <div class="duration">11 Monate</div>
+            <span class="industry">Betonindustrie</span>
+          </div>
+          <div>
+            <h4>Mitarbeit an der Neuentwicklung eines Application Framework</h4>
+            <div class="role">Entwicklung</div>
+            <ul>
+              <li>Mitarbeit an der Implementierung eines Application-Frameworks für kaufmännische/technische Anwendungen</li>
+              <li>Funktion: Generierung der relationalen Datenbasis, GUI/konfigurierbare Oberflächenlogik zur Laufzeit (auf Basis eines UML-Modells in XML-Form)</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> Java · XML · XSLT · Together UML · JBuilder</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">10/2001 – 12/2001</div>
+            <div class="duration">3 Monate</div>
+            <span class="industry">Betonindustrie</span>
+          </div>
+          <div>
+            <h4>Euro-Umstellung einer Fakturierungsanwendung</h4>
+            <div class="role">Analyse, Design, Entwicklung</div>
+            <ul>
+              <li>Entwicklung eines Tools zur Euro-Umstellung von ca. 300 Installationen (10/2001)</li>
+              <li>Anschließend sukzessive Durchführung der Umstellung aller Kunden</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> MS Visual C</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-foo">
+      <span>Walter A. Jablonowski · walterjab@outlook.com</span>
+      <span class="pagenum">Seite 15 / 17</span>
+    </footer>
+  </section>
+
+  <!-- ==================== PAGE 16: PROJECT HISTORY ==================== -->
+
+  <section class="page">
+    <header class="page-header">
+      <div class="who">
+        <img src="img/logo.png" alt="Logo">
+        <div>
+          <div class="name">Walter A. Jablonowski</div>
+          <div class="role">Software Engineer · KI-Systeme</div>
+        </div>
+      </div>
+      <div class="tag">Projekthistorie</div>
+    </header>
+    <div class="header-rule"></div>
+
+    <div class="page-body">
+      <div class="section">
+        <div class="section-title">
+          <span class="index">05</span>
+          <h2>Projekthistorie (Fortsetzung)</h2>
+          <span class="rule"></span>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">02/2001 – 06/2002</div>
+            <div class="duration">17 Monate</div>
+            <span class="industry">Betonindustrie</span>
+          </div>
+          <div>
+            <h4>Neuentwicklung einer Software für Produktionssteuerung in Betonwerken</h4>
+            <div class="role">Projektleitung / Entwicklung</div>
+            <ul>
+              <li>Neuentwicklung einer Software für die Produktion in Betonwerken: Produktionssteuerung, Auftragsabwicklung, Sammeln von Produktionsdaten, Generieren statistischer Auswertungen, Anbindung an Fakturierungssysteme</li>
+              <li>Vor-Ort-Installationen mit kundenspezifischem Customizing der Software bei Werken in Deutschland und Nordfrankreich: Entwicklung von Erweiterungen nach Anforderung, Anpassung von Formaten an die Werksanlage und an kaufmännische Software</li>
+              <li>Aufgaben: Projektleitung, Kundenberatung, Analyse und Design, GUI-Workflow, Implementierung von Kernfunktionalität, Koordination mit einem Hersteller von Steuerungsanlagen</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> MS Access · Visual Basic · Winsock · SQL Server</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">01/2001 – 02/2001</div>
+            <div class="duration">2 Monate</div>
+            <span class="industry">Betonindustrie</span>
+          </div>
+          <div>
+            <h4>Migration einer Dispositionssoftware</h4>
+            <div class="role">Analyse, Entwicklung</div>
+            <ul>
+              <li>Migration einer sehr umfangreichen Software für Fuhrparksdisposition von Borland C++ nach Visual C++ und Win32</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> Borland C++ · Visual C++ · Visual Basic (Codegenerierung Resource Files)</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">09/2000 – 01/2003</div>
+            <div class="duration">29 Monate</div>
+            <span class="industry">Betonindustrie</span>
+          </div>
+          <div>
+            <h4>Weiterentwicklung von 3 Softwareprodukten</h4>
+            <div class="role">Analyse, Design, Entwicklung</div>
+            <ul>
+              <li>Entwicklungsaufgaben in 3 Produkten (Fakturierung, FiBu und Fuhrparkdisposition)</li>
+              <li>Entwicklung von funktionalen Erweiterungen nach Anforderung</li>
+              <li>Erstellen/Anpassen von Formularen (Forth-ähnliche Sprache)</li>
+              <li>Erstellen/Anpassen von Import-/Export-Schnittstellen (Produktionsanlagen, FiBu …)</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> C · Visual C++ · Borland C++ · MFC · dBase IV/V · Forth-ähnliche Sprache</div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="meta">
+            <div class="period">01/1996 – 09/1999</div>
+            <div class="duration">3 Jahre 9 Monate</div>
+            <span class="industry">Software</span>
+          </div>
+          <div>
+            <h4>Mitarbeit in einer Firma bereits zur Schulzeit</h4>
+            <div class="role">Entwicklung</div>
+            <ul>
+              <li>Verschiedene Projekte im Rahmen einer Nebentätigkeit zur Schulzeit: Weiterentwicklung FiBu, verschiedene Tools</li>
+            </ul>
+            <div class="stack"><span class="lbl">Stack:</span> MS Access · Visual Basic · C · Visual C++ · MFC</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-foo">
+      <span>Walter A. Jablonowski · walterjab@outlook.com</span>
+      <span class="pagenum">Seite 16 / 17</span>
+    </footer>
+  </section>
+
+  <!-- ==================== PAGE 17: EDUCATION / CONTACT ==================== -->
+
+  <section class="page">
+    <header class="page-header">
+      <div class="who">
+        <img src="img/logo.png" alt="Logo">
+        <div>
+          <div class="name">Walter A. Jablonowski</div>
+          <div class="role">Software Engineer · KI-Systeme</div>
+        </div>
+      </div>
+      <div class="tag">Ausbildung · Interessen · Kontakt</div>
+    </header>
+    <div class="header-rule"></div>
+
+    <div class="page-body">
+      <div class="section">
+        <div class="section-title">
+          <span class="index">06</span>
+          <h2>Ausbildung</h2>
+          <span class="rule"></span>
+        </div>
+        <div class="edu-list">
+          <div class="edu-item">
+            <span class="year">2003</span>
+            <div class="what">Abschluss Fachinformatiker (IHK)<span class="org">Fachinformatiker für Anwendungsentwicklung</span></div>
+          </div>
+          <div class="edu-item">
+            <span class="year">1996 – 1999</span>
+            <div class="what">Nebentätigkeit zur Schulzeit<span class="org">Implementierung für Softwarehaus</span></div>
+          </div>
+          <div class="edu-item">
+            <span class="year">ab 1992</span>
+            <div class="what">Einstieg in die Programmierung<span class="org">Mit 14 Jahren (Borland C)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <span class="index">07</span>
+          <h2>Interessen</h2>
+          <span class="rule"></span>
+        </div>
+        <div class="interest-list">
+          <div class="interest-line">
+            <span class="cat">Fachlich</span>
+            <div>KI · Informationsmanagement · Minimalistische Webapps · Cloud · UX · Innovative Technologien · Gemeinnützige Software · Blockchain</div>
+          </div>
+          <div class="interest-line">
+            <span class="cat">Privat</span>
+            <div>Ernährung</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <span class="index">08</span>
+          <h2>Kontakt</h2>
+          <span class="rule"></span>
+        </div>
+        <p class="profile-text">
+          Ich freue mich auf Ihre Projektanfrage – <strong>walterjab@outlook.com</strong> · +49 160 99658047 ·
+          walter-a-jablonowski.github.io
         </p>
-        <div class="tool-badges">
-          <a href="https://www.anthropic.com/claude" class="tool-badge" target="_blank">
-            <img src="img/claude_logo.png" alt="Claude">
-            Claude enthusiast
-          </a>
-          <a href="https://www.windsurf.com" class="tool-badge" target="_blank">
-            <img src="img/windsurf_logo.png" alt="Windsurf">
-            enthusiast
-          </a>
-        </div>
-      </section>
-
-    </main>
-  </div><!-- /.cv-page.p1 -->
-
-
-  <!-- ============================================================
-       PAGE 2
-  ============================================================ -->
-  <div class="cv-page p2">
-
-    <aside class="sidebar">
-
-      <div class="s-label">Sprachen</div>
-      <div class="s-langs">
-        <div class="s-lang">
-          <span class="s-lang-name">Deutsch</span>
-          <span class="s-lang-level">Muttersprache</span>
-        </div>
-        <div class="s-lang">
-          <span class="s-lang-name">Englisch</span>
-          <span class="s-lang-level">Flie&szlig;end</span>
-        </div>
       </div>
+    </div>
 
-      <div class="s-divider"></div>
+    <footer class="page-foo">
+      <span>Walter A. Jablonowski · walterjab@outlook.com</span>
+      <span class="pagenum">Seite 17 / 17</span>
+    </footer>
+  </section>
 
-      <div class="s-label">Pers&ouml;nliches</div>
-      <table class="s-personal">
-        <tr>
-          <td>Geburtsdatum</td>
-          <td>09.11.1978</td>
-        </tr>
-        <tr>
-          <td>Nationalit&auml;t</td>
-          <td>Deutsch</td>
-        </tr>
-        <tr>
-          <td>Familienstand</td>
-          <td>Ledig</td>
-        </tr>
-      </table>
-
-      <div class="s-qr">
-        <div class="s-qr-label">Scan me</div>
-        <img src="img/qr.png" alt="QR Code">
-      </div>
-
-    </aside>
-
-    <main class="main">
-
-      <section class="m-sec">
-        <h2 class="m-h2">Berufserfahrung</h2>
-        <div class="timeline">
-
-          <div class="t-item">
-            <div class="t-date">01/2021 &mdash; 07/2024</div>
-            <div class="t-pos">Web-Entwickler</div>
-            <div class="t-org">VX APPS, Hildesheim</div>
-            <div class="t-desc">Entwicklung einer PHP/js-Webanwendung</div>
-          </div>
-
-          <div class="t-item">
-            <div class="t-date">05/2019 &mdash; 01/2021</div>
-            <div class="t-pos">Web-Entwickler</div>
-            <div class="t-org">inixmedia GmbH, Schwentinental</div>
-            <div class="t-desc">Entwicklung einer PHP/js-Webanwendung</div>
-          </div>
-
-          <div class="t-item">
-            <div class="t-date">09/2015 &mdash; 12/2017</div>
-            <div class="t-pos">Mobile- und Web-Entwickler</div>
-            <div class="t-org">Varimetrix Deutschland GmbH, K&uuml;mmersbruck</div>
-            <div class="t-desc">
-              iOS und Android Apps; Entwicklung einer Webanwendung mit PHP und js
-            </div>
-          </div>
-
-          <div class="t-item">
-            <div class="t-date">02/2004 &mdash; 05/2012</div>
-            <div class="t-pos">Selbst&auml;ndiger Entwickler</div>
-            <div class="t-desc">
-              <strong>Kunden:</strong> Auto-Konzern, Telekommunikation, Beh&ouml;rde<br>
-              Neuentwicklung von Business-Anwendungen unter Windows, Datenbankdesign,
-              SQL-Entwicklung, Apps f&uuml;r iPhone
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <section class="m-sec">
-        <h2 class="m-h2">Ausbildung</h2>
-        <div class="timeline">
-
-          <div class="t-item">
-            <div class="t-date">09/2000 &mdash; 02/2003</div>
-            <div class="t-pos">CIB, Bamberg</div>
-            <div class="t-desc">Fachinformatiker Anwendungsentwicklung</div>
-          </div>
-
-          <div class="t-item">
-            <div class="t-date">09/1989 &mdash; 05/1999</div>
-            <div class="t-pos">Clavius Gymnasium, Bamberg</div>
-            <div class="t-desc">Mittlere Reife</div>
-          </div>
-
-        </div>
-      </section>
-
-      <footer class="cv-footer">
-        powered by cv-maker &copy; Walter A. Jablonowski 2026
-      </footer>
-
-    </main>
-  </div><!-- /.cv-page.p2 -->
-
-</div><!-- /.cv-wrap -->
-
-<a class="homepage-fab" href="https://walter-a-jablonowski.github.io/" target="_blank">
-  <i class="bi bi-house-fill"></i>
-  <span>Zur Webseite</span>
-</a>
+  <script>
+    document.getElementById('btnPrint').addEventListener('click', function( e ) {
+      e.preventDefault();
+      window.print();
+    });
+  </script>
 
 </body>
 </html>
