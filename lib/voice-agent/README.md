@@ -7,9 +7,11 @@ Real-time voice chat (Gemini Live API over WebSocket).
 - **Client** — `lib/voice-agent/agent.js` + `lib/voice-agent/style.css`. Mic capture, audio playback, overlay UI.
 - **Worker** — `functions/voice-agent/` (Cloudflare), three modules:
   - `voice-agent.js` — entry: routes a WebSocket upgrade to the relay, POST actions to the legacy handlers
-  - `content.js` — persona, both contexts, both site guides, `NAV_TARGETS`, model switch
+  - `content.js` — persona, both contexts, both site guides, `NAV_TARGETS`
   - `relay.js` — the live session (browser ⇄ Worker ⇄ Gemini)
-- **Config** — `lib/config.js` → `VOICE_AGENT_CONFIG`.
+- **Config** — two single places, one per side:
+  - `functions/config.js` — Worker settings: live model, text model, use case counts. Never reaches a browser.
+  - `lib/config.js` → `VOICE_AGENT_CONFIG` — client settings (incl. `textModel`; the live model is not set here).
 
 ## Transport — relay only
 
@@ -85,6 +87,8 @@ One assembly point: `system_instruction` (from the Worker) `+ runtimeInstruction
 
 ## Model switch (Worker)
 
+All model ids live in `functions/config.js` — nowhere else in the Worker.
+
 One switch picks model **and** mic-input format (kept in sync via `use_legacy_input` → client).
 
 | `USE_NEW_MODEL` | Model | Mic format |
@@ -93,7 +97,8 @@ One switch picks model **and** mic-input format (kept in sync via `use_legacy_in
 | `false` | `gemini-2.5-flash-native-audio-preview-12-2025` | `realtimeInput.mediaChunks` |
 
 - Mismatch → socket close **1007**.
-- Rollback: `USE_NEW_MODEL = false` + redeploy.
+- Rollback: `USE_NEW_MODEL = false` in `functions/config.js` + redeploy.
+- Text model (`TEXT_MODEL_NAME`, use case finder) is separate — the client may override it via `VOICE_AGENT_CONFIG.textModel`.
 
 ## Debug flags (`VOICE_AGENT_CONFIG`)
 
@@ -251,14 +256,33 @@ The `navigate` tool can only reach pages on this site — off-site navigation is
 
 ## Deploy
 
-- **Worker**: paste into Cloudflare dashboard, keep real `GOOGLE_AI_API_KEY` (repo has `YOUR_API_KEY_HERE`).
-- **Client**: bump `?v=...` on `<script>`/`<link>` tags.
-- Deploy Worker + client together (client expects `use_legacy_input`, `greeting_message_de/_en`).
+- **Worker**: `cd functions/voice-agent && npx wrangler deploy`. Never the dashboard editor — the bundle spans several modules (incl. `../config.js`). The key is a Worker secret (`wrangler secret put GOOGLE_AI_API_KEY`), never in the repo.
+- **Client**: `php tools/publish.php` — it rewrites the `?v=` cache-busting tokens itself, no hand-editing.
+- **Order does not matter.** The two halves deploy independently: the relay protocol is stable across this pair, and the only shared setting is `textModel`, which the client sends per request and the Worker only falls back on. Prefer the Worker first — it is the step that can fail, and a failed deploy leaves the live site untouched.
+
+## Reconnect on a dropped socket
+
+A transport close is the network, not the model, so `onRelayClose()` picks the conversation
+back up instead of showing a code. Deliberately narrow, so a broken upstream can never
+turn into a retry loop billing Live-API seconds:
+
+- **one** attempt per live session, re-armed only when a new session reports `ready`
+- only while a call is running (`listening` / `speaking`)
+- only with a stored resume handle — without one it would be a cold restart mid-conversation
+- never for 1000 (normal) or 1011 (`fail()` — the Worker gave up on purpose)
+
+If the handle itself is dead, the existing native→handoff fallback takes over. If the retry
+fails too, the visitor sees exactly the old error.
+
+Covered by `tools/agent_test/agent_test.mjs` (`node tools/agent_test/agent_test.mjs`), which
+runs the real `agent.js` against a DOM stub — no browser, mic or network needed.
 
 ## Close codes
 
 | Code | Cause |
 |---|---|
+| 1006 | Abnormal close, no close frame — the browser⇄Worker socket died (mobile handover, stalled radio, backgrounded tab). Not Gemini: an upstream failure arrives as `upstream-closed-<n>`. The client **retries once** with the resume handle (`shouldReconnect()`); only a second drop in the same session shows the error. |
+| 1001 | Same — endpoint going away. Retried once, exactly like 1006. |
 | 1007 | Model/format mismatch → check `USE_NEW_MODEL`, redeploy. |
 | 1008 | Policy — check API key / model enabled. |
 | 1011 | Server/setup error — try `USE_NEW_MODEL = true`. |
