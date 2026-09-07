@@ -280,8 +280,8 @@ body .project-detail { padding-top: calc(var(--spacing-xxl) + var(--spacing-md))
 body.has-announcement .project-detail { padding-top: calc(var(--spacing-xxl) + 2.6rem + var(--spacing-md)); }
 
 /* The service-page .service-cta banner is gated behind LOADING_CONFIG.hideBiz;
-   the controller adds .hide-biz to <body> when true. Visible by default. The
-   product page exempts its own closing CTA via .service-cta.product-cta. */
+   the controller adds .hide-biz to <body> when true. Visible by default. A page
+   whose CTA must survive the gate marks it .service-cta.cta-always. */
 body.hide-biz .service-cta { display: none; }
 
 @media (max-width: 480px) {

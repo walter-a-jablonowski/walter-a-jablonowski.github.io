@@ -1,0 +1,89 @@
+<svg viewBox="0 0 360 368" xmlns="http://www.w3.org/2000/svg" role="img"
+  font-family="'Segoe UI', Arial, sans-serif"
+  aria-label="Custom AI dashboard: data from database, ERP/CRM and Excel flows into one screen with key figures, a chart and a target gauge, plus an AI assistant that reports on request">
+  <title>AI dashboard &#8211; data sources, key figures, chart and AI assistant</title>
+
+  <!-- Product hero: rendered at 320px wide (.ph-visual img), so the viewBox is only
+       360 units across and every label is sized to stay readable at that scale.
+       Site palette as everywhere else (misc/img/office-agent.svg, the automation
+       page samples): orange for what the machine does, gold for what needs a
+       person's attention - here the target gauge, the alert value and the assistant. -->
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#232326"/>
+      <stop offset="1" stop-color="#131315"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.62">
+      <stop offset="0" stop-color="#FF6B00" stop-opacity="0.13"/>
+      <stop offset="1" stop-color="#FF6B00" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#FF6B00"/>
+    </marker>
+  </defs>
+
+  <rect width="360" height="368" fill="url(#bg)"/>
+  <rect width="360" height="368" fill="url(#glow)"/>
+
+  <!-- The systems that stay in place - the dashboard reads them, it does not replace them -->
+  <rect x="14" y="14" width="104" height="30" rx="15" fill="#2d2d2d" stroke="#666" stroke-width="1.5"/>
+  <text x="66" y="34" text-anchor="middle" fill="#ffffff" font-size="12.5">Database</text>
+  <rect x="128" y="14" width="104" height="30" rx="15" fill="#2d2d2d" stroke="#666" stroke-width="1.5"/>
+  <text x="180" y="34" text-anchor="middle" fill="#ffffff" font-size="12.5">ERP / CRM</text>
+  <rect x="242" y="14" width="104" height="30" rx="15" fill="#2d2d2d" stroke="#666" stroke-width="1.5"/>
+  <text x="294" y="34" text-anchor="middle" fill="#ffffff" font-size="12.5">Excel &#183; API</text>
+
+  <path d="M66,44 V56 H294 V44" fill="none" stroke="#FF6B00" stroke-width="2"/>
+  <line x1="180" y1="44" x2="180" y2="56" stroke="#FF6B00" stroke-width="2"/>
+  <line x1="180" y1="56" x2="180" y2="72" stroke="#FF6B00" stroke-width="2.4" marker-end="url(#arrow)"/>
+
+  <!-- One place to look: the dashboard itself -->
+  <rect x="14" y="74" width="332" height="280" rx="10" fill="#1e1e21" stroke="#FF6B00" stroke-width="2.4"/>
+
+  <!-- Window bar -->
+  <circle cx="32" cy="87" r="3.5" fill="#45454a"/>
+  <circle cx="44" cy="87" r="3.5" fill="#45454a"/>
+  <circle cx="56" cy="87" r="3.5" fill="#45454a"/>
+  <text x="76" y="91" fill="#8a8a8a" font-size="12">Dashboard</text>
+  <circle cx="300" cy="87" r="3" fill="#FFC107"/>
+  <text x="310" y="91" fill="#FFC107" font-size="11">live</text>
+  <line x1="14" y1="100" x2="346" y2="100" stroke="#3a3a3e" stroke-width="1.2"/>
+
+  <!-- Key figures. The third one is gold: a value that has run out of range -->
+  <rect x="26" y="112" width="97" height="50" rx="7" fill="#2d2d2d" stroke="#3a3a3e" stroke-width="1.2"/>
+  <text x="37" y="131" fill="#8a8a8a" font-size="11.5">Revenue</text>
+  <text x="37" y="153" fill="#ffffff" font-size="19" font-weight="600">128k</text>
+  <rect x="131" y="112" width="97" height="50" rx="7" fill="#2d2d2d" stroke="#3a3a3e" stroke-width="1.2"/>
+  <text x="142" y="131" fill="#8a8a8a" font-size="11.5">Orders</text>
+  <text x="142" y="153" fill="#ffffff" font-size="19" font-weight="600">342</text>
+  <rect x="236" y="112" width="97" height="50" rx="7" fill="#2d2d2d" stroke="#FFC107" stroke-width="1.2"/>
+  <text x="247" y="131" fill="#8a8a8a" font-size="11.5">Overdue</text>
+  <text x="247" y="153" fill="#FFC107" font-size="19" font-weight="600">17</text>
+
+  <!-- A chart tile: the last month is the one that matters, so it carries the full accent -->
+  <rect x="26" y="172" width="190" height="110" rx="7" fill="#2d2d2d" stroke="#3a3a3e" stroke-width="1.2"/>
+  <text x="37" y="189" fill="#8a8a8a" font-size="11">Revenue by month</text>
+  <rect x="40" y="238" width="20" height="30" rx="2" fill="#FF6B00" opacity="0.55"/>
+  <rect x="68" y="220" width="20" height="48" rx="2" fill="#FF6B00" opacity="0.63"/>
+  <rect x="96" y="228" width="20" height="40" rx="2" fill="#FF6B00" opacity="0.7"/>
+  <rect x="124" y="204" width="20" height="64" rx="2" fill="#FF6B00" opacity="0.78"/>
+  <rect x="152" y="214" width="20" height="54" rx="2" fill="#FF6B00" opacity="0.88"/>
+  <rect x="180" y="196" width="20" height="72" rx="2" fill="#FF6B00"/>
+  <line x1="34" y1="268" x2="208" y2="268" stroke="#3a3a3e" stroke-width="1.2"/>
+
+  <!-- A target tile -->
+  <rect x="226" y="172" width="107" height="110" rx="7" fill="#2d2d2d" stroke="#3a3a3e" stroke-width="1.2"/>
+  <text x="237" y="189" fill="#8a8a8a" font-size="11">Target</text>
+  <circle cx="279" cy="234" r="32" fill="none" stroke="#3a3a3e" stroke-width="10"/>
+  <circle cx="279" cy="234" r="32" fill="none" stroke="#FFC107" stroke-width="10" stroke-linecap="round"
+    stroke-dasharray="145 201" transform="rotate(-90 279 234)"/>
+  <text x="279" y="240" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="600">72%</text>
+
+  <!-- The AI sitting in the dashboard: ask in plain words, it works on the connected data -->
+  <rect x="26" y="292" width="307" height="50" rx="7" fill="#232326" stroke="#FFC107" stroke-width="1.6"/>
+  <rect x="38" y="306" width="22" height="17" rx="5" fill="none" stroke="#FFC107" stroke-width="1.8"/>
+  <path d="M44,323 v6 l7,-6" fill="none" stroke="#FFC107" stroke-width="1.8" stroke-linejoin="round"/>
+  <text x="70" y="312" fill="#FFC107" font-size="11" font-weight="600">AI assistant</text>
+  <text x="70" y="331" fill="#cfcfcf" font-size="12" font-style="italic">&#8220;Revenue by region?&#8221;</text>
+</svg>

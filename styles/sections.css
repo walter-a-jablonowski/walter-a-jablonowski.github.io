@@ -509,8 +509,13 @@ section {
   transition: transform var(--transition-normal);
 }
 
+/* Flat illustrations and placeholders are centred. Screenshots keep the top-left
+   anchor above - that is what keeps their content readable inside the crop.
+   Matters on mobile: the narrower card flips the cover crop from vertical to
+   horizontal, so a left-anchored illustration visibly drifts right. */
 .project-image img[src*="placehold.co"],
-.project-image img[src$=".svg"] {
+.project-image img[src$=".svg"],
+.project-image img.illustration {
   object-position: center;
 }
 

@@ -52,10 +52,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../../favicon-16x16.png">
   <link rel="manifest" href="../../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../../styles.css?v=26081101">
-  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26081101">
-  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26081101">
-  <link rel="stylesheet" href="../../../../lib/img_overlay/img_overlay.css?v=26081101">
+  <link rel="stylesheet" href="../../../../styles.css?v=26090701">
+  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26090701">
+  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26090701">
+  <link rel="stylesheet" href="../../../../lib/img_overlay/img_overlay.css?v=26090701">
   <style>
     /* Pin the hero to the top so the eyebrow/headline don't shift when the reveal opens */
     .product-hero { align-items: start; margin-top: var(--spacing-lg); }
@@ -76,6 +76,66 @@
     .ph-visual figcaption i { color: var(--primary); flex-shrink: 0; margin-top: .15rem; font-size: .85rem; }
     .ph-visual .loop-zoom-hint { cursor: pointer; }
   </style>
+  <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "en",
+    "url": "https://walter-a-jablonowski.github.io/en/pages/services/self-improving/index.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does it cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The price depends on the use case and the data sources and has to be estimated individually. The first loop is deliberately kept small – it should prove its benefit before you invest further."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I start small?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "With a single use case and a goal that can be measured – an internal knowledge base that curates itself from incoming notes, for example. In stage 1 only documents are written: harmless, and useful right away."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know it really gets better?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Because the system measures and records its own metric on every run. Proposals also state the impact they expect – later runs compare that expectation against the change actually measured. You see the trend, not just the promise."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if the AI proposes something wrong?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Then it doesn’t simply go through. Only what is reversible and explicitly allowed runs automatically – everything else waits for your approval. Every change sits in the log with its reasoning, and the edited files can additionally be versioned. A bad call is therefore something you take back, not damage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can it run on my own infrastructure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The loop runs locally or on your own server, and the language model can run locally too – then no data leaves your house. I support a GDPR-compliant implementation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Am I locked into a vendor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The language model is swappable via configuration – cloud provider or local model – and your data sits in open files you can take with you at any time."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- faq-schema:end -->
 </head>
 <body>
   <header>
@@ -328,7 +388,7 @@
           </div>
         </div>
 
-        <h3 id="use-cases">Typical areas</h3>
+        <h3 id="use-cases">Examples of typical areas</h3>
         <div class="feature-grid">
           <div class="feature-box">
             <div class="fb-icon"><i class="fas fa-headset"></i></div>
@@ -387,6 +447,13 @@
           </div>
         </div>
 
+        <div class="highlight-box">
+          <p><i class="fas fa-chart-line" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>Does it pay off?</strong> You pay for the setup once, the benefit arrives again with
+            every run. And because the system measures its own goal, you can see after each run whether it
+            actually got better &ndash; instead of just assuming so.</p>
+        </div>
+
         <h3 id="safety">What makes it safe?</h3>
         <div class="feature-grid">
           <div class="feature-box">
@@ -410,6 +477,104 @@
           <p><i class="fas fa-lock" style="color: var(--primary); margin-right:.5rem;"></i>
             <strong>Safe in two stages:</strong> In stage 1 only documents are edited &ndash; no actions are
             triggered, which is completely harmless. Real actions come only in stage 2, controlled via the gate.</p>
+        </div>
+
+        <div class="steps-cols">
+          <div>
+            <h3 id="process">A simple approach</h3>
+            <ol class="offer-steps">
+              <li class="no-num"><strong>Start small, without risk.</strong> Stage 1 only edits documents.</li>
+              <li>Define the use case and the goal<br>
+                <span class="step-comment">Initial call, on-site in the region or online</span></li>
+              <li>Set up the loop on that one case</li>
+              <li>Open up approvals step by step</li>
+            </ol>
+          </div>
+          <div class="steps-text mini-tabs">
+            <h3 class="mt-heading">Good to know</h3>
+            <div class="mini-tab-links">
+              <button type="button" class="mini-tab-link active" data-tab="overview">Overview</button>
+              <span class="mini-tab-sep">|</span>
+              <button type="button" class="mini-tab-link" data-tab="faq">FAQ</button>
+            </div>
+            <div class="mini-tab-content active" id="mt-overview">
+              <p>
+                A self-improving loop needs only three things from you: a goal, a metric the goal can be
+                measured by, and the actions the system is allowed to perform. Everything else &ndash; capture,
+                analyze, propose, gate &ndash; is <strong>the same in every use case</strong> and doesn&rsquo;t
+                have to be built again.
+              </p>
+              <p>
+                So your system doesn&rsquo;t start from zero: the loop is the same every time, and only the
+                domain part for your case is added. That keeps the setup small and the first visible benefit close.
+              </p>
+            </div>
+            <div class="mini-tab-content" id="mt-faq">
+              <div class="faq-list">
+                <details class="samples-reveal">
+                  <summary>What does it cost? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>
+                    <span class="biz-only price-line"><strong>Setup at a fixed price</strong> &middot; plus running
+                    usage costs (AI model/APIs). </span>The price depends on the use case and the data sources and
+                    has to be estimated individually. The first loop is deliberately kept small &ndash; it should
+                    prove its benefit before you invest further.
+                  </p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>How do I start small? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>With a single use case and a goal that can be measured &ndash; an internal knowledge base that
+                    curates itself from incoming notes, for example. In stage 1 only documents are written:
+                    harmless, and useful right away.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>How do I know it really gets better? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Because the system measures and records its own metric on every run. Proposals also state the
+                    impact they expect &ndash; later runs compare that expectation against the change actually
+                    measured. You see the trend, not just the promise.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>What if the AI proposes something wrong? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Then it doesn&rsquo;t simply go through. Only what is reversible <em>and</em> explicitly allowed
+                    runs automatically &ndash; everything else waits for your approval. Every change sits in the log
+                    with its reasoning, and the edited files can additionally be versioned. A bad call is therefore
+                    something you take back, not damage.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Can it run on my own infrastructure? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Yes. The loop runs locally or on your own server, and the language model can run locally too
+                    &ndash; then no data leaves your house. I support a GDPR-compliant implementation.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Am I locked into a vendor? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>No. The language model is swappable via configuration &ndash; cloud provider or local model
+                    &ndash; and your data sits in open files you can take with you at any time.</p>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Why work with me?</h3>
+        <p>
+          Self-improving systems are new, and much of it is still promise. I build the part that already holds
+          up today: a small, controlled loop on a real use case &ndash; extended only once it has proven itself.
+        </p>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-award"></i></div>
+            <h4>Experience</h4>
+            <p>Over 25 years in software development, databases and AI.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-brain"></i></div>
+            <h4>AI-native approach</h4>
+            <p>Fast, cost-efficient implementation with state-of-the-art AI.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <h4>Regional &amp; personal</h4>
+            <p>On-site in Bamberg/Nuremberg or online &ndash; one fixed point of contact.</p>
+          </div>
         </div>
 
         <div class="service-cta">
@@ -453,10 +618,10 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../../lib/config.js?v=26081101"></script>
-  <script src="../../../../controller.js?v=26081101"></script>
-  <script src="../../../../lib/voice-agent/agent.js?v=26081101"></script>
-  <script src="../../../../lib/img_overlay/img_overlay.js?v=26081101"></script>
+  <script src="../../../../lib/config.js?v=26090701"></script>
+  <script src="../../../../controller.js?v=26090701"></script>
+  <script src="../../../../lib/voice-agent/agent.js?v=26090701"></script>
+  <script src="../../../../lib/img_overlay/img_overlay.js?v=26090701"></script>
   <script>
     new WebsiteController();
     ImageOverlay.init('.ph-visual svg');

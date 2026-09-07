@@ -65,15 +65,67 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
   <link rel="manifest" href="../../site.webmanifest">
-  <link rel="stylesheet" href="../../styles.css?v=26081101">
-  <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css?v=26081101">
-  <link rel="stylesheet" href="../../lib/fonts/fonts.css?v=26081101">
+  <link rel="stylesheet" href="../../styles.css?v=26090701">
+  <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css?v=26090701">
+  <link rel="stylesheet" href="../../lib/fonts/fonts.css?v=26090701">
   <style>
     /* Region page styles (built on the shared design tokens, aligned with the service pages) */
 
     .product-hero { align-items: start; margin-top: var(--spacing-lg); }
     .ph-lead { margin-bottom: .6rem; }
   </style>
+  <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "de",
+    "url": "https://walter-a-jablonowski.github.io/pages/regions/ki-firma-nuernberg.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Für welche Unternehmen in Nürnberg lohnt sich KI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vor allem für Betriebe mit vielen wiederkehrenden, dokumenten- oder datengetriebenen Abläufen. In der Metropolregion sind das typischerweise produzierende Betriebe und Maschinenbau, Logistik und Großhandel, Medizintechnik im Raum Erlangen, Energie- und Elektrotechnik sowie Dienstleister und Kanzleien. Ob sich KI bei Ihnen lohnt, klären wir im kostenlosen Erstgespräch."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was kostet ein KI-Projekt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kleine Vorhaben rechne ich zum Festpreis ab, größere nach Aufwand; laufende Nutzungskosten für die Modelle kommen hinzu und bleiben transparent. Nach dem kostenlosen Erstgespräch bekommen Sie eine konkrete Einschätzung für Ihren Anwendungsfall."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie schnell ist etwas einsatzbereit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Für einen klar abgegrenzten Anwendungsfall steht in der Regel innerhalb weniger Wochen eine erste lauffähige Version, die Sie im Alltag testen können. Wie lange die vollständige Integration dauert, hängt an den Schnittstellen Ihrer bestehenden Systeme – deshalb starte ich lieber klein und baue aus, was sich bewährt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Läuft die Zusammenarbeit vor Ort oder online?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Beides. Der größte Teil eines Projekts lässt sich zuverlässig online umsetzen. Mein Sitz ist in Stegaurach bei Bamberg, Nürnberg ist in gut einer Stunde erreichbar – für persönliche Termine komme ich gerne zu Ihnen. Sie haben durchgehend denselben Ansprechpartner statt eines wechselnden Agenturteams."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was passiert mit unseren Firmendaten?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Was das Haus verlässt, entscheiden Sie. Auf Wunsch laufen die Modelle lokal oder in Ihrer eigenen Cloud, sodass keine Dokumente an einen externen Anbieter gehen. Zugriffe und Entscheidungen werden protokolliert, und die DSGVO-Fragen klären wir, bevor die erste Zeile Code entsteht."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- faq-schema:end -->
 </head>
 <body>
   <header>
@@ -151,15 +203,17 @@
       <!-- 1) Hero -->
       <div class="product-hero">
         <div class="ph-text">
-          <p class="ph-eyebrow"><a href="index.html" style="color:var(--primary);">Regionen</a> &middot; N&uuml;rnberg</p>
+          <p class="ph-eyebrow"><a href="../../index.html">Start</a> &middot; <a href="index.html">Regionen</a> &middot; N&uuml;rnberg</p>
           <h1>KI f&uuml;r Ihre Firma in N&uuml;rnberg</h1>
           <p class="ph-tagline">K&uuml;nstliche Intelligenz - echter Nutzen im <strong>Gro&szlig;raum N&uuml;rnberg</strong>.</p>
           <p class="ph-lead">
-            KI-Beratung, KI-Entwicklung und Automatisierung f&uuml;r Unternehmen in N&uuml;rnberg und Mittelfranken.
+            KI-Beratung, KI-Entwicklung und Automatisierung f&uuml;r Industrie und Logistik, Handel, Medizintechnik
+            und Dienstleister in N&uuml;rnberg, F&uuml;rth, Erlangen und ganz Mittelfranken.
             <span class="price-hl">Erstgespr&auml;ch unverbindlich</span> &ndash; online oder vor Ort.
           </p>
           <div class="ph-actions">
-            <a href="../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Kontakt</a>
+            <a href="../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Kostenloses Erstgespr&auml;ch</a>
+            <a href="#" class="btn btn-outline use-case-finder-trigger" id="use-case-finder-trigger">Use Case finder</a>
           </div>
         </div>
         <div class="ph-visual">
@@ -169,71 +223,68 @@
 
       <div class="content">
 
-        <h2>KI f&uuml;r Unternehmen im Gro&szlig;raum N&uuml;rnberg</h2>
-        <p>
-          Die Metropolregion N&uuml;rnberg verbindet Industrie, Handel und einen starken Mittelstand mit einer
-          aufstrebenden Tech-Szene. Als <strong>KI Firma f&uuml;r N&uuml;rnberg</strong> helfe ich Unternehmen in
-          N&uuml;rnberg, F&uuml;rth, Erlangen und ganz Mittelfranken, K&uuml;nstliche Intelligenz praxisnah
-          einzuf&uuml;hren &ndash; ohne Hype, mit Blick auf den echten Nutzen.
-        </p>
-        <p>
-          Mein Sitz ist in Stegaurach bei Bamberg, N&uuml;rnberg ist in gut einer Stunde erreichbar. Projekte laufen
-          zuverl&auml;ssig online, und wenn ein pers&ouml;nlicher Termin sinnvoll ist, komme ich gerne zu Ihnen nach
-          N&uuml;rnberg. Ein fester Ansprechpartner statt Agentur-Overhead.
-        </p>
+        <!-- 2) Harte Zahlen statt Vorstellungstext -->
+        <div class="num-row">
+          <div class="num-box"><span class="num-v">25+</span><span class="num-k">Jahre Softwareentwicklung</span></div>
+          <div class="num-box"><span class="num-v">1&nbsp;Std.</span><span class="num-k">bis vor Ort in N&uuml;rnberg</span></div>
+          <div class="num-box"><span class="num-v">ab 1.180&nbsp;&euro;</span><span class="num-k">erste Automatisierung</span></div>
+          <div class="num-box"><span class="num-v">1</span><span class="num-k">Ansprechpartner, kein Agentur-Overhead</span></div>
+        </div>
 
-        <h2>Meine KI-Leistungen f&uuml;r N&uuml;rnberg</h2>
+        <!-- 3) Einsatzbereiche: nach Aufgabe benannt, nicht nach Leistung -->
+        <h2 id="use-cases">Wobei ich Unternehmen in N&uuml;rnberg helfe</h2>
         <div class="feature-grid">
           <div class="feature-box">
-            <div class="fb-icon"><i class="fas fa-lightbulb"></i></div>
-            <h4>KI-Beratung</h4>
-            <p>Anbieterneutral kl&auml;ren, wo KI in Ihrem Unternehmen wirklich hilft.
-              <a href="../services/consulting/index.html">Zur KI-Beratung.</a></p>
-          </div>
-          <div class="feature-box">
-            <div class="fb-icon"><i class="fas fa-robot"></i></div>
-            <h4>KI-Automatisierung</h4>
-            <p>Wiederkehrende Arbeit mit KI-Agenten und Workflows automatisieren.
+            <div class="fb-icon"><i class="fas fa-file-invoice"></i></div>
+            <h4>Dokumente automatisch verarbeiten</h4>
+            <p>Rechnungen und Lieferscheine werden ausgelesen, korrekt zugeordnet und an Ihre Systeme
+              &uuml;bergeben &ndash; kritische F&auml;lle landen zur Pr&uuml;fung beim Menschen.
               Zur <a href="../services/automation/index.html">Automatisierung.</a></p>
           </div>
           <div class="feature-box">
-            <div class="fb-icon"><i class="fas fa-database"></i></div>
-            <h4>KI-Datenl&ouml;sungen</h4>
-            <p>Unstrukturierte Firmendaten ordnen, durchsuchbar machen und in nat&uuml;rlicher Sprache abfragen.
+            <div class="fb-icon"><i class="fas fa-broom"></i></div>
+            <h4>Stammdaten in Ordnung bringen</h4>
+            <p>&Uuml;ber Jahre gewachsene Lieferanten- und Artikeldaten system&uuml;bergreifend abgleichen,
+              Dubletten auch bei abweichender Schreibweise erkennen, kritische F&auml;lle vorlegen.
               <a href="../services/data-solutions/index.html">Zu den Datenl&ouml;sungen.</a></p>
           </div>
           <div class="feature-box">
-            <div class="fb-icon"><i class="fas fa-shield-halved"></i></div>
-            <h4>KI-Security &amp; DSGVO</h4>
-            <p>KI-Systeme absichern, nachvollziehbar und pr&uuml;fbar machen &ndash; DSGVO-konform.
-              Zu <a href="../services/security/index.html">Security &amp; Evaluierung.</a></p>
+            <div class="fb-icon"><i class="fas fa-chart-line"></i></div>
+            <h4>Berichte, die sich selbst schreiben</h4>
+            <p>Kennzahlen aus mehreren Quellen zusammentragen, auswerten und regelm&auml;&szlig;ig ausliefern.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-inbox"></i></div>
+            <h4>Anfragen vorsortieren</h4>
+            <p>Eingehende Mails und Formulare werden eingeordnet, beantwortet oder mit Kontext an die
+              richtige Person weitergereicht.</p>
           </div>
         </div>
-
-        <h2>Aus der Praxis in N&uuml;rnberg und Umgebung</h2>
-        <h3>Stammdatenpflege bei einem fr&auml;nkischen Mittelst&auml;ndler</h3>
-        <p>
-          &Uuml;ber Jahre ausgebaute Lieferanten- und Artikelstammdaten enthalten oft Dubletten und Widerspr&uuml;che.
-          Eine KI gleicht sie system&uuml;bergreifend ab, erkennt Dubletten auch bei abweichenden Schreibweisen und legt
-          kritische F&auml;lle zur Pr&uuml;fung vor &ndash; ein sauberer Stamm, laufend gepflegt.
-        </p>
-        <h3>Klein starten, sicher ausbauen</h3>
-        <p>
-          Ich empfehle den Start mit einem &uuml;berschaubaren Anwendungsfall, der schnell sichtbaren Nutzen bringt &ndash;
-          etwa Dokumentenverarbeitung, automatische Berichte oder Leadanreicherung. Funktioniert er, w&auml;chst die
-          KI-Nutzung Schritt f&uuml;r Schritt, im Tempo Ihres Unternehmens.
-        </p>
-        <h3>Produzierende Betriebe und Handel</h3>
-        <p>
-          Betriebe und H&auml;ndler in der Region N&uuml;rnberg haben viele dokumenten- und datengetriebene
-          Abl&auml;ufe &ndash; ideale Startpunkte f&uuml;r Automatisierung mit schnellem, sichtbarem Nutzen.
+        <p class="grid-note">
+          Noch nicht sicher, was zu Ihnen passt? Das kl&auml;rt die
+          <a href="../services/consulting/index.html">KI-Beratung</a> anbieterneutral. Und wenn bereits KI
+          im Einsatz ist, die nachvollziehbar und DSGVO-konform laufen muss:
+          <a href="../services/security/index.html">Security &amp; Evaluierung.</a>
         </p>
 
         <div class="highlight-box">
           <p><i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right:.5rem;"></i>
-            Projekte laufen online zuverl&auml;ssig, und f&uuml;r pers&ouml;nliche Termine bin ich in
-            gut einer Stunde bei Ihnen vor Ort.</p>
+            Mein Sitz ist in Stegaurach bei Bamberg &ndash; N&uuml;rnberg ist in gut einer Stunde erreichbar.
+            Projekte laufen zuverl&auml;ssig online, und f&uuml;r pers&ouml;nliche Termine komme ich zu Ihnen.</p>
         </div>
+
+        <!-- 4) Der fr&uuml;here "Klein starten"-Absatz, als Ablauf gezeigt -->
+        <h2 id="ablauf">So l&auml;uft ein Projekt ab</h2>
+        <ol class="offer-steps">
+          <li>Kostenloses Erstgespr&auml;ch<br>
+            <span class="step-comment">online oder vor Ort in N&uuml;rnberg</span></li>
+          <li>Einen &uuml;berschaubaren Anwendungsfall ausw&auml;hlen<br>
+            <span class="step-comment">etwa Dokumentenverarbeitung, automatische Berichte oder Leadanreicherung</span></li>
+          <li>Eine erste lauff&auml;hige Version, die Sie im Alltag testen k&ouml;nnen</li>
+          <li>Integration in Ihre bestehenden Systeme</li>
+          <li>Schritt f&uuml;r Schritt ausbauen, was sich bew&auml;hrt hat<br>
+            <span class="step-comment">im Tempo Ihres Unternehmens</span></li>
+        </ol>
 
         <h2>Warum eine KI Firma aus der Region?</h2>
         <div class="feature-grid">
@@ -254,18 +305,61 @@
           </div>
         </div>
 
-        <h2>Weitere Regionen</h2>
-        <div class="region-links">
-          <a href="ki-firma-bamberg.html" class="btn btn-outline"><i class="fas fa-location-dot"></i> KI Firma Bamberg</a>
-          <a href="index.html" class="btn btn-outline"><i class="fas fa-map"></i> Alle Regionen</a>
+        <!-- 5) FAQ - Quelle der FAQPage-Structured-Data (tools/upd_faq_schema.php) -->
+        <h2 id="faq">H&auml;ufige Fragen &ndash; KI f&uuml;r Unternehmen in N&uuml;rnberg</h2>
+        <div class="faq-list">
+          <details class="samples-reveal">
+            <summary>F&uuml;r welche Unternehmen in N&uuml;rnberg lohnt sich KI? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Vor allem f&uuml;r Betriebe mit vielen wiederkehrenden, dokumenten- oder datengetriebenen
+              Abl&auml;ufen. In der Metropolregion sind das typischerweise produzierende Betriebe und
+              Maschinenbau, Logistik und Gro&szlig;handel, Medizintechnik im Raum Erlangen, Energie- und
+              Elektrotechnik sowie Dienstleister und Kanzleien. Ob sich KI bei Ihnen lohnt, kl&auml;ren wir
+              im kostenlosen Erstgespr&auml;ch.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>Was kostet ein KI-Projekt? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Kleine Vorhaben rechne ich zum Festpreis ab, gr&ouml;&szlig;ere nach Aufwand; laufende
+              Nutzungskosten f&uuml;r die Modelle kommen hinzu und bleiben transparent.
+              <span class="biz-only price-line"><strong>Eine erste Automatisierung startet ab 1.180&nbsp;&euro;.</strong></span>
+              Nach dem kostenlosen Erstgespr&auml;ch bekommen Sie eine konkrete Einsch&auml;tzung f&uuml;r
+              Ihren Anwendungsfall.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>Wie schnell ist etwas einsatzbereit? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>F&uuml;r einen klar abgegrenzten Anwendungsfall steht in der Regel innerhalb weniger Wochen
+              eine erste lauff&auml;hige Version, die Sie im Alltag testen k&ouml;nnen. Wie lange die vollst&auml;ndige Integration
+              dauert, h&auml;ngt an den Schnittstellen Ihrer bestehenden Systeme &ndash; deshalb starte ich
+              lieber klein und baue aus, was sich bew&auml;hrt.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>L&auml;uft die Zusammenarbeit vor Ort oder online? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Beides. Der gr&ouml;&szlig;te Teil eines Projekts l&auml;sst sich zuverl&auml;ssig online
+              umsetzen. Mein Sitz ist in Stegaurach bei Bamberg, N&uuml;rnberg ist in gut einer Stunde
+              erreichbar &ndash; f&uuml;r pers&ouml;nliche Termine komme ich gerne zu Ihnen. Sie haben
+              durchgehend denselben Ansprechpartner statt eines wechselnden Agenturteams.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>Was passiert mit unseren Firmendaten? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Was das Haus verl&auml;sst, entscheiden Sie. Auf Wunsch laufen die Modelle lokal oder in Ihrer
+              eigenen Cloud, sodass keine Dokumente an einen externen Anbieter gehen. Zugriffe und
+              Entscheidungen werden protokolliert, und die DSGVO-Fragen kl&auml;ren wir, bevor die erste Zeile
+              Code entsteht.</p>
+          </details>
         </div>
 
-        <div class="service-cta">
-          <h3>Kostenlose KI-Beratung f&uuml;r N&uuml;rnberg</h3>
-          <p>Unverbindlich online kl&auml;ren, wo KI f&uuml;r Ihr Unternehmen in N&uuml;rnberg sinnvoll ist.</p>
+        <!-- 6) Abschluss: Kontakt direkt auf der Seite (cta-always: bleibt unter hideBiz sichtbar) -->
+        <div class="service-cta cta-always">
+          <h3>Kostenloses Erstgespr&auml;ch f&uuml;r N&uuml;rnberg</h3>
+          <p>Unverbindlich kl&auml;ren, wo KI f&uuml;r Ihr Unternehmen in N&uuml;rnberg sinnvoll ist &ndash; online oder vor Ort.</p>
           <div class="cta-actions">
             <a href="../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Kontakt aufnehmen</a>
+            <a href="mailto:walter.a.jablonowski@gmail.com" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Mail schreiben</a>
           </div>
+          <p class="cta-contact">
+            <i class="fas fa-phone"></i><a href="tel:+4916099658047">+49 160 99658047</a>
+            &nbsp;&middot;&nbsp;
+            <i class="fas fa-location-dot"></i>Am Anger 9, 96135 Stegaurach bei Bamberg
+          </p>
         </div>
       </div>
     </div>
@@ -298,9 +392,11 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../lib/config.js?v=26081101"></script>
-  <script src="../../controller.js?v=26081101"></script>
-  <script src="../../lib/voice-agent/agent.js?v=26081101"></script>
+  <script src="../../lib/config.js?v=26090701"></script>
+  <script src="../../controller.js?v=26090701"></script>
+  <script src="../../lib/voice-agent/agent.js?v=26090701"></script>
+  <script src="../../lib/voice-agent/sidebar.js?v=26090701"></script>
+  <script src="../../lib/voice-agent/use-case-finder.js?v=26090701"></script>
   <script>
     new WebsiteController();
   </script>

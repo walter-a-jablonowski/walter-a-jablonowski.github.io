@@ -51,10 +51,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
   <link rel="manifest" href="../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../styles.css?v=26081101">
-  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26081101">
-  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26081101">
-  <link rel="stylesheet" href="../../../lib/img_overlay/img_overlay.css?v=26081101">
+  <link rel="stylesheet" href="../../../styles.css?v=26090701">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26090701">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26090701">
+  <link rel="stylesheet" href="../../../lib/img_overlay/img_overlay.css?v=26090701">
   <style>
     /* Product page styles. Reusable parts (.product-hero, .spec-list, .service-cta
        exemption) live in page-components.css; the blocks below are local to this page. */
@@ -63,8 +63,8 @@
     .content code { color: var(--primary); }  /* systems pages tint inline code */
 
     /* On this page the closing CTA is commercial: hide it under hideBiz
-       (overrides the shared .product-cta exemption via later source order). */
-    body.hide-biz .service-cta.product-cta { display: none; }
+       (overrides the shared .cta-always exemption via later source order). */
+    body.hide-biz .service-cta.cta-always { display: none; }
   </style>
   <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
   <script type="application/ld+json">
@@ -443,7 +443,7 @@
         </div>
 
         <!-- 13) Abschluss-CTA -->
-        <div class="service-cta product-cta">
+        <div class="service-cta cta-always">
           <h3>Was w&uuml;rden Sie bauen, wenn es schnell ginge?</h3>
           <p>Erstgespr&auml;ch kostenfrei &ndash; vor Ort in Bamberg/N&uuml;rnberg oder online.</p>
           <div class="cta-actions">
@@ -481,10 +481,10 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../lib/config.js?v=26081101"></script>
-  <script src="../../../controller.js?v=26081101"></script>
-  <script src="../../../lib/voice-agent/agent.js?v=26081101"></script>
-  <script src="../../../lib/img_overlay/img_overlay.js?v=26081101"></script>
+  <script src="../../../lib/config.js?v=26090701"></script>
+  <script src="../../../controller.js?v=26090701"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26090701"></script>
+  <script src="../../../lib/img_overlay/img_overlay.js?v=26090701"></script>
   <script>
     new WebsiteController();
     ImageOverlay.init('.ph-visual img');

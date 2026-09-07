@@ -85,6 +85,11 @@
 .feature-box h4 { color: var(--white); margin: 0 0 .35rem; font-size: 1.05rem; }
 .feature-box p { margin: 0; font-size: .95rem; color: var(--light-gray); }
 
+/* Note paragraph directly under a feature grid (the cases that did not get a card).
+   It reads as part of the grid, so it keeps a wider gap to whatever follows. Scoped to
+   .content to outweigh the `.content p` margin further down in this file. */
+.content .grid-note { margin-bottom: var(--spacing-lg); }
+
 /* Feature grid carousel (wrapper + arrows injected in controller.js): the grid turns into a
    horizontal scroller as soon as its boxes no longer fit one row - on small screens that is
    almost always the case, on larger ones only for long lists. As long as everything fits,
@@ -130,6 +135,11 @@
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-md);
   text-align: center;
+  /* The boxes stretch to the tallest one; centring keeps a one-line label optically
+     level with a label that wraps to two */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .num-box .num-v {
   display: block;
@@ -364,8 +374,22 @@
   flex-wrap: wrap;
   margin-top: var(--spacing-md);
 }
-/* A closing CTA that stays visible even under hideBiz (unlike a plain .service-cta) */
-body.hide-biz .service-cta.product-cta { display: block; }
+/* Direct contact details under the CTA buttons (mail, phone, location), so a visitor
+   arriving from a local search can act without following a link to another page. */
+.service-cta .cta-contact {
+  margin: var(--spacing-md) 0 0;
+  color: var(--light-gray);
+  font-size: .92rem;
+}
+.service-cta .cta-contact i { color: var(--primary); margin-right: .3rem; }
+.service-cta .cta-contact a { color: inherit; }
+.service-cta .cta-contact a:hover { color: var(--primary-light); }
+
+/* A closing CTA that stays visible even under hideBiz (unlike a plain .service-cta).
+   Used by the product pages and by the region landing pages, whose whole purpose is
+   to convert a visitor arriving from a local search - a landing page without a call
+   to action would be pointless. */
+body.hide-biz .service-cta.cta-always { display: block; }
 
 /* Loop figure — contained panel (content width), slightly darker than the page.
    Holds one diagram (loop, flow or architecture) at its natural 560px width, either
@@ -392,6 +416,10 @@ body.hide-biz .service-cta.product-cta { display: block; }
 }
 .ph-eyebrow { color: var(--primary); font-weight: 600; letter-spacing: .12em;
   text-transform: uppercase; font-size: .8rem; margin: 0 0 .6rem; }
+/* Eyebrow used as a breadcrumb (region pages): the links carry the trail, so they
+   take the eyebrow's own color instead of the global link color. */
+.ph-eyebrow a { color: inherit; }
+.ph-eyebrow a:hover { color: var(--primary-light); }
 .ph-text h1 { color: var(--white); font-size: 2.6rem; line-height: 1.1; margin: 0 0 .8rem; }
 .ph-tagline { color: var(--white); font-size: 1.3rem; font-weight: 500; margin: 0 0 .6rem; }
 .ph-lead { color: var(--lighter-gray); font-size: 1.05rem; line-height: 1.6; margin: 0 0 1.4rem; }
@@ -484,13 +512,6 @@ body.hide-biz .service-cta.product-cta { display: block; }
   .project-header { flex-direction: column; }
 }
 
-/* Row of links to the regional landing pages. */
-.region-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .75rem;
-  margin: var(--spacing-md) 0;
-}
 
 /* ---- Legal pages (imprint, privacy) --------------------------------------
    Their own narrow, light-on-dark reading column — no .project-detail shell. */

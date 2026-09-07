@@ -65,15 +65,67 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
   <link rel="manifest" href="../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../styles.css?v=26081101">
-  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26081101">
-  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26081101">
+  <link rel="stylesheet" href="../../../styles.css?v=26090701">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26090701">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26090701">
   <style>
     /* Region page styles (built on the shared design tokens, aligned with the service pages) */
 
     .product-hero { align-items: start; margin-top: var(--spacing-lg); }
     .ph-lead { margin-bottom: .6rem; }
   </style>
+  <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "en",
+    "url": "https://walter-a-jablonowski.github.io/en/pages/regions/ai-company-nuremberg.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which businesses in Nuremberg benefit from AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mostly those with many recurring, document- or data-driven processes. In the metropolitan area these are typically manufacturers and mechanical engineering, logistics and wholesale, medical technology around Erlangen, energy and electrical engineering as well as service providers and law firms. Whether AI pays off for you is what the free initial call is for."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does an AI project cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Small projects are done at a fixed price, larger ones by effort; ongoing usage costs for the models come on top and stay transparent. After the free initial call you get a concrete estimate for your use case."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How quickly is something ready to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For a clearly scoped use case there is usually a first working version within a few weeks that you can try in day-to-day work. How long the full integration takes depends on the interfaces of your existing systems – which is why I prefer to start small and extend what proves itself."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the work done on-site or online?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both. Most of a project runs reliably online. My base is in Stegaurach near Bamberg and Nuremberg is about an hour away – for personal meetings I am happy to come to you. You have the same point of contact throughout instead of a changing agency team."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens to our company data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You decide what leaves the house. On request the models run locally or in your own cloud, so no document goes to an external provider. Access and decisions are logged, and the GDPR questions are settled before the first line of code."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- faq-schema:end -->
 </head>
 <body>
   <header>
@@ -151,15 +203,17 @@
       <!-- 1) Hero -->
       <div class="product-hero">
         <div class="ph-text">
-          <p class="ph-eyebrow"><a href="index.html" style="color:var(--primary);">Regions</a> &middot; Nuremberg</p>
+          <p class="ph-eyebrow"><a href="../../index.html">Home</a> &middot; <a href="index.html">Regions</a> &middot; Nuremberg</p>
           <h1>AI for Your Nuremberg Business</h1>
           <p class="ph-tagline">Artificial Intelligence - delivers value in the <strong>Nuremberg region</strong>.</p>
           <p class="ph-lead">
-            AI consulting, AI development and automation for businesses in Nuremberg and Middle Franconia.
+            AI consulting, AI development and automation for industry and logistics, trade, medical technology
+            and service providers in Nuremberg, F&uuml;rth, Erlangen and across Middle Franconia.
             <span class="price-hl">Initial call without obligation</span> &ndash; on-site or online.
           </p>
           <div class="ph-actions">
-            <a href="../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Free initial call</a>
+            <a href="#" class="btn btn-outline use-case-finder-trigger" id="use-case-finder-trigger">Use Case finder</a>
           </div>
         </div>
         <div class="ph-visual">
@@ -169,72 +223,68 @@
 
       <div class="content">
 
-        <h2>AI for businesses in the Nuremberg metropolitan area</h2>
-        <p>
-          The Nuremberg metropolitan area combines industry, trade and a strong SME base with a emerging tech scene.
-          As an <strong>AI company for Nuremberg</strong> I help businesses in Nuremberg, F&uuml;rth, Erlangen and
-          across Middle Franconia adopt Artificial Intelligence in a practical way &ndash; no hype, with a focus on
-          real value.
-        </p>
-        <p>
-          My base is in Stegaurach near Bamberg, with Nuremberg about an hour away. Projects run reliably online, and
-          when a personal meeting makes sense I&rsquo;m happy to come to you in Nuremberg. One fixed point of contact
-          instead of agency overhead.
-        </p>
+        <!-- 2) Hard figures instead of an introductory text -->
+        <div class="num-row">
+          <div class="num-box"><span class="num-v">25+</span><span class="num-k">years of software development</span></div>
+          <div class="num-box"><span class="num-v">1&nbsp;hour</span><span class="num-k">to be on-site in Nuremberg</span></div>
+          <div class="num-box"><span class="num-v">from &euro;1,000</span><span class="num-k">for a first automation</span></div>
+          <div class="num-box"><span class="num-v">1</span><span class="num-k">point of contact, no agency overhead</span></div>
+        </div>
 
-        <h2>My AI services for Nuremberg</h2>
+        <!-- 3) Use cases named after the task, not after the service -->
+        <h2 id="use-cases">What I help businesses in Nuremberg with</h2>
         <div class="feature-grid">
           <div class="feature-box">
-            <div class="fb-icon"><i class="fas fa-lightbulb"></i></div>
-            <h4>AI consulting</h4>
-            <p>Clarify, vendor-neutral, where AI really helps in your business.
-              To <a href="../services/consulting/index.html">AI consulting.</a></p>
-          </div>
-          <div class="feature-box">
-            <div class="fb-icon"><i class="fas fa-robot"></i></div>
-            <h4>AI automation</h4>
-            <p>Automate recurring work with AI agents and workflows.
+            <div class="fb-icon"><i class="fas fa-file-invoice"></i></div>
+            <h4>Process documents automatically</h4>
+            <p>Invoices and delivery notes get extracted, mapped correctly and handed over to your systems
+              &ndash; critical cases go to a human for review.
               To <a href="../services/automation/index.html">automation.</a></p>
           </div>
           <div class="feature-box">
-            <div class="fb-icon"><i class="fas fa-database"></i></div>
-            <h4>AI data solutions</h4>
-            <p>Structure unordered company data, make it searchable and query it in natural language.
+            <div class="fb-icon"><i class="fas fa-broom"></i></div>
+            <h4>Clean up master data</h4>
+            <p>Reconcile supplier and article data grown over years across systems, detect duplicates despite
+              differing spellings, submit critical cases for review.
               To <a href="../services/data-solutions/index.html">data solutions.</a></p>
           </div>
           <div class="feature-box">
-            <div class="fb-icon"><i class="fas fa-shield-halved"></i></div>
-            <h4>AI security &amp; GDPR</h4>
-            <p>Secure AI systems and make them observable and verifiable &ndash; GDPR-compliant.
-              <a href="../services/security/index.html">To security &amp; evaluation.</a></p>
+            <div class="fb-icon"><i class="fas fa-chart-line"></i></div>
+            <h4>Reports that write themselves</h4>
+            <p>Collect figures from several sources, evaluate them and deliver them on a schedule.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-inbox"></i></div>
+            <h4>Pre-sort incoming requests</h4>
+            <p>Incoming mails and forms get classified, answered or passed on to the right person with context.</p>
           </div>
         </div>
-
-        <h2>From practice in Nuremberg and the region</h2>
-        <h3>Master data cleanup at a Franconian SME</h3>
-        <p>
-          Supplier and article master data increased over years often contain duplicates and contradictions. An AI
-          reconciles them across systems, detects duplicates despite differing spellings and submits critical cases
-          for review &ndash; a clean master, continuously maintained.
-        </p>
-        <h3>Start small, extend safely</h3>
-        <p>
-          I recommend starting with a manageable use case that delivers quick, visible value &ndash; such as document
-          processing, automated reports or lead enrichment. Once it works, add AI usage step by step, at the pace of
-          your business.
-        </p>
-        <h3>Manufacturing and trade</h3>
-        <p>
-          Manufacturers and retailers in the Nuremberg region have many document- and data-driven processes &ndash;
-          ideal starting points for automation with quick, visible value.
+        <p class="grid-note">
+          Not sure yet which of these fits? That is what vendor-neutral
+          <a href="../services/consulting/index.html">AI consulting</a> is for. And if AI is already running
+          and has to stay observable and GDPR-compliant:
+          <a href="../services/security/index.html">security &amp; evaluation.</a>
         </p>
 
         <div class="highlight-box">
           <p><i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right:.5rem;"></i>
             <strong>Honest about the region:</strong> I don&rsquo;t have an office in Nuremberg &ndash; and it
-            isn&rsquo;t needed. Projects run reliably online, and for personal meetings I&rsquo;m with you in about
-            an hour.</p>
+            isn&rsquo;t needed. My base is in Stegaurach near Bamberg. Projects run reliably online, and for
+            personal meetings I&rsquo;m with you in about an hour.</p>
         </div>
+
+        <!-- 4) The former "start small" paragraph, shown as a process -->
+        <h2 id="process">How a project runs</h2>
+        <ol class="offer-steps">
+          <li>Free initial call<br>
+            <span class="step-comment">online or on-site in Nuremberg</span></li>
+          <li>Pick one manageable use case<br>
+            <span class="step-comment">such as document processing, automated reports or lead enrichment</span></li>
+          <li>A first working version you can try in day-to-day work</li>
+          <li>Integration into your existing systems</li>
+          <li>Extend step by step what has proven itself<br>
+            <span class="step-comment">at the pace of your business</span></li>
+        </ol>
 
         <h2>Why an AI company from the region?</h2>
         <div class="feature-grid">
@@ -255,18 +305,56 @@
           </div>
         </div>
 
-        <h2>Misc regions</h2>
-        <div class="region-links">
-          <a href="ai-company-bamberg.html" class="btn btn-outline"><i class="fas fa-location-dot"></i> AI Company Bamberg</a>
-          <a href="index.html" class="btn btn-outline"><i class="fas fa-map"></i> All regions</a>
+        <!-- 5) FAQ - source of the FAQPage structured data (tools/upd_faq_schema.php) -->
+        <h2 id="faq">Frequently asked &ndash; AI for businesses in Nuremberg</h2>
+        <div class="faq-list">
+          <details class="samples-reveal">
+            <summary>Which businesses in Nuremberg benefit from AI? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Mostly those with many recurring, document- or data-driven processes. In the metropolitan area
+              these are typically manufacturers and mechanical engineering, logistics and wholesale, medical
+              technology around Erlangen, energy and electrical engineering as well as service providers and
+              law firms. Whether AI pays off for you is what the free initial call is for.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>What does an AI project cost? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Small projects are done at a fixed price, larger ones by effort; ongoing usage costs for the
+              models come on top and stay transparent.
+              <span class="biz-only price-line"><strong>A first automation starts at &euro;1,000.</strong></span>
+              After the free initial call you get a concrete estimate for your use case.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>How quickly is something ready to use? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>For a clearly scoped use case there is usually a first working version within a few weeks that you can try
+              in day-to-day work. How long the full integration takes depends on the interfaces of your
+              existing systems &ndash; which is why I prefer to start small and extend what proves itself.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>Is the work done on-site or online? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>Both. Most of a project runs reliably online. My base is in Stegaurach near Bamberg and
+              Nuremberg is about an hour away &ndash; for personal meetings I am happy to come to you. You have
+              the same point of contact throughout instead of a changing agency team.</p>
+          </details>
+          <details class="samples-reveal">
+            <summary>What happens to our company data? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+            <p>You decide what leaves the house. On request the models run locally or in your own cloud, so no
+              document goes to an external provider. Access and decisions are logged, and the GDPR questions
+              are settled before the first line of code.</p>
+          </details>
         </div>
 
-        <div class="service-cta">
-          <h3>Free initial AI consultation for Nuremberg</h3>
+        <!-- 6) Closing contact block (cta-always: stays visible under hideBiz) -->
+        <div class="service-cta cta-always">
+          <h3>Free initial call for Nuremberg</h3>
           <p>Clarify without obligation where AI makes sense for your business in Nuremberg &ndash; on-site or online.</p>
           <div class="cta-actions">
             <a href="../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Contact me</a>
+            <a href="mailto:walter.a.jablonowski@gmail.com" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Write a mail</a>
           </div>
+          <p class="cta-contact">
+            <i class="fas fa-phone"></i><a href="tel:+4916099658047">+49 160 99658047</a>
+            &nbsp;&middot;&nbsp;
+            <i class="fas fa-location-dot"></i>Am Anger 9, 96135 Stegaurach near Bamberg
+          </p>
         </div>
       </div>
     </div>
@@ -299,9 +387,11 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../lib/config.js?v=26081101"></script>
-  <script src="../../../controller.js?v=26081101"></script>
-  <script src="../../../lib/voice-agent/agent.js?v=26081101"></script>
+  <script src="../../../lib/config.js?v=26090701"></script>
+  <script src="../../../controller.js?v=26090701"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26090701"></script>
+  <script src="../../../lib/voice-agent/sidebar.js?v=26090701"></script>
+  <script src="../../../lib/voice-agent/use-case-finder.js?v=26090701"></script>
   <script>
     new WebsiteController();
   </script>
