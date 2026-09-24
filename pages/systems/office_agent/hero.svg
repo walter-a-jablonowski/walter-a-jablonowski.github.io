@@ -1,0 +1,86 @@
+<svg viewBox="0 0 360 428" xmlns="http://www.w3.org/2000/svg" role="img"
+  font-family="'Segoe UI', Arial, sans-serif"
+  aria-label="Office Agent: Belege, Mails und Dateien laufen durch den Agenten, ein Mensch gibt frei, am Ende steht ein gepr&#252;fter Datensatz &#8211; jeder Schritt protokolliert">
+  <title>Office Agent &#8211; Eingang, Agent, Freigabe, gepr&#252;fter Datensatz</title>
+
+  <!-- Product hero: rendered at 320px wide (.ph-visual img), so the viewBox is only
+       360 units across and every label is sized to stay readable at that scale.
+       Same visual language as the index card (misc/img/office-agent.svg): the card
+       shows the motif in three shapes, this one tells the whole story.
+       The stages are centred on x=159, not on the box, to leave the right margin
+       to the audit rail. -->
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#232326"/>
+      <stop offset="1" stop-color="#131315"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.44" cy="0.46" r="0.62">
+      <stop offset="0" stop-color="#FF6B00" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#FF6B00" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#FF6B00"/>
+    </marker>
+    <marker id="arrowGrey" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8a8a8a"/>
+    </marker>
+    <marker id="arrowGold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#FFC107"/>
+    </marker>
+  </defs>
+
+  <rect width="360" height="428" fill="url(#bg)"/>
+  <rect width="360" height="428" fill="url(#glow)"/>
+
+  <!-- What comes in: a stack of documents, one value already picked out in orange -->
+  <rect x="133" y="12" width="66" height="76" rx="7" fill="#242426" stroke="#4e4e52" stroke-width="1.6"/>
+  <rect x="126" y="18" width="66" height="76" rx="7" fill="#28282b" stroke="#5f5f64" stroke-width="1.8"/>
+  <rect x="119" y="24" width="66" height="76" rx="7" fill="#2d2d30" stroke="#8a8a8a" stroke-width="2.2"/>
+  <path d="M131,48 H173" stroke="#8a8a8a" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M131,63 H173" stroke="#8a8a8a" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M131,78 H157" stroke="#FF6B00" stroke-width="3.2" stroke-linecap="round"/>
+  <text x="159" y="118" text-anchor="middle" fill="#999999" font-size="12.5">Beleg &#183; E-Mail &#183; Datei</text>
+
+  <line x1="159" y1="126" x2="159" y2="144" stroke="#8a8a8a" stroke-width="2.4" marker-end="url(#arrowGrey)"/>
+
+  <!-- The agent: always the same checked building blocks, one recipe per task -->
+  <rect x="14" y="146" width="290" height="100" rx="10" fill="#2d2d2d" stroke="#FF6B00" stroke-width="2.4"/>
+  <text x="159" y="182" text-anchor="middle" fill="#FF6B00" font-size="26" font-weight="600">Agent</text>
+  <rect x="28" y="200" width="84" height="30" rx="15" fill="#232326" stroke="#55555a" stroke-width="1.4"/>
+  <text x="70" y="220" text-anchor="middle" fill="#cfcfcf" font-size="12.5">Lesen</text>
+  <rect x="117" y="200" width="84" height="30" rx="15" fill="#232326" stroke="#55555a" stroke-width="1.4"/>
+  <text x="159" y="220" text-anchor="middle" fill="#cfcfcf" font-size="12.5">Pr&#252;fen</text>
+  <rect x="206" y="200" width="84" height="30" rx="15" fill="#232326" stroke="#55555a" stroke-width="1.4"/>
+  <text x="248" y="220" text-anchor="middle" fill="#cfcfcf" font-size="12.5">Abgleich</text>
+
+  <line x1="159" y1="246" x2="159" y2="266" stroke="#FF6B00" stroke-width="2.4" marker-end="url(#arrow)"/>
+
+  <!-- The human gate: no model result passes unchecked -->
+  <rect x="14" y="268" width="290" height="76" rx="10" fill="#2d2d2d" stroke="#FFC107" stroke-width="2.4"/>
+  <circle cx="47" cy="298" r="10" fill="none" stroke="#FFC107" stroke-width="2.2"/>
+  <path d="M31,322 q16,-19 32,0" fill="none" stroke="#FFC107" stroke-width="2.2"/>
+  <text x="148" y="302" text-anchor="middle" fill="#ffffff" font-size="19" font-weight="600">Freigabe</text>
+  <text x="148" y="322" text-anchor="middle" fill="#999999" font-size="12.5">Mensch entscheidet</text>
+  <path d="M232,304 l11,11 l24,-26" fill="none" stroke="#FFC107" stroke-width="4"
+    stroke-linecap="round" stroke-linejoin="round"/>
+
+  <line x1="159" y1="344" x2="159" y2="364" stroke="#FFC107" stroke-width="2.4" marker-end="url(#arrowGold)"/>
+
+  <!-- What comes out: not a text suggestion, a record that was checked -->
+  <rect x="43" y="366" width="232" height="38" rx="19" fill="#2d2d2d" stroke="#FFC107" stroke-width="2"/>
+  <text x="159" y="391" text-anchor="middle" fill="#FFC107" font-size="16" font-weight="600">Gepr&#252;fter Datensatz</text>
+
+  <!-- The rail on the right: every stage is written down and stays explainable -->
+  <g opacity="0.55">
+    <line x1="324" y1="152" x2="324" y2="404" stroke="#FFC107" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <line x1="308" y1="196" x2="320" y2="196" stroke="#FFC107" stroke-width="1.5"/>
+    <line x1="308" y1="306" x2="320" y2="306" stroke="#FFC107" stroke-width="1.5"/>
+    <line x1="281" y1="385" x2="320" y2="385" stroke="#FFC107" stroke-width="1.5"/>
+    <circle cx="324" cy="196" r="2.6" fill="#FFC107"/>
+    <circle cx="324" cy="306" r="2.6" fill="#FFC107"/>
+    <circle cx="324" cy="385" r="2.6" fill="#FFC107"/>
+  </g>
+  <text x="341" y="278" text-anchor="middle" fill="#FFC107" font-size="12.5" opacity="0.85"
+    transform="rotate(-90 341 278)">Protokoll &#183; jeder Schritt</text>
+</svg>

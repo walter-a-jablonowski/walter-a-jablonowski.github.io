@@ -6,6 +6,10 @@
   padding: 0 var(--spacing-lg);
 }
 
+/* Commercial details (e.g. prices) gated behind LOADING_CONFIG.hideBiz; the
+   controller adds .hide-biz to <body> when true. Visible by default. */
+body.hide-biz .biz-only { display: none !important; }
+
 /* ===== Buttons ===== */
 .btn {
   display: inline-block;

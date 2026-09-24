@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="883" viewBox="0 0 800 883" role="img" aria-labelledby="t">
+  <title id="t">Lower costs year after year, no overload despite the skills shortage, more capacity for bigger projects</title>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#19191b"/>
+      <stop offset="1" stop-color="#09090a"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF6B00"/>
+      <stop offset="1" stop-color="#FF3E00"/>
+    </linearGradient>
+    <linearGradient id="row" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f1c1a"/>
+      <stop offset="1" stop-color="#161413"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.72">
+      <stop offset="0" stop-color="#FF6B00" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#FF6B00" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="gl" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="0" stdDeviation="7" flood-color="#FF6B00" flood-opacity="0.45"/>
+    </filter>
+
+    <!-- Cost goes down -->
+    <g id="icDown" stroke="#170f08" fill="#170f08">
+      <rect x="-27" y="-18" width="13" height="36" rx="2" stroke="none"/>
+      <rect x="-7" y="-4" width="13" height="22" rx="2" stroke="none" fill-opacity=".75"/>
+      <rect x="13" y="6" width="13" height="12" rx="2" stroke="none" fill-opacity=".55"/>
+      <path d="M-26 -27 L-2 -15 L22 -3" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 -4 L23 -2 L21 -16" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <!-- Load stays in the safe zone -->
+    <g id="icGauge" stroke="#170f08" fill="none" stroke-linecap="round">
+      <path d="M-30 12 A30 30 0 0 1 30 12" stroke-width="7"/>
+      <path d="M-24 -8 L-20 -4 M0 -19 V-13 M24 -8 L20 -4" stroke-width="4"/>
+      <path d="M0 12 L-17 -9" stroke-width="6"/>
+      <circle cx="0" cy="12" r="6" fill="#170f08" stroke="none"/>
+    </g>
+    <!-- Capacity goes up -->
+    <g id="icUp" stroke="#170f08" fill="#170f08">
+      <rect x="-27" y="6" width="13" height="12" rx="2" stroke="none" fill-opacity=".55"/>
+      <rect x="-7" y="-4" width="13" height="22" rx="2" stroke="none" fill-opacity=".75"/>
+      <rect x="13" y="-18" width="13" height="36" rx="2" stroke="none"/>
+      <path d="M-26 -3 L-2 -15 L22 -27" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 -28 L23 -26 L21 -12" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </defs>
+
+  <rect width="800" height="883" rx="28" fill="url(#bg)"/>
+  <rect width="800" height="883" rx="28" fill="url(#glow)"/>
+
+  <!-- Lower costs -->
+  <rect x="56" y="68" width="688" height="248" rx="20" fill="url(#row)" stroke="#FF6B00" stroke-opacity=".2" stroke-width="2"/>
+  <g filter="url(#gl)">
+    <rect x="88" y="140" width="104" height="104" rx="26" fill="url(#acc)"/>
+  </g>
+  <use href="#icDown" x="140" y="192"/>
+  <text x="220" y="190" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="58" font-weight="700" fill="#ffffff">Lower costs</text>
+  <text x="220" y="234" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="32" fill="#FFC107">year after year</text>
+
+  <!-- No overload -->
+  <rect x="56" y="324" width="688" height="248" rx="20" fill="url(#row)" stroke="#FF6B00" stroke-opacity=".2" stroke-width="2"/>
+  <g filter="url(#gl)">
+    <rect x="88" y="396" width="104" height="104" rx="26" fill="url(#acc)"/>
+  </g>
+  <use href="#icGauge" x="140" y="448"/>
+  <text x="220" y="446" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="58" font-weight="700" fill="#ffffff">No overload</text>
+  <text x="220" y="490" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="32" fill="#FFC107">despite the skills shortage</text>
+
+  <!-- More capacity -->
+  <rect x="56" y="580" width="688" height="248" rx="20" fill="url(#row)" stroke="#FF6B00" stroke-opacity=".2" stroke-width="2"/>
+  <g filter="url(#gl)">
+    <rect x="88" y="652" width="104" height="104" rx="26" fill="url(#acc)"/>
+  </g>
+  <use href="#icUp" x="140" y="704"/>
+  <text x="220" y="702" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="58" font-weight="700" fill="#ffffff">More capacity</text>
+  <text x="220" y="746" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="32" fill="#FFC107">bigger projects, more customers</text>
+</svg>

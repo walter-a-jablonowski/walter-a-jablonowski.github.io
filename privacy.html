@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Datenschutzerklärung | Walter A. Jablonowski">
+  <meta name="description" content="Datenschutzerkl&auml;rung | Walter A. Jablonowski">
   <meta name="robots" content="noindex, follow">
-  <title>Datenschutzerklärung | Walter A. Jablonowski</title>
+  <title>Datenschutzerkl&auml;rung | Walter A. Jablonowski</title>
   <link rel="canonical" href="https://walter-a-jablonowski.github.io/privacy.html">
   <link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/privacy.html">
   <link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/privacy.html">
@@ -14,61 +14,14 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=26062304">
-  <link rel="stylesheet" href="lib/fontawesome/css/all.min.css?v=26062304">
-  <link rel="stylesheet" href="lib/fonts/fonts.css?v=26062304">
+  <link rel="stylesheet" href="styles.css?v=26092401">
+  <link rel="stylesheet" href="lib/fontawesome/css/all.min.css?v=26092401">
+  <link rel="stylesheet" href="lib/fonts/fonts.css?v=26092401">
   <style>
-    .legal-content {
-      padding: 120px 0 60px;
-    }
-
-    .legal-content .container {
-      max-width: 800px;
-    }
-
-    .legal-content h1 {
-      margin-bottom: 2rem;
-      color: var(--primary);
-    }
-
     .legal-content h2 {
       font-size: 1.75rem;
       margin-top: 2rem;
       margin-bottom: 1rem;
-    }
-
-    .legal-content h3 {
-      font-size: 1.25rem;
-      margin-top: 1.5rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .legal-content p, .legal-content ul, .legal-content ol {
-      margin-bottom: 1rem;
-    }
-
-    .legal-content ul, .legal-content ol {
-      padding-left: 2rem;
-    }
-
-    .legal-content a {
-      color: var(--primary);
-      text-decoration: underline;
-    }
-
-    .legal-content a:hover {
-      color: var(--primary-dark);
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-top: 2rem;
-      color: var(--primary);
-      font-weight: 600;
-    }
-
-    .back-link i {
-      margin-right: 0.5rem;
     }
   </style>
 </head>
@@ -83,16 +36,56 @@
           <i class="fas fa-bars"></i>
         </div>
         <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Start</a></li>
+          <!-- nav-menu:start | DON'T edit the menu here - edit the template in tools/upd_menu.php, then run it (see CLAUDE.md) -->
+          <li><a href="index.html#hero" class="nav-link">Start</a></li>
           <li><a href="index.html#about" class="nav-link">KI fragen</a></li>
-          <li><a href="index.html#services" class="nav-link">Leistungen</a></li>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-head">
+              <a href="index.html#services" class="nav-link">Leistungen</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Untermen&uuml; Leistungen"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li class="nav-dropdown-group">Agents &amp; Workflow</li>
+              <li><a href="pages/services/automation/index.html" class="nav-link">Automatisierung</a></li>
+              <li><a href="pages/services/self-improving/index.html" class="nav-link">Selbstverbessernde KI</a></li>
+              <li><a href="pages/services/data-solutions/index.html" class="nav-link">KI-Datenl&ouml;sungen</a></li>
+              <li class="nav-dropdown-group">Consulting &amp; Integration</li>
+              <li><a href="pages/services/consulting/index.html" class="nav-link">AI Beratung</a></li>
+              <li><a href="pages/services/security/index.html" class="nav-link">Security &amp; Evaluierung</a></li>
+              <li><a href="pages/services/integration/index.html" class="nav-link">KI-Integration &amp; MCP</a></li>
+              <li class="nav-dropdown-group">Human Interface</li>
+              <li><a href="pages/services/dashboards/index.html" class="nav-link">KI Dashboards</a></li>
+              <li><a href="pages/services/ai-apps/index.html" class="nav-link">Apps, die arbeiten</a></li>
+              <li class="nav-dropdown-group">Commerce</li>
+              <li><a href="pages/services/agentic-commerce/index.html" class="nav-link">Agentic Commerce</a></li>
+            </ul>
+          </li>
           <li class="less-spacing"><a href="index.html#skills" class="nav-link">Kenntnisse</a></li>
-          <li><a href="index.html#proj" class="nav-link">Projekte</a></li>
-          <li><a href="index.html#contact" class="nav-link">Kontakt</a></li>
-          <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
+          <li class="nav-dropdown less-spacing">
+            <span class="nav-dropdown-head">
+              <a href="index.html#proj" class="nav-link">Projekte</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Untermen&uuml; Projekte"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="pages/systems/office_agent/index.html" class="nav-link">Office Agent</a></li>
+              <li><a href="pages/systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
+              <li><a href="pages/systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
+              <li><a href="pages/systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
+              <li><a href="pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
+              <li><a href="pages/systems/task_board/index.html" class="nav-link">AI Task Board</a></li>
+              <li><a href="pages/systems/agentic_db/index.html" class="nav-link">Agentic DB</a></li>
+              <li><a href="pages/systems/editor/index.html" class="nav-link">AI Built Editor</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="index.html#contact" class="nav-link">Kontakt</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="https://www.linkedin.com/in/waj-ai" target="_blank" class="nav-link"
               title="Mein LinkedIn-Profil besuchen"><i class="fab fa-linkedin-in"></i></a></li>
           <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link"
               title="Mein GitHub-Profil besuchen"><i class="fab fa-github"></i></a></li>
+          <li><button type="button" class="nav-link search-link" data-search-open
+              title="Website durchsuchen (Strg+K)" aria-label="Suche"><i class="fas fa-magnifying-glass"></i></button></li>
+          <!-- nav-menu:end -->
           <li class="lang-switch">
             <a href="privacy.html" class="nav-link active" hreflang="de" title="Deutsch">DE</a>
             <span class="lang-sep">|</span>
@@ -105,13 +98,13 @@
 
   <section class="legal-content">
     <div class="container">
-      <h1>Datenschutzerklärung</h1>
+      <h1>Datenschutzerkl&auml;rung</h1>
 
-      <p>Stand: 20. Juni 2026</p>
+      <p>Stand: 11. Juli 2026</p>
 
       <p>Der Schutz Ihrer personenbezogenen Daten ist mir ein wichtiges Anliegen. Diese
-        Datenschutzerklärung informiert Sie gemäß Art. 13 und 14 der Datenschutz-Grundverordnung (DSGVO)
-        darüber, welche personenbezogenen Daten beim Besuch dieser Website
+        Datenschutzerkl&auml;rung informiert Sie gem&auml;&szlig; Art. 13 und 14 der Datenschutz-Grundverordnung (DSGVO)
+        dar&uuml;ber, welche personenbezogenen Daten beim Besuch dieser Website
         (<a href="https://walter-a-jablonowski.github.io">walter-a-jablonowski.github.io</a>) verarbeitet
         werden, zu welchem Zweck und auf welcher Rechtsgrundlage dies geschieht.</p>
 
@@ -138,50 +131,56 @@
       <p>Diese Website wird bei GitHub Pages gehostet, einem Dienst der GitHub Inc., 88 Colin P Kelly Jr St,
         San Francisco, CA 94107, USA (eine Tochtergesellschaft der Microsoft Corporation).</p>
 
-      <p>Beim Aufruf der Website erhebt der Hoster automatisch Informationen, die Ihr Browser übermittelt,
-        und speichert diese in sogenannten Server-Logfiles. Erfasst werden können:</p>
+      <p>Beim Aufruf der Website erhebt der Hoster automatisch Informationen, die Ihr Browser &uuml;bermittelt,
+        und speichert diese in sogenannten Server-Logfiles. Erfasst werden k&ouml;nnen:</p>
 
       <ul>
-        <li>IP-Adresse des anfragenden Geräts,</li>
+        <li>IP-Adresse des anfragenden Ger&auml;ts,</li>
         <li>Datum und Uhrzeit des Zugriffs,</li>
         <li>Name und URL der abgerufenen Datei,</li>
         <li>Website, von der aus der Zugriff erfolgt (Referrer-URL),</li>
         <li>verwendeter Browser, Betriebssystem und ggf. der Name Ihres Zugangsproviders,</li>
-        <li>HTTP-Statuscode und übertragene Datenmenge.</li>
+        <li>HTTP-Statuscode und &uuml;bertragene Datenmenge.</li>
       </ul>
 
-      <p>Die Verarbeitung dieser Daten erfolgt zur Auslieferung der Website sowie zur Gewährleistung von
-        Stabilität und Sicherheit. Rechtsgrundlage ist das berechtigte Interesse gemäß
+      <p>Die Verarbeitung dieser Daten erfolgt zur Auslieferung der Website sowie zur Gew&auml;hrleistung von
+        Stabilit&auml;t und Sicherheit. Rechtsgrundlage ist das berechtigte Interesse gem&auml;&szlig;
         <strong>Art. 6 Abs. 1 lit. f DSGVO</strong> an einem technisch fehlerfreien und sicheren Betrieb.
         Ich selbst habe auf diese Logfiles keinen direkten Zugriff; es findet kein Tracking durch mich statt.</p>
 
-      <p>Die Datenverarbeitung kann eine Übermittlung in die USA beinhalten. GitHub/Microsoft ist unter dem
-        <strong>EU-US Data Privacy Framework</strong> zertifiziert; ergänzend bestehen
-        EU-Standardvertragsklauseln (Art. 46 DSGVO) als geeignete Garantien für die Drittlandübermittlung.</p>
+      <p>Die Datenverarbeitung kann eine &Uuml;bermittlung in die USA beinhalten. GitHub/Microsoft ist unter dem
+        <strong>EU-US Data Privacy Framework</strong> zertifiziert; erg&auml;nzend bestehen
+        EU-Standardvertragsklauseln (Art. 46 DSGVO) als geeignete Garantien f&uuml;r die Drittland&uuml;bermittlung.</p>
 
       <h2>3. Schriftarten und Symbole (lokal eingebunden)</h2>
 
-      <p>Schriftarten (Google Fonts „Roboto" und „Source Code Pro") sowie die verwendeten Icons
+      <p>Schriftarten (Google Fonts &bdquo;Roboto" und &bdquo;Source Code Pro") sowie die verwendeten Icons
         (Font Awesome) werden <strong>lokal von diesem Server ausgeliefert</strong>. Beim Laden der Website
         wird <strong>keine Verbindung zu Servern von Google, Cloudflare oder anderen Drittanbietern</strong>
-        aufgebaut; es werden insbesondere keine IP-Adressen an Google oder Font-CDNs übermittelt.</p>
+        aufgebaut; es werden insbesondere keine IP-Adressen an Google oder Font-CDNs &uuml;bermittelt.</p>
 
       <h2>4. Cookies und lokale Speicherung</h2>
 
       <p>Diese Website setzt <strong>keine Cookies</strong> zu Tracking-, Analyse- oder Werbezwecken ein und
-        benötigt daher <strong>keinen Cookie-Banner und keine Einwilligung</strong> nach § 25 TDDDG. Es werden
+        ben&ouml;tigt daher <strong>keinen Cookie-Banner und keine Einwilligung</strong> nach § 25 TDDDG. Es werden
         lediglich der <code>localStorage</code> bzw. <code>sessionStorage</code> Ihres Browsers genutzt, um
         technisch notwendige, funktionale Einstellungen ohne Personenbezug zu speichern:</p>
 
       <ul>
         <li><strong>Sprach- und Anzeige-Hinweise</strong> (z.&nbsp;B. <code>waj:homepage:langHintDismissed</code>,
-          <code>waj:homepage:siteVisited</code>): steuern, ob Hinweise bzw. der Ladebildschirm erneut erscheinen.</li>
+          <code>waj:homepage:siteVisited</code>, <code>waj:homepage:offerDismissed</code>): steuern, ob Hinweise,
+          der Ladebildschirm oder Aktionshinweise erneut erscheinen.</li>
+        <li><strong>Use-Case-Finder</strong> (<code>ucf-state</code>, <code>ucf-inquiry</code>): speichern
+          w&auml;hrend der Sitzung Ihre eingegebene Beschreibung, die daraus erzeugten Use Cases sowie einen
+          vorausgef&uuml;llten Kontakttext, damit diese beim Wechsel zur Kontaktseite erhalten bleiben. Diese
+          Eintr&auml;ge k&ouml;nnen von Ihnen eingegebene Texte enthalten, verbleiben jedoch ausschlie&szlig;lich
+          lokal in Ihrem Browser (per Tab, beim Schlie&szlig;en gel&ouml;scht) und werden nicht an mich &uuml;bermittelt.</li>
       </ul>
 
-      <p>Diese Einträge dienen ausschließlich der Funktion und dem Komfort der Seite, enthalten keine
-        personenbezogenen Profile und werden nicht an Dritte übermittelt. Rechtsgrundlage für technisch
-        notwendige Speicherung ist § 25 Abs. 2 TDDDG sowie Art. 6 Abs. 1 lit. f DSGVO. Sie können diese
-        Einträge jederzeit über die Einstellungen Ihres Browsers löschen.</p>
+      <p>Diese Eintr&auml;ge dienen ausschlie&szlig;lich der Funktion und dem Komfort der Seite, dienen keiner
+        werblichen Profilbildung und werden nicht an Dritte &uuml;bermittelt. Rechtsgrundlage f&uuml;r technisch
+        notwendige Speicherung ist § 25 Abs. 2 TDDDG sowie Art. 6 Abs. 1 lit. f DSGVO. Sie k&ouml;nnen diese
+        Eintr&auml;ge jederzeit &uuml;ber die Einstellungen Ihres Browsers l&ouml;schen.</p>
 
       <h2>5. Kontaktformular und E-Mail-Kontakt</h2>
 
@@ -189,80 +188,101 @@
         angegebenen Daten (Name, E-Mail-Adresse, Betreff und Inhalt Ihrer Nachricht), um Ihre Anfrage zu
         bearbeiten und zu beantworten.</p>
 
-      <p>Der Versand des Kontaktformulars erfolgt über den Dienst <strong>EmailJS</strong> (EmailJS Inc., USA),
+      <p>Der Versand des Kontaktformulars erfolgt &uuml;ber den Dienst <strong>EmailJS</strong> (EmailJS Inc., USA),
         der die Nachricht technisch an mein E-Mail-Postfach zustellt. Dabei werden die von Ihnen eingegebenen
-        Daten an EmailJS übermittelt und können in den USA verarbeitet werden; als geeignete Garantie dienen
-        EU-Standardvertragsklauseln (Art. 46 DSGVO). Die Übertragung erfolgt verschlüsselt (TLS).</p>
+        Daten an EmailJS &uuml;bermittelt und k&ouml;nnen in den USA verarbeitet werden; als geeignete Garantie dienen
+        EU-Standardvertragsklauseln (Art. 46 DSGVO). Die &Uuml;bertragung erfolgt verschl&uuml;sselt (TLS).</p>
 
-      <p>Rechtsgrundlage ist <strong>Art. 6 Abs. 1 lit. b DSGVO</strong> (Anbahnung bzw. Durchführung
-        vorvertraglicher Maßnahmen), soweit Ihre Anfrage auf einen Vertrag abzielt, andernfalls
+      <p>Rechtsgrundlage ist <strong>Art. 6 Abs. 1 lit. b DSGVO</strong> (Anbahnung bzw. Durchf&uuml;hrung
+        vorvertraglicher Ma&szlig;nahmen), soweit Ihre Anfrage auf einen Vertrag abzielt, andernfalls
         <strong>Art. 6 Abs. 1 lit. f DSGVO</strong> (berechtigtes Interesse an der Bearbeitung von Anfragen).
         Die Angabe der Daten ist freiwillig; ohne Name, E-Mail-Adresse und Nachricht kann ich Ihre Anfrage
         jedoch nicht bearbeiten.</p>
 
       <h2>6. Sprachassistent (KI per Mikrofon)</h2>
 
-      <p>Auf der Website wird optional ein KI-gestützter Sprachassistent angeboten. Dieser wird
-        <strong>ausschließlich dann aktiv, wenn Sie ihn ausdrücklich starten</strong> (Klick auf das Mikrofon-Symbol)
+      <p>Auf der Website wird optional ein KI-gest&uuml;tzter Sprachassistent angeboten. Dieser wird
+        <strong>ausschlie&szlig;lich dann aktiv, wenn Sie ihn ausdr&uuml;cklich starten</strong> (Klick auf das Mikrofon-Symbol)
         und Ihrem Browser die Mikrofonberechtigung erteilen. Ohne diese aktive Handlung werden keine Audiodaten
         erfasst.</p>
 
-      <p>Nach dem Start wird Ihre Spracheingabe in Echtzeit verarbeitet. Dazu werden die Audiodaten über einen
+      <p>Nach dem Start wird Ihre Spracheingabe in Echtzeit verarbeitet. Dazu werden die Audiodaten &uuml;ber einen
         von mir betriebenen Vermittlungsdienst (Cloudflare Worker) an die <strong>Live-API von Google
-        (Google AI Studio / Gemini)</strong> übertragen, dort verarbeitet, transkribiert und die Antwort als
-        Audio zurückgegeben. Beteiligte Empfänger sind die Cloudflare Inc. (USA) und Google LLC (USA); eine
+        (Google AI Studio / Gemini)</strong> &uuml;bertragen, dort verarbeitet, transkribiert und die Antwort als
+        Audio zur&uuml;ckgegeben. Beteiligte Empf&auml;nger sind die Cloudflare Inc. (USA) und Google LLC (USA); eine
         Verarbeitung in den USA findet statt. Beide Anbieter sind unter dem EU-US Data Privacy Framework
-        zertifiziert, ergänzend gelten EU-Standardvertragsklauseln (Art. 46 DSGVO).</p>
+        zertifiziert, erg&auml;nzend gelten EU-Standardvertragsklauseln (Art. 46 DSGVO).</p>
 
       <p>Ich selbst speichere die Sprachinhalte nicht dauerhaft; sie dienen nur der unmittelbaren
-        Beantwortung Ihrer Anfrage während der Sitzung. Für die Verarbeitung durch Google gelten zusätzlich
-        die Datenschutzbestimmungen von Google. Rechtsgrundlage ist Ihre <strong>Einwilligung gemäß
+        Beantwortung Ihrer Anfrage w&auml;hrend der Sitzung. F&uuml;r die Verarbeitung durch Google gelten zus&auml;tzlich
+        die Datenschutzbestimmungen von Google. Rechtsgrundlage ist Ihre <strong>Einwilligung gem&auml;&szlig;
         Art. 6 Abs. 1 lit. a DSGVO</strong>, die Sie durch das Starten des Assistenten und die Erteilung der
-        Mikrofonberechtigung erteilen und jederzeit durch Beenden der Sitzung widerrufen können.</p>
+        Mikrofonberechtigung erteilen und jederzeit durch Beenden der Sitzung widerrufen k&ouml;nnen.</p>
 
-      <h2>7. Karte (OpenStreetMap)</h2>
+      <h2>7. KI-Use-Case-Finder (KI-Textanalyse)</h2>
+
+      <p>Auf der Website wird optional ein KI-gest&uuml;tzter &bdquo;Use-Case-Finder" angeboten. Dieser wird
+        <strong>ausschlie&szlig;lich dann aktiv, wenn Sie ihn ausdr&uuml;cklich nutzen</strong>, indem Sie eine
+        Beschreibung Ihres Unternehmens bzw. Ihrer Aufgabenstellung eingeben und absenden. Ohne diese aktive
+        Handlung werden keine Inhalte &uuml;bermittelt.</p>
+
+      <p>Nach dem Absenden wird der von Ihnen eingegebene Text &uuml;ber einen von mir betriebenen
+        Vermittlungsdienst (Cloudflare Worker) an die <strong>KI-Textmodelle von Google (Google AI Studio /
+        Gemini)</strong> &uuml;bertragen, dort analysiert und als Vorschlag passender KI-Use-Cases zur&uuml;ckgegeben.
+        Beteiligte Empf&auml;nger sind die Cloudflare Inc. (USA) und Google LLC (USA); eine Verarbeitung in den USA
+        findet statt. Beide Anbieter sind unter dem EU-US Data Privacy Framework zertifiziert, erg&auml;nzend gelten
+        EU-Standardvertragsklauseln (Art. 46 DSGVO).</p>
+
+      <p>Bitte geben Sie in das Beschreibungsfeld <strong>keine sensiblen personenbezogenen Daten</strong> ein.
+        Ich selbst speichere die &uuml;bermittelten Inhalte nicht dauerhaft; sie dienen nur der unmittelbaren
+        Erstellung der Vorschl&auml;ge w&auml;hrend der Sitzung. F&uuml;r die Verarbeitung durch Google gelten zus&auml;tzlich
+        die Datenschutzbestimmungen von Google. Rechtsgrundlage ist Ihre <strong>Einwilligung gem&auml;&szlig;
+        Art. 6 Abs. 1 lit. a DSGVO</strong>, die Sie durch das Absenden Ihrer Beschreibung erteilen, sowie
+        &ndash; soweit Ihre Anfrage auf einen Vertrag abzielt &ndash; Art. 6 Abs. 1 lit. b DSGVO.</p>
+
+      <h2>8. Karte (OpenStreetMap)</h2>
 
       <p>Auf der Startseite wird im Kontaktbereich eine interaktive Karte eingebunden, um meinen Standort
         anzuzeigen. Die Kartensoftware <strong>Leaflet</strong> wird lokal von diesem Server ausgeliefert.
         Das Kartenmaterial (die einzelnen Kartenkacheln) wird jedoch beim Laden der Seite von den Servern von
         <strong>OpenStreetMap</strong> abgerufen. Betreiber ist die OpenStreetMap Foundation, St John's
-        Innovation Centre, Cowley Road, Cambridge, CB4 0WS, Vereinigtes Königreich.</p>
+        Innovation Centre, Cowley Road, Cambridge, CB4 0WS, Vereinigtes K&ouml;nigreich.</p>
 
-      <p>Beim Laden der Karte wird Ihre IP-Adresse an OpenStreetMap übermittelt, da dies technisch
+      <p>Beim Laden der Karte wird Ihre IP-Adresse an OpenStreetMap &uuml;bermittelt, da dies technisch
         erforderlich ist, um die Kartenkacheln an Ihren Browser auszuliefern. Rechtsgrundlage ist mein
-        berechtigtes Interesse an einer ansprechenden Darstellung meines Standorts gemäß
-        <strong>Art. 6 Abs. 1 lit. f DSGVO</strong>. Für das Vereinigte Königreich besteht ein
+        berechtigtes Interesse an einer ansprechenden Darstellung meines Standorts gem&auml;&szlig;
+        <strong>Art. 6 Abs. 1 lit. f DSGVO</strong>. F&uuml;r das Vereinigte K&ouml;nigreich besteht ein
         Angemessenheitsbeschluss der EU-Kommission. Weitere Informationen finden Sie in der
-        Datenschutzerklärung von OpenStreetMap:
+        Datenschutzerkl&auml;rung von OpenStreetMap:
         <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener">wiki.osmfoundation.org/wiki/Privacy_Policy</a>.</p>
 
-      <h2>8. Empfänger und Übermittlung in Drittländer</h2>
+      <h2>9. Empf&auml;nger und &Uuml;bermittlung in Drittl&auml;nder</h2>
 
-      <p>Eine Weitergabe Ihrer Daten an Dritte erfolgt nur in dem oben beschriebenen Umfang. Empfänger bzw.
-        Kategorien von Empfängern sind:</p>
+      <p>Eine Weitergabe Ihrer Daten an Dritte erfolgt nur in dem oben beschriebenen Umfang. Empf&auml;nger bzw.
+        Kategorien von Empf&auml;ngern sind:</p>
 
       <ul>
-        <li><strong>GitHub Inc. / Microsoft (USA)</strong> – Hosting der Website (Server-Logfiles),</li>
-        <li><strong>EmailJS Inc. (USA)</strong> – Zustellung von Kontaktformular-Nachrichten,</li>
-        <li><strong>Cloudflare Inc. (USA) und Google LLC (USA)</strong> – nur bei aktiver Nutzung des
-          Sprachassistenten,</li>
-        <li><strong>OpenStreetMap Foundation (Vereinigtes Königreich)</strong> – Bereitstellung der
+        <li><strong>GitHub Inc. / Microsoft (USA)</strong> &ndash; Hosting der Website (Server-Logfiles),</li>
+        <li><strong>EmailJS Inc. (USA)</strong> &ndash; Zustellung von Kontaktformular-Nachrichten,</li>
+        <li><strong>Cloudflare Inc. (USA) und Google LLC (USA)</strong> &ndash; nur bei aktiver Nutzung des
+          Sprachassistenten oder des Use-Case-Finders,</li>
+        <li><strong>OpenStreetMap Foundation (Vereinigtes K&ouml;nigreich)</strong> &ndash; Bereitstellung der
           Kartenkacheln.</li>
       </ul>
 
-      <p>Soweit dabei Daten in die USA übermittelt werden, stützt sich die Übermittlung auf den
+      <p>Soweit dabei Daten in die USA &uuml;bermittelt werden, st&uuml;tzt sich die &Uuml;bermittlung auf den
         Angemessenheitsbeschluss der EU-Kommission im Rahmen des <strong>EU-US Data Privacy Framework</strong>
-        bzw. auf <strong>EU-Standardvertragsklauseln</strong> gemäß Art. 46 DSGVO. Für Übermittlungen in das
-        Vereinigte Königreich besteht ein Angemessenheitsbeschluss der EU-Kommission.</p>
+        bzw. auf <strong>EU-Standardvertragsklauseln</strong> gem&auml;&szlig; Art. 46 DSGVO. F&uuml;r &Uuml;bermittlungen in das
+        Vereinigte K&ouml;nigreich besteht ein Angemessenheitsbeschluss der EU-Kommission.</p>
 
-      <h2>9. Speicherdauer</h2>
+      <h2>10. Speicherdauer</h2>
 
-      <p>Server-Logfiles werden vom Hoster nur für einen begrenzten Zeitraum gespeichert. Daten aus
+      <p>Server-Logfiles werden vom Hoster nur f&uuml;r einen begrenzten Zeitraum gespeichert. Daten aus
         Kontaktanfragen speichere ich so lange, wie es zur Bearbeitung Ihrer Anfrage und im Rahmen
-        gesetzlicher Aufbewahrungspflichten erforderlich ist; danach werden sie gelöscht. Auf Wunsch lösche
+        gesetzlicher Aufbewahrungspflichten erforderlich ist; danach werden sie gel&ouml;scht. Auf Wunsch l&ouml;sche
         ich Ihre Anfrage jederzeit, sofern keine gesetzlichen Pflichten entgegenstehen.</p>
 
-      <h2>10. Ihre Rechte</h2>
+      <h2>11. Ihre Rechte</h2>
 
       <p>Sie haben nach der DSGVO insbesondere folgende Rechte hinsichtlich der Sie betreffenden
         personenbezogenen Daten:</p>
@@ -270,39 +290,39 @@
       <ul>
         <li>Recht auf <strong>Auskunft</strong> (Art. 15 DSGVO),</li>
         <li>Recht auf <strong>Berichtigung</strong> (Art. 16 DSGVO),</li>
-        <li>Recht auf <strong>Löschung</strong> (Art. 17 DSGVO),</li>
-        <li>Recht auf <strong>Einschränkung der Verarbeitung</strong> (Art. 18 DSGVO),</li>
-        <li>Recht auf <strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO),</li>
+        <li>Recht auf <strong>L&ouml;schung</strong> (Art. 17 DSGVO),</li>
+        <li>Recht auf <strong>Einschr&auml;nkung der Verarbeitung</strong> (Art. 18 DSGVO),</li>
+        <li>Recht auf <strong>Daten&uuml;bertragbarkeit</strong> (Art. 20 DSGVO),</li>
         <li>Recht auf <strong>Widerspruch</strong> gegen die Verarbeitung (Art. 21 DSGVO),</li>
-        <li>Recht auf <strong>Widerruf einer erteilten Einwilligung</strong> mit Wirkung für die Zukunft
+        <li>Recht auf <strong>Widerruf einer erteilten Einwilligung</strong> mit Wirkung f&uuml;r die Zukunft
           (Art. 7 Abs. 3 DSGVO).</li>
       </ul>
 
-      <p>Zur Ausübung dieser Rechte genügt eine formlose Mitteilung an die oben genannten Kontaktdaten.</p>
+      <p>Zur Aus&uuml;bung dieser Rechte gen&uuml;gt eine formlose Mitteilung an die oben genannten Kontaktdaten.</p>
 
-      <h2>11. Beschwerderecht bei einer Aufsichtsbehörde</h2>
+      <h2>12. Beschwerderecht bei einer Aufsichtsbeh&ouml;rde</h2>
 
-      <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Die für mich
-        zuständige Behörde ist:</p>
+      <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbeh&ouml;rde zu beschweren. Die f&uuml;r mich
+        zust&auml;ndige Beh&ouml;rde ist:</p>
 
-      <p>Bayerisches Landesamt für Datenschutzaufsicht (BayLDA)<br>
+      <p>Bayerisches Landesamt f&uuml;r Datenschutzaufsicht (BayLDA)<br>
       Promenade 18, 91522 Ansbach, Deutschland<br>
       <a href="https://www.lda.bayern.de" target="_blank" rel="noopener">www.lda.bayern.de</a></p>
 
-      <h2>12. Externe Links</h2>
+      <h2>13. Externe Links</h2>
 
-      <p>Diese Website enthält Links zu externen Websites Dritter (z.&nbsp;B. LinkedIn, GitHub, X, YouTube,
+      <p>Diese Website enth&auml;lt Links zu externen Websites Dritter (z.&nbsp;B. LinkedIn, GitHub, X, YouTube,
         Google Maps). Beim Anklicken dieser Links gelangen Sie auf die Seiten der jeweiligen Anbieter, auf
         deren Datenverarbeitung ich keinen Einfluss habe. Es gelten die Datenschutzbestimmungen der
         jeweiligen Anbieter.</p>
 
-      <h2>13. Änderungen dieser Datenschutzerklärung</h2>
+      <h2>14. &Auml;nderungen dieser Datenschutzerkl&auml;rung</h2>
 
-      <p>Ich passe diese Datenschutzerklärung an, sobald Änderungen der angebotenen Funktionen oder
-        Änderungen der rechtlichen Rahmenbedingungen dies erforderlich machen. Es gilt jeweils die hier
-        veröffentlichte aktuelle Fassung.</p>
+      <p>Ich passe diese Datenschutzerkl&auml;rung an, sobald &Auml;nderungen der angebotenen Funktionen oder
+        &Auml;nderungen der rechtlichen Rahmenbedingungen dies erforderlich machen. Es gilt jeweils die hier
+        ver&ouml;ffentlichte aktuelle Fassung.</p>
 
-      <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Zurück zur Startseite</a>
+      <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Zur&uuml;ck zur Startseite</a>
     </div>
   </section>
 
@@ -315,7 +335,7 @@
         </div>
         <div class="footer-social">
           <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/waj-ai" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
         <div class="footer-links">
@@ -333,9 +353,9 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="lib/config.js?v=26062304"></script>
-  <script src="controller.js?v=26062304"></script>
-  <script src="lib/voice-agent/agent.js?v=26062304"></script>
+  <script src="lib/config.js?v=26092401"></script>
+  <script src="controller.js?v=26092401"></script>
+  <script src="lib/voice-agent/agent.js?v=26092401"></script>
   <script>
     new WebsiteController();
   </script>

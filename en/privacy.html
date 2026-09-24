@@ -14,61 +14,14 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
   <link rel="manifest" href="../site.webmanifest">
-  <link rel="stylesheet" href="../styles.css?v=26062304">
-  <link rel="stylesheet" href="../lib/fontawesome/css/all.min.css?v=26062304">
-  <link rel="stylesheet" href="../lib/fonts/fonts.css?v=26062304">
+  <link rel="stylesheet" href="../styles.css?v=26092401">
+  <link rel="stylesheet" href="../lib/fontawesome/css/all.min.css?v=26092401">
+  <link rel="stylesheet" href="../lib/fonts/fonts.css?v=26092401">
   <style>
-    .legal-content {
-      padding: 120px 0 60px;
-    }
-
-    .legal-content .container {
-      max-width: 800px;
-    }
-
-    .legal-content h1 {
-      margin-bottom: 2rem;
-      color: var(--primary);
-    }
-
     .legal-content h2 {
       font-size: 1.75rem;
       margin-top: 2rem;
       margin-bottom: 1rem;
-    }
-
-    .legal-content h3 {
-      font-size: 1.25rem;
-      margin-top: 1.5rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .legal-content p, .legal-content ul, .legal-content ol {
-      margin-bottom: 1rem;
-    }
-
-    .legal-content ul, .legal-content ol {
-      padding-left: 2rem;
-    }
-
-    .legal-content a {
-      color: var(--primary);
-      text-decoration: underline;
-    }
-
-    .legal-content a:hover {
-      color: var(--primary-dark);
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-top: 2rem;
-      color: var(--primary);
-      font-weight: 600;
-    }
-
-    .back-link i {
-      margin-right: 0.5rem;
     }
   </style>
 </head>
@@ -83,16 +36,56 @@
           <i class="fas fa-bars"></i>
         </div>
         <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
+          <!-- nav-menu:start | DON'T edit the menu here - edit the template in tools/upd_menu.php, then run it (see CLAUDE.md) -->
+          <li><a href="index.html#hero" class="nav-link">Home</a></li>
           <li><a href="index.html#about" class="nav-link">Ask AI</a></li>
-          <li><a href="index.html#services" class="nav-link">Services</a></li>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-head">
+              <a href="index.html#services" class="nav-link">Services</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Services submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li class="nav-dropdown-group">Agents &amp; Workflow</li>
+              <li><a href="pages/services/automation/index.html" class="nav-link">Automation</a></li>
+              <li><a href="pages/services/self-improving/index.html" class="nav-link">Self-improving AI</a></li>
+              <li><a href="pages/services/data-solutions/index.html" class="nav-link">AI Data Solutions</a></li>
+              <li class="nav-dropdown-group">Consulting &amp; Integration</li>
+              <li><a href="pages/services/consulting/index.html" class="nav-link">AI Consulting</a></li>
+              <li><a href="pages/services/security/index.html" class="nav-link">AI Security &amp; Evaluation</a></li>
+              <li><a href="pages/services/integration/index.html" class="nav-link">AI Integration &amp; MCP</a></li>
+              <li class="nav-dropdown-group">Human Interface</li>
+              <li><a href="pages/services/dashboards/index.html" class="nav-link">AI Dashboards</a></li>
+              <li><a href="pages/services/ai-apps/index.html" class="nav-link">Apps that work</a></li>
+              <li class="nav-dropdown-group">Commerce</li>
+              <li><a href="pages/services/agentic-commerce/index.html" class="nav-link">Agentic Commerce</a></li>
+            </ul>
+          </li>
           <li class="less-spacing"><a href="index.html#skills" class="nav-link">Skills</a></li>
-          <li><a href="index.html#proj" class="nav-link">Projects</a></li>
-          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-          <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
+          <li class="nav-dropdown less-spacing">
+            <span class="nav-dropdown-head">
+              <a href="index.html#proj" class="nav-link">Projects</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Projects submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="pages/systems/office_agent/index.html" class="nav-link">Office Agent</a></li>
+              <li><a href="pages/systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
+              <li><a href="pages/systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
+              <li><a href="pages/systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
+              <li><a href="pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
+              <li><a href="pages/systems/task_board/index.html" class="nav-link">AI Task Board</a></li>
+              <li><a href="pages/systems/agentic_db/index.html" class="nav-link">Agentic DB</a></li>
+              <li><a href="pages/systems/editor/index.html" class="nav-link">AI Built Editor</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="https://www.linkedin.com/in/waj-ai" target="_blank" class="nav-link"
               title="Visit my LinkedIn profile"><i class="fab fa-linkedin-in"></i></a></li>
           <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link"
               title="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
+          <li><button type="button" class="nav-link search-link" data-search-open
+              title="Search the site (Ctrl+K)" aria-label="Search"><i class="fas fa-magnifying-glass"></i></button></li>
+          <!-- nav-menu:end -->
           <li class="lang-switch">
             <a href="../privacy.html" class="nav-link" hreflang="de" title="Deutsch">DE</a>
             <span class="lang-sep">|</span>
@@ -107,7 +100,7 @@
     <div class="container">
       <h1>Privacy Policy</h1>
 
-      <p>Last updated: June 20, 2026</p>
+      <p>Last updated: July 11, 2026</p>
 
       <p>Protecting your personal data is important to me. This Privacy Policy informs you, in accordance with
         Articles 13 and 14 of the General Data Protection Regulation (GDPR), which personal data is processed
@@ -172,12 +165,18 @@
 
       <ul>
         <li><strong>Language and display hints</strong> (e.g. <code>waj:homepage:langHintDismissed</code>,
-          <code>waj:homepage:siteVisited</code>): control whether hints or the loading screen appear again.</li>
+          <code>waj:homepage:siteVisited</code>, <code>waj:homepage:offerDismissed</code>): control whether hints,
+          the loading screen or promotional notices appear again.</li>
+        <li><strong>Use Case Finder</strong> (<code>ucf-state</code>, <code>ucf-inquiry</code>): store, for the
+          duration of the session, the description you entered, the use cases generated from it and a
+          pre-filled contact text, so these are preserved when you switch to the contact page. These entries
+          may contain text you entered, but they remain solely local in your browser (per tab, deleted when it
+          is closed) and are not transmitted to me.</li>
       </ul>
 
-      <p>These entries serve solely the function and convenience of the site, contain no personal profiles and
-        are not transmitted to third parties. The legal basis for technically necessary storage is § 25(2) TDDDG
-        and Art. 6(1)(f) GDPR. You can delete these entries at any time via your browser settings.</p>
+      <p>These entries serve solely the function and convenience of the site, are not used for advertising
+        profiling and are not transmitted to third parties. The legal basis for technically necessary storage is
+        § 25(2) TDDDG and Art. 6(1)(f) GDPR. You can delete these entries at any time via your browser settings.</p>
 
       <h2>5. Contact form and e-mail contact</h2>
 
@@ -212,7 +211,25 @@
         is your <strong>consent under Art. 6(1)(a) GDPR</strong>, which you give by starting the assistant and
         granting microphone permission and which you can withdraw at any time by ending the session.</p>
 
-      <h2>7. Map (OpenStreetMap)</h2>
+      <h2>7. AI Use Case Finder (AI text analysis)</h2>
+
+      <p>The website optionally offers an AI-based "Use Case Finder". It only becomes <strong>active when
+        you explicitly use it</strong>, by entering a description of your company or task and submitting it.
+        Without this active step, no content is transmitted.</p>
+
+      <p>Once submitted, the text you entered is transmitted via a relay service operated by me (a Cloudflare
+        Worker) to the <strong>AI text models of Google (Google AI Studio / Gemini)</strong>, analysed there and
+        returned as a proposal of suitable AI use cases. The recipients involved are Cloudflare Inc. (USA) and
+        Google LLC (USA); processing takes place in the USA. Both providers are certified under the EU-US Data
+        Privacy Framework; in addition, EU Standard Contractual Clauses (Art. 46 GDPR) apply.</p>
+
+      <p>Please <strong>do not enter any sensitive personal data</strong> into the description field. I do not
+        store the transmitted content permanently myself; it serves only to immediately create the suggestions
+        during the session. Google's privacy terms additionally apply to processing by Google. The legal basis
+        is your <strong>consent under Art. 6(1)(a) GDPR</strong>, which you give by submitting your description,
+        as well as &ndash; where your request relates to a contract &ndash; Art. 6(1)(b) GDPR.</p>
+
+      <h2>8. Map (OpenStreetMap)</h2>
 
       <p>The home page embeds an interactive map in the contact area to show my location. The map software
         <strong>Leaflet</strong> is served locally from this server. The map material (the individual map
@@ -227,16 +244,16 @@
         OpenStreetMap's privacy policy:
         <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener">wiki.osmfoundation.org/wiki/Privacy_Policy</a>.</p>
 
-      <h2>8. Recipients and transfers to third countries</h2>
+      <h2>9. Recipients and transfers to third countries</h2>
 
       <p>Your data is only shared to the extent described above. Recipients or categories of recipients are:</p>
 
       <ul>
-        <li><strong>GitHub Inc. / Microsoft (USA)</strong> – hosting of the website (server log files),</li>
-        <li><strong>EmailJS Inc. (USA)</strong> – delivery of contact form messages,</li>
-        <li><strong>Cloudflare Inc. (USA) and Google LLC (USA)</strong> – only when the voice assistant is
-          actively used,</li>
-        <li><strong>OpenStreetMap Foundation (United Kingdom)</strong> – provision of the map tiles.</li>
+        <li><strong>GitHub Inc. / Microsoft (USA)</strong> &ndash; hosting of the website (server log files),</li>
+        <li><strong>EmailJS Inc. (USA)</strong> &ndash; delivery of contact form messages,</li>
+        <li><strong>Cloudflare Inc. (USA) and Google LLC (USA)</strong> &ndash; only when the voice assistant or
+          the Use Case Finder is actively used,</li>
+        <li><strong>OpenStreetMap Foundation (United Kingdom)</strong> &ndash; provision of the map tiles.</li>
       </ul>
 
       <p>Where data is transferred to the USA, the transfer is based on the European Commission's adequacy
@@ -244,14 +261,14 @@
         Clauses</strong> pursuant to Art. 46 GDPR. For transfers to the United Kingdom, an adequacy decision of
         the European Commission is in place.</p>
 
-      <h2>9. Storage period</h2>
+      <h2>10. Storage period</h2>
 
       <p>Server log files are stored by the host only for a limited period. I retain data from contact requests
         for as long as is necessary to handle your request and within the scope of statutory retention
         obligations; thereafter it is deleted. On request, I will delete your enquiry at any time, unless legal
         obligations prevent this.</p>
 
-      <h2>10. Your rights</h2>
+      <h2>11. Your rights</h2>
 
       <p>Under the GDPR you have, in particular, the following rights regarding your personal data:</p>
 
@@ -267,22 +284,22 @@
 
       <p>To exercise these rights, an informal message to the contact details above is sufficient.</p>
 
-      <h2>11. Right to lodge a complaint with a supervisory authority</h2>
+      <h2>12. Right to lodge a complaint with a supervisory authority</h2>
 
       <p>You have the right to lodge a complaint with a data protection supervisory authority. The authority
         responsible for me is:</p>
 
-      <p>Bayerisches Landesamt für Datenschutzaufsicht (BayLDA)<br>
+      <p>Bayerisches Landesamt f&uuml;r Datenschutzaufsicht (BayLDA)<br>
       Promenade 18, 91522 Ansbach, Germany<br>
       <a href="https://www.lda.bayern.de" target="_blank" rel="noopener">www.lda.bayern.de</a></p>
 
-      <h2>12. External links</h2>
+      <h2>13. External links</h2>
 
       <p>This website contains links to external third-party websites (e.g. LinkedIn, GitHub, X, YouTube,
         Google Maps). When you click these links you are taken to the respective providers' sites, over whose
         data processing I have no influence. The privacy terms of the respective providers apply.</p>
 
-      <h2>13. Changes to this Privacy Policy</h2>
+      <h2>14. Changes to this Privacy Policy</h2>
 
       <p>I will update this Privacy Policy whenever changes to the features offered or to the legal framework
         make this necessary. The current version published here applies in each case.</p>
@@ -300,7 +317,7 @@
         </div>
         <div class="footer-social">
           <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/waj-ai" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
         <div class="footer-links">
@@ -318,9 +335,9 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../lib/config.js?v=26062304"></script>
-  <script src="../controller.js?v=26062304"></script>
-  <script src="../lib/voice-agent/agent.js?v=26062304"></script>
+  <script src="../lib/config.js?v=26092401"></script>
+  <script src="../controller.js?v=26092401"></script>
+  <script src="../lib/voice-agent/agent.js?v=26092401"></script>
   <script>
     new WebsiteController();
   </script>

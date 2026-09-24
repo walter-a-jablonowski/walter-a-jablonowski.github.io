@@ -1,4 +1,4 @@
-# Walter A. Jablonowski — AI Developer & AI Consultant
+# Walter A. Jablonowski - AI Developer & AI Consultant
 
 > Freelance AI developer and consultant based in Stegaurach near Bamberg,
 > serving businesses in Bamberg, Nuremberg and the wider Franconia/Bavaria
@@ -16,11 +16,28 @@ visitors talk to an AI about these services directly on the home page.
 
 ## Services
 
-- [AI Automation](https://walter-a-jablonowski.github.io/en/pages/services/automation.html): Automate recurring work with AI agents or workflows, integrated with existing systems (CRM/ERP). Saves time and resources every year.
-- [Self-improving AI](https://walter-a-jablonowski.github.io/en/pages/services/self-improving.html): The company as a closed loop that gets better with every run — more than automation. Kept safe through an append-only log and human approval.
-- [AI Data Solutions](https://walter-a-jablonowski.github.io/en/pages/services/data-solutions.html): Structure unordered company data with AI, make it searchable, and query it in natural language — the basis for automation and new insights.
-- [AI Consulting](https://walter-a-jablonowski.github.io/en/pages/services/consulting.html): Vendor-neutral clarification of where AI delivers real value — use cases, strategy, technology. Free initial consultation.
-- [AI Security & Evaluation](https://walter-a-jablonowski.github.io/en/pages/services/security.html): Secure AI systems and make them observable and verifiable — guardrails, monitoring, quality measurement, GDPR.
+- [AI Automation](https://walter-a-jablonowski.github.io/en/pages/services/automation/): Automate recurring work with AI agents or workflows, integrated with existing systems (CRM/ERP). Saves time and resources every year.
+- [Self-improving AI](https://walter-a-jablonowski.github.io/en/pages/services/self-improving/): The company as a closed loop that gets better with every run — more than automation. Kept safe through an append-only log and human approval.
+- [AI Data Solutions](https://walter-a-jablonowski.github.io/en/pages/services/data-solutions/): Structure unordered company data with AI, make it searchable, and query it in natural language — the basis for automation and new insights.
+- [AI Consulting](https://walter-a-jablonowski.github.io/en/pages/services/consulting/): Vendor-neutral clarification of where AI delivers real value — use cases, strategy, technology. Free initial consultation.
+- [AI Security & Evaluation](https://walter-a-jablonowski.github.io/en/pages/services/security/): Secure AI systems and make them observable and verifiable — guardrails, monitoring, quality measurement, GDPR.
+- [AI Dashboards](https://walter-a-jablonowski.github.io/en/pages/services/dashboards/): Everything you care about in one place — modular dashboards for the whole company, departments or individual employees, fed with live data from existing systems (databases, ERP/CRM, spreadsheets, APIs). Built-in AI (sidebar or voice) prepares data on request or triggers actions.
+- [Apps that work](https://walter-a-jablonowski.github.io/en/pages/services/ai-apps/): Custom applications and AI user interfaces with a built-in AI agent that does most of the work — it uses the same functions the user does, so results stay visible and correctable. Also available as an AI feature added to an existing application.
+- [Agentic Commerce](https://walter-a-jablonowski.github.io/en/pages/services/agentic-commerce/): Open your existing offer to AI shopping assistants — agent-readable product data, an agent API (MCP), agent checkout (ACP, AP2) and visibility in AI search.
+- [AI Integration & MCP](https://walter-a-jablonowski.github.io/en/pages/services/integration/): Connect AI and AI agents securely to existing systems via custom MCP servers — Microsoft 365, databases, ERP/CRM (SAP, Salesforce, HubSpot) and legacy systems. Read-only by default, on-premise possible, no no-code lock-in. Connect first, then automate.
+
+## Systems
+
+Ready-to-adapt products built from these services.
+
+- [Office Agent](https://walter-a-jablonowski.github.io/en/pages/systems/office_agent/): Modular AI automation for back-office document and knowledge work — invoice capture and three-way matching, document classification and extraction, ticket triage, grounded Q&A over company files. Every use case is a configuration file (a "recipe") over the same building blocks, not a program of its own. Durable runs that survive a restart, human approval with roles, amount limits and four-eyes, provenance per extracted field, append-only audit. One single-tenant install per customer, on the customer's infrastructure; the model can be cloud or fully local. In development — the core runs, invoice intake is the first use case.
+- [Website AI Agent](https://walter-a-jablonowski.github.io/en/pages/systems/web_agent/): An AI voice assistant embedded on your website — visitors talk to it, it answers in real time, guides them to the right page, and is multilingual. API key and context stay server-side.
+- [Chat with Data](https://walter-a-jablonowski.github.io/en/pages/systems/data_chat/): Ask your company data questions in natural language — the AI builds a safe, read-only query and returns tables, summaries and charts. Runs on your server or fully local. A tailor-made AI data solution.
+- [SEO Agent](https://walter-a-jablonowski.github.io/en/pages/systems/seo_agent/): A scheduled AI agent that audits your website and optimizes it for Google and AI search (GEO) — meta tags, content, structured data, new pages. Runs on its own or alongside the other systems.
+- [AI Log Viewer](https://walter-a-jablonowski.github.io/en/pages/systems/log-view/): A universal log viewer that brings log files of any format into one place — with a powerful expression filter syntax, AI analysis and a pluggable type system. SQLite with zero setup or MySQL for logs with 100,000+ entries.
+- [AI Task Board](https://walter-a-jablonowski.github.io/en/pages/systems/task_board/): A time-based task board (Current, Upcoming and a timeline of months, weeks and days) whose built-in AI agent does the task management itself — it knows the whole board and has several tools to create, edit, delete, move and clean up. Every change is a proposal shown in colour and accepted individually or all at once. Data as YAML files, model configurable (OpenRouter, Gemini or local Ollama).
+- [Agentic DB](https://walter-a-jablonowski.github.io/en/pages/systems/agentic_db/): A file-based Markdown knowledge base that an AI KeeperAgent organizes on its own — places, splits, merges, indexes and archives. Atomic, versioned, fully undoable. Works standalone as plain files too.
+- [AI Built Editor](https://walter-a-jablonowski.github.io/en/pages/systems/editor/): A complete in-browser editor library — rich content, extensible syntax, its own document model, no dependencies and no build step, added with a single script tag. Specified and built with AI in ten verified steps, and therefore also a worked example of how demanding software is made in days rather than months.
 
 ## About
 
@@ -30,6 +47,9 @@ visitors talk to an AI about these services directly on the home page.
 ## Optional
 
 - [Projects](https://walter-a-jablonowski.github.io/en/#proj): Selected projects and demos.
-- [Blog](https://walter-a-jablonowski.github.io/blog.html): Articles on AI-first development.
+- [Blog](https://walter-a-jablonowski.github.io/en/blog.html): Articles on AI-first development and local AI.
+  - [Local AI for the Mittelstand in Bamberg and Nuremberg](https://walter-a-jablonowski.github.io/en/pages/blog/260708-01-lokale-ki-mittelstand-on-premise.html): Why on-premise open-weights LLMs (Llama 3, Mistral, Qwen) fit privacy-conscious SMEs in Upper Franconia — GDPR-compliant, no data leaving the building.
+  - [Autonomous agents with Google ADK, Coinbase x402, and AP2](https://walter-a-jablonowski.github.io/en/pages/blog/250918-01-autonomous-agents-ap2-x402.html): The emerging agent stack — build with Google's Agent Dev Kit, distribute via x402 Bazaar, monetize with AP2.
+  - [AI-first development boosts productivity](https://walter-a-jablonowski.github.io/en/pages/blog/250918-02-ai-first-development-boosts-productivity.html): How to leverage AI across the lifecycle of small to mid-size apps — from ideation to code generation and quality assurance.
 - [Privacy Policy](https://walter-a-jablonowski.github.io/en/privacy.html)
 - [Imprint](https://walter-a-jablonowski.github.io/en/imprint.html)

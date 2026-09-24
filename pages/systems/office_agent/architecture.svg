@@ -1,0 +1,67 @@
+<svg viewBox="0 0 560 410" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <title>Aufbau des Office Agent: Ausl&#246;ser starten ein Rezept, der Kernel f&#252;hrt es aus und leitet jeden Modell- und Werkzeugaufruf durch eine einzige gepr&#252;fte Stelle zu Modellen und Firmensystemen</title>
+
+  <!-- Background -->
+  <rect width="560" height="410" fill="#1a1a1a"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#FF6B00"/>
+    </marker>
+  </defs>
+
+  <!-- Triggers: what starts a run -->
+  <rect x="20" y="12" width="160" height="30" rx="16" fill="#2d2d2d" stroke="#666" stroke-width="1.5"/>
+  <text x="100" y="32" text-anchor="middle" fill="#ffffff" font-size="13.5">Zeitplan</text>
+  <rect x="200" y="12" width="160" height="30" rx="16" fill="#2d2d2d" stroke="#666" stroke-width="1.5"/>
+  <text x="280" y="32" text-anchor="middle" fill="#ffffff" font-size="13.5">Ordner</text>
+  <rect x="380" y="12" width="160" height="30" rx="16" fill="#2d2d2d" stroke="#666" stroke-width="1.5"/>
+  <text x="460" y="32" text-anchor="middle" fill="#ffffff" font-size="13.5">Postfach</text>
+
+  <path d="M100,42 V52 H460 V42" fill="none" stroke="#FF6B00" stroke-width="2"/>
+  <line x1="280" y1="42" x2="280" y2="52" stroke="#FF6B00" stroke-width="2"/>
+  <line x1="280" y1="52" x2="280" y2="68" stroke="#FF6B00" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- The recipe: the whole use case, as configuration -->
+  <rect x="20" y="70" width="520" height="54" rx="8" fill="#2d2d2d" stroke="#FF6B00" stroke-width="2"/>
+  <text x="280" y="94" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="600">Rezept &#8211; eine Konfigurationsdatei</text>
+  <text x="280" y="113" text-anchor="middle" fill="#999999" font-size="11.5">Lesen &#183; Auslesen &#183; Abgleich &#183; Freigabe &#183; Buchen</text>
+
+  <line x1="280" y1="124" x2="280" y2="140" stroke="#FF6B00" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- The kernel, with the single dispatch choke point -->
+  <rect x="20" y="142" width="520" height="116" rx="8" fill="#232323" stroke="#FF6B00" stroke-width="2"/>
+  <text x="38" y="172" fill="#FF6B00" font-size="16" font-weight="600">Kernel</text>
+  <text x="38" y="196" fill="#999999" font-size="11.5">Ablauf &#183; Zustand</text>
+  <text x="38" y="214" fill="#999999" font-size="11.5">Budget &#183; Wiederholung</text>
+  <text x="38" y="232" fill="#999999" font-size="11.5">Wiederaufnahme</text>
+
+  <rect x="222" y="154" width="302" height="92" rx="8" fill="none" stroke="#FFC107" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="373" y="178" text-anchor="middle" fill="#FFC107" font-size="14" font-weight="600">Alles l&#228;uft hier durch</text>
+  <text x="373" y="199" text-anchor="middle" fill="#999999" font-size="11.5">jeder Modell- und Werkzeugaufruf</text>
+  <text x="373" y="217" text-anchor="middle" fill="#999999" font-size="11.5">Rechte &#183; Budget &#183; Doppel-Schutz</text>
+  <text x="373" y="235" text-anchor="middle" fill="#999999" font-size="11.5">Protokoll &#183; Audit</text>
+
+  <line x1="145" y1="258" x2="145" y2="286" stroke="#FF6B00" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="415" y1="258" x2="415" y2="286" stroke="#FF6B00" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- What the kernel reaches: models and capabilities -->
+  <rect x="20" y="288" width="250" height="58" rx="8" fill="#2d2d2d" stroke="#FF6B00" stroke-width="2"/>
+  <text x="145" y="312" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="600">Modelle</text>
+  <text x="145" y="331" text-anchor="middle" fill="#999999" font-size="11.5">Cloud oder lokal</text>
+
+  <rect x="290" y="288" width="250" height="58" rx="8" fill="#2d2d2d" stroke="#FF6B00" stroke-width="2"/>
+  <text x="415" y="312" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="600">Werkzeuge</text>
+  <text x="415" y="331" text-anchor="middle" fill="#999999" font-size="11.5">Konnektoren &#183; MCP</text>
+
+  <!-- On-premise note under the model box -->
+  <rect x="20" y="362" width="250" height="40" rx="8" fill="none" stroke="#FFC107" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="145" y="381" text-anchor="middle" fill="#FFC107" font-size="12.5" font-weight="600">Auch komplett lokal</text>
+  <text x="145" y="396" text-anchor="middle" fill="#999999" font-size="11">Ihre Daten bleiben im Haus</text>
+
+  <line x1="415" y1="346" x2="415" y2="364" stroke="#FF6B00" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- The company systems the tools reach -->
+  <rect x="290" y="366" width="250" height="32" rx="16" fill="#2d2d2d" stroke="#FFC107" stroke-width="1.5"/>
+  <text x="415" y="387" text-anchor="middle" fill="#FFC107" font-size="13.5" font-weight="600">ERP &#183; Postfach &#183; Dateien</text>
+</svg>

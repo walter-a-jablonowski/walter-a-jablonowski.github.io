@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Eine dateibasierte Markdown-Wissensbasis, die ein KI-Agent selbst organisiert: platziert, teilt, indiziert. Atomar, versioniert, r&uuml;ckg&auml;ngig machbar.">
+  <meta name="keywords" content="Agentic DB, KI Wissensbasis, knowledge base, KeeperAgent, Markdown Datenbank, KI-gest&uuml;tzte Wissensverwaltung, AI, Artificial Intelligence, K&uuml;nstliche Intelligenz, Bamberg, N&uuml;rnberg">
+  <meta name="author" content="Walter A. Jablonowski">
+  <title>Agentic DB &ndash; KI-organisierte Wissensbasis</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Walter A. Jablonowski">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="Agentic DB &ndash; KI-organisierte Wissensbasis">
+  <meta property="og:description" content="Eine dateibasierte Markdown-Wissensbasis, die ein KI-Agent selbstst&auml;ndig organisiert &ndash; atomar, versioniert, vollst&auml;ndig r&uuml;ckg&auml;ngig.">
+  <meta property="og:url" content="https://walter-a-jablonowski.github.io/pages/systems/agentic_db/">
+  <meta property="og:image" content="https://walter-a-jablonowski.github.io/misc/automation-placeholder.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://walter-a-jablonowski.github.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Systeme", "item": "https://walter-a-jablonowski.github.io/" },
+          { "@type": "ListItem", "position": 3, "name": "Agentic DB", "item": "https://walter-a-jablonowski.github.io/pages/systems/agentic_db/" }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Agentic DB",
+        "applicationCategory": "KnowledgeManagement",
+        "description": "Eine dateibasierte Markdown-Wissensbasis, die ein KI-KeeperAgent selbstst&auml;ndig organisiert &ndash; platziert, teilt, fusioniert, indiziert und archiviert. Atomar, versioniert, vollst&auml;ndig r&uuml;ckg&auml;ngig.",
+        "inLanguage": "de",
+        "url": "https://walter-a-jablonowski.github.io/pages/systems/agentic_db/",
+        "provider": { "@type": "Person", "name": "Walter A. Jablonowski", "url": "https://walter-a-jablonowski.github.io/" },
+        "areaServed": [
+          { "@type": "City", "name": "Bamberg" },
+          { "@type": "City", "name": "N&uuml;rnberg" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="canonical" href="https://walter-a-jablonowski.github.io/pages/systems/agentic_db/">
+  <link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/agentic_db/">
+  <link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/agentic_db/">
+  <link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/agentic_db/">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
+  <link rel="manifest" href="../../../site.webmanifest">
+  <link rel="stylesheet" href="../../../styles.css?v=26092401">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26092401">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26092401">
+  <style>
+    /* Product page styles. Reusable parts (.product-hero, .spec-list, .service-cta
+       exemption) live in page-components.css; the blocks below are local to this page. */
+
+    .content h3 { color: var(--white); margin-top: var(--spacing-xl); }
+
+    /* On this page the closing CTA is commercial: hide it under hideBiz
+       (overrides the shared .cta-always exemption via later source order). */
+    body.hide-biz .service-cta.cta-always { display: none; }
+  </style>
+  <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "de",
+    "url": "https://walter-a-jablonowski.github.io/pages/systems/agentic_db/index.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Kann ich Agentic DB schon einsetzen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Agentic DB ist ein experimentelles Projekt. Konzept und Kernabläufe stehen, an der Umsetzung wird gearbeitet. Bei Interesse melden Sie sich gern."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Brauche ich einen Server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nein. Agentic DB ist rein dateibasiert – ein Ordner mit Markdown-Dateien. Backup über normales Datei-Tooling oder Git. Der KeeperAgent läuft auf Ihrem Rechner oder Server."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Funktioniert das auch ohne KI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Die Dateien sind normales Markdown – lesbar und editierbar mit jedem Texteditor. Der KeeperAgent organisiert, ist aber nicht zwingend erforderlich, um die Daten zu nutzen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was passiert bei Fehlern?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bei Inkonsistenz friert die Datenbank ein (HALT) und blockiert alle Schreibvorgänge. Nur Diagnose- und Recovery-Tools laufen weiter. Nach Behebung wird HALT manuell gelöscht."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ich Änderungen rückgängig machen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Jede Inhaltsänderung wird versioniert, jede Löschung archiviert. ui_undo kehrt Aktionen über das Log zurück – mit All-or-None."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche KI steckt dahinter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Das LLM-Modell ist frei wählbar (Cloud oder lokal). Für reproduzierbare Läufe wird temperature: 0 empfohlen. Das verwendete Modell wird pro Aktion geloggt."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- faq-schema:end -->
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <!-- nav-menu:start | DON'T edit the menu here - edit the template in tools/upd_menu.php, then run it (see CLAUDE.md) -->
+          <li><a href="../../../index.html#hero" class="nav-link">Start</a></li>
+          <li><a href="../../../index.html#about" class="nav-link">KI fragen</a></li>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-head">
+              <a href="../../../index.html#services" class="nav-link">Leistungen</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Untermen&uuml; Leistungen"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li class="nav-dropdown-group">Agents &amp; Workflow</li>
+              <li><a href="../../../pages/services/automation/index.html" class="nav-link">Automatisierung</a></li>
+              <li><a href="../../../pages/services/self-improving/index.html" class="nav-link">Selbstverbessernde KI</a></li>
+              <li><a href="../../../pages/services/data-solutions/index.html" class="nav-link">KI-Datenl&ouml;sungen</a></li>
+              <li class="nav-dropdown-group">Consulting &amp; Integration</li>
+              <li><a href="../../../pages/services/consulting/index.html" class="nav-link">AI Beratung</a></li>
+              <li><a href="../../../pages/services/security/index.html" class="nav-link">Security &amp; Evaluierung</a></li>
+              <li><a href="../../../pages/services/integration/index.html" class="nav-link">KI-Integration &amp; MCP</a></li>
+              <li class="nav-dropdown-group">Human Interface</li>
+              <li><a href="../../../pages/services/dashboards/index.html" class="nav-link">KI Dashboards</a></li>
+              <li><a href="../../../pages/services/ai-apps/index.html" class="nav-link">Apps, die arbeiten</a></li>
+              <li class="nav-dropdown-group">Commerce</li>
+              <li><a href="../../../pages/services/agentic-commerce/index.html" class="nav-link">Agentic Commerce</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../../index.html#skills" class="nav-link">Kenntnisse</a></li>
+          <li class="nav-dropdown less-spacing">
+            <span class="nav-dropdown-head">
+              <a href="../../../index.html#proj" class="nav-link">Projekte</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Untermen&uuml; Projekte"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../../../pages/systems/office_agent/index.html" class="nav-link">Office Agent</a></li>
+              <li><a href="../../../pages/systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
+              <li><a href="../../../pages/systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
+              <li><a href="../../../pages/systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
+              <li><a href="../../../pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
+              <li><a href="../../../pages/systems/task_board/index.html" class="nav-link">AI Task Board</a></li>
+              <li><a href="../../../pages/systems/agentic_db/index.html" class="nav-link">Agentic DB</a></li>
+              <li><a href="../../../pages/systems/editor/index.html" class="nav-link">AI Built Editor</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../../index.html#contact" class="nav-link">Kontakt</a></li>
+          <li><a href="../../../blog.html" class="nav-link">Blog</a></li>
+          <li><a href="https://www.linkedin.com/in/waj-ai" target="_blank" class="nav-link"
+              title="Mein LinkedIn-Profil besuchen"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link"
+              title="Mein GitHub-Profil besuchen"><i class="fab fa-github"></i></a></li>
+          <li><button type="button" class="nav-link search-link" data-search-open
+              title="Website durchsuchen (Strg+K)" aria-label="Suche"><i class="fas fa-magnifying-glass"></i></button></li>
+          <!-- nav-menu:end -->
+          <li class="lang-switch">
+            <a href="index.html" class="nav-link active" hreflang="de" title="Deutsch">DE</a>
+            <span class="lang-sep">|</span>
+            <a href="../../../en/pages/systems/agentic_db/index.html" class="nav-link" hreflang="en" title="English">EN</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="project-detail">
+    <div class="container">
+
+      <!-- 1) Product hero -->
+      <div class="product-hero">
+        <div class="ph-text">
+          <p class="ph-eyebrow">Systeme</p>
+          <h1>Agentic DB <span class="badge badge-experimental">Experimentell</span></h1>
+          <p class="ph-tagline">Eine Markdown-Wissensbasis, die sich von <strong>KI selbst organisieren</strong> l&auml;sst.</p>
+          <p class="ph-lead">
+            Ein dateibasiertes Knowledge-Base-System: KI-Agenten lesen und liefern Content,
+            ein &bdquo;KeeperAgent&ldquo; sortiert, teilt, fusioniert und indiziert eigenst&auml;ndig.
+            Alles atomar, versioniert und vollst&auml;ndig r&uuml;ckg&auml;ngig &ndash; funktioniert
+            auch ohne KI als reine Dateisammlung.
+          </p>
+          <div class="ph-actions">
+            <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Beratung anfragen</a>
+            <a href="#how" class="btn btn-secondary"><i class="fas fa-gears"></i> So funktioniert es</a>
+          </div>
+          <p class="ph-live"><i class="fas fa-circle"></i> Dateibasiert &ndash; kein Server, keine Datenbank, nur Markdown-Dateien.</p>
+        </div>
+        <div class="ph-visual">
+          <img src="../../../misc/automation-placeholder.svg" alt="Agentic DB: dateibasierte KI-Wissensbasis mit KeeperAgent, der Inhalte organisiert" loading="lazy">
+        </div>
+      </div>
+
+      <div class="content">
+
+        <!-- 2) Was ist das? -->
+        <h3 id="what">Was ist das?</h3>
+        <p>
+          <strong>Agentic DB</strong> ist eine dateibasierte Wissensbasis in Markdown, die ein
+          interner LLM-Agent &ndash; der <strong>KeeperAgent</strong> &ndash; selbstst&auml;ndig
+          organisiert. Externe KI-Agenten lesen frei und werfen Content in einen Eingangsordner;
+          der KeeperAgent platziert, teilt, fusioniert, trimmt und indiziert sie. Alles ist
+          atomar, versioniert und r&uuml;ckg&auml;ngig machbar. Bei jeder Inkonsistenz friert die
+          Datenbank ein (HALT), statt auf korruptem Zustand weiterzuarbeiten.
+        </p>
+        <ul>
+          <li>Reine Markdown-Dateien &ndash; kein Server, keine Datenbank, funktioniert mit jedem Datei-Tool oder Git</li>
+          <li>Der KeeperAgent entscheidet allein &uuml;ber Platzierung, Aufteilung, Fusionierung und Indizierung</li>
+          <li>Agenten lesen frei (keine Sperre); Schreibvorg&auml;nge laufen &uuml;ber den KeeperAgent</li>
+          <li>Jede &Auml;nderung ist atomar, nachvollziehbar, versioniert und r&uuml;ckg&auml;ngig machbar</li>
+        </ul>
+
+        <!-- 3) Funktionen -->
+        <h3 id="features">Funktionen</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-code-merge"></i></div>
+            <h4>Autonomes Organisieren</h4>
+            <p>Der KeeperAgent platziert, teilt, fusioniert, dedupliziert und indiziert &ndash; gesteuert durch ein user-authored Schema.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-link"></i></div>
+            <h4>Dauerhafte Links</h4>
+            <p>ID-basierte Referenzen &uuml;berleben jeden Move, Merge oder Split. Alias-Dateien (<code>(lnk)</code>) platzieren Objekte an mehreren Orten.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-rotate-left"></i></div>
+            <h4>Vollst&auml;ndig r&uuml;ckg&auml;ngig</h4>
+            <p>Jede Inhalts&auml;nderung wird versioniert; L&ouml;schungen archiviert. <code>ui_undo</code> kehrt Aktionen um.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-shield-halved"></i></div>
+            <h4>Safe by Construction</h4>
+            <p>Atomare Writes, globales Lock, HALT bei Inkonsistenz. Die DB friert ein statt auf korruptem Zustand zu arbeiten.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-magnifying-glass"></i></div>
+            <h4>Indexierte Suche</h4>
+            <p>Chained Index-Dateien mit Routing-Summarys. <code>db_search</code> traversiert den Index per LLM-Scoring.</p>
+          </div>
+        </div>
+
+        <!-- 4) So funktioniert es -->
+        <div class="steps-cols">
+          <div>
+            <h3 id="how">So funktioniert es</h3>
+            <ol class="offer-steps">
+              <li>Content wird in <code>/_in</code> abgelegt (oder direkt &uuml;ber <code>db_store</code>)</li>
+              <li>Dedup-Check: exakte Wiederholung wird erkannt und &uuml;bersprungen</li>
+              <li>Der KeeperAgent <strong>platziert</strong>: create, update, merge oder refuse</li>
+              <li>Bei einem vollen Lauf: <strong>Restrukturierung</strong> der Nachbarschaft + <strong>Housekeeping</strong></li>
+              <li class="no-num"><strong>Ablauf:</strong> Intake &rarr; Dedup &rarr; Place &rarr; Restructure &rarr; Trim &rarr; Lint &rarr; Index</li>
+            </ol>
+          </div>
+          <div class="steps-text mini-tabs">
+            <h3 class="mt-heading">Gut zu wissen</h3>
+            <div class="mini-tab-links">
+              <button type="button" class="mini-tab-link active" data-tab="overview">&Uuml;berblick</button>
+              <span class="mini-tab-sep">|</span>
+              <button type="button" class="mini-tab-link" data-tab="faq">H&auml;ufige Fragen</button>
+            </div>
+            <div class="mini-tab-content active" id="mt-overview">
+              <p>
+                Der <strong>KeeperAgent</strong> trifft alle Organisationsentscheidungen &ndash;
+                Platzierung, Aufteilung, Fusionierung, Indizierung. Externe Agenten lesen frei
+                und schreiben &uuml;ber <code>db_store</code>; sie bewegen nie selbst Dateien.
+              </p>
+              <p>
+                Das <strong>Schema</strong> (<code>_schema.md</code>) ist user-authored und steuert
+                den KeeperAgent: <code>Domain</code> setzt die atomare K&ouml;rnung,
+                <code>keeperStyle</code> die Eingriffsbereitschaft. Split und Merge teilen eine
+                K&ouml;rnung &ndash; Merge macht nie eine begr&uuml;ndete Split r&uuml;ckg&auml;ngig.
+              </p>
+            </div>
+            <div class="mini-tab-content" id="mt-faq">
+              <div class="faq-list">
+                <details class="samples-reveal">
+                  <summary>Kann ich Agentic DB schon einsetzen? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Agentic DB ist ein experimentelles Projekt. Konzept und
+                    Kernabl&auml;ufe stehen, an der Umsetzung wird gearbeitet. Bei Interesse melden Sie sich gern.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Brauche ich einen Server? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Nein. Agentic DB ist rein dateibasiert &ndash; ein Ordner mit Markdown-Dateien. Backup &uuml;ber
+                    normales Datei-Tooling oder Git. Der KeeperAgent l&auml;uft auf Ihrem Rechner oder Server.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Funktioniert das auch ohne KI? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Ja. Die Dateien sind normales Markdown &ndash; lesbar und editierbar mit jedem Texteditor.
+                    Der KeeperAgent organisiert, ist aber nicht zwingend erforderlich, um die Daten zu nutzen.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Was passiert bei Fehlern? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Bei Inkonsistenz friert die Datenbank ein (HALT) und blockiert alle Schreibvorg&auml;nge.
+                    Nur Diagnose- und Recovery-Tools laufen weiter. Nach Behebung wird HALT manuell gel&ouml;scht.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Kann ich &Auml;nderungen r&uuml;ckg&auml;ngig machen? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Ja. Jede Inhalts&auml;nderung wird versioniert, jede L&ouml;schung archiviert. <code>ui_undo</code>
+                    kehrt Aktionen &uuml;ber das Log zur&uuml;ck &ndash; mit All-or-None.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Welche KI steckt dahinter? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>Das LLM-Modell ist frei w&auml;hlbar (Cloud oder lokal). F&uuml;r reproduzierbare L&auml;ufe
+                    wird <code>temperature: 0</code> empfohlen. Das verwendete Modell wird pro Aktion geloggt.</p>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5) Wof&uuml;r? -->
+        <h3 id="use-cases">Wof&uuml;r?</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-brain"></i></div>
+            <h4>Agent-Ged&auml;chtnis</h4>
+            <p>Strukturiertes Langzeitged&auml;chtnis f&uuml;r KI-Agenten &ndash; sie lesen und schreiben, die DB organisiert.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-book"></i></div>
+            <h4>Personal Knowledge Base</h4>
+            <p>Funktioniert auch ohne KI als reine Markdown-Sammlung &ndash; der KeeperAgent ist optional.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-users"></i></div>
+            <h4>Team-Wissen</h4>
+            <p>Git-basierte Wissensbasis f&uuml;r Teams &ndash; jede &Auml;nderung ist nachvollziehbar und r&uuml;ckg&auml;ngig.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-database"></i></div>
+            <h4>Dokumentation &amp; Referenz</h4>
+            <p>Technische Doku, die sich selbst strukturiert &ndash; der KeeperAgent h&auml;lt sie konsistent.</p>
+          </div>
+        </div>
+
+        <!-- 6) Ma&szlig;geschneidert -->
+        <h3 id="custom">Ma&szlig;geschneidert f&uuml;r Sie</h3>
+        <p>
+          Agentic DB ist modular aufgebaut und wird &uuml;ber Schema und Konfiguration auf Ihren
+          Anwendungsfall eingestellt:
+        </p>
+        <ul>
+          <li><code>Domain</code> definiert, was ein atomares Objekt ist &ndash; steuert Split- und Merge-Verhalten</li>
+          <li><code>keeperStyle</code> (conservative / balanced / aggressive) regelt die Eingriffsbereitschaft</li>
+          <li><code>deletionPercent</code> steuert das Trimmen von Inhalten (<code>0</code> deaktiviert)</li>
+          <li><code>naming</code> legt die Namenskonvention fest (kebab-case, snake_case, Title Case, natural)</li>
+          <li>LLM-Modell und Temperatur frei w&auml;hlbar &ndash; <code>temperature: 0</code> f&uuml;r reproduzierbare L&auml;ufe</li>
+          <li>Cron-Zeitplan oder manuelle Ausl&ouml;sung &ndash; volle Kontrolle &uuml;ber Wartungsintervalle</li>
+        </ul>
+
+        <!-- 7) Sicherheit & Kontrolle -->
+        <div class="highlight-box">
+          <p><i class="fas fa-shield-halved" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>Sicherheit &amp; Konsistenz:</strong> Jeder Write ist atomar (temp &rarr; fsync &rarr; rename).
+            Ein globales Lock serialisiert Schreibvorg&auml;nge; Lesezugriff blockiert nie. Bei Inkonsistenz
+            friert die DB ein (<strong>HALT</strong>) &ndash; nur Diagnose- und Recovery-Tools laufen weiter.
+            Lint erkennt und repariert Strukturprobleme automatisch bei jedem Lauf.</p>
+        </div>
+
+        <!-- 8) Demo anfragen -->
+        <div class="live-demo">
+          <h3>In Aktion sehen</h3>
+          <p>Ich zeige Ihnen Agentic DB gerne an einem Beispiel-Setup &ndash; oder richte es f&uuml;r Ihren Anwendungsfall ein.</p>
+          <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Demo anfragen</a>
+        </div>
+
+        <!-- 9) Auf einen Blick -->
+        <h3 id="specs">Auf einen Blick</h3>
+        <div class="spec-list">
+          <div class="spec-row"><span class="spec-k">Aufgabe</span><span class="spec-v">KI-organisierte dateibasierte Wissensbasis</span></div>
+          <div class="spec-row"><span class="spec-k">Format</span><span class="spec-v">Markdown-Dateien + Ressourcen (Bilder, PDFs, CSVs)</span></div>
+          <div class="spec-row"><span class="spec-k">KI</span><span class="spec-v">KeeperAgent (LLM) &ndash; Modell frei w&auml;hlbar, Temperatur konfigurierbar</span></div>
+          <div class="spec-row"><span class="spec-k">Sicherheit</span><span class="spec-v">atomare Writes, globales Lock, HALT, Versioning, Archiving, Undo</span></div>
+          <div class="spec-row"><span class="spec-k">Betrieb</span><span class="spec-v">dateibasiert (kein Server) &ndash; Cron oder manuell</span></div>
+          <div class="spec-row"><span class="spec-k">Schnittstellen</span><span class="spec-v">db_store, db_search, db_read, db_process, db_lint, ui_undo u.&nbsp;a.</span></div>
+        </div>
+
+        <!-- 10) Mehr zum Thema -->
+        <div class="highlight-box">
+          <p><i class="fas fa-lightbulb" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>Mehr als Speicher:</strong> Agentic DB ist ein Beispiel meiner
+            <a href="../../services/automation/index.html">Automatisierung</a> und
+            <a href="../../services/self-improving/index.html">selbstverbessernden KI</a> &ndash; Systeme,
+            die sich selbst organisieren und aus Eingaben lernen.</p>
+        </div>
+
+        <!-- 11) Abschluss-CTA -->
+        <div class="service-cta cta-always">
+          <h3>Agentic DB f&uuml;r Ihren Anwendungsfall</h3>
+          <p>Erstgespr&auml;ch kostenfrei &ndash; vor Ort in Bamberg/N&uuml;rnberg oder online.</p>
+          <div class="cta-actions">
+            <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Kontakt aufnehmen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+          <a href="../../../llms.txt" class="footer-agent-link">F&uuml;r KI-Agenten</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/waj-ai" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-links">
+          <a href="../../../privacy.html">Datenschutz</a>
+          <a href="../../../imprint.html">Impressum</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>powered by &copy; Walter A. Jablonowski 2019-2026. Made with AI. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="../../../lib/config.js?v=26092401"></script>
+  <script src="../../../controller.js?v=26092401"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26092401"></script>
+  <script>
+    new WebsiteController();
+  </script>
+</body>
+</html>

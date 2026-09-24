@@ -8,7 +8,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Walter A. Jablonowski">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="Log Viewer – AI-Powered Logs">
+  <meta property="og:title" content="Log Viewer &ndash; AI-Powered Logs">
   <meta property="og:description" content="General-Purpose Log Viewer with AI Support.">
   <meta property="og:url" content="https://walter-a-jablonowski.github.io/en/pages/projects/log-view/">
   <meta property="og:image" content="https://walter-a-jablonowski.github.io/misc/log-2.png">
@@ -46,85 +46,15 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../../favicon-16x16.png">
   <link rel="manifest" href="../../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../../styles.css?v=26062304">
-  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26062304">
-  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26062304">
+  <link rel="stylesheet" href="../../../../styles.css?v=26092401">
+  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26092401">
+  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26092401">
   <style>
-    /* Project detail page specific styles */
-    .project-detail {
-      padding: var(--spacing-xxl) 0;
-      background-color: var(--dark);
-      color: var(--white);
-      position: relative;
-    }
-    .project-detail::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(14,14,14,0.95) 0%, rgba(26,26,26,0.85) 100%);
-      z-index: 1;
-    }
-    .project-detail .container { position: relative; z-index: 2; }
-
-    .project-header {
-      display: block;
-    }
-    .project-media {
-      flex: 1 1 340px;
-      background: rgba(255,255,255,0.03);
-      border-radius: var(--border-radius-md);
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-    .project-media img { width: 100%; height: 100%; object-fit: cover; }
-
-    .project-title {
-      flex: 2 1 460px;
-    }
-    .project-title h2 { color: var(--white); margin-top: 0.5rem; }
-    .project-title .underline { margin-top: .5rem; }
-
     /* Typography for converted markdown */
-    .intro-text {
-      font-size: 1.2rem;
-      color: var(--lighter-gray);
-      line-height: 1.8;
-      font-weight: 300;
-      margin-left: 0;
-    }
-    .content { color: var(--lighter-gray); line-height: 1.75; }
-    .content h2, .content h3, .content h4 { color: var(--white); margin-top: var(--spacing-lg); }
-    .content p { margin: 0 0 var(--spacing-md); }
-    .content ul { padding-left: 1.25rem; margin: 0 0 var(--spacing-md); }
+    /* h2/h3 come from page-components.css; h4 stays here on purpose - a shared
+       .content h4 would beat .feature-box h4 on every page with feature cards. */
+    .content h4 { color: var(--white); margin-top: var(--spacing-lg); }
     .content li { margin: .35rem 0; }
-    .content a { color: var(--primary); }
-    .content strong { color: var(--white); }
-    .content blockquote {
-      margin: var(--spacing-md) 0;
-      padding: var(--spacing-md);
-      border-left: 4px solid var(--primary);
-      background: rgba(255,255,255,0.04);
-      border-radius: var(--border-radius-sm);
-    }
-    .content pre {
-      background: #0f0f0f;
-      color: #eee;
-      padding: var(--spacing-md);
-      border-radius: var(--border-radius-sm);
-      overflow: auto;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-    .content code { font-family: var(--font-code); }
-
-    .tech-stack {
-      color: var(--primary);
-      font-weight: 500;
-      font-size: 1.05rem;
-    }
-
-    @media (max-width: 768px) {
-      .project-header { flex-direction: column; }
-    }
   </style>
 </head>
 <body>
@@ -138,6 +68,7 @@
           <i class="fas fa-bars"></i>
         </div>
         <ul class="nav-menu">
+          <!-- nav-menu:start | DON'T edit the menu here - edit the template in tools/upd_menu.php, then run it (see CLAUDE.md) -->
           <li><a href="../../../index.html#hero" class="nav-link">Home</a></li>
           <li><a href="../../../index.html#about" class="nav-link">Ask AI</a></li>
           <li class="nav-dropdown">
@@ -146,21 +77,47 @@
               <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Services submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
             </span>
             <ul class="nav-dropdown-menu">
-              <li><a href="../../services/automation.html" class="nav-link">Automation</a></li>
-              <li><a href="../../services/self-improving.html" class="nav-link">Self-improving AI</a></li>
-              <li><a href="../../services/data-solutions.html" class="nav-link">AI Data Solutions</a></li>
-              <li><a href="../../services/consulting.html" class="nav-link">AI Consulting</a></li>
-              <li><a href="../../services/security.html" class="nav-link">AI Security &amp; Evaluation</a></li>
-              <li><a href="../../placeholder.html" class="nav-link">AI Visualization</a></li>
-              <li><a href="../../placeholder.html" class="nav-link">Apps that work</a></li>
+              <li class="nav-dropdown-group">Agents &amp; Workflow</li>
+              <li><a href="../../../pages/services/automation/index.html" class="nav-link">Automation</a></li>
+              <li><a href="../../../pages/services/self-improving/index.html" class="nav-link">Self-improving AI</a></li>
+              <li><a href="../../../pages/services/data-solutions/index.html" class="nav-link">AI Data Solutions</a></li>
+              <li class="nav-dropdown-group">Consulting &amp; Integration</li>
+              <li><a href="../../../pages/services/consulting/index.html" class="nav-link">AI Consulting</a></li>
+              <li><a href="../../../pages/services/security/index.html" class="nav-link">AI Security &amp; Evaluation</a></li>
+              <li><a href="../../../pages/services/integration/index.html" class="nav-link">AI Integration &amp; MCP</a></li>
+              <li class="nav-dropdown-group">Human Interface</li>
+              <li><a href="../../../pages/services/dashboards/index.html" class="nav-link">AI Dashboards</a></li>
+              <li><a href="../../../pages/services/ai-apps/index.html" class="nav-link">Apps that work</a></li>
+              <li class="nav-dropdown-group">Commerce</li>
+              <li><a href="../../../pages/services/agentic-commerce/index.html" class="nav-link">Agentic Commerce</a></li>
             </ul>
           </li>
           <li class="less-spacing"><a href="../../../index.html#skills" class="nav-link">Skills</a></li>
-          <li><a href="../../../index.html#proj" class="nav-link">Projects</a></li>
-          <li><a href="../../../index.html#contact" class="nav-link">Contact</a></li>
-          <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
+          <li class="nav-dropdown less-spacing">
+            <span class="nav-dropdown-head">
+              <a href="../../../index.html#proj" class="nav-link">Projects</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Projects submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../../../pages/systems/office_agent/index.html" class="nav-link">Office Agent</a></li>
+              <li><a href="../../../pages/systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
+              <li><a href="../../../pages/systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
+              <li><a href="../../../pages/systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
+              <li><a href="../../../pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
+              <li><a href="../../../pages/systems/task_board/index.html" class="nav-link">AI Task Board</a></li>
+              <li><a href="../../../pages/systems/agentic_db/index.html" class="nav-link">Agentic DB</a></li>
+              <li><a href="../../../pages/systems/editor/index.html" class="nav-link">AI Built Editor</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../../index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="../../../blog.html" class="nav-link">Blog</a></li>
+          <li><a href="https://www.linkedin.com/in/waj-ai" target="_blank" class="nav-link"
               title="Visit my LinkedIn profile"><i class="fab fa-linkedin-in"></i></a></li>
-          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link" title="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
+          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link"
+              title="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
+          <li><button type="button" class="nav-link search-link" data-search-open
+              title="Search the site (Ctrl+K)" aria-label="Search"><i class="fas fa-magnifying-glass"></i></button></li>
+          <!-- nav-menu:end -->
           <li class="lang-switch">
             <a href="../../../../pages/projects/log-view/index.html" class="nav-link" hreflang="de" title="Deutsch">DE</a>
             <span class="lang-sep">|</span>
@@ -183,7 +140,7 @@
             General-Purpose Log Viewer with AI Support
           </p>
           <p>
-            Done in one 3 days: A universal log viewer that brings all your log files into one place — regardless of format. Analyse large log files with AI, navigate entries with rich details, and extend the system with new log types without touching any main code.
+            Done in one 3 days: A universal log viewer that brings all your log files into one place &mdash; regardless of format. Analyse large log files with AI, navigate entries with rich details, and extend the system with new log types without touching any main code.
           </p>
         </div>
         <div class="project-media">
@@ -196,7 +153,7 @@
         <h3>Key Features</h3>
         <ul>
           <li><strong>AI Analysis</strong>: Send any log to an AI assistant for automated analysis, anomaly detection, and AI-generated filter expressions</li>
-          <li><strong>Pluggable Type System</strong>: Add support for new log formats by dropping in a parser and renderer — no changes to the main application</li>
+          <li><strong>Pluggable Type System</strong>: Add support for new log formats by dropping in a parser and renderer &mdash; no changes to the main application</li>
           <li><strong>Large File Support</strong>: Handles logs with more than 100,000 entries via background ingestion into SQLite or MySQL</li>
           <li><strong>Multi-Source Merging</strong>: Combine multiple files or entire folder trees into a single unified log view</li>
           <li><strong>Rich Filter Syntax</strong>: Expression-based filtering with field comparisons, <code>contains</code>, <code>in [...]</code>, regex, and boolean logic; filters are saved per log</li>
@@ -207,17 +164,17 @@
 
         <h3>Technical Architecture</h3>
         <ul>
-          <li><strong>Backend</strong>: PHP 8+ with a pluggable type → parser → renderer pipeline</li>
+          <li><strong>Backend</strong>: PHP 8+ with a pluggable type &rarr; parser &rarr; renderer pipeline</li>
           <li><strong>Storage</strong>: SQLite (zero-setup) or MySQL; background ingest worker keeps the DB continuously up to date</li>
           <li><strong>Type Detection</strong>: Automatic log type detection with optional URL parameter override</li>
-          <li><strong>Frontend</strong>: Vanilla JavaScript with Fetch API — no heavy frameworks</li>
+          <li><strong>Frontend</strong>: Vanilla JavaScript with Fetch API &mdash; no heavy frameworks</li>
           <li><strong>AI Integration</strong>: Configurable LLM backend for log analysis and filter generation</li>
           <li><strong>Multi-Tenant Ready</strong>: Per-user and per-organisation settings, saved filters, and custom type overrides</li>
         </ul>
 
         <h3>Tech Stack</h3>
         <p class="tech-stack">
-          PHP • SQLite • MySQL • YAML • Vanilla JavaScript • Fetch API • AI / LLM
+          PHP &bull; SQLite &bull; MySQL &bull; YAML &bull; Vanilla JavaScript &bull; Fetch API &bull; AI / LLM
         </p>
 
         <h3>Built-in Log Types</h3>
@@ -230,7 +187,7 @@
 
         <h3>Use Cases</h3>
         <p>
-          Engineers and DevOps teams can point the viewer at any log file or folder — trading systems, batch jobs, order pipelines, PHP errors — and immediately filter, navigate, and analyse entries. The AI assistant handles the heavy lifting: "Show me all rejected orders with a latency above 100 ms" generates the filter expression automatically.
+          Engineers and DevOps teams can point the viewer at any log file or folder &mdash; trading systems, batch jobs, order pipelines, PHP errors &mdash; and immediately filter, navigate, and analyse entries. The AI assistant handles the heavy lifting: "Show me all rejected orders with a latency above 100 ms" generates the filter expression automatically.
         </p>
       </div>
     </div>
@@ -245,7 +202,7 @@
         </div>
         <div class="footer-social">
           <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/waj-ai" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
         <div class="footer-links">
@@ -263,9 +220,9 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../../lib/config.js?v=26062304"></script>
-  <script src="../../../../controller.js?v=26062304"></script>
-  <script src="../../../../lib/voice-agent/agent.js?v=26062304"></script>
+  <script src="../../../../lib/config.js?v=26092401"></script>
+  <script src="../../../../controller.js?v=26092401"></script>
+  <script src="../../../../lib/voice-agent/agent.js?v=26092401"></script>
   <script>
     new WebsiteController();
   </script>

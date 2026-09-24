@@ -1,0 +1,13 @@
+/* ===== Print / PDF ===== */
+/* For publishing single pages as PDF (e.g. on freelancer portals). The nav menu
+   is too wide for an A4 page without margins, so we hide it and keep only the
+   logo. Backgrounds/graphics are printed as-is (dark theme stays on-brand). */
+
+@media print
+{
+  .nav-menu,
+  .menu-toggle
+  {
+    display: none !important;
+  }
+}

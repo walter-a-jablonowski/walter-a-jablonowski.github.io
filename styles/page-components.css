@@ -1,0 +1,651 @@
+/*
+ * Reusable service / offer / product page components.
+ * Extracted verbatim from the per-page inline <style> blocks (identical
+ * across the service, offer & systems pages). Imported globally via styles.css;
+ * every class here is exclusive to those pages, so it has no effect
+ * anywhere else.
+ */
+
+.offer-lead {
+  font-size: 1.2rem;
+  color: var(--lighter-gray);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* Deep-link offset: section headings reachable via #hash (e.g. the voice
+   agent's navigate tool linking to en/pages/services/automation.html#process)
+   must not hide under the fixed header. Only applies to anchored headings. */
+.project-detail .content h3[id] {
+  scroll-margin-top: 90px;
+}
+/* Price highlight inside a lead paragraph, in either of the two lead styles. */
+.offer-lead .price-hl { color: var(--primary); font-weight: 700; }
+.ph-lead .price-hl { color: var(--primary); font-weight: 700; }
+
+/* Lead-in paragraph of a project page — the .offer-lead of that page family. */
+.intro-text {
+  font-size: 1.2rem;
+  color: var(--lighter-gray);
+  line-height: 1.8;
+  font-weight: 300;
+  margin-left: 0;
+}
+
+/* Heading with an action link on its right; the link drops under the heading
+   as soon as both no longer fit one line */
+
+.head-action {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .5rem var(--spacing-md);
+  margin: var(--spacing-lg) 0 var(--spacing-md);  /* the row carries the spacing the heading gave away */
+}
+.head-action h3 { margin: 0; }
+
+.head-action .action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .4rem .9rem;
+  border: 1px solid rgba(255,193,7,0.35);  /* --accent-gold, dimmed */
+  border-radius: var(--border-radius-pill);
+  background: rgba(255,255,255,0.03);  /* same surface as the feature boxes below */
+  color: var(--accent-gold);
+  font-size: .95rem;
+  font-weight: 600;
+  transition: color var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast);
+}
+.head-action .action-link:hover {
+  background: var(--accent-gold);
+  border-color: var(--accent-gold);
+  color: var(--dark);  /* gold is too light to carry white text */
+}
+
+/* Feature cards (icon + title + text) */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+  margin: 0 0 var(--spacing-md);
+}
+.feature-box {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--border-radius-sm);
+  padding: 1.1rem 1.2rem;
+}
+.feature-box .fb-icon {
+  color: var(--primary);
+  font-size: 1.5rem;
+  margin-bottom: .6rem;
+}
+.feature-box h4 { color: var(--white); margin: 0 0 .35rem; font-size: 1.05rem; }
+.feature-box p { margin: 0; font-size: .95rem; color: var(--light-gray); }
+
+/* Note paragraph directly under a feature grid (the cases that did not get a card).
+   It reads as part of the grid, so it keeps a wider gap to whatever follows. Scoped to
+   .content to outweigh the `.content p` margin further down in this file. */
+.content .grid-note { margin-bottom: var(--spacing-lg); }
+
+/* Feature grid carousel (wrapper + arrows injected in controller.js): the grid turns into a
+   horizontal scroller as soon as its boxes no longer fit one row - on small screens that is
+   almost always the case, on larger ones only for long lists. As long as everything fits,
+   nothing is switched on and the plain grid above renders as usual.
+   controller.js sets .is-carousel plus --fc-basis, the width of one box, so a scrolled row
+   looks exactly like the grid row it replaces */
+
+.feature-carousel { position: relative; }
+.feature-carousel .carousel-arrow { display: none; }
+
+.feature-carousel.is-carousel .carousel-arrow { display: flex; }
+.feature-carousel.is-carousel .feature-grid {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 1.5rem;  /* scrolled boxes rest right of the prev arrow; the first box starts flush left */
+}
+.feature-carousel.is-carousel .feature-grid::-webkit-scrollbar { display: none; }
+.feature-carousel.is-carousel .feature-box {
+  flex: 0 0 var(--fc-basis);
+  scroll-snap-align: start;
+}
+
+@media (max-width: 480px) {
+  .feature-carousel.is-carousel .feature-box { flex-basis: 82%; }  /* sliver of the next box hints scrollability */
+}
+
+/* Number row: a few hard figures that carry a claim the surrounding prose only
+   asserts (size, count, duration). Same surface as the feature boxes, but the
+   value leads and the label explains it - so a row of them scans in one look. */
+.num-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--spacing-md);
+  margin: var(--spacing-lg) 0 var(--spacing-xl);
+}
+.num-box {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-md);
+  text-align: center;
+  /* The boxes stretch to the tallest one; centring keeps a one-line label optically
+     level with a label that wraps to two */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.num-box .num-v {
+  display: block;
+  color: var(--primary);
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.num-box .num-k {
+  display: block;
+  color: var(--light-gray);
+  font-size: .87rem;
+  margin-top: .35rem;
+}
+
+/* Foldable samples reveal */
+.samples-reveal { margin: 0 0 var(--spacing-md); }
+.samples-reveal > summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+.samples-reveal > summary::-webkit-details-marker { display: none; }
+.samples-reveal > summary .fa-chevron-down {
+  font-size: .8rem;
+  transition: transform var(--transition-fast);
+}
+.samples-reveal[open] > summary .fa-chevron-down { transform: rotate(180deg); }
+.samples-reveal ul { margin: .75rem 0 0; }
+
+/* Samples list (stacked cards: text left, image right; stacked vertically on mobile) */
+
+.samples-list {
+  margin-top: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+.sample-card {
+  display: flex;
+  background-color: rgba(26, 26, 26, 0.5);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.sample-info {
+  flex: 1;
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+}
+.sample-image-container {
+  width: 40%;
+  overflow: hidden;
+}
+.sample-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left top;
+}
+.sample-image[src$=".svg"] { object-fit: contain; object-position: center; }  /* diagrams scale fully instead of being cropped, centered in the card */
+.sample-image:not(svg) { transition: opacity 0.3s ease; }
+.sample-image:not(svg):hover { opacity: 0.9; }
+.sample-name {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: var(--spacing-md);
+}
+.sample-tag {  /* small "Beispiel" / "Sample" pill next to a card title */
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  padding: .1rem .65rem .15rem;
+  border: 1.5px solid var(--accent-gold);
+  border-radius: var(--border-radius-pill);
+  color: var(--accent-gold);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.sample-description {
+  color: var(--lighter-gray);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .sample-card { flex-direction: column; }
+  .sample-info { order: 2; }
+  .sample-image-container {
+    width: 100%;
+    height: 200px;
+    order: 1;
+  }
+}
+
+/* Process steps */
+.offer-steps {
+  list-style: none;
+  counter-reset: step;
+  padding: 0;
+  margin: 0 0 var(--spacing-md);
+  display: grid;
+  gap: .85rem;
+}
+.offer-steps li {
+  counter-increment: step;
+  position: relative;
+  padding: .85rem 1rem .85rem 3.25rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--border-radius-sm);
+}
+.offer-steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: .85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.7rem;
+  height: 1.7rem;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: .95rem;
+}
+.offer-steps .step-comment { color: var(--light-gray); font-size: .92rem; }
+.offer-steps li.no-num { counter-increment: none; padding-left: 1rem; }
+.offer-steps li.no-num::before { display: none; }
+
+/* Process steps + explanatory text side by side (50/50) */
+.steps-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  align-items: start;
+  margin: var(--spacing-lg) 0 var(--spacing-md);
+}
+.steps-cols h3 { margin-top: 0 !important; }
+.steps-cols .offer-steps { margin-bottom: 0; }
+.steps-cols .steps-text p:last-child { margin-bottom: 0; }
+@media (max-width: 768px) {
+  .steps-cols { grid-template-columns: 1fr; gap: var(--spacing-sm); align-items: start; }
+}
+
+/* Mini tabs (inside the steps-text column) */
+
+/* Small heading above the tab strip. Balances the <h3> of the steps column on
+   the left, and puts the block into the heading outline. Deliberately quieter
+   than a content h3 — the tab labels below it carry the emphasis. */
+.mini-tabs .mt-heading {
+  margin: 0 0 .6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--light-gray);
+  letter-spacing: .02em;
+}
+
+.mini-tabs .mini-tab-links {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+  padding-bottom: .5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.mini-tab-link {
+  background: none;
+  border: none;
+  font-family: inherit;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: .2rem .15rem;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+.mini-tab-link:hover { color: var(--primary-light); }
+.mini-tab-link.active { color: var(--primary); }
+.mini-tab-sep { color: var(--light-gray); margin: 0 .4rem; }
+.mini-tab-content { display: none; }
+.mini-tab-content.active { display: block; }
+
+/* The FAQ mini-tab stays visible under LOADING_CONFIG.hideBiz (unlike prices and
+   the .service-cta banner, which stay hidden). Reason: the service pages carry
+   FAQPage structured data generated from this panel (tools/upd_faq_schema.php),
+   and markup describing content a visitor cannot reach counts as misleading
+   structured data. Collapsed-by-default is fine — unreachable is not. */
+
+/* Highlight / trust callout */
+.highlight-box {
+  margin: var(--spacing-md) 0;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-left: 4px solid var(--primary);
+  background: rgba(255,255,255,0.04);
+  border-radius: var(--border-radius-sm);
+}
+.highlight-box p { margin: 0; }
+
+/* FAQ list (stacked foldables) */
+.faq-list { display: grid; gap: .6rem; margin: 0 0 var(--spacing-md); }
+.faq-list .samples-reveal { margin: 0; padding: .25rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.faq-list .samples-reveal:last-child { border-bottom: none; }
+.faq-list .samples-reveal > summary { color: var(--white); }
+.faq-list .samples-reveal p { margin: .6rem 0 0; font-size: .98rem; }
+
+/* CTA banner */
+.service-cta {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--border-radius-md);
+  text-align: center;
+}
+.service-cta h3 { margin-top: 0; }
+.service-cta .cta-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--spacing-md);
+}
+/* Direct contact details under the CTA buttons (mail, phone, location), so a visitor
+   arriving from a local search can act without following a link to another page. */
+.service-cta .cta-contact {
+  margin: var(--spacing-md) 0 0;
+  color: var(--light-gray);
+  font-size: .92rem;
+}
+.service-cta .cta-contact i { color: var(--primary); margin-right: .3rem; }
+.service-cta .cta-contact a { color: inherit; }
+.service-cta .cta-contact a:hover { color: var(--primary-light); }
+
+/* A closing CTA that stays visible even under hideBiz (unlike a plain .service-cta).
+   Used by the product pages and by the region landing pages, whose whole purpose is
+   to convert a visitor arriving from a local search - a landing page without a call
+   to action would be pointless. */
+body.hide-biz .service-cta.cta-always { display: block; }
+
+/* Loop figure — contained panel (content width), slightly darker than the page.
+   Holds one diagram (loop, flow or architecture) at its natural 560px width, either
+   inline as <svg> or as an <img> pointing at an .svg file beside the page. */
+.loop-figure {
+  margin: var(--spacing-lg) 0 var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-md);
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--border-radius-md);
+}
+.loop-figure svg,
+.loop-figure img { width: 100%; height: auto; display: block; max-width: 560px; margin: 0 auto; }
+.loop-figure figcaption { text-align: center; color: var(--light-gray); font-size: .9rem; margin: .75rem auto 0; max-width: 560px; }
+
+/* Product hero: focused product-page header (eyebrow + title + tagline + lead +
+   actions + "live" note on the left, product visual on the right). */
+.product-hero {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+}
+.ph-eyebrow { color: var(--primary); font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; font-size: .8rem; margin: 0 0 .6rem; }
+/* Eyebrow used as a breadcrumb (region pages): the links carry the trail, so they
+   take the eyebrow's own color instead of the global link color. */
+.ph-eyebrow a { color: inherit; }
+.ph-eyebrow a:hover { color: var(--primary-light); }
+.ph-text h1 { color: var(--white); font-size: 2.6rem; line-height: 1.1; margin: 0 0 .8rem; }
+.ph-tagline { color: var(--white); font-size: 1.3rem; font-weight: 500; margin: 0 0 .6rem; }
+.ph-lead { color: var(--lighter-gray); font-size: 1.05rem; line-height: 1.6; margin: 0 0 1.4rem; }
+.ph-actions { display: flex; flex-wrap: wrap; gap: .8rem; align-items: center;
+  position: relative; }  /* anchor for .use-case-tooltip, like .hero-cta */
+.ph-live { margin: 1.1rem 0 0; color: var(--light-gray); font-size: .95rem; }
+.ph-live i { color: var(--primary); }
+.ph-visual { display: flex; justify-content: center; }
+.ph-visual img { max-width: 320px; width: 100%; height: auto; border-radius: var(--border-radius-lg);
+  box-shadow: 0 24px 60px rgba(0,0,0,.55); border: 1px solid rgba(255,255,255,.08); }
+
+/* Hero screenshot with a "click to enlarge" caption (img_overlay). The caption
+   is centred under the image; a page showing a wide diagram instead overrides
+   this locally to align the caption left. */
+.ph-visual figure { margin: 0; display: flex; flex-direction: column; align-items: center; }
+.ph-visual figcaption { display: flex; align-items: center; justify-content: center; gap: .45rem;
+  color: var(--light-gray); font-size: .85rem; margin: .7rem 0 0; text-align: center; }
+.ph-visual figcaption i { color: var(--primary); }
+.ph-visual .zoom-hint { cursor: pointer; }
+
+@media (max-width: 768px) {
+  .product-hero { grid-template-columns: 1fr; gap: var(--spacing-lg); }
+  .ph-visual img { max-width: 260px; }
+  .ph-visual.hide-on-mobile { display: none; }  /* service pages hide the hero visual on mobile (except self-improving) */
+  .ph-text h1 { font-size: 2.1rem; }
+}
+
+/* Spec list: compact two-column key/value facts table ("at a glance"). */
+.spec-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+.spec-list .spec-row { display: grid; grid-template-columns: 9.5rem 1fr; gap: .6rem;
+  padding: .8rem 1.1rem; border-top: 1px solid rgba(255,255,255,.06); }
+.spec-list .spec-row:nth-child(-n+2) { border-top: none; }
+.spec-list .spec-k { color: var(--light-gray); font-weight: 600; }
+.spec-list .spec-v { color: var(--white); }
+
+@media (max-width: 768px) {
+  .spec-list { grid-template-columns: 1fr; }
+  .spec-list .spec-row:nth-child(2) { border-top: 1px solid rgba(255,255,255,.06); }
+}
+
+/* Status badge: a small pill shown beside a headline (e.g. "experimental").
+   Base .badge is neutral/reusable; add a variant like .badge-experimental for
+   colour. Beside a heading it keeps its own small size and gains left spacing. */
+.badge {
+  display: inline-block;
+  vertical-align: middle;
+  padding: .3em .7em;
+  border-radius: 999px;
+  font-size: .7rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.badge-experimental {
+  color: var(--primary);
+  background: rgba(255, 107, 0, 0.12);
+  border: 1px solid rgba(255, 107, 0, 0.4);
+}
+
+/* Project detail header: cover image beside the title block, stacking on
+   mobile. Kept above the page shell below, matching the order these rules had
+   inside the project pages (.project-title h2 must still lose to .content h2). */
+.project-header {
+  display: block;
+}
+.project-media {
+  flex: 1 1 340px;
+  background: rgba(255,255,255,0.03);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.project-media img { width: 100%; height: 100%; object-fit: cover; }
+.project-title {
+  flex: 2 1 460px;
+}
+.project-title h2 { color: var(--white); margin-top: 0.5rem; }
+.project-title .underline { margin-top: .5rem; }
+
+@media (max-width: 768px) {
+  .project-header { flex-direction: column; }
+}
+
+
+/* ---- Legal pages (imprint, privacy) --------------------------------------
+   Their own narrow, light-on-dark reading column — no .project-detail shell. */
+.legal-content {
+  padding: 120px 0 60px;
+}
+.legal-content .container {
+  max-width: 800px;
+}
+.legal-content h1 {
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+.legal-content h3 {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+.legal-content p, .legal-content ul, .legal-content ol {
+  margin-bottom: 1rem;
+}
+.legal-content ul, .legal-content ol {
+  padding-left: 2rem;
+}
+.legal-content a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+.legal-content a:hover {
+  color: var(--primary-dark);
+}
+.back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+.back-link i {
+  margin-right: 0.5rem;
+}
+
+/* ---- Page shell ----------------------------------------------------------
+   The dark section that every service, systems, project, region and offer page
+   wraps its body in, plus the base typography of the .content column inside it.
+   These were identical in all 50 inline <style> blocks, so they live here now.
+
+   KEEP THIS BLOCK LAST. Element selectors like .content p and .content li have
+   the same specificity as the component rules above (.feature-box p,
+   .highlight-box p, .sample-description, …), so the cascade is decided by source
+   order alone. Inline in a page, this block came after the whole stylesheet and
+   won; moved to the top of this file it would silently lose, and paragraphs
+   inside feature boxes and callouts would collapse their bottom margin.
+
+   A page needing a different value still overrides it locally: its inline
+   <style> is parsed after styles.css, so an equally specific rule there wins. */
+
+.project-detail {
+  padding: var(--spacing-xxl) 0;
+  background-color: var(--dark);
+  color: var(--white);
+  position: relative;
+}
+.project-detail::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(14,14,14,0.95) 0%, rgba(26,26,26,0.85) 100%);
+  z-index: 1;
+}
+.project-detail .container { position: relative; z-index: 2; }
+
+.content { color: var(--lighter-gray); line-height: 1.75; }
+.content h2 { color: var(--white); margin-top: var(--spacing-lg); }
+.content h3 { color: var(--white); margin-top: var(--spacing-lg); }  /* systems pages widen this to --spacing-xl */
+.content h3 .h3-sub { color: var(--light-gray); font-weight: 400; }
+/* No .content h4 here on purpose: 36 pages put an <h4> inside .content as the
+   heading of a .feature-box, and an equally specific .content h4 in this block
+   would beat .feature-box h4 and push every card heading down. The project
+   pages that do want it keep the rule in their own <style>. */
+.content p { margin: 0 0 var(--spacing-md); }
+.content ul { padding-left: 1.25rem; margin: 0 0 var(--spacing-md); }
+.content li { margin: .45rem 0; }
+.content a { color: var(--primary); }
+.content strong { color: var(--white); }
+.content code { font-family: var(--font-code); }  /* systems pages also tint it with --primary */
+/* Buttons keep their own text color (override the generic .content a rule) */
+.content a.btn-primary, .content a.btn-secondary { color: var(--white); }
+.content a.btn-outline { color: var(--primary); }
+.content a.btn-outline:hover { color: var(--white); }
+
+/* Converted-markdown blocks on the project pages. */
+.content blockquote {
+  margin: var(--spacing-md) 0;
+  padding: var(--spacing-md);
+  border-left: 4px solid var(--primary);
+  background: rgba(255,255,255,0.04);
+  border-radius: var(--border-radius-sm);
+}
+.content pre {
+  background: #0f0f0f;
+  color: #eee;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  overflow: auto;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ---- Product-page components that sit inside .content --------------------
+   These follow the page shell for the same source-order reason it comes last:
+   .live-demo p must win over the .content p above it, exactly as it did when
+   both rules lived in the page's own <style>. */
+
+/* Tech-stack line: the technologies a product is built from, as one accented
+   sentence of bullet-separated names. */
+.tech-stack { color: var(--primary); font-weight: 500; font-size: 1.05rem; }
+
+/* Demo callout: a warm panel mid-page inviting the reader to ask for a live
+   demo. Distinct from .service-cta, which closes the page. */
+.live-demo { margin: var(--spacing-xl) 0; padding: var(--spacing-lg) var(--spacing-xl);
+  border-radius: var(--border-radius-lg); text-align: center;
+  background: linear-gradient(135deg, rgba(255,107,0,.14), rgba(255,62,0,.06));
+  border: 1px solid rgba(255,107,0,.30); }
+.live-demo h3 { margin-top: 0 !important; }
+.live-demo p { color: var(--lighter-gray); margin: 0 0 1.1rem; }
+
+/* Price line inside an FAQ answer. Always sits in a .biz-only span, so it
+   disappears with the rest of the commercial content under hideBiz. */
+.price-line { color: var(--lighter-gray); }
+.price-line strong { color: var(--primary); }
+
+/* Examples reveal in the hero of a service or region page (between the lead and
+   the CTA). Sits here rather than with .product-hero above so its list rules
+   keep winning over the .content ones, as they did inside the pages. */
+.ph-live-slo { margin: 0 0 1.4rem; color: var(--lighter-gray); }
+.ph-live-slo ul { padding-left: 1.25rem; }
+.ph-live-slo li { margin: .45rem 0; }
+h1 .badge, h2 .badge, h3 .badge, h4 .badge { margin-left: .65em; }

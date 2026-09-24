@@ -1,0 +1,203 @@
+/* =========================================================================
+   Sidebar — generic slide-in panel (right side)
+   Hosts one or more views (see use-case-finder.css for the first view).
+   Reuses site palette (variables.css) to match the design.
+   ========================================================================= */
+
+.va-sidebar
+{
+  position: fixed;
+  top: 70px;
+  right: 0;
+  width: 600px;
+  max-width: 600px;
+  height: calc( 100vh - 70px );
+  background: var(--dark-gray);
+  color: var(--white);
+  border-left: 1px solid var(--medium-gray);
+  box-shadow: -8px 0 30px rgba( 0, 0, 0, 0.4 );
+  z-index: 1100;
+
+  display: flex;
+  flex-direction: column;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX( 100% );
+  transition: transform var(--transition-normal),
+              opacity var(--transition-normal),
+              visibility var(--transition-normal);
+}
+
+.va-sidebar.open
+{
+  opacity: 1;
+  visibility: visible;
+  transform: translateX( 0 );
+}
+
+/* Backdrop (click-outside to close) */
+.va-sidebar-backdrop
+{
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100vw;
+  height: calc( 100vh - 70px );
+  background: rgba( 0, 0, 0, 0.4 );
+  z-index: 1099;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.va-sidebar-backdrop.open
+{
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ---- Header ---- */
+
+.va-sidebar-header
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: linear-gradient( 135deg, rgba( 255, 107, 0, 0.18 ), rgba( 255, 62, 0, 0.10 ) );
+  border-bottom: 1px solid var(--medium-gray);
+  flex-shrink: 0;
+}
+
+.va-sidebar-title
+{
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--white);
+  margin: 0;
+}
+
+.va-sidebar-close
+{
+  background: none;
+  border: none;
+  color: var(--light-gray);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0.25rem;
+  transition: color var(--transition-fast);
+}
+
+.va-sidebar-close:hover
+{
+  color: var(--white);
+}
+
+/* ---- Tabs (shown only with more than one view) ---- */
+
+.va-sidebar-tabs
+{
+  display: none;
+  flex: 1;
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+}
+
+/* With tabs the strip carries the labels, so the plain title is hidden */
+.va-sidebar-header.has-tabs .va-sidebar-tabs
+{
+  display: flex;
+}
+
+.va-sidebar-header.has-tabs .va-sidebar-title
+{
+  display: none;
+}
+
+.va-sidebar-tab
+{
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--light-gray);
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.25rem 0.4rem;
+  cursor: pointer;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.va-sidebar-tab:hover
+{
+  color: var(--white);
+}
+
+.va-sidebar-tab.active
+{
+  color: var(--white);
+  border-bottom-color: var(--primary);
+}
+
+/* ---- Content area (scrollable, hosts the active view) ---- */
+
+.va-sidebar-content
+{
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-lg);
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba( 255, 107, 0, 0.55 ) transparent;
+}
+
+.va-sidebar-content::-webkit-scrollbar
+{
+  width: 6px;
+}
+
+.va-sidebar-content::-webkit-scrollbar-track
+{
+  background: transparent;
+}
+
+.va-sidebar-content::-webkit-scrollbar-thumb
+{
+  background: rgba( 255, 107, 0, 0.55 );
+  border-radius: 3px;
+}
+
+.va-sidebar-content::-webkit-scrollbar-thumb:hover
+{
+  background: var(--primary);
+}
+
+/* Each view renders into its own .va-view; only the active one is visible */
+.va-view.va-hidden
+{
+  display: none;
+}
+
+/* =========================================================================
+   Responsive — full screen on mobile
+   ========================================================================= */
+
+@media ( max-width: 768px )
+{
+  .va-sidebar
+  {
+    width: 100%;
+    max-width: 100%;
+    top: 0;
+    height: 100vh;
+  }
+
+  .va-sidebar-backdrop
+  {
+    top: 0;
+    height: 100vh;
+  }
+}

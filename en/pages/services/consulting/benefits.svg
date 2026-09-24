@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="883" viewBox="0 0 800 883" role="img" aria-labelledby="t">
+  <title id="t">A clear start, no wasted budget, vendor-neutral advice</title>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#19191b"/>
+      <stop offset="1" stop-color="#09090a"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF6B00"/>
+      <stop offset="1" stop-color="#FF3E00"/>
+    </linearGradient>
+    <linearGradient id="row" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f1c1a"/>
+      <stop offset="1" stop-color="#161413"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.72">
+      <stop offset="0" stop-color="#FF6B00" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#FF6B00" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="gl" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="0" stdDeviation="7" flood-color="#FF6B00" flood-opacity="0.45"/>
+    </filter>
+
+    <!-- The first step is known: a route with the near step emphasised -->
+    <g id="icStart">
+      <path d="M-27 22 L-3 2 L21 -16" fill="none" stroke="#170f08" stroke-width="5"
+            stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".5"/>
+      <path d="M21 -16 V-34" stroke="#170f08" stroke-width="5" stroke-linecap="round"/>
+      <path d="M21 -32 H37 L32 -25 L37 -18 H21 Z" fill="#170f08"/>
+      <circle cx="-3" cy="2" r="7" fill="#170f08" fill-opacity=".7"/>
+      <circle cx="-27" cy="22" r="11" fill="#170f08"/>
+    </g>
+
+    <!-- Checked before anything is built -->
+    <g id="icShield">
+      <path d="M0 -30 L26 -20 V4 C26 20, 14 28, 0 32 C-14 28, -26 20, -26 4 V-20 Z"
+            fill="none" stroke="#170f08" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M-11 0 L-3 9 L12 -9" fill="none" stroke="#170f08" stroke-width="6"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Not tied to anyone: an open lock, no lock-in -->
+    <g id="icOpen">
+      <rect x="-22" y="-4" width="44" height="34" rx="7" fill="none" stroke="#170f08" stroke-width="5"/>
+      <path d="M-8 -4 V-20 A14 14 0 0 1 20 -20 V-14" fill="none" stroke="#170f08" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="0" cy="9" r="4.5" fill="#170f08"/>
+      <rect x="-2" y="9" width="4" height="10" rx="2" fill="#170f08"/>
+    </g>
+  </defs>
+
+  <rect width="800" height="883" rx="28" fill="url(#bg)"/>
+  <rect width="800" height="883" rx="28" fill="url(#glow)"/>
+
+  <!-- A clear start -->
+  <rect x="56" y="68" width="688" height="248" rx="20" fill="url(#row)" stroke="#FF6B00" stroke-opacity=".2" stroke-width="2"/>
+  <g filter="url(#gl)">
+    <rect x="88" y="140" width="104" height="104" rx="26" fill="url(#acc)"/>
+  </g>
+  <use href="#icStart" x="140" y="192"/>
+  <text x="220" y="190" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="58" font-weight="700" fill="#ffffff">A clear start</text>
+  <text x="220" y="234" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="32" fill="#FFC107">you know what to do first</text>
+
+  <!-- No wasted budget -->
+  <rect x="56" y="324" width="688" height="248" rx="20" fill="url(#row)" stroke="#FF6B00" stroke-opacity=".2" stroke-width="2"/>
+  <g filter="url(#gl)">
+    <rect x="88" y="396" width="104" height="104" rx="26" fill="url(#acc)"/>
+  </g>
+  <use href="#icShield" x="140" y="448"/>
+  <text x="220" y="446" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="58" font-weight="700" fill="#ffffff">No wasted budget</text>
+  <text x="220" y="490" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="32" fill="#FFC107">check first, build second</text>
+
+  <!-- Vendor-neutral -->
+  <rect x="56" y="580" width="688" height="248" rx="20" fill="url(#row)" stroke="#FF6B00" stroke-opacity=".2" stroke-width="2"/>
+  <g filter="url(#gl)">
+    <rect x="88" y="652" width="104" height="104" rx="26" fill="url(#acc)"/>
+  </g>
+  <use href="#icOpen" x="140" y="704"/>
+  <text x="220" y="702" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="58" font-weight="700" fill="#ffffff">Vendor-neutral</text>
+  <text x="220" y="746" font-family="Roboto, Segoe UI, Arial, sans-serif" font-size="32" fill="#FFC107">no licences, no commission</text>
+</svg>

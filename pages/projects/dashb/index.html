@@ -8,8 +8,8 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Walter A. Jablonowski">
   <meta property="og:locale" content="de_DE">
-  <meta property="og:title" content="Dashboard – Pers&ouml;nliche KI-Kommandozentrale">
-  <meta property="og:description" content="Pers&ouml;nliche KI-Kommandozentrale – Ihr ganzes Leben in einer Ansicht.">
+  <meta property="og:title" content="Dashboard &ndash; Pers&ouml;nliche KI-Kommandozentrale">
+  <meta property="og:description" content="Pers&ouml;nliche KI-Kommandozentrale &ndash; Ihr ganzes Leben in einer Ansicht.">
   <meta property="og:url" content="https://walter-a-jablonowski.github.io/pages/projects/dashb/">
   <meta property="og:image" content="https://walter-a-jablonowski.github.io/misc/dashb-2.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -46,85 +46,15 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
   <link rel="manifest" href="../../../site.webmanifest">
-  <link rel="stylesheet" href="../../../styles.css?v=26062304">
-  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26062304">
-  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26062304">
+  <link rel="stylesheet" href="../../../styles.css?v=26092401">
+  <link rel="stylesheet" href="../../../lib/fontawesome/css/all.min.css?v=26092401">
+  <link rel="stylesheet" href="../../../lib/fonts/fonts.css?v=26092401">
   <style>
-    /* Project detail page specific styles */
-    .project-detail {
-      padding: var(--spacing-xxl) 0;
-      background-color: var(--dark);
-      color: var(--white);
-      position: relative;
-    }
-    .project-detail::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(14,14,14,0.95) 0%, rgba(26,26,26,0.85) 100%);
-      z-index: 1;
-    }
-    .project-detail .container { position: relative; z-index: 2; }
-
-    .project-header {
-      display: block;
-    }
-    .project-media {
-      flex: 1 1 340px;
-      background: rgba(255,255,255,0.03);
-      border-radius: var(--border-radius-md);
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-    .project-media img { width: 100%; height: 100%; object-fit: cover; }
-
-    .project-title {
-      flex: 2 1 460px;
-    }
-    .project-title h2 { color: var(--white); margin-top: 0.5rem; }
-    .project-title .underline { margin-top: .5rem; }
-
     /* Typography for converted markdown */
-    .intro-text {
-      font-size: 1.2rem;
-      color: var(--lighter-gray);
-      line-height: 1.8;
-      font-weight: 300;
-      margin-left: 0;
-    }
-    .content { color: var(--lighter-gray); line-height: 1.75; }
-    .content h2, .content h3, .content h4 { color: var(--white); margin-top: var(--spacing-lg); }
-    .content p { margin: 0 0 var(--spacing-md); }
-    .content ul { padding-left: 1.25rem; margin: 0 0 var(--spacing-md); }
+    /* h2/h3 come from page-components.css; h4 stays here on purpose - a shared
+       .content h4 would beat .feature-box h4 on every page with feature cards. */
+    .content h4 { color: var(--white); margin-top: var(--spacing-lg); }
     .content li { margin: .35rem 0; }
-    .content a { color: var(--primary); }
-    .content strong { color: var(--white); }
-    .content blockquote {
-      margin: var(--spacing-md) 0;
-      padding: var(--spacing-md);
-      border-left: 4px solid var(--primary);
-      background: rgba(255,255,255,0.04);
-      border-radius: var(--border-radius-sm);
-    }
-    .content pre {
-      background: #0f0f0f;
-      color: #eee;
-      padding: var(--spacing-md);
-      border-radius: var(--border-radius-sm);
-      overflow: auto;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-    .content code { font-family: var(--font-code); }
-
-    .tech-stack {
-      color: var(--primary);
-      font-weight: 500;
-      font-size: 1.05rem;
-    }
-
-    @media (max-width: 768px) {
-      .project-header { flex-direction: column; }
-    }
   </style>
 </head>
 <body>
@@ -138,6 +68,7 @@
           <i class="fas fa-bars"></i>
         </div>
         <ul class="nav-menu">
+          <!-- nav-menu:start | DON'T edit the menu here - edit the template in tools/upd_menu.php, then run it (see CLAUDE.md) -->
           <li><a href="../../../index.html#hero" class="nav-link">Start</a></li>
           <li><a href="../../../index.html#about" class="nav-link">KI fragen</a></li>
           <li class="nav-dropdown">
@@ -146,21 +77,47 @@
               <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Untermen&uuml; Leistungen"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
             </span>
             <ul class="nav-dropdown-menu">
-              <li><a href="../../services/automation.html" class="nav-link">Automatisierung</a></li>
-              <li><a href="../../services/self-improving.html" class="nav-link">Selbstverbessernde KI</a></li>
-              <li><a href="../../services/data-solutions.html" class="nav-link">KI-Datenl&ouml;sungen</a></li>
-              <li><a href="../../services/consulting.html" class="nav-link">KI Beratung</a></li>
-              <li><a href="../../services/security.html" class="nav-link">KI Security &amp; Evaluierung</a></li>
-              <li><a href="../../placeholder.html" class="nav-link">KI Visualisierung</a></li>
-              <li><a href="../../placeholder.html" class="nav-link">Apps, die arbeiten</a></li>
+              <li class="nav-dropdown-group">Agents &amp; Workflow</li>
+              <li><a href="../../../pages/services/automation/index.html" class="nav-link">Automatisierung</a></li>
+              <li><a href="../../../pages/services/self-improving/index.html" class="nav-link">Selbstverbessernde KI</a></li>
+              <li><a href="../../../pages/services/data-solutions/index.html" class="nav-link">KI-Datenl&ouml;sungen</a></li>
+              <li class="nav-dropdown-group">Consulting &amp; Integration</li>
+              <li><a href="../../../pages/services/consulting/index.html" class="nav-link">AI Beratung</a></li>
+              <li><a href="../../../pages/services/security/index.html" class="nav-link">Security &amp; Evaluierung</a></li>
+              <li><a href="../../../pages/services/integration/index.html" class="nav-link">KI-Integration &amp; MCP</a></li>
+              <li class="nav-dropdown-group">Human Interface</li>
+              <li><a href="../../../pages/services/dashboards/index.html" class="nav-link">KI Dashboards</a></li>
+              <li><a href="../../../pages/services/ai-apps/index.html" class="nav-link">Apps, die arbeiten</a></li>
+              <li class="nav-dropdown-group">Commerce</li>
+              <li><a href="../../../pages/services/agentic-commerce/index.html" class="nav-link">Agentic Commerce</a></li>
             </ul>
           </li>
           <li class="less-spacing"><a href="../../../index.html#skills" class="nav-link">Kenntnisse</a></li>
-          <li><a href="../../../index.html#proj" class="nav-link">Projekte</a></li>
-          <li><a href="../../../index.html#contact" class="nav-link">Kontakt</a></li>
-          <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
+          <li class="nav-dropdown less-spacing">
+            <span class="nav-dropdown-head">
+              <a href="../../../index.html#proj" class="nav-link">Projekte</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Untermen&uuml; Projekte"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../../../pages/systems/office_agent/index.html" class="nav-link">Office Agent</a></li>
+              <li><a href="../../../pages/systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
+              <li><a href="../../../pages/systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
+              <li><a href="../../../pages/systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
+              <li><a href="../../../pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
+              <li><a href="../../../pages/systems/task_board/index.html" class="nav-link">AI Task Board</a></li>
+              <li><a href="../../../pages/systems/agentic_db/index.html" class="nav-link">Agentic DB</a></li>
+              <li><a href="../../../pages/systems/editor/index.html" class="nav-link">AI Built Editor</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../../index.html#contact" class="nav-link">Kontakt</a></li>
+          <li><a href="../../../blog.html" class="nav-link">Blog</a></li>
+          <li><a href="https://www.linkedin.com/in/waj-ai" target="_blank" class="nav-link"
               title="Mein LinkedIn-Profil besuchen"><i class="fab fa-linkedin-in"></i></a></li>
-          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link" title="Mein GitHub-Profil besuchen"><i class="fab fa-github"></i></a></li>
+          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link"
+              title="Mein GitHub-Profil besuchen"><i class="fab fa-github"></i></a></li>
+          <li><button type="button" class="nav-link search-link" data-search-open
+              title="Website durchsuchen (Strg+K)" aria-label="Suche"><i class="fas fa-magnifying-glass"></i></button></li>
+          <!-- nav-menu:end -->
           <li class="lang-switch">
             <a href="index.html" class="nav-link active" hreflang="de" title="Deutsch">DE</a>
             <span class="lang-sep">|</span>
@@ -180,10 +137,10 @@
             <div class="underline"></div>
           </div>
           <p class="intro-text" style="margin-left: 0;">
-            Pers&ouml;nliche KI-Kommandozentrale – Ihr ganzes Leben in einer Ansicht
+            Pers&ouml;nliche KI-Kommandozentrale &ndash; Ihr ganzes Leben in einer Ansicht
           </p>
           <p>
-            Alles, was Ihnen wichtig ist, an einem Ort. KI-Integration und Steuerung eines pers&ouml;nlichen KI-Schwarms. Individuelle Seiten und Widgets – genau das, was Sie brauchen, z. B.: Aktivit&auml;tsverfolgung, Finanzen, Posteingang, Gewohnheiten, Wetter. Dies wird stark erweitert. Unterst&uuml;tzt mehrere Designs.
+            Alles, was Ihnen wichtig ist, an einem Ort. KI-Integration und Steuerung eines pers&ouml;nlichen KI-Schwarms. Individuelle Seiten und Widgets &ndash; genau das, was Sie brauchen, z. B.: Aktivit&auml;tsverfolgung, Finanzen, Posteingang, Gewohnheiten, Wetter. Dies wird stark erweitert. Unterst&uuml;tzt mehrere Designs.
           </p>
         </div>
         <div class="project-media">
@@ -195,13 +152,13 @@
 
         <h3>Hauptfunktionen</h3>
         <ul>
-          <li><strong>Widget-System</strong>: Modulare, kombinierbare Widgets f&uuml;r Aktivit&auml;t, Finanzen, Posteingang, Gewohnheiten, Wetter, Schnellzugriffe und mehr – alle serverseitig in PHP gerendert</li>
+          <li><strong>Widget-System</strong>: Modulare, kombinierbare Widgets f&uuml;r Aktivit&auml;t, Finanzen, Posteingang, Gewohnheiten, Wetter, Schnellzugriffe und mehr &ndash; alle serverseitig in PHP gerendert</li>
           <li><strong>T&auml;gliches KI-Briefing</strong>: Die Claude-KI-Integration liefert eine personalisierte Tageszusammenfassung auf Basis Ihrer aktuellen Aufgaben, Ihrer Fokus-Warteschlange und Ihrer Aktivit&auml;tsdaten</li>
           <li><strong>KI-Chat</strong>: Integrierte dialogorientierte Oberfl&auml;che auf Basis von Claude f&uuml;r Unterst&uuml;tzung bei Bedarf direkt im Dashboard</li>
           <li><strong>Finanz&uuml;bersicht</strong>: Konten, Transaktionen, Fixkosten und Diagramme f&uuml;r einen vollst&auml;ndigen finanziellen &Uuml;berblick auf einen Blick</li>
           <li><strong>Aktivit&auml;ts- &amp; Fokus-Tracking</strong>: Aktive Aufgaben, Visions-Zusammenfassung, Fokus-Warteschlange und ein Fokus-Timer, damit Sie auf Kurs bleiben</li>
-          <li><strong>Designs</strong>: Mehrere integrierte Designs (Standard, Business, …), umschaltbar per URL-Parameter oder Benutzereinstellungen – mit voller Unterst&uuml;tzung f&uuml;r hellen/dunklen Modus</li>
-          <li><strong>YAML-Datenspeicherung</strong>: Alle pers&ouml;nlichen Daten werden in einfachen YAML-Dateien unter <code>/data</code> gespeichert – versionskontrollfreundlich, keine Datenbankeinrichtung n&ouml;tig</li>
+          <li><strong>Designs</strong>: Mehrere integrierte Designs (Standard, Business, &hellip;), umschaltbar per URL-Parameter oder Benutzereinstellungen &ndash; mit voller Unterst&uuml;tzung f&uuml;r hellen/dunklen Modus</li>
+          <li><strong>YAML-Datenspeicherung</strong>: Alle pers&ouml;nlichen Daten werden in einfachen YAML-Dateien unter <code>/data</code> gespeichert &ndash; versionskontrollfreundlich, keine Datenbankeinrichtung n&ouml;tig</li>
           <li><strong>CSRF-Schutz</strong>: HMAC-basierte CSRF-Token-Generierung sichert alle AJAX-Interaktionen</li>
         </ul>
 
@@ -217,12 +174,12 @@
 
         <h3>Tech-Stack</h3>
         <p class="tech-stack">
-          PHP • Vanilla JavaScript • YAML • Claude AI (Anthropic) • Open-Meteo • HTML/CSS • Symfony Yaml
+          PHP &bull; Vanilla JavaScript &bull; YAML &bull; Claude AI (Anthropic) &bull; Open-Meteo &bull; HTML/CSS &bull; Symfony Yaml
         </p>
 
         <h3>Anwendungsf&auml;lle</h3>
         <p>
-          Starten Sie Ihren Tag mit einem einzigen Browser-Tab: Lesen Sie Ihr KI-generiertes Briefing, pr&uuml;fen Sie die heutige Fokus-Warteschlange und die aktiven Aufgaben, werfen Sie einen Blick auf Ihre Finanzen, sichten Sie Ihren Posteingang und verfolgen Sie Ihre Gewohnheiten – alles ohne zwischen Apps zu wechseln. Das Dashboard passt sich durch Designs und ein vollst&auml;ndig modulares Widget-System an Ihren Arbeitsablauf an.
+          Starten Sie Ihren Tag mit einem einzigen Browser-Tab: Lesen Sie Ihr KI-generiertes Briefing, pr&uuml;fen Sie die heutige Fokus-Warteschlange und die aktiven Aufgaben, werfen Sie einen Blick auf Ihre Finanzen, sichten Sie Ihren Posteingang und verfolgen Sie Ihre Gewohnheiten &ndash; alles ohne zwischen Apps zu wechseln. Das Dashboard passt sich durch Designs und ein vollst&auml;ndig modulares Widget-System an Ihren Arbeitsablauf an.
         </p>
 
       </div>
@@ -238,7 +195,7 @@
         </div>
         <div class="footer-social">
           <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/waj-ai" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
         <div class="footer-links">
@@ -256,9 +213,9 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../../../lib/config.js?v=26062304"></script>
-  <script src="../../../controller.js?v=26062304"></script>
-  <script src="../../../lib/voice-agent/agent.js?v=26062304"></script>
+  <script src="../../../lib/config.js?v=26092401"></script>
+  <script src="../../../controller.js?v=26092401"></script>
+  <script src="../../../lib/voice-agent/agent.js?v=26092401"></script>
   <script>
     new WebsiteController();
   </script>

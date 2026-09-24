@@ -279,13 +279,19 @@
 
 @media (max-width: 480px) {
   .project-cards {
-    padding: 0 var(--spacing-md);
+    padding: 0;  /* first card starts flush left; scroll-padding keeps scrolled cards off the prev arrow */
+  }
+
+  .project-cards-container {
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 1.9rem;
   }
 
   .project-card {
     min-width: 220px;
     width: 220px;
     padding: var(--spacing-md);
+    scroll-snap-align: start;
   }
 
   .carousel-arrow {

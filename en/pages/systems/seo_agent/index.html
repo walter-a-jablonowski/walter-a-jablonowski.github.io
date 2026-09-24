@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="A scheduled AI agent that audits your website and optimizes it for Google and AI search. Changes go live only after your approval.">
+  <meta name="keywords" content="SEO agent, AI SEO, GEO, AI search optimization, automated SEO, Google Search Console, AI for SMEs, Bamberg, Nuremberg">
+  <meta name="author" content="Walter A. Jablonowski">
+  <title>SEO AI Agent &ndash; Optimize your site for Google & AI search</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Walter A. Jablonowski">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="SEO AI Agent &ndash; Optimize your website for Google &amp; AI search automatically">
+  <meta property="og:description" content="A scheduled AI agent that audits your website and optimizes it for Google and AI search &ndash; changes go live only after your approval.">
+  <meta property="og:url" content="https://walter-a-jablonowski.github.io/en/pages/systems/seo_agent/">
+  <meta property="og:image" content="https://walter-a-jablonowski.github.io/misc/automation-placeholder.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://walter-a-jablonowski.github.io/en/" },
+          { "@type": "ListItem", "position": 2, "name": "Systems", "item": "https://walter-a-jablonowski.github.io/en/" },
+          { "@type": "ListItem", "position": 3, "name": "SEO AI Agent", "item": "https://walter-a-jablonowski.github.io/en/pages/systems/seo_agent/" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "SEO AI Agent",
+        "serviceType": "AI-powered SEO and GEO optimization for websites",
+        "description": "A scheduled AI agent that audits a website and optimizes it for Google and AI search (GEO) &ndash; meta, content, JSON-LD, alt texts and whole new pages. Changes land on a branch for review; the agent never pushes.",
+        "inLanguage": "en",
+        "url": "https://walter-a-jablonowski.github.io/en/pages/systems/seo_agent/",
+        "provider": { "@type": "Person", "name": "Walter A. Jablonowski", "url": "https://walter-a-jablonowski.github.io/" },
+        "areaServed": [
+          { "@type": "City", "name": "Bamberg" },
+          { "@type": "City", "name": "Nuremberg" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="canonical" href="https://walter-a-jablonowski.github.io/en/pages/systems/seo_agent/">
+  <link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/seo_agent/">
+  <link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/seo_agent/">
+  <link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/seo_agent/">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../../favicon-16x16.png">
+  <link rel="manifest" href="../../../../site.webmanifest">
+  <link rel="stylesheet" href="../../../../styles.css?v=26092401">
+  <link rel="stylesheet" href="../../../../lib/fontawesome/css/all.min.css?v=26092401">
+  <link rel="stylesheet" href="../../../../lib/fonts/fonts.css?v=26092401">
+  <style>
+    /* Product page styles. Reusable parts (.product-hero, .spec-list, .service-cta
+       exemption) live in page-components.css; the blocks below are local to this page. */
+
+    .content h3 { color: var(--white); margin-top: var(--spacing-xl); }
+
+    /* On this page the closing CTA is commercial: hide it under hideBiz
+       (overrides the shared .cta-always exemption via later source order). */
+    body.hide-biz .service-cta.cta-always { display: none; }
+  </style>
+  <!-- faq-schema:start | DON'T edit by hand - generated from the #mt-faq panel by tools/upd_faq_schema.php (see CLAUDE.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "en",
+    "url": "https://walter-a-jablonowski.github.io/en/pages/systems/seo_agent/index.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does it cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The price depends on scope and data sources and needs to be assessed individually."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the agent change my site without oversight?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Each run commits to a dedicated branch; you review the diff and merge only what should go live. The agent never pushes. In „propose“ mode it only writes suggestions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is GEO / AI search?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GEO stands for „Generative Engine Optimization“ – visibility in AI answers (ChatGPT, Gemini, Perplexity). The agent checks whether they cite you and works on it deliberately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work with my website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The agent is built for websites in a Git repository (e.g. GitHub Pages) with a German and English language version. I’m happy to check other setups in an initial call."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where does my data run?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The agent runs on your machine or server and is sandboxed to your website directory. With a local model (Ollama), your content does not leave your premises."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which AI is behind it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "By default OpenRouter with Gemini 3.5 Flash; Google Gemini or a local model (Ollama) are equally possible. The model can be swapped without rebuilding the agent."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- faq-schema:end -->
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+          <!-- nav-menu:start | DON'T edit the menu here - edit the template in tools/upd_menu.php, then run it (see CLAUDE.md) -->
+          <li><a href="../../../index.html#hero" class="nav-link">Home</a></li>
+          <li><a href="../../../index.html#about" class="nav-link">Ask AI</a></li>
+          <li class="nav-dropdown">
+            <span class="nav-dropdown-head">
+              <a href="../../../index.html#services" class="nav-link">Services</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Services submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li class="nav-dropdown-group">Agents &amp; Workflow</li>
+              <li><a href="../../../pages/services/automation/index.html" class="nav-link">Automation</a></li>
+              <li><a href="../../../pages/services/self-improving/index.html" class="nav-link">Self-improving AI</a></li>
+              <li><a href="../../../pages/services/data-solutions/index.html" class="nav-link">AI Data Solutions</a></li>
+              <li class="nav-dropdown-group">Consulting &amp; Integration</li>
+              <li><a href="../../../pages/services/consulting/index.html" class="nav-link">AI Consulting</a></li>
+              <li><a href="../../../pages/services/security/index.html" class="nav-link">AI Security &amp; Evaluation</a></li>
+              <li><a href="../../../pages/services/integration/index.html" class="nav-link">AI Integration &amp; MCP</a></li>
+              <li class="nav-dropdown-group">Human Interface</li>
+              <li><a href="../../../pages/services/dashboards/index.html" class="nav-link">AI Dashboards</a></li>
+              <li><a href="../../../pages/services/ai-apps/index.html" class="nav-link">Apps that work</a></li>
+              <li class="nav-dropdown-group">Commerce</li>
+              <li><a href="../../../pages/services/agentic-commerce/index.html" class="nav-link">Agentic Commerce</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../../index.html#skills" class="nav-link">Skills</a></li>
+          <li class="nav-dropdown less-spacing">
+            <span class="nav-dropdown-head">
+              <a href="../../../index.html#proj" class="nav-link">Projects</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Projects submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../../../pages/systems/office_agent/index.html" class="nav-link">Office Agent</a></li>
+              <li><a href="../../../pages/systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
+              <li><a href="../../../pages/systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
+              <li><a href="../../../pages/systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
+              <li><a href="../../../pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
+              <li><a href="../../../pages/systems/task_board/index.html" class="nav-link">AI Task Board</a></li>
+              <li><a href="../../../pages/systems/agentic_db/index.html" class="nav-link">Agentic DB</a></li>
+              <li><a href="../../../pages/systems/editor/index.html" class="nav-link">AI Built Editor</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../../index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="../../../blog.html" class="nav-link">Blog</a></li>
+          <li><a href="https://www.linkedin.com/in/waj-ai" target="_blank" class="nav-link"
+              title="Visit my LinkedIn profile"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link"
+              title="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
+          <li><button type="button" class="nav-link search-link" data-search-open
+              title="Search the site (Ctrl+K)" aria-label="Search"><i class="fas fa-magnifying-glass"></i></button></li>
+          <!-- nav-menu:end -->
+          <li class="lang-switch">
+            <a href="../../../../pages/systems/seo_agent/index.html" class="nav-link" hreflang="de" title="Deutsch">DE</a>
+            <span class="lang-sep">|</span>
+            <a href="index.html" class="nav-link active" hreflang="en" title="English">EN</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="project-detail">
+    <div class="container">
+
+      <!-- 1) Product hero -->
+      <div class="product-hero">
+        <div class="ph-text">
+          <p class="ph-eyebrow">Systems</p>
+          <h1>SEO AI Agent <span class="badge badge-experimental">Experimental</span></h1>
+          <p class="ph-tagline">Your website, continuously optimized &ndash; for <strong>Google</strong> and <strong>AI search</strong>.</p>
+          <p class="ph-lead">
+            A scheduled AI agent audits your site, researches what&rsquo;s missing and improves copy,
+            meta tags and structure &ndash; and writes whole new pages when needed. Every change lands
+            on its own branch for review. The agent never pushes.
+          </p>
+          <div class="ph-actions">
+            <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Request advice</a>
+            <a href="#how" class="btn btn-secondary"><i class="fas fa-gears"></i> How it works</a>
+          </div>
+          <p class="ph-live"><i class="fas fa-circle"></i> Runs on a schedule &ndash; changes go live only after your approval.</p>
+        </div>
+        <div class="ph-visual">
+          <img src="../../../../misc/automation-placeholder.svg" alt="SEO AI Agent: automated SEO and GEO audit with proposed page changes" loading="lazy">
+        </div>
+      </div>
+
+      <div class="content">
+
+        <!-- 2) What is it? -->
+        <h3 id="what">What is it?</h3>
+        <p>
+          <strong>SEO AI Agent</strong> is an AI agent that keeps your website fit for search on its
+          own &ndash; for Google as much as for AI answer engines (GEO). It runs on a schedule, collects
+          real data about your site, finds weak spots and proposes targeted improvements. Nothing
+          goes live unasked: the agent puts its changes on a dedicated branch for you to review and
+          approve.
+        </p>
+        <ul>
+          <li>Optimizes for classic search <strong>and</strong> AI search (GEO) in one pass</li>
+          <li>Works with real data: Google Search Console, GA4, SERP, AI citations</li>
+          <li>Targets meta, content, JSON-LD and alt texts &ndash; and writes new pages (DE+EN)</li>
+          <li>Changes land on a branch for approval &ndash; the agent never pushes</li>
+        </ul>
+
+        <!-- 3) Features -->
+        <h3 id="features">Features</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+            <h4>Audit on real data</h4>
+            <p>Crawls the site and reads Search Console, GA4, SERP and AI citations.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+            <h4>Targeted edits</h4>
+            <p>Changes meta titles, text blocks, JSON-LD and alt texts &ndash; precisely, not wholesale.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-robot"></i></div>
+            <h4>Visible in AI search</h4>
+            <p>GEO: checks whether ChatGPT, Gemini &amp; Perplexity cite you &ndash; and works on it.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-file-circle-plus"></i></div>
+            <h4>New pages</h4>
+            <p>For keywords with no ranking page it writes whole pages (DE+EN) and links them.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-code-branch"></i></div>
+            <h4>Approval by branch</h4>
+            <p>Each run commits to a branch for review &ndash; you merge what goes live.</p>
+          </div>
+        </div>
+
+        <!-- 4) How it works -->
+        <div class="steps-cols">
+          <div>
+            <h3 id="how">How it works</h3>
+            <ol class="offer-steps">
+              <li>The agent collects data and measures where the site stands</li>
+              <li>It researches gaps and builds a <strong>briefing</strong> for the AI model</li>
+              <li>The model returns targeted edits &ndash; and new pages for missing keywords</li>
+              <li class="no-num"><strong>Flow:</strong> Collect &rarr; Measure &rarr; Research &rarr; Brief &rarr; Edit &rarr; Guardrails &rarr; Commit</li>
+            </ol>
+          </div>
+          <div class="steps-text mini-tabs">
+            <h3 class="mt-heading">Good to know</h3>
+            <div class="mini-tab-links">
+              <button type="button" class="mini-tab-link active" data-tab="overview">Overview</button>
+              <span class="mini-tab-sep">|</span>
+              <button type="button" class="mini-tab-link" data-tab="faq">FAQ</button>
+            </div>
+            <div class="mini-tab-content active" id="mt-overview">
+              <p>
+                Before the commit, <strong>guardrails</strong> check the entire edited site &ndash; broken
+                links, JSON-LD, meta lengths, duplicate titles, valid HTML. If a check fails, every
+                file is restored and <strong>nothing</strong> is committed.
+              </p>
+              <p>
+                The language model is <strong>interchangeable</strong>: cloud (OpenRouter with Gemini&nbsp;3.5&nbsp;Flash,
+                Google&nbsp;Gemini) or local (Ollama) &ndash; depending on how much should stay in-house.
+              </p>
+            </div>
+            <div class="mini-tab-content" id="mt-faq">
+              <div class="faq-list">
+                <details class="samples-reveal">
+                  <summary>What does it cost? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>
+                    <span class="biz-only price-line"><strong>Setup at a fixed price</strong> &middot; plus ongoing usage costs
+                    (AI model/APIs). </span>The price depends on scope and data sources and needs to be assessed individually.
+                  </p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Does the agent change my site without oversight? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>No. Each run commits to a dedicated branch; you review the diff and merge only what
+                    should go live. The agent never pushes. In &bdquo;propose&ldquo; mode it only writes suggestions.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>What is GEO / AI search? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>GEO stands for &bdquo;Generative Engine Optimization&ldquo; &ndash; visibility in AI answers
+                    (ChatGPT, Gemini, Perplexity). The agent checks whether they cite you and works on it deliberately.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Does it work with my website? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>The agent is built for websites in a Git repository (e.g. GitHub&nbsp;Pages) with a German
+                    and English language version. I&rsquo;m happy to check other setups in an initial call.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Where does my data run? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>The agent runs on your machine or server and is sandboxed to your website directory.
+                    With a local model (Ollama), your content does not leave your premises.</p>
+                </details>
+                <details class="samples-reveal">
+                  <summary>Which AI is behind it? <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+                  <p>By default OpenRouter with Gemini&nbsp;3.5&nbsp;Flash; Google&nbsp;Gemini or a local model (Ollama)
+                    are equally possible. The model can be swapped without rebuilding the agent.</p>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5) What for? -->
+        <h3 id="use-cases">What for?</h3>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-arrow-trend-up"></i></div>
+            <h4>Better on Google</h4>
+            <p>Ongoing optimization of titles, content and structure instead of one-off actions.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-comment-dots"></i></div>
+            <h4>Found by AI</h4>
+            <p>Visible and citable in ChatGPT, Gemini and Perplexity (GEO).</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-clock-rotate-left"></i></div>
+            <h4>No constant effort</h4>
+            <p>Runs on a schedule in the background &ndash; you only review the proposals.</p>
+          </div>
+          <div class="feature-box">
+            <div class="fb-icon"><i class="fas fa-store"></i></div>
+            <h4>Ideal for SMEs</h4>
+            <p>SEO upkeep without your own team &ndash; with full control over every change.</p>
+          </div>
+        </div>
+
+        <!-- 6) Tailor-made -->
+        <h3 id="custom">Tailor-made for you</h3>
+        <p>
+          SEO AI Agent is not a rigid off-the-shelf tool but modular by design, tuned to your website
+          and your goals. Every building block is interchangeable:
+        </p>
+        <ul>
+          <li>Target keywords, edit budget and schedule freely chosen per website</li>
+          <li>Data sources toggled on: Search Console, GA4, SERP, AI citations</li>
+          <li>AI model of your choice: cloud for speed or local (Ollama) for maximum confidentiality</li>
+          <li>Design-sensitive pages spared: only small edits (meta, alt, JSON-LD), no new sections</li>
+          <li>Run either as a proposal (propose) or as a commit for approval</li>
+        </ul>
+
+        <!-- 7) Privacy & control -->
+        <div class="highlight-box">
+          <p><i class="fas fa-shield-halved" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>Control &amp; safety:</strong> The agent is <strong>sandboxed</strong> to your website
+            directory &ndash; it never writes outside it. Every file is backed up before a change; if a
+            guardrail fails, everything is restored. Changes land on a branch for approval &ndash; the
+            agent <strong>never pushes</strong>.</p>
+        </div>
+
+        <!-- 8) See it in action -->
+        <div class="live-demo">
+          <h3>See it in action</h3>
+          <p>I&rsquo;m happy to show you SEO AI Agent live on an example run &ndash; or straight away on your own website.</p>
+          <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Request a demo</a>
+        </div>
+
+        <!-- 9) At a glance -->
+        <h3 id="specs">At a glance</h3>
+        <div class="spec-list">
+          <div class="spec-row"><span class="spec-k">Task</span><span class="spec-v">automated SEO &amp; AI-search audit + optimization</span></div>
+          <div class="spec-row"><span class="spec-k">Data sources</span><span class="spec-v">Search Console, GA4, SERP, AI citations</span></div>
+          <div class="spec-row"><span class="spec-k">Changes</span><span class="spec-v">meta, content, JSON-LD, alt texts, new pages (DE+EN)</span></div>
+          <div class="spec-row"><span class="spec-k">AI</span><span class="spec-v">OpenRouter (Gemini&nbsp;3.5&nbsp;Flash), Gemini or local (Ollama)</span></div>
+          <div class="spec-row"><span class="spec-k">Operation</span><span class="spec-v">scheduled (e.g. Task Scheduler), on your machine/server</span></div>
+          <div class="spec-row"><span class="spec-k">Security</span><span class="spec-v">guardrails, backups, commit for approval &ndash; no auto-push</span></div>
+        </div>
+
+        <!-- 10) More on the topic -->
+        <div class="highlight-box">
+          <p><i class="fas fa-lightbulb" style="color: var(--primary); margin-right:.5rem;"></i>
+            <strong>More than SEO:</strong> SEO AI Agent is one example of my
+            <a href="../../services/automation/index.html">automation</a> and
+            <a href="../../services/self-improving/index.html">self-improving AI</a> &ndash; agents that take
+            over recurring work and learn from their results.</p>
+        </div>
+
+        <!-- 11) Closing CTA -->
+        <div class="service-cta cta-always">
+          <h3>SEO AI Agent for your website</h3>
+          <p>Initial consultation free of charge &ndash; on-site in Bamberg/Nuremberg or online.</p>
+          <div class="cta-actions">
+            <a href="../../../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="../../../index.html"><span class="highlight">&lt;</span>WAJ<span class="highlight">/&gt;</span></a>
+          <a href="../../../../llms.txt" class="footer-agent-link">For AI agents</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/waj-ai" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-links">
+          <a href="../../../privacy.html">Privacy</a>
+          <a href="../../../imprint.html">Imprint</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>powered by &copy; Walter A. Jablonowski 2019-2026. Made with AI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="../../../../lib/config.js?v=26092401"></script>
+  <script src="../../../../controller.js?v=26092401"></script>
+  <script src="../../../../lib/voice-agent/agent.js?v=26092401"></script>
+  <script>
+    new WebsiteController();
+  </script>
+</body>
+</html>

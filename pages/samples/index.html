@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex, follow">
   <meta name="description" content="Mini Apps | Walter A. Jablonowski">
   <title>Mini Apps | Walter A. Jablonowski</title>
   <link rel="canonical" href="https://walter-a-jablonowski.github.io/pages/samples/">
@@ -9,9 +10,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
   <link rel="manifest" href="../../site.webmanifest">
-  <link rel="stylesheet" href="../../styles.css?v=26062304">
-  <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css?v=26062304">
-  <link rel="stylesheet" href="../../lib/fonts/fonts.css?v=26062304">
+  <link rel="stylesheet" href="../../styles.css?v=26092401">
+  <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css?v=26092401">
+  <link rel="stylesheet" href="../../lib/fonts/fonts.css?v=26092401">
+  <link rel="stylesheet" href="../../lib/img_overlay/img_overlay.css?v=26092401">
   <style>
     /* Samples page specific styles */
     .samples-section {
@@ -42,39 +44,7 @@
       color: var(--white);
     }
 
-    .samples-list {
-      margin-top: var(--spacing-lg);
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-xl);
-    }
-
-    .sample-card {
-      display: flex;
-      background-color: rgba(26, 26, 26, 0.5);
-      border-radius: var(--border-radius-md);
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .sample-info {
-      flex: 1;
-      padding: var(--spacing-lg);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .sample-image-container {
-      width: 40%;
-      overflow: hidden;
-    }
-
-    .sample-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: left top;
-    }
+    /* samples-list / sample-card styles moved to styles/page-components.css */
 
     .intro-text {
       font-size: 1.2rem;
@@ -85,19 +55,6 @@
       margin-left: 0.2rem;
     }
 
-    .sample-name {
-      font-weight: 600;
-      font-size: 1.5rem;
-      color: var(--primary);
-      margin-bottom: var(--spacing-md);
-    }
-
-    .sample-description {
-      color: var(--lighter-gray);
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
     .add-sample-btn {
       margin-top: var(--spacing-xl);
       display: inline-flex;
@@ -106,98 +63,6 @@
 
     .add-sample-btn i {
       margin-right: var(--spacing-xs);
-    }
-
-    .sample-image:not(svg) {
-      cursor: pointer;
-      transition: opacity 0.3s ease;
-    }
-
-    .sample-image:not(svg):hover {
-      opacity: 0.9;
-    }
-
-    .image-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-      z-index: 9999;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-    }
-
-    .image-overlay.active {
-      display: flex;
-    }
-
-    .image-overlay-content {
-      position: relative;
-      max-width: 90%;
-      max-height: 90%;
-    }
-
-    .image-overlay img {
-      max-width: 100%;
-      max-height: 90vh;
-      object-fit: contain;
-      border-radius: var(--border-radius-md);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-    }
-
-    .image-overlay-close {
-      position: absolute;
-      top: 0;
-      right: 0;
-      background-color: rgba(255, 255, 255, 0.9);
-      border: none;
-      color: #000;
-      font-size: 1.5rem;
-      cursor: pointer;
-      padding: 0.5rem 0.75rem;
-      line-height: 1;
-      transition: all 0.3s ease;
-      border-radius: 0 var(--border-radius-md) 0 0.5rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      z-index: 10000;
-    }
-
-    .image-overlay-close:hover {
-      background-color: var(--primary);
-      color: #fff;
-    }
-
-    @media (max-width: 768px) {
-      .sample-card {
-        flex-direction: column;
-      }
-
-      .sample-info {
-        order: 2;
-      }
-
-      .sample-image-container {
-        width: 100%;
-        height: 200px;
-        order: 1;
-      }
-
-      .image-overlay-close {
-        top: 0;
-        right: 0;
-        background-color: rgba(255, 255, 255, 0.95);
-        border-radius: 0;
-        width: 44px;
-        height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-      }
     }
   </style>
 </head>
@@ -220,19 +85,33 @@
               <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Services submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
             </span>
             <ul class="nav-dropdown-menu">
-              <li><a href="../../en/pages/placeholder.html" class="nav-link">Automation</a></li>
-              <li><a href="../../en/pages/placeholder.html" class="nav-link">Self-improving AI</a></li>
-              <li><a href="../projects/db-assistant/index.html" class="nav-link">AI Data Solutions</a></li>
-              <li><a href="../../en/pages/placeholder.html" class="nav-link">AI Consulting</a></li>
-              <li><a href="../../en/pages/placeholder.html" class="nav-link">AI Security &amp; Evaluation</a></li>
-              <li><a href="../../en/pages/placeholder.html" class="nav-link">AI Visualization</a></li>
-              <li><a href="../../en/pages/placeholder.html" class="nav-link">Apps that work</a></li>
+              <li><a href="../../en/pages/services/automation/index.html" class="nav-link">Automation</a></li>
+              <li><a href="../../en/pages/services/self-improving/index.html" class="nav-link">Self-improving AI</a></li>
+              <li><a href="../../en/pages/services/data-solutions/index.html" class="nav-link">AI Data Solutions</a></li>
+              <li><a href="../../en/pages/services/consulting/index.html" class="nav-link">AI Consulting</a></li>
+              <li><a href="../../en/pages/services/security/index.html" class="nav-link">AI Security &amp; Evaluation</a></li>
+              <li><a href="../../en/pages/placeholder.html" class="nav-link">UIs for AI</a></li>
+              <li><a href="../../en/pages/services/dashboards/index.html" class="nav-link">AI Dashboards</a></li>
+              <li><a href="../../en/pages/services/ai-apps/index.html" class="nav-link">Apps that work</a></li>
             </ul>
           </li>
           <li class="less-spacing"><a href="../../index.html#skills" class="nav-link">Skills</a></li>
-          <li><a href="../../index.html#proj" class="nav-link">Projects</a></li>
-          <li><a href="../../index.html#contact" class="nav-link">Contact</a></li>
-          <li><a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank" class="nav-link"
+          <li class="nav-dropdown less-spacing">
+            <span class="nav-dropdown-head">
+              <a href="../../index.html#proj" class="nav-link">Projects</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-label="Projects submenu"><i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            </span>
+            <ul class="nav-dropdown-menu">
+              <li><a href="../../en/pages/systems/web_agent/index.html" class="nav-link">Website AI Agent</a></li>
+              <li><a href="../../en/pages/systems/data_chat/index.html" class="nav-link">Chat with Data</a></li>
+              <li><a href="../../en/pages/systems/seo_agent/index.html" class="nav-link">SEO Agent</a></li>
+              <li><a href="../../en/pages/systems/log-view/index.html" class="nav-link">AI Log Viewer</a></li>
+              <li><a href="../../en/pages/systems/agentic_db/index.html" class="nav-link">Agentic DB</a></li>
+            </ul>
+          </li>
+          <li class="less-spacing"><a href="../../index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="../../blog.html" class="nav-link">Blog</a></li>
+          <li><a href="https://www.linkedin.com/in/waj-ai" target="_blank" class="nav-link"
               title="Visit my LinkedIn profile"><i class="fab fa-linkedin-in"></i></a></li>
           <li><a href="https://github.com/walter-a-jablonowski" target="_blank" class="nav-link github-link" title="Visit my GitHub profile"><i class="fab fa-github"></i></a></li>
         </ul>
@@ -293,7 +172,7 @@
             <div class="sample-description">Interactive data visualization tool that transforms complex datasets into intuitive charts and graphs. Built with JavaScript and D3.js, this application makes it easy to understand trends and patterns in large datasets. Customizable display options allow for tailored reporting.</div>
           </div>
           <div class="sample-image-container">
-            <img src="../../lib/img/dataviz.svg" alt="Data Visualization Tool" class="sample-image">
+            <img src="../../misc/img/dataviz.svg" alt="Data Visualization Tool" class="sample-image">
           </div>
         </div>
 -->
@@ -345,7 +224,7 @@
               <rect x="60" y="145" width="280" height="8" rx="4" fill="#FF6B35"/>
 
               <!-- Generated output -->
-              <text x="60" y="175" font-family="'Source Code Pro', monospace" font-size="12" fill="#4CAF50">✓ Analysis complete</text>
+              <text x="60" y="175" font-family="'Source Code Pro', monospace" font-size="12" fill="#4CAF50">&#10003; Analysis complete</text>
               <text x="60" y="195" font-family="'Source Code Pro', monospace" font-size="12" fill="#888">Generated 3 reports</text>
               <text x="60" y="215" font-family="'Source Code Pro', monospace" font-size="12" fill="#888">Optimized 127 entries</text>
 
@@ -373,7 +252,7 @@
         </div>
         <div class="footer-social">
           <a href="https://github.com/walter-a-jablonowski" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/walter-a-jablonowski-6a9a101b0" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/waj-ai" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="https://x.com/walterjab" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
         <div class="footer-links">
@@ -391,18 +270,10 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <div class="image-overlay" id="imageOverlay">
-    <div class="image-overlay-content">
-      <button class="image-overlay-close" id="closeOverlay">
-        <i class="fas fa-times"></i>
-      </button>
-      <img src="" alt="" id="overlayImage">
-    </div>
-  </div>
-
-  <script src="../../lib/config.js?v=26062304"></script>
-  <script src="../../controller.js?v=26062304"></script>
-  <script src="../../lib/voice-agent/agent.js?v=26062304"></script>
+  <script src="../../lib/config.js?v=26092401"></script>
+  <script src="../../controller.js?v=26092401"></script>
+  <script src="../../lib/voice-agent/agent.js?v=26092401"></script>
+  <script src="../../lib/img_overlay/img_overlay.js?v=26092401"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function()
     {
@@ -416,41 +287,7 @@
         });
       }
 
-      const imageOverlay = document.getElementById('imageOverlay');
-      const overlayImage = document.getElementById('overlayImage');
-      const closeOverlay = document.getElementById('closeOverlay');
-      const sampleImages = document.querySelectorAll('.sample-image');
-
-      sampleImages.forEach(function(img) {
-        if( img.tagName === 'svg' )
-          return;
-
-        img.addEventListener('click', function() {
-          overlayImage.src = this.src;
-          overlayImage.alt = this.alt;
-          imageOverlay.classList.add('active');
-          document.body.style.overflow = 'hidden';
-        });
-      });
-
-      closeOverlay.addEventListener('click', function() {
-        imageOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-      });
-
-      imageOverlay.addEventListener('click', function(e) {
-        if( e.target === imageOverlay ) {
-          imageOverlay.classList.remove('active');
-          document.body.style.overflow = '';
-        }
-      });
-
-      document.addEventListener('keydown', function(e) {
-        if( e.key === 'Escape' && imageOverlay.classList.contains('active') ) {
-          imageOverlay.classList.remove('active');
-          document.body.style.overflow = '';
-        }
-      });
+      ImageOverlay.init('.sample-image:not(svg)');
     });
   </script>
 </body>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="883" viewBox="0 0 800 883" role="img" aria-label="Platzhalter - Bild folgt">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#19191b"/>
+      <stop offset="1" stop-color="#09090a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF6B00"/>
+      <stop offset="1" stop-color="#FF3E00"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.45" r="0.6">
+      <stop offset="0" stop-color="#FF6B00" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#FF6B00" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="card"><rect width="800" height="883" rx="28"/></clipPath>
+  </defs>
+
+  <!-- Card background -->
+  <rect width="800" height="883" rx="28" fill="url(#bg)"/>
+  <rect width="800" height="883" rx="28" fill="url(#glow)"/>
+
+  <!-- Flowing waves -->
+  <g clip-path="url(#card)" fill="none" stroke="url(#accent)" stroke-linecap="round">
+    <path d="M-40 250 C 160 170, 280 330, 480 250 S 760 170, 860 250" stroke-opacity="0.18" stroke-width="3"/>
+    <path d="M-40 320 C 160 240, 280 400, 480 320 S 760 240, 860 320" stroke-opacity="0.30" stroke-width="3"/>
+    <path d="M-40 392 C 160 312, 280 472, 480 392 S 760 312, 860 392" stroke-opacity="0.65" stroke-width="4"/>
+    <path d="M-40 464 C 160 384, 280 544, 480 464 S 760 384, 860 464" stroke-opacity="0.30" stroke-width="3"/>
+    <path d="M-40 534 C 160 454, 280 614, 480 534 S 760 454, 860 534" stroke-opacity="0.18" stroke-width="3"/>
+  </g>
+
+  <!-- Labels -->
+  <text x="400" y="640" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="600" fill="#f2f2f2">in progress...</text>
+  <text x="400" y="686" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#8a8a8a" letter-spacing="2">PLATZHALTER &#183; 800 &#215; 883</text>
+</svg>

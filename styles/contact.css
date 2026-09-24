@@ -9,6 +9,10 @@
   grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-xl);
   margin-bottom: var(--spacing-xl);
+  /* Each column keeps its own height. Without this the grid's default stretch
+     ties the cards to the form: dragging the message field taller would pull the
+     contact cards along with it. Now only the form grows. */
+  align-items: start;
 }
 
 .contact-info {
@@ -160,6 +164,14 @@
   border-radius: var(--border-radius-sm);
   font-family: var(--font-main);
   resize: none;
+}
+
+/* Let the visitor drag the message field taller: the use-case finder prefills it
+   with the selected use cases, which can be a lot of text for the 5 rows the
+   field starts with. Vertical only — the field is width: 100%, so a horizontal
+   drag would push it out of the form. The starting height is unchanged. */
+.form-group textarea {
+  resize: vertical;
 }
 
 .form-group input:focus,

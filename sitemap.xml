@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://walter-a-jablonowski.github.io/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/"/>
@@ -12,7 +12,7 @@
   </url>
   <url>
     <loc>https://walter-a-jablonowski.github.io/en/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/"/>
@@ -20,116 +20,368 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/"/>
   </url>
   <url>
-    <loc>https://walter-a-jablonowski.github.io/pages/services/consulting.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://walter-a-jablonowski.github.io/pages/services/consulting/</loc>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/consulting.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/consulting.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/consulting.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/consulting/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/consulting/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/consulting/"/>
   </url>
   <url>
-    <loc>https://walter-a-jablonowski.github.io/en/pages/services/consulting.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://walter-a-jablonowski.github.io/en/pages/services/consulting/</loc>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/consulting.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/consulting.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/consulting.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/consulting/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/consulting/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/consulting/"/>
   </url>
   <url>
-    <loc>https://walter-a-jablonowski.github.io/pages/services/automation.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://walter-a-jablonowski.github.io/pages/services/automation/</loc>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/automation.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/automation.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/automation.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/automation/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/automation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/automation/"/>
   </url>
   <url>
-    <loc>https://walter-a-jablonowski.github.io/en/pages/services/automation.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://walter-a-jablonowski.github.io/en/pages/services/automation/</loc>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/automation.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/automation.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/automation.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/automation/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/automation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/automation/"/>
   </url>
   <url>
-    <loc>https://walter-a-jablonowski.github.io/pages/services/data-solutions.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://walter-a-jablonowski.github.io/pages/services/data-solutions/</loc>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/data-solutions.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/data-solutions.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/data-solutions.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/data-solutions/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/data-solutions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/data-solutions/"/>
   </url>
   <url>
-    <loc>https://walter-a-jablonowski.github.io/en/pages/services/data-solutions.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://walter-a-jablonowski.github.io/en/pages/services/data-solutions/</loc>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/data-solutions.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/data-solutions.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/data-solutions.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/data-solutions/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/data-solutions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/data-solutions/"/>
   </url>
   <url>
-    <loc>https://walter-a-jablonowski.github.io/pages/services/security.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://walter-a-jablonowski.github.io/pages/services/security/</loc>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/security.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/security.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/security.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/security/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/security/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/security/"/>
   </url>
   <url>
-    <loc>https://walter-a-jablonowski.github.io/en/pages/services/security.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://walter-a-jablonowski.github.io/en/pages/services/security/</loc>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/security.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/security.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/security.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/security/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/security/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/security/"/>
   </url>
   <url>
-    <loc>https://walter-a-jablonowski.github.io/pages/services/self-improving.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://walter-a-jablonowski.github.io/pages/services/self-improving/</loc>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/self-improving.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/self-improving.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/self-improving.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/self-improving/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/self-improving/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/self-improving/"/>
   </url>
   <url>
-    <loc>https://walter-a-jablonowski.github.io/en/pages/services/self-improving.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://walter-a-jablonowski.github.io/en/pages/services/self-improving/</loc>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/self-improving.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/self-improving.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/self-improving.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/self-improving/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/self-improving/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/self-improving/"/>
   </url>
   <url>
-    <loc>https://walter-a-jablonowski.github.io/pages/offers/offer.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://walter-a-jablonowski.github.io/pages/services/dashboards/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/dashboards/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/dashboards/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/dashboards/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/en/pages/services/dashboards/</loc>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/offers/offer.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/offers/offer.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/offers/offer.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/dashboards/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/dashboards/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/dashboards/"/>
   </url>
   <url>
-    <loc>https://walter-a-jablonowski.github.io/en/pages/offers/offer.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://walter-a-jablonowski.github.io/pages/services/ai-apps/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/ai-apps/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/ai-apps/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/ai-apps/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/en/pages/services/ai-apps/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/ai-apps/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/ai-apps/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/ai-apps/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/pages/services/agentic-commerce/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/agentic-commerce/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/agentic-commerce/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/agentic-commerce/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/en/pages/services/agentic-commerce/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/agentic-commerce/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/agentic-commerce/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/agentic-commerce/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/pages/services/integration/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/integration/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/integration/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/integration/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/en/pages/services/integration/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/services/integration/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/services/integration/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/services/integration/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/pages/regions/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/regions/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/regions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/regions/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/en/pages/regions/</loc>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/offers/offer.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/offers/offer.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/offers/offer.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/regions/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/regions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/regions/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/pages/regions/ki-firma-nuernberg.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/regions/ki-firma-nuernberg.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/regions/ai-company-nuremberg.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/regions/ki-firma-nuernberg.html"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/en/pages/regions/ai-company-nuremberg.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/regions/ki-firma-nuernberg.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/regions/ai-company-nuremberg.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/regions/ki-firma-nuernberg.html"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/pages/regions/ki-firma-bamberg.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/regions/ki-firma-bamberg.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/regions/ai-company-bamberg.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/regions/ki-firma-bamberg.html"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/en/pages/regions/ai-company-bamberg.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/regions/ki-firma-bamberg.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/regions/ai-company-bamberg.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/regions/ki-firma-bamberg.html"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/pages/systems/office_agent/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/office_agent/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/office_agent/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/office_agent/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/en/pages/systems/office_agent/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/office_agent/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/office_agent/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/office_agent/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/pages/systems/web_agent/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/web_agent/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/web_agent/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/web_agent/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/en/pages/systems/web_agent/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/web_agent/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/web_agent/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/web_agent/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/pages/systems/data_chat/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/data_chat/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/data_chat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/data_chat/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/en/pages/systems/data_chat/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/data_chat/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/data_chat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/data_chat/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/pages/systems/seo_agent/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/seo_agent/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/seo_agent/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/seo_agent/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/en/pages/systems/seo_agent/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/seo_agent/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/seo_agent/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/seo_agent/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/pages/systems/log-view/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/log-view/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/log-view/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/log-view/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/en/pages/systems/log-view/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/log-view/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/log-view/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/log-view/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/pages/systems/task_board/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/task_board/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/task_board/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/task_board/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/en/pages/systems/task_board/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/task_board/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/task_board/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/task_board/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/pages/systems/agentic_db/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/agentic_db/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/agentic_db/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/agentic_db/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/en/pages/systems/agentic_db/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/agentic_db/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/agentic_db/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/agentic_db/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/pages/systems/editor/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/editor/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/editor/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/editor/"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/en/pages/systems/editor/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/systems/editor/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/systems/editor/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/systems/editor/"/>
   </url>
   <url>
     <loc>https://walter-a-jablonowski.github.io/pages/projects/log-view/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/projects/log-view/"/>
@@ -138,7 +390,7 @@
   </url>
   <url>
     <loc>https://walter-a-jablonowski.github.io/en/pages/projects/log-view/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/projects/log-view/"/>
@@ -147,7 +399,7 @@
   </url>
   <url>
     <loc>https://walter-a-jablonowski.github.io/pages/projects/coin-pos/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/projects/coin-pos/"/>
@@ -156,7 +408,7 @@
   </url>
   <url>
     <loc>https://walter-a-jablonowski.github.io/en/pages/projects/coin-pos/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/projects/coin-pos/"/>
@@ -165,7 +417,7 @@
   </url>
   <url>
     <loc>https://walter-a-jablonowski.github.io/pages/projects/dashb/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/projects/dashb/"/>
@@ -174,7 +426,7 @@
   </url>
   <url>
     <loc>https://walter-a-jablonowski.github.io/en/pages/projects/dashb/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/projects/dashb/"/>
@@ -183,7 +435,7 @@
   </url>
   <url>
     <loc>https://walter-a-jablonowski.github.io/pages/projects/db-assistant/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/projects/db-assistant/"/>
@@ -192,7 +444,7 @@
   </url>
   <url>
     <loc>https://walter-a-jablonowski.github.io/en/pages/projects/db-assistant/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/projects/db-assistant/"/>
@@ -201,7 +453,7 @@
   </url>
   <url>
     <loc>https://walter-a-jablonowski.github.io/pages/projects/ninja-snipp/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/projects/ninja-snipp/"/>
@@ -210,7 +462,7 @@
   </url>
   <url>
     <loc>https://walter-a-jablonowski.github.io/en/pages/projects/ninja-snipp/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/projects/ninja-snipp/"/>
@@ -218,57 +470,75 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/projects/ninja-snipp/"/>
   </url>
   <url>
-    <loc>https://walter-a-jablonowski.github.io/pages/samples/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://walter-a-jablonowski.github.io/blog.html</loc>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/blog.html"/>
   </url>
   <url>
-    <loc>https://walter-a-jablonowski.github.io/blog.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://walter-a-jablonowski.github.io/en/blog.html</loc>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/blog.html"/>
   </url>
   <url>
     <loc>https://walter-a-jablonowski.github.io/pages/blog/250918-01-autonomous-agents-ap2-x402.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/blog/250918-01-autonomous-agents-ap2-x402.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/blog/250918-01-autonomous-agents-ap2-x402.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/blog/250918-01-autonomous-agents-ap2-x402.html"/>
+  </url>
+  <url>
+    <loc>https://walter-a-jablonowski.github.io/en/pages/blog/250918-01-autonomous-agents-ap2-x402.html</loc>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/blog/250918-01-autonomous-agents-ap2-x402.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/blog/250918-01-autonomous-agents-ap2-x402.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/blog/250918-01-autonomous-agents-ap2-x402.html"/>
   </url>
   <url>
-    <loc>https://walter-a-jablonowski.github.io/imprint.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://walter-a-jablonowski.github.io/pages/blog/250918-02-ai-first-development-boosts-productivity.html</loc>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/imprint.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/imprint.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/imprint.html"/>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/blog/250918-02-ai-first-development-boosts-productivity.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/blog/250918-02-ai-first-development-boosts-productivity.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/blog/250918-02-ai-first-development-boosts-productivity.html"/>
   </url>
   <url>
-    <loc>https://walter-a-jablonowski.github.io/en/imprint.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://walter-a-jablonowski.github.io/en/pages/blog/250918-02-ai-first-development-boosts-productivity.html</loc>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/imprint.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/imprint.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/imprint.html"/>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/blog/250918-02-ai-first-development-boosts-productivity.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/blog/250918-02-ai-first-development-boosts-productivity.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/blog/250918-02-ai-first-development-boosts-productivity.html"/>
   </url>
   <url>
-    <loc>https://walter-a-jablonowski.github.io/privacy.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://walter-a-jablonowski.github.io/pages/blog/260708-01-lokale-ki-mittelstand-on-premise.html</loc>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/privacy.html"/>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/blog/260708-01-lokale-ki-mittelstand-on-premise.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/blog/260708-01-lokale-ki-mittelstand-on-premise.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/blog/260708-01-lokale-ki-mittelstand-on-premise.html"/>
   </url>
   <url>
-    <loc>https://walter-a-jablonowski.github.io/en/privacy.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://walter-a-jablonowski.github.io/en/pages/blog/260708-01-lokale-ki-mittelstand-on-premise.html</loc>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/privacy.html"/>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://walter-a-jablonowski.github.io/pages/blog/260708-01-lokale-ki-mittelstand-on-premise.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://walter-a-jablonowski.github.io/en/pages/blog/260708-01-lokale-ki-mittelstand-on-premise.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://walter-a-jablonowski.github.io/pages/blog/260708-01-lokale-ki-mittelstand-on-premise.html"/>
   </url>
 </urlset>

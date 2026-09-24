@@ -47,11 +47,11 @@ class WebsiteController
     // voice-agent.js. No-op unless VOICE_AGENT_CONFIG.persistentAgent is true.
     this.initPersistentAgent();
 
-    // Gate "new feature" CTAs (e.g. the .service-cta banner) via config.
-    this.initNewFeatures();
+    // Reveal new/unfinished content (e.g. the "Systeme" nav dropdown) via config.
+    this.initNewContent();
 
-    // Gate the FAQ mini-tab on the service pages via config.
-    this.initFAQ();
+    // Hide commercial content (prices, service-page FAQ + CTA) when hideBiz is true.
+    this.initHideBiz();
 
     // Wait for DOM to be fully loaded
     document.addEventListener('DOMContentLoaded', () => {
@@ -64,10 +64,15 @@ class WebsiteController
       this.initSkillsModal();
       this.initResponsiveAdjustments();
       this.initTabNavigation();
+      this.initMiniTabs();
+      this.initTextareaMinHeight();
       this.initInfoIcons();
       this.initTypewriterEffect();
       this.initProjectCarousel();
+      this.initFeatureCarousels();
       this.initPastSkillsToggle();
+      this.initUseCaseTooltip();
+      this.initSearch();
 
       // Add animation classes to elements
       document.querySelectorAll('.fade-in').forEach((element, index) => {
@@ -89,34 +94,100 @@ class WebsiteController
     if (typeof LOADING_CONFIG === 'undefined' || !LOADING_CONFIG.showHeroOffer)
       return;
 
-    document.querySelectorAll('.hero-offer').forEach(el => el.classList.add('is-on'));
+    const isDe = (document.documentElement.lang || 'en').toLowerCase().startsWith('de');
+    const offers = Array.isArray(LOADING_CONFIG.heroOffers) ? LOADING_CONFIG.heroOffers : [];
+    const offer = offers[LOADING_CONFIG.heroOfferIndex || 0] || {};
+    const text = (isDe ? offer.de : offer.en) || offer.en || offer.de || '';
+
+    document.querySelectorAll('.hero-offer').forEach(el => {
+      const span = el.querySelector('.hero-offer-text');
+      if (span && text) span.innerHTML = text;
+      el.classList.add('is-on');
+    });
+
+    // The callout makes the left column taller; drop the hero CTA buttons while
+    // it is shown so the column heights stay balanced (hero.css hides them).
+    document.body.classList.add('hero-offer-on');
   }
 
   /**
-   * Hide "new feature" CTAs (e.g. the .service-cta banner on the service pages)
-   * when LOADING_CONFIG.showCTA is explicitly false. Adds a body class
-   * that styles.css uses to hide the gated elements; the default (true/absent)
-   * leaves them visible, so they still show if config or JS is unavailable.
-   * To gate further CTAs, add their selector to the `body.no-new-features` rule
-   * in styles.css. Tolerant of config being absent.
+   * Onboarding tooltip pointing at the hero "Use Case finder" button, shown on
+   * page load when LOADING_CONFIG.showUseCaseTooltip is true. It sits below the
+   * button (the hero image occupies the space to the right) and is anchored
+   * inside .hero-cta (position: relative in hero.css); this method only centers
+   * it on the button. No persistence on purpose: it reappears on every load
+   * until the config flag is turned off. Never shown on mobile (hero.css media
+   * query) to save space. Dismissed via its "X" or by clicking the finder
+   * button itself. No-op on pages without the button; tolerant of config
+   * being absent.
    */
-  initNewFeatures()
+  initUseCaseTooltip()
   {
-    if (typeof LOADING_CONFIG !== 'undefined' && LOADING_CONFIG.showCTA === false)
-      document.body.classList.add('no-new-features');
+    if( typeof LOADING_CONFIG === 'undefined' || LOADING_CONFIG.showUseCaseTooltip !== true )
+      return;
+
+    const trigger = document.getElementById('use-case-finder-trigger');
+    if( ! trigger || ! trigger.parentElement )
+      return;
+
+    const isDe = (document.documentElement.lang || 'en').toLowerCase().startsWith('de');
+    const text = isDe
+      ? 'Klicken Sie hier, um Ihren KI Use Case zu finden'
+      : 'Click here to find your AI use case';
+    const closeLabel = isDe ? 'Hinweis schlie&szlig;en' : 'Dismiss';
+
+    const tip = document.createElement('div');
+    tip.className = 'use-case-tooltip';
+    tip.setAttribute('role', 'note');
+    tip.innerHTML =
+      '<span class="use-case-tooltip-text">' + text + '</span>' +
+      '<button class="use-case-tooltip-close" type="button" aria-label="' + closeLabel + '" title="' + closeLabel + '">&times;</button>';
+    trigger.parentElement.appendChild(tip);
+
+    // Center the tooltip (and its arrow) on the button; re-run on resize and
+    // on load, since the web font can change the button width after DOM ready.
+    const position = () => {
+      tip.style.left = `${trigger.offsetLeft + trigger.offsetWidth / 2}px`;
+    };
+    position();
+    window.addEventListener('resize', position);
+    window.addEventListener('load', position);
+
+    const dismiss = () => tip.remove();
+    tip.querySelector('.use-case-tooltip-close').addEventListener('click', dismiss);
+    trigger.addEventListener('click', dismiss);  // button used - the hint served its purpose
   }
 
   /**
-   * Hide the FAQ mini-tab ("Häufige Fragen") on the service pages when
-   * LOADING_CONFIG.showFAQ is explicitly false. Adds a body class that CSS uses
-   * to hide the FAQ tab button, its separator and the FAQ panel; the overview
-   * tab stays active. The default (true/absent) leaves the FAQ visible, so it
-   * still shows if config or JS is unavailable. Tolerant of config being absent.
+   * Reveal new or unfinished content that is hidden by default until it is ready
+   * for publishing (currently the "Systeme" nav dropdown). The gated elements
+   * carry the .new-content class and CSS hides them unless body.show-new-content
+   * is present; this method adds that class only when LOADING_CONFIG.showNewContent
+   * is explicitly true. Hidden-by-default is the safe choice: if config or JS is
+   * unavailable, the unfinished content stays out of sight. Tolerant of config
+   * being absent.
    */
-  initFAQ()
+  initNewContent()
   {
-    if (typeof LOADING_CONFIG !== 'undefined' && LOADING_CONFIG.showFAQ === false)
-      document.body.classList.add('no-faq');
+    if (typeof LOADING_CONFIG !== 'undefined' && LOADING_CONFIG.showNewContent === true)
+      document.body.classList.add('show-new-content');
+  }
+
+  /**
+   * Hide commercial content when LOADING_CONFIG.hideBiz is true: prices and any
+   * element marked .biz-only, plus the .service-cta banner. Adds the single body
+   * class .hide-biz; the CSS rules (components.css, page-components.css,
+   * hero.css) key off it. Visible by default (absent/false), so everything still
+   * shows if config or JS is unavailable. Tolerant of config being absent.
+   *
+   * The service-page FAQ mini-tab is deliberately NOT hidden: it is the source of
+   * the FAQPage structured data (tools/upd_faq_schema.php), and schema for
+   * content a visitor cannot reach counts as misleading markup.
+   */
+  initHideBiz()
+  {
+    if (typeof LOADING_CONFIG !== 'undefined' && LOADING_CONFIG.hideBiz === true)
+      document.body.classList.add('hide-biz');
   }
 
   /**
@@ -126,7 +197,7 @@ class WebsiteController
    *   'off'    - nothing is added.
    *   'offer'  - bar links to the offer page (legacy boolean true == 'offer').
    *   'texts'  - shows announcementTexts[announcementTextIndex], an HTML string
-   *              that may contain links; the {root} placeholder is replaced with
+   *              that may contain links; the {base} placeholder is replaced with
    *              the path to the current language root.
    * The relative paths are derived from the logo link (which always points to
    * the current language's root) so they are correct on every page and in both
@@ -179,13 +250,12 @@ class WebsiteController
       if (!html) return; // nothing configured to show
       inner =
         '<div class="container">' +
-          '<span class="announcement-bar-content">' + html.replace(/\{root\}/g, prefix) + '</span>' +
+          '<span class="announcement-bar-content">' + html.replace(/\{base\}/g, prefix) + '</span>' +
         '</div>';
     } else {
       // 'offer'
-      const text = isDe
-        ? 'Kleine KI-Automatisierung? Schicken Sie es mir &ndash; ich baue es ab <strong>1.000&nbsp;&euro;</strong>'
-        : 'Have a small AI automation Send it to me &mdash; I&rsquo;ll build it starting at <strong>&euro;1000</strong>.';
+      const offer = config.announcementOffer || {};
+      const text = (isDe ? offer.de : offer.en) || offer.en || offer.de || '';
       const href = prefix + 'pages/offers/offer.html';
       inner =
         '<div class="container">' +
@@ -205,10 +275,35 @@ class WebsiteController
     header.appendChild(bar);
     document.body.classList.add('has-announcement');
 
+    // In persistent-agent mode, links to #about in the bar open the AI overlay
+    // directly (same as the hero "Ask AI" CTA and the Voice Agent project card).
+    if( typeof VOICE_AGENT_CONFIG !== 'undefined' && VOICE_AGENT_CONFIG.persistentAgent )
+      this.bindAgentOpen( bar.querySelectorAll('a[href$="#about"]'));
+
     bar.querySelector('.announcement-bar-close').addEventListener('click', () => {
       bar.remove();
       document.body.classList.remove('has-announcement');
       try { sessionStorage.setItem('waj:homepage:offerDismissed', '1'); } catch (e) { /* ignore */ }
+    });
+  }
+
+  /**
+   * Make links open the AI overlay instead of navigating. Their href (#about)
+   * is left untouched and stays the graceful fallback: if the agent never
+   * loaded, or JS is off, the click still lands on the About section.
+   *
+   * Used from three places, all only while persistentAgent is on: the hero
+   * "Ask AI" CTA, the announcement bar, and the Voice Agent project card.
+   */
+  bindAgentOpen( links )
+  {
+    links.forEach(a => {
+      a.addEventListener('click', (e) => {
+        if( window.voiceAgent && typeof window.voiceAgent.open === 'function' ) {
+          e.preventDefault();
+          window.voiceAgent.open();
+        }
+      });
     });
   }
 
@@ -236,24 +331,15 @@ class WebsiteController
     document.body.classList.add('persistent-agent');
 
     // 1. Neutralize the in-#about live widget (index pages only) with a static,
-    //    on-brand "talk to AI" illustration. Removing the live mic/status here
-    //    guarantees a single live instance (the overlay).
+    //    on-brand "talk to AI" illustration. The markup lives as a hidden
+    //    <template id="va-dummy-art"> in the index page (per language), so it is
+    //    not duplicated here. Removing the live mic/status guarantees a single
+    //    live instance (the overlay).
     const container = document.querySelector('.voice-agent-container');
-    if( container ) {
-      const caption = isDe ? 'Fragen Sie meine KI-Assistentin in der Ecke' : 'Ask my AI assistant in the corner';
+    const dummyTpl = document.getElementById('va-dummy-art');
+    if( container && dummyTpl ) {
       container.classList.add('va-dummy');
-      container.innerHTML =
-        '<svg class="va-dummy-art" viewBox="0 0 120 120" role="img" aria-label="' + caption + '">' +
-          '<defs><linearGradient id="vaDummyGrad" x1="0" y1="0" x2="1" y2="1">' +
-            '<stop offset="0" stop-color="var(--primary)"/><stop offset="1" stop-color="var(--accent-red)"/>' +
-          '</linearGradient></defs>' +
-          '<circle cx="60" cy="60" r="56" fill="url(#vaDummyGrad)" opacity="0.12"/>' +
-          '<circle cx="60" cy="60" r="40" fill="url(#vaDummyGrad)" opacity="0.18"/>' +
-          '<rect x="50" y="34" width="20" height="34" rx="10" fill="url(#vaDummyGrad)"/>' +
-          '<path d="M42 60 a18 18 0 0 0 36 0" fill="none" stroke="url(#vaDummyGrad)" stroke-width="4" stroke-linecap="round"/>' +
-          '<line x1="60" y1="78" x2="60" y2="88" stroke="url(#vaDummyGrad)" stroke-width="4" stroke-linecap="round"/>' +
-        '</svg>' +
-        '<p class="va-dummy-caption">' + caption + '</p>';
+      container.replaceChildren(dummyTpl.content.cloneNode(true));
     }
 
     // 2. Hide the legacy floating link (controller.initFloatingAiButton would
@@ -268,15 +354,14 @@ class WebsiteController
       a.textContent = isDe ? 'Über mich' : 'About';
     });
 
-    // 4. Swap the about intro to the shorter, personal first-person copy. Keep
-    //    the feature list + CTA; just replace the leading paragraphs.
+    // 4. Swap the about intro to the shorter, personal first-person copy. The
+    //    copy lives as a hidden <template id="va-about-intro"> in the index page
+    //    (per language). Keep the feature list + CTA; just replace the leading
+    //    paragraphs.
     const aboutText = document.querySelector('.about-text');
-    if( aboutText ) {
-      const intro = isDe
-        ? 'Hallo, ich bin Walter. Seit über 25 Jahren entwickle ich Software — und inzwischen dreht sich bei mir alles um KI. Ich mag es, aus einer vagen Idee etwas zu machen, das wirklich funktioniert, am liebsten mit möglichst wenig Drumherum: weniger Frameworks, mehr Ergebnis. Ich sitze in <a href="#map" class="highlight">Bamberg</a> und arbeite mit Unternehmen hier, in Nürnberg und online. Neugierig, ob KI Ihnen helfen kann? Fragen Sie meine Assistentin in der Ecke — oder melden Sie sich einfach.'
-        : "Hi, I'm Walter. For over 25 years I've built software — and these days I'm all-in on AI. I love turning a vague idea into something that actually works, ideally with as little ceremony as possible: fewer frameworks, more results. I'm based in <a href=\"#map\" class=\"highlight\">Bamberg</a> and work with companies here, in Nuremberg and online. Curious whether AI can help you? Ask my assistant in the corner — or just reach out.";
-
-      // Replace every direct <p> before the feature list with the single intro.
+    const introTpl = document.getElementById('va-about-intro');
+    if( aboutText && introTpl ) {
+      // Replace every direct <p> before the feature list with the page's intro.
       const list = aboutText.querySelector('.feature-list');
       let node = aboutText.firstElementChild;
       while( node && node !== list ) {
@@ -285,9 +370,48 @@ class WebsiteController
           node.remove();
         node = next;
       }
-      const p = document.createElement('p');
-      p.innerHTML = intro;
-      aboutText.insertBefore(p, aboutText.firstChild);
+      aboutText.insertBefore(introTpl.content.cloneNode(true), aboutText.firstChild);
+    }
+
+    // 5. Re-wire the index CTAs for persistent-agent mode (site-specific; index
+    //    pages only). The #about live widget moved to the overlay, so the hero
+    //    "Ask AI" button no longer jumps to #about — instead, with the round
+    //    launcher it opens the overlay panel directly (via the agent's public
+    //    open() method), and with the text launcher it points to Services. The
+    //    two about CTAs become Contact + Services in both styles.
+    const launcherStyle = VOICE_AGENT_CONFIG.launcherStyle || 'round';
+
+    const heroPrimary = document.querySelector('.hero-cta .btn');   // first hero button
+    if( heroPrimary ) {
+      if( launcherStyle === 'round' ) {
+        heroPrimary.setAttribute('href', '#about');   // graceful fallback if JS fails
+        this.bindAgentOpen([heroPrimary]);            // opens the overlay panel instead of navigating
+      } else {
+        // Text launcher: the pill is the AI entry point, so this button is no
+        // longer "Ask AI" — drop the mic and relabel it to its new target.
+        heroPrimary.setAttribute('href', '#services');
+        heroPrimary.textContent = isDe ? 'Leistungen' : 'Services';
+
+        // The second button would otherwise duplicate Services, so point it at
+        // Projects instead.
+        const heroSecondary = document.querySelectorAll('.hero-cta .btn')[1];
+        if( heroSecondary ) {
+          heroSecondary.setAttribute('href', '#proj');
+          heroSecondary.textContent = isDe ? 'Projekte' : 'Projects';
+        }
+      }
+    }
+
+    // The Voice Agent project card offers "Projektseite | Demo" - the Demo link
+    // is the agent itself, so it opens the overlay rather than jumping to #about.
+    this.bindAgentOpen( document.querySelectorAll('.project-card a[data-agent-open]'));
+
+    const ctaButtons = document.querySelectorAll('.cta-buttons .btn');
+    if( ctaButtons[0] ) ctaButtons[0].setAttribute('href', '#contact');   // first -> Contact (label already fits)
+    if( ctaButtons[1] ) {
+      // Second -> Services: retarget and relabel (was "See samples" -> #proj).
+      ctaButtons[1].setAttribute('href', '#services');
+      ctaButtons[1].textContent = isDe ? 'Leistungen' : 'Services';
     }
   }
 
@@ -387,12 +511,7 @@ class WebsiteController
 
     // Close mobile menu when clicking a link
     this.navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        this.navMenu.classList.remove('active');
-        this.menuToggle.querySelector('i').classList.add('fa-bars');
-        this.menuToggle.querySelector('i').classList.remove('fa-times');
-        this.body.style.overflow = '';
-      });
+      link.addEventListener('click', () => this.closeMobileMenu());
     });
 
     // Services dropdown: caret toggles the submenu on mobile (desktop uses hover)
@@ -412,12 +531,92 @@ class WebsiteController
       if (this.navMenu.classList.contains('active') &&
         !this.navMenu.contains(e.target) &&
         !this.menuToggle.contains(e.target)) {
-        this.navMenu.classList.remove('active');
-        this.menuToggle.querySelector('i').classList.add('fa-bars');
-        this.menuToggle.querySelector('i').classList.remove('fa-times');
-        this.body.style.overflow = '';
+        this.closeMobileMenu();
       }
     });
+
+    // Highlight the current section on load (menu markup carries no hard-coded active)
+    this.updateActiveNavLink();
+  }
+
+  /**
+   * Close the slide-in mobile menu and reset the burger icon (no-op on desktop,
+   * where the menu never carries .active)
+   */
+  closeMobileMenu()
+  {
+    this.navMenu.classList.remove('active');
+    this.menuToggle.querySelector('i').classList.add('fa-bars');
+    this.menuToggle.querySelector('i').classList.remove('fa-times');
+    this.body.style.overflow = '';
+  }
+
+  /**
+   * Site search: the magnifier in the nav and Ctrl/Cmd+K open the dialog.
+   *
+   * Only the trigger lives here - the dialog (lib/search/search.js) and the
+   * index it walks are fetched on first use, so a visitor who never searches
+   * never downloads them.
+   *
+   * Both paths come from this file's own <script> tag: controller.js sits at the
+   * site root, which every page already addresses relative to its own depth, and
+   * the tag carries the current cache-busting token.
+   */
+  initSearch()
+  {
+    const tag = document.querySelector('script[src*="controller.js"]');
+    const parts = (tag ? tag.getAttribute('src') : '').match(/^(.*?)controller\.js(\?.*)?$/) || [];
+
+    this.searchBase = new URL(parts[1] || './', window.location.href).href;
+    this.searchVersion = parts[2] || '';
+
+    document.querySelectorAll('[data-search-open]').forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.openSearch();
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key && e.key.toLowerCase() === 'k' && (e.ctrlKey || e.metaKey) && !e.altKey) {
+        e.preventDefault();
+        this.openSearch();
+      }
+      else if (e.key === 'Escape' && this.search && this.search.isOpen())
+        this.search.close();
+    });
+  }
+
+  /**
+   * Show the search dialog, loading its script on the first call
+   */
+  openSearch()
+  {
+    this.closeMobileMenu();
+
+    if (this.search) {
+      this.search.open();
+      return;
+    }
+
+    if (!this.searchLoading) {
+      this.searchLoading = new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = `${this.searchBase}lib/search/search.js${this.searchVersion}`;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+
+    this.searchLoading
+      .then(() => {
+        if (!this.search)
+          this.search = new SearchManager({ base: this.searchBase, version: this.searchVersion });
+
+        this.search.open();
+      })
+      .catch(() => console.warn('Search dialog could not be loaded'));
   }
 
   /**
@@ -534,6 +733,37 @@ class WebsiteController
     if (this.contactForm) {
 
       const isDe = (document.documentElement.lang || 'en').toLowerCase().startsWith('de');
+
+      // Check for pending Use Case Finder inquiry and pre-fill
+      try
+      {
+        const raw = sessionStorage.getItem( 'ucf-inquiry' );
+        if( raw )
+        {
+          const inquiry = JSON.parse( raw );
+          const inquiryLang = isDe ? 'de' : 'en';
+          if( inquiry.lang === inquiryLang )
+          {
+            const subjectField = document.getElementById( 'subject' );
+            if( subjectField )
+              subjectField.value = inquiry.subject || '';
+
+            const messageField = document.getElementById( 'message' );
+            if( messageField ) {
+              messageField.value = inquiry.message || '';
+              WebsiteController.fitTextarea( messageField );
+            }
+
+            sessionStorage.removeItem( 'ucf-inquiry' );
+
+            setTimeout( () => {
+              document.querySelector( '#contact' ).scrollIntoView( { behavior: 'smooth' } );
+            }, 300 );
+          }
+        }
+      }
+      catch( e ) {}
+
       const t = isDe ? {
         errName:    'Bitte geben Sie Ihren Namen ein',
         errMail:    'Bitte geben Sie Ihre E-Mail-Adresse ein',
@@ -712,28 +942,30 @@ class WebsiteController
       errMail:    'Bitte geben Sie Ihre E-Mail-Adresse ein',
       errMailInv: 'Bitte geben Sie eine gültige E-Mail-Adresse ein',
       errCurrent: 'Bitte beschreiben Sie die aktuelle Situation',
-      errOutcome: 'Bitte beschreiben Sie das gewünschte Ergebnis',
       success:    '<i class="fas fa-check-circle"></i> Vielen Dank! Ich melde mich zeitnah bei Ihnen.',
       error:      '<i class="fas fa-exclamation-circle"></i> Hoppla, da ist etwas schiefgelaufen. Bitte versuchen Sie es später erneut.',
       subject:    'Use-Case-Anfrage (Angebotsseite)',
       lCurrent:   'Aktuelle Situation / Aufgabe heute',
+      lInputs:    'Ihre Inputs / Unterlagen',
+      lSystems:   'Beteiligte Systeme / Tools',
       lOutcome:   'Gewünschtes Ergebnis',
       lFrequency: 'Häufigkeit / Volumen',
-      lSystems:   'Beteiligte Systeme / Tools',
+      lBudget:    'Zeit- und Budgetvorstellung',
       notGiven:   '(keine Angabe)'
     } : {
       errName:    'Please enter your name',
       errMail:    'Please enter your email address',
       errMailInv: 'Please enter a valid email address',
       errCurrent: 'Please describe the current situation',
-      errOutcome: 'Please describe the desired outcome',
       success:    '<i class="fas fa-check-circle"></i> Thank you! I will get back to you soon.',
       error:      '<i class="fas fa-exclamation-circle"></i> Oops! Something went wrong. Please try again later.',
       subject:    'Use case inquiry (offer page)',
       lCurrent:   'Current situation / task today',
+      lInputs:    'Your inputs / documents',
+      lSystems:   'Systems / tools involved',
       lOutcome:   'Desired outcome',
       lFrequency: 'Frequency / volume',
-      lSystems:   'Systems / tools involved',
+      lBudget:    'Timeline and budget expectations',
       notGiven:   '(not specified)'
     };
 
@@ -762,6 +994,8 @@ class WebsiteController
       const outcome   = document.getElementById('of-outcome').value.trim();
       const frequency = document.getElementById('of-frequency').value.trim();
       const systems   = document.getElementById('of-systems').value.trim();
+      const inputs    = document.getElementById('of-inputs').value.trim();
+      const budget    = document.getElementById('of-budget').value.trim();
 
       validationContainer.innerHTML = '';
       validationContainer.style.display = 'none';
@@ -773,7 +1007,6 @@ class WebsiteController
       if( ! email )                        { errors.push(t.errMail); isValid = false; }
       else if( ! this.isValidEmail(email)) { errors.push(t.errMailInv); isValid = false; }
       if( ! current )                      { errors.push(t.errCurrent); isValid = false; }
-      if( ! outcome )                      { errors.push(t.errOutcome); isValid = false; }
 
       if( ! isValid ) {
         validationContainer.style.display = 'block';
@@ -790,9 +1023,11 @@ class WebsiteController
       // Compose the message body from the two textareas plus the helper fields
       const message =
         t.lCurrent + ':\n' + current + '\n\n' +
+        t.lInputs + ': ' + (inputs || t.notGiven) + '\n' +
+        t.lSystems + ': ' + (systems || t.notGiven) + '\n\n' +
         t.lOutcome + ':\n' + outcome + '\n\n' +
         t.lFrequency + ': ' + (frequency || t.notGiven) + '\n' +
-        t.lSystems + ': ' + (systems || t.notGiven);
+        t.lBudget + ': ' + (budget || t.notGiven);
 
       const templateParams = { name: name, mail: email, subject: t.subject, message: message };
 
@@ -884,9 +1119,20 @@ class WebsiteController
     // Set the --vh value initially
     this.setVhProperty();
 
+    // Position the scroll indicator above the system nav bar (measured, not inferred)
+    this.setIndicatorBottom();
+
+    // Track the visible viewport live so the indicator follows the URL bar and
+    // stays clear of the Android buttons bar as it shows/hides on scroll.
+    if( window.visualViewport ) {
+      window.visualViewport.addEventListener('resize', () => this.setIndicatorBottom());
+      window.visualViewport.addEventListener('scroll', () => this.setIndicatorBottom());
+    }
+
     // Update the --vh value on resize and orientation change
     window.addEventListener('resize', () => {
       this.setVhProperty();
+      this.setIndicatorBottom();
 
       // Update menu height if it's open
       if( this.navMenu.classList.contains('active') ) {
@@ -904,6 +1150,7 @@ class WebsiteController
         if( this.navMenu.classList.contains('active') ) {
           this.navMenu.style.height = `${window.innerHeight}px`;
         }
+        this.setIndicatorBottom();
         this.checkHeaderBackground();
       }, 100);
     });
@@ -932,6 +1179,34 @@ class WebsiteController
     const vh = window.innerHeight * 0.01;
     // Then we set the value in the --vh custom property to the root of the document
     document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
+  /**
+   * Position the scroll indicator above the system navigation bar.
+   *
+   * The hero uses min-height:100vh, and on Android Chrome CSS 100vh is the
+   * *largest* viewport (URL bar hidden). While the URL bar is shown the hero is
+   * therefore taller than the visible area, pushing the bottom-anchored indicator
+   * below the fold where the buttons bar clips it. env(safe-area-inset-bottom) is
+   * also 0 on 3-button-nav devices, so it can't help.
+   *
+   * We measure the hero's real rendered height against the actual visible
+   * viewport (visualViewport API) and expose the overshoot as --indicator-bottom.
+   * This is a direct pixel measurement, so it is correct on any device / nav mode.
+   */
+  setIndicatorBottom()
+  {
+    const vv = window.visualViewport;
+    if( ! vv ) return;   // CSS fallback (env + fixed offset) stays in effect
+
+    if( ! this.heroEl )
+      this.heroEl = document.querySelector('.hero');
+    if( ! this.heroEl ) return;
+
+    // How far the hero's bottom extends past the visible viewport bottom
+    const overshoot = Math.max(0, this.heroEl.offsetHeight - (vv.height + vv.offsetTop));
+
+    document.documentElement.style.setProperty('--indicator-bottom', `${overshoot}px`);
   }
 
   /**
@@ -988,6 +1263,132 @@ class WebsiteController
   }
 
   /**
+   * Pin every resizable textarea's min-height to the height it starts at, so a
+   * drag can only make it taller (the field is resize: vertical, contact.css).
+   *
+   * Measured rather than computed in CSS: the starting height comes from the
+   * rows attribute times the browser's own line-height, which the UA stylesheet
+   * sets on form controls — there is no reliable way to express that in CSS, and
+   * the pages use different row counts (3, 4, 5). Runs after load so web fonts
+   * are already applied; they change the line height and with it the height.
+   */
+  initTextareaMinHeight()
+  {
+    const fields = document.querySelectorAll('.form-group textarea');
+
+    if( ! fields.length ) return;
+
+    const pin = () => fields.forEach(field => WebsiteController.pinTextareaMinHeight(field));
+
+    if( document.readyState === 'complete' )
+      pin();
+    else
+      window.addEventListener('load', pin, { once: true });
+  }
+
+  /**
+   * Remember a textarea's current height as its floor, once.
+   * Static: fitTextarea() below and the use-case finder both need it, and it
+   * must happen before any growing — afterwards the "starting height" is gone.
+   */
+  static pinTextareaMinHeight( field )
+  {
+    // Skip fields that are hidden at this point (offsetHeight 0) — pinning them
+    // to zero would defeat the purpose
+    if( field && ! field.style.minHeight && field.offsetHeight > 0 )
+      field.style.minHeight = `${field.offsetHeight}px`;
+  }
+
+  /**
+   * Grow a textarea toward its content after it was filled programmatically.
+   *
+   * Used when the use-case finder drops the selected use cases into the contact
+   * message: the field starts at 5 rows, which is right for a short note but
+   * shows almost nothing of a multi-use-case text. Deliberately capped rather
+   * than fitted exactly — the whole text does not have to be visible, and a
+   * field that grows without limit would push the send button off-screen. The
+   * rest stays scrollable, and the visitor can still drag it taller.
+   *
+   * Static so the use-case finder can call it without a controller instance.
+   */
+  static fitTextarea( field )
+  {
+    if( ! field || ! field.offsetHeight ) return;
+
+    // Must run first: it captures the pre-grow height as the field's floor
+    WebsiteController.pinTextareaMinHeight(field);
+
+    const start = parseFloat(field.style.minHeight) || field.offsetHeight;
+    const cap   = Math.max(start, Math.min(start * 2.5, window.innerHeight * 0.5));
+
+    field.style.height = 'auto';                              // let scrollHeight report the content
+    const borders = field.offsetHeight - field.clientHeight;  // box-sizing is border-box
+
+    field.style.height = `${Math.min(field.scrollHeight + borders, cap)}px`;
+  }
+
+  /**
+   * Mini-tabs on the service pages ("Überblick" | "Häufige Fragen").
+   *
+   * Also makes a tab addressable by URL hash, so a deep link opens it instead of
+   * landing on a hidden panel: the hash is matched against the buttons'
+   * data-tab, with an optional "mt-" prefix tolerated. So #faq (preferred, and
+   * the same anchor the systems pages use for their FAQ heading) and #mt-faq
+   * both open the FAQ tab. Runs on load and on every hashchange.
+   *
+   * A panel is shown by the .active class (page-components.css); the markup
+   * ships with the first tab active, so without JS the page still reads.
+   */
+  initMiniTabs()
+  {
+    const groups = document.querySelectorAll('.mini-tabs');
+
+    if( ! groups.length ) return;
+
+    // Activate one tab within its group
+    const activate = ( group, name ) =>
+    {
+      const links  = group.querySelectorAll('.mini-tab-link');
+      const panels = group.querySelectorAll('.mini-tab-content');
+
+      links.forEach(l => l.classList.toggle('active', l.getAttribute('data-tab') === name));
+      panels.forEach(p => p.classList.toggle('active', p.id === `mt-${name}`));
+    };
+
+    groups.forEach(group => {
+      group.querySelectorAll('.mini-tab-link').forEach(link => {
+        link.addEventListener('click', () => activate(group, link.getAttribute('data-tab')));
+      });
+    });
+
+    // Open the tab a URL hash points at, and bring it into view
+    const openFromHash = ( scroll ) =>
+    {
+      const name = location.hash.replace(/^#/, '').replace(/^mt-/, '');
+
+      if( ! name ) return;
+
+      for( const group of groups )
+      {
+        if( ! group.querySelector(`.mini-tab-link[data-tab="${CSS.escape(name)}"]`) )
+          continue;
+
+        activate(group, name);
+
+        // The hash has no element to jump to (the panel id is prefixed), so
+        // scroll the group ourselves
+        if( scroll )
+          group.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        return;
+      }
+    };
+
+    openFromHash(true);
+    window.addEventListener('hashchange', () => openFromHash(true));
+  }
+
+  /**
    * Initialize info icons with popover functionality
    */
   initInfoIcons()
@@ -1037,6 +1438,15 @@ class WebsiteController
 
     if( typewriterElement ) {
       const text = typewriterElement.textContent;
+
+      // Respect reduced motion preference: keep the text as is, no cursor
+      if( window.matchMedia('(prefers-reduced-motion: reduce)').matches ) {
+        typewriterElement.classList.add('typing-done');
+        return;
+      }
+
+      // Expose the full text to screen readers while the animation runs
+      typewriterElement.setAttribute('aria-label', text);
       typewriterElement.textContent = '';
 
       let charIndex = 0;
@@ -1050,28 +1460,36 @@ class WebsiteController
           // Variable typing speed for more realistic effect
           // Faster for most characters, slower for punctuation
           const currentChar = text.charAt(charIndex - 1);
-          let delay = 70; // Base typing speed
+          let delay = 55; // Base typing speed
 
           // Add random variation to typing speed
-          delay += Math.random() * 50; // Add 0-50ms random delay
+          delay += Math.random() * 45; // Add 0-45ms random delay
 
-          // Slow down for punctuation or spaces
-          if( currentChar === ' ' || currentChar === '-' || currentChar === '.' ) {
-            delay += 50; // Additional delay for these characters
+          // Slow down for word breaks and punctuation
+          if( currentChar === ' ' || currentChar === '-' || currentChar === '.' || currentChar === '&' ) {
+            delay += 60; // Additional delay for these characters
           }
+
+          // Occasional short hesitation, like a human pausing while typing
+          if( Math.random() < 0.06 )
+            delay += 150 + Math.random() * 150;
 
           setTimeout(typeNextChar, delay);
         } else {
-          // Typing is complete, hide the cursor after a short delay
+          // Typing is complete: let the cursor blink for a moment, then fade it out
+          typewriterElement.classList.remove('typing');
           setTimeout(() => {
             typewriterElement.classList.add('typing-done');
-          }, 1500); // Wait 1.5 seconds before hiding cursor
+          }, 1800);
         }
       }
 
-      // Function to start typing
+      // Function to start typing: blink the idle cursor first, then type with a solid cursor
       function startTyping() {
-        setTimeout(typeNextChar, 800);
+        setTimeout(() => {
+          typewriterElement.classList.add('typing');
+          typeNextChar();
+        }, 800);
       }
 
       // Check if loading screen is enabled and wait for it to complete
@@ -1103,7 +1521,7 @@ class WebsiteController
     if( !carouselContainer || !prevArrow || !nextArrow ) return;
 
     // Set initial state - hide prev arrow if at start
-    this.updateCarouselArrows(carouselContainer);
+    this.updateCarouselArrows( carouselContainer, prevArrow, nextArrow );
 
     // Handle next arrow click
     nextArrow.addEventListener('click', () => {
@@ -1131,12 +1549,12 @@ class WebsiteController
 
     // Update arrows visibility on scroll
     carouselContainer.addEventListener('scroll', () => {
-      this.updateCarouselArrows(carouselContainer);
+      this.updateCarouselArrows( carouselContainer, prevArrow, nextArrow );
     });
 
     // Update arrows on window resize
     window.addEventListener('resize', () => {
-      this.updateCarouselArrows(carouselContainer);
+      this.updateCarouselArrows( carouselContainer, prevArrow, nextArrow );
     });
 
     // Touch swipe functionality for mobile
@@ -1154,14 +1572,125 @@ class WebsiteController
   }
 
   /**
-   * Update carousel arrows visibility based on scroll position
-   * @param {HTMLElement} container - The carousel container element
+   * Initialize feature grid carousels (used on all pages with .feature-grid; a grid only
+   * becomes a carousel when its boxes don't fit one row, see page-components.css)
    */
-  updateCarouselArrows(container)
+  initFeatureCarousels()
   {
-    const prevArrow = document.querySelector('.carousel-arrow.prev');
-    const nextArrow = document.querySelector('.carousel-arrow.next');
+    document.querySelectorAll('.feature-grid').forEach( grid => {
 
+      // Wrap the grid and inject the arrows, so pages need no extra markup
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'feature-carousel';
+      grid.parentNode.insertBefore( wrapper, grid );
+
+      const prevArrow = document.createElement('div');
+      prevArrow.className = 'carousel-arrow prev';
+      prevArrow.innerHTML = '<i class="fas fa-chevron-left"></i>';
+
+      const nextArrow = document.createElement('div');
+      nextArrow.className = 'carousel-arrow next';
+      nextArrow.innerHTML = '<i class="fas fa-chevron-right"></i>';
+
+      wrapper.appendChild(prevArrow);
+      wrapper.appendChild(grid);
+      wrapper.appendChild(nextArrow);
+
+      // Scroll one box per arrow click; native touch scrolling covers swiping
+
+      const scrollByBox = direction => {
+        const boxWidth = grid.querySelector('.feature-box').offsetWidth;
+        const gap = parseInt(window.getComputedStyle(grid).getPropertyValue('gap'));
+
+        grid.scrollBy({
+          left: direction * (boxWidth + gap),
+          behavior: 'smooth'
+        });
+      };
+
+      const canScroll = direction => direction > 0
+        ? grid.scrollLeft < grid.scrollWidth - grid.clientWidth - 10
+        : grid.scrollLeft > 10;
+
+      prevArrow.addEventListener('click', () => scrollByBox(-1));
+      nextArrow.addEventListener('click', () => scrollByBox(1));
+
+      // The mouse wheel scrolls the carousel sideways (desktop; a wheel has no vertical room
+      // to spare here). Once the last box is reached the event is left untouched, so the page
+      // scrolls on as usual instead of the carousel swallowing the gesture.
+
+      let wheelStep = 0;
+
+      grid.addEventListener('wheel', event => {
+
+        if( ! wrapper.classList.contains('is-carousel')) return;
+        if( Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;  // sideways gestures already scroll natively
+
+        const direction = event.deltaY > 0 ? 1 : -1;
+        if( ! canScroll(direction)) return;
+
+        event.preventDefault();
+
+        // One box per turn of the wheel - further events during the smooth scroll are swallowed
+        if( event.timeStamp - wheelStep < 300 ) return;
+
+        wheelStep = event.timeStamp;
+        scrollByBox(direction);
+
+      }, { passive: false });
+
+      grid.addEventListener('scroll', () => this.updateCarouselArrows( grid, prevArrow, nextArrow ));
+
+      // Re-decide whenever the available width changes - which includes the grid becoming
+      // visible inside a panel that was hidden at load. Switching modes only changes the
+      // height, so the observer cannot feed itself.
+
+      let lastWidth = -1;
+
+      const sync = () => {
+        if( wrapper.clientWidth === lastWidth ) return;
+        lastWidth = wrapper.clientWidth;
+
+        this.layOutFeatureCarousel( wrapper, grid );
+        this.updateCarouselArrows( grid, prevArrow, nextArrow );
+      };
+
+      new ResizeObserver(sync).observe(wrapper);
+      sync();
+    });
+  }
+
+  /**
+   * Decide whether a feature grid has to scroll: the boxes of the first row are counted
+   * while the grid lays out as a grid, so the carousel shows exactly as many boxes as the
+   * grid itself would have placed in one row
+   * @param {HTMLElement} wrapper - The .feature-carousel wrapping the grid
+   * @param {HTMLElement} grid - The .feature-grid to lay out
+   */
+  layOutFeatureCarousel( wrapper, grid )
+  {
+    const boxes = [...grid.querySelectorAll('.feature-box')];
+    if( boxes.length < 2 ) return;
+
+    wrapper.classList.remove('is-carousel');
+
+    const perRow = boxes.filter( box => box.offsetTop === boxes[0].offsetTop ).length;
+
+    if( perRow >= boxes.length ) return;  // everything fits - keep the plain grid
+
+    wrapper.style.setProperty('--fc-basis', `calc((100% - ${perRow - 1} * var(--spacing-md)) / ${perRow})`);
+    wrapper.classList.add('is-carousel');
+  }
+
+  /**
+   * Update carousel arrows visibility based on scroll position
+   * @param {HTMLElement} container - The scrolling carousel container element
+   * @param {HTMLElement} prevArrow - The carousel's prev arrow
+   * @param {HTMLElement} nextArrow - The carousel's next arrow
+   */
+  updateCarouselArrows( container, prevArrow, nextArrow )
+  {
     if( !container || !prevArrow || !nextArrow ) return;
 
     // Show/hide prev arrow based on scroll position
