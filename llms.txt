@@ -1,6 +1,6 @@
 # Walter A. Jablonowski - AI Developer & AI Consultant
 
-> Freelance AI developer and consultant based in Stegaurach near Bamberg,
+> Freelance AI developer and consultant based in Bamberg,
 > serving businesses in Bamberg, Nuremberg and the wider Franconia/Bavaria
 > region (and remotely). 25+ years in software development, with a focus on
 > AI integration, AI agents, automation, web and database development.

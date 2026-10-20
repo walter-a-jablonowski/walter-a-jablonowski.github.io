@@ -105,20 +105,34 @@ sub page used to describe the start page.
 - `page` is only compared against index entries, never used to build a URL. An unknown page
   simply gets no context.
 
-## Model switch (Worker)
+## Live model (Worker)
 
-All model ids live in `functions/config.js` — nowhere else in the Worker.
+All model ids live in `functions/config.js` — nowhere else in the Worker. `MODEL_NAME` is
+`gemini-3.8-live` (stable). Mic audio goes out as `realtimeInput.audio`, which every remaining
+Live model takes — the `mediaChunks` format and the `USE_NEW_MODEL` switch left with
+`gemini-2.5-flash-native-audio`.
 
-One switch picks model **and** mic-input format (kept in sync via `use_legacy_input` → client).
+| Model | Use |
+|---|---|
+| `gemini-3.8-live` | Default: low latency, no reasoning delay |
+| `gemini-3.8-live-extended-thinking` | More background reasoning, slower replies |
+| `gemini-3.1-flash-live-preview` | Rollback only — shut down **2026-11-17** (as is 2.5 native audio) |
 
-| `USE_NEW_MODEL` | Model | Mic format |
-|---|---|---|
-| `true`  | `gemini-3.1-flash-live-preview` | `realtimeInput.audio` |
-| `false` | `gemini-2.5-flash-native-audio-preview-12-2025` | `realtimeInput.mediaChunks` |
+What 3.8 changed against the 3.1 preview, and how the relay handles it:
 
-- Mismatch → socket close **1007**.
-- Rollback: `USE_NEW_MODEL = false` in `functions/config.js` + redeploy.
-- Text model (`TEXT_MODEL_NAME`, use case finder) is separate — the client may override it via `VOICE_AGENT_CONFIG.textModel`.
+- **Tool calls are async by default** (`NON_BLOCKING`): the model keeps talking and hears the
+  result later. `navigate` is declared `behavior: 'BLOCKING'`, because its result is what tells
+  the model it only showed a link — it must arrive before the model talks about it.
+- **No `thinkingLevel`** — sending one is an error. The relay never sent one.
+- **Proactive audio is always on; affective dialogue is gone.** Neither was configured.
+- `clientContent` without `turnComplete` (the page context) is still taken in silently; with
+  `turnComplete: true` (greeting, handoff seed) it interrupts any running generation — both
+  are sent right after setup, before the model has said anything.
+
+Rollback: set `MODEL_NAME` in `functions/config.js` + redeploy.
+
+Text model (`TEXT_MODEL_NAME`, use case finder) is separate — the client may override it via
+`VOICE_AGENT_CONFIG.textModel`.
 
 ## Debug flags (`VOICE_AGENT_CONFIG`)
 
@@ -313,8 +327,8 @@ What needs a human voice, ears or a phone is a manual checklist: TEST-CASES.md i
 |---|---|
 | 1006 | Abnormal close, no close frame — the browser⇄Worker socket died (mobile handover, stalled radio, backgrounded tab). Not Gemini: an upstream failure arrives as `upstream-closed-<n>`. The client **retries once** with the resume handle (`shouldReconnect()`); only a second drop in the same session shows the error. |
 | 1001 | Same — endpoint going away. Retried once, exactly like 1006. |
-| 1007 | Model/format mismatch → check `USE_NEW_MODEL`, redeploy. |
-| 1008 | Policy — check API key / model enabled. |
-| 1011 | Server/setup error — try `USE_NEW_MODEL = true`. |
+| 1007 | Invalid frame — usually a setup field the model rejects (e.g. `thinkingLevel` on 3.8) → check `buildSetup()` against `MODEL_NAME`. |
+| 1008 | Policy — check API key / model enabled (or shut down). |
+| 1011 | Server/setup error — check `MODEL_NAME`. |
 
 No greeting on mic-less PC → `simulateMic: true`.
